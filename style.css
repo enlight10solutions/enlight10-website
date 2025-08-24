@@ -5,7 +5,6 @@
   --gold:#FFD447;
   --ink:#0f172a;       /* dark text on white */
   --muted:#475569;
-  --card:#f8fafc;
   --radius:16px;
   --shadow:0 10px 25px rgba(0,0,0,.15);
 }
@@ -15,71 +14,85 @@ html,body{height:100%}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
   color:#f4f4f4; /* hero default; content overrides in .light */
 }
 
-/* ========== Utilities ========== */
-.visually-hidden{
+/* ========== A11y Utility (keep H1 for SEO, visually hidden) ========== */
+.sr-only{
   position:absolute!important;
   height:1px;width:1px;overflow:hidden;
   clip:rect(1px,1px,1px,1px); white-space:nowrap;
 }
 
-/* ===== Top Bar ===== */
+/* ========== Top Bar ========== */
 .topbar{
   position:fixed; inset:0 0 auto 0; height:64px;
   display:flex; align-items:center; justify-content:space-between;
-  padding: 0 .9rem;
-  background: linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  z-index: 1000;
+  padding:0 .9rem;
+  background:linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  z-index:1000;
 }
 
-/* Brand with logo inside the topbar */
 .topbar .brand{
   display:flex; align-items:center; gap:.5rem;
   color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
 }
 .brand-logo{
   height:30px; width:auto; display:block; object-fit:contain;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,.35));
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
 }
 .brand-text{ display:none; color:#e5e7eb; }
-.brand-text strong{ color: var(--gold); font-weight:800; }
+.brand-text strong{ color:var(--gold); font-weight:800; }
 
 .topbar .nav-links{ display:flex; align-items:center; gap:.75rem; }
 .topbar .nav-links a{
   color:#e5e7eb; text-decoration:none; padding:.5rem .6rem; border-radius:10px;
 }
-.topbar .nav-links a:hover{ background: rgba(255,255,255,.06); }
+.topbar .nav-links a:hover{ background:rgba(255,255,255,.06); }
 
-/* Small button variant in topbar */
-.button.small{ padding:.6rem .9rem; font-weight:700; border-radius:10px; }
+/* Button (nav only) */
+.button{
+  display:inline-block;
+  background:var(--gold);
+  color:#1b2234;
+  font-weight:700;
+  padding:.9rem 1.15rem;
+  border:none; border-radius:12px;
+  text-decoration:none;
+  transition:transform .12s ease, box-shadow .12s ease, background .2s ease;
+  box-shadow:0 10px 26px rgba(255,212,71,.28);
+}
+.button.small{ padding:.6rem .9rem; border-radius:10px; }
+.button:hover{ transform:translateY(-1px); box-shadow:0 14px 32px rgba(255,212,71,.35); }
 
-/* Show brand text next to logo on wider screens */
-@media (min-width: 900px){
+/* Show brand text on wider screens */
+@media (min-width:900px){
   .brand-logo{ height:34px; }
   .brand-text{ display:inline-flex; }
 }
 
-/* === HERO: logo as BACKGROUND filling the blue area === */
+/* ========== HERO (full-screen logo as background) ========== */
 .hero{
-  min-height: 100dvh;                 /* full viewport height */
-  padding-top: 64px;                  /* clear fixed topbar */
-  position: relative;
-  display: grid;
-  place-items: center;
-
-  /* TOP LAYER: centered logo; contain keeps full logo visible
-     BACK LAYERS: your glow + blue gradient */
+  min-height:100dvh;                 /* true viewport height */
+  padding-top:64px;                  /* clear fixed topbar */
+  position:relative;
+  display:grid; place-items:center;
+  /* Top layer: logo; below: glow + gradient */
   background:
     url('./Logo.png') center / contain no-repeat,
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
+}
+
+/* Clickable overlay so the whole hero enters the site */
+.hero-link{
+  position:absolute; left:0; right:0; top:64px; bottom:0;
+  display:block; cursor:pointer;
 }
 
 /* Scroll cue */
@@ -91,51 +104,36 @@ body{
 /* ========== LIGHT CONTENT ========== */
 .light{ background:#ffffff; color:var(--ink); }
 
-/* White sections */
 .section-block{
   max-width:1100px;
-  margin: 0 auto;
-  padding: clamp(1rem, 2.5vw, 1.75rem);
+  margin:0 auto;
+  padding:clamp(1rem, 2.5vw, 1.75rem);
   border-bottom:1px solid #eef2f7;
 }
 .section-block.slim{ max-width:900px; }
 
 h2{
   margin:0 0 .5rem;
-  color:#0b1220;                     /* dark navy headings on white */
-  font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
+  color:#0b1220;
+  font-size:clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
 }
 .section-block p{
   margin:.4rem 0 0;
-  color: var(--muted);
+  color:var(--muted);
   line-height:1.65;
 }
 .why{ font-weight:600; color:#0b1220 }
 
-/* ========== FOOTER (blue again) ========== */
+/* ========== FOOTER (match hero tones) ========== */
 footer{
   background:
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
-  padding: 1.5rem 1rem 2.25rem;
+  padding:1.5rem 1rem 2.25rem;
   color:#cbd5e1;
   text-align:center;
   border-top:1px solid rgba(255,255,255,.06);
 }
 footer p{ margin:.35rem 0; }
-footer a{ color: var(--gold); text-decoration:none; }
+footer a{ color:var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
-
-/* Buttons (used only in nav) */
-.button{
-  display:inline-block;
-  background: var(--gold);
-  color:#1b2234;
-  font-weight:700;
-  padding:.9rem 1.15rem;
-  border:none; border-radius:12px;
-  text-decoration:none;
-  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
-  box-shadow: 0 10px 26px rgba(255,212,71,.28);
-}
-.button:hover{ transform: translateY(-1px); box-shadow: 0 14px 32px rgba(255,212,71,.35); }
