@@ -17,11 +17,11 @@ html{ scroll-behavior:smooth }
 body{
   margin:0;
   font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* Keep these for dark areas only; we reset in .light */
+  /* For dark areas we keep antialiasing; reset in .light for crisp white */
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  color:#e5e7eb; /* default for dark hero/topbar/footer */
-  background:#000; /* prevents flashes; hero overrides immediately */
+  color:#e5e7eb;     /* dark-area default */
+  background:#000;   /* prevents white flash */
 }
 
 /* ========== Top Bar (sticky) ========== */
@@ -126,17 +126,10 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
   color:#e5e7eb;
+  position:relative;
 }
 
-/* Option A: big inline <img class="hero-logo"> */
-.hero-logo{
-  width:min(92vw, 1200px);
-  max-height: calc(100dvh - 64px - 160px);
-  height:auto; object-fit:contain;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
-}
-
-/* Option B: logo as hero background when section has class="hero logo-hero" */
+/* Logo as hero background (section needs class="logo-hero") */
 .logo-hero{
   background-image:
     url("/Logo.png"),
@@ -147,8 +140,14 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
   background-size: min(92vw, 1400px) auto, cover, cover;
 }
 
+/* Make the whole hero clickable to scroll */
+.hero-link{
+  position:absolute; inset:0; display:block; text-indent:-9999px;
+}
+
 /* Scroll cue */
 .scroll-cue{
+  position:absolute; left:50%; bottom:1.25rem; transform:translateX(-50%);
   font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em;
 }
 
@@ -166,7 +165,6 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
   padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.4vw, 1.75rem);
   border-bottom:1px solid #eef2f7;
 }
-
 .section-block.slim{ max-width:900px; }
 
 h2{
@@ -177,13 +175,11 @@ h2{
 
 .section-block p{
   margin:.4rem 0 0;
-  color: var(--ink);         /* main body text: dark */
+  color: var(--ink);  /* main body text: dark */
   line-height:1.65;
 }
-.why{ font-weight:600; color: var(--ink) }
 
-/* If you need softer secondary text anywhere, use a class: */
-.muted{ color: var(--muted); }
+.why{ font-weight:600; color: var(--ink) }
 
 /* ========== FOOTER (same blue as hero) ========== */
 footer{
@@ -199,7 +195,3 @@ footer p{ margin:.35rem 0; }
 footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 footer .small{ font-size:.9rem; color:#94a3b8; }
-
-
-
-
