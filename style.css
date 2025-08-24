@@ -80,7 +80,7 @@ body{
 
 .hero-logo-full{
   width: min(95vw, 1400px);                 /* massive but responsive */
-  max-height: calc(100dvh - 64px - 180px);  /* avoid overlapping CTAs/edge */
+  max-height: calc(100dvh - 64px - 140px);  /* avoid overlapping CTAs/edge */
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
