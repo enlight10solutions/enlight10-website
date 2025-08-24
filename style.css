@@ -66,39 +66,20 @@ body{
   .brand-text{ display:inline-flex; }
 }
 
-/* === HERO: full-screen BIG logo === */
+/* === HERO: logo as BACKGROUND filling the blue area === */
 .hero{
   min-height: 100dvh;                 /* full viewport height */
-  padding: calc(64px + 2rem) 1rem 3.5rem; /* clear fixed topbar + spacing */
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column; text-align:center; gap:1rem;
-  position:relative;
+  padding-top: 64px;                  /* clear fixed topbar */
+  position: relative;
+  display: grid;
+  place-items: center;
+
+  /* TOP LAYER: centered logo; contain keeps full logo visible
+     BACK LAYERS: your glow + blue gradient */
   background:
+    url('./Logo.png') center / contain no-repeat,
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
-}
-
-.hero-logo-full{
-  width: min(95vw, 1400px);                 /* massive but responsive */
-  max-height: calc(100dvh - 64px - 140px);  /* avoid overlapping CTAs/edge */
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
-}
-@media (min-width: 1200px){
-  .hero-logo-full { width: min(98vw, 1800px); }
-}
-
-.hero-tag{
-  margin:.25rem 0 0;
-  color:#1e2a44;                         /* dark navy text */
-  background: rgba(255,255,255,.92);     /* light chip for contrast */
-  padding: .35rem .6rem;
-  border-radius: .6rem;
-  font-weight:600;
-  letter-spacing:.2px;
-  box-shadow: 0 4px 16px rgba(0,0,0,.15);
-  display:inline-block;
 }
 
 /* Scroll cue */
@@ -129,7 +110,6 @@ h2{
   color: var(--muted);
   line-height:1.65;
 }
-
 .why{ font-weight:600; color:#0b1220 }
 
 /* ========== FOOTER (blue again) ========== */
