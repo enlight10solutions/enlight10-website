@@ -21,6 +21,17 @@ body{
   color:#f4f4f4; /* hero default; content overrides in .light */
 }
 
+/* tighten white-section spacing a touch */
+.section-block{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.4vw, 1.75rem);
+  border-bottom:1px solid #eef2f7;
+}
+
+/* add a bit more air under the Solution Suite heading */
+.suite h2{ margin-bottom:.35rem; }
+
 /* ========== Utilities ========== */
 .visually-hidden{
   position:absolute!important;
