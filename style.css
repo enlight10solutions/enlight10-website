@@ -34,8 +34,9 @@ body{
   display:flex; align-items:center; justify-content:center;
   flex-direction:column; text-align:center; gap:1rem;
   padding:2rem 1rem 3.5rem;
+  /* match footer: same linear + radial glow */
   background:
-    radial-gradient(1200px 600px at 70% -20%, rgba(255,212,71,.12), transparent 60%),
+    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
   position:relative;
 }
