@@ -1,3 +1,57 @@
+/* ===== Top Bar ===== */
+.topbar{
+  position:fixed; inset:0 0 auto 0; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 .9rem;
+  background: linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  z-index: 1000;
+}
+.topbar .brand{
+  color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
+  display:flex; align-items:center; gap:.4rem;
+}
+.topbar .brand span{ color: var(--gold); font-weight:800 }
+.topbar .nav-links{ display:flex; align-items:center; gap:.75rem }
+.topbar .nav-links a{
+  color:#e5e7eb; text-decoration:none; padding:.5rem .6rem; border-radius:10px;
+}
+.topbar .nav-links a:hover{ background: rgba(255,255,255,.06) }
+
+/* Small button variant in topbar */
+.button.small{
+  padding:.6rem .9rem; font-weight:700; border-radius:10px;
+}
+
+/* Make hero account for fixed bar height & split layout */
+.hero{ min-height:100dvh; padding-top: calc(64px + 2rem); }
+.hero-grid{
+  width: 100%;
+  max-width: 1200px;
+  display:grid; grid-template-columns: 1fr; gap: 1.25rem;
+  align-items:start; justify-items:center;
+}
+@media (min-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr 1fr; align-items:center; justify-items:stretch; }
+}
+.hero-left{
+  display:flex; align-items:flex-start; justify-content:flex-start;
+  width:100%;
+}
+.hero-logo-large{
+  width:min(90%, 700px); height:auto;
+  object-fit:contain;
+  /* Keep it visually on the top-left */
+  align-self:flex-start; justify-self:flex-start;
+}
+.hero-right{
+  align-self:center;
+  text-align:left;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
 /* ========== Theme Tokens ========== */
 :root{
   --navy:#0d1117;      /* deep blue for hero/footer */
