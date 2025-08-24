@@ -52,17 +52,22 @@ body{
   position:relative;
 }
 
+
 .hero-logo{
   width:min(680px, 80vw);
   height:auto;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 
-.hero-tag{
+hero-tag{
   margin:.25rem 0 0;
-  color:#e8eaed;
-  font-weight:500;
+  color: var(--navy-2);              /* Dark navy text */
+  background: rgba(255,255,255,.92); /* Light chip for contrast on dark hero */
+  padding: .35rem .6rem;
+  border-radius: .6rem;
+  font-weight:600;
   letter-spacing:.2px;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
 }
 
 .hero-ctas{
