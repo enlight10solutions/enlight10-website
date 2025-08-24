@@ -6,28 +6,90 @@
   <title>Who We Are — enLight10 Solutions</title>
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
+  <link rel="preload" as="image" href="./Logo.png">
+  <link rel="icon" href="./Logo.png" type="image/png">
 </head>
 <body>
+
+  <!-- FIXED TOP BAR (same as home) -->
   <nav class="topbar">
-    <a class="brand" href="./">enLight10 <span>Solutions</span></a>
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo" src="./Logo.png" alt="">
+      <span class="brand-text">enLight10 <strong>Solutions</strong></span>
+    </a>
     <div class="nav-links">
-      <a href="./who.html">Who We Are</a>
+      <a href="./who.html" aria-current="page">Who We Are</a>
       <a href="./services.html">Services</a>
       <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
     </div>
   </nav>
 
+  <!-- CONTENT -->
   <main class="light" style="padding-top:80px">
     <section class="section-block slim">
       <h2>Who We Are</h2>
-      <p>enLight10 Solutions is a veteran-owned, DoD-focused Azure security firm delivering CUI protection, Zero Trust, and compliance automation for Microsoft GCC High tenants.</p>
-      <p>We combine hands-on Azure expertise (Purview, Sentinel, Defender, Entra) with audit-ready compliance mapping to CMMC and NIST 800-171.</p>
+      <p>
+        enLight10 Solutions is a veteran-owned, DoD-focused Azure security firm. We help defense contractors
+        protect Controlled Unclassified Information (CUI), operationalize Zero Trust, and stay audit-ready on
+        Microsoft GCC High using the tools they already own — Purview, Sentinel, Defender, and Entra.
+      </p>
+    </section>
+
+    <section class="section-block slim">
+      <h2>Our Mission</h2>
+      <p>
+        Bring clarity and confidence to the Defense Industrial Base by turning complex compliance into
+        practical, automated safeguards — so teams can move faster without risking contracts or data.
+      </p>
+    </section>
+
+    <section class="section-block slim">
+      <h2>What We Do</h2>
+      <p>
+        We design, harden, and operate Microsoft 365 GCC High environments for DoD contractors — aligning
+        security controls with CMMC, NIST 800-171/172, DFARS, DoDI 5200.48, and Zero Trust guidance. Our work
+        blends hands-on engineering with evidence-ready documentation.
+      </p>
+      <ul class="clean">
+        <li><span class="why">GCC High expertise:</span> Purview (CUI labeling), Sentinel (SIEM), Defender (EDR), Entra (IAM).</li>
+        <li><span class="why">Compliance first:</span> control mapping, evidence capture, and audit prep built into operations.</li>
+        <li><span class="why">Operational pragmatism:</span> guardrails that fit real users, devices, and missions.</li>
+      </ul>
+    </section>
+
+    <section class="section-block slim">
+      <h2>Why enLight10</h2>
+      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
+      <p>
+        We’re not just tool installers — we’re outcome partners. Our approach reduces time-to-compliance,
+        lowers audit risk, and makes GCC High <em>work</em> for day-to-day operations.
+      </p>
+    </section>
+
+    <section class="section-block slim">
+      <h2>Credentials & Codes</h2>
+      <ul class="clean">
+        <li><span class="why">Ownership:</span> Veteran-owned small business (SDVOSB eligibility).</li>
+        <li><span class="why">Focus:</span> Microsoft 365 GCC High / Azure for DoD contractors.</li>
+        <li><span class="why">NAICS:</span> 541512, 541519, 541611, 541690, 541330.</li>
+      </ul>
+    </section>
+
+    <section class="section-block slim">
+      <h2>How We Work</h2>
+      <ul class="clean">
+        <li><span class="why">Subcontract-friendly:</span> team with primes and MSPs, or deliver direct.</li>
+        <li><span class="why">Evidence by design:</span> every change ties to a control and shows up in dashboards.</li>
+        <li><span class="why">Flexible delivery:</span> assessments, deployments, and managed operations.</li>
+      </ul>
     </section>
   </main>
 
+  <!-- FOOTER (same gradient as home) -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
     <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
   </footer>
+
 </body>
 </html>
