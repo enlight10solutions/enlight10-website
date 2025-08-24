@@ -1,5 +1,5 @@
 // script.js
-// Mobile menu controls
+// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('menuToggle');
   const panel = document.getElementById('mobileMenu');
@@ -34,7 +34,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
-
 
