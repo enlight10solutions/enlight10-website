@@ -3,137 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services — enLight10 Solutions</title>
+  <title>enLight10 Solutions</title>
+
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 
+  <!-- Perf & branding -->
   <link rel="preload" as="image" href="./Logo.png">
   <link rel="icon" href="./Logo.png" type="image/png">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR (same as other pages) -->
+  <!-- FIXED TOP BAR -->
   <nav class="topbar">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo" src="./Logo.png" alt="">
+      <img class="brand-logo" src="./Logo.png" alt="enLight10 Solutions">
       <span class="brand-text">enLight10 <strong>Solutions</strong></span>
     </a>
     <div class="nav-links">
       <a href="./who.html">Who We Are</a>
-      <a href="./services.html" aria-current="page">Services</a>
+      <a href="./services.html">Services</a>
       <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
     </div>
   </nav>
 
-  <main class="light" style="padding-top:80px">
-    <!-- Services Overview -->
-    <section class="section-block slim">
-      <h2>Services</h2>
+  <!-- HERO: logo as full-screen background; entire area clickable to content -->
+  <section class="hero" id="top" aria-labelledby="site-title">
+    <h1 id="site-title" class="sr-only">enLight10 Solutions</h1>
+    <a class="hero-link" href="#mission" aria-label="Enter site — jump to Mission"></a>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- LIGHT CONTENT -->
+  <main class="light">
+    <section id="mission" class="section-block slim">
+      <h2>Mission</h2>
       <p>
-        We help DoD contractors get secure, compliant, and audit-ready on Microsoft 365 GCC High and Azure.
-        Our work turns native Microsoft security into practical guardrails that map directly to CMMC and NIST 800-171.
+        To bring clarity and confidence to DoD contractors by unlocking the full security and compliance
+        potential of Microsoft GCC High — through automation, Zero Trust, and AI-driven visibility.
       </p>
     </section>
 
-    <!-- Core Offerings -->
-    <section class="section-block suite slim">
-      <h2>Core Offerings</h2>
-      <div class="features">
-        <article class="feature">
-          <h3><span class="dot"></span> CUI Classifier (Purview)</h3>
-          <p>Build and operate CUI labeling that works in the real world.</p>
-          <ul class="clean">
-            <li><span class="why">Custom Sensitive Info Types:</span> regex, keyword dictionaries, proximity rules.</li>
-            <li><span class="why">Trainable classifiers:</span> curate positives/negatives for prose-heavy content.</li>
-            <li><span class="why">Auto-labeling policies:</span> SharePoint, OneDrive, Exchange, Teams.</li>
-            <li><span class="why">Markings:</span> headers/footers and designation block automation patterns.</li>
-            <li><span class="why">Evidence:</span> exportable events mapped to CMMC / NIST 800-171.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3><span class="dot"></span> SOC-as-a-Service (Sentinel)</h3>
-          <p>SIEM deployment and managed monitoring tailored to GCC High.</p>
-          <ul class="clean">
-            <li><span class="why">Rapid stand-up:</span> data connectors, log retention, normalization.</li>
-            <li><span class="why">Use cases:</span> CUI exfil, insider threat, account abuse, device risk.</li>
-            <li><span class="why">Automation:</span> playbooks for triage, enrichment, containment.</li>
-            <li><span class="why">Runbooks:</span> ticketing workflows and response documentation.</li>
-            <li><span class="why">Options:</span> 8×5 or 24×7 coverage with defined SLAs.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3><span class="dot"></span> Zero Trust Ready (Entra)</h3>
-          <p>Identity-first hardening aligned to DoD Zero Trust pillars.</p>
-          <ul class="clean">
-            <li><span class="why">MFA everywhere:</span> phishing-resistant options for privileged roles.</li>
-            <li><span class="why">Conditional Access:</span> device compliance, geo, risk, and session controls.</li>
-            <li><span class="why">PIM:</span> just-in-time access, approval flows, access reviews.</li>
-            <li><span class="why">Privileged workstations:</span> admin tiering and PAW patterns.</li>
-            <li><span class="why">Device posture:</span> Defender/Intune baselines for endpoints.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3><span class="dot"></span> Compliance Accelerator</h3>
-          <p>Control mapping, evidence generation, and audit prep.</p>
-          <ul class="clean">
-            <li><span class="why">Gap assessment:</span> CMMC L2 focus mapped to NIST 800-171/172.</li>
-            <li><span class="why">SSP, SPRS, POA&amp;M:</span> living documents, not shelfware.</li>
-            <li><span class="why">Dashboards:</span> control coverage, exceptions, residual risk.</li>
-            <li><span class="why">Inheritance:</span> leverage GCC High platform controls appropriately.</li>
-            <li><span class="why">Pre-audit:</span> interview prep and artifact staging.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3><span class="dot"></span> Contractor Solutions</h3>
-          <p>Cleared staff augmentation to help primes and DIB subs deliver.</p>
-          <ul class="clean">
-            <li><span class="why">Roles:</span> SOC analyst, cloud security engineer, systems admin.</li>
-            <li><span class="why">Models:</span> time &amp; materials, surge support, backfill.</li>
-            <li><span class="why">Clearance:</span> veteran-owned; eligibility for SDVOSB teaming.</li>
-          </ul>
-        </article>
-      </div>
+    <section id="vision" class="section-block slim">
+      <h2>Vision</h2>
+      <p>
+        A defense industrial base where every contractor — large or small — operates with the same level of
+        compliance assurance and cyber resilience as the largest primes.
+      </p>
     </section>
 
-    <!-- How We Deliver -->
-    <section class="section-block slim">
-      <h2>How We Deliver</h2>
-      <ul class="clean">
-        <li><span class="why">Assess → Implement → Operate:</span> phased approach with measurable outcomes at each step.</li>
-        <li><span class="why">Evidence by design:</span> every control has telemetry and an artifact plan.</li>
-        <li><span class="why">Subcontract-friendly:</span> we strengthen primes/MSPs without competing with them.</li>
-        <li><span class="why">Change management:</span> documented runbooks and approvals aligned to audits.</li>
-      </ul>
-    </section>
-
-    <!-- Bundles -->
-    <section class="section-block slim">
-      <h2>Starter Bundles</h2>
-      <ul class="clean">
-        <li><span class="why">Foundation:</span> Entra MFA + Conditional Access baseline, Defender onboarding, core audit evidence.</li>
-        <li><span class="why">Classifier:</span> Purview auto-labeling package with 3–5 custom CUI detectors and designation-block stamping.</li>
-        <li><span class="why">SOC Kickoff:</span> Sentinel deployment, 10 priority detections, triage playbooks, and ticketing integration.</li>
-        <li><span class="why">Compliance Jumpstart:</span> gap analysis, SSP/SPR score, POA&amp;M plan, and auditor-ready artifacts.</li>
-      </ul>
-    </section>
-
-    <!-- Readiness Checklist -->
-    <section class="section-block slim">
-      <h2>Readiness Checklist</h2>
-      <ul class="clean">
-        <li><span class="why">Licensing:</span> GCC High SKUs identified and assigned.</li>
-        <li><span class="why">Ownership:</span> executive sponsor and technical point of contact.</li>
-        <li><span class="why">Scope:</span> in-scope systems, users, and repositories defined.</li>
-        <li><span class="why">Data flows:</span> where CUI lives, moves, and is shared.</li>
-      </ul>
+    <section id="why-us" class="section-block slim">
+      <h2>Why Us</h2>
+      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
+      <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
     </section>
   </main>
 
-  <!-- FOOTER (same gradient as other pages) -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
     <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
