@@ -4,8 +4,8 @@
   --navy:#0d1117;      /* deep blue for hero/footer */
   --navy-2:#1e2a44;    /* accent glow */
   --gold:#FFD447;
-  --ink:#0b1220;       /* rich dark text on white */
-  --muted:#475569;     /* secondary text */
+  --ink:#0b1220;       /* dark text on white */
+  --muted:#475569;     /* body copy on white */
   --radius:16px;
   --shadow:0 10px 25px rgba(0,0,0,.15);
 }
@@ -13,15 +13,13 @@
 *{ box-sizing:border-box }
 html,body{ height:100% }
 html{ scroll-behavior:smooth }
-
 body{
   margin:0;
   font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  /* For dark areas we keep antialiasing; reset in .light for crisp white */
-  -webkit-font-smoothing:antialiased;
+  -webkit-font-smoothing:antialiased;    /* looks great on dark hero/nav */
   text-rendering:optimizeLegibility;
-  color:#e5e7eb;     /* dark-area default */
-  background:#000;   /* prevents white flash */
+  color:#e5e7eb;                          /* default for dark hero/topbar; overridden in .light */
+  background:#000;                        /* prevents flashes; hero overrides immediately */
 }
 
 /* ========== Top Bar (sticky) ========== */
@@ -116,7 +114,7 @@ body.menu-open #menuBackdrop{ opacity:1; }
 body.menu-open #mobileMenu{ transform: translateX(0); }
 body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
 
-/* ========== HERO (full-screen dark) ========== */
+/* ========== HERO (full-screen; big inline logo) ========== */
 .hero{
   min-height:100dvh;
   padding-top:64px; /* account for fixed topbar */
@@ -126,60 +124,48 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
   color:#e5e7eb;
-  position:relative;
 }
 
-/* Logo as hero background (section needs class="logo-hero") */
-.logo-hero{
-  background-image:
-    url("/Logo.png"),
-    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
-    linear-gradient(to bottom, var(--navy-2), var(--navy));
-  background-repeat: no-repeat, no-repeat, no-repeat;
-  background-position: center center, 0 0, 0 0;
-  background-size: min(92vw, 1400px) auto, cover, cover;
+.hero-logo-full{
+  width: min(92vw, 1400px);
+  max-height: calc(100dvh - 64px - 160px);
+  height:auto; object-fit:contain;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 
-/* Make the whole hero clickable to scroll */
-.hero-link{
-  position:absolute; inset:0; display:block; text-indent:-9999px;
-}
-
-/* Scroll cue */
 .scroll-cue{
-  position:absolute; left:50%; bottom:1.25rem; transform:translateX(-50%);
   font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em;
 }
 
-/* ========== LIGHT CONTENT (white area) ========== */
+/* ========== LIGHT CONTENT (white) ========== */
 .light{
   background:#ffffff;
   color: var(--ink);
-  -webkit-font-smoothing: auto;   /* crisper on Windows */
-  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing:auto;   /* crucial: crisp on light background */
+  text-rendering:optimizeSpeed;
 }
 
 .section-block{
   max-width:1100px;
   margin: 0 auto;
-  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.4vw, 1.75rem);
+  padding: clamp(1rem, 2.2vw, 1.75rem) clamp(1rem, 2.6vw, 1.85rem);
   border-bottom:1px solid #eef2f7;
 }
 .section-block.slim{ max-width:900px; }
 
 h2{
   margin:0 0 .5rem;
-  color: var(--ink);
+  color:#0b1220;
   font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
 }
 
 .section-block p{
-  margin:.4rem 0 0;
-  color: var(--ink);  /* main body text: dark */
+  margin:.5rem 0 0;
+  color: var(--muted);   /* readable gray on white */
   line-height:1.65;
 }
 
-.why{ font-weight:600; color: var(--ink) }
+.why{ font-weight:600; color:#0b1220 }
 
 /* ========== FOOTER (same blue as hero) ========== */
 footer{
@@ -195,3 +181,4 @@ footer p{ margin:.35rem 0; }
 footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 footer .small{ font-size:.9rem; color:#94a3b8; }
+
