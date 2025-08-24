@@ -1,71 +1,3 @@
-/* ===== Top Bar ===== */
-.topbar{
-  position:fixed; inset:0 0 auto 0; height:64px;
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 0 .9rem;
-  background: linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,.08);
-  z-index: 1000;
-}
-
-/* Brand with logo inside the topbar */
-.topbar .brand{
-  display:flex; align-items:center; gap:.5rem;
-  color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
-}
-.brand-logo{
-  height:36px; width:auto; display:block; object-fit:contain;
-  filter: drop-shadow(0 1px 2px rgba(0,0,0,.35));
-}
-.brand-text{ display:none; color:#e5e7eb; }
-.brand-text strong{ color: var(--gold); font-weight:800; }
-
-.topbar .nav-links{ display:flex; align-items:center; gap:.75rem; }
-.topbar .nav-links a{
-  color:#e5e7eb; text-decoration:none; padding:.5rem .6rem; border-radius:10px;
-}
-.topbar .nav-links a:hover{ background: rgba(255,255,255,.06); }
-
-/* Small button variant in topbar */
-.button.small{ padding:.6rem .9rem; font-weight:700; border-radius:10px; }
-
-/* Hero accounts for fixed bar; two-column on wide */
-.hero{ min-height:100dvh; padding-top: calc(64px + 2rem); }
-.hero-grid{
-  width:100%; max-width:1200px;
-  display:grid; grid-template-columns:1fr; gap:1.25rem;
-  align-items:start; justify-items:center;
-}
-.hero-left{ display:flex; align-items:flex-start; justify-content:flex-start; width:100%; }
-.hero-logo-large{
-  width:min(90%, 700px); height:auto; object-fit:contain;
-  align-self:flex-start; justify-self:flex-start;
-}
-.hero-right{ align-self:center; text-align:left; max-width:560px; margin-inline:auto; }
-
-@media (min-width: 900px){
-  .brand-logo{ height:42px; }
-  .brand-text{ display:inline-flex; }
-  .hero-grid{ grid-template-columns:1fr 1fr; align-items:center; justify-items:stretch; }
-}
-.hero-left{
-  display:flex; align-items:flex-start; justify-content:flex-start;
-  width:100%;
-}
-.hero-logo-large{
-  width:min(90%, 700px); height:auto;
-  object-fit:contain;
-  /* Keep it visually on the top-left */
-  align-self:flex-start; justify-self:flex-start;
-}
-.hero-right{
-  align-self:center;
-  text-align:left;
-  max-width: 560px;
-  margin-inline: auto;
-}
-
 /* ========== Theme Tokens ========== */
 :root{
   --navy:#0d1117;      /* deep blue for hero/footer */
@@ -89,17 +21,6 @@ body{
   color:#f4f4f4; /* hero default; content overrides in .light */
 }
 
-/* tighten white-section spacing a touch */
-.section-block{
-  max-width:1100px;
-  margin: 0 auto;
-  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.4vw, 1.75rem);
-  border-bottom:1px solid #eef2f7;
-}
-
-/* add a bit more air under the Solution Suite heading */
-.suite h2{ margin-bottom:.35rem; }
-
 /* ========== Utilities ========== */
 .visually-hidden{
   position:absolute!important;
@@ -107,30 +28,77 @@ body{
   clip:rect(1px,1px,1px,1px); white-space:nowrap;
 }
 
-/* ========== HERO (full screen) ========== */
+/* ===== Top Bar ===== */
+.topbar{
+  position:fixed; inset:0 0 auto 0; height:64px;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 0 .9rem;
+  background: linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  z-index: 1000;
+}
+
+/* Brand with logo inside the topbar */
+.topbar .brand{
+  display:flex; align-items:center; gap:.5rem;
+  color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
+}
+.brand-logo{
+  height: 32px; width:auto; display:block; object-fit:contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+.brand-text{ display:none; color:#e5e7eb; }
+.brand-text strong{ color: var(--gold); font-weight:800; }
+
+.topbar .nav-links{ display:flex; align-items:center; gap:.75rem; }
+.topbar .nav-links a{
+  color:#e5e7eb; text-decoration:none; padding:.5rem .6rem; border-radius:10px;
+}
+.topbar .nav-links a:hover{ background: rgba(255,255,255,.06); }
+
+/* Small button variant in topbar */
+.button.small{ padding:.6rem .9rem; font-weight:700; border-radius:10px; }
+
+/* === HERO (full-screen with gradient) === */
 .hero{
-  min-height:100svh;
-  display:flex; align-items:center; justify-content:center;
-  flex-direction:column; text-align:center; gap:1rem;
-  padding:2rem 1rem 3.5rem;
+  min-height: 100dvh;                 /* true viewport height incl. iOS UI */
+  padding-top: calc(64px + 2rem);     /* clear the fixed topbar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  position: relative;
+
   /* match footer: same linear + radial glow */
   background:
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
-  position:relative;
 }
 
-
-.hero-logo{
-  width:min(680px, 80vw);
-  height:auto;
+/* Make the hero logo dominate the first screen */
+.hero-logo.hero-logo-full{
+  width: min(95vw, 1200px);
+  max-height: calc(100dvh - 64px - 170px); /* room for CTAs */
+  height: auto;
+  object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 
-hero-tag{
+@media (min-width: 1024px){
+  .hero-logo.hero-logo-full{
+    width: min(85vw, 1400px);
+    max-height: calc(100dvh - 64px - 180px);
+  }
+}
+
+/* Tagline chip (only if you uncomment the tagline) */
+.hero-tag{
   margin:.25rem 0 0;
-  color: var(--navy-2);              /* Dark navy text */
-  background: rgba(255,255,255,.92); /* Light chip for contrast on dark hero */
+  color: var(--navy-2);
+  background: rgba(255,255,255,.92);
   padding: .35rem .6rem;
   border-radius: .6rem;
   font-weight:600;
@@ -138,11 +106,7 @@ hero-tag{
   box-shadow: 0 4px 16px rgba(0,0,0,.15);
 }
 
-.hero-ctas{
-  display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center;
-  margin-top:.35rem;
-}
-
+/* Buttons */
 .button{
   display:inline-block;
   background: var(--gold);
@@ -173,28 +137,24 @@ hero-tag{
 }
 
 /* ========== LIGHT CONTENT ========== */
-.light{
-  background:#ffffff; color:var(--ink);
-}
+.light{ background:#ffffff; color:var(--ink); }
 
+/* Single, clean section spacing */
 .section-block{
   max-width:1100px;
   margin: 0 auto;
   padding: clamp(1rem, 2.5vw, 1.75rem);
   border-bottom:1px solid #eef2f7;
 }
-/* Solution Suite layout */
-.suite{
-  border-bottom: 1px solid #eef2f7;
-}
 
+.suite h2{ margin-bottom:.35rem; }
+
+/* Solution Suite layout */
 .features{
   margin-top: .75rem;
   display: grid;
   gap: 1rem;
 }
-
-/* 2 columns on wider screens */
 @media (min-width: 900px){
   .features{ grid-template-columns: 1fr 1fr; }
   .features .feature:last-child{ grid-column: span 2; } /* center final item */
@@ -208,19 +168,13 @@ hero-tag{
   box-shadow: 0 6px 14px rgba(2,6,23,.05);
   padding: 1rem 1.1rem;
 }
-
 .feature h3{
   margin: 0 0 .35rem;
   font-size: 1.05rem;
   color: #0b1220;
   display: flex; align-items: center; gap: .5rem;
 }
-
-.feature p{
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
+.feature p{ margin: 0; color: var(--muted); line-height: 1.6; }
 
 /* small accent dot before each title */
 .dot{
@@ -229,29 +183,23 @@ hero-tag{
   box-shadow: 0 0 0 4px rgba(255,212,71,.16);
 }
 
-.section-block.slim{
-  max-width:900px;
-}
+.section-block.slim{ max-width:900px; }
 
 h2{
   margin:0 0 .5rem;
-  color:#0b1220;
+  color:#0b1220;                     /* dark navy headings on white */
   font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
 }
-
 .section-block p{
   margin:.4rem 0 0;
   color: var(--muted);
   line-height:1.65;
 }
-
 ul.clean{
   list-style:none; padding:0; margin:.75rem 0 0;
   display:grid; gap:.75rem;
 }
 .highlight{color:#0b1220; font-weight:700}
-
-/* emphasize quick list line */
 .why{ font-weight:600; color:#0b1220 }
 
 /* ========== FOOTER (blue again) ========== */
@@ -264,15 +212,11 @@ footer{
   text-align:center;
   border-top:1px solid rgba(255,255,255,.06);
 }
+footer p{ margin:.35rem 0; }
+footer a{ color: var(--gold); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
 
-footer p{
-  margin:.35rem 0;
-}
-
-footer a{
-  color: var(--gold);
-  text-decoration:none;
-}
-footer a:hover{
-  text-decoration:underline;
+/* Show brand text next to logo on wider screens */
+@media (min-width: 900px){
+  .brand-text{ display:inline-flex; }
 }
