@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>enLight10 Solutions</title>
 
   <link rel="stylesheet" href="./style.css">
@@ -14,45 +14,25 @@
 </head>
 <body>
 
-  <!-- FIXED TOP BAR -->
+  <!-- FIXED TOP BAR (logo inside) -->
   <nav class="topbar">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo" src="./Logo.png" alt="enLight10 Solutions">
+      <img class="brand-logo" src="./Logo.png" alt="">
       <span class="brand-text">enLight10 <strong>Solutions</strong></span>
     </a>
-
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="./who.html">Who We Are</a>
-        <a href="./services.html">Services</a>
-        <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
-      </div>
-
-      <!-- Hamburger for mobile -->
-      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile menu + backdrop -->
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden>
-    <nav class="menu-nav" aria-label="Mobile">
+    <div class="nav-links">
       <a href="./who.html">Who We Are</a>
       <a href="./services.html">Services</a>
       <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
+    </div>
+  </nav>
 
-  <!-- HERO: full-screen with BIG logo as background -->
-  <section class="hero logo-hero" id="top" aria-label="Intro">
-    <!-- Make the whole hero clickable to jump down -->
-    <a class="hero-link" href="#mission" aria-label="Enter site — jump to Mission"></a>
+  <!-- HERO: full-screen logo as BACKGROUND (no hero text/buttons) -->
+  <section class="hero" id="top" aria-label="enLight10 Solutions">
     <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- LIGHT CONTENT -->
+  <!-- LIGHT CONTENT AREA (white background) -->
   <main class="light">
     <section id="mission" class="section-block slim">
       <h2>Mission</h2>
@@ -70,7 +50,22 @@
       </p>
     </section>
 
-    <sectio
+    <section id="why-us" class="section-block slim">
+      <h2>Why Us</h2>
+      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned</p>
+      <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
+    </section>
+  </main>
+
+  <!-- BLUE FOOTER -->
+  <footer>
+    <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+    <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
+  </footer>
+
+</body>
+</html>
+
 
 
 
