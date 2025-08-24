@@ -126,10 +126,13 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
   color:#e5e7eb;
 }
 
+/* replace your existing .hero-logo-full block with this */
+.hero-logo,
 .hero-logo-full{
   width: min(92vw, 1400px);
   max-height: calc(100dvh - 64px - 160px);
-  height:auto; object-fit:contain;
+  height:auto;
+  object-fit:contain;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 
@@ -181,4 +184,42 @@ footer p{ margin:.35rem 0; }
 footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 footer .small{ font-size:.9rem; color:#94a3b8; }
+
+/* ===== FINAL OVERRIDES (force correct colors/contrast) ===== */
+
+/* Make paragraph/body text crisp dark on white */
+.light,
+.light .section-block,
+.light .section-block p,
+.light p {
+  color: #0b1220 !important;         /* near-black */
+  -webkit-font-smoothing: auto !important;
+  text-rendering: optimizeSpeed !important;
+}
+
+/* Heading can stay dark navy */
+.light h2 { color: #0b1220 !important; }
+
+/* Gold contact button in the nav */
+.nav-links .button {
+  background: #FFD447 !important;
+  color: #1b2234 !important;
+  box-shadow: 0 10px 26px rgba(255,212,71,.28) !important;
+}
+
+/* Ensure hero and footer are the rich blue gradient (not gray) */
+.hero {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.12), transparent 55%),
+    linear-gradient(to bottom, #1e2a44, #0d1117) !important;
+}
+footer {
+  background:
+    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.12), transparent 55%),
+    linear-gradient(to bottom, #1e2a44, #0d1117) !important;
+  color: #cbd5e1 !important;
+}
+
+/* Ensure links in footer read well */
+footer a { color: #FFD447 !important; }
 
