@@ -45,7 +45,7 @@ body{
   color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
 }
 .brand-logo{
-  height: 32px; width:auto; display:block; object-fit:contain;
+  height: 30px; width:auto; display:block; object-fit:contain;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.35));
 }
 .brand-text{ display:none; color:#e5e7eb; }
@@ -60,50 +60,82 @@ body{
 /* Small button variant in topbar */
 .button.small{ padding:.6rem .9rem; font-weight:700; border-radius:10px; }
 
-/* === HERO (full-screen with gradient) === */
-.hero{
-  min-height: 100dvh;                 /* true viewport height incl. iOS UI */
-  padding-top: calc(64px + 2rem);     /* clear the fixed topbar */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1rem;
-  position: relative;
+/* Show brand text next to logo on wider screens */
+@media (min-width: 900px){
+  .brand-logo{ height: 34px; }
+  .brand-text{ display:inline-flex; }
+}
 
-  /* match footer: same linear + radial glow */
+/* === HERO (split layout, gradient) === */
+.hero{
+  padding-top: calc(64px + 2rem);
+  padding-bottom: 3.5rem;
+  position: relative;
   background:
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
 }
 
-/* Make the hero logo dominate the first screen */
-.hero-logo.hero-logo-full{
-  width: min(95vw, 1200px);
-  max-height: calc(100dvh - 64px - 170px); /* room for CTAs */
-  height: auto;
+.hero-grid{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display:grid;
+  grid-template-columns: 1fr;   /* stack on mobile */
+  gap: 1.25rem;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+@media (min-width: 900px){
+  .hero-grid{
+    grid-template-columns: 1.1fr 1fr; /* logo slightly larger */
+  }
+}
+
+.hero-left{
+  display:flex; justify-content:center; align-items:center;
+}
+.hero-logo{
+  width: min(720px, 85vw);
+  height:auto;
   object-fit: contain;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 
-@media (min-width: 1024px){
-  .hero-logo.hero-logo-full{
-    width: min(85vw, 1400px);
-    max-height: calc(100dvh - 64px - 180px);
-  }
+.hero-right{
+  text-align: center;
+}
+@media (min-width: 900px){
+  .hero-right{ text-align: left; padding-left: .5rem; }
 }
 
-/* Tagline chip (only if you uncomment the tagline) */
+.hero-title{
+  margin: 0 0 .35rem;
+  color: #ffffff;
+  font-size: clamp(1.4rem, 1.4vw + 1.2rem, 2rem);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
 .hero-tag{
   margin:.25rem 0 0;
-  color: var(--navy-2);
+  color:#1e2a44;
   background: rgba(255,255,255,.92);
   padding: .35rem .6rem;
   border-radius: .6rem;
   font-weight:600;
   letter-spacing:.2px;
   box-shadow: 0 4px 16px rgba(0,0,0,.15);
+  display: inline-block;
+}
+
+.hero-ctas{
+  display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center;
+  margin-top:.75rem;
+}
+@media (min-width: 900px){
+  .hero-ctas{ justify-content:flex-start; }
 }
 
 /* Buttons */
@@ -139,14 +171,13 @@ body{
 /* ========== LIGHT CONTENT ========== */
 .light{ background:#ffffff; color:var(--ink); }
 
-/* Single, clean section spacing */
+/* Section spacing */
 .section-block{
   max-width:1100px;
   margin: 0 auto;
   padding: clamp(1rem, 2.5vw, 1.75rem);
   border-bottom:1px solid #eef2f7;
 }
-
 .suite h2{ margin-bottom:.35rem; }
 
 /* Solution Suite layout */
@@ -215,8 +246,3 @@ footer{
 footer p{ margin:.35rem 0; }
 footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
-
-/* Show brand text next to logo on wider screens */
-@media (min-width: 900px){
-  .brand-text{ display:inline-flex; }
-}
