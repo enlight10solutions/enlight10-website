@@ -1,5 +1,5 @@
 // script.js
-// Mobile menu logic (safe if elements are missing)
+// Mobile menu logic
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn   = document.getElementById('menuToggle');
   const panel     = document.getElementById('mobileMenu');
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeMenu = () => {
     document.body.classList.remove('menu-open');
     menuBtn.setAttribute('aria-expanded', 'false');
+    // allow CSS transition to complete before hiding
     setTimeout(() => {
       panel.hidden = true;
       backdrop.hidden = true;
@@ -29,9 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   backdrop.addEventListener('click', closeMenu);
-  panel.addEventListener('click', (e) => { if (e.target.matches('a')) closeMenu(); });
 
+  // Close when a link inside the panel is clicked
+  panel.addEventListener('click', (e) => {
+    if (e.target.matches('a')) closeMenu();
+  });
+
+  // Close on ESC
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) closeMenu();
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+      closeMenu();
+    }
   });
 });
+
