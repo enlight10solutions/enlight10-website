@@ -86,7 +86,7 @@ body{
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
 @media (min-width: 1200px){
-  .hero-logo-full{ width: min(90vw, 1600px); }
+  .hero-logo-full { width: min(98vw, 1800px); }
 }
 
 .hero-tag{
