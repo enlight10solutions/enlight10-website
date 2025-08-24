@@ -1,4 +1,5 @@
 // script.js
+// Mobile menu controls
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.getElementById('menuToggle');
   const panel = document.getElementById('mobileMenu');
