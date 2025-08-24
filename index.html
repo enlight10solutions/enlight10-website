@@ -8,15 +8,16 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 
+  <!-- Perf & branding -->
   <link rel="preload" as="image" href="./Logo.png">
   <link rel="icon" href="./Logo.png" type="image/png">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR (logo inside) -->
+  <!-- FIXED TOP BAR -->
   <nav class="topbar">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo" src="./Logo.png" alt="">
+      <img class="brand-logo" src="./Logo.png" alt="enLight10 Solutions">
       <span class="brand-text">enLight10 <strong>Solutions</strong></span>
     </a>
     <div class="nav-links">
@@ -26,12 +27,14 @@
     </div>
   </nav>
 
-  <!-- HERO: full-screen logo as BACKGROUND (no hero text/buttons) -->
-  <section class="hero" id="top" aria-label="enLight10 Solutions">
+  <!-- HERO: logo as full-screen background; entire area clickable to content -->
+  <section class="hero" id="top" aria-labelledby="site-title">
+    <h1 id="site-title" class="sr-only">enLight10 Solutions</h1>
+    <a class="hero-link" href="#mission" aria-label="Enter site — jump to Mission"></a>
     <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- LIGHT CONTENT AREA (white background) -->
+  <!-- LIGHT CONTENT -->
   <main class="light">
     <section id="mission" class="section-block slim">
       <h2>Mission</h2>
@@ -51,15 +54,15 @@
 
     <section id="why-us" class="section-block slim">
       <h2>Why Us</h2>
-      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned</p>
+      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
       <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
     </section>
   </main>
 
-  <!-- BLUE FOOTER -->
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-    <p><a href="mailto:jay.moreno@enlight10solutions.com">info@enlight10solutions.com</a></p>
+    <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
   </footer>
 
 </body>
