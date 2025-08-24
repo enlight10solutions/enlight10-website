@@ -1,10 +1,6 @@
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-  const contactBtn = document.querySelector('.button[href^="mailto:"]');
-  if (contactBtn) {
-    contactBtn.addEventListener('click', () => console.log('Contact clicked'));
-  }
-
+  // Subtle topbar background change on scroll
   const topbar = document.querySelector('.topbar');
   const onScroll = () => {
     if (!topbar) return;
@@ -14,5 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // (Optional) log mailto clicks (nav contact)
+  const contactBtns = document.querySelectorAll('a[href^="mailto:"]');
+  contactBtns.forEach(btn => btn.addEventListener('click', () => {
+    console.log('Contact clicked:', btn.getAttribute('href'));
+  }));
 });
+
 
