@@ -5,59 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>enLight10 Solutions</title>
 
-  <!-- External CSS + JS -->
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 </head>
 <body>
 
-  <!-- HERO / HEADER -->
-  <header>
-    <!-- Ensure the file is exactly: Logo.png (same folder as index.html) -->
-    <img src="./Logo.png" alt="enLight10 Solutions Logo" />
-    <h1>enLight10 Solutions</h1>
-    <h2>Let the Light shine on your Security and Compliance</h2>
-    <p>
+  <!-- HERO: full-screen logo + CTA -->
+  <section class="hero" id="top">
+    <!-- Make sure the file is exactly named Logo.png and sits next to index.html -->
+    <img class="hero-logo" src="./Logo.png" alt="enLight10 Solutions Logo">
+    <h1 class="visually-hidden">enLight10 Solutions</h1>
+    <p class="hero-tag">Let the Light shine on your Security and Compliance</p>
+
+    <div class="hero-ctas">
       <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact Us</a>
-    </p>
-  </header>
+      <a class="ghost" href="#mission" aria-label="Scroll to content">Learn more ↓</a>
+    </div>
 
-  <!-- MISSION -->
-  <section class="section-block">
-    <h2>🌟 Mission</h2>
-    <p>
-      To bring clarity and confidence to DoD contractors by unlocking the full security and compliance potential of Microsoft GCC High — through automation, Zero Trust, and AI-driven visibility.
-    </p>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- VISION -->
-  <section class="section-block">
-    <h2>🚀 Vision</h2>
-    <p>
-      A defense industrial base where every contractor — large or small — operates with the same level of compliance assurance and cyber resilience as the largest primes.
-    </p>
-  </section>
+  <!-- LIGHT CONTENT AREA (white background) -->
+  <main class="light">
+    <section id="mission" class="section-block slim">
+      <h2>🌟 Mission</h2>
+      <p>
+        To bring clarity and confidence to DoD contractors by unlocking the full security and compliance
+        potential of Microsoft GCC High — through automation, Zero Trust, and AI-driven visibility.
+      </p>
+    </section>
 
-  <!-- SOLUTION SUITE -->
-  <section class="section-block">
-    <h2>🔐 Solution Suite</h2>
-    <ul class="clean">
-      <li><span class="highlight">enLight10 :: CUI Classifier</span> — Custom Purview classifiers tied to the NARA CUI Registry & DoDI 5200.48, automated headers/footers, compliance dashboards.</li>
-      <li><span class="highlight">enLight10 :: SOC-as-a-Service</span> — Azure Sentinel standup & tuning for GCC High, pre-built DoD/CMMC use cases, AI-assisted monitoring & triage.</li>
-      <li><span class="highlight">enLight10 :: Zero Trust Ready</span> — Entra IAM policies, MFA, Conditional Access, PIM, device compliance enforcement.</li>
-      <li><span class="highlight">enLight10 :: Compliance Accelerator</span> — Zero Trust maturity assessments, continuous evidence generation for CMMC/NIST audits, DoD Cyber Scorecard integration.</li>
-      <li><span class="highlight">enLight10 :: Contractor Solutions</span> — Cleared IT and cybersecurity staff augmentation for DoD programs.</li>
-    </ul>
-  </section>
+    <section class="section-block slim">
+      <h2>🚀 Vision</h2>
+      <p>
+        A defense industrial base where every contractor — large or small — operates with the same level of
+        compliance assurance and cyber resilience as the largest primes.
+      </p>
+    </section>
 
-  <!-- WHY US -->
-  <section class="section-block">
-    <h2>💡 Why enLight10?</h2>
-    <p>DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned</p>
-    <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
-  </section>
+    <section class="section-block">
+      <h2>🔐 Solution Suite</h2>
+      <ul class="clean">
+        <li><span class="highlight">enLight10 :: CUI Classifier</span> — Custom Purview classifiers tied to the NARA CUI Registry &amp; DoDI 5200.48, automated headers/footers, compliance dashboards.</li>
+        <li><span class="highlight">enLight10 :: SOC-as-a-Service</span> — Azure Sentinel standup &amp; tuning for GCC High, pre-built DoD/CMMC use cases, AI-assisted monitoring &amp; triage.</li>
+        <li><span class="highlight">enLight10 :: Zero Trust Ready</span> — Entra IAM policies, MFA, Conditional Access, PIM, device compliance enforcement.</li>
+        <li><span class="highlight">enLight10 :: Compliance Accelerator</span> — Zero Trust maturity assessments, continuous evidence generation for CMMC/NIST audits, DoD Cyber Scorecard integration.</li>
+        <li><span class="highlight">enLight10 :: Contractor Solutions</span> — Cleared IT &amp; cybersecurity staff augmentation for DoD programs.</li>
+      </ul>
+    </section>
 
-  <!-- FOOTER -->
+    <section class="section-block slim">
+      <h2>💡 Why enLight10?</h2>
+      <p class="why">
+        DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned
+      </p>
+      <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
+    </section>
+  </main>
+
+  <!-- BLUE FOOTER -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
     <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
