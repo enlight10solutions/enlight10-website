@@ -8,43 +8,41 @@
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
 
-  <!-- Perf + share (optional) -->
   <link rel="preload" as="image" href="./Logo.png">
   <link rel="icon" href="./Logo.png" type="image/png">
-  <meta property="og:title" content="enLight10 Solutions">
-  <meta property="og:description" content="Let the Light shine on your Security and Compliance">
-  <meta property="og:image" content="https://ashy-pond-09409b51e.2.azurestaticapps.net/Logo.png">
-  <meta property="og:type" content="website">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR -->
+  <!-- FIXED TOP BAR (logo inside) -->
   <nav class="topbar">
-  <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-    <img class="brand-logo" src="./Logo.png" alt="">
-    <span class="brand-text">enLight10 <strong>Solutions</strong></span>
-  </a>
-  <div class="nav-links">
-    <a href="./who.html">Who We Are</a>
-    <a href="./services.html">Services</a>
-    <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
-  </div>
-</nav>
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo" src="./Logo.png" alt="">
+      <span class="brand-text">enLight10 <strong>Solutions</strong></span>
+    </a>
+    <div class="nav-links">
+      <a href="./who.html">Who We Are</a>
+      <a href="./services.html">Services</a>
+      <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
+    </div>
+  </nav>
 
-  <!-- HERO: full-screen, centered logo + CTA -->
-<section class="hero" id="top">
-  <img class="hero-logo hero-logo-full" src="./Logo.png" alt="enLight10 Solutions Logo" loading="eager">
-
-  <!-- (Optional) tagline – remove if you want *only* the logo -->
-  <!-- <p class="hero-tag">Let the Light shine on your Security and Compliance</p> -->
-
-  <div class="hero-ctas">
-    <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact Us</a>
-    <a class="ghost" href="#mission" aria-label="Scroll to content">Learn more ↓</a>
-  </div>
-
-  <div class="scroll-cue" aria-hidden="true">Scroll</div>
-</section>
+  <!-- HERO: split layout (logo left) -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <img class="hero-logo" src="./Logo.png" alt="enLight10 Solutions Logo" loading="eager">
+      </div>
+      <div class="hero-right">
+        <h1 class="hero-title">Let the Light Shine on Your Security and Compliance</h1>
+        <p class="hero-tag">Azure GCC High • CUI • Sentinel SOC • Zero Trust • CMMC/NIST</p>
+        <div class="hero-ctas">
+          <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact Us</a>
+          <a class="ghost" href="#mission" aria-label="Scroll to content">Learn more</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  </section>
 
   <!-- LIGHT CONTENT AREA (white background) -->
   <main class="light">
@@ -104,7 +102,7 @@
   <!-- BLUE FOOTER -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-    <p><a href="mailto:jay.moreno@enlight10solutions.com">info@enlight10solutions.com</a></p>
+    <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
   </footer>
 
 </body>
