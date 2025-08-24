@@ -4,67 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>enLight10 Solutions</title>
-
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
   <script src="./script.js" defer></script>
-
-  <!-- Perf & branding -->
-  <link rel="preload" as="image" href="./Logo.png">
-  <link rel="icon" href="./Logo.png" type="image/png">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR -->
+  <!-- Top Navigation (sticky) -->
   <nav class="topbar">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo" src="./Logo.png" alt="enLight10 Solutions">
+    <a class="brand" href="./" aria-label="enLight10 Solutions home">
+      <img class="brand-logo" src="./Logo.png" alt="" />
       <span class="brand-text">enLight10 <strong>Solutions</strong></span>
     </a>
+
+    <!-- Desktop links -->
     <div class="nav-links">
       <a href="./who.html">Who We Are</a>
       <a href="./services.html">Services</a>
       <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- HERO: logo as full-screen background; entire area clickable to content -->
-  <section class="hero" id="top" aria-labelledby="site-title">
-    <h1 id="site-title" class="sr-only">enLight10 Solutions</h1>
-    <a class="hero-link" href="#mission" aria-label="Enter site — jump to Mission"></a>
-    <div class="scroll-cue" aria-hidden="true">Scroll</div>
-  </section>
+  <!-- Mobile slide-out menu -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden>
+    <nav class="menu-nav">
+      <a href="./who.html">Who We Are</a>
+      <a href="./services.html">Services</a>
+      <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
 
-  <!-- LIGHT CONTENT -->
-  <main class="light">
-    <section id="mission" class="section-block slim">
-      <h2>Mission</h2>
-      <p>
-        To bring clarity and confidence to DoD contractors by unlocking the full security and compliance
-        potential of Microsoft GCC High — through automation, Zero Trust, and AI-driven visibility.
-      </p>
-    </section>
+  <!-- HERO: full-screen BIG logo as background (no buttons/text) -->
+  <section class="hero logo-hero" id="top" aria-label="Brand hero"></section>
 
-    <section id="vision" class="section-block slim">
-      <h2>Vision</h2>
-      <p>
-        A defense industrial base where every contractor — large or small — operates with the same level of
-        compliance assurance and cyber resilience as the largest primes.
-      </p>
-    </section>
+  <!-- (No sections on the home page per your latest direction) -->
 
-    <section id="why-us" class="section-block slim">
-      <h2>Why Us</h2>
-      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
-      <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
-    </section>
-  </main>
-
-   <!-- FOOTER (same gradient as other pages) -->
+  <!-- Footer -->
   <footer>
-  <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-  <p><span class="pill">Veteran-Owned Small Business</span></p>
-  <p><a href="mailto:jay.moreno@enlight10solutions.com">info@enlight10solutions.com</a></p>
-</footer>
+    <p>© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+    <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
+    <p class="small">Veteran-Owned Business</p>
+  </footer>
 
 </body>
 </html>
