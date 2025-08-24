@@ -7,20 +7,44 @@
 
   <link rel="stylesheet" href="./style.css">
   <script src="./script.js" defer></script>
+
+  <!-- Perf + share (optional) -->
+  <link rel="preload" as="image" href="./Logo.png">
+  <link rel="icon" href="./Logo.png" type="image/png">
+  <meta property="og:title" content="enLight10 Solutions">
+  <meta property="og:description" content="Let the Light shine on your Security and Compliance">
+  <meta property="og:image" content="https://ashy-pond-09409b51e.2.azurestaticapps.net/Logo.png">
+  <meta property="og:type" content="website">
 </head>
 <body>
 
-  <!-- HERO: full-screen logo + CTA -->
-  <section class="hero" id="top">
-    <img class="hero-logo" src="./Logo.png" alt="enLight10 Solutions Logo">
-    <h1 class="visually-hidden">enLight10 Solutions</h1>
-    <p class="hero-tag">Let the Light shine on your Security and Compliance</p>
-
-    <div class="hero-ctas">
-      <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact Us</a>
-      <a class="ghost" href="#mission" aria-label="Scroll to content">Learn more ↓</a>
+  <!-- FIXED TOP BAR -->
+  <nav class="topbar">
+    <a class="brand" href="./">
+      enLight10 <span>Solutions</span>
+    </a>
+    <div class="nav-links">
+      <a href="./who.html">Who We Are</a>
+      <a href="./services.html">Services</a>
+      <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
     </div>
+  </nav>
 
+  <!-- HERO: two-column, logo top-left -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <img class="hero-logo hero-logo-large" src="./Logo.png" alt="enLight10 Solutions Logo" loading="eager">
+      </div>
+      <div class="hero-right">
+        <h1 class="visually-hidden">enLight10 Solutions</h1>
+        <p class="hero-tag">Let the Light shine on your Security and Compliance</p>
+        <div class="hero-ctas">
+          <a class="button" href="mailto:jay.moreno@enlight10solutions.com">Contact Us</a>
+          <a class="ghost" href="#mission" aria-label="Scroll to content">Learn more ↓</a>
+        </div>
+      </div>
+    </div>
     <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
@@ -44,7 +68,6 @@
 
     <section class="section-block suite slim">
       <h2>Solution Suite</h2>
-
       <div class="features">
         <article class="feature">
           <h3><span class="dot"></span> enLight10 :: CUI Classifier</h3>
@@ -75,9 +98,7 @@
 
     <section class="section-block slim">
       <h2>Why enLight10?</h2>
-      <p class="why">
-        DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned
-      </p>
+      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Scalable • Mission-Aligned</p>
       <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
     </section>
   </main>
@@ -85,7 +106,7 @@
   <!-- BLUE FOOTER -->
   <footer>
     <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-    <p><a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a></p>
+    <p><a href="mailto:jay.moreno@enlight10solutions.com">info@enlight10solutions.com</a></p>
   </footer>
 
 </body>
