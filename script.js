@@ -10,12 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
-
-  // (Optional) log mailto clicks (nav contact)
-  const contactBtns = document.querySelectorAll('a[href^="mailto:"]');
-  contactBtns.forEach(btn => btn.addEventListener('click', () => {
-    console.log('Contact clicked:', btn.getAttribute('href'));
-  }));
 });
-
 
