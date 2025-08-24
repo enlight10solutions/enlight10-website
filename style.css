@@ -136,18 +136,23 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
 }
 
 /* ========== LIGHT CONTENT (important: restores dark text) ========== */
-.light{
-  background:#ffffff;
-  color: var(--ink);   /* <-- fixes the “white/fuzzy” text issue */
+/* --- Fix paragraph contrast & smoothing in white sections --- */
+:root{
+  /* Darker body-copy color for better contrast on white */
+  --muted:#1f2937; /* (was #475569) */
 }
 
-.section-block{
-  max-width:1100px;
-  margin: 0 auto;
-  padding: clamp(1rem, 2.5vw, 1.75rem);
-  border-bottom:1px solid #eef2f7;
+.light{ 
+  color: var(--ink);              /* ensure base text is dark in light area */
+  -webkit-font-smoothing: auto;   /* undo global 'antialiased' for readability */
+  text-rendering: optimizeSpeed;
 }
-.section-block.slim{ max-width:900px; }
+
+.section-block p{
+  color: var(--ink);              /* use the dark body color, not muted gray */
+  -webkit-font-smoothing: auto;
+  text-rendering: optimizeSpeed;
+}
 
 h2{
   margin:0 0 .5rem;
