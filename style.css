@@ -31,7 +31,6 @@ body{
   border-bottom: 1px solid rgba(255,255,255,.08);
   z-index: 1000;
 }
-
 .topbar .brand{
   display:flex; align-items:center; gap:.5rem;
   color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
@@ -43,6 +42,8 @@ body{
 .brand-text{ display:none; color:#e5e7eb; }
 .brand-text strong{ color: var(--gold); font-weight:800; }
 
+.nav-right{ display:flex; align-items:center; gap:.5rem; }
+
 /* Desktop inline links */
 .nav-links{ display:none; align-items:center; gap:.75rem; }
 .nav-links a{
@@ -50,7 +51,6 @@ body{
 }
 .nav-links a:hover{ background: rgba(255,255,255,.06); }
 
-/* Buttons */
 .button{
   display:inline-block;
   background: var(--gold);
@@ -115,6 +115,7 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
 .hero{
   min-height:100dvh;
   padding-top:64px; /* account for fixed topbar */
+  position:relative;
   background:
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
@@ -122,13 +123,48 @@ body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
 
 /* Place the Logo.png centered, massive, responsive */
 .logo-hero{
-  background-image: url("./Logo.png"), 
+  background-image: url("/Logo.png"),
                     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
                     linear-gradient(to bottom, var(--navy-2), var(--navy));
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: center center, 0 0, 0 0;
   background-size: min(92vw, 1400px) auto, cover, cover;
 }
+
+/* Make whole hero clickable to jump down */
+.hero-link{
+  position:absolute; left:0; right:0; top:64px; bottom:0;
+  display:block;
+}
+
+/* Scroll cue */
+.scroll-cue{
+  position:absolute; left:50%; bottom:1.25rem; transform:translateX(-50%);
+  font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em;
+}
+
+/* ========== LIGHT CONTENT (white) ========== */
+.light{ background:#ffffff; color:var(--ink); }
+
+.section-block{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 1.5rem) clamp(1rem, 2.4vw, 1.75rem);
+  border-bottom:1px solid #eef2f7;
+}
+.section-block.slim{ max-width:900px; }
+
+h2{
+  margin:0 0 .5rem;
+  color:#0b1220;
+  font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
+}
+.section-block p{
+  margin:.4rem 0 0;
+  color: var(--muted);
+  line-height:1.65;
+}
+.why{ font-weight:600; color:#0b1220; }
 
 /* ========== Footer (blue again) ========== */
 footer{
@@ -141,6 +177,10 @@ footer{
   border-top:1px solid rgba(255,255,255,.06);
 }
 footer p{ margin:.35rem 0; }
+footer a{ color: var(--gold); text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+footer .small{ font-size:.9rem; color:#94a3b8; }
+
 footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 footer .small{ font-size:.9rem; color:#94a3b8; }
