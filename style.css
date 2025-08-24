@@ -1,5 +1,4 @@
 /* ===== Top Bar ===== */
-/* ===== Top Bar ===== */
 .topbar{
   position:fixed; inset:0 0 auto 0; height:64px;
   display:flex; align-items:center; justify-content:space-between;
