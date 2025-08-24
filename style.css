@@ -14,28 +14,21 @@ html,body{height:100%}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
-  color:#f4f4f4; /* hero default; content overrides in .light */
+  color:#f4f4f4; /* hero default */
 }
 
-/* ========== A11y Utility (keep H1 for SEO, visually hidden) ========== */
-.sr-only{
-  position:absolute!important;
-  height:1px;width:1px;overflow:hidden;
-  clip:rect(1px,1px,1px,1px); white-space:nowrap;
-}
-
-/* ========== Top Bar ========== */
+/* ========== Top Bar (sticky) ========== */
 .topbar{
   position:fixed; inset:0 0 auto 0; height:64px;
   display:flex; align-items:center; justify-content:space-between;
-  padding:0 .9rem;
-  background:linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-  z-index:1000;
+  padding: 0 .9rem;
+  background: linear-gradient(to bottom, rgba(13,17,23,.92), rgba(13,17,23,.66));
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  z-index: 1000;
 }
 
 .topbar .brand{
@@ -43,97 +36,110 @@ body{
   color:#e5e7eb; text-decoration:none; font-weight:800; letter-spacing:.2px;
 }
 .brand-logo{
-  height:30px; width:auto; display:block; object-fit:contain;
-  filter:drop-shadow(0 1px 2px rgba(0,0,0,.35));
+  height:36px; width:auto; display:block; object-fit:contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.35));
 }
 .brand-text{ display:none; color:#e5e7eb; }
-.brand-text strong{ color:var(--gold); font-weight:800; }
+.brand-text strong{ color: var(--gold); font-weight:800; }
 
-.topbar .nav-links{ display:flex; align-items:center; gap:.75rem; }
-.topbar .nav-links a{
+/* Desktop inline links */
+.nav-links{ display:none; align-items:center; gap:.75rem; }
+.nav-links a{
   color:#e5e7eb; text-decoration:none; padding:.5rem .6rem; border-radius:10px;
 }
-.topbar .nav-links a:hover{ background:rgba(255,255,255,.06); }
+.nav-links a:hover{ background: rgba(255,255,255,.06); }
 
-/* Button (nav only) */
+/* Buttons */
 .button{
   display:inline-block;
-  background:var(--gold);
+  background: var(--gold);
   color:#1b2234;
   font-weight:700;
-  padding:.9rem 1.15rem;
+  padding:.75rem 1rem;
   border:none; border-radius:12px;
   text-decoration:none;
-  transition:transform .12s ease, box-shadow .12s ease, background .2s ease;
-  box-shadow:0 10px 26px rgba(255,212,71,.28);
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+  box-shadow: 0 10px 26px rgba(255,212,71,.28);
 }
-.button.small{ padding:.6rem .9rem; border-radius:10px; }
-.button:hover{ transform:translateY(-1px); box-shadow:0 14px 32px rgba(255,212,71,.35); }
+.button:hover{ transform: translateY(-1px); box-shadow: 0 14px 32px rgba(255,212,71,.35); }
+.button.small{ padding:.55rem .85rem; border-radius:10px; }
 
-/* Show brand text on wider screens */
-@media (min-width:900px){
-  .brand-logo{ height:34px; }
+/* Hamburger (mobile) */
+.hamburger{
+  display:inline-flex; flex-direction:column; justify-content:center; gap:5px;
+  width:42px; height:42px; padding:0; border:none; background:transparent; cursor:pointer;
+}
+.hamburger span{
+  display:block; height:2px; width:22px; background:#e5e7eb; border-radius:2px;
+  transition: transform .2s ease, opacity .2s ease, width .2s ease;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); width:22px; }
+.hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); width:22px; }
+
+/* Show desktop links on wider screens; show brand text too */
+@media (min-width: 992px){
+  .nav-links{ display:flex; }
+  .hamburger{ display:none; }
+  .brand-logo{ height:42px; }
   .brand-text{ display:inline-flex; }
 }
 
-/* ========== HERO (full-screen logo as background) ========== */
+/* ========== Mobile Menu (slide-out) ========== */
+.menu-backdrop{
+  position:fixed; inset:0; background: rgba(0,0,0,.45);
+  z-index: 999; opacity:0; transition: opacity .18s ease;
+}
+.menu-panel{
+  position:fixed; inset:64px 0 0 auto; width:min(320px, 86vw);
+  background:#0f1521; color:#e5e7eb; border-left:1px solid rgba(255,255,255,.08);
+  box-shadow: -18px 0 28px rgba(0,0,0,.35);
+  z-index: 1000; transform: translateX(100%); transition: transform .22s ease;
+  display:flex; align-items:flex-start; justify-content:flex-start;
+}
+.menu-nav{
+  display:flex; flex-direction:column; gap:.5rem; padding: 1rem;
+  width:100%;
+}
+.menu-nav a{
+  color:#e5e7eb; text-decoration:none; padding:.8rem .9rem; border-radius:10px;
+}
+.menu-nav a:hover{ background: rgba(255,255,255,.06); }
+
+body.menu-open #menuBackdrop{ opacity:1; }
+body.menu-open #mobileMenu{ transform: translateX(0); }
+body.menu-open{ overflow:hidden; } /* lock scroll when menu open */
+
+/* ========== HERO (full-screen with BIG logo as background) ========== */
 .hero{
-  min-height:100dvh;                 /* true viewport height */
-  padding-top:64px;                  /* clear fixed topbar */
-  position:relative;
-  display:grid; place-items:center;
-  /* Top layer: logo; below: glow + gradient */
+  min-height:100dvh;
+  padding-top:64px; /* account for fixed topbar */
   background:
-    url('./Logo.png') center / contain no-repeat,
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
 }
 
-/* Clickable overlay so the whole hero enters the site */
-.hero-link{
-  position:absolute; left:0; right:0; top:64px; bottom:0;
-  display:block; cursor:pointer;
+/* Place the Logo.png centered, massive, responsive */
+.logo-hero{
+  background-image: url("./Logo.png"), 
+                    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
+                    linear-gradient(to bottom, var(--navy-2), var(--navy));
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center center, 0 0, 0 0;
+  background-size: min(92vw, 1400px) auto, cover, cover;
 }
 
-/* Scroll cue */
-.scroll-cue{
-  position:absolute; left:50%; bottom:1.25rem; transform:translateX(-50%);
-  font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em;
-}
-
-/* ========== LIGHT CONTENT ========== */
-.light{ background:#ffffff; color:var(--ink); }
-
-.section-block{
-  max-width:1100px;
-  margin:0 auto;
-  padding:clamp(1rem, 2.5vw, 1.75rem);
-  border-bottom:1px solid #eef2f7;
-}
-.section-block.slim{ max-width:900px; }
-
-h2{
-  margin:0 0 .5rem;
-  color:#0b1220;
-  font-size:clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
-}
-.section-block p{
-  margin:.4rem 0 0;
-  color:var(--muted);
-  line-height:1.65;
-}
-.why{ font-weight:600; color:#0b1220 }
-
-/* ========== FOOTER (match hero tones) ========== */
+/* ========== Footer (blue again) ========== */
 footer{
   background:
     radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
     linear-gradient(to bottom, var(--navy-2), var(--navy));
-  padding:1.5rem 1rem 2.25rem;
+  padding: 1.5rem 1rem 2.25rem;
   color:#cbd5e1;
   text-align:center;
   border-top:1px solid rgba(255,255,255,.06);
 }
 footer p{ margin:.35rem 0; }
-footer a{ color:var(--gold); text-decoration:none; }
+footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
+footer .small{ font-size:.9rem; color:#94a3b8; }
