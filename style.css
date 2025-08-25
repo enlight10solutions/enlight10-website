@@ -220,17 +220,22 @@ footer p {
   margin: .35rem 0;
 }
 
-/* Footer links: force gold in all states */
+/* Footer links override (keep them gold text, not buttons) */
 footer a,
 footer a:link,
 footer a:visited {
+  background: none !important;
   color: var(--gold) !important;
-  text-decoration: none;
   font-weight: 600;
+  padding: 0;
+  box-shadow: none !important;
+  border: none;
 }
+
 footer a:hover {
   text-decoration: underline;
 }
+
 footer a:active,
 footer a:focus {
   color: var(--gold) !important;
