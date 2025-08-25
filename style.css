@@ -110,6 +110,23 @@ body.menu-open{ overflow:hidden; }
   color: #e5e7eb;
   min-height: auto;          /* remove full-screen lock */
 }
+
+.hero-logo-full {
+  width: 90vw;               /* fills most of the screen width on mobile */
+  max-width: 600px;          /* cap size so it doesn’t get huge */
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
+  margin-top: -20px;         /* optional: pull slightly up if too low */
+}
+
+/* Larger screens (desktop/laptops) */
+@media (min-width: 992px) {
+  .hero-logo-full {
+    max-width: 900px;        /* bigger on desktops */
+    width: 70vw;             /* but not edge-to-edge */
+  }
+}
 /* =========================
    LIGHT CONTENT
    ========================= */
