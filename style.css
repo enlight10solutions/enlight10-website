@@ -265,3 +265,30 @@ footer .small {
   color: #1b2234 !important;
   box-shadow: 0 10px 26px rgba(255,212,71,.28) !important;
 }
+
+/* ==== FOOTER LINKS: hard override (end of file) ==== */
+footer p a,
+footer a,
+footer a:link,
+footer a:visited,
+footer p a:link,
+footer p a:visited {
+  color: #FFD447 !important;        /* gold */
+  text-decoration: none !important;  /* remove default underline */
+  font-weight: 600;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+footer a:hover,
+footer p a:hover,
+footer a:active,
+footer p a:active,
+footer a:focus,
+footer p a:focus {
+  color: #FFD447 !important;
+  text-decoration: underline !important;
+  outline: none;
+}
