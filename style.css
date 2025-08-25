@@ -206,23 +206,24 @@ h2{
 .why{ font-weight:600; color:#0b1220 }
 
 /* =========================
-   FOOTER (black, centered, gold link)
+   FOOTER (black, centered, gold links)
    ========================= */
 footer {
-  background: #000;
+  background: #000;                           /* solid black */
   padding: 1.5rem 1rem 2.25rem;
-  color: #cbd5e1;               /* default text color */
-  text-align: center;           /* center all footer content */
+  color: #cbd5e1;                             /* default footer text color */
+  text-align: center;
   border-top: 1px solid rgba(255,255,255,.08);
 }
 
-footer p { 
-  margin: .35rem 0; 
+footer p {
+  margin: .35rem 0;
 }
 
 footer a {
-  color: var(--gold);           /* email link gold */
+  color: var(--gold) !important;              /* gold (yellow) */
   text-decoration: none;
+  font-weight: 600;
 }
 footer a:hover {
   text-decoration: underline;
@@ -230,7 +231,7 @@ footer a:hover {
 
 footer .small {
   font-size: .9rem;
-  color: #94a3b8;               /* muted gray */
+  color: #94a3b8;                             /* muted gray */
 }
 
 /* =========================
