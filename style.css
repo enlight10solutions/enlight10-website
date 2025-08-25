@@ -207,6 +207,36 @@ footer .small{ font-size:.9rem; color:#94a3b8; }
   box-shadow: 0 10px 26px rgba(255,212,71,.28) !important;
 }
 
+/* Slim logo used in the topbar */
+.brand-logo--slim {
+  height: 44px;         /* tweak to 48–56px if you want bigger */
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.35));
+}
+
+/* If a brand-text ever remains in markup, keep it hidden in navbar */
+.topbar .brand-text { 
+  display: none !important; 
+}
+
+/* Keep topbar spacing tidy with larger logo */
+.topbar { 
+  height: 64px;         /* ensure enough vertical space for the logo */
+  padding: 0 16px;
+}
+.topbar .brand { 
+  display: flex; 
+  align-items: center; 
+  gap: .5rem; 
+}
+
+/* Slightly larger logo on wider screens */
+@media (min-width: 992px){
+  .brand-logo--slim { height: 52px; }
+  .topbar { height: 72px; }
+}
+
 /* Ensure hero and footer are the rich blue gradient (not gray) */
 .hero {
   background:
