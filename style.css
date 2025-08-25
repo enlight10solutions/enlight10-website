@@ -182,5 +182,30 @@ footer a:focus{
 
 /* ===== HARD PRODUCTION OVERRIDES (keep these last) ===== */
 /* Ensure topbar/footer always match the logo navy even if something else overrides earlier */
-.topbar{ background:#0d1117 !important; }
-footer{ background:#0d1117 !important; }
+.topbar { background:#0d1117 !important; }
+footer  { background:#0d1117 !important; }
+
+/* Force footer links (email + Capability PDF) to always be gold */
+footer a,
+footer p a,
+footer a:link,
+footer a:visited {
+  color: #FFD447 !important;       /* gold */
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+footer a:hover,
+footer p a:hover,
+footer a:active,
+footer p a:active,
+footer a:focus,
+footer p a:focus {
+  color: #FFD447 !important;       /* gold */
+  text-decoration: underline !important;
+  outline: none !important;
+}
