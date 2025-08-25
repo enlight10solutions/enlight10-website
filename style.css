@@ -25,6 +25,7 @@ body{
 /* =========================
    NAVIGATION BAR
    ========================= */
+/* NAVIGATION BAR */
 .topbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -33,7 +34,7 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
-  background: #000; /* solid black */
+  background: var(--navy); /* match logo background (#0d1117) */
   border-bottom: 1px solid rgba(255,255,255,.08);
   z-index: 1000;
 }
@@ -209,9 +210,9 @@ h2{
    FOOTER (black, centered, gold links)
    ========================= */
 footer {
-  background: #000;                           /* solid black */
+  background: var(--navy); /* match logo background (#0d1117) */
   padding: 1.5rem 1rem 2.25rem;
-  color: #cbd5e1;                             /* default footer text color */
+  color: #cbd5e1;
   text-align: center;
   border-top: 1px solid rgba(255,255,255,.08);
 }
