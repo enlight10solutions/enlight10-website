@@ -206,15 +206,33 @@ h2{
 .why{ font-weight:600; color:#0b1220 }
 
 /* =========================
-   FOOTER (black)
+   FOOTER (black, centered, gold link)
    ========================= */
+footer {
+  background: #000;
+  padding: 1.5rem 1rem 2.25rem;
+  color: #cbd5e1;               /* default text color */
+  text-align: center;           /* center all footer content */
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+footer p { 
+  margin: .35rem 0; 
+}
+
 footer a {
-  color: var(--gold) !important;   /* gold (yellow) */
+  color: var(--gold);           /* email link gold */
   text-decoration: none;
 }
 footer a:hover {
   text-decoration: underline;
 }
+
+footer .small {
+  font-size: .9rem;
+  color: #94a3b8;               /* muted gray */
+}
+
 /* =========================
    FINAL OVERRIDES
    ========================= */
