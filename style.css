@@ -220,12 +220,21 @@ footer p {
   margin: .35rem 0;
 }
 
-footer a {
-  color: var(--gold) !important;              /* gold (yellow) */
+/* Footer links: force gold in all states */
+footer a,
+footer a:link,
+footer a:visited {
+  color: var(--gold) !important;
   text-decoration: none;
   font-weight: 600;
 }
 footer a:hover {
+  text-decoration: underline;
+}
+footer a:active,
+footer a:focus {
+  color: var(--gold) !important;
+  outline: none;
   text-decoration: underline;
 }
 
