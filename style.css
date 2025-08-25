@@ -1,4 +1,4 @@
-// style.css
+//style.css
 /* ========== Theme Tokens ========== */
 :root{
   --navy:#0d1117;      /* deep blue for hero/footer */
@@ -16,10 +16,10 @@ html{ scroll-behavior:smooth }
 body{
   margin:0;
   font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  -webkit-font-smoothing:antialiased;    /* looks great on dark hero/nav */
+  -webkit-font-smoothing:antialiased;    
   text-rendering:optimizeLegibility;
-  color:#e5e7eb;                          /* default for dark hero/topbar; overridden in .light */
-  background:#000;                        /* prevents flashes; hero overrides immediately */
+  color:#e5e7eb;                          
+  background:#000;                        
 }
 
 /* =========================
@@ -32,29 +32,41 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 .9rem;
-  background: #000; /* solid black background */
+  padding: 0 16px;
+  background: #000; /* solid black */
   border-bottom: 1px solid rgba(255,255,255,.08);
   z-index: 1000;
 }
 
-/* Logo inside topbar */
+.topbar .brand { 
+  display: flex; 
+  align-items: center; 
+  gap: .5rem; 
+}
 .topbar .brand-logo {
   display: block;
   height: 40px;
   width: auto;
 }
+.brand-logo--slim {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(0,0,0,.35));
+}
+.topbar .brand-text { display: none !important; }
 
 /* Nav links (desktop) */
+.nav-links{ display:none; align-items:center; gap:.75rem; }
 .topbar .nav-links a {
-  color: #fff;            /* white text on black */
+  color: #fff;
   margin-left: 1rem;
   text-decoration: none;
   font-weight: 500;
 }
 .topbar .nav-links a:hover,
 .topbar .nav-links a[aria-current="page"] {
-  color: var(--gold);     /* your accent color on hover/active */
+  color: var(--gold);
 }
 
 /* Contact button */
@@ -66,25 +78,42 @@ body{
   font-size: 0.85rem;
   margin-left: 1rem;
   text-decoration: none;
+  box-shadow: 0 10px 26px rgba(255,212,71,.28);
 }
 .topbar .button.small:hover {
   background: #fff;
   color: #000;
 }
 
-/* Hamburger menu (mobile toggle) */
+/* Hamburger (mobile toggle) */
+.hamburger{
+  display:inline-flex; flex-direction:column; justify-content:center; gap:5px;
+  width:42px; height:42px; padding:0; border:none; background:transparent; cursor:pointer;
+}
 .hamburger span {
   display: block;
   width: 22px;
   height: 2px;
-  margin: 5px auto;
-  background-color: #fff;  /* white bars on black background */
-  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  border-radius:2px;
+  transition: transform .2s ease, opacity .2s ease, width .2s ease;
+}
+.hamburger[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); width:22px; }
+.hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+.hamburger[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); width:22px; }
+
+@media (min-width: 992px){
+  .nav-links{ display:flex; }
+  .hamburger{ display:none; }
+  .brand-logo--slim { height: 52px; }
+  .topbar { height: 72px; }
 }
 
 /* =========================
    MOBILE MENU
    ========================= */
+[hidden] { display: none !important; }
+
 .menu-backdrop {
   position: fixed;
   inset: 0;
@@ -94,42 +123,50 @@ body{
 
 .menu-panel {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 240px;
-  height: 100%;
-  background: #000;         /* solid black for mobile menu */
-  box-shadow: -2px 0 12px rgba(0,0,0,.5);
-  padding: 2rem 1rem;
+  inset: 64px 0 0 auto;
+  width: min(320px, 86vw);
+  height: calc(100dvh - 64px);
+  background: #000;
+  border-left: 1px solid rgba(255,255,255,.08);
+  box-shadow: -18px 0 28px rgba(0,0,0,.35);
+  padding: 1rem;
   z-index: 950;
   display: flex;
   flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .22s ease;
 }
+body.menu-open #mobileMenu { transform: translateX(0); }
+body.menu-open #menuBackdrop { display:block !important; }
+body.menu-open { overflow:hidden; }
 
+.menu-nav{ display:flex; flex-direction:column; gap:.5rem; width:100%; }
 .menu-panel a {
-  color: #fff;              /* white links in mobile menu */
+  color: #fff;
   margin-bottom: 1rem;
   text-decoration: none;
   font-size: 1rem;
+  padding:.8rem .9rem; 
+  border-radius:10px;
 }
 .menu-panel a:hover,
 .menu-panel a[aria-current="page"] {
-  color: var(--gold);       /* highlight accent */
+  color: var(--gold);
 }
 
-/* ========== HERO (full-screen; big inline logo) ========== */
+/* =========================
+   HERO (full-screen)
+   ========================= */
 .hero{
   min-height:100dvh;
-  padding-top:64px; /* account for fixed topbar */
+  padding-top:64px;
   display:flex; align-items:center; justify-content:center; flex-direction:column; gap:1rem;
   text-align:center;
   background:
-    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.10), transparent 55%),
-    linear-gradient(to bottom, var(--navy-2), var(--navy));
+    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.12), transparent 55%),
+    linear-gradient(to bottom, #1e2a44, #0d1117);
   color:#e5e7eb;
 }
-
-/* replace your existing .hero-logo-full block with this */
 .hero-logo,
 .hero-logo-full{
   width: min(92vw, 1400px);
@@ -138,19 +175,17 @@ body{
   object-fit:contain;
   filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
 }
+.scroll-cue{ font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em; }
 
-.scroll-cue{
-  font-size:.8rem; color:#cbd5e1; opacity:.85; letter-spacing:.12em;
-}
-
-/* ========== LIGHT CONTENT (white) ========== */
+/* =========================
+   LIGHT CONTENT
+   ========================= */
 .light{
   background:#ffffff;
   color: var(--ink);
-  -webkit-font-smoothing:auto;   /* crucial: crisp on light background */
+  -webkit-font-smoothing:auto;
   text-rendering:optimizeSpeed;
 }
-
 .section-block{
   max-width:1100px;
   margin: 0 auto;
@@ -158,24 +193,23 @@ body{
   border-bottom:1px solid #eef2f7;
 }
 .section-block.slim{ max-width:900px; }
-
 h2{
   margin:0 0 .5rem;
   color:#0b1220;
   font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem);
 }
-
 .section-block p{
   margin:.5rem 0 0;
-  color: var(--muted);   /* readable gray on white */
+  color: var(--muted);
   line-height:1.65;
 }
-
 .why{ font-weight:600; color:#0b1220 }
 
-/* ========== FOOTER (black to match top bar) ========== */
+/* =========================
+   FOOTER (black)
+   ========================= */
 footer{
-  background:#000;                           /* solid black */
+  background:#000;
   padding: 1.5rem 1rem 2.25rem;
   color:#cbd5e1;
   text-align:center;
@@ -186,73 +220,20 @@ footer a{ color: var(--gold); text-decoration:none; }
 footer a:hover{ text-decoration:underline; }
 footer .small{ font-size:.9rem; color:#94a3b8; }
 
-/* (Keep the HERO gradient as-is; remove any previous footer gradient overrides) */
-
-/* ===== FINAL OVERRIDES (force correct colors/contrast) ===== */
-
-/* Make paragraph/body text crisp dark on white */
+/* =========================
+   FINAL OVERRIDES
+   ========================= */
 .light,
 .light .section-block,
 .light .section-block p,
 .light p {
-  color: #0b1220 !important;         /* near-black */
+  color: #0b1220 !important;
   -webkit-font-smoothing: auto !important;
   text-rendering: optimizeSpeed !important;
 }
-
-/* Heading can stay dark navy */
 .light h2 { color: #0b1220 !important; }
-
-/* Gold contact button in the nav */
 .nav-links .button {
   background: #FFD447 !important;
   color: #1b2234 !important;
   box-shadow: 0 10px 26px rgba(255,212,71,.28) !important;
 }
-
-/* Slim logo used in the topbar */
-.brand-logo--slim {
-  height: 44px;         /* tweak to 48–56px if you want bigger */
-  width: auto;
-  display: block;
-  filter: drop-shadow(0 3px 10px rgba(0,0,0,.35));
-}
-
-/* If a brand-text ever remains in markup, keep it hidden in navbar */
-.topbar .brand-text { 
-  display: none !important; 
-}
-
-/* Keep topbar spacing tidy with larger logo */
-.topbar { 
-  height: 64px;         /* ensure enough vertical space for the logo */
-  padding: 0 16px;
-}
-.topbar .brand { 
-  display: flex; 
-  align-items: center; 
-  gap: .5rem; 
-}
-
-/* Slightly larger logo on wider screens */
-@media (min-width: 992px){
-  .brand-logo--slim { height: 52px; }
-  .topbar { height: 72px; }
-}
-
-/* Ensure hero and footer are the rich blue gradient (not gray) */
-.hero {
-  background:
-    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.12), transparent 55%),
-    linear-gradient(to bottom, #1e2a44, #0d1117) !important;
-}
-footer {
-  background:
-    radial-gradient(900px 500px at 15% -10%, rgba(255,212,71,.12), transparent 55%),
-    linear-gradient(to bottom, #1e2a44, #0d1117) !important;
-  color: #cbd5e1 !important;
-}
-
-/* Ensure links in footer read well */
-footer a { color: #FFD447 !important; }
-
