@@ -101,7 +101,6 @@ body.menu-open{ overflow:hidden; }
   }
 }
 
-
 /* =========================
    HERO
    ========================= */
@@ -152,34 +151,42 @@ h2{ margin:0 0 .5rem; color:#0b1220; font-size:clamp(1.25rem,1.2vw + 1rem,1.6rem
 /* =========================
    FOOTER (match logo background)
    ========================= */
-footer{
-  background:var(--navy);
-  padding:1.5rem 1rem 2.25rem;
-  color:#cbd5e1;
-  text-align:center;
-  border-top:1px solid rgba(255,255,255,.08);
+footer {
+  background: var(--navy, #0d1117);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
 }
-footer p{ margin:.35rem 0; }
-footer .small{ font-size:.9rem; color:#94a3b8; }
 
-/* Footer links: make gold, never buttons */
-footer a,
-footer a:link,
-footer a:visited{
-  color:var(--gold) !important;
-  text-decoration:none !important;
-  font-weight:600;
-  background:none !important;
-  border:none !important;
-  box-shadow:none !important;
-  padding:0 !important;
+/* Default muted text (off-white/grayish) */
+.footer-copy,
+.footer-vet {
+  color: #d1d5db; /* soft off-white/gray */
+  margin: 0.35rem 0;
 }
-footer a:hover{ text-decoration:underline !important; }
-footer a:active,
-footer a:focus{
-  color:var(--gold) !important;
-  text-decoration:underline !important;
-  outline:none;
+
+/* Info + Social clickable links = gold */
+.footer-info a,
+.footer-social a {
+  color: var(--gold, #FFD447);
+  text-decoration: none;
+  margin: 0 0.3rem;
+}
+
+.footer-info a:hover,
+.footer-social a:hover {
+  text-decoration: underline;
+}
+
+/* Social label */
+.footer-social {
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+.footer-social span {
+  margin-right: 0.25rem;
+  color: #d1d5db; /* keep "Follow us:" off-white */
 }
 
 /* =========================
@@ -205,27 +212,25 @@ footer a:focus{
 .topbar { background:#0d1117 !important; }
 footer  { background:#0d1117 !important; }
 
-/* Force footer links (email + Capability PDF) to always be gold */
+/* ===== HARD OVERRIDE: Footer Links Always Gold ===== */
 footer a,
-footer p a,
 footer a:link,
-footer a:visited {
-  color: #FFD447 !important;       /* gold */
+footer a:visited,
+footer a:hover,
+footer a:active,
+footer a:focus {
+  color: #FFD447 !important;        /* Force gold */
   text-decoration: none !important;
   font-weight: 600 !important;
   background: none !important;
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
+  outline: none !important;
 }
 
+/* Hover effect: underline only */
 footer a:hover,
-footer p a:hover,
-footer a:active,
-footer p a:active,
-footer a:focus,
-footer p a:focus {
-  color: #FFD447 !important;       /* gold */
+footer a:focus {
   text-decoration: underline !important;
-  outline: none !important;
 }
