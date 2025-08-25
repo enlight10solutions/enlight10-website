@@ -94,6 +94,14 @@ body.menu-open{ overflow:hidden; }
 .menu-panel a:hover,
 .menu-panel a[aria-current="page"]{ color:var(--gold); }
 
+/* Hide scroll cue on mobile */
+@media (max-width: 768px) {
+  .scroll-cue {
+    display: none !important;
+  }
+}
+
+
 /* =========================
    HERO
    ========================= */
