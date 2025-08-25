@@ -17,24 +17,25 @@
 <body>
 
   <!-- FIXED TOP BAR (identical to index.html) -->
+<nav class="topbar">
   <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-  <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=1" alt="enLight10 Solutions">
-</a>
+    <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=1" alt="enLight10 Solutions">
+  </a>
   
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="./who.html" aria-current="page">Who We Are</a>
-        <a href="./services.html">Services</a>
-        <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
-      </div>
-
-      <!-- Hamburger for mobile -->
-      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span></span><span></span><span></span>
-      </button>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="./who.html" aria-current="page">Who We Are</a>
+      <a href="./services.html">Services</a>
+      <a class="button small" href="mailto:jay.moreno@enlight10solutions.com">Contact</a>
     </div>
-  </nav>
 
+    <!-- Hamburger for mobile -->
+    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+  
   <!-- Mobile menu + backdrop -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden>
