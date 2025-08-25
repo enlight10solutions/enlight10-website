@@ -1,44 +1,53 @@
+//services.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — enLight10 Solutions</title>
-  <link rel="stylesheet" href="./style.css">
+
+  <!-- Styles / JS (cache-bust) -->
+  <link rel="stylesheet" href="./style.css?v=8">
   <script src="./script.js" defer></script>
 
-  <link rel="preload" as="image" href="./Logo.png">
-  <link rel="icon" href="./Logo.png" type="image/png">
+  <!-- Preload + Favicon -->
+  <link rel="preload" as="image" href="./Logo.png?v=2">
+  <link rel="icon" href="./Logo.png?v=2" type="image/png">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR (identical to index.html) -->
-<nav class="topbar">
-  <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-    <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=1" alt="enLight10 Solutions">
-  </a>
-  
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="./who.html" aria-current="page">Who We Are</a>
-      <a href="./services.html">Services</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </div>
+  <!-- TOP BAR (same as index.html) -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <!-- NOTE: filename is case-sensitive -->
+      <img class="brand-logo brand-logo--slim" src="./LogoSlim.PNG?v=2" alt="enLight10 Solutions">
+    </a>
 
-    <!-- Hamburger for mobile -->
-    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+    <div class="nav-right">
+      <div class="nav-links" role="menubar">
+        <a role="menuitem" href="./who.html">Who We Are</a>
+        <a role="menuitem" href="./services.html" aria-current="page">Services</a>
+        <a role="menuitem" class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
 
-    <div class="nav-links">
-      <a href="./who.html">Who We Are</a>
-      <a href="./services.html" aria-current="page">Services</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      <!-- Hamburger for mobile -->
+      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
+  <!-- Mobile menu + backdrop (needed for script.js) -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
+    <nav class="menu-nav">
+      <a href="./who.html">Who We Are</a>
+      <a href="./services.html" aria-current="page">Services</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
   <main class="light" style="padding-top:80px">
     <!-- Services Overview -->
     <section class="section-block slim">
@@ -147,17 +156,13 @@
     </section>
   </main>
 
- <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer>
-  <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-  <p><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></p>
-  <p class="small">Veteran-Owned Small Business</p>
-   <p>
-    <a href="./docs/CapabilityStatement.pdf" target="_blank">
-    Capability Statement (PDF)
-    </a>
-  </p>
-</footer>
+    <p>&copy; 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+    <p><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></p>
+    <p class="small">Veteran-Owned Small Business</p>
+    <p><a href="./docs/CapabilityStatement.pdf" target="_blank" rel="noopener">Capability Statement (PDF)</a></p>
+  </footer>
 
 </body>
 </html>
