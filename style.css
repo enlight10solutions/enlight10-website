@@ -98,33 +98,17 @@ body.menu-open{ overflow:hidden; }
    HERO
    ========================= */
 .hero {
-  min-height:100dvh;
-  padding-top:100px;   /* was 64px, try 100–140px */
-  display:flex;
-  align-items:center;
-  justify-content:flex-start;  /* pushes content toward the top */
-  flex-direction:column;
-  gap:1rem;
-  text-align:center;
-  background:#0d1117;
-  color:#e5e7eb;
-}
-
-.hero-logo-full {
-  width: 90vw;               /* fills most of the screen width on mobile */
-  max-width: 600px;          /* cap size so it doesn’t get huge */
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 12px 28px rgba(0,0,0,.45));
-  margin-top: -20px;         /* optional: pull slightly up if too low */
-}
-
-/* Larger screens (desktop/laptops) */
-@media (min-width: 992px) {
-  .hero-logo-full {
-    max-width: 900px;        /* bigger on desktops */
-    width: 70vw;             /* but not edge-to-edge */
-  }
+  padding-top: 100px;        /* keep clear of topbar */
+  padding-bottom: 60px;      /* breathing room below */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
+  background: #0d1117;       /* dark navy */
+  color: #e5e7eb;
+  min-height: auto;          /* remove full-screen lock */
 }
 /* =========================
    LIGHT CONTENT
