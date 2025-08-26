@@ -1,96 +1,90 @@
 //who.html
+<!-- who.html (revised) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Who We Are — enLight10 Solutions</title>
 
-  <!-- Shared styles/scripts -->
-  <link rel="stylesheet" href="./style.css">
+  <!-- Styles / JS -->
+  <link rel="stylesheet" href="./style.css?v=9">
   <script src="./script.js" defer></script>
 
-  <!-- Cache-bust logo -->
-  <link rel="preload" as="image" href="./Logo.png?v=2">
-  <link rel="icon" href="./Logo.png?v=2" type="image/png">
+  <!-- Preload + Favicon -->
+  <link rel="preload" as="image" href="./Logo_new.png?v=2">
+  <link rel="icon" href="./Logo_new.png?v=2" type="image/png">
 </head>
 <body>
 
-  <!-- FIXED TOP BAR (identical to index.html) -->
-<nav class="topbar">
-  <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-    <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=1" alt="enLight10 Solutions">
-  </a>
-  
-  <div class="nav-right">
-    <div class="nav-links">
-      <a href="./who.html" aria-current="page">Who We Are</a>
-      <a href="./services.html">Services</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+  <!-- TOP BAR -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=2" alt="enLight10 Solutions">
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links" role="menubar">
+        <a role="menuitem" href="./who.html" aria-current="page">Who We Are</a>
+        <a role="menuitem" href="./services.html">Services</a>
+        <a role="menuitem" class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
+
+      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <!-- Hamburger for mobile -->
-    <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-  
-  <!-- Mobile menu + backdrop -->
+  <!-- Mobile menu -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden>
-    <nav class="menu-nav" aria-label="Mobile">
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
+    <nav class="menu-nav">
       <a href="./who.html" aria-current="page">Who We Are</a>
       <a href="./services.html">Services</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- CONTENT -->
+  <!-- MAIN -->
   <main class="light" style="padding-top:80px">
     <section class="section-block slim">
       <h2>Who We Are</h2>
       <p>
-        enLight10 Solutions is a veteran-owned, DoD-focused Azure security firm. We help defense contractors
-        protect Controlled Unclassified Information (CUI), operationalize Zero Trust, and stay audit-ready on
-        Microsoft GCC High using the tools they already own — Purview, Sentinel, Defender, and Entra.
+        enLight10 Solutions is a veteran-owned, DoD-focused Azure security firm. We help defense contractors protect Controlled Unclassified Information (CUI), operationalize Zero Trust, and stay audit-ready on Microsoft GCC High using the tools they already own — Purview, Sentinel, Defender, and Entra.
       </p>
     </section>
 
     <section class="section-block slim">
       <h2>Our Mission</h2>
       <p>
-        Bring clarity and confidence to the Defense Industrial Base by turning complex compliance into
-        practical, automated safeguards — so teams can move faster without risking contracts or data.
+        Bring clarity and confidence to the Defense Industrial Base by turning complex compliance into practical, automated safeguards — so teams can move faster without risking contracts or data.
       </p>
     </section>
 
     <section class="section-block slim">
       <h2>What We Do</h2>
       <p>
-        We design, harden, and operate Microsoft 365 GCC High environments for DoD contractors — aligning
-        security controls with CMMC, NIST 800-171/172, DFARS, DoDI 5200.48, and Zero Trust guidance. Our work
-        blends hands-on engineering with evidence-ready documentation.
+        We design, harden, and operate Microsoft 365 GCC High environments for DoD contractors — aligning security controls with CMMC, NIST 800-171/172, DFARS, DoDI 5200.48, and DoD Zero Trust guidance. Our work blends hands-on engineering with evidence-ready documentation.
       </p>
       <ul class="clean">
         <li><span class="why">GCC High expertise:</span> Purview (CUI labeling), Sentinel (SIEM), Defender (EDR), Entra (IAM).</li>
         <li><span class="why">Compliance first:</span> control mapping, evidence capture, and audit prep built into operations.</li>
         <li><span class="why">Operational pragmatism:</span> guardrails that fit real users, devices, and missions.</li>
+        <li><span class="why">Future-ready:</span> building toward AI-enabled SOC services with Microsoft Security Copilot.</li>
       </ul>
     </section>
 
     <section class="section-block slim">
       <h2>Why enLight10</h2>
-      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
+      <p><strong>DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</strong></p>
       <p>
-        We’re not just tool installers — we’re outcome partners. Our approach reduces time-to-compliance,
-        lowers audit risk, and makes GCC High <em>work</em> for day-to-day operations.
+        We’re not just tool installers — we’re outcome partners. Our approach reduces time-to-compliance, lowers audit risk, and makes GCC High work for day-to-day operations.
       </p>
     </section>
 
     <section class="section-block slim">
-      <h2>Credentials & Codes</h2>
+      <h2>Credentials &amp; Codes</h2>
       <ul class="clean">
         <li><span class="why">Ownership:</span> Veteran-owned small business (SDVOSB eligibility).</li>
         <li><span class="why">Focus:</span> Microsoft 365 GCC High / Azure for DoD contractors.</li>
@@ -101,39 +95,31 @@
     <section class="section-block slim">
       <h2>How We Work</h2>
       <ul class="clean">
-        <li><span class="why">Subcontract-friendly:</span> team with primes and MSPs, or deliver direct.</li>
-        <li><span class="why">Evidence by design:</span> every change ties to a control and shows up in dashboards.</li>
-        <li><span class="why">Flexible delivery:</span> assessments, deployments, and managed operations.</li>
+        <li><span class="why">Subcontract-friendly:</span> we strengthen primes/MSPs without competing with them.</li>
+        <li><span class="why">Evidence by design:</span> every change produces a control artifact and dashboard trace.</li>
+        <li><span class="why">Flexible delivery:</span> assessments, deployments, or managed operations.</li>
       </ul>
     </section>
   </main>
 
-<footer>
-  <div class="footer-inner">
-
-    <!-- Copyright -->
-    <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-
-    <!-- Veteran Owned -->
-    <p class="footer-vet">Veteran-Owned Small Business</p>
-
-    <!-- Info Row -->
-    <p class="footer-info">
-      <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> | 
-      <a href="Capability-Statement.pdf" target="_blank">Capability Statement (PDF)</a>
-    </p>
-
-    <!-- Social Links -->
-    <div class="footer-social">
-      <span>Follow us:</span>
-      <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-      <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
-      <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> |
+        <a href="Capability-Statement.pdf" target="_blank">Capability Statement (PDF)</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
     </div>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
+
 
