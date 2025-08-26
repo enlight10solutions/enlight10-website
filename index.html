@@ -1,4 +1,5 @@
-<!-- index.html (revised) -->
+//index.html
+<!-- index.html (with logo splash hero restored) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
   <meta name="description" content="Veteran-owned, DoD-focused Azure security. We help defense contractors protect CUI, implement Zero Trust, and stay CMMC-ready on Microsoft 365 GCC High & Azure with Purview, Sentinel, Defender, and Entra.">
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=10">
+  <link rel="stylesheet" href="./style.css?v=11">
   <script src="./script.js" defer></script>
 
   <!-- Preload + Favicon -->
@@ -21,7 +22,6 @@
   <!-- TOP BAR -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <!-- NOTE: filename is case-sensitive on the server -->
       <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=2" alt="enLight10 Solutions" />
     </a>
 
@@ -31,7 +31,6 @@
         <a role="menuitem" href="./services.html">Services</a>
         <a role="menuitem" class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
-
       <!-- Hamburger (mobile) -->
       <button id="menuToggle" class="hamburger"
               aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -50,8 +49,14 @@
     </nav>
   </aside>
 
-  <!-- HERO (single) -->
-  <section class="hero light" id="top" aria-label="Intro" style="padding:90px 0 40px">
+  <!-- SPLASH HERO (logo only) -->
+  <section class="hero splash" id="top" aria-label="Intro">
+    <img class="hero-logo-full" src="./Logo_new.png?v=2" alt="enLight10 Solutions Logo" />
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- MAIN HERO (text) -->
+  <section class="hero light" style="padding:90px 0 40px">
     <div class="container">
       <h1 class="hero-title">Secure. Compliant. Audit-Ready.</h1>
       <p class="hero-subtitle">
@@ -88,12 +93,12 @@
       </article>
       <article class="feature">
         <h3>AI-Powered Roadmap</h3>
-        <p>Building an Agentic AI SOC on Microsoft Security Copilot for faster triage, clearer narratives, and scalable response.</p>
+        <p>Building an Agentic AI SOC for faster triage, clearer narratives, and scalable response.</p>
       </article>
     </div>
   </section>
 
-  <!-- CORE OFFERS (AVAILABLE NOW) -->
+  <!-- CORE OFFERS -->
   <section class="section-block suite slim">
     <h2>What We Deliver Today</h2>
     <div class="features">
@@ -106,13 +111,11 @@
         </ul>
         <a class="text-link" href="./services.html#contractor-solutions">See details →</a>
       </article>
-
       <article class="feature">
         <h3>Compliance Accelerator</h3>
         <p>CMMC L2 gap analysis, SSP/SPRS/POA&amp;M as living documents, auditor-ready artifacts.</p>
         <a class="text-link" href="./services.html#compliance-accelerator">See details →</a>
       </article>
-
       <article class="feature">
         <h3>Zero Trust Foundations</h3>
         <p>Entra + Defender baselines: MFA, Conditional Access, PIM, device posture, PAWs.</p>
