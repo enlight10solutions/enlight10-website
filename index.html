@@ -1,13 +1,15 @@
-<!-- index.html -->
+<!-- index.html (revised) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>enLight10 Solutions</title>
+
+  <title>DoD GCC High Security & CMMC — enLight10 Solutions</title>
+  <meta name="description" content="Veteran-owned, DoD-focused Azure security. We help defense contractors protect CUI, implement Zero Trust, and stay CMMC-ready on Microsoft 365 GCC High & Azure with Purview, Sentinel, Defender, and Entra.">
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=4">
+  <link rel="stylesheet" href="./style.css?v=10">
   <script src="./script.js" defer></script>
 
   <!-- Preload + Favicon -->
@@ -48,75 +50,113 @@
     </nav>
   </aside>
 
-  <!-- HERO -->
-  <section class="hero" id="top" aria-label="Intro">
-    <img class="hero-logo-full" src="./Logo_new.png?v=2" alt="enLight10 Solutions Logo" />
-    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+  <!-- HERO (single) -->
+  <section class="hero light" id="top" aria-label="Intro" style="padding:90px 0 40px">
+    <div class="container">
+      <h1 class="hero-title">Secure. Compliant. Audit-Ready.</h1>
+      <p class="hero-subtitle">
+        enLight10 helps DoD contractors protect CUI, operationalize Zero Trust, and stay CMMC-ready on
+        <strong>Microsoft 365 GCC High &amp; Azure</strong>—using Purview, Sentinel, Defender, and Entra.
+      </p>
+
+      <div class="hero-ctas">
+        <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Readiness%20Call%20Request&body=Hi%20enLight10%2C%20we%27d%20like%20to%20discuss%20GCC%20High%20security%20and%20CMMC%20readiness.">Get a Readiness Call</a>
+        <a class="button ghost" href="Capability-Statement.pdf" target="_blank" aria-label="Open Capability Statement PDF">Capability Statement</a>
+      </div>
+
+      <!-- Trust strip -->
+      <ul class="badges clean" style="margin-top:18px">
+        <li class="badge">Veteran-Owned</li>
+        <li class="badge">DoD-Focused</li>
+        <li class="badge">GCC High • Azure</li>
+        <li class="badge">NAICS: 541512 • 541519 • 541611 • 541690 • 541330</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- MAIN -->
-  <main class="light" role="main">
-    <section id="mission" class="section-block slim">
-      <h2>Mission</h2>
-      <p>
-        To bring clarity and confidence to DoD contractors by unlocking the full security and compliance
-        potential of Microsoft GCC High — through automation, Zero Trust, and AI-driven visibility.
-      </p>
-    </section>
+  <!-- VALUE PILLARS -->
+  <section class="section-block slim">
+    <h2>Why enLight10</h2>
+    <div class="features three">
+      <article class="feature">
+        <h3>Compliance-Driven</h3>
+        <p>Controls mapped to <strong>CMMC L2</strong>, <strong>NIST 800-171/172</strong>, DFARS, and DoDI 5200.48—with evidence by design.</p>
+      </article>
+      <article class="feature">
+        <h3>Zero Trust by Default</h3>
+        <p>Entra + Defender policies that fit real users and devices—MFA, PIM, Conditional Access, device posture baselines.</p>
+      </article>
+      <article class="feature">
+        <h3>AI-Powered Roadmap</h3>
+        <p>Building an Agentic AI SOC on Microsoft Security Copilot for faster triage, clearer narratives, and scalable response.</p>
+      </article>
+    </div>
+  </section>
 
-    <section id="vision" class="section-block slim">
-      <h2>Vision</h2>
-      <p>
-        A defense industrial base where every contractor — large or small — operates with the same level of
-        compliance assurance and cyber resilience as the largest primes.
-      </p>
-    </section>
+  <!-- CORE OFFERS (AVAILABLE NOW) -->
+  <section class="section-block suite slim">
+    <h2>What We Deliver Today</h2>
+    <div class="features">
+      <article class="feature">
+        <h3>Contractor Solutions (Subcontracting)</h3>
+        <p>Cleared staff augmentation for primes and DIB subs.</p>
+        <ul class="clean">
+          <li>Roles: SOC analyst, cloud security engineer, systems admin</li>
+          <li>Models: time &amp; materials, surge support, backfill</li>
+        </ul>
+        <a class="text-link" href="./services.html#contractor-solutions">See details →</a>
+      </article>
 
-    <section id="Brand Story" class="section-block slim">
-      <h2>Brand Story</h2>
-      <p>
-        The name enLight10 comes from our mission to bring light, clarity, and understanding into complex and often hidden challenges.
-        “Enlighten” means to illuminate, to reveal what is unseen, and to provide insight that leads to confident action.
-        The number 10 symbolizes excellence and completion — the highest standard.
-        Together, enLight10 Solutions represents our commitment to shining light on unseen risks, simplifying complexity, and delivering secure, mission-ready solutions 
-        that meet the highest standards.
-        We don’t just solve problems — we bring clarity and confidence to every mission.
-      </p>
-    </section>
+      <article class="feature">
+        <h3>Compliance Accelerator</h3>
+        <p>CMMC L2 gap analysis, SSP/SPRS/POA&amp;M as living documents, auditor-ready artifacts.</p>
+        <a class="text-link" href="./services.html#compliance-accelerator">See details →</a>
+      </article>
 
-    <section id="why-us" class="section-block slim">
-      <h2>Why Us</h2>
-      <p class="why">DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</p>
-      <p>We shed light on CUI, Zero Trust, and Compliance for the Defense Industrial Base.</p>
-    </section>
-  </main>
+      <article class="feature">
+        <h3>Zero Trust Foundations</h3>
+        <p>Entra + Defender baselines: MFA, Conditional Access, PIM, device posture, PAWs.</p>
+        <a class="text-link" href="./services.html#zero-trust">See details →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ROADMAP TEASER -->
+  <section class="section-block slim band">
+    <h2>What’s Next</h2>
+    <p class="muted">
+      Pilot programs are forming for <strong>CUI Classifier (Purview)</strong> and
+      <strong>SOC-as-a-Service (Sentinel + Agentic AI)</strong>. Interested in early access?
+    </p>
+    <a class="button small" href="mailto:info@enlight10solutions.com?subject=Pilot%20Program%20Interest">Join a Pilot</a>
+  </section>
+
+  <!-- CALL TO ACTION -->
+  <section class="section-block slim">
+    <h2>Ready to move faster without risking contracts or data?</h2>
+    <div class="hero-ctas">
+      <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Readiness%20Call%20Request">Get a Readiness Call</a>
+      <a class="button ghost" href="./services.html">Explore Services</a>
+    </div>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-  <div class="footer-inner">
-
-    <!-- Copyright -->
-    <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-
-    <!-- Veteran Owned -->
-    <p class="footer-vet">Veteran-Owned Small Business</p>
-
-    <!-- Info Row -->
-    <p class="footer-info">
-      <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> | 
-      <a href="Capability-Statement.pdf" target="_blank">Capability Statement (PDF)</a>
-    </p>
-
-    <!-- Social Links -->
-    <div class="footer-social">
-      <span>Follow us:</span>
-      <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-      <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
-      <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> |
+        <a href="Capability-Statement.pdf" target="_blank">Capability Statement (PDF)</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
     </div>
-
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
