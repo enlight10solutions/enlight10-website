@@ -1,125 +1,183 @@
-<!-- index.html (splash logo hero + white main body) -->
+<!-- index.html (Watchtower landing with demo video) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>DoD GCC High Security & CMMC — enLight10 Solutions</title>
-  <meta name="description" content="Veteran-owned, DoD-focused Azure security. We help defense contractors protect CUI, implement Zero Trust, and stay CMMC-ready on Microsoft 365 GCC High & Azure with Purview, Sentinel, Defender, and Entra.">
+  <title>enLight10 Solutions — Watchtower & Government Cyber</title>
+  <meta name="description" content="Veteran-owned small business focused on cybersecurity and government contracting. Building Watchtower, an emerging AI-assisted SOC platform for defense and mission-driven environments.">
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=12">
+  <link rel="stylesheet" href="./style.css?v=20">
   <script src="./script.js" defer></script>
 
   <!-- Preload + Favicon -->
-  <link rel="preload" as="image" href="./Logo_new.png?v=2">
-  <link rel="icon" href="./Logo_new.png?v=2" type="image/png">
+  <link rel="preload" as="image" href="./Logo(offical)(closeup).PNG">
+  <link rel="icon" href="./Logo(offical)(closeup).PNG" type="image/png">
 </head>
 <body>
 
   <!-- TOP BAR -->
-  <nav class="topbar" role="navigation" aria-label="Primary">
+  <nav class="topbar" role="navigation">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=2" alt="enLight10 Solutions" />
+      <!-- Updated to use new official logo -->
+      <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions" />
     </a>
 
     <div class="nav-right">
-      <div class="nav-links" role="menubar">
-        <a role="menuitem" href="./who.html">Who We Are</a>
-        <a role="menuitem" href="./services.html">Services</a>
-        <a role="menuitem" class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      <div class="nav-links">
+
+        <!-- PRODUCT DROPDOWN -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">Product ▾</button>
+          <div class="dropdown-panel">
+            <a href="./watchtower.html">Watchtower <span style="color:#d00; font-weight:bold; font-size:0.8em;">(NEW)</span></a>
+          </div>
+        </div>
+
+        <a href="./services.html">Services</a>
+        <a href="./who.html">Who We Are</a>
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
+
       <!-- Hamburger (mobile) -->
-      <button id="menuToggle" class="hamburger"
-              aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile menu + backdrop -->
+  <!-- MOBILE MENU -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <a href="./who.html">Who We Are</a>
+      <a href="./watchtower.html">Watchtower (NEW)</a>
       <a href="./services.html">Services</a>
+      <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- SPLASH HERO (logo only) -->
-  <section class="hero splash" id="top" aria-label="Intro">
-    <img class="hero-logo-full" src="./Logo_new.png?v=2" alt="enLight10 Solutions Logo" />
+  <!-- HERO WITH DEMO VIDEO -->
+  <section class="hero splash" id="top">
+    <div class="hero-inner">
+      <div class="hero-main">
+        <img class="hero-logo-full" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions Logo" />
+
+        <div class="hero-text">
+          <h1>Cyber Operations for Government & Critical Missions</h1>
+          <p>
+            enLight10 Solutions is a veteran-owned cybersecurity company supporting government and defense projects — and building <strong>Watchtower</strong>, an emerging SOC platform where analysts, automation, and AI work together.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="./watchtower.html">Explore Watchtower</a>
+            <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Gov Cyber or Watchtower Inquiry">Start a Conversation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-video-block">
+        <h2 class="hero-video-title">Watchtower Demo</h2>
+        <video
+          id="demoVideo"
+          class="hero-video"
+          controls
+          autoplay
+          muted
+          playsinline
+        >
+          <source src="./DemoWatchtower.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        <div class="video-speed-controls">
+          <span>Playback speed:</span>
+          <button type="button" class="video-speed-btn" data-speed="1">1×</button>
+          <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
+          <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+        </div>
+      </div>
+    </div>
+
     <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
-  <!-- MAIN BODY (white background) -->
+  <!-- MAIN BODY -->
   <main class="light" style="background:#fff; color:#000; padding:60px 0">
-    
-    <!-- VALUE PILLARS -->
+
+    <!-- WHAT WE DO -->
     <section class="section-block slim">
-      <h2>Why enLight10</h2>
+      <h2>What We Do</h2>
+
       <div class="features three">
         <article class="feature">
-          <h3>Compliance-Driven</h3>
-          <p>Controls mapped to <strong>CMMC L2</strong>, <strong>NIST 800-171/172</strong>, DFARS, and DoDI 5200.48—with evidence by design.</p>
+          <h3>🛡 Cyber Operations</h3>
+          <p>Supporting SOC workflows, detection, response, and day-to-day security operations across mission-driven environments.</p>
         </article>
+
         <article class="feature">
-          <h3>Zero Trust by Default</h3>
-          <p>Entra + Defender policies that fit real users and devices—MFA, PIM, Conditional Access, device posture baselines.</p>
+          <h3>⚙️ Engineering & Automation</h3>
+          <p>Improving tooling, integrations, monitoring pipelines, and operational efficiency with a practical, security-first approach.</p>
         </article>
+
         <article class="feature">
-          <h3>AI-Powered Roadmap</h3>
-          <p>Building an Agentic AI SOC for faster triage, clearer narratives, and scalable response.</p>
+          <h3>📦 Watchtower Platform</h3>
+          <p>
+            A focused SOC platform to help analysts investigate faster, reduce noise, and communicate findings clearly.
+            <a href="./watchtower.html" class="text-link">See the platform →</a>
+          </p>
         </article>
       </div>
     </section>
 
-    <!-- CORE OFFERS -->
+    <!-- WATCHTOWER PREVIEW -->
     <section class="section-block suite slim">
-      <h2>What We Deliver Today</h2>
-      <div class="features">
+      <h2>Introducing Watchtower <span style="color:#d00; font-size:0.6em;">(NEW)</span></h2>
+      <p class="lead">Watchtower is in its early-access phase. We're building it with real operators — not as a theoretical product.</p>
+
+      <div class="features three">
         <article class="feature">
-          <h3>Contractor Solutions (Subcontracting)</h3>
-          <p>Cleared staff augmentation for primes and DIB subs.</p>
-          <ul class="clean">
-            <li>Roles: SOC analyst, cloud security engineer, systems admin</li>
-            <li>Models: time &amp; materials, surge support, backfill</li>
-          </ul>
-          <a class="text-link" href="./services.html#contractor-solutions">See details →</a>
+          <h3>One Place to Work</h3>
+          <p>A single SOC workspace for alerts, evidence, investigation, and narrative-building — instead of jumping across tools.</p>
         </article>
 
         <article class="feature">
-          <h3>Compliance Accelerator</h3>
-          <p>CMMC L2 gap analysis, SSP/SPRS/POA&amp;M as living documents, auditor-ready artifacts.</p>
-          <a class="text-link" href="./services.html#compliance-accelerator">See details →</a>
+          <h3>AI-Assisted, Human-Controlled</h3>
+          <p>Summaries, analysis, timelines, and context suggestions assist analysts — not replace them.</p>
         </article>
 
         <article class="feature">
-          <h3>Zero Trust Foundations</h3>
-          <p>Entra + Defender baselines: MFA, Conditional Access, PIM, device posture, PAWs.</p>
-          <a class="text-link" href="./services.html#zero-trust">See details →</a>
+          <h3>Built for Real Teams</h3>
+          <p>Designed from hands-on government cyber experience — shift work, escalations, accountability, and clear reporting.</p>
         </article>
       </div>
-    </section>
 
+      <div class="hero-actions" style="margin-top:1rem;">
+        <a class="button primary" href="./watchtower.html">Learn More</a>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
-        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> |
-        <a href="./docs/CapabilityStatement.pdf" target="_blank">Capability Statement (PDF)</a>
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
       </p>
       <div class="footer-social">
         <span>Follow us:</span>
         <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-        <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
         <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
+      <!-- Small e10 icon at the bottom -->
+      <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+        <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social & GitHub</span>
       </div>
     </div>
   </footer>
