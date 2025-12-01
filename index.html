@@ -9,7 +9,7 @@
   <meta name="description" content="Veteran-owned small business focused on cybersecurity and government contracting. Building Watchtower, an emerging AI-assisted SOC platform for defense and mission-driven environments.">
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=20">
+  <link rel="stylesheet" href="./style.css?v=21">
   <script src="./script.js" defer></script>
 
   <!-- Preload + Favicon -->
@@ -21,13 +21,11 @@
   <!-- TOP BAR -->
   <nav class="topbar" role="navigation">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <!-- Updated to use new official logo -->
       <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions" />
     </a>
 
     <div class="nav-right">
       <div class="nav-links">
-
         <!-- PRODUCT DROPDOWN -->
         <div class="dropdown">
           <button class="dropdown-toggle">Product ▾</button>
@@ -59,49 +57,54 @@
     </nav>
   </aside>
 
-  <!-- HERO WITH DEMO VIDEO -->
+  <!-- HERO: VIDEO FRONT & CENTER -->
   <section class="hero splash" id="top">
-    <div class="hero-inner">
-      <div class="hero-main">
-        <img class="hero-logo-full" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions Logo" />
-
-        <div class="hero-text">
-          <h1>Cyber Operations for Government & Critical Missions</h1>
-          <p>
-            enLight10 Solutions is a veteran-owned cybersecurity company supporting government and defense projects — and building <strong>Watchtower</strong>, an emerging SOC platform where analysts, automation, and AI work together.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button primary" href="./watchtower.html">Explore Watchtower</a>
-            <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Gov Cyber or Watchtower Inquiry">Start a Conversation</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-video-block">
-        <h2 class="hero-video-title">Watchtower Demo</h2>
-        <video
-          id="demoVideo"
-          class="hero-video"
-          controls
-          autoplay
-          muted
-          playsinline
-        >
-          <source src="./DemoWatchtower.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        <div class="video-speed-controls">
-          <span>Playback speed:</span>
-          <button type="button" class="video-speed-btn" data-speed="1">1×</button>
-          <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
-          <button type="button" class="video-speed-btn" data-speed="2">2×</button>
-        </div>
-      </div>
+    <div class="hero-heading">
+      <img class="hero-logo-small" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions Logo" />
+      <h1>Introducing Watchtower</h1>
+      <p class="tagline">
+        Cyber operations for government &amp; critical missions — built by a veteran-owned team with real SOC experience.
+      </p>
     </div>
 
-    <div class="scroll-cue" aria-hidden="true">Scroll</div>
+    <div class="hero-video-wrapper">
+      <video
+        id="demoVideo"
+        class="hero-video featured"
+        controls
+        autoplay
+        muted
+        playsinline
+        preload="metadata"
+      >
+        <source src="https://enlight10media.blob.core.windows.net/media/DemoWatchtower.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="video-speed-controls">
+        <span>Playback speed:</span>
+        <button type="button" class="video-speed-btn" data-speed="1">1×</button>
+        <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
+        <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+      </div>
+
+      <p class="hero-learn-more">
+        Want the full breakdown? <a href="./watchtower.html">Learn more about the Watchtower product →</a>
+      </p>
+    </div>
+
+    <div class="hero-actions hero-actions-under-video">
+      <a class="button primary" href="./watchtower.html">Explore Watchtower</a>
+      <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Gov Cyber or Watchtower Inquiry">Start a Conversation</a>
+    </div>
+
+    <div class="hero-subcopy">
+      <p>
+        enLight10 Solutions is a veteran-owned cybersecurity company supporting government and defense projects — and building <strong>Watchtower</strong>, an emerging SOC platform where analysts, automation, and AI work together.
+      </p>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">Scroll ↓</div>
   </section>
 
   <!-- MAIN BODY -->
@@ -118,7 +121,7 @@
         </article>
 
         <article class="feature">
-          <h3>⚙️ Engineering & Automation</h3>
+          <h3>⚙️ Engineering &amp; Automation</h3>
           <p>Improving tooling, integrations, monitoring pipelines, and operational efficiency with a practical, security-first approach.</p>
         </article>
 
@@ -155,7 +158,7 @@
       </div>
 
       <div class="hero-actions" style="margin-top:1rem;">
-        <a class="button primary" href="./watchtower.html">Learn More</a>
+        <a class="button primary" href="./watchtower.html">Learn More About Watchtower</a>
       </div>
     </section>
   </main>
@@ -177,7 +180,7 @@
       <!-- Small e10 icon at the bottom -->
       <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
         <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
-        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social & GitHub</span>
+        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
       </div>
     </div>
   </footer>
