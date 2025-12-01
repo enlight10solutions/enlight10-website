@@ -1,5 +1,4 @@
-//who.html
-<!-- who.html (revised) -->
+<!-- who.html (Founder-focused with credibility and mission alignment) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,118 +7,143 @@
   <title>Who We Are — enLight10 Solutions</title>
 
   <!-- Styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=9">
+  <link rel="stylesheet" href="./style.css?v=17">
   <script src="./script.js" defer></script>
 
-  <!-- Preload + Favicon -->
-  <link rel="preload" as="image" href="./Logo_new.png?v=2">
+  <!-- Favicon -->
   <link rel="icon" href="./Logo_new.png?v=2" type="image/png">
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./LogoSlim.png?v=2" alt="enLight10 Solutions">
+  <!-- NAV -->
+  <nav class="topbar">
+    <a class="brand" href="./">
+      <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions">
     </a>
 
     <div class="nav-right">
-      <div class="nav-links" role="menubar">
-        <a role="menuitem" href="./who.html" aria-current="page">Who We Are</a>
-        <a role="menuitem" href="./services.html">Services</a>
-        <a role="menuitem" class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      <div class="nav-links">
+
+        <!-- Product Dropdown -->
+        <div class="dropdown">
+          <button class="dropdown-toggle">Product ▾</button>
+          <div class="dropdown-panel">
+            <a href="./watchtower.html">Watchtower <span style="color:#d00; font-weight:bold; font-size:0.8em;">(NEW)</span></a>
+          </div>
+        </div>
+
+        <a href="./services.html">Services</a>
+        <a href="./who.html" aria-current="page">Who We Are</a>
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
-      <button id="menuToggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button id="menuToggle" class="hamburger">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile menu -->
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
-    <nav class="menu-nav">
-      <a href="./who.html" aria-current="page">Who We Are</a>
-      <a href="./services.html">Services</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
 
   <!-- MAIN -->
   <main class="light" style="padding-top:80px">
+
+    <!-- Overview -->
     <section class="section-block slim">
       <h2>Who We Are</h2>
+      <p class="lead">
+        enLight10 Solutions is a veteran-owned cybersecurity company focused on supporting government and defense operations — and building <strong>Watchtower</strong>, a SOC platform shaped by real-world experience.
+      </p>
       <p>
-        enLight10 Solutions is a veteran-owned, DoD-focused Azure security firm. We help defense contractors protect Controlled Unclassified Information (CUI), operationalize Zero Trust, and stay audit-ready on Microsoft GCC High using the tools they already own — Purview, Sentinel, Defender, and Entra.
+        We operate at the intersection of practitioner reality, mission constraints, and modern technology. The work we do — and the platform we're building — comes from lived experience inside cyber teams responsible for critical infrastructure, defense networks, and national-level missions.
       </p>
     </section>
 
+    <!-- Founder Bio -->
     <section class="section-block slim">
-      <h2>Our Mission</h2>
-      <p>
-        Bring clarity and confidence to the Defense Industrial Base by turning complex compliance into practical, automated safeguards — so teams can move faster without risking contracts or data.
-      </p>
-    </section>
+      <h2>Founder</h2>
 
-    <section class="section-block slim">
-      <h2>What We Do</h2>
       <p>
-        We design, harden, and operate Microsoft 365 GCC High environments for DoD contractors — aligning security controls with CMMC, NIST 800-171/172, DFARS, DoDI 5200.48, and DoD Zero Trust guidance. Our work blends hands-on engineering with evidence-ready documentation.
+        enLight10 Solutions was founded by <strong>Jay Moreno</strong>, a cybersecurity operator and leader with over 15 years of technical experience and 9 years dedicated to defensive cyber operations across military, federal, and government contracting environments.
       </p>
+
       <ul class="clean">
-        <li><span class="why">GCC High expertise:</span> Purview (CUI labeling), Sentinel (SIEM), Defender (EDR), Entra (IAM).</li>
-        <li><span class="why">Compliance first:</span> control mapping, evidence capture, and audit prep built into operations.</li>
-        <li><span class="why">Operational pragmatism:</span> guardrails that fit real users, devices, and missions.</li>
-        <li><span class="why">Future-ready:</span> building toward AI-enabled SOC services with Microsoft Security Copilot.</li>
+        <li><strong>U.S. Air Force (Active Duty):</strong> early career in network operations and enterprise command-and-control support.</li>
+        <li><strong>U.S. Army National Guard & Deployment:</strong> systems administration, IT modernization, and deployed communications support across multiple theaters.</li>
+        <li><strong>Cyber Protection Team (CPT):</strong> selected as one of the top cybersecurity operators across the Guard (~20,000 personnel).</li>
+        <li><strong>USCYBERCOM–Aligned Missions:</strong> Threat Hunter supporting Cyber National Mission Teams and Hunt Forward Operations.</li>
+        <li><strong>GG-13 Cyber Hunt Lead:</strong> led advanced hunt operations with NSA Texas and international deployments supporting U.S. and allied defense partners.</li>
+        <li><strong>SOC & Ops Leadership:</strong> Directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
+      </ul>
+
+      <p style="margin-top:1rem;">
+        Jay’s operational focus — from CPT missions and hunt operations to enterprise SOC leadership — directly informs how Watchtower is being built and how we support customers today.
+      </p>
+    </section>
+
+    <!-- Credibility / Certifications -->
+    <section class="section-block slim">
+      <h2>Clearance & Certifications</h2>
+      <ul class="clean">
+        <li><strong>Clearance:</strong> Active TS/SCI eligible</li>
+        <li><strong>Certifications:</strong> CISSP, GCIA, CySA+, Security+</li>
+        <li><strong>Education:</strong> M.S. Cybersecurity, B.S. Computer Science</li>
       </ul>
     </section>
 
+    <!-- Why We're Building -->
     <section class="section-block slim">
-      <h2>Why enLight10</h2>
-      <p><strong>DoD-Focused • Compliance-Driven • AI-Powered • Mission-Aligned</strong></p>
+      <h2>Why We're Building Watchtower</h2>
       <p>
-        We’re not just tool installers — we’re outcome partners. Our approach reduces time-to-compliance, lowers audit risk, and makes GCC High work for day-to-day operations.
+        After years inside SOCs and cyber missions, one pattern was constant: analysts spent too much time navigating tools and too little time understanding the threat or telling the story of the incident.
+      </p>
+      <p>
+        Watchtower exists to change that — giving analysts one place to investigate, document, and communicate clearly.
+      </p>
+
+      <p style="margin-top:.5rem;">
+        Learn more on the <a href="./watchtower.html" class="text-link">Watchtower page →</a>
       </p>
     </section>
 
-    <section class="section-block slim">
-      <h2>Credentials &amp; Codes</h2>
-      <ul class="clean">
-        <li><span class="why">Ownership:</span> Veteran-owned small business (SDVOSB eligibility).</li>
-        <li><span class="why">Focus:</span> Microsoft 365 GCC High / Azure for DoD contractors.</li>
-        <li><span class="why">NAICS:</span> 541512, 541519, 541611, 541690, 541330.</li>
-      </ul>
-    </section>
-
+    <!-- Business -->
     <section class="section-block slim">
       <h2>How We Work</h2>
       <ul class="clean">
-        <li><span class="why">Subcontract-friendly:</span> we strengthen primes/MSPs without competing with them.</li>
-        <li><span class="why">Evidence by design:</span> every change produces a control artifact and dashboard trace.</li>
-        <li><span class="why">Flexible delivery:</span> assessments, deployments, or managed operations.</li>
+        <li>Mission-aligned, not vendor-driven</li>
+        <li>Subcontract-friendly and partnership-focused</li>
+        <li>Built for long-term operational trust</li>
+        <li>If it doesn't help the mission — we don't do it</li>
       </ul>
     </section>
+
+    <!-- CTA -->
+    <section class="section-block slim">
+      <h2>Connect With Us</h2>
+      <p>
+        Whether you're exploring Watchtower, looking for cybersecurity support, or discussing teaming opportunities — we’re open to a straightforward conversation.
+      </p>
+
+      <div style="margin-top:1.5rem;">
+        <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Government Cyber / Watchtower Inquiry">
+          Start a Conversation
+        </a>
+      </div>
+    </section>
+
   </main>
 
+
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All Rights Reserved.</p>
-      <p class="footer-vet">Veteran-Owned Small Business</p>
-      <p class="footer-info">
-        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a> |
-        <a href="./docs/CapabilityStatement.pdf" target="_blank">Capability Statement (PDF)</a>
-      </p>
+      <p>© 2025 enLight10 Solutions, LLC — Veteran-Owned Small Business</p>
       <div class="footer-social">
-        <span>Follow us:</span>
-        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-        <a href="https://x.com/E10Solutions" target="_blank">X @E10Solutions</a> |
-        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/company/enlight10solutions">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions">X</a> |
+        <a href="https://github.com/enlight10solutions">GitHub</a>
       </div>
     </div>
   </footer>
 
 </body>
 </html>
-
-
