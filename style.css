@@ -427,7 +427,7 @@ h2 {
 
 /* Apply only on hover */
 .hero-logo-link:hover .hero-logo-small {
-  animation: pulseGlow 1.6s ease-out infinite;
+  animation: pulseGlow 5s ease-out infinite;
   transform: scale(1.06);
   cursor: pointer;
 }
