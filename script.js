@@ -1,101 +1,113 @@
 // script.js
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   /* ---------------- Mobile menu ---------------- */
-  const menuBtn = document.getElementById("menuToggle");
-  const panel = document.getElementById("mobileMenu");
-  const backdrop = document.getElementById("menuBackdrop");
+  var menuBtn = document.getElementById("menuToggle");
+  var panel = document.getElementById("mobileMenu");
+  var backdrop = document.getElementById("menuBackdrop");
 
-  const openMenu = () => {
+  function openMenu() {
     document.body.classList.add("menu-open");
     if (panel) panel.hidden = false;
     if (backdrop) backdrop.hidden = false;
-    menuBtn?.setAttribute("aria-expanded", "true");
-  };
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
+  }
 
-  const closeMenu = () => {
+  function closeMenu() {
     document.body.classList.remove("menu-open");
-    menuBtn?.setAttribute("aria-expanded", "false");
-    setTimeout(() => {
+    if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    setTimeout(function () {
       if (panel) panel.hidden = true;
       if (backdrop) backdrop.hidden = true;
     }, 200);
-  };
+  }
 
-  menuBtn?.addEventListener("click", () => {
-    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-    expanded ? closeMenu() : openMenu();
-  });
+  if (menuBtn) {
+    menuBtn.addEventListener("click", function () {
+      var expanded = menuBtn.getAttribute("aria-expanded") === "true";
+      if (expanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
 
-  backdrop?.addEventListener("click", closeMenu);
+  if (backdrop) {
+    backdrop.addEventListener("click", closeMenu);
+  }
 
-  document.addEventListener("keydown", (e) => {
+  document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
       closeMenu();
     }
   });
 
   /* ---------------- Demo video speed ---------------- */
-  const video = document.getElementById("demoVideo");
-  if (video instanceof HTMLVideoElement) {
-    const speedButtons = document.querySelectorAll<HTMLButtonElement>(".video-speed-btn");
+  var video = document.getElementById("demoVideo");
+  if (video && video.tagName === "VIDEO") {
+    var speedButtons = document.querySelectorAll(".video-speed-btn");
 
-    const setActiveSpeed = (speed) => {
-      speedButtons.forEach((btn) => {
-        const s = parseFloat(btn.getAttribute("data-speed") || "1");
+    function setActiveSpeed(speed) {
+      speedButtons.forEach(function (btn) {
+        var attr = btn.getAttribute("data-speed") || "1";
+        var s = parseFloat(attr);
         if (s === speed) {
           btn.classList.add("active");
         } else {
           btn.classList.remove("active");
         }
       });
-    };
+    }
 
-    video.addEventListener("loadedmetadata", () => {
-      video.playbackRate = 1.5;   // default to 1.5x
+    video.addEventListener("loadedmetadata", function () {
+      video.playbackRate = 1.5; // default 1.5x
       setActiveSpeed(1.5);
     });
 
-    speedButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const speed = parseFloat(btn.getAttribute("data-speed") || "1");
-        video.playbackRate = speed;
-        setActiveSpeed(speed);
+    speedButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var attr = btn.getAttribute("data-speed") || "1";
+        var speed = parseFloat(attr);
+        if (!isNaN(speed)) {
+          video.playbackRate = speed;
+          setActiveSpeed(speed);
+        }
       });
     });
   }
 
   /* ---------------- Product dropdown ---------------- */
-  const dropdowns = document.querySelectorAll<HTMLElement>(".dropdown");
+  var dropdowns = document.querySelectorAll(".dropdown");
 
-  dropdowns.forEach((dd) => {
-    const toggle = dd.querySelector<HTMLElement>(".dropdown-toggle");
-    const panelEl = dd.querySelector<HTMLElement>(".dropdown-panel");
+  dropdowns.forEach(function (dd) {
+    var toggle = dd.querySelector(".dropdown-toggle");
+    var panelEl = dd.querySelector(".dropdown-panel");
     if (!toggle || !panelEl) return;
 
-    let hideTimer: number | undefined;
+    var hideTimer = null;
 
-    const open = () => {
+    function open() {
       if (hideTimer) {
-        window.clearTimeout(hideTimer);
-        hideTimer = undefined;
+        clearTimeout(hideTimer);
+        hideTimer = null;
       }
       dd.classList.add("open");
-    };
+    }
 
-    const scheduleClose = () => {
-      hideTimer = window.setTimeout(() => {
+    function scheduleClose() {
+      hideTimer = setTimeout(function () {
         dd.classList.remove("open");
-      }, 200); // small delay so users can move into the panel
-    };
+      }, 200); // small delay so you can move into the panel
+    }
 
-    // Hover support (desktop)
+    // Hover (desktop)
     toggle.addEventListener("mouseenter", open);
     panelEl.addEventListener("mouseenter", open);
     toggle.addEventListener("mouseleave", scheduleClose);
     panelEl.addEventListener("mouseleave", scheduleClose);
 
-    // Click toggle (helps on touchpads / for accessibility)
-    toggle.addEventListener("click", (e) => {
+    // Click toggle (helps on touchpads / accessibility)
+    toggle.addEventListener("click", function (e) {
       e.preventDefault();
       if (dd.classList.contains("open")) {
         dd.classList.remove("open");
