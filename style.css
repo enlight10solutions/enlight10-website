@@ -399,6 +399,35 @@ h2 {
 }
 .why { font-weight:600; color:#0b1220; }
 
+/* Clickable Watchtower hero logo with yellow glow on hover */
+.hero-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 18px;
+  background: radial-gradient(circle at center, rgba(253, 224, 71, 0.18), transparent);
+  transition:
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.12s ease;
+}
+
+.hero-logo-link:hover,
+.hero-logo-link:focus-visible {
+  background: radial-gradient(circle at center, rgba(253, 224, 71, 0.35), transparent);
+  box-shadow: 0 0 32px rgba(250, 204, 21, 0.75);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.hero-logo-link:focus-visible {
+  /* subtle focus ring inside the glow */
+  box-shadow:
+    0 0 32px rgba(250, 204, 21, 0.75),
+    0 0 0 2px rgba(15, 23, 42, 0.9);
+}
+
 /* =========================
    FOOTER
    ========================= */
