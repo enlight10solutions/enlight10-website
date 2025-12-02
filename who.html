@@ -7,7 +7,7 @@
   <title>Who We Are — enLight10 Solutions</title>
 
   <!-- Styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=17">
+  <link rel="stylesheet" href="./style.css?v=18">
   <script src="./script.js" defer></script>
 
   <!-- Favicon -->
@@ -16,8 +16,8 @@
 <body>
 
   <!-- NAV -->
-  <nav class="topbar">
-    <a class="brand" href="./">
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions">
     </a>
 
@@ -37,15 +37,32 @@
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
-      <button id="menuToggle" class="hamburger">
+      <!-- Hamburger (mobile) -->
+      <button
+        id="menuToggle"
+        class="hamburger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
+    <nav class="menu-nav">
+      <a href="./watchtower.html">Watchtower (NEW)</a>
+      <a href="./services.html">Services</a>
+      <a href="./who.html" aria-current="page">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
 
   <!-- MAIN -->
-  <main class="light" style="padding-top:80px">
+  <main class="light" style="padding:80px 0 60px;">
 
     <!-- Overview -->
     <section class="section-block slim">
@@ -68,11 +85,11 @@
 
       <ul class="clean">
         <li><strong>U.S. Air Force (Active Duty):</strong> early career in network operations and enterprise command-and-control support.</li>
-        <li><strong>U.S. Army National Guard & Deployment:</strong> systems administration, IT modernization, and deployed communications support across multiple theaters.</li>
+        <li><strong>U.S. Army National Guard &amp; Deployment:</strong> systems administration, IT modernization, and deployed communications support across multiple theaters.</li>
         <li><strong>Cyber Protection Team (CPT):</strong> selected as one of the top cybersecurity operators across the Guard (~20,000 personnel).</li>
         <li><strong>USCYBERCOM–Aligned Missions:</strong> Threat Hunter supporting Cyber National Mission Teams and Hunt Forward Operations.</li>
         <li><strong>GG-13 Cyber Hunt Lead:</strong> led advanced hunt operations with NSA Texas and international deployments supporting U.S. and allied defense partners.</li>
-        <li><strong>SOC & Ops Leadership:</strong> Directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
+        <li><strong>SOC &amp; Ops Leadership:</strong> Directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
       </ul>
 
       <p style="margin-top:1rem;">
@@ -82,7 +99,7 @@
 
     <!-- Credibility / Certifications -->
     <section class="section-block slim">
-      <h2>Clearance & Certifications</h2>
+      <h2>Clearance &amp; Certifications</h2>
       <ul class="clean">
         <li><strong>Clearance:</strong> Active TS/SCI eligible</li>
         <li><strong>Certifications:</strong> CISSP, GCIA, CySA+, Security+</li>
@@ -132,15 +149,15 @@
 
   </main>
 
-
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p>© 2025 enLight10 Solutions, LLC — Veteran-Owned Small Business</p>
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC — Veteran-Owned Small Business</p>
       <div class="footer-social">
-        <a href="https://linkedin.com/company/enlight10solutions">LinkedIn</a> |
-        <a href="https://x.com/E10Solutions">X</a> |
-        <a href="https://github.com/enlight10solutions">GitHub</a>
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
       </div>
     </div>
   </footer>
