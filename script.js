@@ -1,89 +1,107 @@
 // script.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  /* ============================
-     Mobile menu toggle
-     ============================ */
+  /* ---------------- Mobile menu ---------------- */
   const menuBtn = document.getElementById("menuToggle");
   const panel = document.getElementById("mobileMenu");
   const backdrop = document.getElementById("menuBackdrop");
 
   const openMenu = () => {
-    if (!panel || !backdrop || !menuBtn) return;
     document.body.classList.add("menu-open");
-    panel.hidden = false;
-    backdrop.hidden = false;
-    menuBtn.setAttribute("aria-expanded", "true");
+    if (panel) panel.hidden = false;
+    if (backdrop) backdrop.hidden = false;
+    menuBtn?.setAttribute("aria-expanded", "true");
   };
 
   const closeMenu = () => {
-    if (!panel || !backdrop || !menuBtn) return;
     document.body.classList.remove("menu-open");
-    menuBtn.setAttribute("aria-expanded", "false");
-    // small delay to allow slide-out animation if you add one later
+    menuBtn?.setAttribute("aria-expanded", "false");
     setTimeout(() => {
-      panel.hidden = true;
-      backdrop.hidden = true;
+      if (panel) panel.hidden = true;
+      if (backdrop) backdrop.hidden = true;
     }, 200);
   };
 
-  if (menuBtn && panel && backdrop) {
-    menuBtn.addEventListener("click", () => {
-      const expanded = menuBtn.getAttribute("aria-expanded") === "true";
-      expanded ? closeMenu() : openMenu();
-    });
+  menuBtn?.addEventListener("click", () => {
+    const expanded = menuBtn.getAttribute("aria-expanded") === "true";
+    expanded ? closeMenu() : openMenu();
+  });
 
-    backdrop.addEventListener("click", closeMenu);
+  backdrop?.addEventListener("click", closeMenu);
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
-        closeMenu();
-      }
-    });
-  }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+      closeMenu();
+    }
+  });
 
-  /* ============================
-     Demo video + speed controls
-     ============================ */
+  /* ---------------- Demo video speed ---------------- */
   const video = document.getElementById("demoVideo");
-  const speedButtons = document.querySelectorAll(".video-speed-btn[data-speed]");
+  if (video instanceof HTMLVideoElement) {
+    const speedButtons = document.querySelectorAll<HTMLButtonElement>(".video-speed-btn");
 
-  const setSpeed = (speedValue) => {
-    const speed = parseFloat(speedValue);
-    if (video && !Number.isNaN(speed)) {
-      video.playbackRate = speed;
-    }
+    const setActiveSpeed = (speed) => {
+      speedButtons.forEach((btn) => {
+        const s = parseFloat(btn.getAttribute("data-speed") || "1");
+        if (s === speed) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+    };
 
-    // update active button styling
-    speedButtons.forEach((btn) => {
-      if (!(btn instanceof HTMLElement)) return;
-      const btnSpeed = btn.getAttribute("data-speed");
-      if (btnSpeed === speedValue) {
-        btn.classList.add("active");
-      } else {
-        btn.classList.remove("active");
-      }
-    });
-  };
-
-  if (video) {
-    // Default speed: 1.5x once metadata is ready
     video.addEventListener("loadedmetadata", () => {
-      setSpeed("1.5");
+      video.playbackRate = 1.5;   // default to 1.5x
+      setActiveSpeed(1.5);
     });
 
-    // If metadata is already loaded (fast reload), set it immediately
-    if (video.readyState >= 1) {
-      setSpeed("1.5");
-    }
+    speedButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const speed = parseFloat(btn.getAttribute("data-speed") || "1");
+        video.playbackRate = speed;
+        setActiveSpeed(speed);
+      });
+    });
   }
 
-  // Wire up the buttons
-  speedButtons.forEach((btn) => {
-    if (!(btn instanceof HTMLElement)) return;
-    btn.addEventListener("click", () => {
-      const speed = btn.getAttribute("data-speed") || "1";
-      setSpeed(speed);
+  /* ---------------- Product dropdown ---------------- */
+  const dropdowns = document.querySelectorAll<HTMLElement>(".dropdown");
+
+  dropdowns.forEach((dd) => {
+    const toggle = dd.querySelector<HTMLElement>(".dropdown-toggle");
+    const panelEl = dd.querySelector<HTMLElement>(".dropdown-panel");
+    if (!toggle || !panelEl) return;
+
+    let hideTimer: number | undefined;
+
+    const open = () => {
+      if (hideTimer) {
+        window.clearTimeout(hideTimer);
+        hideTimer = undefined;
+      }
+      dd.classList.add("open");
+    };
+
+    const scheduleClose = () => {
+      hideTimer = window.setTimeout(() => {
+        dd.classList.remove("open");
+      }, 200); // small delay so users can move into the panel
+    };
+
+    // Hover support (desktop)
+    toggle.addEventListener("mouseenter", open);
+    panelEl.addEventListener("mouseenter", open);
+    toggle.addEventListener("mouseleave", scheduleClose);
+    panelEl.addEventListener("mouseleave", scheduleClose);
+
+    // Click toggle (helps on touchpads / for accessibility)
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (dd.classList.contains("open")) {
+        dd.classList.remove("open");
+      } else {
+        open();
+      }
     });
   });
 });
