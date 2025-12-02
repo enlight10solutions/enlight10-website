@@ -31,9 +31,28 @@
         <a href="./who.html">Who We Are</a>
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
-      <button id="menuToggle" class="hamburger"><span></span><span></span><span></span></button>
+      <button
+  id="menuToggle"
+  class="hamburger"
+  aria-label="Toggle mobile menu"
+  aria-expanded="false"
+  aria-controls="mobileMenu"
+>
+  <span></span><span></span><span></span>
+</button>
     </div>
   </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <a href="./watchtower.html">Watchtower (NEW)</a>
+      <a href="./services.html">Services</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
 
   <main class="light" style="padding:60px 0;">
     <section class="section-block slim">
