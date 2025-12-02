@@ -5,17 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Watchtower — Early Access SOC Platform</title>
 
-  <meta name="description" content="Watchtower is an AI-assisted SOC platform built for government and defense security teams. Currently available via limited early access and pilot engagements.">
+  <meta
+    name="description"
+    content="Watchtower is an AI-assisted SOC platform built for government, defense, and security-focused small businesses. Available via limited early access and pilot engagements."
+  />
 
-  <link rel="stylesheet" href="./style.css?v=14">
+  <link rel="stylesheet" href="./style.css?v=18">
   <script src="./script.js" defer></script>
   <link rel="icon" href="./Logo_new.png?v=2" type="image/png">
+
+  <!-- Page-specific layout tweaks -->
+  <style>
+    .wt-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem);
+      border-bottom: 1px solid #eef2f7;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .wt-hero-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .wt-hero-logo img {
+      max-width: 320px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.35);
+      border-radius: 18px;
+    }
+
+    .wt-hero-body {
+      text-align: left;
+    }
+
+    .wt-hero-body h1 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .wt-hero-body .lead {
+      margin-top: 0;
+    }
+
+    .wt-hero-actions {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 900px) {
+      .wt-hero {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .wt-hero-logo {
+        flex: 0 0 320px;
+      }
+
+      .wt-hero-body {
+        flex: 1;
+        padding-left: 2.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="topbar" role="navigation">
-    <a class="brand" href="./">
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions">
     </a>
 
@@ -31,15 +97,17 @@
         <a href="./who.html">Who We Are</a>
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
+
+      <!-- Hamburger (mobile) -->
       <button
-  id="menuToggle"
-  class="hamburger"
-  aria-label="Toggle mobile menu"
-  aria-expanded="false"
-  aria-controls="mobileMenu"
->
-  <span></span><span></span><span></span>
-</button>
+        id="menuToggle"
+        class="hamburger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
@@ -47,7 +115,7 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <a href="./watchtower.html">Watchtower (NEW)</a>
+      <a href="./watchtower.html" aria-current="page">Watchtower (NEW)</a>
       <a href="./services.html">Services</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
@@ -55,68 +123,94 @@
   </aside>
 
   <main class="light" style="padding:80px 0 60px;">
-    <section class="section-block slim">
-      <h1>Watchtower</h1>
-      <img
-        src="./enLight10Watchtoer(tm).png"
-        alt="Watchtower by enLight10 Solutions"
-        style="max-width:260px; height:auto; margin:1rem 0; display:block;"
+
+    <!-- HERO: Logo left, copy + CTA right -->
+    <section class="wt-hero">
+      <div class="wt-hero-logo">
+        <img
+          src="./enLight10Watchtoer(tm).png"
+          alt="Watchtower by enLight10 Solutions"
         />
+      </div>
+
+      <div class="wt-hero-body">
+        <h1>Watchtower</h1>
         <p class="lead">
           Watchtower is an emerging <strong>Security Operations Platform</strong> built for government,
-          defense, and mission-critical environments...
+          defense, and security-focused small businesses that need a clearer way to investigate, document,
+          and communicate what’s happening in their environment.
         </p>
 
-      <div class="hero-actions" style="margin-top:1.5rem;">
-        <a class="button primary" 
-           href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry">
-          Request Early Access
-        </a>
-        <a class="button ghost" href="https://github.com/enlight10solutions" target="_blank">
-          Follow Development
-        </a>
+        <p>
+          Instead of bouncing between tickets, dashboards, and chat threads, Watchtower gives analysts
+          one place to work — with AI assistance that helps them move faster, not lose control.
+        </p>
+
+        <div class="wt-hero-actions">
+          <a
+            class="button primary"
+            href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry"
+          >
+            Request Early Access
+          </a>
+          <a
+            class="button ghost"
+            href="https://github.com/enlight10solutions"
+            target="_blank"
+          >
+            Follow Development
+          </a>
+        </div>
       </div>
     </section>
 
+    <!-- WHAT IT DOES -->
     <section class="section-block slim">
       <h2>What Watchtower Does</h2>
       <div class="features three">
         <article class="feature">
           <h3>Unified Analyst Workspace</h3>
           <p>
-            Alerts, cases, context, and analyst findings live in one interface — not buried in multiple tools or chat threads.
+            Alerts, cases, context, and analyst findings live in one interface — not buried in
+            multiple tools or chat threads.
           </p>
         </article>
         <article class="feature">
           <h3>AI-Assisted Investigation</h3>
           <p>
-            AI helps analyze alerts, summarize investigations, draft timelines, and create defensible documentation.
+            AI helps analyze alerts, summarize investigations, draft timelines, and create defensible
+            documentation that leadership and auditors can actually understand.
           </p>
         </article>
         <article class="feature">
           <h3>Operational Workflow Support</h3>
           <p>
-            Built for shift work, handoffs, escalation paths, and government-style reporting formats.
+            Built for shift work, handoffs, escalation paths, and government-style reporting formats —
+            but simple enough for small security teams to adopt.
           </p>
         </article>
       </div>
     </section>
 
+    <!-- WHO IT'S FOR -->
     <section class="section-block slim">
       <h2>Who It's For</h2>
       <p class="lead">Watchtower is designed for:</p>
       <ul class="clean">
         <li>Government SOC teams and cybersecurity offices</li>
         <li>Defense contractors with monitoring and investigation needs</li>
-        <li>Organizations maturing from tickets + spreadsheets toward repeatable processes</li>
+        <li>Security teams at small and mid-size businesses that need structure without a huge tooling stack</li>
+        <li>Organizations maturing from tickets + spreadsheets toward repeatable, auditable processes</li>
       </ul>
     </section>
 
+    <!-- PILOT PROGRAM -->
     <section class="section-block slim">
       <h2>Pilot Program</h2>
       <p>
-        Watchtower is currently available through a limited early access pilot. Pilot participants help validate workflows, 
-        shape features, and provide operational feedback in exchange for early capability and direct engineering involvement.
+        Watchtower is currently available through a limited early access pilot. Pilot participants help
+        validate workflows, shape features, and provide operational feedback in exchange for early
+        capability and direct engineering involvement.
       </p>
       <ul class="clean">
         <li>Hands-on onboarding and guidance</li>
@@ -125,8 +219,10 @@
       </ul>
 
       <div style="margin-top:1.5rem;">
-        <a class="button primary" 
-           href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Program">
+        <a
+          class="button primary"
+          href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Program"
+        >
           Apply for Pilot Access
         </a>
       </div>
@@ -135,7 +231,7 @@
 
   <footer>
     <div class="footer-inner">
-      <p>© 2025 enLight10 Solutions — Veteran-Owned Small Business</p>
+      <p class="footer-copy">© 2025 enLight10 Solutions — Veteran-Owned Small Business</p>
     </div>
   </footer>
 </body>
