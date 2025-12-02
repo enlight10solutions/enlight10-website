@@ -248,8 +248,12 @@ body.menu-open { overflow:hidden; }
   margin: 0 auto;
 }
 .hero-logo-small {
-  padding-top: 4px;
-  padding-bottom: 0px;
+  width: 80px;            /* restores original size */
+  height: auto;
+  display: block;
+  margin: 6px auto 0 auto; /* small balance tweak */
+  padding-top: 3px;        /* slight visual correction */
+  padding-bottom: 0;
 }
 .hero-heading h1 {
   margin: 0;
