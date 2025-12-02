@@ -248,12 +248,9 @@ body.menu-open { overflow:hidden; }
   margin: 0 auto;
 }
 .hero-logo-small {
-  width: 80px;            /* restores original size */
+  width: 80px;
   height: auto;
   display: block;
-  margin: 6px auto 0 auto; /* small balance tweak */
-  padding-top: 3px;        /* slight visual correction */
-  padding-bottom: 0;
 }
 .hero-heading h1 {
   margin: 0;
@@ -401,17 +398,27 @@ h2 {
 .why { font-weight:600; color:#0b1220; }
 
 /* Clickable Watchtower hero logo with yellow glow on hover */
+/* Clickable Watchtower logo with balanced glow */
 .hero-logo-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
-  border-radius: 18px;
-  background: radial-gradient(circle at center, rgba(253, 224, 71, 0.18), transparent);
-  transition:
-    background 0.22s ease,
-    box-shadow 0.22s ease,
-    transform 0.12s ease;
+
+  /* TOP | RIGHT | BOTTOM | LEFT */
+  padding: 10px 18px 22px 18px;  /* less space on top, a bit more on bottom */
+
+  border-radius: 32px;
+  background:
+    radial-gradient(circle at center,
+      rgba(255, 212, 71, 0.18) 0,
+      rgba(255, 212, 71, 0.06) 40%,
+      rgba(0, 0, 0, 0.0) 70%
+    ),
+    #020617;
+  box-shadow:
+    0 0 50px rgba(255, 212, 71, 0.45),
+    0 24px 45px rgba(0, 0, 0, 0.8);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .hero-logo-link:hover,
