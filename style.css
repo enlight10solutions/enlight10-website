@@ -36,13 +36,22 @@ body {
   border-bottom:1px solid rgba(255,255,255,.08);
   z-index:1000;
 }
-.topbar .brand { display:flex; align-items:center; gap:.5rem; }
-.topbar .brand-logo { display:block; height:40px; width:auto; }
+.topbar .brand {
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+}
+.topbar .brand-logo {
+  display:block;
+  height:40px;
+  width:auto;
+}
 .brand-logo--slim {
   height:44px;
   width:auto;
   display:block;
   filter:drop-shadow(0 3px 10px rgba(0,0,0,.35));
+  transition: transform .25s ease, filter .25s ease; /* so glow looks smooth */
 }
 .topbar .brand-text { display:none !important; }
 
@@ -247,11 +256,19 @@ body.menu-open { overflow:hidden; }
   max-width: 700px;
   margin: 0 auto;
 }
+
+.hero-logo-link {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
 .hero-logo-small {
-  width: 80px;
+  width: 130px;
   height: auto;
   display: block;
+  transition: transform .25s ease, filter .25s ease;
 }
+
 .hero-heading h1 {
   margin: 0;
   font-size: clamp(2rem, 3vw, 2.6rem);
@@ -399,19 +416,6 @@ h2 {
 
 /* ===== Hover Glow Pulse (Option B) ===== */
 
-.hero-logo-link {
-  display: inline-block;
-  transition: transform .25s ease;
-}
-
-.hero-logo-small {
-  width: 130px;
-  height: auto;
-  display: block;
-  transition: transform .25s ease, filter .25s ease;
-}
-
-/* Glow animation keyframes */
 @keyframes pulseGlow {
   0% {
     filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0));
@@ -425,13 +429,19 @@ h2 {
   }
 }
 
-/* Apply only on hover */
+/* Apply only on hover for Watchtower hero logo */
 .hero-logo-link:hover .hero-logo-small {
   animation: pulseGlow 5s ease-out infinite;
   transform: scale(1.06);
   cursor: pointer;
 }
 
+/* Apply the SAME glow to the top-left company logo */
+.topbar .brand:hover .brand-logo--slim {
+  animation: pulseGlow 5s ease-out infinite;
+  transform: scale(1.04);
+  cursor: pointer;
+}
 
 /* =========================
    FOOTER
