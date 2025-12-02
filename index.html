@@ -12,7 +12,7 @@
   >
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=22">
+  <link rel="stylesheet" href="./style.css?v=23">
   <script src="./script.js" defer></script>
 
   <!-- Preload + Favicon -->
@@ -63,8 +63,19 @@
   <!-- HERO: VIDEO FRONT & CENTER -->
   <section class="hero splash" id="top">
     <div class="hero-heading">
-      <!-- Center hero logo switched to Watchtower mark -->
-      <img class="hero-logo-small" src="./enLight10Watchtoer(tm).png" alt="Watchtower by enLight10 Solutions" />
+      <!-- Watchtower logo now clickable and glowing on hover -->
+      <a
+        href="./watchtower.html"
+        class="hero-logo-link"
+        aria-label="Go to the Watchtower product page"
+      >
+        <img
+          class="hero-logo-small"
+          src="./enLight10Watchtoer(tm).png"
+          alt="Watchtower by enLight10 Solutions"
+        />
+      </a>
+
       <h1>Introducing Watchtower</h1>
       <p class="tagline">
         Cyber operations for government, defense, and security-focused small businesses —
