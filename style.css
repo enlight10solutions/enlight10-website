@@ -248,11 +248,8 @@ body.menu-open { overflow:hidden; }
   margin: 0 auto;
 }
 .hero-logo-small {
-  width: 80px;
-  height: auto;
-  border-radius: 12px;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,.55));
-  margin-bottom: 0.5rem;
+  padding-top: 4px;
+  padding-bottom: 0px;
 }
 .hero-heading h1 {
   margin: 0;
