@@ -70,6 +70,20 @@ body{
   .topbar{ height:72px; }
 }
 
+.video-speed-btn {
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(148,163,184,.8);
+  background: rgba(15,23,42,0.8);
+  color: #e5e7eb;
+  cursor: pointer;
+}
+.video-speed-btn:hover {
+  background: rgba(30,64,175,0.9);
+  border-color: rgba(129,140,248,1);
+}
+
 /* Simple dropdown for "Product" */
 .dropdown {
   position: relative;
