@@ -19,11 +19,21 @@
     .wt-hero {
       max-width: 1100px;
       margin: 0 auto;
-      padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem) 1.25rem;
+      padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem) 1.75rem;
       border-bottom: 1px solid #eef2f7;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.75rem;
+    }
+
+    .wt-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      max-width: 520px;
+      margin: 0 auto;
+      gap: 1.1rem;
     }
 
     .wt-hero-logo {
@@ -41,9 +51,7 @@
     }
 
     .wt-hero-body {
-      text-align: left;
-      max-width: 520px;
-      margin: 0 auto;
+      width: 100%;
     }
 
     .wt-hero-body p {
@@ -52,7 +60,12 @@
     }
 
     .wt-hero-body .lead {
-      margin-top: 0.75rem;
+      margin-top: 0.25rem;
+    }
+
+    .wt-hero-right {
+      display: flex;
+      justify-content: center;
     }
 
     .wt-hero-actions {
@@ -72,14 +85,14 @@
         align-items: flex-start;
       }
 
-      .wt-hero-logo {
-        flex: 0 0 320px;
+      .wt-hero-left {
+        flex: 0 0 360px;
+        align-items: flex-start;
+        margin: 0;
       }
 
-      .wt-hero-body {
+      .wt-hero-right {
         flex: 1;
-        padding-left: 2.25rem;
-        margin: 0;
       }
     }
 
@@ -88,7 +101,7 @@
        ========================= */
 
     .crp-section {
-      padding: 1.75rem 1rem 3rem;
+      padding: 0.25rem 0 0.5rem;
       display: flex;
       justify-content: center;
     }
@@ -112,7 +125,6 @@
       color: #4b5563;
     }
 
-    /* Diagram visible by default */
     .crp-diagram {
       max-width: 100%;
       height: auto;
@@ -120,13 +132,12 @@
       margin: 0 auto;
     }
 
-    /* Layers visible by default */
     .crp-layer {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Sequential, looping step animation (bottom → top) only when visible */
+    /* Simple looping step animation; always on via .crp-visible */
     .crp-section.crp-visible .crp-layer-tools {
       animation: crpStep 8s ease-in-out infinite;
     }
@@ -210,252 +221,256 @@
 
   <main class="light" style="padding:80px 0 60px;">
 
-    <!-- HERO: Logo left, descriptive copy under logo -->
+    <!-- HERO: Left = logo + copy, Right = CRP diagram -->
     <section class="wt-hero">
-      <div class="wt-hero-logo">
-        <img
-          src="./enLight10Watchtoer(tm).png"
-          alt="Watchtower by enLight10 Solutions"
-        />
-      </div>
-
-      <div class="wt-hero-body">
-        <p class="lead">
-          Watchtower is an emerging <strong>Security Operations Platform</strong> built for government,
-          defense, and security-focused small businesses that need a clearer way to investigate, document,
-          and communicate what’s happening in their environment.
-        </p>
-
-        <p>
-          Instead of bouncing between tickets, dashboards, and chat threads, Watchtower gives analysts
-          one place to work — with AI assistance that helps them move faster, not lose control.
-        </p>
-      </div>
-    </section>
-
-    <!-- CRP DIAGRAM + title + CTAs -->
-    <section id="crpSection" class="crp-section">
-      <div class="crp-inner">
-        <h1 class="crp-title-heading">Watchtower</h1>
-        <p class="crp-tagline">
-          Transforms your existing security tools into organized understanding,
-          actionable response, and continuous assurance.
-        </p>
-
-        <!-- Inline SVG diagram -->
-        <svg
-          class="crp-diagram"
-          xmlns="http://www.w3.org/2000/svg"
-          version="1.1"
-          width="438"
-          height="485"
-          viewBox="0 0 438 485"
-          style="background: transparent; background-color: transparent;"
-        >
-          <!-- Outer rounded frame -->
-          <rect
-            x="1"
-            y="0"
-            width="435.5"
-            height="413"
-            rx="62"
-            ry="62"
-            fill="#ffffff"
-            stroke="#000000"
-            stroke-width="1.2"
+      <div class="wt-hero-left">
+        <div class="wt-hero-logo">
+          <img
+            src="./enLight10Watchtoer(tm).png"
+            alt="Watchtower by enLight10 Solutions"
           />
-
-          <!-- Title -->
-          <text
-            x="219"
-            y="24"
-            text-anchor="middle"
-            font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-            font-size="18"
-            fill="#000000"
-            font-weight="bold"
-          >
-            Cyber Reasoning Platform
-          </text>
-
-          <!-- Assurance layer -->
-          <g class="crp-layer crp-layer-assurance">
-            <rect
-              x="28.75"
-              y="41"
-              width="373.25"
-              height="53"
-              fill="#2f6caa"
-              stroke="#0a1a2f"
-              stroke-width="1"
-            />
-            <text
-              x="219"
-              y="60"
-              text-anchor="middle"
-              font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="12"
-              fill="#f9fafb"
-            >
-              <tspan x="219" dy="0" font-weight="bold">
-                Assurance — Prove &amp; Improve
-              </tspan>
-              <tspan x="219" dy="1.3em">• Audit</tspan>
-              <tspan x="219" dy="1.3em">
-                • Compliance Suite
-                <tspan font-style="italic" fill="#ff0"> future</tspan>
-              </tspan>
-            </text>
-          </g>
-
-          <!-- Action layer -->
-          <g class="crp-layer crp-layer-action">
-            <rect
-              x="29.5"
-              y="124"
-              width="372.5"
-              height="68"
-              fill="#285a8c"
-              stroke="#0a1a2f"
-              stroke-width="1"
-            />
-            <text
-              x="219"
-              y="145"
-              text-anchor="middle"
-              font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="12"
-              fill="#f9fafb"
-            >
-              <tspan x="219" dy="0" font-weight="bold">
-                Action — Respond &amp; Remediate
-              </tspan>
-              <tspan x="219" dy="1.3em">• Cases</tspan>
-              <tspan x="219" dy="1.3em">• Deploy</tspan>
-              <tspan x="219" dy="1.3em">
-                • Remediation Suite
-                <tspan font-style="italic" fill="#ff0"> future</tspan>
-              </tspan>
-            </text>
-          </g>
-
-          <!-- Understanding layer -->
-          <g class="crp-layer crp-layer-understanding">
-            <rect
-              x="30"
-              y="224"
-              width="373"
-              height="61"
-              fill="#204773"
-              stroke="#0a1a2f"
-              stroke-width="1"
-            />
-            <text
-              x="219"
-              y="244"
-              text-anchor="middle"
-              font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="12"
-              fill="#f9fafb"
-            >
-              <tspan x="219" dy="0" font-weight="bold">
-                Understanding — Investigate
-              </tspan>
-              <tspan x="219" dy="1.3em">• Atlas</tspan>
-              <tspan x="219" dy="1.3em">
-                • Investigation Suite
-                <tspan font-style="italic" fill="#ff0"> future</tspan>
-              </tspan>
-            </text>
-          </g>
-
-          <!-- WCS layer -->
-          <g class="crp-layer crp-layer-wcs">
-            <rect
-              x="32.25"
-              y="317"
-              width="368.5"
-              height="76"
-              fill="#1e3a5f"
-              stroke="#0a1a2f"
-              stroke-width="1"
-            />
-            <text
-              x="219"
-              y="339"
-              text-anchor="middle"
-              font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="12"
-              fill="#f9fafb"
-            >
-              <tspan x="219" dy="0" font-weight="bold">
-                WCS — Organizes your security data
-              </tspan>
-              <tspan x="219" dy="1.3em">• Normalizes logs</tspan>
-              <tspan x="219" dy="1.3em">• Correlates events</tspan>
-              <tspan x="219" dy="1.3em">
-                • Buckets activity (Seek, D&amp;A)
-              </tspan>
-            </text>
-          </g>
-
-          <!-- Tools layer -->
-          <g class="crp-layer crp-layer-tools">
-            <rect
-              x="0"
-              y="427"
-              width="431"
-              height="57"
-              fill="#4b5563"
-              stroke="#0a1a2f"
-              stroke-width="1"
-            />
-            <text
-              x="215"
-              y="446"
-              text-anchor="middle"
-              font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
-              font-size="12"
-              fill="#f9fafb"
-            >
-              <tspan x="215" dy="0" font-weight="bold">
-                Cybersecurity &amp; Compliance Tools
-              </tspan>
-              <tspan x="215" dy="1.3em">
-                SIEM · SOAR · EDR · NDR · Firewalls · Vulnerabilities · Compliance platforms
-              </tspan>
-            </text>
-          </g>
-
-          <!-- Thick step arrows -->
-          <g fill="#000000" stroke="#000000" stroke-width="1">
-            <!-- Between Tools and WCS -->
-            <path d="M 220.39 426.58 L 210.39 426.42 L 210.61 412.42 L 200.11 412.26 L 215.9 393.5 L 231.1 412.74 L 220.6 412.58 Z" />
-            <!-- Between WCS and Understanding -->
-            <path d="M 221.5 316.5 L 211.5 316.5 L 211.5 304.5 L 201 304.5 L 216.5 285.5 L 232 304.5 L 221.5 304.5 Z" />
-            <!-- Between Understanding and Action -->
-            <path d="M 221.49 223.44 L 211.49 223.56 L 211.36 211.56 L 200.86 211.67 L 216.14 192.5 L 231.86 211.32 L 221.36 211.44 Z" />
-            <!-- Between Action and Assurance -->
-            <path d="M 220.75 123.47 L 210.75 123.53 L 210.68 113.53 L 200.18 113.6 L 215.55 94.5 L 231.18 113.4 L 220.68 113.47 Z" />
-          </g>
-        </svg>
-
-        <!-- CTAs centered under the diagram -->
-        <div class="wt-hero-actions wt-hero-actions--center">
-          <a
-            class="button primary"
-            href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry"
-          >
-            Request Early Access
-          </a>
-          <a
-            class="button ghost"
-            href="https://github.com/enlight10solutions"
-            target="_blank"
-          >
-            Follow Development
-          </a>
         </div>
+
+        <div class="wt-hero-body">
+          <p class="lead">
+            Watchtower is an emerging <strong>Security Operations Platform</strong> built for government,
+            defense, and security-focused small businesses that need a clearer way to investigate, document,
+            and communicate what’s happening in their environment.
+          </p>
+
+          <p>
+            Instead of bouncing between tickets, dashboards, and chat threads, Watchtower gives analysts
+            one place to work — with AI assistance that helps them move faster, not lose control.
+          </p>
+        </div>
+      </div>
+
+      <div class="wt-hero-right">
+        <!-- CRP DIAGRAM + title + CTAs -->
+        <section id="crpSection" class="crp-section crp-visible">
+          <div class="crp-inner">
+            <h1 class="crp-title-heading">Watchtower</h1>
+            <p class="crp-tagline">
+              Transforms your existing security tools into organized understanding,
+              actionable response, and continuous assurance.
+            </p>
+
+            <!-- Inline SVG diagram -->
+            <svg
+              class="crp-diagram"
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              width="438"
+              height="485"
+              viewBox="0 0 438 485"
+              style="background: transparent; background-color: transparent;"
+            >
+              <!-- Outer rounded frame -->
+              <rect
+                x="1"
+                y="0"
+                width="435.5"
+                height="413"
+                rx="62"
+                ry="62"
+                fill="#ffffff"
+                stroke="#000000"
+                stroke-width="1.2"
+              />
+
+              <!-- Title -->
+              <text
+                x="219"
+                y="24"
+                text-anchor="middle"
+                font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                font-size="18"
+                fill="#000000"
+                font-weight="bold"
+              >
+                Cyber Reasoning Platform
+              </text>
+
+              <!-- Assurance layer -->
+              <g class="crp-layer crp-layer-assurance">
+                <rect
+                  x="28.75"
+                  y="41"
+                  width="373.25"
+                  height="53"
+                  fill="#2f6caa"
+                  stroke="#0a1a2f"
+                  stroke-width="1"
+                />
+                <text
+                  x="219"
+                  y="60"
+                  text-anchor="middle"
+                  font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                  font-size="12"
+                  fill="#f9fafb"
+                >
+                  <tspan x="219" dy="0" font-weight="bold">
+                    Assurance — Prove &amp; Improve
+                  </tspan>
+                  <tspan x="219" dy="1.3em">• Audit</tspan>
+                  <tspan x="219" dy="1.3em">
+                    • Compliance Suite
+                    <tspan font-style="italic" fill="#ff0"> future</tspan>
+                  </tspan>
+                </text>
+              </g>
+
+              <!-- Action layer -->
+              <g class="crp-layer crp-layer-action">
+                <rect
+                  x="29.5"
+                  y="124"
+                  width="372.5"
+                  height="68"
+                  fill="#285a8c"
+                  stroke="#0a1a2f"
+                  stroke-width="1"
+                />
+                <text
+                  x="219"
+                  y="145"
+                  text-anchor="middle"
+                  font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                  font-size="12"
+                  fill="#f9fafb"
+                >
+                  <tspan x="219" dy="0" font-weight="bold">
+                    Action — Respond &amp; Remediate
+                  </tspan>
+                  <tspan x="219" dy="1.3em">• Cases</tspan>
+                  <tspan x="219" dy="1.3em">• Deploy</tspan>
+                  <tspan x="219" dy="1.3em">
+                    • Remediation Suite
+                    <tspan font-style="italic" fill="#ff0"> future</tspan>
+                  </tspan>
+                </text>
+              </g>
+
+              <!-- Understanding layer -->
+              <g class="crp-layer crp-layer-understanding">
+                <rect
+                  x="30"
+                  y="224"
+                  width="373"
+                  height="61"
+                  fill="#204773"
+                  stroke="#0a1a2f"
+                  stroke-width="1"
+                />
+                <text
+                  x="219"
+                  y="244"
+                  text-anchor="middle"
+                  font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                  font-size="12"
+                  fill="#f9fafb"
+                >
+                  <tspan x="219" dy="0" font-weight="bold">
+                    Understanding — Investigate
+                  </tspan>
+                  <tspan x="219" dy="1.3em">• Atlas</tspan>
+                  <tspan x="219" dy="1.3em">
+                    • Investigation Suite
+                    <tspan font-style="italic" fill="#ff0"> future</tspan>
+                  </tspan>
+                </text>
+              </g>
+
+              <!-- WCS layer -->
+              <g class="crp-layer crp-layer-wcs">
+                <rect
+                  x="32.25"
+                  y="317"
+                  width="368.5"
+                  height="76"
+                  fill="#1e3a5f"
+                  stroke="#0a1a2f"
+                  stroke-width="1"
+                />
+                <text
+                  x="219"
+                  y="339"
+                  text-anchor="middle"
+                  font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                  font-size="12"
+                  fill="#f9fafb"
+                >
+                  <tspan x="219" dy="0" font-weight="bold">
+                    WCS — Organizes your security data
+                  </tspan>
+                  <tspan x="219" dy="1.3em">• Normalizes logs</tspan>
+                  <tspan x="219" dy="1.3em">• Correlates events</tspan>
+                  <tspan x="219" dy="1.3em">
+                    • Buckets activity (Seek, D&amp;A)
+                  </tspan>
+                </text>
+              </g>
+
+              <!-- Tools layer -->
+              <g class="crp-layer crp-layer-tools">
+                <rect
+                  x="0"
+                  y="427"
+                  width="431"
+                  height="57"
+                  fill="#4b5563"
+                  stroke="#0a1a2f"
+                  stroke-width="1"
+                />
+                <text
+                  x="215"
+                  y="446"
+                  text-anchor="middle"
+                  font-family="Helvetica, system-ui, -apple-system, BlinkMacSystemFont, sans-serif"
+                  font-size="12"
+                  fill="#f9fafb"
+                >
+                  <tspan x="215" dy="0" font-weight="bold">
+                    Cybersecurity &amp; Compliance Tools
+                  </tspan>
+                  <tspan x="215" dy="1.3em">
+                    SIEM · SOAR · EDR · NDR · Firewalls · Vulnerabilities · Compliance platforms
+                  </tspan>
+                </text>
+              </g>
+
+              <!-- Thick step arrows -->
+              <g fill="#000000" stroke="#000000" stroke-width="1">
+                <!-- Between Tools and WCS -->
+                <path d="M 220.39 426.58 L 210.39 426.42 L 210.61 412.42 L 200.11 412.26 L 215.9 393.5 L 231.1 412.74 L 220.6 412.58 Z" />
+                <!-- Between WCS and Understanding -->
+                <path d="M 221.5 316.5 L 211.5 316.5 L 211.5 304.5 L 201 304.5 L 216.5 285.5 L 232 304.5 L 221.5 304.5 Z" />
+                <!-- Between Understanding and Action -->
+                <path d="M 221.49 223.44 L 211.49 223.56 L 211.36 211.56 L 200.86 211.67 L 216.14 192.5 L 231.86 211.32 L 221.36 211.44 Z" />
+                <!-- Between Action and Assurance -->
+                <path d="M 220.75 123.47 L 210.75 123.53 L 210.68 113.53 L 200.18 113.6 L 215.55 94.5 L 231.18 113.4 L 220.68 113.47 Z" />
+              </g>
+            </svg>
+
+            <!-- CTAs centered under the diagram -->
+            <div class="wt-hero-actions wt-hero-actions--center">
+              <a
+                class="button primary"
+                href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry"
+              >
+                Request Early Access
+              </a>
+              <a
+                class="button ghost"
+                href="https://github.com/enlight10solutions"
+                target="_blank"
+              >
+                Follow Development
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
