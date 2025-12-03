@@ -386,6 +386,74 @@ body.menu-open { overflow:hidden; }
   opacity: 0.6;
 }
 
+/* Base state: hidden & slightly lowered */
+.crp-layer {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* When the section is visible, animate each layer in */
+.crp-section.crp-visible .crp-layer {
+  animation: crpLayerIn 0.6s ease-out forwards;
+}
+
+/* Staggered delays for each step */
+.crp-section.crp-visible .crp-layer-tools {
+  /* chaos jiggle + fade in */
+  animation:
+    crpToolsJiggle 0.6s ease-out 0s 1,
+    crpLayerIn 0.6s ease-out 0s 1 forwards;
+}
+
+.crp-section.crp-visible .crp-layer-wcs {
+  animation-delay: 0.4s;
+}
+
+.crp-section.crp-visible .crp-layer-understanding {
+  animation-delay: 0.8s;
+}
+
+.crp-section.crp-visible .crp-layer-action {
+  animation-delay: 1.2s;
+}
+
+.crp-section.crp-visible .crp-layer-assurance {
+  animation-delay: 1.6s;
+}
+
+/* Optional subtle glow for the title */
+.crp-section.crp-visible .crp-title {
+  animation: crpTitleGlow 1.4s ease-out 2s 1 forwards;
+}
+
+/* Keyframes */
+@keyframes crpLayerIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bottom “chaos jiggle” */
+@keyframes crpToolsJiggle {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-4px); }
+  40%  { transform: translateX(4px); }
+  60%  { transform: translateX(-2px); }
+  80%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Soft glow for title group if you want it */
+@keyframes crpTitleGlow {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 /* =========================
    LIGHT CONTENT
    ========================= */
