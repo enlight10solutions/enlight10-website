@@ -116,4 +116,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  /* ---------------- CRP diagram scroll animation ---------------- */
+  var crpSection = document.getElementById("crpSection");
+  if (crpSection && "IntersectionObserver" in window) {
+    var crpObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            crpSection.classList.add("crp-visible");
+            crpObserver.disconnect(); // run once
+          }
+        });
+      },
+      {
+        threshold: 0.35, // ~35% of the section in view
+      }
+    );
+
+    crpObserver.observe(crpSection);
+  } else if (crpSection) {
+    // Fallback: just show animation on load
+    crpSection.classList.add("crp-visible");
+  }
 });
