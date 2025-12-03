@@ -19,33 +19,17 @@
     .wt-hero {
       max-width: 1100px;
       margin: 0 auto;
-      padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem);
+      padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem) 1.25rem;
       border-bottom: 1px solid #eef2f7;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-    }
-
-    .wt-hero-left,
-    .wt-hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .wt-hero-left {
-      align-items: flex-start;
-    }
-
-    .wt-hero-right {
-      align-items: center;
-      text-align: center;
+      gap: 1.5rem;
     }
 
     .wt-hero-logo {
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
     }
 
     .wt-hero-logo img {
@@ -56,33 +40,30 @@
       border-radius: 18px;
     }
 
-    .hero-title {
-      margin-top: 0;
-      margin-bottom: 0.25rem;
+    .wt-hero-body {
+      text-align: left;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
-    .hero-caption {
-      margin: 0;
-      font-size: 0.98rem;
-      color: #4b5563;
-      max-width: 36rem;
+    .wt-hero-body p {
+      margin-top: 0.75rem;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-crp {
-      margin-top: 1.25rem;
-      margin-bottom: 0.5rem;
-      max-width: 380px;
-    }
-
-    .wt-hero-left .lead {
-      margin-top: 0.5rem;
+    .wt-hero-body .lead {
+      margin-top: 0.75rem;
     }
 
     .wt-hero-actions {
-      margin-top: 0.5rem;
+      margin-top: 1.2rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
+    }
+
+    .wt-hero-actions--center {
+      justify-content: center;
     }
 
     @media (min-width: 900px) {
@@ -91,16 +72,43 @@
         align-items: flex-start;
       }
 
-      .wt-hero-left {
-        flex: 0 0 340px;
+      .wt-hero-logo {
+        flex: 0 0 320px;
       }
 
-      .wt-hero-right {
+      .wt-hero-body {
         flex: 1;
+        padding-left: 2.25rem;
+        margin: 0;
       }
     }
 
-    /* CRP diagram base styling */
+    /* CRP diagram layout */
+    .crp-section {
+      padding: 1.25rem 1rem 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .crp-inner {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .crp-title-heading {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+
+    .crp-tagline {
+      margin: 0 0 1.2rem;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+
     .crp-diagram {
       max-width: 100%;
       height: auto;
@@ -108,61 +116,57 @@
       margin: 0 auto;
     }
 
-    /* Hide the top draw.io title + tagline (now replaced by hero title/caption) */
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-12"],
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-13"] {
-      display: none;
+    /* Base state for layered animation */
+    .crp-layer {
+      opacity: 0;
+      transform: translateY(8px);
     }
 
-    /* Step-in animation for layers */
-    @keyframes crpStepIn {
-      0% {
+    /* Sequential, looping step animation: bottom → top */
+    .crp-section.crp-visible .crp-layer-tools {
+      animation: crpStep 8s ease-in-out infinite;
+    }
+    .crp-section.crp-visible .crp-layer-wcs {
+      animation: crpStep 8s ease-in-out infinite;
+      animation-delay: 0.8s;
+    }
+    .crp-section.crp-visible .crp-layer-understanding {
+      animation: crpStep 8s ease-in-out infinite;
+      animation-delay: 1.6s;
+    }
+    .crp-section.crp-visible .crp-layer-action {
+      animation: crpStep 8s ease-in-out infinite;
+      animation-delay: 2.4s;
+    }
+    .crp-section.crp-visible .crp-layer-assurance {
+      animation: crpStep 8s ease-in-out infinite;
+      animation-delay: 3.2s;
+    }
+
+    @keyframes crpStep {
+      0%, 10% {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(8px);
       }
-      100% {
+      18%, 55% {
         opacity: 1;
         transform: translateY(0);
       }
+      65%, 100% {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
     }
 
-    /* Base red box */
-    .crp-diagram [data-cell-id="7rgcwmNYHRSgSkCT9KJq-1"] {
+    /* Extra: smooth fade/slide-in for the entire SVG on first view (optional) */
+    .crp-diagram {
       opacity: 0;
-      animation: crpStepIn 0.7s ease-out 0.2s forwards;
+      transform: translateY(12px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
-    /* WCS box */
-    .crp-diagram [data-cell-id="7rgcwmNYHRSgSkCT9KJq-2"] {
-      opacity: 0;
-      animation: crpStepIn 0.7s ease-out 0.55s forwards;
-    }
-
-    /* Understanding box */
-    .crp-diagram [data-cell-id="7rgcwmNYHRSgSkCT9KJq-3"] {
-      opacity: 0;
-      animation: crpStepIn 0.7s ease-out 0.9s forwards;
-    }
-
-    /* Action box */
-    .crp-diagram [data-cell-id="7rgcwmNYHRSgSkCT9KJq-4"] {
-      opacity: 0;
-      animation: crpStepIn 0.7s ease-out 1.25s forwards;
-    }
-
-    /* Assurance box */
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-8"] {
-      opacity: 0;
-      animation: crpStepIn 0.7s ease-out 1.6s forwards;
-    }
-
-    /* Connectors/arrows */
-    .crp-diagram [data-cell-id="7rgcwmNYHRSgSkCT9KJq-5"],
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-2"],
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-3"],
-    .crp-diagram [data-cell-id="ijbP3atgvFKqhFfognv6-10"] {
-      opacity: 0;
-      animation: crpStepIn 0.5s ease-out 0.75s forwards;
+    .crp-section.crp-visible .crp-diagram {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -213,17 +217,16 @@
 
   <main class="light" style="padding:80px 0 60px;">
 
-    <!-- HERO: Logo + text left, title + caption + CRP diagram right -->
+    <!-- HERO: Logo left, descriptive copy under logo -->
     <section class="wt-hero">
-      <!-- LEFT: Logo + main body text + CTAs -->
-      <div class="wt-hero-left">
-        <div class="wt-hero-logo">
-          <img
-            src="./enLight10Watchtoer(tm).png"
-            alt="Watchtower by enLight10 Solutions"
-          />
-        </div>
+      <div class="wt-hero-logo">
+        <img
+          src="./enLight10Watchtoer(tm).png"
+          alt="Watchtower by enLight10 Solutions"
+        />
+      </div>
 
+      <div class="wt-hero-body">
         <p class="lead">
           Watchtower is an emerging <strong>Security Operations Platform</strong> built for government,
           defense, and security-focused small businesses that need a clearer way to investigate, document,
@@ -234,8 +237,413 @@
           Instead of bouncing between tickets, dashboards, and chat threads, Watchtower gives analysts
           one place to work — with AI assistance that helps them move faster, not lose control.
         </p>
+      </div>
+    </section>
 
-        <div class="wt-hero-actions">
+    <!-- CRP DIAGRAM + title + CTAs -->
+    <section id="crpSection" class="crp-section">
+      <div class="crp-inner">
+        <h1 class="crp-title-heading">Watchtower</h1>
+        <p class="crp-tagline">
+          Transforms your existing security tools into organized understanding,
+          actionable response, and continuous assurance.
+        </p>
+
+        <!-- Inline SVG with softened colors + layer classes -->
+        <svg
+          class="crp-diagram"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="437px"
+          height="491px"
+          viewBox="0 0 437 491"
+          style="background: transparent; background-color: transparent;"
+        >
+          <defs></defs>
+          <g>
+            <g data-cell-id="0">
+              <g data-cell-id="1">
+
+                <!-- Rounded outer frame -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-11">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="0"
+                      y="46"
+                      width="435.5"
+                      height="377"
+                      rx="56.55"
+                      ry="56.55"
+                      fill="none"
+                      stroke="#0f172a"
+                      pointer-events="all"
+                    />
+                  </g>
+                </g>
+
+                <!-- Arrow between tools and WCS -->
+                <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-5">
+                  <g transform="translate(0.5,0.5)">
+                    <path
+                      d="M 214 436 L 214 416 L 214 424 L 214 410.37"
+                      fill="none"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="stroke"
+                    />
+                    <path
+                      d="M 214 405.12 L 217.5 412.12 L 214 410.37 L 210.5 412.12 Z"
+                      fill="#0f172a"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="all"
+                    />
+                  </g>
+                </g>
+
+                <!-- Bottom: tools (muted maroon) -->
+                <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-1" class="crp-layer crp-layer-tools">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="0"
+                      y="436"
+                      width="428"
+                      height="54"
+                      fill="#4b1f2f"
+                      stroke="#fda4af"
+                      pointer-events="all"
+                    />
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 426px; height: 1px; padding-top: 463px; margin-left: 1px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #ffffff;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#f9fafb; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
+                                <b>Cybersecurity &amp; Compliance Tools</b><br />
+                                SIEM · SOAR · EDR · NDR · Firewalls   · Vulnerabilities · Compliance platforms
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="214" y="467" fill="#f9fafb" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Cybersecurity &amp; Compliance Tools
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Arrow between WCS and Understanding -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-2">
+                  <g transform="translate(0.5,0.5)">
+                    <path
+                      d="M 214 335 L 214 315 L 213.79 312.35"
+                      fill="none"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="stroke"
+                    />
+                    <path
+                      d="M 213.39 307.11 L 217.42 313.82 L 213.79 312.35 L 210.44 314.36 Z"
+                      fill="#0f172a"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="all"
+                    />
+                  </g>
+                </g>
+
+                <!-- WCS layer (dark green) -->
+                <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-2" class="crp-layer crp-layer-wcs">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="30.5"
+                      y="335"
+                      width="367"
+                      height="69"
+                      fill="#102a1c"
+                      stroke="#4ade80"
+                      pointer-events="all"
+                    />
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 365px; height: 1px; padding-top: 370px; margin-left: 32px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#f9fafb;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#f9fafb; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
+                                <b> WCS — Organizes your security data</b>
+                                <div>• Normalizes logs</div>
+                                <div>• Correlates events</div>
+                                <div>• Buckets activity (Seek, D&amp;A)</div>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="214" y="373" fill="#f9fafb" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          WCS — Organizes your security data
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Arrow between Understanding and Action -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-3">
+                  <g transform="translate(0.5,0.5)">
+                    <path
+                      d="M 213.25 254 L 213.25 220.37"
+                      fill="none"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="stroke"
+                    />
+                    <path
+                      d="M 213.25 215.12 L 216.75 222.12 L 213.25 220.37 L 209.75 222.12 Z"
+                      fill="#0f172a"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="all"
+                    />
+                  </g>
+                </g>
+
+                <!-- Understanding layer -->
+                <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-3" class="crp-layer crp-layer-understanding">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="29"
+                      y="254"
+                      width="368.5"
+                      height="52"
+                      fill="#0f2f24"
+                      stroke="#34d399"
+                      pointer-events="all"
+                    />
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 367px; height: 1px; padding-top: 280px; margin-left: 30px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#f9fafb;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#f9fafb; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
+                                <b>Understanding — Investigate</b>
+                                <div>• Atlas</div>
+                                <div>• Investigation Suite <i style="color:#cbd5f5;">future</i></div>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="213" y="284" fill="#f9fafb" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Understanding — Investigate
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Arrow between Action and Assurance -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-10">
+                  <g transform="translate(0.5,0.5)">
+                    <path
+                      d="M 213.3 159 L 213.3 139 L 212 139 L 212 140.37"
+                      fill="none"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="stroke"
+                    />
+                    <path
+                      d="M 212 135.12 L 215.5 142.12 L 212 140.37 L 208.5 142.12 Z"
+                      fill="#0f172a"
+                      stroke="#0f172a"
+                      stroke-miterlimit="10"
+                      pointer-events="all"
+                    />
+                  </g>
+                </g>
+
+                <!-- Action layer -->
+                <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-4" class="crp-layer crp-layer-action">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="28.5"
+                      y="159"
+                      width="369.5"
+                      height="55"
+                      fill="#0d3a2d"
+                      stroke="#22c55e"
+                      pointer-events="all"
+                    />
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 368px; height: 1px; padding-top: 187px; margin-left: 30px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#f9fafb;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#f9fafb; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
+                                <b>Action — Respond &amp; Remediate</b>
+                                <div>• Cases</div>
+                                <div>• Deploy</div>
+                                <div>• Remediation Suite <i style="color:#cbd5f5;">future</i></div>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="213" y="190" fill="#f9fafb" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Action — Respond &amp; Remediate
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Assurance layer -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-8" class="crp-layer crp-layer-assurance">
+                  <g transform="translate(0.5,0.5)">
+                    <rect
+                      x="26.5"
+                      y="89"
+                      width="371"
+                      height="45"
+                      fill="#0b4331"
+                      stroke="#22c55e"
+                      pointer-events="all"
+                    />
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 369px; height: 1px; padding-top: 112px; margin-left: 28px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#f9fafb;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#f9fafb; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
+                                <b>Assurance — Prove &amp; Improve</b>
+                                <div>• Audit</div>
+                                <div>• Compliance Suite <i style="color:#cbd5f5;">future</i></div>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="212" y="115" fill="#f9fafb" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Assurance — Prove &amp; Improve
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Title inside frame (kept for redundancy, but no animation) -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-12">
+                  <g transform="translate(0.5,0.5)">
+                    <rect x="17" y="51" width="384" height="30" fill="none" stroke="none" pointer-events="all"/>
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 382px; height: 1px; padding-top: 66px; margin-left: 18px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#0f172a;">
+                              <div style="display: inline-block; font-size: 18px; font-family: Helvetica; color:#0f172a; line-height: 1.2; pointer-events: all;">
+                                <b>Watchtower - Cyber Reasoning Platform</b>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="209" y="70" fill="#0f172a" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Watchtower - Cyber Reasoning Platform
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Tagline inside frame (you can delete if feels redundant) -->
+                <g data-cell-id="ijbP3atgvFKqhFfognv6-13">
+                  <g transform="translate(0.5,0.5)">
+                    <rect x="24" y="0" width="370" height="46" fill="none" stroke="none" pointer-events="all"/>
+                  </g>
+                  <g>
+                    <g>
+                      <switch>
+                        <foreignObject
+                          style="overflow: visible; text-align: left;"
+                          pointer-events="none"
+                          width="100%"
+                          height="100%"
+                          requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+                        >
+                          <div xmlns="http://www.w3.org/1999/xhtml"
+                               style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 368px; height: 1px; padding-top: 23px; margin-left: 25px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color:#111827;">
+                              <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color:#111827; line-height: 1.2; pointer-events: all;">
+                                <i>Transforms your existing security tools into organized understanding, actionable response, and continuous assurance.</i>
+                              </div>
+                            </div>
+                          </div>
+                        </foreignObject>
+                        <text x="209" y="27" fill="#111827" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                          Transforms your existing security tools...
+                        </text>
+                      </switch>
+                    </g>
+                  </g>
+                </g>
+
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <!-- CTAs centered under the diagram -->
+        <div class="wt-hero-actions wt-hero-actions--center">
           <a
             class="button primary"
             href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry"
@@ -249,202 +657,6 @@
           >
             Follow Development
           </a>
-        </div>
-      </div>
-
-      <!-- RIGHT: Title + caption + animated CRP stack -->
-      <div class="wt-hero-right">
-        <h1 class="hero-title">Watchtower</h1>
-        <p class="hero-caption">
-          Transforms your existing security tools into organized understanding,
-          actionable response, and continuous assurance.
-        </p>
-
-        <div class="hero-crp">
-          <!-- INLINE CRP DIAGRAM (viewBox cropped to remove top whitespace) -->
-          <svg class="crp-diagram" xmlns="http://www.w3.org/2000/svg"
-               xmlns:xlink="http://www.w3.org/1999/xlink"
-               version="1.1"
-               width="437px"
-               height="431px"
-               viewBox="0 60 437 431"
-               style="background: transparent; background-color: transparent; color-scheme: light dark;">
-            <defs/>
-            <g>
-              <g data-cell-id="0">
-                <g data-cell-id="1">
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-11">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="0" y="46" width="435.5" height="377" rx="56.55" ry="56.55" fill="none" stroke="#000000" pointer-events="all" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-5">
-                    <g transform="translate(0.5,0.5)">
-                      <path d="M 214 436 L 214 416 L 214 424 L 214 410.37" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                      <path d="M 214 405.12 L 217.5 412.12 L 214 410.37 L 210.5 412.12 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-1">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="0" y="436" width="428" height="54" fill="#f8cecc" stroke="#b85450" pointer-events="all" style="fill: light-dark(rgb(248, 206, 204), rgb(81, 45, 43)); stroke: light-dark(rgb(184, 84, 80), rgb(215, 129, 126));"/>
-                    </g>
-                    <g>
-                      <g>
-                        <switch>
-                          <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 426px; height: 1px; padding-top: 463px; margin-left: 1px;">
-                              <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000;">
-                                <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
-                                  <b>Cybersecurity &amp; Compliance Tools</b><br />
-                                  SIEM · SOAR · EDR · NDR · Firewalls  · Vulnerabilities · Compliance platforms
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          <text x="214" y="467" fill="light-dark(#000000, #ffffff)" font-family="Helvetica" font-size="12px" text-anchor="middle">Cybersecurity &amp; Compliance Tools...</text>
-                        </switch>
-                      </g>
-                    </g>
-                  </g>
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-2">
-                    <g transform="translate(0.5,0.5)">
-                      <path d="M 214 335 L 214 315 L 213.79 312.35" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                      <path d="M 213.39 307.11 L 217.42 313.82 L 213.79 312.35 L 210.44 314.36 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-2">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="30.5" y="335" width="367" height="69" fill="#d5e8d4" stroke="#82b366" pointer-events="all" style="fill: light-dark(rgb(213, 232, 212), rgb(31, 47, 30)); stroke: light-dark(rgb(130, 179, 102), rgb(68, 110, 44));"/>
-                    </g>
-                    <g>
-                      <g>
-                        <switch>
-                          <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 365px; height: 1px; padding-top: 370px; margin-left: 32px;">
-                              <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000;">
-                                <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
-                                  <b> WCS — Organizes your security data</b>
-                                  <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Normalizes logs</span></div>
-                                  <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Correlates events</span></div>
-                                  <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Buckets activity (Seek, D&amp;A)</span></div>
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          <text x="214" y="373" fill="light-dark(#000000, #ffffff)" font-family="Helvetica" font-size="12px" text-anchor="middle">WCS — Organizes your security data...</text>
-                        </switch>
-                      </g>
-                    </g>
-                  </g>
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-3">
-                    <g transform="translate(0.5,0.5)">
-                      <path d="M 213.25 254 L 213.25 220.37" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                      <path d="M 213.25 215.12 L 216.75 222.12 L 213.25 220.37 L 209.75 222.12 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-3">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="29" y="254" width="368.5" height="52" fill="#d5e8d4" stroke="#82b366" pointer-events="all" style="fill: light-dark(rgb(213, 232, 212), rgb(31, 47, 30)); stroke: light-dark(rgb(130, 179, 102), rgb(68, 110, 44));"/>
-                    </g>
-                    <g>
-                      <g>
-                        <switch>
-                          <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 367px; height: 1px; padding-top: 280px; margin-left: 30px;">
-                              <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000;">
-                                <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
-                                  <b>Understanding — Investigate</b>
-                                  <div>
-                                    <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Atlas</span></div>
-                                    <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Investigation Suite </span><i style="background-color: transparent; text-align: left;"><font style="color: light-dark(rgb(128, 128, 128), rgb(255, 255, 255));">future</font></i><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"><br /></span></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          <text x="213" y="284" fill="light-dark(#000000, #ffffff)" font-family="Helvetica" font-size="12px" text-anchor="middle">Understanding — Investigate...</text>
-                        </switch>
-                      </g>
-                    </g>
-                  </g>
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-10">
-                    <g transform="translate(0.5,0.5)">
-                      <path d="M 213.3 159 L 213.3 139 L 212 139 L 212 140.37" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke" style="stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                      <path d="M 212 135.12 L 215.5 142.12 L 212 140.37 L 208.5 142.12 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all" style="fill: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="7rgcwmNYHRSgSkCT9KJq-4">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="28.5" y="159" width="369.5" height="55" fill="#d5e8d4" stroke="#82b366" pointer-events="all" style="fill: light-dark(rgb(213, 232, 212), rgb(31, 47, 30)); stroke: light-dark(rgb(130, 179, 102), rgb(68, 110, 44));"/>
-                    </g>
-                    <g>
-                      <g>
-                        <switch>
-                          <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 368px; height: 1px; padding-top: 187px; margin-left: 30px;">
-                              <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000;">
-                                <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
-                                  <div><b>Action — Respond &amp; Remediate</b></div>
-                                  <div>
-                                    <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Cases</span></div>
-                                    <div><span style="text-align: left; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">• Deploy<br /></span><span style="text-align: left;">• Remediation Suite <i><font style="color: light-dark(rgb(128, 128, 128), rgb(127, 127, 127));">future</font></i></span></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          <text x="213" y="190" fill="light-dark(#000000, #ffffff)" font-family="Helvetica" font-size="12px" text-anchor="middle">Action — Respond &amp; Remediate...</text>
-                        </switch>
-                      </g>
-                    </g>
-                  </g>
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-8">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="26.5" y="89" width="371" height="45" fill="#d5e8d4" stroke="#82b366" pointer-events="all" style="fill: light-dark(rgb(213, 232, 212), rgb(31, 47, 30)); stroke: light-dark(rgb(130, 179, 102), rgb(68, 110, 44));"/>
-                    </g>
-                    <g>
-                      <g>
-                        <switch>
-                          <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
-                            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 369px; height: 1px; padding-top: 112px; margin-left: 28px;">
-                              <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000;">
-                                <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal;">
-                                  <div><b>Assurance — Prove &amp; Improve</b></div>
-                                  <div><span style="background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: left;">• Audit</span></div>
-                                  <div>
-                                    <div>
-                                      <span style="text-align: left; background-color: transparent;">
-                                        <font style="color: light-dark(rgb(128, 128, 128), rgb(255, 255, 255));">• </font>
-                                        <font style="color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));">Compliance Suite</font>
-                                        <font style="color: light-dark(rgb(128, 128, 128), rgb(255, 255, 255));"> </font>
-                                        <i><font style="color: light-dark(rgb(128, 128, 128), rgb(255, 255, 255));">future</font></i>
-                                      </span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </foreignObject>
-                          <text x="212" y="115" fill="light-dark(#000000, #ffffff)" font-family="Helvetica" font-size="12px" text-anchor="middle">Assurance — Prove &amp; Improve...</text>
-                        </switch>
-                      </g>
-                    </g>
-                  </g>
-                  <!-- Top draw.io title + tagline groups (kept but hidden via CSS) -->
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-12">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="17" y="51" width="384" height="30" fill="none" stroke="none" pointer-events="all"/>
-                    </g>
-                  </g>
-                  <g data-cell-id="ijbP3atgvFKqhFfognv6-13">
-                    <g transform="translate(0.5,0.5)">
-                      <rect x="24" y="0" width="370" height="46" fill="none" stroke="none" pointer-events="all"/>
-                    </g>
-                  </g>
-                </g>
-              </g>
-            </g>
-          </svg>
         </div>
       </div>
     </section>
@@ -470,7 +682,7 @@
         <article class="feature">
           <h3>Operational Workflow Support</h3>
           <p>
-            Built for shift work, handoffs, escalation paths, and government-style reporting formats —
+            Built for shift work, handoffs, escalation paths, and government-style reporting formats — 
             but simple enough for small security teams to adopt.
           </p>
         </article>
