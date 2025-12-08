@@ -60,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     video.addEventListener("loadedmetadata", function () {
-      video.playbackRate = 1.5; // default 1.5x
-      setActiveSpeed(1.5);
+      video.playbackRate = 1; // default 1x
+      setActiveSpeed(1);
     });
 
     speedButtons.forEach(function (btn) {
