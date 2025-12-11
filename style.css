@@ -36,10 +36,11 @@ body {
   /* Hard, logo-centric gradient */
   background: linear-gradient(
     to right,
-    #FFD447 0%,    /* gold under the logo */
+    #0d1117 0%,    /* gold under the logo */
+    #1e2a44 2%,   /* quick transition band */
     #FFD447 5%,   /* keep solid gold for a bit */
-    #1e2a44 12%,   /* quick transition band */
-    #0d1117 18%,   /* into deep navy */
+    #1e2a44 8%,   /* quick transition band */
+    #0d1117 12%,   /* into deep navy */
     #0d1117 100%   /* solid navy across the rest */
   );
 
