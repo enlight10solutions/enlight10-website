@@ -671,6 +671,13 @@ footer a:focus {
   margin-top: -40px; /* adjust until visually perfect */
 }
 
+.hero-logo-large {
+  width: 100%;
+  max-width: 420px;   /* adjust this number to taste */
+  height: auto;
+  margin-top: -20px;  /* subtle lift */
+}
+
 .hero-right {
   flex: 0 0 54%;
 }
