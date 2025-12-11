@@ -34,8 +34,8 @@ body {
   padding:0 16px;
   background:#ffffff;                     /* WHITE NAV BAR */
   color:var(--ink);
-  border-bottom:1px solid rgba(15,23,42,.08);
-  box-shadow:0 2px 8px rgba(15,23,42,.08);
+  border-bottom: 4px solid var(--gold);   /* GOLD BRAND STRIPE */
+box-shadow:none;                        /* optional: removes shadow if you want a cleaner look */
   z-index:1000;
 }
 .topbar .brand {
