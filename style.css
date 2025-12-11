@@ -770,3 +770,9 @@ footer a:focus {
     max-width: 360px;
   }
 }
+
+.topbar .brand-logo--slim {
+  height: 62px !important;   /* or 80px if you want big */
+  width: auto !important;
+}
+
