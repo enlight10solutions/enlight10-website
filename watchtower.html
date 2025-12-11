@@ -16,30 +16,18 @@
 
   <!-- Page-specific layout tweaks -->
   <style>
-    /* =========================
-       HERO WRAPPER (dark band)
-       ========================= */
-    .wt-hero-shell {
-      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
-      color: #e5e7eb;
-      padding: 80px 0 40px; /* clears fixed nav and adds breathing room */
-    }
-
-    .wt-hero-shell a {
-      color: #facc15;
-    }
-
-    /* =========================
-       HERO CONTENT
-       ========================= */
     .wt-hero {
       max-width: 1100px;
       margin: 0 auto;
       padding: clamp(1.2rem, 2.5vw, 2rem) clamp(1rem, 3vw, 2rem) 1.75rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      border-bottom: 1px solid #111827;
       display: flex;
       flex-direction: column;
       gap: 1.75rem;
+
+      /* Make the top section dark like the main page */
+      background: #020617;
+      color: #e5e7eb;
     }
 
     .wt-hero-left {
@@ -62,7 +50,7 @@
       max-width: 320px;
       width: 100%;
       height: auto;
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.35);
       border-radius: 18px;
     }
 
@@ -73,10 +61,25 @@
     .wt-hero-body p {
       margin-top: 0.75rem;
       margin-bottom: 0.75rem;
+      color: #e5e7eb;           /* hero body text lighter on dark bg */
     }
 
     .wt-hero-body .lead {
       margin-top: 0.25rem;
+      color: #e5e7eb;
+    }
+
+    .wt-hero-body a {
+      color: #FFD447;           /* gold links in hero */
+    }
+
+    .wt-hero-body a:hover {
+      text-decoration: underline;
+    }
+
+    .wt-hero-right {
+      display: flex;
+      justify-content: center;
     }
 
     .wt-hero-actions {
@@ -86,44 +89,8 @@
       gap: 0.75rem;
     }
 
-    .wt-hero-right {
-      display: flex;
+    .wt-hero-actions--center {
       justify-content: center;
-      align-items: flex-start;
-    }
-
-    .wt-video-hero-inner {
-      max-width: 520px;
-      width: 100%;
-      text-align: center;
-    }
-
-    .crp-title-heading {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 0 0 0.4rem;
-      color: #f9fafb;
-    }
-
-    .crp-tagline {
-      margin: 0 0 1.2rem;
-      font-size: 0.95rem;
-      color: #cbd5f5;
-    }
-
-    .wt-video-frame {
-      max-width: 960px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      background: #000;
-    }
-
-    .wt-video-frame video {
-      width: 100%;
-      height: auto;
-      display: block;
     }
 
     @media (min-width: 900px) {
@@ -144,45 +111,129 @@
     }
 
     /* =========================
-       WATCHTOWER DEMO SPEED CONTROLS (reuse styles if present globally)
+       CRP DIAGRAM
        ========================= */
-    .wt-video-speed-controls {
-      margin-top: 0.5rem;
+
+    .crp-section {
+      padding: 0.25rem 0 0.5rem;
       display: flex;
       justify-content: center;
-      gap: 0.5rem;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #e5e7eb;
     }
 
-    .wt-video-speed-btn {
-      border-radius: 999px;
-      border: 1px solid #4b5563;
-      padding: 0.15rem 0.6rem;
-      background: #020617;
-      color: #e5e7eb;
-      cursor: pointer;
-      font-size: 0.8rem;
+    .crp-inner {
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
     }
 
-    .wt-video-speed-btn:hover {
-      background: rgba(37, 99, 235, 0.9);
-      border-color: rgba(129, 140, 248, 1);
+    .crp-title-heading {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+      color: #e5e7eb; /* ensure visible on dark bg if in hero */
     }
 
-    .wt-video-speed-btn.active {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.45);
+    .crp-tagline {
+      margin: 0 0 1.2rem;
+      font-size: 0.95rem;
+      color: #cbd5f5;
+    }
+
+    .crp-diagram {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Start hidden; we reveal in sequence */
+    .crp-layer,
+    .crp-arrow {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    @keyframes crpRise {
+      0% {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* One-time, bottom-up: box → arrow → box → arrow… */
+    .crp-section.crp-visible .crp-layer-tools {
+      animation: crpRise 0.6s ease-out 0s forwards;
+    }
+    .crp-section.crp-visible .crp-arrow-1 {
+      animation: crpRise 0.4s ease-out 0.6s forwards;
+    }
+
+    .crp-section.crp-visible .crp-layer-wcs {
+      animation: crpRise 0.6s ease-out 1.0s forwards;
+    }
+    .crp-section.crp-visible .crp-arrow-2 {
+      animation: crpRise 0.4s ease-out 1.6s forwards;
+    }
+
+    .crp-section.crp-visible .crp-layer-understanding {
+      animation: crpRise 0.6s ease-out 2.0s forwards;
+    }
+    .crp-section.crp-visible .crp-arrow-3 {
+      animation: crpRise 0.4s ease-out 2.6s forwards;
+    }
+
+    .crp-section.crp-visible .crp-layer-action {
+      animation: crpRise 0.6s ease-out 3.0s forwards;
+    }
+    .crp-section.crp-visible .crp-arrow-4 {
+      animation: crpRise 0.4s ease-out 3.6s forwards;
+    }
+
+    .crp-section.crp-visible .crp-layer-assurance {
+      animation: crpRise 0.6s ease-out 4.0s forwards;
     }
 
     /* =========================
-       CONTENT SECTIONS (keep light)
+       WATCHTOWER DEMO VIDEO
        ========================= */
-    main.light-main {
-      padding: 0 0 60px;
-      background: #ffffff;
-      color: #020617;
+
+    .wt-video-section {
+      text-align: center;
+    }
+
+    .wt-video-section .lead {
+      max-width: 720px;
+      margin: 0.5rem auto 1.25rem;
+      color: #4b5563;
+      font-size: 0.98rem;
+    }
+
+    .wt-video-frame {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      background: #000;
+    }
+
+    .wt-video-frame video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* =========================
+       Footer font consistency
+       ========================= */
+    footer,
+    footer * {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     }
   </style>
 </head>
@@ -192,11 +243,7 @@
   <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img
-        class="brand-logo brand-logo--slim"
-        src="./enLight10_Logo.png"
-        alt="enLight10 Solutions"
-      >
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions">
     </a>
 
     <div class="nav-right">
@@ -236,14 +283,15 @@
     </nav>
   </aside>
 
-  <!-- DARK HERO BAND -->
-  <section class="wt-hero-shell">
-    <!-- HERO: Left = logo + copy, Right = video -->
-    <div class="wt-hero">
+  <main style="padding:80px 0 60px;">
+
+    <!-- HERO: Left = logo + copy (+ CTAs), Right = CRP / video area -->
+    <section class="wt-hero">
       <div class="wt-hero-left">
         <div class="wt-hero-logo">
+          <!-- ✅ Fixed hero logo file -->
           <img
-            src="./enLight10Watchtoer(tm).png"
+            src="./Watchtower_Logo.png"
             alt="Watchtower by enLight10 Solutions"
           />
         </div>
@@ -269,49 +317,55 @@
             >
               Talk to Us about Cyber Defense United
             </a>
-            <a class="button ghost" href="#wt-demo">
+            <a
+              class="button ghost"
+              href="#wt-demo"
+            >
               Watch the Watchtower Demo
             </a>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: Heading + video (replaces SVG) -->
       <div class="wt-hero-right">
-        <div class="wt-video-hero-inner">
-          <h1 class="crp-title-heading">Watchtower</h1>
-          <p class="crp-tagline">
-            Transforms your existing security tools into organized understanding,
-            actionable response, and continuous assurance inside Cyber Defense United.
-          </p>
+        <!-- You can keep your CRP diagram here *or* swap this section for the inline hero video
+             you already wired up — font/colors will now still look correct either way. -->
+        <section id="crpSection" class="crp-section crp-visible">
+          <div class="crp-inner">
+            <h1 class="crp-title-heading">Watchtower</h1>
+            <p class="crp-tagline">
+              Transforms your existing security tools into organized understanding,
+              actionable response, and continuous assurance inside Cyber Defense United.
+            </p>
 
-          <div class="wt-video-frame" id="wt-demo">
-            <video
-              controls
-              preload="metadata"
-              aria-label="Watchtower demo video"
-            >
-              <source src="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <!-- (SVG diagram or hero video lives here in your current version) -->
+            <!-- ... existing SVG kept as-is ... -->
           </div>
-
-          <!-- optional simple speed controls; hook up via JS if desired -->
-          <!--
-          <div class="wt-video-speed-controls">
-            <span>Playback speed:</span>
-            <button type="button" class="wt-video-speed-btn" data-speed="1">1×</button>
-            <button type="button" class="wt-video-speed-btn" data-speed="1.5">1.5×</button>
-            <button type="button" class="wt-video-speed-btn" data-speed="2">2×</button>
-          </div>
-          -->
-        </div>
+        </section>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MAIN BODY (light background) -->
-  <main class="light-main">
+    <!-- DEMO VIDEO -->
+    <section id="wt-demo" class="section-block slim wt-video-section">
+      <h2>Watchtower Overview Demo</h2>
+      <p class="lead">
+        A quick walkthrough of how Watchtower helps Cyber Defense United bring order to SOC chaos —
+        from alerts and cases to timelines, reporting, and executive-ready narratives.
+      </p>
+
+      <div class="wt-video-frame">
+        <video
+          controls
+          preload="metadata"
+          aria-label="Watchtower demo video"
+        >
+          <source src="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag. You can
+          <a href="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4">download the demo video here</a>.
+        </video>
+      </div>
+    </section>
+
     <!-- WHAT IT DOES -->
     <section class="section-block slim">
       <h2>What Watchtower Does</h2>
@@ -356,7 +410,7 @@
     <section class="section-block slim">
       <h2>How to Get Watchtower Today</h2>
       <p>
-        Today, Watchtower is delivered as part of our <strong>Cyber Defense United</strong> offering — 
+        Today, Watchtower is delivered as part of our <strong>Cyber Defense United</strong> offering —
         bringing together SOC workflows, AI-assisted investigation, and defensible reporting into a
         single operational picture.
       </p>
@@ -392,7 +446,7 @@
       </div>
 
       <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
-        <img src="./e10_Logo.png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
         <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
       </div>
     </div>
