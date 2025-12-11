@@ -41,8 +41,8 @@ body {
     #0d1117 0%,   /* deep navy at very edge */
     #1e2a44 1%,   /* quick transition band */
     #FFD447 6%,   /* strong gold around logo */
-    #1e2a44 9%,  /* transition back */
-    #0d1117 10%,  /* into deep navy */
+    #1e2a44 10%,  /* transition back */
+    #0d1117 11%,  /* into deep navy */
     #0d1117 100%  /* solid navy across the rest */
   );
 }
