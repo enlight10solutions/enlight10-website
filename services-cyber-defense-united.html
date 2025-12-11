@@ -1,0 +1,324 @@
+<!-- services-cyber-defense-united.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Cyber Defense United — enLight10 Watchtower Services</title>
+  <meta
+    name="description"
+    content="Cyber Defense United is enLight10’s flagship SOC modernization and cyber operations engagement, powered by the Watchtower Cyber Reasoning Platform."
+  />
+
+  <!-- Shared site styles / JS -->
+  <link rel="stylesheet" href="./style.css?v=25" />
+  <script src="./script.js" defer></script>
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <!-- Page-specific layout -->
+  <style>
+    body {
+      margin: 0;
+      background: #f9fafb;
+      color: #020617;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* Top hero strip: same dark vibe as main page */
+    .cdu-hero {
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      color: #ffffff;
+      padding: 90px 0 70px; /* clears fixed nav + adds breathing room */
+    }
+
+    .cdu-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .cdu-hero-left {
+      flex: 0 0 360px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .cdu-hero-left img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .cdu-hero-right {
+      flex: 1 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cdu-hero-right h1 {
+      margin: 0;
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      font-weight: 700;
+    }
+
+    .cdu-hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .cdu-hero-copy {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      max-width: 560px;
+      color: #e5e7eb;
+    }
+
+    .cdu-hero-copy strong {
+      font-weight: 600;
+    }
+
+    .cdu-hero-actions {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+    }
+
+    /* Main body under hero (light background, like index) */
+    main.light {
+      background: #ffffff;
+      color: #020617;
+      padding: 60px 0;
+    }
+
+    @media (max-width: 900px) {
+      .cdu-hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .cdu-hero-left,
+      .cdu-hero-right {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .cdu-hero-right h1,
+      .cdu-hero-copy {
+        text-align: left;
+      }
+
+      .cdu-hero-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img
+        class="brand-logo brand-logo--slim"
+        src="./enLight10_Logo.png"
+        alt="enLight10 Solutions"
+      />
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <!-- SERVICES DROPDOWN -->
+        <div class="dropdown">
+          <button
+            class="dropdown-toggle active"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Services ▾
+          </button>
+          <div class="dropdown-panel">
+            <a href="./services-cyber-defense-united.html" class="active">
+              Cyber Defense United
+              <span class="sub">SOC modernization powered by Watchtower</span>
+            </a>
+            <a href="./services-watchtower-deployments.html">
+              Watchtower Platform &amp; Integration
+              <span class="sub">Deploy, integrate, and tune the CRP</span>
+            </a>
+            <a href="./services-cato.html">
+              Operational cATO Enablement
+              <span class="sub">Continuous monitoring, evidence, &amp; hardening</span>
+            </a>
+            <a href="./services-cmmc.html">
+              CMMC Operations &amp; Evidence
+              <span class="sub">Logging, IR, and monitoring tied to controls</span>
+            </a>
+            <a href="./services-automation.html">
+              Automation &amp; SOAR Optimization
+              <span class="sub">Tines &amp; existing SOAR, driven by Watchtower</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT LINK -->
+        <a href="./watchtower.html">Watchtower Platform</a>
+
+        <!-- ABOUT -->
+        <a href="./who.html">Who We Are</a>
+
+        <!-- CONTACT -->
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        id="menuToggle"
+        class="hamburger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United</a>
+      <a href="./services-watchtower-deployments.html">Watchtower Platform &amp; Integration</a>
+      <a href="./services-cato.html">Operational cATO Enablement</a>
+      <a href="./services-cmmc.html">CMMC Operations &amp; Evidence</a>
+      <a href="./services-automation.html">Automation &amp; SOAR Optimization</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower Platform</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- HERO: Watchtower logo + Cyber Defense United intro -->
+  <section class="cdu-hero">
+    <div class="cdu-hero-inner">
+      <!-- LEFT: Watchtower logo -->
+      <div class="cdu-hero-left">
+        <img
+          src="./Watchtower_Logo.png"
+          alt="Watchtower — Cyber Defense United core platform"
+        />
+      </div>
+
+      <!-- RIGHT: copy + CTA -->
+      <div class="cdu-hero-right">
+        <div class="cdu-hero-kicker">Services • Cyber Defense United</div>
+        <h1>Cyber Defense United.</h1>
+        <p class="cdu-hero-copy">
+          Cyber Defense United is our flagship <strong>SOC and NSOC modernization</strong> engagement,
+          built around the <strong>Watchtower Cyber Reasoning Platform</strong>. It combines operations
+          design, shift work, battle rhythm, and reporting with the technology backbone needed to make
+          those decisions defensible.
+        </p>
+        <p class="cdu-hero-copy">
+          Instead of stitching together tools and tickets, we help you build a
+          <strong>unified way of defending</strong> — with Watchtower as the hub for alerts, cases,
+          timelines, and evidence.
+        </p>
+
+        <div class="cdu-hero-actions">
+          <a
+            class="button primary"
+            href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
+          >
+            Request a Cyber Defense United Conversation
+          </a>
+          <a class="button ghost" href="./watchtower.html">
+            Learn More About the Watchtower Platform
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN BODY (stub sections to fill out later) -->
+  <main class="light">
+    <section class="section-block slim">
+      <h2>What Cyber Defense United Covers</h2>
+      <p class="lead">
+        This is where we’ll outline the pillars of the engagement — operations design, Watchtower
+        deployment, reporting, and continuous improvement. You can replace this text with your
+        detailed copy.
+      </p>
+    </section>
+
+    <section class="section-block slim">
+      <h2>How We Work With Your Team</h2>
+      <p>
+        Insert engagement model here (onsite / remote, phases, workshops, NSOC build-out, etc.).
+      </p>
+    </section>
+
+    <section class="section-block slim">
+      <h2>Outcomes You Can Expect</h2>
+      <p>
+        Use this section for specific benefits: improved handoffs, better reporting, cATO readiness,
+        CMMC evidence, reduced alert fatigue, and so on.
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        © 2025 enLight10 Solutions, LLC. All rights reserved.
+      </p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
+      <div
+        style="
+          margin-top:0.75rem;
+          display:flex;
+          align-items:center;
+          gap:0.5rem;
+          justify-content:center;
+        "
+      >
+        <img
+          src="./e10(tm).png"
+          alt="e10 icon"
+          style="width:28px; height:28px; border-radius:6px;"
+        />
+        <span style="font-size:0.8rem; opacity:0.7;">
+          enLight10 on social &amp; GitHub
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
