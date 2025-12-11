@@ -39,8 +39,8 @@ body {
     #0d1117 0%,    /* gold under the logo */
     #1e2a44 1%,   /* quick transition band */
     #FFD447 5%,   /* keep solid gold for a bit */
-    #1e2a44 10%,   /* quick transition band */
-    #0d1117 11%,   /* into deep navy */
+    #1e2a44 9%,   /* quick transition band */
+    #0d1117 10%,   /* into deep navy */
     #0d1117 100%   /* solid navy across the rest */
   );
   z-index: 1000;
