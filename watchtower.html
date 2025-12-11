@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Watchtower — Early Access SOC Platform</title>
+  <title>Watchtower — Cyber Defense United Operations Platform</title>
 
   <meta
     name="description"
-    content="Watchtower is an AI-assisted SOC platform built for government, defense, and security-focused small businesses. Available via limited early access and pilot engagements."
+    content="Watchtower is the cyber reasoning platform powering Cyber Defense United — helping defense and security-focused teams investigate, document, and communicate what’s happening in their environment."
   />
 
   <link rel="stylesheet" href="./style.css?v=18">
@@ -182,9 +182,40 @@
     .crp-section.crp-visible .crp-layer-assurance {
       animation: crpRise 0.6s ease-out 4.0s forwards;
     }
+
+    /* =========================
+       WATCHTOWER DEMO VIDEO
+       ========================= */
+
+    .wt-video-section {
+      text-align: center;
+    }
+
+    .wt-video-section .lead {
+      max-width: 720px;
+      margin: 0.5rem auto 1.25rem;
+      color: #4b5563;
+      font-size: 0.98rem;
+    }
+
+    .wt-video-frame {
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+      background: #000;
+    }
+
+    .wt-video-frame video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   </style>
 </head>
-<body>
+
+<body class="light">
 
   <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
@@ -222,14 +253,14 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <a href="./watchtower.html" aria-current="page">Watchtower (NEW)</a>
+      <a href="./watchtower.html" aria-current="page">Watchtower (Cyber Defense United)</a>
       <a href="./services.html">Services</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <main class="light" style="padding:80px 0 60px;">
+  <main style="padding:80px 0 60px;">
 
     <!-- HERO: Left = logo + copy (+ CTAs), Right = CRP diagram -->
     <section class="wt-hero">
@@ -243,46 +274,46 @@
 
         <div class="wt-hero-body">
           <p class="lead">
-            Watchtower is an emerging <strong>Security Operations Platform</strong> built for government,
-            defense, and security-focused small businesses that need a clearer way to investigate, document,
+            Watchtower is the <strong>cyber reasoning platform</strong> at the core of
+            <strong>Cyber Defense United</strong> — built for government, defense, and
+            security-focused organizations that need a clearer way to investigate, document,
             and communicate what’s happening in their environment.
           </p>
 
           <p>
             Instead of bouncing between tickets, dashboards, and chat threads, Watchtower gives analysts
-            one place to work — with AI assistance that helps them move faster, not lose control.
+            one place to work — with AI assistance that helps them move faster, without losing control
+            of the investigation or the story.
           </p>
 
-          <!-- CTAs moved here under the copy -->
           <div class="wt-hero-actions">
             <a
               class="button primary"
-              href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Inquiry"
+              href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Watchtower"
             >
-              Request Early Access
+              Talk to Us about Cyber Defense United
             </a>
             <a
               class="button ghost"
-              href="https://github.com/enlight10solutions"
-              target="_blank"
+              href="#wt-demo"
             >
-              Follow Development
+              Watch the Watchtower Demo
             </a>
           </div>
         </div>
       </div>
 
       <div class="wt-hero-right">
-        <!-- CRP DIAGRAM + title (no CTAs here now) -->
+        <!-- CRP DIAGRAM + title -->
         <section id="crpSection" class="crp-section crp-visible">
           <div class="crp-inner">
             <h1 class="crp-title-heading">Watchtower</h1>
             <p class="crp-tagline">
               Transforms your existing security tools into organized understanding,
-              actionable response, and continuous assurance.
+              actionable response, and continuous assurance inside Cyber Defense United.
             </p>
 
-            <!-- Inline SVG diagram (new version) -->
+            <!-- Inline SVG diagram -->
             <svg
               class="crp-diagram"
               xmlns="http://www.w3.org/2000/svg"
@@ -467,7 +498,6 @@
                 </text>
               </g>
 
-              <!-- Thick step arrows (each with its own class for timing) -->
               <!-- Tools → WCS -->
               <g class="crp-arrow crp-arrow-1" fill="#000000" stroke="#000000" stroke-width="1">
                 <path
@@ -495,6 +525,27 @@
             </svg>
           </div>
         </section>
+      </div>
+    </section>
+
+    <!-- DEMO VIDEO -->
+    <section id="wt-demo" class="section-block slim wt-video-section">
+      <h2>Watchtower Overview Demo</h2>
+      <p class="lead">
+        A quick walkthrough of how Watchtower helps Cyber Defense United bring order to SOC chaos —
+        from alerts and cases to timelines, reporting, and executive-ready narratives.
+      </p>
+
+      <div class="wt-video-frame">
+        <video
+          controls
+          preload="metadata"
+          aria-label="Watchtower demo video"
+        >
+          <source src="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4" type="video/mp4" />
+          Your browser does not support the video tag. You can
+          <a href="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4">download the demo video here</a>.
+        </video>
       </div>
     </section>
 
@@ -538,26 +589,26 @@
       </ul>
     </section>
 
-    <!-- PILOT PROGRAM -->
+    <!-- HOW TO GET WATCHTOWER -->
     <section class="section-block slim">
-      <h2>Pilot Program</h2>
+      <h2>How to Get Watchtower Today</h2>
       <p>
-        Watchtower is currently available through a limited early access pilot. Pilot participants help
-        validate workflows, shape features, and provide operational feedback in exchange for early
-        capability and direct engineering involvement.
+        Today, Watchtower is delivered as part of our <strong>Cyber Defense United</strong> offering —
+        bringing together SOC workflows, AI-assisted investigation, and defensible reporting into a
+        single operational picture.
       </p>
       <ul class="clean">
-        <li>Hands-on onboarding and guidance</li>
-        <li>Access to emerging features</li>
-        <li>Direct input to the roadmap</li>
+        <li>Embedded into your existing security tools and data sources</li>
+        <li>Tailored to your mission, reporting requirements, and operating model</li>
+        <li>Available through CD United strategy, assessment, and SOC build-out engagements</li>
       </ul>
 
       <div style="margin-top:1.5rem;">
         <a
           class="button primary"
-          href="mailto:info@enlight10solutions.com?subject=Watchtower Pilot Program"
+          href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Watchtower Briefing"
         >
-          Apply for Pilot Access
+          Schedule a Cyber Defense United Briefing
         </a>
       </div>
     </section>
@@ -583,6 +634,5 @@
       </div>
     </div>
   </footer>
-
 </body>
 </html>
