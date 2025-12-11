@@ -37,10 +37,10 @@ body {
   background: linear-gradient(
     to right,
     #0d1117 0%,    /* gold under the logo */
-    #1e2a44 3%,   /* quick transition band */
-    #FFD447 9%,   /* keep solid gold for a bit */
-    #1e2a44 15%,   /* quick transition band */
-    #0d1117 18%,   /* into deep navy */
+    #1e2a44 2%,   /* quick transition band */
+    #FFD447 5%,   /* keep solid gold for a bit */
+    #1e2a44 8%,   /* quick transition band */
+    #0d1117 10%,   /* into deep navy */
     #0d1117 100%   /* solid navy across the rest */
   );
   z-index: 1000;
