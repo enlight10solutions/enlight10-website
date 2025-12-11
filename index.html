@@ -1,39 +1,158 @@
-<!-- index.html (Watchtower landing with Cyber Reasoning Platform messaging) -->
+<!-- index.html (Main landing page with Cyber Defense United + services) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>enLight10 Solutions — Watchtower Cyber Reasoning Platform</title>
+  <title>enLight10 Solutions — Cyber Defense United & Watchtower</title>
   <meta
     name="description"
-    content="Introducing Watchtower, the first Cyber Reasoning Platform — a unified space for detection, investigation, response, and evidence. Built by a veteran-owned team for government, defense, and security-focused small businesses."
+    content="enLight10 Solutions is a veteran-owned cybersecurity company behind Watchtower, the Cyber Reasoning Platform powering Cyber Defense United — SOC modernization, cATO enablement, CMMC operations, and security automation services."
   />
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=23" />
+  <link rel="stylesheet" href="./style.css?v=24" />
   <script src="./script.js" defer></script>
 
-  <!-- Preload + Favicon -->
-  <link rel="preload" as="image" href="./Logo(offical)(closeup).PNG" />
-  <link rel="icon" href="./Logo(offical)(closeup).PNG" type="image/png" />
+  <!-- Preload + Favicon (update path/filename if needed) -->
+  <link rel="preload" as="image" href="./enLight10_Logo.png" />
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <!-- Page-specific layout tweaks & nav restyle -->
+  <style>
+    /* Top bar: white with subtle shadow and modern nav font */
+    .topbar {
+      background: #ffffff;
+      color: #020617;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .brand-logo--slim {
+      max-height: 52px;
+      width: auto;
+    }
+
+    .nav-links a,
+    .dropdown-toggle {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      font-size: 0.92rem;
+      text-transform: none;
+    }
+
+    .nav-links a,
+    .dropdown-toggle {
+      color: #0f172a;
+    }
+
+    .nav-links a:hover,
+    .dropdown-toggle:hover {
+      color: #1d4ed8;
+    }
+
+    .nav-links .button.small {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* Hero tweaks */
+    body {
+      background: #f9fafb;
+      color: #020617;
+    }
+
+    .hero.splash {
+      background: radial-gradient(circle at top left, #e0f2fe 0, #f9fafb 42%, #ffffff 100%);
+      color: #020617;
+    }
+
+    .hero-logo-small {
+      max-width: 260px;
+      height: auto;
+      filter: drop-shadow(0 18px 40px rgba(15, 23, 42, 0.25));
+      border-radius: 18px;
+    }
+
+    .hero-heading h1 {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .tagline {
+      max-width: 640px;
+    }
+
+    .hero-actions-under-video .button.primary {
+      font-weight: 600;
+    }
+
+    .hero-actions-under-video .button.ghost {
+      font-weight: 500;
+    }
+
+    /* Services dropdown in nav */
+    .dropdown-panel {
+      min-width: 260px;
+    }
+
+    .dropdown-panel a span.sub {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-top: 0.1rem;
+    }
+
+    /* Sections */
+    main.light {
+      background: #ffffff;
+      color: #020617;
+    }
+
+    .section-block.slim h2 {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .text-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      color: #1d4ed8;
+      background: rgba(219, 234, 254, 0.6);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subcopy strong {
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
   <!-- TOP BAR -->
-  <nav class="topbar" role="navigation">
+  <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img
         class="brand-logo brand-logo--slim"
-        src="./Logo(offical)(closeup).PNG"
+        src="./enLight10_Logo.png"
         alt="enLight10 Solutions"
       />
     </a>
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- PRODUCT DROPDOWN -->
+        <!-- SOLUTIONS / SERVICES DROPDOWN -->
         <div class="dropdown">
           <button
             class="dropdown-toggle"
@@ -41,17 +160,39 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Product ▾
+            Services ▾
           </button>
           <div class="dropdown-panel">
-            <a href="./watchtower.html">
-              Watchtower <span style="color:#d00; font-weight:bold; font-size:0.8em;">(NEW)</span>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United
+              <span class="sub">SOC modernization powered by Watchtower</span>
+            </a>
+            <a href="./services-watchtower-deployments.html">
+              Watchtower Platform &amp; Integration
+              <span class="sub">Deploy, integrate, and tune the CRP</span>
+            </a>
+            <a href="./services-cato.html">
+              Operational cATO Enablement
+              <span class="sub">Continuous monitoring, evidence, &amp; hardening</span>
+            </a>
+            <a href="./services-cmmc.html">
+              CMMC Operations &amp; Evidence
+              <span class="sub">Logging, IR, and monitoring tied to controls</span>
+            </a>
+            <a href="./services-automation.html">
+              Automation &amp; SOAR Optimization
+              <span class="sub">Tines and existing SOAR, driven by Watchtower</span>
             </a>
           </div>
         </div>
 
-        <a href="./services.html">Services</a>
+        <!-- PRODUCT LINK -->
+        <a href="./watchtower.html">Watchtower Platform</a>
+
+        <!-- ABOUT / WHO WE ARE -->
         <a href="./who.html">Who We Are</a>
+
+        <!-- CONTACT -->
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
@@ -73,16 +214,24 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <a href="./watchtower.html">Watchtower (NEW)</a>
-      <a href="./services.html">Services</a>
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
+      <a href="./services-watchtower-deployments.html">Watchtower Platform &amp; Integration</a>
+      <a href="./services-cato.html">Operational cATO Enablement</a>
+      <a href="./services-cmmc.html">CMMC Operations &amp; Evidence</a>
+      <a href="./services-automation.html">Automation &amp; SOAR Optimization</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower Platform</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- HERO: CYBER REASONING PLATFORM + DEMO VIDEO -->
+  <!-- HERO: CYBER DEFENSE UNITED + DEMO VIDEO -->
   <section class="hero splash" id="top">
     <div class="hero-heading">
+      <span class="text-pill">Cyber Defense United • Powered by Watchtower</span>
+
       <!-- Watchtower logo clickable with glow via CSS -->
       <a
         href="./watchtower.html"
@@ -96,10 +245,11 @@
         />
       </a>
 
-      <h1>Introducing the First Cyber Reasoning Platform.</h1>
+      <h1>Unifying Cyber Defense with the Watchtower Cyber Reasoning Platform.</h1>
       <p class="tagline">
-        Watchtower doesn’t just collect security data — it understands it.
-        One place for detection, investigation, response, and evidence.
+        Cyber Defense United combines SOC workflows, continuous monitoring, automation, and
+        compliance evidence — all powered by Watchtower, the Cyber Reasoning Platform that
+        turns raw security data into decisions you can defend.
       </p>
     </div>
 
@@ -126,27 +276,22 @@
       </div>
 
       <p class="hero-learn-more">
-        Want the full breakdown?
+        Want to go deeper?
         <a href="./watchtower.html">See how Watchtower works →</a>
       </p>
     </div>
 
     <div class="hero-actions hero-actions-under-video">
-      <a class="button primary" href="./watchtower.html">Explore the Platform</a>
-      <a
-        class="button ghost"
-        href="mailto:info@enlight10solutions.com?subject=Cyber Reasoning Platform / Watchtower Inquiry"
-      >
-        Request Early Access
-      </a>
+      <a class="button primary" href="./services-cyber-defense-united.html">Explore Cyber Defense United</a>
+      <a class="button ghost" href="./watchtower.html">Explore the Watchtower Platform</a>
     </div>
 
     <div class="hero-subcopy">
       <p>
         enLight10 Solutions is a veteran-owned cybersecurity company building
         <strong>Watchtower</strong> — a Cyber Reasoning Platform (CRP) that helps
-        government, defense organizations, and security-focused small businesses
-        move from alert fatigue to evidence-driven decisions.
+        government, defense organizations, and security-focused small businesses move from alert
+        fatigue to <strong>evidence-driven, cATO-ready operations</strong>.
       </p>
     </div>
 
@@ -154,14 +299,15 @@
   </section>
 
   <!-- MAIN BODY -->
-  <main class="light" style="background:#fff; color:#000; padding:60px 0">
+  <main class="light" style="padding:60px 0">
 
     <!-- WHAT IS A CYBER REASONING PLATFORM? -->
     <section class="section-block slim">
       <h2>What Is a Cyber Reasoning Platform?</h2>
       <p class="lead">
         Traditional tools generate alerts. Analysts chase noise. Compliance drains time.
-        A Cyber Reasoning Platform changes the model.
+        A Cyber Reasoning Platform changes the model by focusing on behavior, intent,
+        and the evidence you need for commanders, CISOs, and auditors.
       </p>
       <div class="features three">
         <article class="feature">
@@ -169,54 +315,89 @@
           <p>
             Watchtower ingests signals from your existing tools and focuses on
             <strong>intent and impact</strong> — not just signatures or single events.
+            It creates buckets of related activity and shows you why they matter.
           </p>
         </article>
         <article class="feature">
           <h3>Explains in Plain Language</h3>
           <p>
             Each investigation comes with narrative, timeline, and supporting evidence,
-            so leadership, analysts, and auditors see the same story.
+            so leadership, analysts, and auditors see the same story — not just a wall
+            of alerts and tickets.
           </p>
         </article>
         <article class="feature">
           <h3>Drives Action, Not Just Alerts</h3>
           <p>
-            Reasoning, risk, and recommended actions are surfaced together —
-            so you can move from “something happened” to “here’s what we’re doing about it.”
+            Reasoning, risk, and recommended actions are surfaced together — so you can
+            move from “something happened” to “here’s what we’re doing about it,” with
+            documentation built-in.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- THE WATCHTOWER DEFENSE STACK -->
+    <!-- CORE OFFERINGS / SERVICES -->
     <section class="section-block slim">
-      <h2>The Watchtower Defense Stack</h2>
+      <h2>Our Core Offerings</h2>
       <p class="lead">
-        Use Watchtower as a platform, a co-managed partner, or a fully managed defensive service —
-        all powered by the same reasoning core.
+        Start with Cyber Defense United as the flagship engagement, then add focused services for
+        platform deployment, cATO, CMMC, and automation — all anchored by Watchtower.
       </p>
       <div class="features three">
         <article class="feature">
-          <h3>Cyber Reasoning Platform</h3>
+          <h3>Cyber Defense United</h3>
           <p>
-            The intelligence layer that correlates behavior, identifies intent,
-            and automatically builds case-ready context and evidence.
+            SOC and NSOC modernization built around Watchtower:
+            tiering, escalation paths, shift work, reporting, and battle rhythm —
+            all grounded in the Cyber Reasoning Platform.
+            <br />
+            <a href="./services-cyber-defense-united.html" class="text-link">Learn more →</a>
           </p>
         </article>
+
         <article class="feature">
-          <h3>Watchtower Workspace</h3>
+          <h3>Watchtower Platform &amp; Integration</h3>
           <p>
-            A unified SOC interface for alerts, cases, automation, and reporting —
-            built from real government and enterprise operations, not theory.
-            <a href="./watchtower.html" class="text-link">Explore Watchtower →</a>
+            Deploy Watchtower into your environment, integrate SIEM, EDR, firewalls, and identity
+            data into WCS, and tune detections and AI so your analysts defend, not just chase logs.
+            <br />
+            <a href="./services-watchtower-deployments.html" class="text-link">Platform services →</a>
           </p>
         </article>
+
         <article class="feature">
-          <h3>Managed Defense (CSSP / MSSP)</h3>
+          <h3>Operational cATO Enablement</h3>
           <p>
-            Optional managed and co-managed services where analysts sit on top of reasoning,
-            not raw logs — available through our
-            <a href="./services.html" class="text-link">cyber services offerings →</a>
+            Focused on the <strong>continuous monitoring and evidence</strong> layers of cATO:
+            Watchtower + SteelCloud + SOAR (Tines or your stack) to harden systems, monitor activity,
+            and produce operational evidence your A&amp;A team can use.
+            <br />
+            <a href="./services-cato.html" class="text-link">cATO enablement →</a>
+          </p>
+        </article>
+      </div>
+
+      <div class="features two">
+        <article class="feature">
+          <h3>CMMC Operations &amp; Evidence</h3>
+          <p>
+            We don’t try to be your generic RPO. Instead, we focus on the parts of CMMC that depend
+            on your SOC and monitoring:
+            AU, IR, CM, CA, and RA. Watchtower cases, logs, and timelines become your
+            <strong>proof of control execution</strong>.
+            <br />
+            <a href="./services-cmmc.html" class="text-link">CMMC ops lane →</a>
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Automation &amp; SOAR Optimization</h3>
+          <p>
+            Use Tines or your existing SOAR to automate enrichment, ticketing, health checks,
+            and compliance workflows — with Watchtower as the reasoning and evidence layer on top.
+            <br />
+            <a href="./services-automation.html" class="text-link">Automation services →</a>
           </p>
         </article>
       </div>
@@ -224,41 +405,43 @@
 
     <!-- WHO WE SERVE -->
     <section class="section-block slim">
-      <h2>Who Watchtower Is For</h2>
+      <h2>Who We Serve</h2>
       <p class="lead">
-        Built from the ground up for missions where failure is not an option — and where
-        teams are stretched thin.
+        Built for missions where failure isn’t an option — and where teams are stretched thin.
       </p>
       <ul class="clean">
-        <li><strong>Defense &amp; Government:</strong> cyber operations, CSSP teams, and mission partners that need traceable, evidence-driven decisions.</li>
-        <li><strong>Defense Contractors:</strong> organizations supporting DoD and federal programs that must meet strict security and compliance expectations.</li>
-        <li><strong>Security-Focused Small Businesses:</strong> companies handling sensitive data (healthcare, finance, critical services) that need SOC-level capability without a 24/7 headcount.</li>
+        <li><strong>Defense &amp; Government:</strong> cyber operations, CSSP teams, and mission partners that need traceable, evidence-driven decisions and cATO-ready monitoring.</li>
+        <li><strong>Defense Contractors:</strong> organizations supporting DoD and federal programs that must prove they are secure and compliant without drowning in manual reporting.</li>
+        <li><strong>Security-Focused Businesses:</strong> healthcare, finance, and critical-service providers that need SOC-grade capability and CMMC-aligned operations without a 50-person team.</li>
       </ul>
     </section>
 
-    <!-- WHY WATCHTOWER VS TRADITIONAL TOOLS -->
+    <!-- WHY WATCHTOWER / ENLIGHT10 -->
     <section class="section-block slim">
-      <h2>Why Watchtower Instead of “One More Tool”?</h2>
+      <h2>Why enLight10 &amp; Watchtower?</h2>
       <div class="features three">
         <article class="feature">
           <h3>Less Switching, More Defending</h3>
           <p>
             Replace scattered dashboards and tickets with a single narrative view —
-            alerts, context, actions, and documentation in one place.
+            alerts, context, actions, and documentation in one place. Watchtower becomes
+            the hub; everything else becomes a sensor.
           </p>
         </article>
         <article class="feature">
           <h3>Evidence Built In</h3>
           <p>
             Every case builds compliance-ready evidence as you work:
-            timelines, decisions, and artifacts tied together for audits and after-action reviews.
+            timelines, decisions, artifacts, and reports mapped to your controls.
+            That’s how we support CMMC and cATO without becoming another paperwork factory.
           </p>
         </article>
         <article class="feature">
           <h3>Designed by Operators</h3>
           <p>
             enLight10 is led by practitioners with experience across CPT, USCYBERCOM-aligned missions,
-            and enterprise SOC leadership — Watchtower reflects that reality.
+            and enterprise SOC leadership. Cyber Defense United and Watchtower reflect the reality
+            of 24/7 operations, not a whiteboard fantasy.
           </p>
         </article>
       </div>
@@ -266,21 +449,22 @@
 
     <!-- CTA SECTION -->
     <section class="section-block slim">
-      <h2>Ready to See Cyber Reasoning in Action?</h2>
+      <h2>Ready to Unite Your Cyber Defense?</h2>
       <p class="lead">
         Whether you’re running a mission network, securing a defense program, or leading a
-        high-risk small business, Watchtower can become the core of how you defend.
+        high-risk small business, Cyber Defense United and Watchtower can become the core
+        of how you defend — and prove it.
       </p>
 
       <div class="hero-actions" style="margin-top:1.5rem;">
         <a
           class="button primary"
-          href="mailto:info@enlight10solutions.com?subject=Watchtower Cyber Reasoning Platform – Early Access"
+          href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Watchtower Conversation"
         >
           Request a Conversation
         </a>
         <a class="button ghost" href="./watchtower.html">
-          Learn More About the Platform
+          Learn More About the Watchtower Platform
         </a>
       </div>
     </section>
