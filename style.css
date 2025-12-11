@@ -721,3 +721,15 @@ footer a:focus {
     margin-right: auto;
   }
 }
+
+/* Lift the big Watchtower logo up in the hero on desktop */
+@media (min-width: 900px) {
+  .hero-left {
+    align-items: flex-start;
+  }
+
+  .hero-logo-large {
+    margin-top: -60px;  /* ← adjust: -40px, -60px, -80px to taste */
+  }
+}
+
