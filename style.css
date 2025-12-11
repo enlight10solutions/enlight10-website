@@ -60,7 +60,6 @@ body {
 .topbar .brand {
   display: flex;
   align-items: center;
-  margin-left: 16px;   /* nudges logo in from very edge */
   gap: .5rem;
 }
 
