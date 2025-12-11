@@ -19,43 +19,8 @@
   <link rel="preload" as="image" href="./enLight10_Logo.png" />
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
-  <!-- Page-specific layout tweaks & nav / hero restyle -->
+  <!-- Page-specific layout tweaks (no nav overrides) -->
   <style>
-    /* ---------------------------
-       Top navigation bar (white)
-       --------------------------- */
-    .topbar {
-      background: #ffffff;
-      color: #0f172a; /* dark navy */
-      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
-    }
-
-    .brand-logo--slim {
-      max-height: 52px;
-      width: auto;
-    }
-
-    .nav-links a,
-    .dropdown-toggle {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      font-size: 0.92rem;
-      text-transform: none;
-      color: #0f172a; /* dark navy */
-    }
-
-    .nav-links a:hover,
-    .dropdown-toggle:hover {
-      color: #1e3a8a; /* brighter navy on hover */
-    }
-
-    .nav-links .button.small {
-      font-weight: 600;
-      letter-spacing: 0.03em;
-    }
-
     /* ---------------------------
        Global + hero tweaks
        --------------------------- */
@@ -230,73 +195,69 @@
 
   <!-- HERO: CYBER DEFENSE UNITED + DEMO VIDEO -->
   <section class="hero splash" id="top">
-  <div class="hero-inner">
-    
-    <!-- LEFT SIDE: BIG WATCHTOWER LOGO -->
-    <div class="hero-left">
-      <img
-        class="hero-logo-large"
-        src="./Watchtower_Logo.png"
-        alt="enLight10 Watchtower"
-      />
-    </div>
+    <div class="hero-inner">
+      <!-- LEFT SIDE: BIG WATCHTOWER LOGO -->
+      <div class="hero-left">
+        <img
+          class="hero-logo-large"
+          src="./Watchtower_Logo.png"
+          alt="enLight10 Watchtower"
+        />
+      </div>
 
-    <!-- RIGHT SIDE: HEADLINE + TEXT + VIDEO -->
-    <div class="hero-right">
+      <!-- RIGHT SIDE: HEADLINE + TEXT + VIDEO -->
+      <div class="hero-right">
+        <span class="text-pill">Cyber Defense United • Powered by Watchtower</span>
 
-      <span class="text-pill">Cyber Defense United • Powered by Watchtower</span>
+        <h1>Unifying Cyber Defense with the Watchtower Cyber Reasoning Platform.</h1>
 
-      <h1>Unifying Cyber Defense with the Watchtower Cyber Reasoning Platform.</h1>
+        <p class="tagline">
+          Cyber Defense United combines SOC workflows, continuous monitoring, automation, 
+          and compliance evidence — all powered by Watchtower, the Cyber Reasoning Platform 
+          that turns raw security data into decisions you can defend.
+        </p>
 
-      <p class="tagline">
-        Cyber Defense United combines SOC workflows, continuous monitoring, automation, 
-        and compliance evidence — all powered by Watchtower, the Cyber Reasoning Platform 
-        that turns raw security data into decisions you can defend.
-      </p>
+        <!-- VIDEO -->
+        <div class="hero-video-wrapper">
+          <video
+            id="demoVideo"
+            class="hero-video featured"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-      <!-- VIDEO -->
-      <div class="hero-video-wrapper">
-        <video
-          id="demoVideo"
-          class="hero-video featured"
-          controls
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-        >
-          <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          <div class="video-speed-controls">
+            <span>Playback speed:</span>
+            <button type="button" class="video-speed-btn" data-speed="1">1×</button>
+            <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
+            <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+          </div>
+        </div>
 
-        <div class="video-speed-controls">
-          <span>Playback speed:</span>
-          <button type="button" class="video-speed-btn" data-speed="1">1×</button>
-          <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
-          <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+        <!-- BUTTONS -->
+        <div class="hero-actions hero-actions-under-video">
+          <a class="button primary" href="./services-cyber-defense-united.html">
+            Explore Cyber Defense United
+          </a>
+          <a class="button ghost" href="./watchtower.html">
+            Explore the Watchtower Platform
+          </a>
         </div>
       </div>
-
-      <!-- BUTTONS -->
-      <div class="hero-actions hero-actions-under-video">
-        <a class="button primary" href="./services-cyber-defense-united.html">
-          Explore Cyber Defense United
-        </a>
-        <a class="button ghost" href="./watchtower.html">
-          Explore the Watchtower Platform
-        </a>
-      </div>
-
     </div>
-  </div>
 
-  <div class="scroll-cue" aria-hidden="true">Scroll ↓</div>
-</section>
+    <div class="scroll-cue" aria-hidden="true">Scroll ↓</div>
+  </section>
 
   <!-- MAIN BODY -->
   <main class="light" style="padding:60px 0">
-
     <!-- WHAT IS A CYBER REASONING PLATFORM? -->
     <section class="section-block slim">
       <h2>What Is a Cyber Reasoning Platform?</h2>
@@ -345,7 +306,7 @@
           <h3>Cyber Defense United</h3>
           <p>
             SOC and NSOC modernization built around Watchtower:
-            tiering, escalation paths, shift work, reporting, and battle rhythm —
+            tiering, escalation paths, shift work, reporting, and battle rhythm — 
             all grounded in the Cyber Reasoning Platform.
             <br />
             <a href="./services-cyber-defense-united.html" class="text-link">Learn more →</a>
