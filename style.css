@@ -43,8 +43,6 @@ body {
     #0d1117 12%,   /* into deep navy */
     #0d1117 100%   /* solid navy across the rest */
   );
-
-  border-bottom: 2px solid #FFD447; /* gold underline */
   z-index: 1000;
 }
 .topbar::after {
