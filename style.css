@@ -701,7 +701,7 @@ footer a:focus {
 }
 
 .topbar .brand-logo--slim {
-  height: 72px !important;   /* or 80px if you want big */
+  height: 64px !important;   /* or 80px if you want big */
   width: auto !important;
 }
 
