@@ -42,10 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* ---------------- Demo video speed ---------------- */
+  /* ---------------- Demo video controls (speed + seek) ---------------- */
   var video = document.getElementById("demoVideo");
   if (video && video.tagName === "VIDEO") {
-    var speedButtons = document.querySelectorAll(".video-speed-btn");
+    // Only grab true speed buttons (must have data-speed)
+    var speedButtons = document.querySelectorAll(".video-speed-btn[data-speed]");
+    var speedControls = document.querySelector(".video-speed-controls");
 
     function setActiveSpeed(speed) {
       speedButtons.forEach(function (btn) {
@@ -74,9 +76,67 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
+
+    // ---- NEW: add skip backward / forward buttons ----
+    if (speedControls) {
+      var backBtn = document.createElement("button");
+      backBtn.type = "button";
+      backBtn.className = "video-speed-btn video-seek-btn";
+      backBtn.textContent = "⏪ -10s";
+
+      var forwardBtn = document.createElement("button");
+      forwardBtn.type = "button";
+      forwardBtn.className = "video-speed-btn video-seek-btn";
+      forwardBtn.textContent = "10s ⏩";
+
+      backBtn.addEventListener("click", function () {
+        if (!isNaN(video.currentTime)) {
+          video.currentTime = Math.max(0, video.currentTime - 10);
+        }
+      });
+
+      forwardBtn.addEventListener("click", function () {
+        if (!isNaN(video.currentTime)) {
+          var limit = isNaN(video.duration) ? video.currentTime + 10 : video.duration;
+          video.currentTime = Math.min(limit, video.currentTime + 10);
+        }
+      });
+
+      speedControls.appendChild(backBtn);
+      speedControls.appendChild(forwardBtn);
+    }
+
+    // ---- NEW: keyboard shortcuts for seek ----
+    document.addEventListener("keydown", function (e) {
+      if (!video) return;
+
+      // Don't hijack keys while typing in inputs/textareas/contenteditable
+      var target = e.target;
+      if (
+        target &&
+        (target.tagName === "INPUT" ||
+          target.tagName === "TEXTAREA" ||
+          target.isContentEditable)
+      ) {
+        return;
+      }
+
+      if (e.key === "ArrowLeft") {
+        // Jump back 5s
+        if (!isNaN(video.currentTime)) {
+          video.currentTime = Math.max(0, video.currentTime - 5);
+        }
+      } else if (e.key === "ArrowRight") {
+        // Jump forward 5s
+        if (!isNaN(video.currentTime)) {
+          var limit = isNaN(video.duration) ? video.currentTime + 5 : video.duration;
+          video.currentTime = Math.min(limit, video.currentTime + 5);
+        }
+      }
+    });
   }
 
-  /* ---------------- Product dropdown ---------------- */
+  /* ---------------- Dropdowns (Services / Product) ---------------- */
   var dropdowns = document.querySelectorAll(".dropdown");
 
   dropdowns.forEach(function (dd) {
