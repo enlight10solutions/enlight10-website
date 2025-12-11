@@ -43,7 +43,7 @@ body {
     #0d1117 100%   /* solid navy across the rest */
   );
 
-  border-bottom: 6px solid #FFD447; /* gold underline */
+  border-bottom: 2px solid #FFD447; /* gold underline */
   z-index: 1000;
 }
 .topbar .brand {
