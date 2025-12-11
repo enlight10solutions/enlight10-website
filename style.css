@@ -765,6 +765,17 @@ footer a:focus {
     margin-right: auto;
   }
 
+  .hero-right {
+  text-align: center;
+  width: 100%;
+}
+
+.hero-right h1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
   .hero-logo-large {
     margin-top: 0;
     max-width: 360px;
