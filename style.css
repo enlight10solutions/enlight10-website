@@ -37,9 +37,9 @@ body {
   background: linear-gradient(
     to right,
     #FFD447 0%,    /* gold under the logo */
-    #FFD447 12%,   /* keep solid gold for a bit */
-    #1e2a44 24%,   /* quick transition band */
-    #0d1117 32%,   /* into deep navy */
+    #FFD447 5%,   /* keep solid gold for a bit */
+    #1e2a44 12%,   /* quick transition band */
+    #0d1117 18%,   /* into deep navy */
     #0d1117 100%   /* solid navy across the rest */
   );
 
