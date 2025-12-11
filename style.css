@@ -688,6 +688,11 @@ footer a:focus {
   margin-top: 1.2rem;
 }
 
+.topbar .brand-logo--slim {
+  height: 72px !important;   /* or 80px if you want big */
+  width: auto !important;
+}
+
 @media (max-width: 900px) {
   .hero-inner {
     flex-direction: column;
