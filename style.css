@@ -25,18 +25,24 @@ body {
    NAVIGATION BAR
    ========================= */
 .topbar {
-  position:fixed;
-  inset:0 0 auto 0;
-  height:64px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 16px;
-  background:#ffffff;                     /* WHITE NAV BAR */
-  color:var(--ink);
-border-bottom:8px solid var(--gold);
-box-shadow:none;                        /* optional: removes shadow if you want a cleaner look */
-  z-index:1000;
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  /* 🔥 Horizontal brand gradient */
+  background: linear-gradient(
+    to right,
+    #FFD447 0%,       /* Gold (brand left side) */
+    #1e2a44 45%,      /* Deep navy transition */
+    #0d1117 100%      /* Full Watchtower navy */
+  );
+
+  border-bottom: 6px solid #FFD447; /* Gold underline */
+  z-index: 1000;
 }
 .topbar::after {
   content:"";
@@ -73,14 +79,14 @@ box-shadow:none;                        /* optional: removes shadow if you want 
 
 .nav-links { display:none; align-items:center; gap:.75rem; }
 .topbar .nav-links a {
-  color:#0b1220;                          /* dark text on white */
+  color: #ffffff;                          
   margin-left:1rem;
   text-decoration:none;
   font-weight:500;
 }
 .topbar .nav-links a:hover,
 .topbar .nav-links a[aria-current="page"] {
-  color:#1e3a8a;                          /* brighter navy on hover/active */
+  color:#FFD447;                          /* brighter navy on hover/active */
 }
 
 .topbar .button.small {
@@ -142,7 +148,7 @@ box-shadow:none;                        /* optional: removes shadow if you want 
 .dropdown-toggle {
   border: none;
   background: transparent;
-  color: #0b1220;   /* dark text on white bar */
+  color: #ffffff; 
   font: inherit;
   padding: 0.35rem 0.75rem;
   cursor: pointer;
@@ -153,7 +159,7 @@ box-shadow:none;                        /* optional: removes shadow if you want 
 
 .dropdown-toggle:hover,
 .dropdown-toggle:focus {
-  color: #1e3a8a;
+  color: #FFD447;
 }
 
 .dropdown-toggle.active {
