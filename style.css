@@ -39,10 +39,6 @@ body {
   background: linear-gradient(
     to right,
     #0d1117 0%,   /* deep navy at very edge */
-    #1e2a44 1%,   /* quick transition band */
-    #FFD447 6%,   /* strong gold around logo */
-    #1e2a44 10%,  /* transition back */
-    #0d1117 11%,  /* into deep navy */
     #0d1117 100%  /* solid navy across the rest */
   );
 }
@@ -81,6 +77,26 @@ body {
   display: block;
   filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .35));
   transition: transform .25s ease, filter .25s ease;
+}
+
+/* --- Brand logo constant pulse glow --- */
+.brand-logo--slim {
+  border-radius: 14px; /* keeps the logo nicely rounded */
+  box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.55);  /* base yellow glow */
+  animation: e10LogoPulse 3s ease-out infinite;
+}
+
+/* Soft pulsing halo around the logo */
+@keyframes e10LogoPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 22px 10px rgba(250, 204, 21, 0.0); /* halo expands/fades */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.0);
+  }
 }
 
 .topbar .brand-text {
