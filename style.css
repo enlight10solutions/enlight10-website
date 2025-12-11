@@ -50,7 +50,7 @@ body {
 .topbar .brand {
   display:flex;
   align-items:center;
-  margin-left: 32px;
+  margin-left: 28px;
   gap:.5rem;
 }
 .topbar .brand-logo {
