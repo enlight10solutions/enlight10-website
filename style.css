@@ -663,15 +663,12 @@ footer a:focus {
 .hero-left {
   flex: 0 0 46%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;   /* stick to the top */
+  align-items: flex-start;       /* align top vertically */
 }
 
 .hero-logo-large {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.45));
+  margin-top: -40px; /* adjust until visually perfect */
 }
 
 .hero-right {
