@@ -134,7 +134,7 @@ body {
 @media (min-width:992px) {
   .nav-links { display:flex; }
   .hamburger { display:none; }
-  .brand-logo--slim { height:52px; }
+  .brand-logo--slim { height:72px; }  /* match the larger size */
   .topbar { height:72px; }
 }
 
