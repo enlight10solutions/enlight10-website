@@ -733,3 +733,16 @@ footer a:focus {
   }
 }
 
+/* Force the Watchtower logo column to align to the top instead of center */
+.hero-inner {
+  align-items: flex-start !important; 
+}
+
+.hero-left {
+  align-self: flex-start !important;
+}
+
+.hero-logo-large {
+  margin-top: -60px !important;   /* adjust as needed */
+}
+
