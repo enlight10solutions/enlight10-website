@@ -1,14 +1,14 @@
-<!-- index.html (Main landing page with Cyber Defense United + services) -->
+<!-- index.html (Main landing page with Watchtower + SecureOps + Cyber Defense United) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>enLight10 Solutions — Cyber Defense United & Watchtower</title>
+  <title>enLight10 Solutions — Watchtower SecureOps & Cyber Defense United</title>
   <meta
     name="description"
-    content="enLight10 Solutions is a veteran-owned cybersecurity company behind Watchtower, the Cyber Reasoning Platform powering Cyber Defense United — SOC modernization, cATO enablement, CMMC operations, and security automation services."
+    content="enLight10 Solutions is a veteran-owned cybersecurity company behind Watchtower — a SecureOps services line and Cyber Reasoning Platform powering Cyber Defense United, SOC modernization, cATO enablement, CMMC operations, and security automation."
   />
 
   <!-- Styles / JS (cache-bust) -->
@@ -61,9 +61,9 @@
     }
 
     /* Add spacing between adjacent links in hero-actions rows */
-.hero-actions a + a {
-  margin-left: 1.25rem;
-}
+    .hero-actions a + a {
+      margin-left: 1.25rem;
+    }
 
     /* Services dropdown styling */
     .dropdown-panel {
@@ -79,31 +79,38 @@
     }
 
     /* Right hero column: center title, video, and buttons */
-.hero-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
 
-.hero-title {
-  margin: 0 0 1rem;
-  text-align: center;
-}
+    .hero-title {
+      margin: 0 0 0.5rem;
+      text-align: center;
+    }
 
-.hero-video-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .hero-subtitle {
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 620px;
+    }
 
-/* Buttons under the video */
-.hero-actions-under-video {
-  margin-top: 1.2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
+    .hero-video-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Buttons under the video */
+    .hero-actions-under-video {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
     /* Content sections */
     main.light {
@@ -134,9 +141,10 @@
     .hero-subcopy strong {
       font-weight: 600;
     }
-        /* Hero layout: logo + body + CTAs left, headline + video right */
+
+    /* Hero layout: logo + body + CTAs left, headline + video right */
     .hero-inner {
-      align-items: flex-start;             /* top-align both columns on desktop */
+      align-items: flex-start;
       gap: 3rem;
     }
 
@@ -148,7 +156,7 @@
     }
 
     .hero-left .hero-logo-large {
-    max-width: 520px;   /* bump for a bigger logo */
+      max-width: 520px; /* bump for a bigger logo */
     }
 
     .hero-left .tagline {
@@ -194,6 +202,10 @@
         text-align: center;
       }
 
+      .hero-right .hero-subtitle {
+        text-align: center;
+      }
+
       .hero-actions-under-video {
         justify-content: center;
       }
@@ -232,7 +244,7 @@
           <div class="dropdown-panel">
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United
-              <span class="sub">SOC modernization powered by Watchtower</span>
+              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
             </a>
             <a href="./services-watchtower-deployments.html">
               Watchtower Platform &amp; Integration
@@ -294,10 +306,10 @@
     </nav>
   </aside>
 
-   <!-- HERO: CYBER DEFENSE UNITED + DEMO VIDEO -->
+  <!-- HERO: WATCHTOWER FAMILY + DEMO VIDEO -->
   <section class="hero splash" id="top">
     <div class="hero-inner">
-      <!-- LEFT SIDE: LOGO + PARAGRAPH + CTAs -->
+      <!-- LEFT SIDE: LOGO + PARAGRAPH -->
       <div class="hero-left">
         <img
           class="hero-logo-large"
@@ -306,53 +318,54 @@
         />
 
         <p class="tagline">
-          Cyber Defense United combines SOC workflows, continuous monitoring, automation,
-          and compliance evidence — all powered by Watchtower, the Cyber Reasoning Platform
-          that turns raw security data into decisions you can defend.
+          <strong>Watchtower</strong> is the brand that unites our SecureOps services and
+          the Watchtower Cyber Reasoning Platform (CRP). Together, they power
+          <strong>Cyber Defense United</strong> for DoD and DIB missions, and
+          SecureOps offerings for commercial and MSSP environments.
         </p>
-
       </div>
 
       <!-- RIGHT SIDE: HEADLINE + VIDEO -->
-<div class="hero-right">
+      <div class="hero-right">
+        <h1 class="hero-title">Watchtower.</h1>
+        <p class="hero-subtitle">
+          Our SecureOps services and Cyber Reasoning Platform that turn raw security data
+          into decisions you can defend — from Cyber Defense United to enterprise SecureOps.
+        </p>
 
-  <h1 class="hero-title">Cyber Defense United.</h1>
+        <div class="hero-video-wrapper">
+          <video
+            id="demoVideo"
+            class="hero-video featured"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
+          </video>
 
-  <div class="hero-video-wrapper">
-    <video
-      id="demoVideo"
-      class="hero-video featured"
-      controls
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-    >
-      <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
-    </video>
+          <div class="video-speed-controls">
+            <span>Playback speed:</span>
+            <button type="button" class="video-speed-btn" data-speed="1">1×</button>
+            <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
+            <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+          </div>
 
-    <div class="video-speed-controls">
-      <span>Playback speed:</span>
-      <button type="button" class="video-speed-btn" data-speed="1">1×</button>
-      <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
-      <button type="button" class="video-speed-btn" data-speed="2">2×</button>
-    </div>
-
-    <!-- CTA BUTTONS now under video -->
-    <div class="hero-actions hero-actions-under-video">
-      <a class="button primary" href="./services-cyber-defense-united.html">
-        Explore Cyber Defense United
-      </a>
-      <a class="button ghost" href="./watchtower.html">
-        Explore the Watchtower Platform
-      </a>
-    </div>
-  </div>
-
-</div>
-
+          <!-- CTA BUTTONS now under video -->
+          <div class="hero-actions hero-actions-under-video">
+            <a class="button primary" href="./services-cyber-defense-united.html">
+              Explore Cyber Defense United
+            </a>
+            <a class="button ghost" href="./watchtower.html">
+              Explore the Watchtower Platform
+            </a>
+          </div>
+        </div>
       </div>
+
     </div>
 
     <div class="scroll-cue" aria-hidden="true">Scroll ↓</div>
@@ -360,6 +373,57 @@
 
   <!-- MAIN BODY -->
   <main class="light" style="padding:60px 0">
+
+    <!-- WATCHTOWER FAMILY OVERVIEW -->
+    <section class="section-block slim">
+      <h2>The Watchtower Family</h2>
+      <p class="lead">
+        enLight10 brings operations and platform together under a single brand:
+        <strong>Watchtower SecureOps</strong> for services,
+        <strong>Watchtower CRP</strong> for the Cyber Reasoning Platform,
+        and <strong>Cyber Defense United</strong> as our DoD/DIB specialization.
+      </p>
+      <div class="features three">
+        <article class="feature">
+          <h3>Watchtower SecureOps™</h3>
+          <p>
+            A services line that delivers modern SOC operations powered by Watchtower:
+            24/7 monitoring, hunt, IR, and reporting delivered as:
+          </p>
+          <ul>
+            <li>Cyber Defense United for DoD/DIB missions</li>
+            <li>SecureOps for Enterprise and Commercial</li>
+            <li>SecureOps for MSSPs and partner models</li>
+            <li>SecureOps Lite for SMB and non-24/7 teams</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>Watchtower CRP™</h3>
+          <p>
+            The Cyber Reasoning Platform behind SecureOps. Modules like
+            <strong>Guardian</strong> (alerts), <strong>Seek</strong> (WCS buckets),
+            <strong>Atlas</strong> (investigations), <strong>Assist</strong> (AI),
+            <strong>Deploy</strong> (automation), and <strong>Audit</strong> (evidence)
+            turn tools and logs into narrative, defensible decisions.
+            <br />
+            <a href="./watchtower.html" class="text-link">Explore Watchtower CRP →</a>
+          </p>
+        </article>
+
+        <article class="feature">
+          <h3>Cyber Defense United™</h3>
+          <p>
+            Our DoD and DIB-focused SecureOps offering — combining Watchtower CRP with
+            cATO-ready monitoring, ZTA-aligned architecture, mission network operations,
+            and government-grade reporting.
+            <br />
+            <a href="./services-cyber-defense-united.html" class="text-link">See DoD/DIB offering →</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
     <!-- WHAT IS A CYBER REASONING PLATFORM? -->
     <section class="section-block slim">
       <h2>What Is a Cyber Reasoning Platform?</h2>
@@ -372,7 +436,7 @@
         <article class="feature">
           <h3>Understands Behavior</h3>
           <p>
-            Watchtower ingests signals from your existing tools and focuses on
+            Watchtower CRP ingests signals from your existing tools and focuses on
             <strong>intent and impact</strong> — not just signatures or single events.
             It creates buckets of related activity and shows you why they matter.
           </p>
@@ -398,17 +462,17 @@
 
     <!-- CORE OFFERINGS / SERVICES -->
     <section class="section-block slim">
-      <h2>Our Core Offerings</h2>
+      <h2>SecureOps Services Built on Watchtower</h2>
       <p class="lead">
-        Start with Cyber Defense United as the flagship engagement, then add focused services for
-        platform deployment, cATO, CMMC, and automation — all anchored by Watchtower.
+        Start with Cyber Defense United as the flagship DoD/DIB engagement, then add focused
+        services for platform deployment, cATO, CMMC, and automation — all anchored by Watchtower.
       </p>
       <div class="features three">
         <article class="feature">
           <h3>Cyber Defense United</h3>
           <p>
             SOC and NSOC modernization built around Watchtower:
-            tiering, escalation paths, shift work, reporting, and battle rhythm — 
+            tiering, escalation paths, shift work, reporting, and battle rhythm —
             all grounded in the Cyber Reasoning Platform.
             <br />
             <a href="./services-cyber-defense-united.html" class="text-link">Learn more →</a>
@@ -499,7 +563,7 @@
           <h3>Designed by Operators</h3>
           <p>
             enLight10 is led by practitioners with experience across CPT, USCYBERCOM-aligned missions,
-            and enterprise SOC leadership. Cyber Defense United and Watchtower reflect the reality
+            and enterprise SOC leadership. SecureOps, Cyber Defense United, and Watchtower reflect the reality
             of 24/7 operations, not a whiteboard fantasy.
           </p>
         </article>
@@ -511,7 +575,7 @@
       <h2>Ready to Unite Your Cyber Defense?</h2>
       <p class="lead">
         Whether you’re running a mission network, securing a defense program, or leading a
-        high-risk small business, Cyber Defense United and Watchtower can become the core
+        high-risk small business, Watchtower SecureOps and Cyber Defense United can become the core
         of how you defend — and prove it.
       </p>
 
