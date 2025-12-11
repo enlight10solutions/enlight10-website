@@ -746,3 +746,14 @@ footer a:focus {
   margin-top: -60px !important;   /* adjust as needed */
 }
 
+/* Make both columns top-aligned instead of centered */
+.hero-inner {
+  align-items: flex-start !important;
+}
+
+/* Pull the right column upward slightly for visual balance */
+.hero-right {
+  margin-top: -30px !important;   /* adjust to taste: -20px to -60px */
+}
+
+
