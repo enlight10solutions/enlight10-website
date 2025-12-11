@@ -73,6 +73,33 @@
       margin-top: 0.1rem;
     }
 
+    /* Right hero column: center title, video, and buttons */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-title {
+  margin: 0 0 1rem;
+  text-align: center;
+}
+
+.hero-video-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Buttons under the video */
+.hero-actions-under-video {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
     /* Content sections */
     main.light {
       background: #ffffff;
@@ -116,7 +143,7 @@
     }
 
     .hero-left .hero-logo-large {
-      max-width: 420px;
+    max-width: 520px;   /* bump for a bigger logo */
     }
 
     .hero-left .tagline {
@@ -279,42 +306,47 @@
           that turns raw security data into decisions you can defend.
         </p>
 
-        <div class="hero-actions hero-actions-under-video">
-          <a class="button primary" href="./services-cyber-defense-united.html">
-            Explore Cyber Defense United
-          </a>
-          <a class="button ghost" href="./watchtower.html">
-            Explore the Watchtower Platform
-          </a>
-        </div>
       </div>
 
       <!-- RIGHT SIDE: HEADLINE + VIDEO -->
-      <div class="hero-right">
-        <h1>Cyber Defense United.</h1>
+<div class="hero-right">
 
-        <div class="hero-video-wrapper">
-          <video
-            id="demoVideo"
-            class="hero-video featured"
-            controls
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-          >
-            <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+  <h1 class="hero-title">Cyber Defense United.</h1>
 
-          <div class="video-speed-controls">
-            <span>Playback speed:</span>
-            <button type="button" class="video-speed-btn" data-speed="1">1×</button>
-            <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
-            <button type="button" class="video-speed-btn" data-speed="2">2×</button>
-          </div>
-        </div>
+  <div class="hero-video-wrapper">
+    <video
+      id="demoVideo"
+      class="hero-video featured"
+      controls
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    >
+      <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-speed-controls">
+      <span>Playback speed:</span>
+      <button type="button" class="video-speed-btn" data-speed="1">1×</button>
+      <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
+      <button type="button" class="video-speed-btn" data-speed="2">2×</button>
+    </div>
+
+    <!-- CTA BUTTONS now under video -->
+    <div class="hero-actions hero-actions-under-video">
+      <a class="button primary" href="./services-cyber-defense-united.html">
+        Explore Cyber Defense United
+      </a>
+      <a class="button ghost" href="./watchtower.html">
+        Explore the Watchtower Platform
+      </a>
+    </div>
+  </div>
+
+</div>
+
       </div>
     </div>
 
