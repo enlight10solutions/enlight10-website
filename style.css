@@ -60,7 +60,7 @@ body {
 .topbar .brand {
   display:flex;
   align-items:center;
-  margin-left: 14px;
+  margin-left: 16px;
   gap:.5rem;
 }
 .topbar .brand-logo {
