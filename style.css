@@ -47,6 +47,18 @@ body {
   border-bottom: 2px solid #FFD447; /* gold underline */
   z-index: 1000;
 }
+.topbar::after {
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height:8px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,212,71,0.35),
+    rgba(255,212,71,0)
+  );
+}
 .topbar .brand {
   display:flex;
   align-items:center;
