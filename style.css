@@ -34,7 +34,7 @@ body {
   padding:0 16px;
   background:#ffffff;                     /* WHITE NAV BAR */
   color:var(--ink);
-  border-bottom: 4px solid var(--gold);   /* GOLD BRAND STRIPE */
+border-bottom:8px solid var(--gold);
 box-shadow:none;                        /* optional: removes shadow if you want a cleaner look */
   z-index:1000;
 }
@@ -43,11 +43,11 @@ box-shadow:none;                        /* optional: removes shadow if you want 
   position:absolute;
   left:0;
   right:0;
-  bottom:-1px;
-  height:6px;
+  bottom:-4px;
+  height:10px;
   background:linear-gradient(
     to bottom,
-    rgba(255,212,71,0.35),
+    rgba(255,212,71,0.55),
     rgba(255,212,71,0)
   );
   pointer-events:none;
@@ -63,7 +63,7 @@ box-shadow:none;                        /* optional: removes shadow if you want 
   width:auto;
 }
 .brand-logo--slim {
-  height:44px;
+  height:72px;
   width:auto;
   display:block;
   filter:drop-shadow(0 3px 10px rgba(0,0,0,.35));
