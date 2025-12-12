@@ -1,4 +1,4 @@
-<!-- who.html (Founder-focused with credibility and mission alignment) -->
+<!-- who.html (About / Founder-focused with dark hero + pulsing logo glow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +7,237 @@
   <title>Who We Are — enLight10 Solutions</title>
 
   <!-- Styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=18">
+  <link rel="stylesheet" href="./style.css?v=26" />
   <script src="./script.js" defer></script>
 
   <!-- Favicon -->
-  <link rel="icon" href="./Logo_new.png?v=2" type="image/png">
-</head>
-<body>
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
-  <!-- NAV -->
+  <!-- Page-specific layout -->
+  <style>
+    body {
+      margin: 0;
+      background: #f9fafb;
+      color: #020617;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* ---------------------------
+       Dark hero (matches newer pages)
+       --------------------------- */
+    .about-hero {
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      color: #ffffff;
+      padding: 95px 0 70px; /* clears fixed nav */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-hero-left {
+      flex: 0 0 380px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    /* Big logo */
+    .about-hero-logo {
+      width: 100%;
+      max-width: 460px;
+      height: auto;
+      border-radius: 18px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.65));
+    }
+
+    /* Glow "aura" behind the logo */
+    .about-hero-left::before {
+      content: "";
+      position: absolute;
+      left: 28%;
+      top: 28%;
+      width: 320px;
+      height: 320px;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(245, 158, 11, 0.22) 0%,
+        rgba(245, 158, 11, 0.12) 28%,
+        rgba(245, 158, 11, 0.06) 45%,
+        rgba(245, 158, 11, 0.00) 70%
+      );
+      filter: blur(6px);
+      opacity: 0.55;
+      animation: e10Pulse 4.8s ease-in-out infinite;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Secondary soft glow for depth */
+    .about-hero-left::after {
+      content: "";
+      position: absolute;
+      left: 32%;
+      top: 34%;
+      width: 520px;
+      height: 520px;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.10) 0%,
+        rgba(56, 189, 248, 0.05) 35%,
+        rgba(56, 189, 248, 0.00) 70%
+      );
+      filter: blur(10px);
+      opacity: 0.35;
+      animation: e10Pulse2 6.5s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes e10Pulse {
+      0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(0.98); }
+      50%      { opacity: 0.78; transform: translate(-50%, -50%) scale(1.05); }
+    }
+
+    @keyframes e10Pulse2 {
+      0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.98); }
+      50%      { opacity: 0.42; transform: translate(-50%, -50%) scale(1.03); }
+    }
+
+    .about-hero-right {
+      flex: 1 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .about-hero-right h1 {
+      margin: 0;
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      font-weight: 700;
+    }
+
+    .about-hero-copy {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #e5e7eb;
+      max-width: 620px;
+    }
+
+    .about-hero-copy strong {
+      font-weight: 650;
+    }
+
+    .about-hero-actions {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      align-items: center;
+    }
+
+    /* Light body (same pattern as other pages) */
+    main.light {
+      background: #ffffff;
+      color: #020617;
+      padding: 60px 0;
+    }
+
+    @media (max-width: 900px) {
+      .about-hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .about-hero-left,
+      .about-hero-right {
+        width: 100%;
+        flex: 1 1 auto;
+      }
+
+      .about-hero-left {
+        justify-content: center;
+      }
+
+      .about-hero-left::before {
+        left: 50%;
+        top: 40%;
+      }
+
+      .about-hero-left::after {
+        left: 55%;
+        top: 45%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV (match newer site structure) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./Logo(offical)(closeup).PNG" alt="enLight10 Solutions">
+      <img
+        class="brand-logo brand-logo--slim"
+        src="./enLight10_Logo.png"
+        alt="enLight10 Solutions"
+      />
     </a>
 
     <div class="nav-right">
       <div class="nav-links">
-
-        <!-- Product Dropdown -->
+        <!-- SERVICES DROPDOWN (SecureOps + CDU only) -->
         <div class="dropdown">
-          <button class="dropdown-toggle">Product ▾</button>
+          <button
+            class="dropdown-toggle"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Services ▾
+          </button>
           <div class="dropdown-panel">
-            <a href="./watchtower.html">Watchtower <span style="color:#d00; font-weight:bold; font-size:0.8em;">(NEW)</span></a>
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Services delivered by people &amp; platform</span>
+            </a>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+            </a>
           </div>
         </div>
 
-        <a href="./services.html">Services</a>
+        <!-- PRODUCT LINK -->
+        <a href="./watchtower.html">Watchtower CRP</a>
+
+        <!-- ABOUT -->
         <a href="./who.html" aria-current="page">Who We Are</a>
+
+        <!-- CONTACT -->
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
@@ -44,6 +248,7 @@
         aria-label="Toggle mobile menu"
         aria-expanded="false"
         aria-controls="mobileMenu"
+        type="button"
       >
         <span></span><span></span><span></span>
       </button>
@@ -52,48 +257,84 @@
 
   <!-- MOBILE MENU -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile menu">
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <a href="./watchtower.html">Watchtower (NEW)</a>
-      <a href="./services.html">Services</a>
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">
+        Services
+      </strong>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower CRP</a>
       <a href="./who.html" aria-current="page">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- MAIN -->
-  <main class="light" style="padding:80px 0 60px;">
+  <!-- DARK HERO (2 columns) -->
+  <section class="about-hero">
+    <div class="about-hero-inner">
+      <!-- LEFT: big enLight10 logo with pulsing glow -->
+      <div class="about-hero-left">
+        <img
+          class="about-hero-logo"
+          src="./enLight10_Logo.png"
+          alt="enLight10 Solutions"
+        />
+      </div>
 
-    <!-- Overview -->
-    <section class="section-block slim">
-      <h2>Who We Are</h2>
-      <p class="lead">
-        enLight10 Solutions is a veteran-owned cybersecurity company focused on supporting government and defense operations — and building <strong>Watchtower</strong>, a SOC platform shaped by real-world experience.
-      </p>
-      <p>
-        We operate at the intersection of practitioner reality, mission constraints, and modern technology. The work we do — and the platform we're building — comes from lived experience inside cyber teams responsible for critical infrastructure, defense networks, and national-level missions.
-      </p>
-    </section>
+      <!-- RIGHT: the intro text -->
+      <div class="about-hero-right">
+        <div class="about-hero-kicker">Who We Are</div>
+        <h1>Built by operators. Focused on mission outcomes.</h1>
 
+        <p class="about-hero-copy">
+          enLight10 Solutions is a veteran-owned cybersecurity company focused on supporting government and defense
+          operations — and building <strong>Watchtower</strong>, a SOC platform shaped by real-world experience.
+        </p>
+
+        <p class="about-hero-copy">
+          We operate at the intersection of practitioner reality, mission constraints, and modern technology.
+          The work we do — and the platform we’re building — comes from lived experience inside cyber teams
+          responsible for critical infrastructure, defense networks, and national-level missions.
+        </p>
+
+        <div class="about-hero-actions">
+          <a class="button primary" href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation">
+            Start a Conversation
+          </a>
+          <a class="button ghost" href="./watchtower.html">
+            Explore Watchtower CRP
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN (light) -->
+  <main class="light">
     <!-- Founder Bio -->
     <section class="section-block slim">
       <h2>Founder</h2>
 
       <p>
-        enLight10 Solutions was founded by <strong>Jay Moreno</strong>, a cybersecurity operator and leader with over 15 years of technical experience and 9 years dedicated to defensive cyber operations across military, federal, and government contracting environments.
+        enLight10 Solutions was founded by <strong>Jay Moreno</strong>, a cybersecurity operator and leader with over
+        15 years of technical experience and 9 years dedicated to defensive cyber operations across military, federal,
+        and government contracting environments.
       </p>
 
       <ul class="clean">
         <li><strong>U.S. Air Force (Active Duty):</strong> early career in network operations and enterprise command-and-control support.</li>
         <li><strong>U.S. Army National Guard &amp; Deployment:</strong> systems administration, IT modernization, and deployed communications support across multiple theaters.</li>
         <li><strong>Cyber Protection Team (CPT):</strong> selected as one of the top cybersecurity operators across the Guard (~20,000 personnel).</li>
-        <li><strong>USCYBERCOM–Aligned Missions:</strong> Threat Hunter supporting Cyber National Mission Teams and Hunt Forward Operations.</li>
+        <li><strong>USCYBERCOM–Aligned Missions:</strong> threat hunter supporting Cyber National Mission Teams and hunt-forward operations.</li>
         <li><strong>GG-13 Cyber Hunt Lead:</strong> led advanced hunt operations with NSA Texas and international deployments supporting U.S. and allied defense partners.</li>
-        <li><strong>SOC &amp; Ops Leadership:</strong> Directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
+        <li><strong>SOC &amp; Ops Leadership:</strong> directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
       </ul>
 
       <p style="margin-top:1rem;">
-        Jay’s operational focus — from CPT missions and hunt operations to enterprise SOC leadership — directly informs how Watchtower is being built and how we support customers today.
+        Jay’s operational focus — from CPT missions and hunt operations to enterprise SOC leadership — directly informs
+        how Watchtower is being built and how we support customers today.
       </p>
     </section>
 
@@ -109,9 +350,10 @@
 
     <!-- Why We're Building -->
     <section class="section-block slim">
-      <h2>Why We're Building Watchtower</h2>
+      <h2>Why We’re Building Watchtower</h2>
       <p>
-        After years inside SOCs and cyber missions, one pattern was constant: analysts spent too much time navigating tools and too little time understanding the threat or telling the story of the incident.
+        After years inside SOCs and cyber missions, one pattern was constant: analysts spent too much time navigating tools
+        and too little time understanding the threat or telling the story of the incident.
       </p>
       <p>
         Watchtower exists to change that — giving analysts one place to investigate, document, and communicate clearly.
@@ -137,7 +379,8 @@
     <section class="section-block slim">
       <h2>Connect With Us</h2>
       <p>
-        Whether you're exploring Watchtower, looking for cybersecurity support, or discussing teaming opportunities — we’re open to a straightforward conversation.
+        Whether you're exploring Watchtower, looking for cybersecurity support, or discussing teaming opportunities —
+        we’re open to a straightforward conversation.
       </p>
 
       <div style="margin-top:1.5rem;">
@@ -146,31 +389,28 @@
         </a>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
   <footer>
-  <div class="footer-inner">
-    <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
-    <p class="footer-vet">Veteran-Owned Small Business</p>
-    <p class="footer-info">
-      <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
-    </p>
-    <div class="footer-social">
-      <span>Follow us:</span>
-      <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-      <a href="https://x.com/E10Solutions" target="_blank">X</a> |
-      <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
-    </div>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
 
-    <!-- 🔥 This is the part missing from the other pages -->
-    <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
-      <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
-      <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social & GitHub</span>
+      <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+        <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
+      </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
