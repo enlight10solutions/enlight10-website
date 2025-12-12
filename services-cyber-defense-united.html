@@ -1,4 +1,4 @@
-<!-- services-cyber-defense-united.html -->
+<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,14 +25,116 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* Top hero strip: same dark vibe as main page */
+    /* ---------------------------
+       SERVICES DROPDOWN: force gold hover (override any blue defaults)
+       --------------------------- */
+    .dropdown-panel a {
+      text-decoration: none;
+    }
+
+    /* Make hover/active gold instead of blue */
+    .dropdown-panel a:hover,
+    .dropdown-panel a:focus-visible {
+      background: rgba(251, 191, 36, 0.14) !important;
+      color: #fde68a !important;
+    }
+
+    /* If your global CSS adds a blue underline or link color, neutralize it here */
+    .dropdown-panel a:hover *,
+    .dropdown-panel a:focus-visible * {
+      color: inherit !important;
+    }
+
+    /* Optional: active state inside dropdown */
+    .dropdown-panel a[aria-current="page"] {
+      background: rgba(251, 191, 36, 0.18);
+      color: #fff7d6;
+      border-left: 2px solid rgba(251, 191, 36, 0.75);
+      padding-left: calc(0.9rem - 2px);
+    }
+
+    /* Pill buttons (hero CTAs) */
+.cdu-hero-actions {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.cdu-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.cdu-pill:focus-visible {
+  outline: 2px solid rgba(251, 191, 36, 0.65);
+  outline-offset: 3px;
+}
+
+.cdu-pill:hover {
+  transform: translateY(-1px);
+}
+
+.cdu-pill.primary {
+  color: #0b1120;
+  background: linear-gradient(180deg, rgba(251,191,36,1) 0%, rgba(245,158,11,1) 100%);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+}
+
+.cdu-pill.primary:hover {
+  box-shadow: 0 16px 34px rgba(0,0,0,0.55);
+}
+
+.cdu-pill.ghost {
+  color: #fff7d6;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+}
+
+.cdu-pill.ghost:hover {
+  border-color: rgba(251, 191, 36, 0.55);
+  background: rgba(15, 23, 42, 0.50);
+}
+
+    /* ---------------------------
+       HERO: upgraded visual treatment
+       --------------------------- */
     .cdu-hero {
-      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(900px 420px at 18% 35%, rgba(251, 191, 36, 0.10), rgba(2, 6, 23, 0) 60%),
+                  linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
       color: #ffffff;
-      padding: 90px 0 70px; /* clears fixed nav + adds breathing room */
+      padding: 95px 0 75px; /* clears fixed nav + adds breathing room */
+    }
+
+    /* subtle “texture” / vignette */
+    .cdu-hero::before {
+      content: "";
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.08), rgba(2, 6, 23, 0) 55%),
+                  radial-gradient(circle at 25% 70%, rgba(251, 191, 36, 0.08), rgba(2, 6, 23, 0) 60%);
+      filter: blur(10px);
+      opacity: 0.7;
+      pointer-events: none;
     }
 
     .cdu-hero-inner {
+      position: relative;
+      z-index: 1;
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
@@ -43,18 +145,44 @@
     }
 
     .cdu-hero-left {
-      flex: 0 0 360px;
+      flex: 0 0 380px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
+      position: relative;
     }
 
+    /* logo card */
     .cdu-hero-left img {
-      max-width: 420px;
+      max-width: 460px;
       width: 100%;
       height: auto;
       border-radius: 18px;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* soft gold aura behind the logo (static, not pulsing) */
+    .cdu-hero-left::after {
+      content: "";
+      position: absolute;
+      width: 640px;
+      height: 640px;
+      left: 50%;
+      top: 42%;
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(251, 191, 36, 0.16) 0%,
+        rgba(251, 191, 36, 0.08) 30%,
+        rgba(251, 191, 36, 0.00) 65%
+      );
+      filter: blur(12px);
+      opacity: 0.55;
+      z-index: 1;
+      pointer-events: none;
     }
 
     .cdu-hero-right {
@@ -64,35 +192,39 @@
       gap: 1rem;
     }
 
-    .cdu-hero-right h1 {
-      margin: 0;
-      font-size: clamp(2rem, 2.8vw, 2.6rem);
-      font-weight: 700;
-    }
-
     .cdu-hero-kicker {
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: 0.82;
+    }
+
+    .cdu-hero-right h1 {
+      margin: 0;
+      font-size: clamp(2rem, 2.8vw, 2.7rem);
+      font-weight: 800;
+      letter-spacing: 0.01em;
     }
 
     .cdu-hero-copy {
       font-size: 0.98rem;
-      line-height: 1.7;
-      max-width: 560px;
+      line-height: 1.75;
+      max-width: 600px;
       color: #e5e7eb;
+      margin: 0;
     }
 
     .cdu-hero-copy strong {
-      font-weight: 600;
+      font-weight: 650;
+      color: #fff7d6;
     }
 
     .cdu-hero-actions {
-      margin-top: 0.75rem;
+      margin-top: 0.85rem;
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem 1.2rem;
+      align-items: center;
     }
 
     /* Main body under hero (light background, like index) */
@@ -123,6 +255,32 @@
       .cdu-hero-actions {
         justify-content: flex-start;
       }
+
+      .cdu-hero-left::after {
+        width: 520px;
+        height: 520px;
+        top: 48%;
+      }
+    }
+
+    /* Footer: ensure the e10 icon block is centered consistently */
+    .footer-e10 {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    .footer-e10 img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .footer-e10 span {
+      font-size: 0.8rem;
+      opacity: 0.7;
     }
   </style>
 </head>
@@ -151,9 +309,9 @@
             Services ▾
           </button>
           <div class="dropdown-panel">
-  <a href="./services-secureops.html">Watchtower SecureOps™</a>
-<a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United™</a>
-</div>
+            <a href="./services-secureops.html">Watchtower SecureOps™</a>
+            <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United™</a>
+          </div>
         </div>
 
         <!-- PRODUCT LINK -->
@@ -185,11 +343,8 @@
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
       <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United</a>
-      <a href="./services-watchtower-deployments.html">Watchtower Platform &amp; Integration</a>
-      <a href="./services-cato.html">Operational cATO Enablement</a>
-      <a href="./services-cmmc.html">CMMC Operations &amp; Evidence</a>
-      <a href="./services-automation.html">Automation &amp; SOAR Optimization</a>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United™</a>
       <hr />
       <a href="./watchtower.html">Watchtower Platform</a>
       <a href="./who.html">Who We Are</a>
@@ -197,10 +352,10 @@
     </nav>
   </aside>
 
-  <!-- HERO: Watchtower logo + Cyber Defense United intro -->
+  <!-- HERO -->
   <section class="cdu-hero">
     <div class="cdu-hero-inner">
-      <!-- LEFT: Watchtower logo -->
+      <!-- LEFT: CDU logo -->
       <div class="cdu-hero-left">
         <img
           src="./Watchtower_CDU_Logo.png"
@@ -212,12 +367,14 @@
       <div class="cdu-hero-right">
         <div class="cdu-hero-kicker">Services • Cyber Defense United</div>
         <h1>Cyber Defense United.</h1>
+
         <p class="cdu-hero-copy">
           Cyber Defense United is our flagship <strong>SOC and NSOC modernization</strong> engagement,
           built around the <strong>Watchtower Cyber Reasoning Platform</strong>. It combines operations
           design, shift work, battle rhythm, and reporting with the technology backbone needed to make
           those decisions defensible.
         </p>
+
         <p class="cdu-hero-copy">
           Instead of stitching together tools and tickets, we help you build a
           <strong>unified way of defending</strong> — with Watchtower as the hub for alerts, cases,
@@ -225,16 +382,17 @@
         </p>
 
         <div class="cdu-hero-actions">
-          <a
-            class="button primary"
-            href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
-          >
-            Request a Cyber Defense United Conversation
-          </a>
-          <a class="button ghost" href="./watchtower.html">
-            Learn More About the Watchtower Platform
-          </a>
-        </div>
+  <a
+    class="cdu-pill primary"
+    href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
+  >
+    Request a Cyber Defense United Conversation
+  </a>
+
+  <a class="cdu-pill ghost" href="./watchtower.html">
+    Learn More About the Watchtower Platform
+  </a>
+</div>
       </div>
     </div>
   </section>
@@ -269,36 +427,22 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">
-        © 2025 enLight10 Solutions, LLC. All rights reserved.
-      </p>
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
       </p>
+
       <div class="footer-social">
         <span>Follow us:</span>
         <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
         <a href="https://x.com/E10Solutions" target="_blank">X</a> |
         <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
       </div>
-      <div
-        style="
-          margin-top:0.75rem;
-          display:flex;
-          align-items:center;
-          gap:0.5rem;
-          justify-content:center;
-        "
-      >
-        <img
-          src="./e10_Logo.png"
-          alt="e10 icon"
-          style="width:28px; height:28px; border-radius:6px;"
-        />
-        <span style="font-size:0.8rem; opacity:0.7;">
-          enLight10 on social &amp; GitHub
-        </span>
+
+      <div class="footer-e10">
+        <img src="./e10_Logo.png" alt="e10 icon" />
+        <span>enLight10 on social &amp; GitHub</span>
       </div>
     </div>
   </footer>
