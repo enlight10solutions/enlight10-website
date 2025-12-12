@@ -1,0 +1,511 @@
+<!-- services-secureops.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Watchtower SecureOps™ — Modern SOC Services Powered by Watchtower</title>
+  <meta
+    name="description"
+    content="Watchtower SecureOps™ is enLight10’s services line for commercial and MSSP environments — SecureOps for Enterprise, SecureOps for MSSPs, and SecureOps Lite (SMB), all powered by the Watchtower Cyber Reasoning Platform (CRP)."
+  />
+
+  <!-- Shared site styles / JS -->
+  <link rel="stylesheet" href="./style.css?v=26" />
+  <script src="./script.js" defer></script>
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <!-- Page-specific layout -->
+  <style>
+    body {
+      margin: 0;
+      background: #f9fafb;
+      color: #020617;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    /* Top hero strip: dark, similar to main page */
+    .secops-hero {
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      color: #ffffff;
+      padding: 90px 0 70px; /* clears fixed nav + adds breathing room */
+    }
+
+    .secops-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .secops-hero-left {
+      flex: 0 0 360px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .secops-hero-left img {
+      max-width: 420px;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .secops-hero-right {
+      flex: 1 1 360px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .secops-hero-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .secops-hero-right h1 {
+      margin: 0;
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
+      font-weight: 700;
+    }
+
+    .secops-hero-copy {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      max-width: 600px;
+      color: #e5e7eb;
+    }
+
+    .secops-hero-copy strong {
+      font-weight: 600;
+    }
+
+    .secops-hero-actions {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+    }
+
+    /* Main body under hero (light background, like index) */
+    main.light {
+      background: #ffffff;
+      color: #020617;
+      padding: 60px 0;
+    }
+
+    @media (max-width: 900px) {
+      .secops-hero-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .secops-hero-left,
+      .secops-hero-right {
+        flex: 1 1 auto;
+        width: 100%;
+      }
+
+      .secops-hero-right h1,
+      .secops-hero-copy {
+        text-align: left;
+      }
+
+      .secops-hero-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAV -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img
+        class="brand-logo brand-logo--slim"
+        src="./enLight10_Logo.png"
+        alt="enLight10 Solutions"
+      />
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <!-- SERVICES DROPDOWN (SecureOps + CDU only) -->
+        <div class="dropdown">
+          <button
+            class="dropdown-toggle active"
+            type="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Services ▾
+          </button>
+          <div class="dropdown-panel">
+            <a href="./services.html#secureops" class="active">
+              Watchtower SecureOps™
+              <span class="sub">Services delivered by people &amp; platform</span>
+            </a>
+            <a href="./services.html#cyber-defense-united">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PRODUCT LINK -->
+        <a href="./watchtower.html">Watchtower CRP</a>
+
+        <!-- ABOUT -->
+        <a href="./who.html">Who We Are</a>
+
+        <!-- CONTACT -->
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        id="menuToggle"
+        class="hamburger"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services.html#secureops" aria-current="page">Watchtower SecureOps™</a>
+      <a href="./services.html#cyber-defense-united">Cyber Defense United™</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower CRP</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- HERO: Watchtower SecureOps intro -->
+  <section class="secops-hero">
+    <div class="secops-hero-inner">
+      <!-- LEFT: Watchtower SecureOps logo -->
+      <div class="secops-hero-left">
+        <img
+          src="./Watchtower_SecureOps_Logo.png"
+          alt="Watchtower SecureOps — Services powered by Watchtower CRP"
+        />
+      </div>
+
+      <!-- RIGHT: copy + CTA -->
+      <div class="secops-hero-right">
+        <div class="secops-hero-kicker">Services • Watchtower SecureOps™</div>
+        <h1>Watchtower SecureOps™</h1>
+        <p class="secops-hero-copy">
+          <strong>Watchtower SecureOps™</strong> is our services line — operations delivered by
+          <strong>people and platform together</strong>. It uses the Watchtower Cyber Reasoning Platform (CRP)
+          to turn raw alerts and logs into clear investigations, timelines, and outcomes for commercial environments.
+        </p>
+        <p class="secops-hero-copy">
+          Whether you’re an enterprise SOC, an MSSP supporting many tenants, or an SMB that needs structure
+          without a huge team, SecureOps gives you a <strong>repeatable way to defend</strong> and
+          <strong>prove what you did</strong>.
+        </p>
+
+        <div class="secops-hero-actions">
+          <a
+            class="button primary"
+            href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Conversation"
+          >
+            Talk to Us About SecureOps
+          </a>
+          <a class="button ghost" href="./watchtower.html">
+            Learn About the Watchtower CRP
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN BODY -->
+  <main class="light">
+    <!-- OVERVIEW -->
+    <section class="section-block slim">
+      <h2>What Watchtower SecureOps™ Is</h2>
+      <p class="lead">
+        Watchtower SecureOps takes the things you already have — SIEM, EDR, identity, firewalls, cloud logs —
+        and wraps them in a <strong>case-driven operating model</strong> powered by Watchtower CRP.
+      </p>
+      <ul class="clean">
+        <li>
+          <strong>One place to work:</strong> analysts live in Watchtower cases and timelines, not in twenty tabs.
+        </li>
+        <li>
+          <strong>Evidence by default:</strong> every alert, action, and decision becomes documented as part of the case.
+        </li>
+        <li>
+          <strong>Commercial focus:</strong> built for enterprises, MSSPs, and SMBs that need SOC-level rigor
+          without the overhead of a 24/7, 50-person team.
+        </li>
+      </ul>
+    </section>
+
+    <!-- VARIANTS: ENTERPRISE / MSSP / SMB -->
+    <section class="section-block slim">
+      <h2>SecureOps Service Variants</h2>
+      <p class="lead">
+        The same foundation, tuned for three common commercial realities:
+        <strong>Enterprise SOCs</strong>, <strong>MSSPs</strong>, and <strong>SMBs</strong>.
+      </p>
+
+      <div class="features three">
+        <article class="feature">
+          <h3>SecureOps for Enterprise</h3>
+          <p>
+            For in-house security teams that already own tools but need a more coherent SOC operating model.
+          </p>
+          <ul class="clean">
+            <li>24/7 or business-hours monitoring and triage.</li>
+            <li>Case-driven investigations with impact and recommendations.</li>
+            <li>Integration with your existing SIEM, EDR, and ticketing stack.</li>
+            <li>Executive-ready reporting tied to risk and compliance needs.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>SecureOps for MSSPs</h3>
+          <p>
+            For MSSPs and SOC providers that want a consistent way to manage many tenants using Watchtower CRP.
+          </p>
+          <ul class="clean">
+            <li>Multi-tenant patterns for cases, alerts, and playbooks.</li>
+            <li>Standardized triage, escalation, and reporting across clients.</li>
+            <li>Evidence and narratives you can show to your customers, not just ticket counts.</li>
+            <li>Optional white-label-style workflows with your brand and processes.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>SecureOps Lite (SMB)</h3>
+          <p>
+            For SMBs and non-24/7 teams that need structure and evidence, not a full-blown SOC.
+          </p>
+          <ul class="clean">
+            <li>Right-sized alerting with clear priorities and action plans.</li>
+            <li>Business-hours monitoring with on-call or surge support patterns.</li>
+            <li>Incident timelines and “what we did” records for leadership and auditors.</li>
+            <li>On-ramps to CMMC and other frameworks without massive upfront investment.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES -->
+    <section class="section-block slim">
+      <h2>Core SecureOps Capabilities</h2>
+      <p class="lead">
+        All SecureOps variants share a core set of capabilities — the difference is how far we scale them
+        and how we shape them around your environment.
+      </p>
+      <div class="features three">
+        <article class="feature">
+          <h3>Monitoring &amp; Triage</h3>
+          <p>
+            Eyes on glass, but smarter:
+          </p>
+          <ul class="clean">
+            <li>Alert triage and initial investigation inside Watchtower.</li>
+            <li>Enrichment from your existing tools (EDR, threat intel, identity).</li>
+            <li>Priority scoring so your team focuses on what matters most.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>Investigation, Hunt &amp; Response</h3>
+          <p>
+            Turn raw data into clear stories of what happened and what you did.
+          </p>
+          <ul class="clean">
+            <li>Atlas-powered cases with timelines and artifacts.</li>
+            <li>Campaign and user/host-centric investigations via Watchtower buckets.</li>
+            <li>Proactive hunts designed around your risk profile.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>Reporting &amp; Compliance Evidence</h3>
+          <p>
+            Operations that can stand in front of auditors, boards, and regulators.
+          </p>
+          <ul class="clean">
+            <li>Regular operational reporting (weekly, monthly, quarterly).</li>
+            <li>Evidence packs for audits (CMMC, ISO, SOC 2, internal standards).</li>
+            <li>“Here’s what we saw, here’s what we did, here’s what changed” narratives.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- POWERED BY WATCHTOWER CRP -->
+    <section class="section-block slim">
+      <h2>Powered by the Watchtower Cyber Reasoning Platform (CRP)</h2>
+      <p class="lead">
+        Watchtower SecureOps uses the CRP as the <strong>reasoning and evidence layer</strong> above your tools.
+      </p>
+      <ul class="clean">
+        <li>
+          <strong>Guardian:</strong> organizes alerts and signals into triage queues and funnels.
+        </li>
+        <li>
+          <strong>Seek:</strong> fuses events into WCS-backed buckets that represent behaviors and campaigns, not just single alerts.
+        </li>
+        <li>
+          <strong>Atlas:</strong> the investigation workspace where analysts build and track cases, attach artifacts, and record decisions.
+        </li>
+        <li>
+          <strong>Assist:</strong> AI copilots to summarize cases, draft reports, and suggest next steps — always under analyst control.
+        </li>
+        <li>
+          <strong>Deploy:</strong> orchestrates playbooks for enrichment, ticketing, and automated containment where you’re comfortable.
+        </li>
+        <li>
+          <strong>Audit:</strong> organizes cases, timelines, and artifacts into reusable evidence across controls and frameworks.
+        </li>
+      </ul>
+      <p style="margin-top:1rem;">
+        You keep your existing tools. Watchtower CRP and SecureOps wrap them in a <strong>single operating picture</strong>.
+      </p>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="section-block slim">
+      <h2>Who Watchtower SecureOps™ Is For</h2>
+      <p class="lead">
+        Built for commercial teams that care about <strong>outcomes and evidence</strong>, not just tool sprawl.
+      </p>
+      <ul class="clean">
+        <li>
+          <strong>Enterprises</strong> with existing SOCs or security teams that want a more consistent,
+          case-driven way to operate.
+        </li>
+        <li>
+          <strong>MSSPs &amp; Managed Security Providers</strong> that need to deliver clearer value to clients
+          and scale operations without burning out analysts.
+        </li>
+        <li>
+          <strong>Healthcare, finance, and critical-service SMBs</strong> that need SOC-grade rigor but cannot
+          justify full internal SOC build-outs.
+        </li>
+      </ul>
+    </section>
+
+    <!-- HOW WE ENGAGE -->
+    <section class="section-block slim">
+      <h2>How a SecureOps Engagement Works</h2>
+      <ul class="clean">
+        <li>
+          <span class="why">1. Discovery:</span>
+          understand your environment, tools, staffing, and regulatory pressures (CMMC, SOC 2, HIPAA, etc.).
+        </li>
+        <li>
+          <span class="why">2. Design:</span>
+          define scope (networks, tenants, data sources), target outcomes, and reporting cadence.
+        </li>
+        <li>
+          <span class="why">3. Watchtower Integration:</span>
+          connect your SIEM, EDR, identity, and other data sources into Watchtower CRP.
+        </li>
+        <li>
+          <span class="why">4. Run SecureOps:</span>
+          operate monitoring, triage, investigations, and reporting using Watchtower as the central workspace.
+        </li>
+        <li>
+          <span class="why">5. Refine &amp; Scale:</span>
+          tune playbooks, automation, and coverage; expand to more assets, tenants, or business units over time.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-block slim">
+      <h2>Let’s Talk SecureOps for Your Environment</h2>
+      <p class="lead">
+        If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
+        without building everything yourself, Watchtower SecureOps may be the right fit.
+      </p>
+      <p>
+        Email us at
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+        with a short description of your environment (industry, size, current tools), and we’ll respond with
+        a focused, technical conversation about SecureOps options.
+      </p>
+      <div style="margin-top:1.5rem;">
+        <a
+          class="button primary"
+          href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Inquiry"
+        >
+          Start a SecureOps Conversation
+        </a>
+        <a
+          class="button ghost"
+          href="./watchtower.html"
+          style="margin-left:0.75rem;"
+        >
+          Explore the Watchtower CRP
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">
+        © 2025 enLight10 Solutions, LLC. All rights reserved.
+      </p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
+      <div
+        style="
+          margin-top:0.75rem;
+          display:flex;
+          align-items:center;
+          gap:0.5rem;
+          justify-content:center;
+        "
+      >
+        <img
+          src="./e10(tm).png"
+          alt="e10 icon"
+          style="width:28px; height:28px; border-radius:6px;"
+        />
+        <span style="font-size:0.8rem; opacity:0.7;">
+          enLight10 on social &amp; GitHub
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
