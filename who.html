@@ -22,6 +22,73 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
+    /* ----------------------------------
+   Hero pill buttons (shared pattern)
+----------------------------------- */
+.about-hero-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.about-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.72rem 1.05rem;
+  border-radius: 999px;
+  font-weight: 650;
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.about-pill:hover {
+  transform: translateY(-1px);
+}
+
+.about-pill:focus-visible {
+  outline: 2px solid rgba(251, 191, 36, 0.65);
+  outline-offset: 3px;
+}
+
+/* Primary (gold) */
+.about-pill.primary {
+  color: #0b1120;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 191, 36, 1) 0%,
+    rgba(245, 158, 11, 1) 100%
+  );
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+.about-pill.primary:hover {
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55);
+}
+
+/* Ghost */
+.about-pill.ghost {
+  color: #fff7d6;
+  background: rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.about-pill.ghost:hover {
+  border-color: rgba(251, 191, 36, 0.55);
+  background: rgba(15, 23, 42, 0.5);
+}
+
     /* ---------------------------
        Dark hero (matches newer pages)
        --------------------------- */
@@ -314,13 +381,17 @@
         </p>
 
         <div class="about-hero-actions">
-          <a class="button primary" href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation">
-            Start a Conversation
-          </a>
-          <a class="button ghost" href="./watchtower.html">
-            Explore Watchtower CRP
-          </a>
-        </div>
+  <a
+    class="about-pill primary"
+    href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation"
+  >
+    Start a Conversation
+  </a>
+
+  <a class="about-pill ghost" href="./watchtower.html">
+    Explore Watchtower CRP
+  </a>
+</div>
       </div>
 
     </div>
