@@ -1,4 +1,4 @@
-<!-- watchtower.html -->
+<!-- watchtower.html (FULL FILE REPLACEMENT) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +23,14 @@
       margin: 0;
       background: #020617;
       color: #e5e7eb;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     /* Top hero shell (dark) */
     .wt-hero-shell {
       background: linear-gradient(to bottom, #020617 0%, #020617 60%, #020617 100%);
       color: #e5e7eb;
-      padding-top: 100px;   /* clear the fixed topbar */
+      padding-top: 100px; /* clear fixed topbar */
       padding-bottom: 60px;
     }
 
@@ -49,7 +49,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 1.2rem;
+      gap: 1.1rem;
     }
 
     .wt-hero-logo {
@@ -69,20 +69,13 @@
     .wt-hero-copy p {
       margin: 0 0 0.75rem;
       color: #e5e7eb;
-      line-height: 1.6;
+      line-height: 1.65;
       max-width: 520px;
     }
 
     .wt-hero-copy p.lead {
       font-size: 1rem;
       color: #e5e7eb;
-    }
-
-    .wt-hero-actions {
-      margin-top: 0.75rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
     }
 
     .wt-hero-right {
@@ -96,14 +89,15 @@
     .wt-hero-right h1 {
       margin: 0 0 0.5rem;
       font-size: clamp(2rem, 2.8vw, 2.6rem);
-      font-weight: 700;
+      font-weight: 750;
+      letter-spacing: 0.01em;
     }
 
     .wt-hero-tagline {
       margin: 0 0 1.25rem;
-      max-width: 600px;
+      max-width: 680px;
       font-size: 0.98rem;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #cbd5f5;
     }
 
@@ -120,6 +114,54 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    /* Pills under the video */
+    .wt-hero-pills {
+      width: 100%;
+      max-width: 720px;
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.58rem 0.95rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.92rem;
+      line-height: 1;
+      border: 1px solid rgba(251, 191, 36, 0.28);
+      background: rgba(2, 6, 23, 0.40);
+      color: #fde68a;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      transition: transform 140ms ease, filter 140ms ease, background 140ms ease;
+      white-space: nowrap;
+    }
+
+    .pill:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      background: rgba(2, 6, 23, 0.52);
+    }
+
+    .pill.primary {
+      border: 1px solid rgba(251, 191, 36, 0.45);
+      background: rgba(251, 191, 36, 0.16);
+      color: #fff7d6;
+    }
+
+    .pill.ghost {
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(2, 6, 23, 0.28);
+      color: #e2e8f0;
     }
 
     @media (max-width: 900px) {
@@ -139,10 +181,6 @@
       .wt-hero-tagline {
         text-align: center;
       }
-
-      .wt-hero-actions {
-        justify-content: flex-start;
-      }
     }
 
     /* Lower content: use the standard light theme from the main site */
@@ -151,11 +189,31 @@
       color: #020617;
       padding: 60px 0;
     }
+
+    /* Footer: center the e10 block reliably */
+    .footer-e10 {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    .footer-e10 img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .footer-e10 span {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
   </style>
 </head>
 
 <body>
-  <!-- NAV (same as main site, but with CRP wording) -->
+  <!-- NAV (updated: SecureOps + CDU only) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img
@@ -167,7 +225,7 @@
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- SERVICES DROPDOWN -->
+        <!-- SERVICES DROPDOWN (SecureOps + CDU only) -->
         <div class="dropdown">
           <button
             class="dropdown-toggle"
@@ -178,25 +236,13 @@
             Services ▾
           </button>
           <div class="dropdown-panel">
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Services delivered by people &amp; platform</span>
+            </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
               <span class="sub">DoD/DIB SecureOps on Watchtower</span>
-            </a>
-            <a href="./services-watchtower-deployments.html">
-              Watchtower SecureOps™ &amp; Platform
-              <span class="sub">Deploy, integrate, and tune the CRP</span>
-            </a>
-            <a href="./services-cato.html">
-              Operational cATO Enablement
-              <span class="sub">Continuous monitoring, evidence, &amp; hardening</span>
-            </a>
-            <a href="./services-cmmc.html">
-              CMMC Operations &amp; Evidence
-              <span class="sub">Logging, IR, and monitoring tied to controls</span>
-            </a>
-            <a href="./services-automation.html">
-              Automation &amp; SOAR Optimization
-              <span class="sub">Tines &amp; existing SOAR, driven by Watchtower</span>
             </a>
           </div>
         </div>
@@ -229,12 +275,11 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">
+        Services
+      </strong>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
-      <a href="./services-watchtower-deployments.html">Watchtower SecureOps™ &amp; Platform</a>
-      <a href="./services-cato.html">Operational cATO Enablement</a>
-      <a href="./services-cmmc.html">CMMC Operations &amp; Evidence</a>
-      <a href="./services-automation.html">Automation &amp; SOAR Optimization</a>
       <hr />
       <a href="./watchtower.html" aria-current="page">Watchtower CRP</a>
       <a href="./who.html">Who We Are</a>
@@ -245,7 +290,7 @@
   <!-- HERO: Watchtower CRP logo + copy (left) and CRP demo video (right) -->
   <section class="wt-hero-shell">
     <div class="wt-hero">
-      <!-- LEFT: logo + copy + CTAs -->
+      <!-- LEFT: logo + copy -->
       <div class="wt-hero-left">
         <div class="wt-hero-logo">
           <img
@@ -266,22 +311,10 @@
             investigations, narrative timelines, and defensible evidence. Modules like Guardian, Seek,
             Atlas, Assist, Deploy, and Audit help teams defend faster without losing the story.
           </p>
-
-          <div class="wt-hero-actions">
-            <a
-              class="button primary"
-              href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access"
-            >
-              Request Watchtower CRP Briefing
-            </a>
-            <a class="button ghost" href="./services-cyber-defense-united.html">
-              See How CRP Powers Cyber Defense United
-            </a>
-          </div>
         </div>
       </div>
 
-      <!-- RIGHT: title + tagline + CRP demo video -->
+      <!-- RIGHT: title + tagline + CRP demo video + pills UNDER video -->
       <div class="wt-hero-right">
         <h1>Watchtower CRP™</h1>
         <p class="wt-hero-tagline">
@@ -298,6 +331,18 @@
             <source src="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+        </div>
+
+        <div class="wt-hero-pills" aria-label="Watchtower CRP actions">
+          <a
+            class="pill primary"
+            href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access"
+          >
+            Request Watchtower CRP Briefing
+          </a>
+          <a class="pill ghost" href="./services-cyber-defense-united.html">
+            See How CRP Powers Cyber Defense United
+          </a>
         </div>
       </div>
     </div>
@@ -458,12 +503,10 @@
     </section>
   </main>
 
-  <!-- FOOTER (same styling as index) -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">
-        © 2025 enLight10 Solutions, LLC. All rights reserved.
-      </p>
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
@@ -474,23 +517,11 @@
         <a href="https://x.com/E10Solutions" target="_blank">X</a> |
         <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
       </div>
-      <div
-        style="
-          margin-top:0.75rem;
-          display:flex;
-          align-items:center;
-          gap:0.5rem;
-          justify-content:center;
-        "
-      >
-        <img
-          src="./e10_Logo.png"
-          alt="e10 icon"
-          style="width:28px; height:28px; border-radius:6px;"
-        />
-        <span style="font-size:0.8rem; opacity:0.7;">
-          enLight10 on social &amp; GitHub
-        </span>
+
+      <!-- Centered e10 block -->
+      <div class="footer-e10">
+        <img src="./e10_Logo.png" alt="e10 icon" />
+        <span>enLight10 on social &amp; GitHub</span>
       </div>
     </div>
   </footer>
