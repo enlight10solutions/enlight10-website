@@ -1,4 +1,4 @@
-<!-- who.html (About / Founder-focused with dark hero + pulsing logo glow) -->
+<!-- who.html (About / Founder-focused with dark hero + BIG pulsing logo glow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +51,63 @@
       position: relative;
     }
 
+    /* Wrapper so we can build a BIG pulse around the logo */
+    .logo-pulse-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    /* BIG amber pulse (primary) */
+    .logo-pulse-wrapper::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 760px;              /* BIGGER */
+      height: 760px;             /* BIGGER */
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(245, 158, 11, 0.34) 0%,
+        rgba(245, 158, 11, 0.18) 28%,
+        rgba(245, 158, 11, 0.09) 45%,
+        rgba(245, 158, 11, 0.03) 60%,
+        rgba(245, 158, 11, 0.00) 72%
+      );
+      filter: blur(22px);
+      opacity: 0.65;
+      animation: e10Pulse 5.8s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* HUGE cool pulse (secondary depth) */
+    .logo-pulse-wrapper::after {
+      content: "";
+      position: absolute;
+      left: 52%;
+      top: 52%;
+      width: 980px;              /* BIGGER */
+      height: 980px;             /* BIGGER */
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background: radial-gradient(
+        circle,
+        rgba(56, 189, 248, 0.12) 0%,
+        rgba(56, 189, 248, 0.06) 35%,
+        rgba(56, 189, 248, 0.03) 55%,
+        rgba(56, 189, 248, 0.00) 72%
+      );
+      filter: blur(34px);
+      opacity: 0.35;
+      animation: e10Pulse2 7.6s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
     /* Big logo */
     .about-hero-logo {
       width: 100%;
@@ -62,61 +119,14 @@
       filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.65));
     }
 
-    /* Glow "aura" behind the logo */
-    .about-hero-left::before {
-      content: "";
-      position: absolute;
-      left: 28%;
-      top: 28%;
-      width: 320px;
-      height: 320px;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-      background: radial-gradient(
-        circle,
-        rgba(245, 158, 11, 0.22) 0%,
-        rgba(245, 158, 11, 0.12) 28%,
-        rgba(245, 158, 11, 0.06) 45%,
-        rgba(245, 158, 11, 0.00) 70%
-      );
-      filter: blur(6px);
-      opacity: 0.55;
-      animation: e10Pulse 4.8s ease-in-out infinite;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    /* Secondary soft glow for depth */
-    .about-hero-left::after {
-      content: "";
-      position: absolute;
-      left: 32%;
-      top: 34%;
-      width: 520px;
-      height: 520px;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-      background: radial-gradient(
-        circle,
-        rgba(56, 189, 248, 0.10) 0%,
-        rgba(56, 189, 248, 0.05) 35%,
-        rgba(56, 189, 248, 0.00) 70%
-      );
-      filter: blur(10px);
-      opacity: 0.35;
-      animation: e10Pulse2 6.5s ease-in-out infinite;
-      z-index: 0;
-      pointer-events: none;
-    }
-
     @keyframes e10Pulse {
       0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(0.98); }
-      50%      { opacity: 0.78; transform: translate(-50%, -50%) scale(1.05); }
+      50%      { opacity: 0.82; transform: translate(-50%, -50%) scale(1.06); }
     }
 
     @keyframes e10Pulse2 {
       0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.98); }
-      50%      { opacity: 0.42; transform: translate(-50%, -50%) scale(1.03); }
+      50%      { opacity: 0.44; transform: translate(-50%, -50%) scale(1.04); }
     }
 
     .about-hero-right {
@@ -183,14 +193,14 @@
         justify-content: center;
       }
 
-      .about-hero-left::before {
-        left: 50%;
-        top: 40%;
+      /* Reduce glow on mobile so it doesn’t dominate the screen */
+      .logo-pulse-wrapper::before {
+        width: 680px;
+        height: 680px;
       }
-
-      .about-hero-left::after {
-        left: 55%;
-        top: 45%;
+      .logo-pulse-wrapper::after {
+        width: 860px;
+        height: 860px;
       }
     }
   </style>
@@ -271,26 +281,30 @@
     </nav>
   </aside>
 
-  <!-- DARK HERO (2 columns) -->
+  <!-- HERO: Who We Are -->
   <section class="about-hero">
     <div class="about-hero-inner">
-      <!-- LEFT: big enLight10 logo with pulsing glow -->
+
+      <!-- LEFT: Logo with BIG pulse -->
       <div class="about-hero-left">
-        <img
-          class="about-hero-logo"
-          src="./enLight10_Logo.png"
-          alt="enLight10 Solutions"
-        />
+        <div class="logo-pulse-wrapper">
+          <img
+            src="./enLight10_Logo.png"
+            alt="enLight10 Solutions"
+            class="about-hero-logo"
+          />
+        </div>
       </div>
 
-      <!-- RIGHT: the intro text -->
+      <!-- RIGHT: Text -->
       <div class="about-hero-right">
         <div class="about-hero-kicker">Who We Are</div>
         <h1>Built by operators. Focused on mission outcomes.</h1>
 
         <p class="about-hero-copy">
-          enLight10 Solutions is a veteran-owned cybersecurity company focused on supporting government and defense
-          operations — and building <strong>Watchtower</strong>, a SOC platform shaped by real-world experience.
+          <strong>enLight10 Solutions</strong> is a veteran-owned cybersecurity company focused on supporting
+          government and defense operations — and building <strong>Watchtower</strong>, a SOC platform shaped by
+          real-world experience.
         </p>
 
         <p class="about-hero-copy">
@@ -308,55 +322,9 @@
           </a>
         </div>
       </div>
+
     </div>
   </section>
-
-  <!-- HERO: Who We Are -->
-<section class="about-hero">
-  <div class="about-hero-inner">
-
-    <!-- LEFT: Logo with large pulse -->
-    <div class="about-hero-left">
-      <div class="logo-pulse-wrapper">
-        <img
-          src="./enLight10_Logo.png"
-          alt="enLight10 Solutions"
-          class="about-hero-logo"
-        />
-      </div>
-    </div>
-
-    <!-- RIGHT: Text -->
-    <div class="about-hero-right">
-      <div class="about-kicker">WHO WE ARE</div>
-      <h1>Built by operators. Focused on mission outcomes.</h1>
-
-      <p>
-        <strong>enLight10 Solutions</strong> is a veteran-owned cybersecurity company
-        focused on supporting government and defense operations — and building
-        <strong>Watchtower</strong>, a SOC platform shaped by real-world experience.
-      </p>
-
-      <p>
-        We operate at the intersection of practitioner reality, mission constraints,
-        and modern technology. The work we do — and the platform we’re building —
-        comes from lived experience inside cyber teams responsible for critical
-        infrastructure, defense networks, and national-level missions.
-      </p>
-
-      <div class="about-hero-actions">
-        <a class="button primary" href="mailto:info@enlight10solutions.com">
-          Start a Conversation
-        </a>
-        <a class="button ghost" href="./watchtower.html">
-          Explore Watchtower CRP
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 
   <!-- MAIN (light) -->
   <main class="light">
@@ -454,7 +422,7 @@
       </div>
 
       <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
-        <img src="./e10(tm).png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <img src="./e10_Logo.png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
         <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
       </div>
     </div>
