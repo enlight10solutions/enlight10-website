@@ -1,18 +1,18 @@
-<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT) -->
+<!-- services-secureops.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Cyber Defense United — enLight10 Watchtower Services</title>
+  <title>Watchtower SecureOps™ — Modern SOC Services Powered by Watchtower</title>
   <meta
     name="description"
-    content="Cyber Defense United is enLight10’s flagship SOC modernization and cyber operations engagement, powered by the Watchtower Cyber Reasoning Platform."
+    content="Watchtower SecureOps™ is enLight10’s services line for commercial and MSSP environments — SecureOps for Enterprise, SecureOps for MSSPs, and SecureOps Lite (SMB), all powered by the Watchtower Cyber Reasoning Platform (CRP)."
   />
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=25" />
+  <link rel="stylesheet" href="./style.css?v=26" />
   <script src="./script.js" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
@@ -25,151 +25,238 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
-    /* ---------------------------
-       SERVICES DROPDOWN: force gold hover (override any blue defaults)
-       --------------------------- */
-    .dropdown-panel a {
-      text-decoration: none;
+    /* ---------------------------------
+       Text gradient helpers
+       --------------------------------- */
+    .text-gradient {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Make hover/active gold instead of blue */
-    .dropdown-panel a:hover,
-    .dropdown-panel a:focus-visible {
-      background: rgba(251, 191, 36, 0.14) !important;
-      color: #fde68a !important;
+    /* White → Red (SecureOps) */
+    .gradient-red {
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffe4e6 38%,
+        #fb7185 68%,
+        #ef4444 100%
+      );
+      filter: drop-shadow(0 2px 6px rgba(239, 68, 68, 0.25));
     }
 
-    /* If your global CSS adds a blue underline or link color, neutralize it here */
-    .dropdown-panel a:hover *,
-    .dropdown-panel a:focus-visible * {
-      color: inherit !important;
-    }
-
-    /* Optional: active state inside dropdown */
-    .dropdown-panel a[aria-current="page"] {
-      background: rgba(251, 191, 36, 0.18);
-      color: #fff7d6;
-      border-left: 2px solid rgba(251, 191, 36, 0.75);
-      padding-left: calc(0.9rem - 2px);
-    }
-
-    /* ---------------------------
-       HERO: upgraded visual treatment
-       --------------------------- */
-    .cdu-hero {
+    /* Top hero strip: dark, similar to main page */
+    .secops-hero {
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      color: #ffffff;
+      padding: 90px 0 70px; /* clears fixed nav + adds breathing room */
       position: relative;
       overflow: hidden;
-      background: radial-gradient(900px 420px at 18% 35%, rgba(251, 191, 36, 0.10), rgba(2, 6, 23, 0) 60%),
-                  linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
-      color: #ffffff;
-      padding: 95px 0 75px; /* clears fixed nav + adds breathing room */
     }
 
-    /* subtle “texture” / vignette */
-    .cdu-hero::before {
+    /* subtle "laser" accent behind content */
+    .secops-hero::after {
       content: "";
       position: absolute;
-      inset: -40px;
-      background: radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.08), rgba(2, 6, 23, 0) 55%),
-                  radial-gradient(circle at 25% 70%, rgba(251, 191, 36, 0.08), rgba(2, 6, 23, 0) 60%);
-      filter: blur(10px);
-      opacity: 0.7;
+      left: 50%;
+      bottom: 38px;
+      width: min(920px, 92vw);
+      height: 3px;
+      transform: translateX(-50%);
+      background: linear-gradient(
+        90deg,
+        rgba(239, 68, 68, 0) 0%,
+        rgba(239, 68, 68, 0.35) 18%,
+        rgba(239, 68, 68, 0.95) 50%,
+        rgba(239, 68, 68, 0.35) 82%,
+        rgba(239, 68, 68, 0) 100%
+      );
+      filter: blur(0.4px);
+      opacity: 0.75;
       pointer-events: none;
     }
 
-    .cdu-hero-inner {
-      position: relative;
-      z-index: 1;
+    .secops-hero-inner {
       max-width: 1100px;
       margin: 0 auto;
       padding: 0 1.5rem;
       display: flex;
       flex-wrap: wrap;
       gap: 3rem;
-      align-items: center;
+      align-items: flex-start;
+      position: relative;
+      z-index: 1;
     }
 
-    .cdu-hero-left {
-      flex: 0 0 380px;
+    .secops-hero-left {
+      flex: 0 0 360px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: flex-start;
+      gap: 1.1rem;
       position: relative;
     }
 
-    /* logo card */
-    .cdu-hero-left img {
-      max-width: 460px;
+    .secops-hero-left img {
+      max-width: 420px;
       width: 100%;
       height: auto;
       border-radius: 18px;
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      position: relative;
-      z-index: 2;
     }
 
-    /* soft gold aura behind the logo (static, not pulsing) */
-    .cdu-hero-left::after {
+    /* small red "beam" glow behind the logo (subtle) */
+    .secops-hero-left::after {
       content: "";
       position: absolute;
-      width: 640px;
-      height: 640px;
       left: 50%;
-      top: 42%;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
+      bottom: 18px;
+      width: 78%;
+      height: 8px;
+      transform: translateX(-50%);
       background: radial-gradient(
         circle,
-        rgba(251, 191, 36, 0.16) 0%,
-        rgba(251, 191, 36, 0.08) 30%,
-        rgba(251, 191, 36, 0.00) 65%
+        rgba(239, 68, 68, 0.65) 0%,
+        rgba(239, 68, 68, 0.25) 45%,
+        rgba(239, 68, 68, 0) 70%
       );
-      filter: blur(12px);
+      filter: blur(6px);
       opacity: 0.55;
-      z-index: 1;
       pointer-events: none;
     }
 
-    .cdu-hero-right {
-      flex: 1 1 360px;
+    /* Tagline under logo */
+    .secops-tagline {
+      margin: 0;
+      max-width: 520px;
+      color: #e5e7eb;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+    .secops-tagline strong { color: #ffffff; font-weight: 700; }
+    .secops-tagline em { font-style: normal; color: #ffe4e6; font-weight: 650; }
+
+    .secops-hero-right {
+      flex: 1 1 420px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 0.9rem;
+      align-items: flex-start;
+      text-align: left;
     }
 
-    .cdu-hero-kicker {
+    .secops-hero-kicker {
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      opacity: 0.82;
+      opacity: 0.8;
     }
 
-    .cdu-hero-right h1 {
-      margin: 0;
-      font-size: clamp(2rem, 2.8vw, 2.7rem);
+    .secops-hero-right h1 {
+      margin: 0 0 0.25rem;
+      font-size: clamp(2rem, 2.8vw, 2.6rem);
       font-weight: 800;
       letter-spacing: 0.01em;
     }
 
-    .cdu-hero-copy {
+    .secops-hero-copy {
       font-size: 0.98rem;
-      line-height: 1.75;
-      max-width: 600px;
+      line-height: 1.7;
+      max-width: 680px;
       color: #e5e7eb;
       margin: 0;
     }
 
-    .cdu-hero-copy strong {
+    .secops-hero-copy strong {
       font-weight: 650;
-      color: #fff7d6;
+      color: #ffffff;
     }
 
-    .cdu-hero-actions {
-      margin-top: 0.85rem;
+    /* Video area (index-like) */
+    .secops-video-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 0.35rem;
+    }
+
+    .secops-hero-video {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      outline: 1px solid rgba(239, 68, 68, 0.22);
+      background: rgba(2, 6, 23, 0.35);
+    }
+
+    /* ----------------------------
+       Hero pill buttons (CTAs)
+       ---------------------------- */
+    .secops-hero-actions {
+      margin-top: 1.9rem; /* clears player controls row */
       display: flex;
       flex-wrap: wrap;
-      gap: 0.8rem 1.2rem;
+      gap: 1.1rem 1.25rem;
       align-items: center;
+    }
+
+    .secops-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.35rem;
+      border-radius: 999px;
+      font-weight: 650;
+      font-size: 0.95rem;
+      text-decoration: none;
+      line-height: 1;
+      transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease;
+      user-select: none;
+      white-space: nowrap;
+      min-height: 44px;
+    }
+
+    .secops-pill:hover { transform: translateY(-1px); }
+
+    .secops-pill:focus-visible {
+      outline: 2px solid rgba(251, 191, 36, 0.65);
+      outline-offset: 3px;
+    }
+
+    /* Primary (gold) */
+    .secops-pill.primary {
+      color: #0b1120;
+      background: linear-gradient(
+        180deg,
+        rgba(251, 191, 36, 1) 0%,
+        rgba(245, 158, 11, 1) 100%
+      );
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .secops-pill.primary:hover {
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55);
+    }
+
+    /* Ghost */
+    .secops-pill.ghost {
+      color: #fff7d6;
+      background: rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .secops-pill.ghost:hover {
+      border-color: rgba(251, 191, 36, 0.55);
+      background: rgba(15, 23, 42, 0.5);
     }
 
     /* Main body under hero (light background, like index) */
@@ -180,58 +267,32 @@
     }
 
     @media (max-width: 900px) {
-      .cdu-hero-inner {
+      .secops-hero-inner {
         flex-direction: column;
         align-items: center;
         text-align: left;
       }
 
-      .cdu-hero-left,
-      .cdu-hero-right {
+      .secops-hero-left,
+      .secops-hero-right {
         flex: 1 1 auto;
         width: 100%;
       }
 
-      .cdu-hero-right h1,
-      .cdu-hero-copy {
+      .secops-hero-right h1,
+      .secops-hero-copy {
         text-align: left;
       }
 
-      .cdu-hero-actions {
+      .secops-hero-actions {
         justify-content: flex-start;
       }
-
-      .cdu-hero-left::after {
-        width: 520px;
-        height: 520px;
-        top: 48%;
-      }
-    }
-
-    /* Footer: ensure the e10 icon block is centered consistently */
-    .footer-e10 {
-      margin-top: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
-    .footer-e10 img {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-    }
-    .footer-e10 span {
-      font-size: 0.8rem;
-      opacity: 0.7;
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV -->
+  <!-- NAV (matches index/watchtower) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img
@@ -243,10 +304,10 @@
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- SERVICES DROPDOWN -->
+        <!-- SERVICES DROPDOWN (SecureOps + CDU) -->
         <div class="dropdown">
           <button
-            class="dropdown-toggle active"
+            class="dropdown-toggle"
             type="button"
             aria-haspopup="true"
             aria-expanded="false"
@@ -254,13 +315,19 @@
             Services ▾
           </button>
           <div class="dropdown-panel">
-            <a href="./services-secureops.html">Watchtower SecureOps™</a>
-            <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United™</a>
+            <a href="./services-secureops.html" aria-current="page">
+              Watchtower SecureOps™
+              <span class="sub">Services delivered by people &amp; platform</span>
+            </a>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+            </a>
           </div>
         </div>
 
         <!-- PRODUCT LINK -->
-        <a href="./watchtower.html">Watchtower Platform</a>
+        <a href="./watchtower.html">Watchtower CRP</a>
 
         <!-- ABOUT -->
         <a href="./who.html">Who We Are</a>
@@ -288,105 +355,310 @@
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
       <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-secureops.html">Watchtower SecureOps™</a>
-      <a href="./services-cyber-defense-united.html" aria-current="page">Cyber Defense United™</a>
+      <a href="./services-secureops.html" aria-current="page">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
-      <a href="./watchtower.html">Watchtower Platform</a>
+      <a href="./watchtower.html">Watchtower CRP</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
-  <!-- HERO -->
-  <section class="cdu-hero">
-    <div class="cdu-hero-inner">
-      <!-- LEFT: CDU logo -->
-      <div class="cdu-hero-left">
+  <!-- HERO (index-like: left logo stack, right title + video + pills) -->
+  <section class="secops-hero">
+    <div class="secops-hero-inner">
+      <!-- LEFT: Watchtower SecureOps logo + tagline -->
+      <div class="secops-hero-left">
         <img
-          src="./Watchtower_CDU_Logo.png"
-          alt="Watchtower — Cyber Defense United core platform"
+          src="./Watchtower_SecureOps_Logo.png"
+          alt="Watchtower SecureOps — Services powered by Watchtower CRP"
         />
+
+        <p class="secops-tagline">
+          <strong>Watchtower™</strong> is the flagship brand family.
+          <em>SecureOps™</em> is our commercial services line — delivered by people and platform together,
+          powered by the Watchtower Cyber Reasoning Platform.
+        </p>
       </div>
 
-      <!-- RIGHT: copy + CTA -->
-      <div class="cdu-hero-right">
-        <div class="cdu-hero-kicker">Services • Cyber Defense United</div>
-        <h1>Cyber Defense United.</h1>
+      <!-- RIGHT: copy + video + CTAs -->
+      <div class="secops-hero-right">
+        <div class="secops-hero-kicker">Services • Watchtower SecureOps™</div>
 
-        <p class="cdu-hero-copy">
-          Cyber Defense United is our flagship <strong>SOC and NSOC modernization</strong> engagement,
-          built around the <strong>Watchtower Cyber Reasoning Platform</strong>. It combines operations
-          design, shift work, battle rhythm, and reporting with the technology backbone needed to make
-          those decisions defensible.
+        <h1>
+          Watchtower
+          <span class="text-gradient gradient-red">SecureOps</span>™
+        </h1>
+
+        <p class="secops-hero-copy">
+          We focus on two things: <strong>building Watchtower</strong> — our cyber reasoning
+          platform — and <strong>running operations with you</strong> through Watchtower SecureOps™.
+          For commercial and MSSP environments, that means modern SOC workflows, case-driven
+          investigations, and reporting that connects security work to business risk.
         </p>
 
-        <p class="cdu-hero-copy">
-          Instead of stitching together tools and tickets, we help you build a
-          <strong>unified way of defending</strong> — with Watchtower as the hub for alerts, cases,
-          timelines, and evidence.
+        <p class="secops-hero-copy">
+          We’re intentionally small and hands-on. Our work is grounded in real-world security
+          operations: SOC shifts, incident response, engineering, and the day-to-day reality of
+          keeping critical systems online. SecureOps delivers that experience as a service —
+          powered by the Watchtower CRP.
         </p>
 
-        <div class="cdu-hero-actions">
-          <a
-            class="button primary"
-            href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
+        <div class="secops-video-wrapper">
+          <video
+            class="secops-hero-video"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
           >
-            Request a Cyber Defense United Conversation
-          </a>
-          <a class="button ghost" href="./watchtower.html">
-            Learn More About the Watchtower Platform
-          </a>
+            <source src="https://enlight10media.blob.core.windows.net/media/Secureops.mp4" type="video/mp4" />
+          </video>
+
+          <!-- Pills -->
+          <div class="secops-hero-actions">
+            <a
+              class="secops-pill primary"
+              href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Conversation"
+            >
+              Talk to Us About SecureOps
+            </a>
+
+            <a class="secops-pill ghost" href="./watchtower.html">
+              Learn About the Watchtower CRP
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN BODY (stub sections to fill out later) -->
+  <!-- MAIN BODY (aligned with other pages) -->
   <main class="light">
+    <!-- VARIANTS: ENTERPRISE / MSSP / SMB -->
     <section class="section-block slim">
-      <h2>What Cyber Defense United Covers</h2>
+      <h2>SecureOps Service Variants</h2>
       <p class="lead">
-        This is where we’ll outline the pillars of the engagement — operations design, Watchtower
-        deployment, reporting, and continuous improvement. You can replace this text with your
-        detailed copy.
+        The same foundation, tuned for three common commercial realities:
+        <strong>Enterprise SOCs</strong>, <strong>MSSPs</strong>, and <strong>SMBs</strong>.
+      </p>
+
+      <div class="features three">
+        <article class="feature">
+          <h3>SecureOps for Enterprise</h3>
+          <p>
+            For in-house security teams that already own tools but need a more coherent SOC operating model.
+          </p>
+          <ul class="clean">
+            <li>24/7 or business-hours monitoring and triage.</li>
+            <li>Case-driven investigations with impact and recommendations.</li>
+            <li>Integration with your existing SIEM, EDR, and ticketing stack.</li>
+            <li>Executive-ready reporting tied to risk and compliance needs.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>SecureOps for MSSPs</h3>
+          <p>
+            For MSSPs and SOC providers that want a consistent way to manage many tenants using Watchtower CRP.
+          </p>
+          <ul class="clean">
+            <li>Multi-tenant patterns for cases, alerts, and playbooks.</li>
+            <li>Standardized triage, escalation, and reporting across clients.</li>
+            <li>Evidence and narratives you can show to your customers, not just ticket counts.</li>
+            <li>Optional white-label-style workflows with your brand and processes.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>SecureOps Lite (SMB)</h3>
+          <p>
+            For SMBs and non-24/7 teams that need structure and evidence, not a full-blown SOC.
+          </p>
+          <ul class="clean">
+            <li>Right-sized alerting with clear priorities and action plans.</li>
+            <li>Business-hours monitoring with on-call or surge support patterns.</li>
+            <li>Incident timelines and “what we did” records for leadership and auditors.</li>
+            <li>On-ramps to CMMC and other frameworks without massive upfront investment.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES -->
+    <section class="section-block slim">
+      <h2>Core SecureOps Capabilities</h2>
+      <p class="lead">
+        All SecureOps variants share a core set of capabilities — the difference is how far we scale them
+        and how we shape them around your environment.
+      </p>
+      <div class="features three">
+        <article class="feature">
+          <h3>Monitoring &amp; Triage</h3>
+          <p>Eyes on glass, but smarter:</p>
+          <ul class="clean">
+            <li>Alert triage and initial investigation inside Watchtower.</li>
+            <li>Enrichment from your existing tools (EDR, threat intel, identity).</li>
+            <li>Priority scoring so your team focuses on what matters most.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>Investigation, Hunt &amp; Response</h3>
+          <p>Turn raw data into clear stories of what happened and what you did.</p>
+          <ul class="clean">
+            <li>Atlas-powered cases with timelines and artifacts.</li>
+            <li>Campaign and user/host-centric investigations via Watchtower buckets.</li>
+            <li>Proactive hunts designed around your risk profile.</li>
+          </ul>
+        </article>
+
+        <article class="feature">
+          <h3>Reporting &amp; Compliance Evidence</h3>
+          <p>Operations that can stand in front of auditors, boards, and regulators.</p>
+          <ul class="clean">
+            <li>Regular operational reporting (weekly, monthly, quarterly).</li>
+            <li>Evidence packs for audits (CMMC, ISO, SOC 2, internal standards).</li>
+            <li>“Here’s what we saw, here’s what we did, here’s what changed” narratives.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- POWERED BY WATCHTOWER CRP -->
+    <section class="section-block slim">
+      <h2>Powered by the Watchtower Cyber Reasoning Platform (CRP)</h2>
+      <p class="lead">
+        Watchtower SecureOps uses the CRP as the <strong>reasoning and evidence layer</strong> above your tools.
+      </p>
+      <ul class="clean">
+        <li><strong>Guardian:</strong> organizes alerts and signals into triage queues and funnels.</li>
+        <li><strong>Seek:</strong> fuses events into WCS-backed buckets that represent behaviors and campaigns, not just single alerts.</li>
+        <li><strong>Atlas:</strong> the investigation workspace where analysts build and track cases, attach artifacts, and record decisions.</li>
+        <li><strong>Assist:</strong> AI copilots to summarize cases, draft reports, and suggest next steps — always under analyst control.</li>
+        <li><strong>Deploy:</strong> orchestrates playbooks for enrichment, ticketing, and automated containment where you’re comfortable.</li>
+        <li><strong>Audit:</strong> organizes cases, timelines, and artifacts into reusable evidence across controls and frameworks.</li>
+      </ul>
+      <p style="margin-top:1rem;">
+        You keep your existing tools. Watchtower CRP and SecureOps wrap them in a <strong>single operating picture</strong>.
       </p>
     </section>
 
+    <!-- WHO IT'S FOR -->
     <section class="section-block slim">
-      <h2>How We Work With Your Team</h2>
-      <p>
-        Insert engagement model here (onsite / remote, phases, workshops, NSOC build-out, etc.).
+      <h2>Who Watchtower SecureOps™ Is For</h2>
+      <p class="lead">
+        Built for commercial teams that care about <strong>outcomes and evidence</strong>, not just tool sprawl.
       </p>
+      <ul class="clean">
+        <li>
+          <strong>Enterprises</strong> with existing SOCs or security teams that want a more consistent,
+          case-driven way to operate.
+        </li>
+        <li>
+          <strong>MSSPs &amp; Managed Security Providers</strong> that need to deliver clearer value to clients
+          and scale operations without burning out analysts.
+        </li>
+        <li>
+          <strong>Healthcare, finance, and critical-service SMBs</strong> that need SOC-grade rigor but cannot
+          justify full internal SOC build-outs.
+        </li>
+      </ul>
     </section>
 
+    <!-- HOW WE ENGAGE -->
     <section class="section-block slim">
-      <h2>Outcomes You Can Expect</h2>
-      <p>
-        Use this section for specific benefits: improved handoffs, better reporting, cATO readiness,
-        CMMC evidence, reduced alert fatigue, and so on.
+      <h2>How a SecureOps Engagement Works</h2>
+      <ul class="clean">
+        <li>
+          <span class="why">1. Discovery:</span>
+          understand your environment, tools, staffing, and regulatory pressures (CMMC, SOC 2, HIPAA, etc.).
+        </li>
+        <li>
+          <span class="why">2. Design:</span>
+          define scope (networks, tenants, data sources), target outcomes, and reporting cadence.
+        </li>
+        <li>
+          <span class="why">3. Watchtower Integration:</span>
+          connect your SIEM, EDR, identity, and other data sources into Watchtower CRP.
+        </li>
+        <li>
+          <span class="why">4. Run SecureOps:</span>
+          operate monitoring, triage, investigations, and reporting using Watchtower as the central workspace.
+        </li>
+        <li>
+          <span class="why">5. Refine &amp; Scale:</span>
+          tune playbooks, automation, and coverage; expand to more assets, tenants, or business units over time.
+        </li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-block slim">
+      <h2>Let’s Talk SecureOps for Your Environment</h2>
+      <p class="lead">
+        If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
+        without building everything yourself, Watchtower SecureOps may be the right fit.
       </p>
+      <p>
+        Email us at
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+        with a short description of your environment (industry, size, current tools), and we’ll respond with
+        a focused, technical conversation about SecureOps options.
+      </p>
+      <div style="margin-top:1.5rem;">
+        <a
+          class="button primary"
+          href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Inquiry"
+        >
+          Start a SecureOps Conversation
+        </a>
+        <a
+          class="button ghost"
+          href="./watchtower.html"
+          style="margin-left:0.75rem;"
+        >
+          Explore the Watchtower CRP
+        </a>
+      </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (aligned with other pages) -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">
+        © 2025 enLight10 Solutions, LLC. All rights reserved.
+      </p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
       </p>
-
       <div class="footer-social">
         <span>Follow us:</span>
         <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
         <a href="https://x.com/E10Solutions" target="_blank">X</a> |
         <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
       </div>
-
-      <div class="footer-e10">
-        <img src="./e10_Logo.png" alt="e10 icon" />
-        <span>enLight10 on social &amp; GitHub</span>
+      <div
+        style="
+          margin-top:0.75rem;
+          display:flex;
+          align-items:center;
+          gap:0.5rem;
+          justify-content:center;
+        "
+      >
+        <img
+          src="./e10_Logo.png"
+          alt="e10 icon"
+          style="width:28px; height:28px; border-radius:6px;"
+        />
+        <span style="font-size:0.8rem; opacity:0.7;">
+          enLight10 on social &amp; GitHub
+        </span>
       </div>
     </div>
   </footer>
