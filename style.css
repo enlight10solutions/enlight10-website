@@ -433,6 +433,43 @@ body.menu-open { overflow: hidden; }
   }
 }
 
+/* ---------------------------------
+   SecureOps gradient pill button
+   --------------------------------- */
+.button.secureops {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fee2e2 30%,
+    #dc2626 100%
+  );
+  color: #020617;
+  border: none;
+  font-weight: 600;
+  box-shadow:
+    0 6px 18px rgba(220, 38, 38, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.button.secureops:hover {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #fecaca 25%,
+    #b91c1c 100%
+  );
+  box-shadow:
+    0 8px 24px rgba(220, 38, 38, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  transform: translateY(-1px);
+}
+
+.button.secureops:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 12px rgba(220, 38, 38, 0.35);
+}
+
 /* =========================
    HERO (BASE)
    ========================= */
