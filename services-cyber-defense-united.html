@@ -28,24 +28,19 @@
     /* ---------------------------
        SERVICES DROPDOWN: force gold hover (override any blue defaults)
        --------------------------- */
-    .dropdown-panel a {
-      text-decoration: none;
-    }
+    .dropdown-panel a { text-decoration: none; }
 
-    /* Make hover/active gold instead of blue */
     .dropdown-panel a:hover,
     .dropdown-panel a:focus-visible {
       background: rgba(251, 191, 36, 0.14) !important;
       color: #fde68a !important;
     }
 
-    /* If your global CSS adds a blue underline or link color, neutralize it here */
     .dropdown-panel a:hover *,
     .dropdown-panel a:focus-visible * {
       color: inherit !important;
     }
 
-    /* Optional: active state inside dropdown */
     .dropdown-panel a[aria-current="page"] {
       background: rgba(251, 191, 36, 0.18);
       color: #fff7d6;
@@ -53,80 +48,48 @@
       padding-left: calc(0.9rem - 2px);
     }
 
-    /* Pill buttons (hero CTAs) */
-.cdu-hero-actions {
-  margin-top: 0.85rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  align-items: center;
-}
+    /* ---------------------------
+       Text gradient utilities (match index)
+       --------------------------- */
+    .text-gradient {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
 
-.cdu-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.72rem 1.05rem;
-  border-radius: 999px;
-  font-weight: 650;
-  font-size: 0.95rem;
-  text-decoration: none;
-  line-height: 1;
-  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.cdu-pill:focus-visible {
-  outline: 2px solid rgba(251, 191, 36, 0.65);
-  outline-offset: 3px;
-}
-
-.cdu-pill:hover {
-  transform: translateY(-1px);
-}
-
-.cdu-pill.primary {
-  color: #0b1120;
-  background: linear-gradient(180deg, rgba(251,191,36,1) 0%, rgba(245,158,11,1) 100%);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.45);
-}
-
-.cdu-pill.primary:hover {
-  box-shadow: 0 16px 34px rgba(0,0,0,0.55);
-}
-
-.cdu-pill.ghost {
-  color: #fff7d6;
-  background: rgba(15, 23, 42, 0.35);
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-}
-
-.cdu-pill.ghost:hover {
-  border-color: rgba(251, 191, 36, 0.55);
-  background: rgba(15, 23, 42, 0.50);
-}
+    /* White → Gold */
+    .gradient-gold {
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff2c2 40%,
+        #facc15 75%,
+        #eab308 100%
+      );
+      filter: drop-shadow(0 2px 6px rgba(250, 204, 21, 0.35));
+    }
 
     /* ---------------------------
-       HERO: upgraded visual treatment
+       HERO: upgraded visual treatment + "index-like" layout
        --------------------------- */
     .cdu-hero {
       position: relative;
       overflow: hidden;
-      background: radial-gradient(900px 420px at 18% 35%, rgba(251, 191, 36, 0.10), rgba(2, 6, 23, 0) 60%),
-                  linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
+      background:
+        radial-gradient(900px 420px at 18% 35%, rgba(251, 191, 36, 0.10), rgba(2, 6, 23, 0) 60%),
+        linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
       color: #ffffff;
       padding: 95px 0 75px; /* clears fixed nav + adds breathing room */
     }
 
-    /* subtle “texture” / vignette */
     .cdu-hero::before {
       content: "";
       position: absolute;
       inset: -40px;
-      background: radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.08), rgba(2, 6, 23, 0) 55%),
-                  radial-gradient(circle at 25% 70%, rgba(251, 191, 36, 0.08), rgba(2, 6, 23, 0) 60%);
+      background:
+        radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.08), rgba(2, 6, 23, 0) 55%),
+        radial-gradient(circle at 25% 70%, rgba(251, 191, 36, 0.08), rgba(2, 6, 23, 0) 60%);
       filter: blur(10px);
       opacity: 0.7;
       pointer-events: none;
@@ -141,18 +104,19 @@
       display: flex;
       flex-wrap: wrap;
       gap: 3rem;
-      align-items: center;
+      align-items: flex-start; /* like index */
     }
 
+    /* LEFT: logo + short brand stack copy */
     .cdu-hero-left {
       flex: 0 0 380px;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: flex-start;
+      gap: 1.1rem;
       position: relative;
     }
 
-    /* logo card */
     .cdu-hero-left img {
       max-width: 460px;
       width: 100%;
@@ -163,14 +127,13 @@
       z-index: 2;
     }
 
-    /* soft gold aura behind the logo (static, not pulsing) */
     .cdu-hero-left::after {
       content: "";
       position: absolute;
       width: 640px;
       height: 640px;
       left: 50%;
-      top: 42%;
+      top: 28%;
       transform: translate(-50%, -50%);
       border-radius: 999px;
       background: radial-gradient(
@@ -185,11 +148,24 @@
       pointer-events: none;
     }
 
+    .cdu-tagline {
+      margin: 0;
+      max-width: 520px;
+      color: #e5e7eb;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+    .cdu-tagline strong { color: #ffffff; font-weight: 700; }
+    .cdu-tagline em { font-style: normal; color: #fff7d6; font-weight: 650; }
+
+    /* RIGHT: title + subtitle + video + pills (same rhythm as index) */
     .cdu-hero-right {
-      flex: 1 1 360px;
+      flex: 1 1 420px;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      gap: 0.85rem;
     }
 
     .cdu-hero-kicker {
@@ -202,32 +178,100 @@
     .cdu-hero-right h1 {
       margin: 0;
       font-size: clamp(2rem, 2.8vw, 2.7rem);
-      font-weight: 800;
+      font-weight: 900;
       letter-spacing: 0.01em;
     }
 
-    .cdu-hero-copy {
-      font-size: 0.98rem;
-      line-height: 1.75;
-      max-width: 600px;
+    .cdu-hero-subtitle {
+      margin: 0 0 0.7rem;
+      font-size: 0.95rem;
+      opacity: 0.92;
+      max-width: 640px;
+      line-height: 1.7;
       color: #e5e7eb;
-      margin: 0;
     }
 
-    .cdu-hero-copy strong {
-      font-weight: 650;
-      color: #fff7d6;
-    }
-
-    .cdu-hero-actions {
-      margin-top: 0.85rem;
+    .cdu-hero-video-wrapper {
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.2rem;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-top: 0.25rem;
     }
 
-    /* Main body under hero (light background, like index) */
+    /* video card feel (works with your existing .hero-video.featured too) */
+    .cdu-hero-video {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 16px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+      outline: 1px solid rgba(251, 191, 36, 0.22);
+      background: rgba(2, 6, 23, 0.35);
+    }
+
+    /* Buttons under the video (pills, index-like spacing) */
+    .cdu-hero-actions {
+      margin-top: 1.9rem; /* matches your index spacing under video controls */
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .cdu-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 1.55rem;
+      border-radius: 999px;
+      font-weight: 650;
+      font-size: 0.95rem;
+      text-decoration: none;
+      line-height: 1;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+      user-select: none;
+      white-space: nowrap;
+      min-height: 44px;
+    }
+
+    .cdu-pill:focus-visible {
+      outline: 2px solid rgba(251, 191, 36, 0.65);
+      outline-offset: 3px;
+    }
+
+    .cdu-pill:hover { transform: translateY(-1px); }
+
+    /* Gold gradient pill (primary) */
+    .cdu-pill.primary {
+      color: #0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+    .cdu-pill.primary:hover {
+      box-shadow:
+        0 14px 28px rgba(250, 204, 21, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Ghost pill */
+    .cdu-pill.ghost {
+      color: #fff7d6;
+      background: rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .cdu-pill.ghost:hover {
+      border-color: rgba(251, 191, 36, 0.55);
+      background: rgba(15, 23, 42, 0.50);
+    }
+
+    /* ---------------------------
+       MAIN BODY
+       --------------------------- */
     main.light {
       background: #ffffff;
       color: #020617;
@@ -247,19 +291,15 @@
         width: 100%;
       }
 
-      .cdu-hero-right h1,
-      .cdu-hero-copy {
-        text-align: left;
-      }
-
       .cdu-hero-actions {
         justify-content: flex-start;
+        gap: 1.1rem;
       }
 
       .cdu-hero-left::after {
         width: 520px;
         height: 520px;
-        top: 48%;
+        top: 34%;
       }
     }
 
@@ -352,47 +392,63 @@
     </nav>
   </aside>
 
-  <!-- HERO -->
+  <!-- HERO (index-like: logo+tagline left, title+video+buttons right) -->
   <section class="cdu-hero">
     <div class="cdu-hero-inner">
-      <!-- LEFT: CDU logo -->
+      <!-- LEFT -->
       <div class="cdu-hero-left">
         <img
           src="./Watchtower_CDU_Logo.png"
-          alt="Watchtower — Cyber Defense United core platform"
+          alt="Watchtower — Cyber Defense United"
         />
+
+        <p class="cdu-tagline">
+          <strong>Watchtower™</strong> is the flagship brand family.
+          <em>Cyber Defense United™</em> is the DoD/DIB SecureOps variant —
+          powered by the <em>Watchtower Cyber Reasoning Platform</em> to unify alerts, investigations,
+          reporting, and defensible evidence.
+        </p>
       </div>
 
-      <!-- RIGHT: copy + CTA -->
+      <!-- RIGHT -->
       <div class="cdu-hero-right">
         <div class="cdu-hero-kicker">Services • Cyber Defense United</div>
-        <h1>Cyber Defense United.</h1>
 
-        <p class="cdu-hero-copy">
-          Cyber Defense United is our flagship <strong>SOC and NSOC modernization</strong> engagement,
-          built around the <strong>Watchtower Cyber Reasoning Platform</strong>. It combines operations
-          design, shift work, battle rhythm, and reporting with the technology backbone needed to make
-          those decisions defensible.
+        <h1 class="cdu-hero-title">
+          <span class="text-gradient gradient-gold">Cyber Defense United.</span>
+        </h1>
+
+        <p class="cdu-hero-subtitle">
+          Mission-focused SOC and NSOC modernization for high-consequence environments —
+          delivering cATO-ready monitoring, ZTA-aligned architectures, and evidence you can defend.
         </p>
 
-        <p class="cdu-hero-copy">
-          Instead of stitching together tools and tickets, we help you build a
-          <strong>unified way of defending</strong> — with Watchtower as the hub for alerts, cases,
-          timelines, and evidence.
-        </p>
+        <div class="cdu-hero-video-wrapper">
+          <video
+            class="cdu-hero-video"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="https://enlight10media.blob.core.windows.net/media/Cyber%20Defense%20United.mp4" type="video/mp4" />
+          </video>
 
-        <div class="cdu-hero-actions">
-  <a
-    class="cdu-pill primary"
-    href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
-  >
-    Request a Cyber Defense United Conversation
-  </a>
+          <div class="cdu-hero-actions">
+            <a
+              class="cdu-pill primary"
+              href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
+            >
+              Request a Conversation
+            </a>
 
-  <a class="cdu-pill ghost" href="./watchtower.html">
-    Learn More About the Watchtower Platform
-  </a>
-</div>
+            <a class="cdu-pill ghost" href="./watchtower.html">
+              Learn More About Watchtower
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
