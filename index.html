@@ -52,15 +52,7 @@
       max-width: 640px;
     }
 
-    .hero-actions-under-video .button.primary {
-      font-weight: 600;
-    }
-
-    .hero-actions-under-video .button.ghost {
-      font-weight: 500;
-    }
-
-    /* Add spacing between adjacent links in hero-actions rows */
+    /* Add spacing between adjacent links in hero-actions rows (backup) */
     .hero-actions a + a {
       margin-left: 1.25rem;
     }
@@ -78,7 +70,7 @@
       margin-top: 0.1rem;
     }
 
-    /* Right hero column: center title, video, and buttons */
+    /* Right hero column: left-aligned like the rest of hero */
     .hero-right {
       display: flex;
       flex-direction: column;
@@ -105,14 +97,111 @@
       width: 100%;
     }
 
-    /* Buttons under the video */
+    /* ---------------------------
+       Text gradient utilities
+       --------------------------- */
+    .text-gradient {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* White → Gold (Cyber Defense United) */
+    .gradient-gold {
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #fff2c2 40%,
+        #facc15 75%,
+        #eab308 100%
+      );
+    }
+
+    /* White → Red (SecureOps) */
+    .gradient-red {
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffd6d6 40%,
+        #ef4444 75%,
+        #dc2626 100%
+      );
+    }
+
+    /* Optional polish: subtle glow for readability on dark hero */
+    .hero-title .gradient-red {
+      filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.35));
+    }
+    .hero-title .gradient-gold {
+      filter: drop-shadow(0 2px 6px rgba(250, 204, 21, 0.35));
+    }
+
+    /* ---------------------------
+       Hero actions under video
+       --------------------------- */
     .hero-actions-under-video {
-  margin-top: 1.9rem; /* pushes below video arrows */
-  display: flex;
-  justify-content: flex-start;
-  gap: 1.2rem;
-  flex-wrap: wrap;
-}
+      margin-top: 2.15rem; /* pushes below the video arrows/controls */
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 2rem;           /* MORE space between the two pills */
+      flex-wrap: wrap;
+    }
+
+    /* Make sure these look like pills even if base .button changes */
+    .hero-actions-under-video .button {
+      border-radius: 999px;
+      padding: 0.95rem 1.55rem;
+      line-height: 1;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    /* Gold gradient pill (Explore Cyber Defense United) */
+    .button.primary.gold {
+      color: #0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .button.primary.gold:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(250, 204, 21, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Red gradient pill (Explore SecureOps) */
+    .button.secureops {
+      color: #0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #ffd6d6 42%, #ef4444 78%, #dc2626 100%);
+      border: 1px solid rgba(239, 68, 68, 0.55);
+      box-shadow:
+        0 10px 22px rgba(239, 68, 68, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .button.secureops:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(239, 68, 68, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Remove any inherited underline effects for these pills */
+    .hero-actions-under-video .button,
+    .hero-actions-under-video .button:visited {
+      text-decoration: none;
+    }
 
     /* Content sections */
     main.light {
@@ -144,7 +233,7 @@
       font-weight: 600;
     }
 
-    /* Hero layout: logo + body + CTAs left, headline + video right */
+    /* Hero layout: logo + body left, headline + video right */
     .hero-inner {
       align-items: flex-start;
       gap: 3rem;
@@ -169,7 +258,7 @@
     .hero-right h1 {
       margin-top: 0;
       margin-bottom: 1rem;
-      max-width: 620px;
+      max-width: 720px; /* a touch wider so headline feels bigger */
     }
 
     .hero-right .hero-video-wrapper {
@@ -199,6 +288,7 @@
 
       .hero-actions-under-video {
         justify-content: center;
+        gap: 1.1rem; /* tighter on mobile */
       }
 
       .hero-left .tagline {
@@ -236,15 +326,15 @@
             Services ▾
           </button>
           <div class="dropdown-panel">
-  <a href="./services-secureops.html">
-    Watchtower SecureOps™
-    <span class="sub">Services delivered by people &amp; platform</span>
-  </a>
-  <a href="./services-cyber-defense-united.html">
-    Cyber Defense United™
-    <span class="sub">DoD/DIB SecureOps on Watchtower</span>
-  </a>
-</div>
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Services delivered by people &amp; platform</span>
+            </a>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+            </a>
+          </div>
         </div>
 
         <!-- PRODUCT LINK -->
@@ -306,7 +396,12 @@
 
       <!-- RIGHT SIDE: HEADLINE + VIDEO -->
       <div class="hero-right">
-        <h1 class="hero-title">Watchtower SecureOps™ &amp; Cyber Defense United™</h1>
+        <h1 class="hero-title">
+          <span class="text-gradient gradient-red">Watchtower SecureOps™</span>
+          &amp;
+          <span class="text-gradient gradient-gold">Cyber Defense United™</span>
+        </h1>
+
         <p class="hero-subtitle">
           Modern SecureOps delivered by people and platform together: Watchtower SecureOps for
           enterprise, MSSPs, and SMBs — and Cyber Defense United for DoD and DIB missions that
@@ -336,12 +431,12 @@
 
           <!-- CTA BUTTONS now under video -->
           <div class="hero-actions hero-actions-under-video">
-            <a class="button primary" href="./services-cyber-defense-united.html">
-  Explore Cyber Defense United
-</a>
+            <a class="button primary gold" href="./services-cyber-defense-united.html">
+              Explore Cyber Defense United
+            </a>
             <a class="button secureops" href="./services-secureops.html">
-  Explore SecureOps
-</a>
+              Explore SecureOps
+            </a>
           </div>
         </div>
       </div>
