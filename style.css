@@ -1003,3 +1003,41 @@ footer a:focus {
   width: auto !important;
 }
 
+/* ---------------------------------------
+   Footer readability fixes (all pages)
+   --------------------------------------- */
+footer,
+footer .footer-inner {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+footer p,
+footer a,
+footer span {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* links: keep readable + on-brand */
+footer a {
+  text-decoration: none;
+  color: rgba(251, 191, 36, 0.95); /* gold */
+}
+
+footer a:hover {
+  color: rgba(251, 191, 36, 1);
+  text-decoration: underline;
+}
+
+/* specifically the e10 line you circled */
+.footer-e10 span {
+  color: rgba(255, 255, 255, 0.72) !important;
+  opacity: 1 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* optional: tighten footer spacing a touch */
+footer .footer-inner {
+  padding-bottom: 2rem;
+}
+
