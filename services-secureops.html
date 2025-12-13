@@ -1,4 +1,4 @@
-<!-- services-secureops.html -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +12,7 @@
   />
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=26" />
+  <link rel="stylesheet" href="./style.css?v=27" />
   <script src="./script.js" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
@@ -259,11 +259,120 @@
       background: rgba(15, 23, 42, 0.5);
     }
 
-    /* Main body under hero (light background, like index) */
+    /* ---------------------------
+       MAIN BODY (CDU-like cards)
+       --------------------------- */
     main.light {
       background: #ffffff;
       color: #020617;
       padding: 60px 0;
+    }
+
+    .secops-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .secops-lead {
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #0f172a;
+      max-width: 900px;
+    }
+
+    .secops-grid {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .secops-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 1.1rem 1.1rem;
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(2, 6, 23, 0.06);
+    }
+
+    .secops-card h3 {
+      margin: 0 0 0.55rem;
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+    }
+
+    .secops-card p {
+      margin: 0;
+      color: #334155;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .secops-list {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+      color: #334155;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .secops-split {
+      margin-top: 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .secops-lane {
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 1.15rem 1.15rem;
+      background: #ffffff;
+      box-shadow: 0 10px 22px rgba(2, 6, 23, 0.06);
+    }
+
+    .secops-lane h3 { margin: 0 0 0.55rem; }
+    .secops-lane p {
+      margin: 0;
+      color: #334155;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .secops-cta-band {
+      margin-top: 1.25rem;
+      border-radius: 18px;
+      padding: 1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color: #e5e7eb;
+      border: 1px solid rgba(239, 68, 68, 0.22);
+      box-shadow: 0 16px 34px rgba(2, 6, 23, 0.35);
+    }
+
+    .secops-cta-band h2 {
+      margin: 0 0 0.55rem;
+      color: #ffffff;
+    }
+
+    .secops-cta-band p {
+      margin: 0;
+      line-height: 1.7;
+      max-width: 900px;
+      color: rgba(229,231,235,0.92);
+    }
+
+    .secops-cta-actions {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem 1.2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 980px) {
+      .secops-grid { grid-template-columns: 1fr; }
+      .secops-split { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 900px) {
@@ -435,195 +544,246 @@
     </div>
   </section>
 
-  <!-- MAIN BODY (aligned with other pages) -->
+  <!-- MAIN BODY (CDU-like, boxed) -->
   <main class="light">
-    <!-- VARIANTS: ENTERPRISE / MSSP / SMB -->
-    <section class="section-block slim">
-      <h2>SecureOps Service Variants</h2>
-      <p class="lead">
-        The same foundation, tuned for three common commercial realities:
-        <strong>Enterprise SOCs</strong>, <strong>MSSPs</strong>, and <strong>SMBs</strong>.
-      </p>
+    <div class="secops-section">
 
-      <div class="features three">
-        <article class="feature">
-          <h3>SecureOps for Enterprise</h3>
+      <!-- What SecureOps Delivers -->
+      <section class="section-block slim">
+        <h2>What Watchtower SecureOps Delivers</h2>
+        <p class="secops-lead">
+          Watchtower SecureOps brings together the <strong>Watchtower CRP</strong> and experienced operators to help
+          commercial organizations run security operations that are <strong>measurable</strong>, <strong>repeatable</strong>,
+          and <strong>defensible</strong>. We can augment your existing SOC, modernize your workflows, or operate as a
+          managed partner alongside your team.
+        </p>
+
+        <div class="secops-grid">
+          <article class="secops-card">
+            <h3>Managed Detection &amp; Response</h3>
+            <p>
+              Monitoring, triage, investigation, and response support — built around cases and evidence, not just
+              alert queues.
+            </p>
+            <ul class="secops-list">
+              <li>Business-hours, 24/7, or hybrid coverage models</li>
+              <li>Case timelines, artifacts, and after-action reporting</li>
+              <li>Escalation paths and clear “what we did” documentation</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>Watchtower CRP as the Operations Hub</h3>
+            <p>
+              Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leadership
+              gets clarity.
+            </p>
+            <ul class="secops-list">
+              <li>Unified investigations across SIEM/EDR/identity/network sources</li>
+              <li>Standardized playbooks and consistent reporting</li>
+              <li>Evidence packs: “what we saw → what it meant → what we did”</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>Incident Response &amp; Surge Support</h3>
+            <p>
+              When something is real, you need experienced hands. We support containment decisions, recovery, and
+              communications.
+            </p>
+            <ul class="secops-list">
+              <li>Rapid triage + scoping to confirm impact</li>
+              <li>Containment guidance aligned to your risk tolerance</li>
+              <li>Executive summaries and post-incident recommendations</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- SecureOps Variants -->
+      <section class="section-block slim">
+        <h2>SecureOps Service Variants</h2>
+        <p class="secops-lead">
+          The same foundation, tuned for three common commercial realities:
+          <strong>Enterprise SOCs</strong>, <strong>MSSPs</strong>, and <strong>SMBs</strong>.
+        </p>
+
+        <div class="secops-grid">
+          <article class="secops-card">
+            <h3>SecureOps for Enterprise</h3>
+            <p>
+              For in-house security teams that already own tools but need a more coherent SOC operating model.
+            </p>
+            <ul class="secops-list">
+              <li>Modern triage workflows + case discipline</li>
+              <li>Integration with SIEM/EDR/ticketing</li>
+              <li>Leadership-ready reporting tied to risk</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>SecureOps for MSSPs</h3>
+            <p>
+              For providers that need repeatable operations across tenants with clear customer-facing value.
+            </p>
+            <ul class="secops-list">
+              <li>Multi-tenant patterns for cases and reporting</li>
+              <li>Standardized triage + escalation across clients</li>
+              <li>Evidence and narratives customers can understand</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>SecureOps Lite (SMB)</h3>
+            <p>
+              For smaller teams that need SOC-grade rigor without a full 24/7 headcount model.
+            </p>
+            <ul class="secops-list">
+              <li>Right-sized alerting with clear priorities</li>
+              <li>Business-hours monitoring + on-call patterns</li>
+              <li>Audit-ready “what happened / what we did” records</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Commercial add-ons: Tool Integration + AI + Compliance Automation -->
+      <section class="section-block slim">
+        <h2>Commercial Enablement: Integration, AI, and Automation</h2>
+        <p class="secops-lead">
+          Most commercial teams don’t need “more tools” — they need their tools to work together and reduce manual work.
+          SecureOps helps integrate your stack, apply automation safely, and use AI where it actually improves outcomes.
+        </p>
+
+        <div class="secops-split">
+          <article class="secops-lane">
+            <h3>Tool Integration &amp; Operational Hardening</h3>
+            <p>
+              We integrate and tune the tools you already have — and where needed, help you add the right supporting
+              components (log pipeline, SOAR, endpoint coverage, identity telemetry) without creating dashboard sprawl.
+            </p>
+            <ul class="secops-list">
+              <li>SIEM, EDR, identity, network, and cloud signal integration</li>
+              <li>Connector tuning + alert quality improvements</li>
+              <li>Playbooks and handoffs that match your team structure</li>
+            </ul>
+          </article>
+
+          <article class="secops-lane">
+            <h3>AI Assist (Human-in-the-Loop)</h3>
+            <p>
+              We apply AI to the parts that slow teams down: summarization, triage assistance, report drafting, and
+              decision support — with review gates and auditability.
+            </p>
+            <ul class="secops-list">
+              <li>Case summaries and “recommended next steps”</li>
+              <li>Faster executive briefs and audit narratives</li>
+              <li>Safe patterns: traceability, approvals, and logging</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="secops-split">
+          <article class="secops-lane">
+            <h3>Compliance Evidence Automation</h3>
+            <p>
+              We help reduce the manual burden of proving you’re doing security by generating evidence from operations:
+              cases, timelines, artifacts, and repeatable reporting.
+            </p>
+            <ul class="secops-list">
+              <li>Evidence packs aligned to common frameworks (SOC 2, ISO 27001, internal policies)</li>
+              <li>Automated reporting cadence (weekly/monthly/quarterly)</li>
+              <li>“Show your work” operational records for auditors and leadership</li>
+            </ul>
+          </article>
+
+          <article class="secops-lane">
+            <h3>Patch &amp; Remediation Automation (When Appropriate)</h3>
+            <p>
+              Where it’s safe and desired, we can help automate remediation workflows (ticketing, approvals, and
+              execution paths) so issues get fixed faster without breaking change control.
+            </p>
+            <ul class="secops-list">
+              <li>SOAR-assisted ticket creation and routing</li>
+              <li>Vulnerability + patch workflows aligned to change windows</li>
+              <li>Closed-loop validation: “fixed + verified” documentation</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- Powered by CRP (kept, but in boxed tone) -->
+      <section class="section-block slim">
+        <h2>Powered by the Watchtower Cyber Reasoning Platform (CRP)</h2>
+        <p class="secops-lead">
+          Watchtower SecureOps uses the CRP as the <strong>reasoning and evidence layer</strong> above your tools.
+        </p>
+
+        <div class="secops-grid">
+          <article class="secops-card">
+            <h3>Guardian + Seek</h3>
+            <p>
+              Organizes alerts and fuses events into behaviors and campaigns — not just single noisy detections.
+            </p>
+            <ul class="secops-list">
+              <li>Signal triage funnels and priority scoring</li>
+              <li>WCS-backed buckets that represent real activity</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>Atlas + Assist</h3>
+            <p>
+              Investigation workspace with timelines, artifacts, and operator-controlled AI assistance.
+            </p>
+            <ul class="secops-list">
+              <li>Cases that tell the story end-to-end</li>
+              <li>Summaries and reporting acceleration (human-in-the-loop)</li>
+            </ul>
+          </article>
+
+          <article class="secops-card">
+            <h3>Deploy + Audit</h3>
+            <p>
+              Orchestration plus reusable evidence outputs — aligned to how teams actually operate.
+            </p>
+            <ul class="secops-list">
+              <li>Playbooks for enrichment, routing, and automation</li>
+              <li>Evidence organization across controls and reporting periods</li>
+            </ul>
+          </article>
+        </div>
+
+        <p style="margin-top:1rem; max-width: 900px; color:#334155; line-height:1.7;">
+          You keep your existing tools. Watchtower CRP and SecureOps wrap them in a <strong>single operating picture</strong>.
+        </p>
+      </section>
+
+      <!-- CTA band (dark, readable) -->
+      <section class="section-block slim">
+        <div class="secops-cta-band">
+          <h2>Let’s talk about your environment.</h2>
           <p>
-            For in-house security teams that already own tools but need a more coherent SOC operating model.
+            If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
+            without building everything yourself, we’ll start with a short technical conversation about your tools,
+            constraints, and priorities, then propose a clear operating approach.
           </p>
-          <ul class="clean">
-            <li>24/7 or business-hours monitoring and triage.</li>
-            <li>Case-driven investigations with impact and recommendations.</li>
-            <li>Integration with your existing SIEM, EDR, and ticketing stack.</li>
-            <li>Executive-ready reporting tied to risk and compliance needs.</li>
-          </ul>
-        </article>
 
-        <article class="feature">
-          <h3>SecureOps for MSSPs</h3>
-          <p>
-            For MSSPs and SOC providers that want a consistent way to manage many tenants using Watchtower CRP.
-          </p>
-          <ul class="clean">
-            <li>Multi-tenant patterns for cases, alerts, and playbooks.</li>
-            <li>Standardized triage, escalation, and reporting across clients.</li>
-            <li>Evidence and narratives you can show to your customers, not just ticket counts.</li>
-            <li>Optional white-label-style workflows with your brand and processes.</li>
-          </ul>
-        </article>
+          <div class="secops-cta-actions">
+            <a
+              class="secops-pill primary"
+              href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps / Technical Conversation"
+            >
+              Request a Conversation
+            </a>
+            <a class="secops-pill ghost" href="./watchtower.html">
+              Explore Watchtower CRP
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <article class="feature">
-          <h3>SecureOps Lite (SMB)</h3>
-          <p>
-            For SMBs and non-24/7 teams that need structure and evidence, not a full-blown SOC.
-          </p>
-          <ul class="clean">
-            <li>Right-sized alerting with clear priorities and action plans.</li>
-            <li>Business-hours monitoring with on-call or surge support patterns.</li>
-            <li>Incident timelines and “what we did” records for leadership and auditors.</li>
-            <li>On-ramps to CMMC and other frameworks without massive upfront investment.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- CORE CAPABILITIES -->
-    <section class="section-block slim">
-      <h2>Core SecureOps Capabilities</h2>
-      <p class="lead">
-        All SecureOps variants share a core set of capabilities — the difference is how far we scale them
-        and how we shape them around your environment.
-      </p>
-      <div class="features three">
-        <article class="feature">
-          <h3>Monitoring &amp; Triage</h3>
-          <p>Eyes on glass, but smarter:</p>
-          <ul class="clean">
-            <li>Alert triage and initial investigation inside Watchtower.</li>
-            <li>Enrichment from your existing tools (EDR, threat intel, identity).</li>
-            <li>Priority scoring so your team focuses on what matters most.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3>Investigation, Hunt &amp; Response</h3>
-          <p>Turn raw data into clear stories of what happened and what you did.</p>
-          <ul class="clean">
-            <li>Atlas-powered cases with timelines and artifacts.</li>
-            <li>Campaign and user/host-centric investigations via Watchtower buckets.</li>
-            <li>Proactive hunts designed around your risk profile.</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <h3>Reporting &amp; Compliance Evidence</h3>
-          <p>Operations that can stand in front of auditors, boards, and regulators.</p>
-          <ul class="clean">
-            <li>Regular operational reporting (weekly, monthly, quarterly).</li>
-            <li>Evidence packs for audits (CMMC, ISO, SOC 2, internal standards).</li>
-            <li>“Here’s what we saw, here’s what we did, here’s what changed” narratives.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- POWERED BY WATCHTOWER CRP -->
-    <section class="section-block slim">
-      <h2>Powered by the Watchtower Cyber Reasoning Platform (CRP)</h2>
-      <p class="lead">
-        Watchtower SecureOps uses the CRP as the <strong>reasoning and evidence layer</strong> above your tools.
-      </p>
-      <ul class="clean">
-        <li><strong>Guardian:</strong> organizes alerts and signals into triage queues and funnels.</li>
-        <li><strong>Seek:</strong> fuses events into WCS-backed buckets that represent behaviors and campaigns, not just single alerts.</li>
-        <li><strong>Atlas:</strong> the investigation workspace where analysts build and track cases, attach artifacts, and record decisions.</li>
-        <li><strong>Assist:</strong> AI copilots to summarize cases, draft reports, and suggest next steps — always under analyst control.</li>
-        <li><strong>Deploy:</strong> orchestrates playbooks for enrichment, ticketing, and automated containment where you’re comfortable.</li>
-        <li><strong>Audit:</strong> organizes cases, timelines, and artifacts into reusable evidence across controls and frameworks.</li>
-      </ul>
-      <p style="margin-top:1rem;">
-        You keep your existing tools. Watchtower CRP and SecureOps wrap them in a <strong>single operating picture</strong>.
-      </p>
-    </section>
-
-    <!-- WHO IT'S FOR -->
-    <section class="section-block slim">
-      <h2>Who Watchtower SecureOps™ Is For</h2>
-      <p class="lead">
-        Built for commercial teams that care about <strong>outcomes and evidence</strong>, not just tool sprawl.
-      </p>
-      <ul class="clean">
-        <li>
-          <strong>Enterprises</strong> with existing SOCs or security teams that want a more consistent,
-          case-driven way to operate.
-        </li>
-        <li>
-          <strong>MSSPs &amp; Managed Security Providers</strong> that need to deliver clearer value to clients
-          and scale operations without burning out analysts.
-        </li>
-        <li>
-          <strong>Healthcare, finance, and critical-service SMBs</strong> that need SOC-grade rigor but cannot
-          justify full internal SOC build-outs.
-        </li>
-      </ul>
-    </section>
-
-    <!-- HOW WE ENGAGE -->
-    <section class="section-block slim">
-      <h2>How a SecureOps Engagement Works</h2>
-      <ul class="clean">
-        <li>
-          <span class="why">1. Discovery:</span>
-          understand your environment, tools, staffing, and regulatory pressures (CMMC, SOC 2, HIPAA, etc.).
-        </li>
-        <li>
-          <span class="why">2. Design:</span>
-          define scope (networks, tenants, data sources), target outcomes, and reporting cadence.
-        </li>
-        <li>
-          <span class="why">3. Watchtower Integration:</span>
-          connect your SIEM, EDR, identity, and other data sources into Watchtower CRP.
-        </li>
-        <li>
-          <span class="why">4. Run SecureOps:</span>
-          operate monitoring, triage, investigations, and reporting using Watchtower as the central workspace.
-        </li>
-        <li>
-          <span class="why">5. Refine &amp; Scale:</span>
-          tune playbooks, automation, and coverage; expand to more assets, tenants, or business units over time.
-        </li>
-      </ul>
-    </section>
-
-    <!-- CTA -->
-    <section class="section-block slim">
-      <h2>Let’s Talk SecureOps for Your Environment</h2>
-      <p class="lead">
-        If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
-        without building everything yourself, Watchtower SecureOps may be the right fit.
-      </p>
-      <p>
-        Email us at
-        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
-        with a short description of your environment (industry, size, current tools), and we’ll respond with
-        a focused, technical conversation about SecureOps options.
-      </p>
-      <div style="margin-top:1.5rem;">
-        <a
-          class="button primary"
-          href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Inquiry"
-        >
-          Start a SecureOps Conversation
-        </a>
-        <a
-          class="button ghost"
-          href="./watchtower.html"
-          style="margin-left:0.75rem;"
-        >
-          Explore the Watchtower CRP
-        </a>
-      </div>
-    </section>
+    </div>
   </main>
 
   <!-- FOOTER (aligned with other pages) -->
