@@ -324,6 +324,27 @@ body {
   color: #000;
 }
 
+/* =========================
+   NAV: Services dropdown (global)
+   ========================= */
+.dropdown-panel{
+  min-width: 260px; /* keeps items from breaking awkwardly */
+}
+
+.dropdown-panel a{
+  display:block;
+  text-decoration:none;
+  line-height:1.25;
+}
+
+.dropdown-panel a .sub{
+  display:block;          /* THIS is the “compacting” piece */
+  font-size:0.78rem;
+  font-weight:400;
+  opacity:0.82;
+  margin-top:0.12rem;
+}
+
 /* Hamburger */
 .hamburger {
   display: inline-flex;
