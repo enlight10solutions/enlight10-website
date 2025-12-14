@@ -39,9 +39,14 @@
     .hero.splash .hero-inner{
       align-items:flex-start;
       gap: 3rem;
-      padding-top: 0 !important;
+      padding-top: 10px !important;
       margin-top: 0 !important;
     }
+
+    /* Give the hero some breathing room under the top nav */
+.hero.splash{
+  padding-top: 18px; /* try 14–26px if you want */
+}
 
     /* Bring RIGHT column up (overrides any base CSS) */
     .hero-right{
@@ -102,42 +107,56 @@
   border-radius: 22px;
   padding: 14px;
   background: rgba(2,6,23,0.35);
-  box-shadow:
-    0 20px 48px rgba(0,0,0,0.65),
-    inset 0 0 0 1px rgba(255,212,71,0.18);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.65),
+              inset 0 0 0 1px rgba(255,212,71,0.18);
   overflow: hidden;
+  isolation: isolate; /* makes glow layering consistent */
 }
 
-/* Soft pulsing light behind logo */
 .hero-logo-wrap::before{
   content:"";
   position:absolute;
-  inset:-20%;
-  background: radial-gradient(
-    circle at 50% 40%,
-    rgba(255,212,71,0.25),
-    rgba(255,212,71,0.10) 35%,
-    transparent 65%
+  inset:-35%;
+  background: radial-gradient(circle at 50% 40%,
+    rgba(255,212,71,0.42),
+    rgba(255,212,71,0.16) 40%,
+    transparent 70%
   );
-  animation: logoPulse 6s ease-in-out infinite;
+  filter: blur(18px);
+  opacity: 0.75;
+  animation: logoPulse 5.8s ease-in-out infinite;
   pointer-events:none;
+  z-index: 0;
 }
 
-/* Logo image rounding */
+.hero-logo-wrap::after{
+  content:"";
+  position:absolute;
+  inset:-45%;
+  background: radial-gradient(circle at 55% 45%,
+    rgba(56,189,248,0.18),
+    rgba(56,189,248,0.08) 45%,
+    transparent 72%
+  );
+  filter: blur(26px);
+  opacity: 0.55;
+  animation: logoPulse2 7.2s ease-in-out infinite;
+  pointer-events:none;
+  z-index: 0;
+}
+
 .hero-logo-large{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius: 16px;
   position: relative;
   z-index: 1;
 }
 
-/* Pulse animation */
 @keyframes logoPulse{
-  0%   { opacity: 0.45; transform: scale(0.98); }
-  50%  { opacity: 0.75; transform: scale(1.02); }
-  100% { opacity: 0.45; transform: scale(0.98); }
+  0%,100% { opacity:0.55; transform: scale(0.98); }
+  50%     { opacity:0.95; transform: scale(1.04); }
+}
+@keyframes logoPulse2{
+  0%,100% { opacity:0.22; transform: scale(0.98); }
+  50%     { opacity:0.55; transform: scale(1.03); }
 }
 
     .flat-gold{
@@ -197,13 +216,17 @@
 
     .hero-actions-under-video{
   width: 100%;
-  max-width: 960px;          /* match your video wrapper max-width */
+  max-width: 960px;
   margin-top: 1.05rem;
   display: flex;
-  justify-content: space-between; /* spreads them to edges of video width */
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   flex-wrap: nowrap;
+
+  padding-right: 14px;  /* pulls SecureOps inward */
+  padding-left: 6px;    /* optional: balances left */
+  box-sizing: border-box;
 }
 
 .hero-actions-under-video .button{
