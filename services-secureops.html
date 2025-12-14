@@ -231,261 +231,109 @@
       background: rgba(2, 6, 23, 0.35);
     }
 
-    /* ============================
-   SecureOps Packages (Rapid7-style comparison)
-   Paste near the bottom of your page <style>
-   ============================ */
+    /* =========================================================
+   SecureOps Packages + Comparison Table polish
+   ========================================================= */
 
-.pricing-wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding: 0 1.5rem;
-}
+/* --- A single, consistent "Talk" button style --- */
+.pkg-talk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
-.pricing-head{
-  margin-top: 1.75rem;
-}
+  width: 100%;
+  max-width: 220px;
+  min-height: 46px;
 
-.pricing-head h2{
-  margin:0 0 .55rem;
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: 0.01em;
-  color:#0b1220;
-}
-
-.pricing-head p{
-  margin:0;
-  max-width: 920px;
-  color:#334155;
-  line-height:1.7;
-}
-
-/* Soft gold circuit band behind the pricing area */
-.pricing-band{
-  margin-top: 1.15rem;
-  border-radius: 18px;
-  border: 1px solid rgba(15,23,42,0.08);
-  position: relative;
-  overflow: hidden;
-  padding: 1.25rem;
-  background:
-    radial-gradient(circle at 18% 10%, rgba(180, 140, 70, 0.10), transparent 52%),
-    radial-gradient(circle at 82% 12%, rgba(140, 100, 40, 0.08), transparent 58%),
-    linear-gradient(180deg, #fbf7ee 0%, #ffffff 72%);
-  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
-}
-
-/* Circuit overlay (subtle) */
-.pricing-circuits{
-  position:absolute;
-  inset:-22%;
-  opacity:0.14;
-  mix-blend-mode:multiply;
-  pointer-events:none;
-  filter: blur(0.15px);
-}
-
-.pricing-circuits svg{ width:100%; height:100%; display:block; }
-
-/* Packages */
-.pkg-grid{
-  position: relative;
-  z-index: 1;
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.1rem;
-  margin-bottom: 1.25rem;
-}
-
-.pkg{
-  background:#fff;
-  border: 1px solid rgba(15,23,42,0.10);
-  border-radius: 16px;
-  padding: 1.05rem 1.05rem;
-  box-shadow: 0 12px 28px rgba(2,6,23,0.06);
-  display:flex;
-  flex-direction:column;
-  gap: .65rem;
-}
-
-.pkg .kicker{
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color:#64748b;
+  padding: 0.85rem 1.15rem;
+  border-radius: 999px;
   font-weight: 800;
-}
+  letter-spacing: 0.01em;
+  text-decoration: none;
 
-.pkg h3{
-  margin:0;
-  font-size: 1.15rem;
-  color:#0b1220;
-  font-weight: 900;
-}
+  /* visible on light cards */
+  color: #0b1120;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.18);
 
-.pkg .desc{
-  margin:0;
-  color:#334155;
-  line-height:1.65;
-  font-size: .95rem;
-}
-
-.pkg .pillrow{
-  display:flex;
-  gap:.55rem;
-  flex-wrap:wrap;
-  margin-top:.15rem;
-}
-.pkg .mini{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:.35rem .65rem;
-  border-radius:999px;
-  font-size:.72rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  font-weight: 900;
-  border:1px solid rgba(2,6,23,0.10);
-  background: rgba(2,6,23,0.03);
-  color:#0b1120;
-}
-
-.pkg .cta{
-  margin-top:.35rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.6rem;
-}
-.pkg .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:44px;
-  padding:.8rem 1.0rem;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:750;
-  border:1px solid rgba(15,23,42,0.12);
-  background:#fff;
-  color:#0b1120;
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-}
-.pkg .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(2,6,23,0.08); }
-
-.pkg.featured{
-  border-color: rgba(250,204,21,0.55);
   box-shadow:
-    0 12px 28px rgba(2,6,23,0.08),
-    0 0 0 3px rgba(250,204,21,0.12);
+    0 10px 22px rgba(2, 6, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
 }
-.pkg.featured .btn.primary{
-  color:#0b1120;
+
+.pkg-talk:hover {
+  transform: translateY(-1px);
+  border-color: rgba(250, 204, 21, 0.55);
+  box-shadow:
+    0 14px 28px rgba(2, 6, 23, 0.12),
+    0 0 0 3px rgba(250, 204, 21, 0.12);
+}
+
+.pkg-talk:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(250, 204, 21, 0.35),
+    0 14px 28px rgba(2, 6, 23, 0.12);
+}
+
+/* optional: “primary” talk button for the middle card (if you want it) */
+.pkg-talk--gold {
+  color: #0b1120;
   background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
   border: 1px solid rgba(250, 204, 21, 0.55);
-}
-.pkg .btn.ghost{
-  background: rgba(2,6,23,0.02);
-  border-color: rgba(148,163,184,0.35);
-  color:#0b1120;
+  box-shadow:
+    0 12px 26px rgba(250, 204, 21, 0.16),
+    0 10px 22px rgba(2, 6, 23, 0.10);
 }
 
-/* Comparison table */
-.pkg-table{
-  position: relative;
-  z-index: 1;
-  background:#fff;
-  border:1px solid rgba(15,23,42,0.10);
-  border-radius: 16px;
-  overflow:hidden;
-  box-shadow: 0 12px 28px rgba(2,6,23,0.06);
-}
-
-.pkg-row{
-  display:grid;
-  grid-template-columns: 1.3fr repeat(3, 1fr);
-  gap: 0;
-  border-top:1px solid rgba(2,6,23,0.06);
-}
-
-.pkg-row:first-child{ border-top:none; }
-
-.pkg-cell{
-  padding: .9rem .95rem;
-  font-size: .92rem;
-  color:#0b1120;
-  line-height:1.45;
-  border-left:1px solid rgba(2,6,23,0.06);
-}
-
-.pkg-cell:first-child{
-  border-left:none;
-  color:#0b1220;
-}
-
-.pkg-group{
-  background: linear-gradient(180deg, rgba(2,6,23,0.03) 0%, rgba(2,6,23,0.01) 100%);
-  font-weight: 900;
-  color:#0b1220;
+/* --- Comparison table section headers: dark blue bar + white text --- */
+.pkg-compare thead th,
+.pkg-compare .section-head {
+  background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
+  color: #ffffff !important;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing:.12em;
-  font-size: .75rem;
-}
-
-.pkg-colhead{
-  background:#0b1120;
-  color:#fff;
   font-weight: 900;
-  text-align:center;
+  border-top: 1px solid rgba(250, 204, 21, 0.28);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
 }
 
-.pkg-colhead:first-child{
-  text-align:left;
-  color: rgba(255,255,255,0.85);
+/* If your section rows are <tr><td colspan="...">Threat Detection...</td></tr> */
+.pkg-compare .section-head td {
+  padding: 0.95rem 1rem;
 }
 
-.ok{ font-weight: 900; }
-.muted{ color:#64748b; }
-.addon{
-  display:inline-flex;
-  align-items:center;
-  gap:.45rem;
-  font-weight: 850;
-  color:#0b1120;
-}
-.addon .tag{
-  font-size:.70rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  padding:.28rem .55rem;
-  border-radius:999px;
-  border:1px solid rgba(250,204,21,0.45);
-  background: rgba(250,204,21,0.12);
+/* --- Replace big "ADD ON" pills with simple text chips --- */
+.pkg-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(2, 6, 23, 0.03);
+  color: #0b1120;
 }
 
-@media (max-width: 980px){
-  .pkg-grid{ grid-template-columns: 1fr; }
-  .pkg-row{ grid-template-columns: 1.2fr repeat(3, .9fr); }
-  .pkg-cell{ font-size:.88rem; padding:.8rem .8rem; }
+/* Make “Optional” / “Add-on” not scream */
+.pkg-chip.optional { opacity: 0.8; }
+.pkg-chip.addon {
+  border-color: rgba(250, 204, 21, 0.35);
+  background: rgba(250, 204, 21, 0.08);
 }
 
-@media (max-width: 760px){
-  /* Mobile: turn the table into stacked cards per feature group */
-  .pkg-table{ overflow: visible; }
-  .pkg-row{
-    grid-template-columns: 1fr;
-    border-top: 1px solid rgba(2,6,23,0.08);
-  }
-  .pkg-cell{
-    border-left:none;
-    border-top:1px dashed rgba(2,6,23,0.08);
-  }
-  .pkg-cell:first-child{
-    border-top:none;
-    font-weight:900;
-  }
-  .pkg-colhead{ display:none; }
+/* If you currently have a big addon pill class, hide it safely */
+.addon-pill,
+.addon-badge,
+.addonTag {
+  display: none !important;
 }
 
     /* ---------------------------------
@@ -1010,31 +858,7 @@
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <div class="secops-cta-band">
-          <h2>Let’s talk about your environment.</h2>
-          <p>
-            If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
-            without building everything yourself, we’ll start with a short conversation about your tools,
-            constraints, and priorities.
-          </p>
-
-          <div class="secops-cta-actions">
-            <a class="secops-pill primary" href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps / Technical Conversation">
-              Request a Conversation
-            </a>
-            <a class="secops-pill ghost" href="./watchtower.html">
-              Explore Watchtower CRP
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- =========================
+      <!-- =========================
      SecureOps Packages (Pricing Diagram)
      Paste ABOVE <footer>
      ========================= -->
@@ -1078,7 +902,9 @@
             <span class="mini">Onboarding</span>
           </div>
           <div class="cta">
-            <a class="btn ghost" href="mailto:info@enlight10solutions.com?subject=SecureOps Starter Package">Talk Starter</a>
+            <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter">
+  Talk Starter
+</a>
           </div>
         </article>
 
@@ -1092,7 +918,9 @@
             <span class="mini">Playbooks</span>
           </div>
           <div class="cta">
-            <a class="btn primary" href="mailto:info@enlight10solutions.com?subject=SecureOps Pro Package">Talk Pro</a>
+            <a class="pkg-talk pkg-talk--gold" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro">
+  Talk Pro
+</a>
           </div>
         </article>
 
@@ -1105,8 +933,10 @@
             <span class="mini">Hunt</span>
             <span class="mini">Assurance</span>
           </div>
-          <div class="cta">
-            <a class="btn ghost" href="mailto:info@enlight10solutions.com?subject=SecureOps Elite Package">Talk Elite</a>
+          <div class="cta">            
+<a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite">
+  Talk Elite
+</a>
           </div>
         </article>
       </div>
@@ -1227,6 +1057,31 @@
         <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
       </div>
     </div>
+
+      <!-- CTA -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <div class="secops-cta-band">
+          <h2>Let’s talk about your environment.</h2>
+          <p>
+            If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
+            without building everything yourself, we’ll start with a short conversation about your tools,
+            constraints, and priorities.
+          </p>
+
+          <div class="secops-cta-actions">
+            <a class="secops-pill primary" href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps / Technical Conversation">
+              Request a Conversation
+            </a>
+            <a class="secops-pill ghost" href="./watchtower.html">
+              Explore Watchtower CRP
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
   </footer>
 </body>
 </html>
