@@ -213,13 +213,32 @@
       outline-offset: 3px;
     }
 
-    .secops-pill.primary {
-      color: #0b1120;
-      background: linear-gradient(180deg, rgba(251, 191, 36, 1) 0%, rgba(245, 158, 11, 1) 100%);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    }
+    .secops-pill.primary{
+  color:#020617;
+  background: linear-gradient(to top,
+    #b91c1c 0%,
+    #dc2626 35%,
+    #fecaca 65%,
+    #ffffff 100%
+  );
+  border: 1px solid rgba(239, 68, 68, 0.45);
+  box-shadow:
+    0 10px 26px rgba(220, 38, 38, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.45);
+}
 
-    .secops-pill.primary:hover { box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55); }
+.secops-pill.primary:hover{
+  background: linear-gradient(to top,
+    #991b1b 0%,
+    #dc2626 40%,
+    #fee2e2 70%,
+    #ffffff 100%
+  );
+  box-shadow:
+    0 14px 34px rgba(220, 38, 38, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.60);
+}
+
 
     .secops-pill.ghost {
       color: #fff7d6;
@@ -378,6 +397,10 @@
       .secops-hero-right h1, .secops-hero-copy { text-align: left; }
       .secops-hero-actions { justify-content: flex-start; }
     }
+        <div class="scroll-cue" aria-hidden="true">
+      Scroll <span class="arrow">↓</span>
+    </div>
+  </section>
   </style>
 </head>
 
