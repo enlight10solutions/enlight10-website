@@ -95,35 +95,61 @@
     }
 
     .cdu-hero-left img {
-      max-width: 460px;
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      position: relative;
-      z-index: 2;
-    }
+  max-width: 460px;
+  width: 100%;
+  height: auto;
+
+  /* keep the rounded look */
+  border-radius: 18px;
+
+  /* NEW: gold border + subtle inner line (SecureOps-style, but CDU gold) */
+  border: 1px solid rgba(250, 204, 21, 0.55);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.70),
+    0 0 0 1px rgba(255, 242, 194, 0.22) inset;
+
+  /* optional: makes the border feel “premium” */
+  background: rgba(2, 6, 23, 0.35);
+
+  position: relative;
+  z-index: 2;
+}
 
     .cdu-hero-left::after {
-      content: "";
-      position: absolute;
-      width: 640px;
-      height: 640px;
-      left: 50%;
-      top: 28%;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-      background: radial-gradient(
-        circle,
-        rgba(251, 191, 36, 0.16) 0%,
-        rgba(251, 191, 36, 0.08) 30%,
-        rgba(251, 191, 36, 0.00) 65%
-      );
-      filter: blur(12px);
-      opacity: 0.55;
-      z-index: 1;
-      pointer-events: none;
-    }
+  content: "";
+  position: absolute;
+
+  /* center behind the logo */
+  left: 50%;
+  top: -10%;
+  transform: translate(-50%, 0);
+
+  width: 640px;
+  height: 640px;
+  border-radius: 999px;
+
+  /* softer CDU-gold glow */
+  background: radial-gradient(
+    circle at 50% 35%,
+    rgba(251, 191, 36, 0.18) 0%,
+    rgba(251, 191, 36, 0.08) 34%,
+    rgba(251, 191, 36, 0.00) 66%
+  );
+
+  filter: blur(14px);
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+
+  /* NEW: slow drift downward */
+  animation: cduGlowDrift 10s ease-in-out infinite;
+}
+
+    @keyframes cduGlowDrift {
+  0%   { transform: translate(-50%, -8%); opacity: 0.45; }
+  50%  { transform: translate(-50%, 18%); opacity: 0.70; }
+  100% { transform: translate(-50%, -8%); opacity: 0.45; }
+}
 
     .cdu-tagline {
       margin: 0;
