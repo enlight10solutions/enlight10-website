@@ -24,7 +24,6 @@
   --gold-accent: #d6b46a;   /* brushed / champagne gold (less yellow) */
   --gold-accent-2: #bfa15a; /* deeper gold for active/open */
 }
-}
 
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -76,13 +75,14 @@ body {
 /* Buttons inside dark band */
 .dark-band .button {
   border-radius: 999px;
-  padding: 0.75rem 1.6rem;
-  font-weight: 600;
+  padding: 0.62rem 1.15rem; /* slimmer */
+  font-weight: 650;
+  font-size: 0.92rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px;
+  min-height: 38px; /* slimmer */
   line-height: 1;
 }
 
@@ -118,9 +118,9 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.70rem 1.05rem; /* smaller */
-  min-height: 40px;         /* smaller */
-  font-size: 0.92rem;       /* slightly smaller text */
+  padding: 0.62rem 1.05rem; /* slimmer */
+  min-height: 38px;         /* slimmer */
+  font-size: 0.90rem;       /* slightly smaller text */
   border-radius: 999px;
   font-weight: 650;
   line-height: 1;
@@ -212,7 +212,7 @@ body {
 
 /* Top-left nav logo */
 .brand-logo--slim {
-  height: 62px; /* unified (was duplicated) */
+  height: 70px; /* unified (was duplicated) */
   width: auto;
   display: block;
   border-radius: 14px;
@@ -537,8 +537,10 @@ body.menu-open { overflow: hidden; }
    ========================================================= */
 .button.secureops {
   border-radius: 999px;
-  padding: 0.75rem 1.6rem;
-  font-weight: 600;
+  padding: 0.62rem 1.15rem; /* slimmer */
+  min-height: 38px;
+  font-weight: 650;
+  font-size: 0.92rem;
   letter-spacing: 0.02em;
   background: linear-gradient(to top, #b91c1c 0%, #dc2626 35%, #fecaca 65%, #ffffff 100%);
   color: #020617;
