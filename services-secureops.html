@@ -1,4 +1,4 @@
-<!-- services-secureops.html (FULL FILE REPLACEMENT — hero layout restored + SMOOTH left→right red glow sweep behind logo) -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT — bottom fixed + packages band matches site gradient) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,9 +94,7 @@
       position: relative;
     }
 
-    /* ------------------------------
-       Smooth glow wrapper (NOT clipped)
-       ------------------------------ */
+    /* Smooth glow wrapper (NOT clipped) */
     .secops-logo-glow{
       position: relative;
       isolation: isolate;
@@ -104,14 +102,12 @@
       max-width: 420px;
     }
 
-    /* The glow itself (smooth sweep via transform) */
     .secops-logo-glow::before{
       content:"";
       position:absolute;
       inset: -45%;
       z-index: 0;
       pointer-events:none;
-
       background: radial-gradient(
         circle at 35% 45%,
         rgba(239,68,68,0.60) 0%,
@@ -120,26 +116,22 @@
         rgba(239,68,68,0.05) 60%,
         transparent 72%
       );
-
       filter: blur(28px);
       opacity: 0.75;
       will-change: transform, opacity;
       animation: glowSweep 12s linear infinite alternate;
     }
 
-    /* Smooth left->right (no variable stepping) */
     @keyframes glowSweep{
       0%   { transform: translateX(-18%) scale(0.98); opacity: 0.55; }
       50%  { transform: translateX(0%)    scale(1.02); opacity: 0.85; }
       100% { transform: translateX(18%)  scale(0.98); opacity: 0.55; }
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
       .secops-logo-glow::before { animation: none; opacity: 0.55; }
     }
 
-    /* Logo frame (clips the image, NOT the glow) */
     .secops-logo-frame{
       position: relative;
       z-index: 1;
@@ -162,7 +154,6 @@
       z-index: 1;
     }
 
-    /* Tagline OUTSIDE logo frame */
     .secops-tagline {
       margin: 0;
       max-width: 420px;
@@ -231,116 +222,11 @@
       background: rgba(2, 6, 23, 0.35);
     }
 
-    /* =========================================================
-   SecureOps Packages + Comparison Table polish
-   ========================================================= */
-
-/* --- A single, consistent "Talk" button style --- */
-.pkg-talk {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  width: 100%;
-  max-width: 220px;
-  min-height: 46px;
-
-  padding: 0.85rem 1.15rem;
-  border-radius: 999px;
-  font-weight: 800;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-
-  /* visible on light cards */
-  color: #0b1120;
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.18);
-
-  box-shadow:
-    0 10px 22px rgba(2, 6, 23, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.55);
-
-  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-}
-
-.pkg-talk:hover {
-  transform: translateY(-1px);
-  border-color: rgba(250, 204, 21, 0.55);
-  box-shadow:
-    0 14px 28px rgba(2, 6, 23, 0.12),
-    0 0 0 3px rgba(250, 204, 21, 0.12);
-}
-
-.pkg-talk:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 3px rgba(250, 204, 21, 0.35),
-    0 14px 28px rgba(2, 6, 23, 0.12);
-}
-
-/* optional: “primary” talk button for the middle card (if you want it) */
-.pkg-talk--gold {
-  color: #0b1120;
-  background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
-  border: 1px solid rgba(250, 204, 21, 0.55);
-  box-shadow:
-    0 12px 26px rgba(250, 204, 21, 0.16),
-    0 10px 22px rgba(2, 6, 23, 0.10);
-}
-
-/* --- Comparison table section headers: dark blue bar + white text --- */
-.pkg-compare thead th,
-.pkg-compare .section-head {
-  background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
-  color: #ffffff !important;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 900;
-  border-top: 1px solid rgba(250, 204, 21, 0.28);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
-}
-
-/* If your section rows are <tr><td colspan="...">Threat Detection...</td></tr> */
-.pkg-compare .section-head td {
-  padding: 0.95rem 1rem;
-}
-
-/* --- Replace big "ADD ON" pills with simple text chips --- */
-.pkg-chip {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  background: rgba(2, 6, 23, 0.03);
-  color: #0b1120;
-}
-
-/* Make “Optional” / “Add-on” not scream */
-.pkg-chip.optional { opacity: 0.8; }
-.pkg-chip.addon {
-  border-color: rgba(250, 204, 21, 0.35);
-  background: rgba(250, 204, 21, 0.08);
-}
-
-/* If you currently have a big addon pill class, hide it safely */
-.addon-pill,
-.addon-badge,
-.addonTag {
-  display: none !important;
-}
-
     /* ---------------------------------
        HERO pills (CTAs)
        --------------------------------- */
     .secops-hero-actions {
-      margin-top: 1.9rem;
+      margin-top: 1.2rem;
       display: flex;
       flex-wrap: wrap;
       gap: 1.1rem 1.25rem;
@@ -364,11 +250,6 @@
     }
 
     .secops-pill:hover { transform: translateY(-1px); }
-
-    .secops-pill:focus-visible {
-      outline: 2px solid rgba(251, 191, 36, 0.65);
-      outline-offset: 3px;
-    }
 
     .secops-pill.primary{
       color:#020617;
@@ -409,12 +290,12 @@
     }
 
     /* ---------------------------------
-       MAIN BODY (unchanged)
+       MAIN BODY
        --------------------------------- */
     main.light {
       background: #ffffff;
       color: #020617;
-      padding: 60px 0;
+      padding: 60px 0 0;
     }
 
     .page-wrap{
@@ -438,6 +319,7 @@
       font-size: 1.02rem;
     }
 
+    /* Your page band gradient */
     .band-red{
       margin-top: 1.25rem;
       border: 1px solid #e5e7eb;
@@ -508,8 +390,236 @@
       pointer-events:none;
     }
 
-    .secops-cta-band {
+    /* =========================================================
+       Packages + Table (Rapid7-ish) — now using band-red style
+       ========================================================= */
+    .pricing-wrap { margin-top: 1.75rem; }
+    .pricing-head h2{ margin:0 0 0.55rem; font-weight:800; color:#0b1220; }
+    .pricing-head p{ margin:0; color:#334155; line-height:1.7; max-width: 920px; }
+
+    /* Make the package band MATCH your page bands */
+    .pricing-band{
       margin-top: 1.25rem;
+      position: relative;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(244,63,94,0.10), rgba(255,255,255,0) 48%),
+        radial-gradient(circle at 80% 10%, rgba(251,191,36,0.07), rgba(255,255,255,0) 58%),
+        linear-gradient(180deg, rgba(255,241,242,0.95) 0%, rgba(255,255,255,1) 70%);
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
+
+    /* Keep circuits subtle */
+    .pricing-circuits{
+      position:absolute;
+      inset:-14%;
+      opacity: 0.16;
+      pointer-events:none;
+      mix-blend-mode: multiply;
+      filter: blur(0.2px);
+    }
+    .pricing-circuits svg{ width:100%; height:100%; display:block; }
+
+    .pkg-grid{
+      position: relative;
+      z-index: 1;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .pkg{
+      background: rgba(255,255,255,0.96);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+      display:flex;
+      flex-direction:column;
+      gap: 0.65rem;
+    }
+
+    .pkg.featured{
+      border-color: rgba(250,204,21,0.55);
+      box-shadow:
+        0 12px 28px rgba(2,6,23,0.08),
+        0 0 0 3px rgba(250,204,21,0.12);
+    }
+
+    .pkg .kicker{
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:#64748b;
+      font-weight:900;
+    }
+
+    .pkg h3{
+      margin:0;
+      font-size:1.35rem;
+      color:#0b1120;
+      letter-spacing:0.01em;
+    }
+
+    .pkg .desc{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .pillrow{
+      margin-top: 0.25rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.5rem;
+    }
+
+    .pillrow .mini{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.38rem 0.70rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      font-weight: 900;
+    }
+
+    .pkg .cta{
+      margin-top: 0.55rem;
+    }
+
+    /* --- A single, consistent "Talk" button style --- */
+    .pkg-talk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+
+      width: 100%;
+      max-width: 220px;
+      min-height: 46px;
+
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+
+      color: #0b1120;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.18);
+
+      box-shadow:
+        0 10px 22px rgba(2, 6, 23, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .pkg-talk:hover {
+      transform: translateY(-1px);
+      border-color: rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 14px 28px rgba(2, 6, 23, 0.12),
+        0 0 0 3px rgba(250, 204, 21, 0.12);
+    }
+
+    .pkg-talk--gold {
+      color: #0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 12px 26px rgba(250, 204, 21, 0.16),
+        0 10px 22px rgba(2, 6, 23, 0.10);
+    }
+
+    /* Comparison table (div-based) */
+    .pkg-table{
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(2,6,23,0.10);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+    }
+
+    .pkg-row{
+      display:grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid rgba(2,6,23,0.08);
+    }
+    .pkg-row:first-child{ border-top: none; }
+
+    .pkg-cell{
+      padding: 0.95rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color:#0b1120;
+      border-left: 1px solid rgba(2,6,23,0.06);
+      background: rgba(255,255,255,0.96);
+    }
+    .pkg-cell:first-child{ border-left:none; color:#0b1120; font-weight:650; }
+
+    .pkg-colhead .pkg-cell{
+      background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
+      color: #ffffff;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .pkg-colhead .pkg-cell:first-child{
+      border-left:none;
+    }
+
+    /* Group header rows */
+    .pkg-group .pkg-cell{
+      background: rgba(2,6,23,0.03);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      color:#0b1120;
+    }
+    .pkg-group .pkg-cell:not(:first-child){ background: rgba(2,6,23,0.03); }
+
+    .ok{ font-weight: 900; }
+    .muted{ color:#64748b; }
+
+    /* Replace big ADD-ON pill with subtle chip */
+    .addon .tag{ display:none !important; }
+    .addon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      background: rgba(2, 6, 23, 0.03);
+      color: #0b1120;
+      opacity: 0.82;
+    }
+
+    /* CTA band */
+    .secops-cta-band {
+      margin-top: 1.75rem;
       border-radius: 18px;
       padding: 1.35rem 1.35rem;
       background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
@@ -532,6 +642,8 @@
     @media (max-width: 980px) {
       .grid-3 { grid-template-columns: 1fr; }
       .grid-2 { grid-template-columns: 1fr; }
+      .pkg-grid{ grid-template-columns: 1fr; }
+      .pkg-row{ grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr; }
     }
 
     @media (max-width: 900px) {
@@ -599,7 +711,7 @@
   <section class="secops-hero">
     <div class="secops-hero-inner">
 
-      <!-- LEFT (restored) -->
+      <!-- LEFT -->
       <div class="secops-hero-left">
         <div class="secops-logo-glow">
           <div class="secops-logo-frame">
@@ -807,7 +919,7 @@
               </p>
               <ul>
                 <li>SOAR-assisted ticket creation and routing</li>
-                <li>Vulnerability + patch worksflows aligned to established change management windows</li>
+                <li>Vulnerability + patch workflows aligned to established change windows</li>
                 <li>Closed-loop validation: “fixed + verified” documentation</li>
               </ul>
             </article>
@@ -858,208 +970,169 @@
         </div>
       </section>
 
-      <!-- =========================
-     SecureOps Packages (Pricing Diagram)
-     Paste ABOVE <footer>
-     ========================= -->
-<section class="section-block slim">
-  <div class="pricing-wrap">
-    <div class="pricing-head">
-      <h2>SecureOps Packages</h2>
-      <p>
-        Three ways to engage — built around measurable operations, clear reporting, and defensible evidence.
-        We’ll right-size coverage and integrations to your environment.
-      </p>
-    </div>
-
-    <div class="pricing-band">
-      <!-- subtle circuits behind the whole pricing band -->
-      <div class="pricing-circuits" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
-          <g opacity="0.9">
-            <path d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
-            <g fill="rgba(161,128,61,0.75)">
-              <circle cx="85" cy="115" r="5"/><circle cx="280" cy="235" r="5"/><circle cx="520" cy="120" r="5"/>
-              <circle cx="740" cy="420" r="5"/><circle cx="935" cy="250" r="5"/><circle cx="1030" cy="585" r="5"/>
-            </g>
-          </g>
-        </svg>
-      </div>
-
-      <!-- package cards -->
-      <div class="pkg-grid">
-        <article class="pkg">
-          <div class="kicker">Package</div>
-          <h3>Starter</h3>
-          <p class="desc">Right-sized monitoring + triage with clean reporting and escalation paths.</p>
-          <div class="pillrow">
-            <span class="mini">Business-hours</span>
-            <span class="mini">Evidence-first</span>
-            <span class="mini">Onboarding</span>
-          </div>
-          <div class="cta">
-            <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter">
-  Talk Starter
-</a>
-          </div>
-        </article>
-
-        <article class="pkg featured">
-          <div class="kicker">Most Common</div>
-          <h3>Pro</h3>
-          <p class="desc">Hybrid or 24/7 coverage with deeper investigations, tuning, and response support.</p>
-          <div class="pillrow">
-            <span class="mini">Hybrid / 24x7</span>
-            <span class="mini">IR support</span>
-            <span class="mini">Playbooks</span>
-          </div>
-          <div class="cta">
-            <a class="pkg-talk pkg-talk--gold" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro">
-  Talk Pro
-</a>
-          </div>
-        </article>
-
-        <article class="pkg">
-          <div class="kicker">Full-spectrum</div>
-          <h3>Elite</h3>
-          <p class="desc">Continuous operations with proactive hunting, hardening, and executive-ready cadence.</p>
-          <div class="pillrow">
-            <span class="mini">24x7x365</span>
-            <span class="mini">Hunt</span>
-            <span class="mini">Assurance</span>
-          </div>
-          <div class="cta">            
-<a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite">
-  Talk Elite
-</a>
-          </div>
-        </article>
-      </div>
-
-      <!-- comparison table -->
-      <div class="pkg-table" role="table" aria-label="SecureOps package comparison">
-        <div class="pkg-row pkg-colhead" role="row">
-          <div class="pkg-cell" role="columnheader">Capability</div>
-          <div class="pkg-cell" role="columnheader">Starter</div>
-          <div class="pkg-cell" role="columnheader">Pro</div>
-          <div class="pkg-cell" role="columnheader">Elite</div>
-        </div>
-
-        <div class="pkg-row pkg-group" role="row">
-          <div class="pkg-cell" role="cell">Threat Detection &amp; Response</div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Monitoring coverage model</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Business-hours / on-call</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Hybrid or 24/7</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> 24x7x365</div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Case timelines + evidence packs</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Proactive threat hunting</div>
-          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
-          <div class="pkg-cell" role="cell">
-            <span class="addon">Optional <span class="tag">Add-On</span></span>
-          </div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">IR surge support (remote)</div>
-          <div class="pkg-cell" role="cell">
-            <span class="addon">Optional <span class="tag">Add-On</span></span>
-          </div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-        </div>
-
-        <div class="pkg-row pkg-group" role="row">
-          <div class="pkg-cell" role="cell">Operations &amp; Reporting</div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Escalation paths + playbooks</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Baseline</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Standardized</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Advanced + tuned</div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Monthly exec summary / posture review</div>
-          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
-        </div>
-
-        <div class="pkg-row pkg-group" role="row">
-          <div class="pkg-cell" role="cell">Integrations &amp; Enablement</div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-          <div class="pkg-cell" role="cell"></div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Tool onboarding + tuning</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Core sources</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Expanded</div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Full program</div>
-        </div>
-
-        <div class="pkg-row" role="row">
-          <div class="pkg-cell" role="cell">Automation / SOAR workflows</div>
-          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
-          <div class="pkg-cell" role="cell">
-            <span class="addon">Optional <span class="tag">Add-On</span></span>
-          </div>
-          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
-      <p class="footer-vet">Veteran-Owned Small Business</p>
-      <p class="footer-info">
-        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
-      </p>
-      <div class="footer-social">
-        <span>Follow us:</span>
-        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
-        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
-        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
-      </div>
-
-      <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
-        <img src="./e10_Logo.png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
-        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
-      </div>
-    </div>
-
-      <!-- CTA -->
+      <!-- SecureOps Packages (ABOVE CTA) -->
       <section class="section-block slim" style="margin-top:1.75rem;">
+        <div class="pricing-wrap">
+          <div class="pricing-head">
+            <h2>SecureOps Packages</h2>
+            <p>
+              Three ways to engage — built around measurable operations, clear reporting, and defensible evidence.
+              We’ll right-size coverage and integrations to your environment.
+            </p>
+          </div>
+
+          <div class="pricing-band">
+            <div class="pricing-circuits" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+                <g opacity="0.9">
+                  <path d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+                  <g fill="rgba(161,128,61,0.75)">
+                    <circle cx="85" cy="115" r="5"/><circle cx="280" cy="235" r="5"/><circle cx="520" cy="120" r="5"/>
+                    <circle cx="740" cy="420" r="5"/><circle cx="935" cy="250" r="5"/><circle cx="1030" cy="585" r="5"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+
+            <div class="pkg-grid">
+              <article class="pkg">
+                <div class="kicker">Package</div>
+                <h3>Starter</h3>
+                <p class="desc">Right-sized monitoring + triage with clean reporting and escalation paths.</p>
+                <div class="pillrow">
+                  <span class="mini">Business-hours</span>
+                  <span class="mini">Evidence-first</span>
+                  <span class="mini">Onboarding</span>
+                </div>
+                <div class="cta">
+                  <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter">Talk Starter</a>
+                </div>
+              </article>
+
+              <article class="pkg featured">
+                <div class="kicker">Most Common</div>
+                <h3>Pro</h3>
+                <p class="desc">Hybrid or 24/7 coverage with deeper investigations, tuning, and response support.</p>
+                <div class="pillrow">
+                  <span class="mini">Hybrid / 24x7</span>
+                  <span class="mini">IR support</span>
+                  <span class="mini">Playbooks</span>
+                </div>
+                <div class="cta">
+                  <a class="pkg-talk pkg-talk--gold" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro">Talk Pro</a>
+                </div>
+              </article>
+
+              <article class="pkg">
+                <div class="kicker">Full-spectrum</div>
+                <h3>Elite</h3>
+                <p class="desc">Continuous operations with proactive hunting, hardening, and executive-ready cadence.</p>
+                <div class="pillrow">
+                  <span class="mini">24x7x365</span>
+                  <span class="mini">Hunt</span>
+                  <span class="mini">Assurance</span>
+                </div>
+                <div class="cta">
+                  <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite">Talk Elite</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="pkg-table" role="table" aria-label="SecureOps package comparison">
+              <div class="pkg-row pkg-colhead" role="row">
+                <div class="pkg-cell" role="columnheader">Capability</div>
+                <div class="pkg-cell" role="columnheader">Starter</div>
+                <div class="pkg-cell" role="columnheader">Pro</div>
+                <div class="pkg-cell" role="columnheader">Elite</div>
+              </div>
+
+              <div class="pkg-row pkg-group" role="row">
+                <div class="pkg-cell" role="cell">Threat Detection &amp; Response</div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Monitoring coverage model</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Business-hours / on-call</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Hybrid or 24/7</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> 24x7x365</div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Case timelines + evidence packs</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Proactive threat hunting</div>
+                <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+                <div class="pkg-cell" role="cell"><span class="addon">Optional</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">IR surge support (remote)</div>
+                <div class="pkg-cell" role="cell"><span class="addon">Optional</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="pkg-row pkg-group" role="row">
+                <div class="pkg-cell" role="cell">Operations &amp; Reporting</div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Escalation paths + playbooks</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Baseline</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Standardized</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Advanced + tuned</div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Monthly exec summary / posture review</div>
+                <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
+              </div>
+
+              <div class="pkg-row pkg-group" role="row">
+                <div class="pkg-cell" role="cell">Integrations &amp; Enablement</div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+                <div class="pkg-cell" role="cell"></div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Tool onboarding + tuning</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Core sources</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Expanded</div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span> Full program</div>
+              </div>
+
+              <div class="pkg-row" role="row">
+                <div class="pkg-cell" role="cell">Automation / SOAR workflows</div>
+                <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+                <div class="pkg-cell" role="cell"><span class="addon">Optional</span></div>
+                <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA (NOW correctly inside MAIN and above FOOTER) -->
+      <section class="section-block slim" style="margin-top:1.75rem; padding-bottom: 60px;">
         <div class="secops-cta-band">
           <h2>Let’s talk about your environment.</h2>
           <p>
@@ -1081,7 +1154,27 @@
 
     </div>
   </main>
-  
+
+  <!-- FOOTER (LAST) -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
+      </div>
+
+      <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+        <img src="./e10_Logo.png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
+      </div>
+    </div>
   </footer>
 </body>
 </html>
