@@ -1,4 +1,4 @@
-<!-- watchtower.html (FULL FILE REPLACEMENT — animated gold circuits behind CRP logo, cleaned hero-left, smooth flow) -->
+<!-- watchtower.html (FULL FILE REPLACEMENT — BIG circuit field behind left panel, no hero glow, clean + smooth flow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,80 +27,15 @@
     }
 
     /* ---------------------------
-       HERO (dark)
+       HERO (dark) — NO global glow
        --------------------------- */
-    /* HERO glow field (behind the left logo + spills into top hero) */
-.wt-hero-shell{
-  position: relative;
-  overflow: hidden;
-}
-
-/* Big ambient field */
-.wt-hero-shell::before{
-  content:"";
-  position:absolute;
-  left: -12%;
-  top: -22%;
-  width: 64%;
-  height: 95%;
-  pointer-events:none;
-  z-index: 0;
-
-  background:
-    radial-gradient(circle at 35% 30%,
-      rgba(250,204,21,0.22),
-      rgba(250,204,21,0.10) 38%,
-      transparent 70%),
-    radial-gradient(circle at 55% 45%,
-      rgba(56,189,248,0.14),
-      rgba(56,189,248,0.06) 45%,
-      transparent 75%),
-    linear-gradient(180deg,
-      rgba(2,6,23,0.00) 0%,
-      rgba(2,6,23,0.28) 70%,
-      rgba(2,6,23,0.55) 100%);
-
-  filter: blur(18px);
-  opacity: 0.85;
-  animation: heroGlowDrift 12s ease-in-out infinite;
-}
-
-/* Moving sweep band */
-.wt-hero-shell::after{
-  content:"";
-  position:absolute;
-  left:-40%;
-  top:-10%;
-  width: 90%;
-  height: 85%;
-  pointer-events:none;
-  z-index: 0;
-
-  background: linear-gradient(
-    110deg,
-    transparent 0%,
-    rgba(250,204,21,0.10) 35%,
-    rgba(250,204,21,0.18) 45%,
-    rgba(250,204,21,0.08) 55%,
-    transparent 70%
-  );
-
-  filter: blur(10px);
-  opacity: 0.55;
-  animation: heroSweep 9.5s ease-in-out infinite;
-}
-
-/* Ensure content is above the glow */
-.wt-hero-shell .wt-hero{
-  position: relative;
-  z-index: 1;
-}
-
     .wt-hero-shell{
       padding-top: 100px; /* clear fixed topbar */
       padding-bottom: 56px;
       background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
       color:#e5e7eb;
+      position: relative;
+      overflow: hidden;
     }
 
     .wt-hero{
@@ -111,6 +46,8 @@
       flex-wrap: wrap;
       gap: 3rem;
       align-items: flex-start;
+      position: relative;
+      z-index: 1;
     }
 
     .wt-hero-left{
@@ -121,46 +58,66 @@
       gap: 1.1rem;
     }
 
-    /* ✅ Logo container (with circuits behind) */
-    .wt-logo-wrap{
+    /* ✅ BIG LEFT FIELD (circuits fill the whole panel area) */
+    .wt-left-field{
       position: relative;
-      isolation: isolate;
       width: 100%;
-      max-width: 420px;
-      border-radius: 18px;
-      padding: 12px;
-      background: rgba(2,6,23,0.35);
-      border: 1px solid rgba(250,204,21,0.18);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-      overflow: hidden; /* keep the circuit effect contained */
+      max-width: 520px;
+      border-radius: 22px;
+      padding: 18px;
+      overflow: hidden;
+      isolation: isolate;
+
+      background:
+        radial-gradient(800px 420px at 20% 28%, rgba(250,204,21,0.10), transparent 60%),
+        radial-gradient(700px 420px at 78% 32%, rgba(56,189,248,0.08), transparent 62%),
+        rgba(2,6,23,0.18);
+
+      border: 1px solid rgba(250,204,21,0.14);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.45);
     }
 
-    /* Circuits sit BEHIND the logo image */
-    .wt-circuits-bg{
+    /* subtle “data sweep” across the entire left field */
+    .wt-left-field::after{
+      content:"";
       position:absolute;
-      inset: -22%;
+      inset:-35%;
+      z-index:0;
+      pointer-events:none;
+      opacity:0.22;
+      background: linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(250,204,21,0.08) 32%,
+        rgba(250,204,21,0.16) 44%,
+        rgba(250,204,21,0.06) 56%,
+        transparent 70%
+      );
+      filter: blur(10px);
+      animation: wtFieldSweep 10.5s ease-in-out infinite;
+    }
+
+    @keyframes wtFieldSweep{
+      0%   { transform: translateX(-18%) translateY(-2%); opacity: 0.14; }
+      50%  { transform: translateX(18%)  translateY(2%);  opacity: 0.28; }
+      100% { transform: translateX(-18%) translateY(-2%); opacity: 0.14; }
+    }
+
+    /* Circuits cover ENTIRE left field (not just the logo) */
+    .wt-left-field .wt-circuits-bg{
+      position:absolute;
+      inset: -18%;
       z-index: 0;
-      opacity: 0.28;           /* intensity */
-      mix-blend-mode: screen;  /* makes it feel like light */
+      opacity: 0.22;
+      mix-blend-mode: screen;
       pointer-events:none;
       filter: blur(0.2px);
     }
 
-    .wt-circuits-bg svg{
+    .wt-left-field .wt-circuits-bg svg{
       width:100%;
       height:100%;
       display:block;
-    }
-
-    /* Logo image above circuits */
-    .wt-logo-wrap img{
-      position: relative;
-      z-index: 1;
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 14px;
-      background:#000;
     }
 
     /* Circuit styling + smooth motion */
@@ -178,13 +135,11 @@
       opacity: 0.95;
     }
 
-    /* Glow filter */
     .wt-circuits-bg .glow{
-      filter: drop-shadow(0 0 6px rgba(255, 212, 71, 0.25))
-              drop-shadow(0 0 12px rgba(255, 212, 71, 0.12));
+      filter: drop-shadow(0 0 6px rgba(255, 212, 71, 0.22))
+              drop-shadow(0 0 12px rgba(255, 212, 71, 0.10));
     }
 
-    /* Smooth left-to-right “data flow” effect */
     .wt-circuits-bg .flow{
       stroke-dasharray: 10 18;
       animation: wtDash 10s linear infinite;
@@ -200,10 +155,41 @@
       to { stroke-dashoffset: -320; }
     }
 
-    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce){
       .wt-circuits-bg .flow,
-      .wt-circuits-bg .flow2{ animation: none !important; }
+      .wt-circuits-bg .flow2,
+      .wt-left-field::after{ animation: none !important; }
+    }
+
+    /* ✅ Logo “card” sits inside the field (clean + bordered) */
+    .wt-logo-wrap{
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      padding: 12px;
+      background: rgba(2,6,23,0.40);
+      border: 1px solid rgba(250,204,21,0.22);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .wt-logo-wrap img{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius: 14px;
+      background:#000;
+    }
+
+    /* Left copy sits above circuits too */
+    .wt-hero-copy{
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      margin-top: 0.95rem;
     }
 
     .wt-hero-copy p{
@@ -257,7 +243,6 @@
       display:block;
     }
 
-    /* Pills under the video (consistent) */
     .wt-hero-pills{
       width:100%;
       max-width: 760px;
@@ -311,7 +296,7 @@
       .wt-hero{ flex-direction:column; align-items:center; }
       .wt-hero-left, .wt-hero-right{ width:100%; flex:1 1 auto; }
       .wt-hero-left{ align-items:center; text-align:left; }
-      .wt-hero-copy{ width:100%; }
+      .wt-left-field{ max-width: 560px; }
       .wt-hero-right h1, .wt-hero-tagline{ text-align:center; }
     }
 
@@ -480,7 +465,6 @@
       align-items:center;
     }
 
-    /* CTA pills so links don't disappear */
     .cta-actions a{
       display:inline-flex;
       align-items:center;
@@ -528,7 +512,6 @@
       box-shadow: 0 0 0 3px rgba(250,204,21,0.35), 0 14px 28px rgba(0,0,0,0.35);
     }
 
-    /* Responsive body grids */
     @media (max-width: 980px){
       .grid-3{ grid-template-columns: 1fr; }
       .grid-2{ grid-template-columns: 1fr; }
@@ -592,8 +575,8 @@
     <div class="wt-hero">
       <div class="wt-hero-left">
 
-        <!-- ✅ Logo with animated circuits behind it -->
-        <div class="wt-logo-wrap">
+        <!-- ✅ BIG circuit panel behind logo + copy -->
+        <div class="wt-left-field">
           <div class="wt-circuits-bg" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
               <g opacity="0.95" class="glow">
@@ -646,21 +629,25 @@
             </svg>
           </div>
 
-          <img src="./Watchtower_CRP_Logo.png" alt="Watchtower CRP by enLight10 Solutions" />
-        </div>
+          <!-- Logo card inside the field -->
+          <div class="wt-logo-wrap">
+            <img src="./Watchtower_CRP_Logo.png" alt="Watchtower CRP by enLight10 Solutions" />
+          </div>
 
-        <div class="wt-hero-copy">
-          <p class="lead">
-            <strong>Watchtower CRP™</strong> is the <strong>Cyber Reasoning Platform</strong> at the core
-            of the Watchtower brand family — powering <strong>Watchtower SecureOps™</strong> services and
-            <strong>Cyber Defense United™</strong> for DoD, DIB, and security-focused missions.
-          </p>
+          <!-- Copy inside the field -->
+          <div class="wt-hero-copy">
+            <p class="lead">
+              <strong>Watchtower CRP™</strong> is the <strong>Cyber Reasoning Platform</strong> at the core
+              of the Watchtower brand family — powering <strong>Watchtower SecureOps™</strong> services and
+              <strong>Cyber Defense United™</strong> for DoD, DIB, and security-focused missions.
+            </p>
 
-          <p>
-            Watchtower CRP ingests signals from your existing tools and turns them into correlated
-            investigations, narrative timelines, and defensible evidence. Modules like Guardian, Seek,
-            Atlas, Assist, Deploy, and Audit help teams defend faster without losing the story.
-          </p>
+            <p>
+              Watchtower CRP ingests signals from your existing tools and turns them into correlated
+              investigations, narrative timelines, and defensible evidence. Modules like Guardian, Seek,
+              Atlas, Assist, Deploy, and Audit help teams defend faster without losing the story.
+            </p>
+          </div>
         </div>
       </div>
 
