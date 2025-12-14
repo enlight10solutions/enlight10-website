@@ -109,30 +109,56 @@
     }
 
     /* glow layer */
-    .secops-logo-frame::before {
-  content: "";
-  position: absolute;
+    /* Wrapper = glow layer (NOT clipped) */
+.secops-logo-glow{
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 420px;
+}
 
-  /* Push glow OUTSIDE the logo */
-  inset: -35%;
+/* Moving glow behind */
+.secops-logo-glow::before{
+  content:"";
+  position:absolute;
+  inset: -40%;
+  z-index: 0;
+  pointer-events:none;
 
-  /* Stronger red core, soft falloff */
+  /* A hotspot that we slide left->right */
   background: radial-gradient(
-    circle at 50% 45%,
-    rgba(239, 68, 68, 0.45) 0%,
-    rgba(239, 68, 68, 0.28) 25%,
-    rgba(239, 68, 68, 0.12) 45%,
-    rgba(239, 68, 68, 0.04) 60%,
+    circle at var(--x, 20%) 45%,
+    rgba(239,68,68,0.55) 0%,
+    rgba(239,68,68,0.30) 22%,
+    rgba(239,68,68,0.12) 42%,
+    rgba(239,68,68,0.05) 58%,
     transparent 70%
   );
 
-  filter: blur(22px);
-  z-index: -1;          /* ⬅️ THIS is what puts it behind */
-  opacity: 0.65;
-
-  animation: logoGlowPulse 7s ease-in-out infinite;
-  pointer-events: none;
+  filter: blur(26px);
+  opacity: 0.75;
+  animation: glowSweep 5.8s ease-in-out infinite;
 }
+
+/* Keep the logo frame ABOVE the glow */
+.secops-logo-frame{
+  position: relative;
+  z-index: 1;
+  border-radius: 18px;
+  overflow: hidden; /* keep the image clean */
+  background: rgba(2, 6, 23, 0.35);
+  outline: 1px solid rgba(239, 68, 68, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(239, 68, 68, 0.12),
+    0 22px 50px rgba(0, 0, 0, 0.65);
+}
+
+@keyframes glowSweep{
+  0%   { --x: 18%; transform: scale(0.98); opacity: 0.55; }
+  50%  { --x: 82%; transform: scale(1.04); opacity: 0.90; }
+  100% { --x: 18%; transform: scale(0.98); opacity: 0.55; }
+}
+
 
     @keyframes secopsPulse{
       0%   { opacity: 0.40; transform: scale(0.98); }
@@ -496,10 +522,12 @@
     <div class="secops-hero-inner">
 
       <!-- LEFT -->
-      <div class="secops-hero-left">
-        <div class="secops-logo-frame">
-          <img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps — Services powered by Watchtower CRP" />
-        </div>
+      <div class="secops-logo-glow">
+  <div class="secops-logo-frame">
+    <img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps — Services powered by Watchtower CRP" />
+  </div>
+</div>
+
 
         <p class="secops-tagline">
           <strong>Watchtower™</strong> is the flagship brand family.
