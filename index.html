@@ -112,33 +112,37 @@
     /* Logo container with rounded edges + soft light */
 .hero-logo-wrap{
   position: relative;
-  border-radius: 24px;
-  padding: 18px;                 /* a bit more breathing room */
-  padding-top: 26px;             /* ✅ extra top inset so the lighthouse doesn't feel cut */
-  background: rgba(2,6,23,0.35);
+  border-radius: 22px;
+
+  /* MORE controlled padding */
+  padding: 20px 22px 24px;
+
+  background: rgba(2,6,23,0.38);
   box-shadow:
     0 20px 48px rgba(0,0,0,0.65),
-    inset 0 0 0 1px rgba(255,212,71,0.18);
+    inset 0 0 0 1px rgba(255,212,71,0.16);
+
   overflow: hidden;
   isolation: isolate;
 }
+    
+    .hero-logo-large{
+  transform: translateY(4px);
+}
+
 
 /* ✅ The logo image itself gets rounded + clipped cleanly */
 .hero-logo-large{
-  display: block;
   width: 100%;
   height: auto;
 
-  border-radius: 18px;           /* rounded logo edges */
-  clip-path: inset(0 round 18px);/* ✅ forces rounding even with transparent PNG edges */
-  overflow: hidden;
+  /* KEY FIXES */
+  max-width: 460px;        /* prevents over-scaling */
+  object-fit: contain;    /* NEVER crop */
+  display: block;
 
-  object-fit: contain;           /* keeps the full logo visible */
-  background: rgba(2,6,23,0.12); /* subtle backing so edges look intentional */
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
-
-  position: relative;
-  z-index: 1;
+  /* visual breathing room */
+  margin: 6px auto;
 }
 
     .hero-logo-wrap::before{
