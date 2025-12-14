@@ -1,4 +1,4 @@
-<!-- who.html (FULL FILE REPLACEMENT — founder-focused) -->
+<!-- who.html (FULL FILE REPLACEMENT — founder-focused + cleaner founder layout + BLUE -> YELLOW -> WHITE bands) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +28,7 @@
       background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
       color:#fff;
       padding:95px 0 70px;
-      overflow:hidden; /* FIX: removes any odd “scroll area” feel inside the hero */
+      overflow:hidden;
     }
 
     .about-hero::before{
@@ -60,7 +60,7 @@
       display:flex;
       justify-content:flex-start;
       align-items:flex-start;
-      overflow:visible; /* ensure no nested scrollbars */
+      overflow:visible;
     }
 
     /* Pulse wrapper — fixed stacking so glow always renders */
@@ -71,7 +71,7 @@
       justify-content:flex-start;
       isolation:isolate;
       z-index:1;
-      overflow:visible; /* ensure no nested scrollbars */
+      overflow:visible;
     }
 
     .logo-pulse-wrapper::before{
@@ -219,7 +219,7 @@
     }
 
     /* ---------------------------
-       Main (organized like CDU)
+       Main
        --------------------------- */
     main.light{
       background:#ffffff;
@@ -233,86 +233,78 @@
       padding:0 1.5rem;
     }
 
-    .about-grid{
-      margin-top:1.1rem;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:1.1rem;
-    }
-
-    .about-card{
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      padding:1.15rem 1.15rem;
-      background:#fff;
-      box-shadow:0 10px 22px rgba(2,6,23,0.06);
-    }
-
-    .about-card h3{
-      margin:0 0 0.55rem;
-      font-size:1.02rem;
-      letter-spacing:0.01em;
-    }
-
-    .about-card p{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .about-list{
-      margin:0.75rem 0 0;
-      padding-left:1.1rem;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .about-lanes{
+    /* BLUE -> YELLOW -> WHITE "BAND" (behind groups of cards) */
+    .e10-band{
+      position:relative;
       margin-top:1.15rem;
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:1.1rem;
+      border-radius:18px;
+      padding:1.25rem 1.25rem;
+      border:1px solid rgba(56,189,248,0.18);
+      background:
+        /* LEFT: light blue wash (cloud) */
+        radial-gradient(
+          circle at 14% 45%,
+          rgba(56,189,248,0.16),
+          transparent 52%
+        ),
+        /* CENTER: warm yellow sun core */
+        radial-gradient(
+          circle at 50% 40%,
+          rgba(251,191,36,0.18),
+          transparent 56%
+        ),
+        /* RIGHT: white -> yellow soft */
+        radial-gradient(
+          circle at 88% 38%,
+          rgba(255,255,255,0.70),
+          rgba(251,191,36,0.14) 48%,
+          transparent 72%
+        ),
+        /* subtle glass base */
+        linear-gradient(
+          180deg,
+          rgba(13, 17, 23, 0.04) 0%,
+          rgba(13, 17, 23, 0.02) 100%
+        );
+      box-shadow:
+        0 18px 44px rgba(2, 6, 23, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.35);
     }
 
-    .about-lane{
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      padding:1.15rem 1.15rem;
-      background:#fff;
-      box-shadow:0 10px 22px rgba(2,6,23,0.06);
-    }
-    .about-lane h3{ margin:0 0 0.55rem; }
-    .about-lane p{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
+    .e10-band::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(56,189,248,0.07), transparent 60%);
+      pointer-events:none;
     }
 
-    /* Founder section */
+    /* -------- Founder section (FIXED layout) -------- */
     .founder-wrap{
       margin-top:1.1rem;
       display:grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.6fr 1fr; /* more room for main card */
       gap:1.1rem;
       align-items:start;
     }
 
     .founder-card{
-      border:1px solid #e5e7eb;
+      position:relative;
+      border:1px solid rgba(15,23,42,0.10);
       border-radius:18px;
-      background:#fff;
-      box-shadow:0 12px 26px rgba(2,6,23,0.06);
+      background: rgba(255,255,255,0.94);
+      box-shadow:0 12px 26px rgba(2,6,23,0.08);
       padding:1.25rem 1.25rem;
+      backdrop-filter: blur(6px);
+      z-index:1;
     }
 
     .founder-head{
       display:flex;
-      gap:1rem;
-      align-items:center;
+      align-items:flex-start;
       justify-content:space-between;
+      gap:0.9rem;
       flex-wrap:wrap;
       margin-bottom:0.85rem;
     }
@@ -321,13 +313,15 @@
       display:flex;
       flex-direction:column;
       gap:0.15rem;
-      min-width:280px;
+      min-width:260px;
+      flex: 1 1 auto;
     }
 
     .founder-title h2{
       margin:0;
       font-size:1.35rem;
       letter-spacing:0.01em;
+      line-height:1.1;
     }
 
     .founder-sub{
@@ -342,6 +336,8 @@
       flex-wrap:wrap;
       gap:0.55rem;
       align-items:center;
+      justify-content:flex-end;
+      flex: 0 1 360px; /* keeps badges from pushing layout weirdly */
     }
 
     .badge{
@@ -352,16 +348,17 @@
       border-radius:999px;
       font-size:0.86rem;
       font-weight:650;
-      border:1px solid rgba(251,191,36,0.35);
-      background: rgba(251,191,36,0.10);
+      border:1px solid rgba(56,189,248,0.22);
+      background: rgba(56,189,248,0.08);
       color:#0b1120;
+      white-space:nowrap;
     }
 
     .badge.dark{
-      border-color:#e5e7eb;
+      border-color:rgba(15,23,42,0.12);
       background:#0b1120;
       color:#fff;
-      box-shadow:0 10px 22px rgba(2,6,23,0.08);
+      box-shadow:0 10px 22px rgba(2,6,23,0.10);
     }
 
     .founder-body p{
@@ -379,7 +376,7 @@
     }
 
     .metric{
-      border:1px solid #e5e7eb;
+      border:1px solid rgba(15,23,42,0.10);
       border-radius:14px;
       padding:0.85rem 0.85rem;
       background: linear-gradient(180deg, rgba(2,6,23,0.03) 0%, rgba(2,6,23,0.00) 100%);
@@ -404,14 +401,17 @@
     .founder-side{
       display:grid;
       gap:1.1rem;
+      position:relative;
+      z-index:1;
     }
 
     .mini-card{
-      border:1px solid #e5e7eb;
+      border:1px solid rgba(15,23,42,0.10);
       border-radius:16px;
       padding:1.1rem 1.1rem;
-      background:#fff;
-      box-shadow:0 10px 22px rgba(2,6,23,0.06);
+      background: rgba(255,255,255,0.94);
+      box-shadow:0 10px 22px rgba(2,6,23,0.08);
+      backdrop-filter: blur(6px);
     }
     .mini-card h3{ margin:0 0 0.55rem; font-size:1.02rem; }
     .mini-card p{ margin:0; color:#334155; line-height:1.65; font-size:0.95rem; }
@@ -424,13 +424,76 @@
       font-size:0.95rem;
     }
 
+    /* Other sections */
+    .about-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:1.1rem;
+    }
+
+    .about-card{
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:16px;
+      padding:1.15rem 1.15rem;
+      background: rgba(255,255,255,0.94);
+      box-shadow:0 12px 28px rgba(2,6,23,0.08);
+      backdrop-filter: blur(6px);
+    }
+
+    .about-card h3{
+      margin:0 0 0.55rem;
+      font-size:1.02rem;
+      letter-spacing:0.01em;
+    }
+
+    .about-card p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .about-list{
+      margin:0.75rem 0 0;
+      padding-left:1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .about-lanes{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:1.1rem;
+    }
+
+    .about-lane{
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:16px;
+      padding:1.15rem 1.15rem;
+      background: rgba(255,255,255,0.94);
+      box-shadow:0 12px 28px rgba(2,6,23,0.08);
+      backdrop-filter: blur(6px);
+    }
+    .about-lane h3{ margin:0 0 0.55rem; }
+    .about-lane p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
     .about-cta-band{
       margin-top:1.25rem;
       border-radius:18px;
       padding:1.35rem 1.35rem;
       background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
       color:#e5e7eb;
-      border:1px solid rgba(251,191,36,0.22);
+      border:1px solid rgba(56,189,248,0.22);
       box-shadow:0 16px 34px rgba(2,6,23,0.35);
     }
     .about-cta-band h2{ margin:0 0 0.55rem; color:#fff; }
@@ -462,6 +525,7 @@
       .about-lanes{ grid-template-columns: 1fr; }
       .founder-wrap{ grid-template-columns: 1fr; }
       .founder-metrics{ grid-template-columns: 1fr; }
+      .founder-badges{ justify-content:flex-start; flex: 1 1 auto; }
     }
 
     @media (max-width: 900px){
@@ -574,90 +638,93 @@
           and can build a capability that holds up to mission and audit scrutiny.
         </p>
 
-        <div class="founder-wrap">
-          <article class="founder-card">
-            <div class="founder-head">
-              <div class="founder-title">
-                <h2>Jay Moreno</h2>
-                <p class="founder-sub">Founder • Cybersecurity Executive • SOC/NSOC Builder</p>
-              </div>
-
-              <div class="founder-badges" aria-label="Founder credentials">
-                <span class="badge">15+ yrs technical</span>
-                <span class="badge">9 yrs cyber leadership</span>
-                <span class="badge dark">CISSP • GCIA</span>
-                <span class="badge dark">TS/SCI Eligible</span>
-              </div>
-            </div>
-
-            <div class="founder-body">
-              <p>
-                Jay was recruited to design, stand up, and lead a mission-ready NSOC supporting INDOPACOM requirements —
-                integrating SOC/NOC/ops situational awareness, playbooks, escalation paths, and automation into a unified
-                operational construct.
-              </p>
-
-              <p>
-                Prior to that, he led enterprise SOC operations, IR, and detection improvements, and has executed
-                advanced threat hunting in support of USCYBERCOM national mission teams — including hunt-forward
-                operations and high-stakes environments where clarity and speed matter.
-              </p>
-
-              <div class="founder-metrics" aria-label="Founder highlights">
-                <div class="metric">
-                  <p class="k">NSOC / SOC Stand-up</p>
-                  <p class="v">Built from zero</p>
+        <!-- BAND behind founder cards -->
+        <div class="e10-band">
+          <div class="founder-wrap">
+            <article class="founder-card">
+              <div class="founder-head">
+                <div class="founder-title">
+                  <h2>Jay Moreno</h2>
+                  <p class="founder-sub">Founder • Cybersecurity Executive • SOC/NSOC Builder</p>
                 </div>
-                <div class="metric">
-                  <p class="k">Operational Gains</p>
-                  <p class="v">MTTD/MTTR ↓</p>
-                </div>
-                <div class="metric">
-                  <p class="k">Focus</p>
-                  <p class="v">Evidence + Outcomes</p>
+
+                <div class="founder-badges" aria-label="Founder credentials">
+                  <span class="badge">15+ yrs technical</span>
+                  <span class="badge">9 yrs cyber leadership</span>
+                  <span class="badge dark">CISSP • GCIA</span>
+                  <span class="badge dark">TS/SCI Eligible</span>
                 </div>
               </div>
 
-              <h3 style="margin:1.05rem 0 0.55rem; font-size:1.02rem;">Why this matters for partners</h3>
-              <ul class="about-list">
-                <li><strong>We speak operator.</strong> We’ve lived shift ops, incident tempo, and mission pressure.</li>
-                <li><strong>We ship usable.</strong> Integration-first delivery that fits real workflows and constraints.</li>
-                <li><strong>We build defensible proof.</strong> Timelines, artifacts, decisions — ready for leadership and audit.</li>
-              </ul>
-            </div>
-          </article>
+              <div class="founder-body">
+                <p>
+                  Jay was recruited to design, stand up, and lead a mission-ready NSOC supporting INDOPACOM requirements —
+                  integrating SOC/NOC/ops situational awareness, playbooks, escalation paths, and automation into a unified
+                  operational construct.
+                </p>
 
-          <aside class="founder-side">
-            <div class="mini-card">
-              <h3>Career Snapshot</h3>
-              <ul class="timeline">
-                <li><strong>INSOC/NSOC Director (Hawaii)</strong> — stood up integrated SOC/NOC ops model, playbooks, and automation</li>
-                <li><strong>Cyber Operations Manager</strong> — 24/7 SOC leadership, detection + tuning + IR acceleration</li>
-                <li><strong>USCYBERCOM Threat Hunting</strong> — hunt-forward support and advanced hunts (host/network/ICS)</li>
-                <li><strong>Military Communications + Cyber</strong> — leadership and operational IT in deployed environments</li>
-              </ul>
-            </div>
+                <p>
+                  Prior to that, he led enterprise SOC operations, IR, and detection improvements, and has executed
+                  advanced threat hunting in support of USCYBERCOM national mission teams — including hunt-forward
+                  operations and high-stakes environments where clarity and speed matter.
+                </p>
 
-            <div class="mini-card">
-              <h3>Education &amp; Certifications</h3>
-              <p>
-                M.S. Cyber Security • Western Governors University<br/>
-                B.S. Computer Science • Texas State University<br/>
-                A.S. Information Technology • CCAF
-              </p>
-              <p style="margin-top:0.65rem;">
-                CISSP • GCIA • CySA+ • Security+ • TS/SCI Eligible
-              </p>
-            </div>
+                <div class="founder-metrics" aria-label="Founder highlights">
+                  <div class="metric">
+                    <p class="k">NSOC / SOC Stand-up</p>
+                    <p class="v">Built from zero</p>
+                  </div>
+                  <div class="metric">
+                    <p class="k">Operational Gains</p>
+                    <p class="v">MTTD/MTTR ↓</p>
+                  </div>
+                  <div class="metric">
+                    <p class="k">Focus</p>
+                    <p class="v">Evidence + Outcomes</p>
+                  </div>
+                </div>
 
-            <div class="mini-card">
-              <h3>What Jay Builds</h3>
-              <p>
-                Watchtower is an operator-driven workspace for investigations, evidence, and reasoning —
-                designed to reduce time-to-answer, improve reporting quality, and keep humans in control.
-              </p>
-            </div>
-          </aside>
+                <h3 style="margin:1.05rem 0 0.55rem; font-size:1.02rem;">Why this matters for partners</h3>
+                <ul class="about-list">
+                  <li><strong>We speak operator.</strong> We’ve lived shift ops, incident tempo, and mission pressure.</li>
+                  <li><strong>We ship usable.</strong> Integration-first delivery that fits real workflows and constraints.</li>
+                  <li><strong>We build defensible proof.</strong> Timelines, artifacts, decisions — ready for leadership and audit.</li>
+                </ul>
+              </div>
+            </article>
+
+            <aside class="founder-side">
+              <div class="mini-card">
+                <h3>Career Snapshot</h3>
+                <ul class="timeline">
+                  <li><strong>INSOC/NSOC Director (Hawaii)</strong> — stood up integrated SOC/NOC ops model, playbooks, and automation</li>
+                  <li><strong>Cyber Operations Manager</strong> — 24/7 SOC leadership, detection + tuning + IR acceleration</li>
+                  <li><strong>USCYBERCOM Threat Hunting</strong> — hunt-forward support and advanced hunts (host/network/ICS)</li>
+                  <li><strong>Military Communications + Cyber</strong> — leadership and operational IT in deployed environments</li>
+                </ul>
+              </div>
+
+              <div class="mini-card">
+                <h3>Education &amp; Certifications</h3>
+                <p>
+                  M.S. Cyber Security • Western Governors University<br/>
+                  B.S. Computer Science • Texas State University<br/>
+                  A.S. Information Technology • CCAF
+                </p>
+                <p style="margin-top:0.65rem;">
+                  CISSP • GCIA • CySA+ • Security+ • TS/SCI Eligible
+                </p>
+              </div>
+
+              <div class="mini-card">
+                <h3>What Jay Builds</h3>
+                <p>
+                  Watchtower is an operator-driven workspace for investigations, evidence, and reasoning —
+                  designed to reduce time-to-answer, improve reporting quality, and keep humans in control.
+                </p>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
 
@@ -669,45 +736,47 @@
           and a stronger operating picture over time.
         </p>
 
-        <div class="about-grid">
-          <article class="about-card">
-            <h3>Security Operations &amp; Incident Response</h3>
-            <p>
-              Monitoring, triage, investigations, and response support — designed for environments where speed,
-              clarity, and evidence matter.
-            </p>
-            <ul class="about-list">
-              <li>Case-based workflows with timelines and artifacts</li>
-              <li>Actionable recommendations and IR reporting</li>
-              <li>Operational cadence: daily/weekly/monthly reporting</li>
-            </ul>
-          </article>
+        <div class="e10-band">
+          <div class="about-grid">
+            <article class="about-card">
+              <h3>Security Operations &amp; Incident Response</h3>
+              <p>
+                Monitoring, triage, investigations, and response support — designed for environments where speed,
+                clarity, and evidence matter.
+              </p>
+              <ul class="about-list">
+                <li>Case-based workflows with timelines and artifacts</li>
+                <li>Actionable recommendations and IR reporting</li>
+                <li>Operational cadence: daily/weekly/monthly reporting</li>
+              </ul>
+            </article>
 
-          <article class="about-card">
-            <h3>Engineering &amp; Tool Integration</h3>
-            <p>
-              Connect what you already own and reduce dashboard chaos — log pipelines, SIEM/EDR integration,
-              and automation glue that actually gets used.
-            </p>
-            <ul class="about-list">
-              <li>SIEM onboarding + tuning and use-case engineering</li>
-              <li>Identity, endpoint, and network data integration</li>
-              <li>Automation and ITSM enrichment patterns</li>
-            </ul>
-          </article>
+            <article class="about-card">
+              <h3>Engineering &amp; Tool Integration</h3>
+              <p>
+                Connect what you already own and reduce dashboard chaos — log pipelines, SIEM/EDR integration,
+                and automation glue that actually gets used.
+              </p>
+              <ul class="about-list">
+                <li>SIEM onboarding + tuning and use-case engineering</li>
+                <li>Identity, endpoint, and network data integration</li>
+                <li>Automation and ITSM enrichment patterns</li>
+              </ul>
+            </article>
 
-          <article class="about-card">
-            <h3>Watchtower Platform</h3>
-            <p>
-              Our operating workspace for investigations, evidence, and reasoning — built to help defenders decide
-              faster and communicate clearly.
-            </p>
-            <ul class="about-list">
-              <li>Evidence packs for audits and leadership</li>
-              <li>Analyst-assist summaries and report drafting</li>
-              <li>Designed for constrained / real-world operations</li>
-            </ul>
-          </article>
+            <article class="about-card">
+              <h3>Watchtower Platform</h3>
+              <p>
+                Our operating workspace for investigations, evidence, and reasoning — built to help defenders decide
+                faster and communicate clearly.
+              </p>
+              <ul class="about-list">
+                <li>Evidence packs for audits and leadership</li>
+                <li>Analyst-assist summaries and report drafting</li>
+                <li>Designed for constrained / real-world operations</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -719,38 +788,40 @@
           we simplify operations and improve outcomes.
         </p>
 
-        <div class="about-lanes">
-          <article class="about-lane">
-            <h3>Operator-first</h3>
-            <p>
-              We design around the analyst workflow: triage → investigate → contain → report. If it doesn’t help
-              operations, it doesn’t ship.
-            </p>
-          </article>
+        <div class="e10-band">
+          <div class="about-lanes">
+            <article class="about-lane">
+              <h3>Operator-first</h3>
+              <p>
+                We design around the analyst workflow: triage → investigate → contain → report. If it doesn’t help
+                operations, it doesn’t ship.
+              </p>
+            </article>
 
-          <article class="about-lane">
-            <h3>Evidence-first</h3>
-            <p>
-              Security work has to stand up to scrutiny. We build repeatable documentation: timelines, artifacts,
-              decisions, and reporting that auditors and leaders can understand.
-            </p>
-          </article>
+            <article class="about-lane">
+              <h3>Evidence-first</h3>
+              <p>
+                Security work has to stand up to scrutiny. We build repeatable documentation: timelines, artifacts,
+                decisions, and reporting that auditors and leaders can understand.
+              </p>
+            </article>
 
-          <article class="about-lane">
-            <h3>Integration, not replacement</h3>
-            <p>
-              You keep your existing tools. We connect and rationalize them, then layer automation and reasoning
-              on top to reduce time-to-answer.
-            </p>
-          </article>
+            <article class="about-lane">
+              <h3>Integration, not replacement</h3>
+              <p>
+                You keep your existing tools. We connect and rationalize them, then layer automation and reasoning
+                on top to reduce time-to-answer.
+              </p>
+            </article>
 
-          <article class="about-lane">
-            <h3>Human-in-the-loop AI</h3>
-            <p>
-              AI is for acceleration, not autopilot. Summaries, drafting, and suggestion flows are controlled by
-              analysts, with traceability baked in.
-            </p>
-          </article>
+            <article class="about-lane">
+              <h3>Human-in-the-loop AI</h3>
+              <p>
+                AI is for acceleration, not autopilot. Summaries, drafting, and suggestion flows are controlled by
+                analysts, with traceability baked in.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
