@@ -109,16 +109,37 @@
     }
 
     /* Logo container with rounded edges + soft light */
-    .hero-logo-wrap{
-      position: relative;
-      border-radius: 22px;
-      padding: 14px;
-      background: rgba(2,6,23,0.35);
-      box-shadow: 0 20px 48px rgba(0,0,0,0.65),
-                  inset 0 0 0 1px rgba(255,212,71,0.18);
-      overflow: hidden;
-      isolation: isolate;
-    }
+    /* Logo container with rounded edges + soft light */
+.hero-logo-wrap{
+  position: relative;
+  border-radius: 24px;
+  padding: 18px;                 /* a bit more breathing room */
+  padding-top: 26px;             /* ✅ extra top inset so the lighthouse doesn't feel cut */
+  background: rgba(2,6,23,0.35);
+  box-shadow:
+    0 20px 48px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,212,71,0.18);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ✅ The logo image itself gets rounded + clipped cleanly */
+.hero-logo-large{
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border-radius: 18px;           /* rounded logo edges */
+  clip-path: inset(0 round 18px);/* ✅ forces rounding even with transparent PNG edges */
+  overflow: hidden;
+
+  object-fit: contain;           /* keeps the full logo visible */
+  background: rgba(2,6,23,0.12); /* subtle backing so edges look intentional */
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+
+  position: relative;
+  z-index: 1;
+}
 
     .hero-logo-wrap::before{
       content:"";
@@ -150,11 +171,6 @@
       animation: logoPulse2 7.2s ease-in-out infinite;
       pointer-events:none;
       z-index: 0;
-    }
-
-    .hero-logo-large{
-      position: relative;
-      z-index: 1;
     }
 
     @keyframes logoPulse{
