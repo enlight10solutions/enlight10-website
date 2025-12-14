@@ -21,6 +21,9 @@
   --dark-muted: rgba(229, 231, 235, 0.90);
   --dark-panel: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
   --dark-border: rgba(251,191,36,0.22);
+  --gold-accent: #d6b46a;   /* brushed / champagne gold (less yellow) */
+  --gold-accent-2: #bfa15a; /* deeper gold for active/open */
+}
 }
 
 * { box-sizing: border-box; }
@@ -282,21 +285,27 @@ body {
   display: block;
   width: 22px;
   height: 2px;
-  background: #0b1220;
+  background: rgba(229, 231, 235, 0.92); /* visible on dark nav */
   border-radius: 2px;
-  transition: transform .2s ease, opacity .2s ease, width .2s ease;
+  transition:
+    transform .2s ease,
+    opacity .2s ease,
+    width .2s ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
-.hamburger[aria-expanded="true"] span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  width: 22px;
+/* hover + keyboard focus = subtle gold */
+.hamburger:hover span,
+.hamburger:focus-visible span {
+  background: var(--gold-accent);
+  box-shadow: 0 0 8px rgba(214, 180, 106, 0.30);
 }
 
-.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-
-.hamburger[aria-expanded="true"] span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-  width: 22px;
+/* menu open = slightly deeper gold */
+.hamburger[aria-expanded="true"] span {
+  background: var(--gold-accent-2);
+  box-shadow: 0 0 10px rgba(191, 161, 90, 0.38);
 }
 
 @media (min-width: 992px) {
