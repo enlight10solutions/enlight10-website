@@ -1,3 +1,10 @@
+/* =========================================================
+   enLight10 Solutions — style.css (CLEANED + NORMALIZED)
+   - Adds unified "dark band" styling for bottom sections
+   - Cleans footer typography/colors (removes redundant overrides)
+   - Removes most !important-based overrides (keeps layout stable)
+   ========================================================= */
+
 /* ========== Theme Tokens ========== */
 :root {
   --navy: #0d1117;      /* solid dark navy (match logo background) */
@@ -5,8 +12,15 @@
   --gold: #FFD447;
   --ink: #0b1220;       /* dark text on white */
   --muted: #475569;     /* body copy on white */
+
   --radius: 16px;
   --shadow: 0 10px 25px rgba(0, 0, 0, .15);
+
+  /* Dark section typography + surfaces (NEW) */
+  --dark-text: rgba(255, 255, 255, 0.90);
+  --dark-muted: rgba(229, 231, 235, 0.90);
+  --dark-panel: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
+  --dark-border: rgba(251,191,36,0.22);
 }
 
 * { box-sizing: border-box; }
@@ -22,9 +36,72 @@ body {
   background: #000; /* page base; sections override */
 }
 
-/* =========================
+/* =========================================================
+   DARK BAND / CTA SECTIONS (NEW, site-wide)
+   Use on those “cool dark bottom” blocks:
+   <div class="dark-band"> ... </div>
+   ========================================================= */
+.dark-band {
+  background: var(--dark-panel);
+  border: 1px solid var(--dark-border);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  color: var(--dark-text);
+}
+
+.dark-band h2,
+.dark-band h3 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 0.55rem;
+}
+
+.dark-band p {
+  color: var(--dark-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.dark-band strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Buttons inside dark band */
+.dark-band .button {
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  line-height: 1;
+}
+
+.dark-band .button.primary {
+  background: var(--gold);
+  color: #000;
+  box-shadow: 0 12px 30px rgba(255, 212, 71, 0.35);
+}
+
+.dark-band .button.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+}
+
+.dark-band .button.ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================================
    NAVIGATION BAR
-   ========================= */
+   ========================================================= */
 .topbar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -36,11 +113,7 @@ body {
   z-index: 1000;
 
   /* Hard, logo-centric gradient */
-  background: linear-gradient(
-    to right,
-    #0d1117 0%,   /* deep navy at very edge */
-    #0d1117 100%  /* solid navy across the rest */
-  );
+  background: linear-gradient(to right, #0d1117 0%, #0d1117 100%);
 }
 
 .topbar::after {
@@ -71,38 +144,27 @@ body {
 
 /* Top-left nav logo */
 .brand-logo--slim {
-  height: 60px;        /* bump up size */
+  height: 62px; /* unified (was duplicated) */
   width: auto;
   display: block;
+  border-radius: 14px;
   filter: drop-shadow(0 3px 10px rgba(0, 0, 0, .35));
   transition: transform .25s ease, filter .25s ease;
-}
-
-/* --- Brand logo constant pulse glow --- */
-.brand-logo--slim {
-  border-radius: 14px; /* keeps the logo nicely rounded */
-  box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.55);  /* base yellow glow */
   animation: e10LogoPulse 5s ease-out infinite;
 }
 
 /* Soft pulsing halo around the logo */
 @keyframes e10LogoPulse {
-  0% {
-    filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0));
-  }
+  0% { filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0)); }
   50% {
     filter:
       drop-shadow(0 0 30px rgba(255, 212, 71, 0.55))
       drop-shadow(0 0 50px rgba(255, 212, 71, 0.35));
   }
-  100% {
-    filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0));
-  }
+  100% { filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0)); }
 }
 
-.topbar .brand-text {
-  display: none !important;
-}
+.topbar .brand-text { display: none; }
 
 .nav-links {
   display: none;
@@ -119,7 +181,7 @@ body {
 
 .topbar .nav-links a:hover,
 .topbar .nav-links a[aria-current="page"] {
-  color: #FFD447;
+  color: var(--gold);
 }
 
 .topbar .button.small {
@@ -166,9 +228,7 @@ body {
   width: 22px;
 }
 
-.hamburger[aria-expanded="true"] span:nth-child(2) {
-  opacity: 0;
-}
+.hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 
 .hamburger[aria-expanded="true"] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
@@ -178,15 +238,12 @@ body {
 @media (min-width: 992px) {
   .nav-links { display: flex; }
   .hamburger { display: none; }
-  .topbar { height: 72px; }
 }
 
-/* =========================
+/* =========================================================
    PRODUCT / SERVICES DROPDOWN
-   ========================= */
-.dropdown {
-  position: relative;
-}
+   ========================================================= */
+.dropdown { position: relative; }
 
 .dropdown-toggle {
   border: none;
@@ -201,13 +258,7 @@ body {
 }
 
 .dropdown-toggle:hover,
-.dropdown-toggle:focus {
-  color: #FFD447;
-}
-
-.dropdown-toggle.active {
-  color: #1e3a8a;
-}
+.dropdown-toggle:focus { color: var(--gold); }
 
 .dropdown-panel {
   position: absolute;
@@ -248,15 +299,12 @@ body {
   transform: translateY(0);
 }
 
-/* -----------------------------------
+/* =========================================================
    WHO WE ARE – HERO
------------------------------------ */
+   ========================================================= */
 .about-hero {
-  background: radial-gradient(
-      circle at 30% 50%,
-      rgba(255, 215, 0, 0.08),
-      transparent 55%
-    ),
+  background:
+    radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.08), transparent 55%),
     linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
   padding: 120px 0 90px;
   color: #ffffff;
@@ -272,13 +320,11 @@ body {
   align-items: center;
 }
 
-/* LEFT */
 .about-hero-left {
   display: flex;
   justify-content: center;
 }
 
-/* LOGO + PULSE */
 .logo-pulse-wrapper {
   position: relative;
   display: inline-flex;
@@ -287,7 +333,7 @@ body {
 .logo-pulse-wrapper::before {
   content: "";
   position: absolute;
-  inset: -80px; /* BIG glow */
+  inset: -80px;
   background: radial-gradient(
     circle,
     rgba(255, 215, 0, 0.35),
@@ -312,7 +358,6 @@ body {
     0 0 0 1px rgba(255, 215, 0, 0.15);
 }
 
-/* RIGHT */
 .about-hero-right h1 {
   font-size: clamp(2.2rem, 3vw, 2.8rem);
   font-weight: 700;
@@ -341,41 +386,24 @@ body {
   flex-wrap: wrap;
 }
 
-/* ANIMATION */
 @keyframes slowPulse {
-  0% {
-    transform: scale(0.92);
-    opacity: 0.65;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.92);
-    opacity: 0.65;
-  }
+  0% { transform: scale(0.92); opacity: 0.65; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.92); opacity: 0.65; }
 }
 
-/* MOBILE */
 @media (max-width: 900px) {
   .about-hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
-  .about-hero-left {
-    margin-bottom: 2rem;
-  }
-
-  .about-hero-actions {
-    justify-content: center;
-  }
+  .about-hero-left { margin-bottom: 2rem; }
+  .about-hero-actions { justify-content: center; }
 }
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-   ========================= */
+   ========================================================= */
 [hidden] { display: none !important; }
 
 .menu-backdrop {
@@ -426,70 +454,45 @@ body.menu-open { overflow: hidden; }
   color: var(--gold);
 }
 
-/* Hide scroll cue on mobile */
 @media (max-width: 768px) {
-  .scroll-cue {
-    display: none !important;
-  }
+  .scroll-cue { display: none !important; }
 }
 
-/* ---------------------------------
-   SecureOps pill button (beacon / laser style)
-   --------------------------------- */
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 .button.secureops {
-  border-radius: 999px; /* true pill */
+  border-radius: 999px;
   padding: 0.75rem 1.6rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-
-  background: linear-gradient(
-    to top,
-    #b91c1c 0%,
-    #dc2626 35%,
-    #fecaca 65%,
-    #ffffff 100%
-  );
-
+  background: linear-gradient(to top, #b91c1c 0%, #dc2626 35%, #fecaca 65%, #ffffff 100%);
   color: #020617;
   border: none;
-
   box-shadow:
     0 10px 26px rgba(220, 38, 38, 0.45),
     inset 0 -1px 0 rgba(255, 255, 255, 0.45);
-
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    background 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .button.secureops:hover {
-  background: linear-gradient(
-    to top,
-    #991b1b 0%,
-    #dc2626 40%,
-    #fee2e2 70%,
-    #ffffff 100%
-  );
-
+  background: linear-gradient(to top, #991b1b 0%, #dc2626 40%, #fee2e2 70%, #ffffff 100%);
   box-shadow:
     0 14px 34px rgba(220, 38, 38, 0.55),
     inset 0 -1px 0 rgba(255, 255, 255, 0.6);
-
   transform: translateY(-2px);
 }
 
 .button.secureops:active {
   transform: translateY(0);
-  box-shadow:
-    0 6px 16px rgba(220, 38, 38, 0.4);
+  box-shadow: 0 6px 16px rgba(220, 38, 38, 0.4);
 }
 
-/* =========================
+/* =========================================================
    HERO (BASE)
-   ========================= */
+   ========================================================= */
 .hero {
-  padding-top: 100px;        /* keep clear of topbar */
+  padding-top: 100px;
   padding-bottom: 60px;
   display: flex;
   align-items: center;
@@ -501,17 +504,13 @@ body.menu-open { overflow: hidden; }
   color: #e5e7eb;
 }
 
-/* Hero heading (for simple one-column hero) */
 .hero-heading {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
 }
 
-.hero-logo-link {
-  display: inline-block;
-  transition: transform .25s ease;
-}
+.hero-logo-link { display: inline-block; transition: transform .25s ease; }
 
 .hero-logo-small {
   width: 130px;
@@ -533,7 +532,6 @@ body.menu-open { overflow: hidden; }
   opacity: 0.85;
 }
 
-/* Video front-and-center (used by hero-right) */
 .hero-video-wrapper {
   max-width: 960px;
   width: 100%;
@@ -551,7 +549,6 @@ body.menu-open { overflow: hidden; }
   background: #000;
 }
 
-/* Playback controls */
 .video-speed-controls {
   margin-top: 10px;
   display: flex;
@@ -560,9 +557,7 @@ body.menu-open { overflow: hidden; }
   font-size: 0.9rem;
 }
 
-.video-speed-controls span {
-  opacity: 0.85;
-}
+.video-speed-controls span { opacity: 0.85; }
 
 .video-speed-btn {
   border: 1px solid #4b5563;
@@ -595,11 +590,8 @@ body.menu-open { overflow: hidden; }
   text-decoration: none;
 }
 
-.hero-learn-more a:hover {
-  text-decoration: underline;
-}
+.hero-learn-more a:hover { text-decoration: underline; }
 
-/* Hero CTAs and subcopy */
 .hero-actions-under-video {
   margin-top: 1.5rem;
   display: flex;
@@ -628,14 +620,11 @@ body.menu-open { overflow: hidden; }
   font-weight: 500;
 }
 
-.hero-actions-under-video .button.ghost:hover {
-  background: rgba(15, 23, 42, 0.8);
-}
+.hero-actions-under-video .button.ghost:hover { background: rgba(15, 23, 42, 0.8); }
 
 .hero-subcopy {
   max-width: 720px;
-  margin: 0 auto;
-  margin-top: 0.75rem;
+  margin: 0.75rem auto 0;
   font-size: 0.95rem;
   opacity: 0.9;
 }
@@ -650,7 +639,7 @@ body.menu-open { overflow: hidden; }
   margin-top: 0.75rem;
   display: flex;
   align-items: center;
-  justify-content: center; /* 👈 hard center */
+  justify-content: center;
   gap: 0.5rem;
   width: 100%;
   text-align: center;
@@ -663,14 +652,15 @@ body.menu-open { overflow: hidden; }
 }
 
 .footer-e10 span {
-  font-size: 0.8rem;
-  opacity: 0.7;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.72);
+  opacity: 1;
 }
 
-
-/* =========================
+/* =========================================================
    CRP diagram & animations
-   ========================= */
+   ========================================================= */
 .crp-section {
   padding: 2.5rem 1rem 3rem;
   display: flex;
@@ -683,10 +673,7 @@ body.menu-open { overflow: hidden; }
   text-align: center;
 }
 
-.crp-inner svg {
-  max-width: 100%;
-  height: auto;
-}
+.crp-inner svg { max-width: 100%; height: auto; }
 
 .crp-tagline {
   margin: 0 0 1rem;
@@ -699,9 +686,7 @@ body.menu-open { overflow: hidden; }
   transform: translateY(20px);
 }
 
-.crp-section.crp-visible .crp-layer {
-  animation: crpLayerIn 0.6s ease-out forwards;
-}
+.crp-section.crp-visible .crp-layer { animation: crpLayerIn 0.6s ease-out forwards; }
 
 .crp-section.crp-visible .crp-layer-tools {
   animation:
@@ -709,59 +694,33 @@ body.menu-open { overflow: hidden; }
     crpLayerIn 0.6s ease-out 0s 1 forwards;
 }
 
-.crp-section.crp-visible .crp-layer-wcs {
-  animation-delay: 0.4s;
-}
+.crp-section.crp-visible .crp-layer-wcs { animation-delay: 0.4s; }
+.crp-section.crp-visible .crp-layer-understanding { animation-delay: 0.8s; }
+.crp-section.crp-visible .crp-layer-action { animation-delay: 1.2s; }
+.crp-section.crp-visible .crp-layer-assurance { animation-delay: 1.6s; }
 
-.crp-section.crp-visible .crp-layer-understanding {
-  animation-delay: 0.8s;
-}
+.crp-title { opacity: 0; }
+.crp-section.crp-visible .crp-title { animation: crpTitleIn 0.8s ease-out 1.8s forwards; }
 
-.crp-section.crp-visible .crp-layer-action {
-  animation-delay: 1.2s;
-}
-
-.crp-section.crp-visible .crp-layer-assurance {
-  animation-delay: 1.6s;
-}
-
-.crp-title {
-  opacity: 0;
-}
-
-.crp-section.crp-visible .crp-title {
-  animation: crpTitleIn 0.8s ease-out 1.8s forwards;
-}
-
-/* Keyframes */
 @keyframes crpLayerIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes crpToolsJiggle {
-  0%   { transform: translateX(0); }
-  20%  { transform: translateX(-4px); }
-  40%  { transform: translateX(4px); }
-  60%  { transform: translateX(-2px); }
-  80%  { transform: translateX(2px); }
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
   100% { transform: translateX(0); }
 }
 
-@keyframes crpTitleIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
+@keyframes crpTitleIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* =========================
+/* =========================================================
    LIGHT CONTENT
-   ========================= */
+   ========================================================= */
 .light {
   background: #fff;
   color: var(--ink);
@@ -776,9 +735,7 @@ body.menu-open { overflow: hidden; }
   border-bottom: 1px solid #eef2f7;
 }
 
-.section-block.slim {
-  max-width: 900px;
-}
+.section-block.slim { max-width: 900px; }
 
 h2 {
   margin: 0 0 .5rem;
@@ -792,125 +749,34 @@ h2 {
   line-height: 1.65;
 }
 
-.why {
-  font-weight: 600;
-  color: #0b1220;
-}
+.why { font-weight: 600; color: #0b1220; }
 
-/* ===== Hover Glow Pulse (Option B) ===== */
+/* Hover glow pulse (used for hero + brand) */
 @keyframes pulseGlow {
-  0% {
-    filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0));
-  }
+  0% { filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0)); }
   50% {
     filter:
       drop-shadow(0 0 30px rgba(255, 212, 71, 0.55))
       drop-shadow(0 0 50px rgba(255, 212, 71, 0.35));
   }
-  100% {
-    filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0));
-  }
+  100% { filter: drop-shadow(0 0 2px rgba(255, 212, 71, 0.0)); }
 }
 
-/* Hover glow for hero logo */
 .hero-logo-link:hover .hero-logo-small {
   animation: pulseGlow 2s ease-out infinite;
   transform: scale(1.16);
   cursor: pointer;
 }
 
-/* Same glow for top-left nav logo */
 .topbar .brand:hover .brand-logo--slim {
   animation: pulseGlow 3s ease-out infinite;
   transform: scale(1.14);
   cursor: pointer;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-  background: var(--navy, #0d1117);
-  padding: 2rem 1rem;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.footer-copy,
-.footer-vet {
-  color: #d1d5db;
-  margin: 0.35rem 0;
-}
-
-.footer-info a,
-.footer-social a {
-  color: var(--gold, #FFD447);
-  text-decoration: none;
-  margin: 0 0.3rem;
-}
-
-.footer-info a:hover,
-.footer-social a:hover {
-  text-decoration: underline;
-}
-
-.footer-social {
-  margin-top: 0.75rem;
-  font-weight: 600;
-}
-
-.footer-social span {
-  margin-right: 0.25rem;
-  color: #d1d5db;
-}
-
-/* =========================
-   FINAL OVERRIDES
-   ========================= */
-.light,
-.light .section-block,
-.light .section-block p,
-.light p {
-  color: #0b1220 !important;
-  -webkit-font-smoothing: auto !important;
-  text-rendering: optimizeSpeed !important;
-}
-
-.light h2 {
-  color: #0b1220 !important;
-}
-
-.nav-links .button {
-  background: #FFD447 !important;
-  color: #1b2234 !important;
-  box-shadow: 0 10px 26px rgba(255, 212, 71, .28) !important;
-}
-
-/* Footer links always gold */
-footer a,
-footer a:link,
-footer a:visited,
-footer a:hover,
-footer a:active,
-footer a:focus {
-  color: #FFD447 !important;
-  text-decoration: none !important;
-  font-weight: 600 !important;
-  background: none !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  outline: none !important;
-}
-
-footer a:hover,
-footer a:focus {
-  text-decoration: underline !important;
-}
-
-/* =========================
-   New two-column hero layout
-   ========================= */
+/* =========================================================
+   TWO-COLUMN HERO LAYOUT (INDEX)
+   ========================================================= */
 .hero-inner {
   max-width: 1250px;
   margin: 0 auto;
@@ -918,10 +784,9 @@ footer a:focus {
   display: flex;
   justify-content: space-between;
   gap: 3rem;
-  align-items: flex-start;            /* top-align both columns */
+  align-items: flex-start;
 }
 
-/* LEFT: big Watchtower image */
 .hero-left {
   flex: 0 0 46%;
   display: flex;
@@ -933,13 +798,12 @@ footer a:focus {
   width: 100%;
   max-width: 420px;
   height: auto;
-  margin-top: -60px;                 /* lift the tower image up */
+  margin-top: -60px;
 }
 
-/* RIGHT: text + video */
 .hero-right {
   flex: 0 0 54%;
-  margin-top: -30px;                 /* lift right column for balance */
+  margin-top: -30px;
 }
 
 .hero-right h1 {
@@ -956,11 +820,8 @@ footer a:focus {
   max-width: 540px;
 }
 
-.hero-right .hero-video-wrapper {
-  margin-top: 1.2rem;
-}
+.hero-right .hero-video-wrapper { margin-top: 1.2rem; }
 
-/* Stack hero columns on smaller screens */
 @media (max-width: 900px) {
   .hero-inner {
     flex-direction: column;
@@ -974,6 +835,11 @@ footer a:focus {
     margin-top: 0;
   }
 
+  .hero-right {
+    text-align: center;
+    width: 100%;
+  }
+
   .hero-right h1,
   .hero-right .tagline {
     text-align: center;
@@ -981,63 +847,52 @@ footer a:focus {
     margin-right: auto;
   }
 
-  .hero-right {
-  text-align: center;
-  width: 100%;
-}
-
-.hero-right h1 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
   .hero-logo-large {
     margin-top: 0;
     max-width: 360px;
   }
 }
 
-.topbar .brand-logo--slim {
-  height: 62px !important;   /* or 80px if you want big */
-  width: auto !important;
-}
-
-/* ---------------------------------------
-   Footer readability fixes (all pages)
-   --------------------------------------- */
-footer,
-footer .footer-inner {
+/* =========================================================
+   FOOTER (CLEAN + CONSISTENT, no redundant overrides)
+   ========================================================= */
+footer {
+  background: var(--navy, #0d1117);
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.88);
 }
 
-footer p,
-footer a,
-footer span {
+.footer-copy,
+.footer-vet {
   color: rgba(255, 255, 255, 0.88);
+  margin: 0.35rem 0;
 }
 
-/* links: keep readable + on-brand */
-footer a {
+.footer-info a,
+.footer-social a {
+  color: rgba(251, 191, 36, 0.95);
   text-decoration: none;
-  color: rgba(251, 191, 36, 0.95); /* gold */
+  margin: 0 0.3rem;
+  font-weight: 600;
 }
 
-footer a:hover {
-  color: rgba(251, 191, 36, 1);
-  text-decoration: underline;
+.footer-info a:hover,
+.footer-social a:hover { text-decoration: underline; }
+
+.footer-social {
+  margin-top: 0.75rem;
+  font-weight: 600;
 }
 
-/* specifically the e10 line you circled */
-.footer-e10 span {
-  color: rgba(255, 255, 255, 0.72) !important;
-  opacity: 1 !important;
-  font-size: 0.9rem;
-  font-weight: 500;
+.footer-social span {
+  margin-right: 0.25rem;
+  color: rgba(255, 255, 255, 0.88);
 }
 
-/* optional: tighten footer spacing a touch */
-footer .footer-inner {
-  padding-bottom: 2rem;
-}
-
+/* =========================================================
+   NOTE:
+   - Removed the old “FINAL OVERRIDES” block + footer !important
+   - Use .dark-band for those bottom dark CTA sections
+   ========================================================= */
