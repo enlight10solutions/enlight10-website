@@ -1,4 +1,4 @@
-<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT) -->
+<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT — adds CDU Packages + comparison table above CTA) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,61 +95,46 @@
     }
 
     .cdu-hero-left img {
-  max-width: 460px;
-  width: 100%;
-  height: auto;
-
-  /* keep the rounded look */
-  border-radius: 18px;
-
-  /* NEW: gold border + subtle inner line (SecureOps-style, but CDU gold) */
-  border: 1px solid rgba(250, 204, 21, 0.55);
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.70),
-    0 0 0 1px rgba(255, 242, 194, 0.22) inset;
-
-  /* optional: makes the border feel “premium” */
-  background: rgba(2, 6, 23, 0.35);
-
-  position: relative;
-  z-index: 2;
-}
+      max-width: 460px;
+      width: 100%;
+      height: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.70),
+        0 0 0 1px rgba(255, 242, 194, 0.22) inset;
+      background: rgba(2, 6, 23, 0.35);
+      position: relative;
+      z-index: 2;
+    }
 
     .cdu-hero-left::after {
-  content: "";
-  position: absolute;
-
-  /* center behind the logo */
-  left: 50%;
-  top: -10%;
-  transform: translate(-50%, 0);
-
-  width: 640px;
-  height: 640px;
-  border-radius: 999px;
-
-  /* softer CDU-gold glow */
-  background: radial-gradient(
-    circle at 50% 35%,
-    rgba(251, 191, 36, 0.18) 0%,
-    rgba(251, 191, 36, 0.08) 34%,
-    rgba(251, 191, 36, 0.00) 66%
-  );
-
-  filter: blur(14px);
-  opacity: 0.55;
-  z-index: 1;
-  pointer-events: none;
-
-  /* NEW: slow drift downward */
-  animation: cduGlowDrift 10s ease-in-out infinite;
-}
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -10%;
+      transform: translate(-50%, 0);
+      width: 640px;
+      height: 640px;
+      border-radius: 999px;
+      background: radial-gradient(
+        circle at 50% 35%,
+        rgba(251, 191, 36, 0.18) 0%,
+        rgba(251, 191, 36, 0.08) 34%,
+        rgba(251, 191, 36, 0.00) 66%
+      );
+      filter: blur(14px);
+      opacity: 0.55;
+      z-index: 1;
+      pointer-events: none;
+      animation: cduGlowDrift 10s ease-in-out infinite;
+    }
 
     @keyframes cduGlowDrift {
-  0%   { transform: translate(-50%, -8%); opacity: 0.45; }
-  50%  { transform: translate(-50%, 18%); opacity: 0.70; }
-  100% { transform: translate(-50%, -8%); opacity: 0.45; }
-}
+      0%   { transform: translate(-50%, -8%); opacity: 0.45; }
+      50%  { transform: translate(-50%, 18%); opacity: 0.70; }
+      100% { transform: translate(-50%, -8%); opacity: 0.45; }
+    }
 
     .cdu-tagline {
       margin: 0;
@@ -302,31 +287,10 @@
       border: 1px solid rgba(251, 191, 36, 0.18);
 
       background:
-        /* LEFT: warm gold wash */
-        radial-gradient(
-          circle at 14% 45%,
-          rgba(250, 204, 21, 0.16),
-          transparent 52%
-        ),
-        /* CENTER: flatter gold core */
-        radial-gradient(
-          circle at 50% 40%,
-          rgba(255, 212, 71, 0.18),
-          transparent 56%
-        ),
-        /* RIGHT: white -> gold */
-        radial-gradient(
-          circle at 88% 38%,
-          rgba(255, 255, 255, 0.65),
-          rgba(255, 212, 71, 0.16) 48%,
-          transparent 72%
-        ),
-        /* subtle glass base */
-        linear-gradient(
-          180deg,
-          rgba(13, 17, 23, 0.04) 0%,
-          rgba(13, 17, 23, 0.02) 100%
-        );
+        radial-gradient(circle at 14% 45%, rgba(250, 204, 21, 0.16), transparent 52%),
+        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.18), transparent 56%),
+        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.65), rgba(255, 212, 71, 0.16) 48%, transparent 72%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
 
       box-shadow:
         0 18px 44px rgba(2, 6, 23, 0.08),
@@ -338,11 +302,7 @@
       position:absolute;
       inset:0;
       border-radius:inherit;
-      background: radial-gradient(
-        circle at 50% 50%,
-        rgba(255, 212, 71, 0.08),
-        transparent 60%
-      );
+      background: radial-gradient(circle at 50% 50%, rgba(255, 212, 71, 0.08), transparent 60%);
       pointer-events:none;
     }
 
@@ -409,6 +369,201 @@
       font-size: 0.95rem;
     }
 
+    /* =========================
+       CDU PACKAGES + TABLE
+       ========================= */
+    .cdu-pricing-wrap{ margin-top: 1.75rem; }
+    .cdu-pricing-head h2{ margin:0 0 0.55rem; font-weight:900; }
+    .cdu-pricing-head p{ margin:0; color:#0f172a; line-height:1.7; max-width: 920px; }
+
+    .cdu-pkg-grid{
+      position: relative;
+      z-index: 1;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .cdu-pkg{
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      border-radius: 16px;
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
+      backdrop-filter: blur(6px);
+      display:flex;
+      flex-direction:column;
+      gap: 0.65rem;
+    }
+
+    .cdu-pkg.featured{
+      border-color: rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 12px 28px rgba(2,6,23,0.10),
+        0 0 0 3px rgba(250,204,21,0.14);
+    }
+
+    .cdu-pkg .kicker{
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      color:#64748b;
+      font-weight:900;
+    }
+
+    .cdu-pkg h3{
+      margin:0;
+      font-size:1.35rem;
+      color:#0b1120;
+      letter-spacing:0.01em;
+      font-weight: 900;
+    }
+
+    .cdu-pkg .desc{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .cdu-pillrow{
+      margin-top: 0.25rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.5rem;
+    }
+
+    .cdu-pillrow .mini{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.38rem 0.70rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      font-weight: 900;
+    }
+
+    /* Consistent "Talk" buttons */
+    .cdu-talk{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width: 240px;
+      min-height: 46px;
+      padding: 0.85rem 1.15rem;
+      border-radius: 999px;
+      font-weight: 900;
+      text-decoration:none;
+      letter-spacing: 0.01em;
+      color:#0b1120;
+      background:#ffffff;
+      border:1px solid rgba(15,23,42,0.18);
+      box-shadow:
+        0 10px 22px rgba(2, 6, 23, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .cdu-talk:hover{
+      transform: translateY(-1px);
+      border-color: rgba(250, 204, 21, 0.65);
+      box-shadow:
+        0 14px 28px rgba(2, 6, 23, 0.12),
+        0 0 0 3px rgba(250, 204, 21, 0.12);
+    }
+
+    .cdu-talk--gold{
+      color:#0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border:1px solid rgba(250, 204, 21, 0.60);
+      box-shadow:
+        0 12px 26px rgba(250, 204, 21, 0.18),
+        0 10px 22px rgba(2, 6, 23, 0.10);
+    }
+
+    /* Comparison table */
+    .cdu-table{
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(2,6,23,0.10);
+      border-radius: 16px;
+      overflow:hidden;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+    }
+
+    .cdu-row{
+      display:grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      border-top: 1px solid rgba(2,6,23,0.08);
+    }
+    .cdu-row:first-child{ border-top:none; }
+
+    .cdu-cell{
+      padding: 0.95rem 1rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color:#0b1120;
+      border-left: 1px solid rgba(2,6,23,0.06);
+      background: rgba(255,255,255,0.96);
+    }
+    .cdu-cell:first-child{ border-left:none; font-weight:650; }
+
+    .cdu-colhead .cdu-cell{
+      background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
+      color:#ffffff;
+      font-weight:900;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-size:0.82rem;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+    .cdu-colhead .cdu-cell:first-child{ border-left:none; }
+
+    .cdu-group .cdu-cell{
+      background: rgba(2,6,23,0.03);
+      font-weight:900;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-size:0.82rem;
+    }
+    .cdu-group .cdu-cell:not(:first-child){ background: rgba(2,6,23,0.03); }
+
+    .ok{ font-weight: 900; }
+    .muted{ color:#64748b; }
+
+    /* Optional / Add-on chip (subtle) */
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: 1px solid rgba(15, 23, 42, 0.12);
+      background: rgba(2, 6, 23, 0.03);
+      color: #0b1120;
+      opacity: 0.82;
+    }
+    .chip.addon{
+      border-color: rgba(250, 204, 21, 0.35);
+      background: rgba(250, 204, 21, 0.08);
+      opacity: 0.90;
+    }
+
+    /* ---------------------------
+       CTA
+       --------------------------- */
     .cdu-cta-band {
       margin-top: 1.25rem;
       border-radius: 18px;
@@ -419,42 +574,8 @@
       box-shadow: 0 16px 34px rgba(2, 6, 23, 0.35);
     }
 
-    .cdu-cta-band h2 {
-      margin: 0 0 0.55rem;
-      color: #ffffff;
-    }
-
-    .cdu-cta-band p {
-      margin: 0;
-      line-height: 1.7;
-      max-width: 900px;
-    }
-
-    /* Force readable text inside the dark CTA band (override global section styles) */
-    .cdu-cta-band h2 { color: #ffffff !important; }
-    .cdu-cta-band p { color: rgba(229, 231, 235, 0.92) !important; }
-
-    /* Force readable text inside the dark CTA band */
-.cdu-cta-band {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.cdu-cta-band h2 {
-  color: #ffffff;
-}
-
-.cdu-cta-band p {
-  color: rgba(229, 231, 235, 0.92);
-}
-
-/* EXPLICITLY restore button text colors */
-.cdu-cta-band .cdu-pill.primary {
-  color: #0b1120; /* dark text on gold */
-}
-
-.cdu-cta-band .cdu-pill.ghost {
-  color: #fff7d6; /* light text on dark */
-}
+    .cdu-cta-band h2 { margin: 0 0 0.55rem; color: #ffffff !important; }
+    .cdu-cta-band p { margin: 0; line-height: 1.7; max-width: 900px; color: rgba(229, 231, 235, 0.92) !important; }
 
     .cdu-cta-actions {
       margin-top: 1rem;
@@ -464,9 +585,31 @@
       align-items: center;
     }
 
+    /* Footer: ensure the e10 icon block is centered consistently */
+    .footer-e10 {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    .footer-e10 img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .footer-e10 span {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
     @media (max-width: 980px) {
       .cdu-grid { grid-template-columns: 1fr; }
       .cdu-lanes { grid-template-columns: 1fr; }
+      .cdu-pkg-grid { grid-template-columns: 1fr; }
+      .cdu-row { grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr; }
     }
 
     @media (max-width: 900px) {
@@ -493,26 +636,6 @@
         top: 34%;
       }
     }
-
-    /* Footer: ensure the e10 icon block is centered consistently */
-    .footer-e10 {
-      margin-top: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
-    .footer-e10 img {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-    }
-    .footer-e10 span {
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
   </style>
 </head>
 
@@ -520,11 +643,7 @@
   <!-- NAV (NO custom hover/active overrides; use global site behavior) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img
-        class="brand-logo brand-logo--slim"
-        src="./enLight10_Logo.png"
-        alt="enLight10 Solutions"
-      />
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
     </a>
 
     <div class="nav-right">
@@ -557,14 +676,7 @@
       </div>
 
       <!-- Hamburger (mobile) -->
-      <button
-        id="menuToggle"
-        class="hamburger"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-        type="button"
-      >
+      <button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -589,10 +701,7 @@
     <div class="cdu-hero-inner">
       <!-- LEFT -->
       <div class="cdu-hero-left">
-        <img
-          src="./Watchtower_CDU_Logo.png"
-          alt="Watchtower — Cyber Defense United"
-        />
+        <img src="./Watchtower_CDU_Logo.png" alt="Watchtower — Cyber Defense United" />
 
         <p class="cdu-tagline">
           <strong>Watchtower™</strong> is the flagship brand family.
@@ -616,23 +725,12 @@
         </p>
 
         <div class="cdu-hero-video-wrapper">
-          <video
-            class="cdu-hero-video"
-            controls
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="metadata"
-          >
+          <video class="cdu-hero-video" controls autoplay muted loop playsinline preload="metadata">
             <source src="https://enlight10media.z22.web.core.windows.net/Cyber%20Defense%20United.faststart.mp4" type="video/mp4" />
           </video>
 
           <div class="cdu-hero-actions">
-            <a
-              class="cdu-pill primary"
-              href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation"
-            >
+            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation">
               Request a Conversation
             </a>
 
@@ -643,7 +741,7 @@
         </div>
       </div>
     </div>
-        <div class="scroll-cue" aria-hidden="true">
+    <div class="scroll-cue" aria-hidden="true">
       Scroll <span class="arrow">↓</span>
     </div>
   </section>
@@ -662,7 +760,6 @@
           programs that need measurable outcomes and defensible evidence.
         </p>
 
-        <!-- GOLD BAND behind cards -->
         <div class="cdu-band">
           <div class="cdu-grid">
             <article class="cdu-card">
@@ -716,7 +813,6 @@
           security outcomes while reducing manual burden.
         </p>
 
-        <!-- GOLD BAND behind lanes -->
         <div class="cdu-band">
           <div class="cdu-lanes">
             <article class="cdu-lane">
@@ -757,7 +853,6 @@
           program structure and constraints.
         </p>
 
-        <!-- GOLD BAND behind cards -->
         <div class="cdu-band">
           <div class="cdu-grid">
             <article class="cdu-card">
@@ -787,6 +882,161 @@
         </div>
       </section>
 
+      <!-- =========================
+           CDU PACKAGES (ABOVE CTA)
+           ========================= -->
+      <section class="section-block slim">
+        <div class="cdu-pricing-wrap">
+          <div class="cdu-pricing-head">
+            <h2>Cyber Defense United Packages</h2>
+            <p>
+              Three ways to engage — tuned for mission networks, DIB enterprises, and programs that need repeatable operations
+              and defensible evidence. Options are available to right-size coverage and scope.
+            </p>
+          </div>
+
+          <div class="cdu-band">
+            <div class="cdu-pkg-grid">
+              <article class="cdu-pkg">
+                <div class="kicker">Package</div>
+                <h3>Foundation</h3>
+                <p class="desc">Mission-aligned monitoring + triage with documented cases and clear escalation paths.</p>
+                <div class="cdu-pillrow">
+                  <span class="mini">Business-hours / On-call</span>
+                  <span class="mini">Evidence-first</span>
+                  <span class="mini">Onboarding</span>
+                </div>
+                <div style="margin-top:0.55rem;">
+                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Foundation">Talk Foundation</a>
+                </div>
+              </article>
+
+              <article class="cdu-pkg featured">
+                <div class="kicker">Most Common</div>
+                <h3>Mission</h3>
+                <p class="desc">Hybrid or 24/7 coverage with deeper investigations, IR support, and cadence reporting.</p>
+                <div class="cdu-pillrow">
+                  <span class="mini">Hybrid / 24x7</span>
+                  <span class="mini">IR Support</span>
+                  <span class="mini">Playbooks</span>
+                </div>
+                <div style="margin-top:0.55rem;">
+                  <a class="cdu-talk cdu-talk--gold" href="mailto:info@enlight10solutions.com?subject=CDU%20Mission">Talk Mission</a>
+                </div>
+              </article>
+
+              <article class="cdu-pkg">
+                <div class="kicker">Full-spectrum</div>
+                <h3>Command</h3>
+                <p class="desc">Continuous operations with proactive hunt, hardening, and executive/ATO-ready outputs.</p>
+                <div class="cdu-pillrow">
+                  <span class="mini">24x7x365</span>
+                  <span class="mini">Hunt</span>
+                  <span class="mini">Assurance</span>
+                </div>
+                <div style="margin-top:0.55rem;">
+                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Command">Talk Command</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="cdu-table" role="table" aria-label="Cyber Defense United package comparison">
+              <div class="cdu-row cdu-colhead" role="row">
+                <div class="cdu-cell" role="columnheader">Capability</div>
+                <div class="cdu-cell" role="columnheader">Foundation</div>
+                <div class="cdu-cell" role="columnheader">Mission</div>
+                <div class="cdu-cell" role="columnheader">Command</div>
+              </div>
+
+              <div class="cdu-row cdu-group" role="row">
+                <div class="cdu-cell" role="cell">Threat Detection &amp; Response</div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">Coverage model</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Business-hours / on-call</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Hybrid or 24/7</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> 24x7x365</div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">Case timelines + evidence packs</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">Proactive threat hunting</div>
+                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
+                <div class="cdu-cell" role="cell"><span class="chip addon">Add-on</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">IR surge support (remote)</div>
+                <div class="cdu-cell" role="cell"><span class="chip">Optional</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="cdu-row cdu-group" role="row">
+                <div class="cdu-cell" role="cell">Operations &amp; Reporting</div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">Escalation paths + playbooks</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Baseline</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Standardized</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Advanced + tuned</div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">Monthly exec summary / posture review</div>
+                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
+              </div>
+
+              <div class="cdu-row cdu-group" role="row">
+                <div class="cdu-cell" role="cell">Enablement &amp; Compliance</div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+                <div class="cdu-cell" role="cell"></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">On-prem integration / tool onboarding</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Core sources</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Expanded</div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Full program</div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">cATO evidence automation</div>
+                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
+                <div class="cdu-cell" role="cell"><span class="chip addon">Add-on</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+
+              <div class="cdu-row" role="row">
+                <div class="cdu-cell" role="cell">AI assist (human-in-the-loop)</div>
+                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
+                <div class="cdu-cell" role="cell"><span class="chip">Optional</span></div>
+                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
       <section class="section-block slim">
         <div class="cdu-cta-band">
           <h2>Let’s talk about your environment.</h2>
@@ -797,10 +1047,7 @@
           </p>
 
           <div class="cdu-cta-actions">
-            <a
-              class="cdu-pill primary"
-              href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Technical Conversation"
-            >
+            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Technical Conversation">
               Request a Conversation
             </a>
             <a class="cdu-pill ghost" href="./watchtower.html">
@@ -809,6 +1056,7 @@
           </div>
         </div>
       </section>
+
     </div>
   </main>
 
