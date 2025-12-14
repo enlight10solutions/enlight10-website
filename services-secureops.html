@@ -1,4 +1,4 @@
-<!-- services-secureops.html (FULL FILE REPLACEMENT — fixed tagline placement (NOT inside logo frame) + ensured pulsing red glow behind logo) -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT — hero layout restored + SMOOTH left→right red glow sweep behind logo) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -94,91 +94,64 @@
       position: relative;
     }
 
-    /* ✅ Logo frame: subtle red border + pulsing red glow BEHIND the logo */
-    .secops-logo-frame{
+    /* ------------------------------
+       Smooth glow wrapper (NOT clipped)
+       ------------------------------ */
+    .secops-logo-glow{
       position: relative;
-      isolation: isolate; /* IMPORTANT: keeps glow behind */
+      isolation: isolate;
       width: 100%;
       max-width: 420px;
+    }
+
+    /* The glow itself (smooth sweep via transform) */
+    .secops-logo-glow::before{
+      content:"";
+      position:absolute;
+      inset: -45%;
+      z-index: 0;
+      pointer-events:none;
+
+      background: radial-gradient(
+        circle at 35% 45%,
+        rgba(239,68,68,0.60) 0%,
+        rgba(239,68,68,0.30) 24%,
+        rgba(239,68,68,0.12) 44%,
+        rgba(239,68,68,0.05) 60%,
+        transparent 72%
+      );
+
+      filter: blur(28px);
+      opacity: 0.75;
+      will-change: transform, opacity;
+      animation: glowSweep 12s linear infinite alternate;
+    }
+
+    /* Smooth left->right (no variable stepping) */
+    @keyframes glowSweep{
+      0%   { transform: translateX(-18%) scale(0.98); opacity: 0.55; }
+      50%  { transform: translateX(0%)    scale(1.02); opacity: 0.85; }
+      100% { transform: translateX(18%)  scale(0.98); opacity: 0.55; }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .secops-logo-glow::before { animation: none; opacity: 0.55; }
+    }
+
+    /* Logo frame (clips the image, NOT the glow) */
+    .secops-logo-frame{
+      position: relative;
+      z-index: 1;
+      width: 100%;
       border-radius: 18px;
       overflow: hidden;
-
       background: rgba(2, 6, 23, 0.35);
-      outline: 1px solid rgba(239, 68, 68, 0.22);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+      outline: 1px solid rgba(239, 68, 68, 0.25);
+      box-shadow:
+        0 0 0 1px rgba(239, 68, 68, 0.12),
+        0 22px 50px rgba(0, 0, 0, 0.65);
     }
-
-    /* glow layer */
-    /* Wrapper = glow layer (NOT clipped) */
-.secops-logo-glow{
-  position: relative;
-  isolation: isolate;
-  width: 100%;
-  max-width: 420px;
-}
-
-/* Moving glow behind */
-.secops-logo-glow::before{
-  content:"";
-  position:absolute;
-  inset: -40%;
-  z-index: 0;
-  pointer-events:none;
-
-  /* A hotspot that we slide left->right */
-  background: radial-gradient(
-    circle at var(--x, 20%) 45%,
-    rgba(239,68,68,0.55) 0%,
-    rgba(239,68,68,0.30) 22%,
-    rgba(239,68,68,0.12) 42%,
-    rgba(239,68,68,0.05) 58%,
-    transparent 70%
-  );
-
-  filter: blur(26px);
-  opacity: 0.75;
-  animation: glowSweep 5.8s ease-in-out infinite;
-}
-
-/* Keep the logo frame ABOVE the glow */
-.secops-logo-frame{
-  position: relative;
-  z-index: 1;
-  border-radius: 18px;
-  overflow: hidden; /* keep the image clean */
-  background: rgba(2, 6, 23, 0.35);
-  outline: 1px solid rgba(239, 68, 68, 0.25);
-  box-shadow:
-    0 0 0 1px rgba(239, 68, 68, 0.12),
-    0 22px 50px rgba(0, 0, 0, 0.65);
-}
-
-@keyframes glowSweep{
-  0%   { --x: 18%; transform: scale(0.98); opacity: 0.55; }
-  50%  { --x: 82%; transform: scale(1.04); opacity: 0.90; }
-  100% { --x: 18%; transform: scale(0.98); opacity: 0.55; }
-}
-
-
-    @keyframes secopsPulse{
-      0%   { opacity: 0.40; transform: scale(0.98); }
-      50%  { opacity: 0.78; transform: scale(1.02); }
-      100% { opacity: 0.40; transform: scale(0.98); }
-    }
-
-    @keyframes logoGlowPulse {
-  0%   { opacity: 0.45; transform: scale(0.96); }
-  50%  { opacity: 0.85; transform: scale(1.04); }
-  100% { opacity: 0.45; transform: scale(0.96); }
-}
-
-    .secops-logo-frame {
-  outline: 1px solid rgba(239, 68, 68, 0.25);
-  box-shadow:
-    0 0 0 1px rgba(239, 68, 68, 0.12),
-    0 22px 50px rgba(0, 0, 0, 0.65);
-}
-
 
     .secops-logo-frame img{
       width: 100%;
@@ -186,13 +159,13 @@
       display: block;
       border-radius: 18px;
       position: relative;
-      z-index: 1; /* image above glow */
+      z-index: 1;
     }
 
-    /* ✅ Tagline is OUTSIDE the logo frame (no overlap) */
+    /* Tagline OUTSIDE logo frame */
     .secops-tagline {
       margin: 0;
-      max-width: 420px; /* align with logo width */
+      max-width: 420px;
       color: #e5e7eb;
       line-height: 1.7;
       font-size: 0.98rem;
@@ -236,7 +209,6 @@
       color: #ffffff;
     }
 
-    /* Inline highlight for SecureOps */
     .secureops-highlight{
       font-weight: 800;
       letter-spacing: 0.01em;
@@ -259,7 +231,9 @@
       background: rgba(2, 6, 23, 0.35);
     }
 
-    /* HERO pills (CTAs) */
+    /* ---------------------------------
+       HERO pills (CTAs)
+       --------------------------------- */
     .secops-hero-actions {
       margin-top: 1.9rem;
       display: flex;
@@ -330,7 +304,7 @@
     }
 
     /* ---------------------------------
-       MAIN BODY
+       MAIN BODY (unchanged)
        --------------------------------- */
     main.light {
       background: #ffffff;
@@ -429,7 +403,6 @@
       pointer-events:none;
     }
 
-    /* CTA band (dark) */
     .secops-cta-band {
       margin-top: 1.25rem;
       border-radius: 18px;
@@ -461,7 +434,7 @@
       .secops-hero-left, .secops-hero-right { flex: 1 1 auto; width: 100%; }
       .secops-hero-right h1, .secops-hero-copy { text-align: left; }
       .secops-hero-actions { justify-content: flex-start; }
-      .secops-logo-frame{ max-width: 520px; }
+      .secops-logo-glow{ max-width: 520px; }
       .secops-tagline{ max-width: 520px; }
     }
   </style>
@@ -521,13 +494,13 @@
   <section class="secops-hero">
     <div class="secops-hero-inner">
 
-      <!-- LEFT -->
-      <div class="secops-logo-glow">
-  <div class="secops-logo-frame">
-    <img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps — Services powered by Watchtower CRP" />
-  </div>
-</div>
-
+      <!-- LEFT (restored) -->
+      <div class="secops-hero-left">
+        <div class="secops-logo-glow">
+          <div class="secops-logo-frame">
+            <img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps — Services powered by Watchtower CRP" />
+          </div>
+        </div>
 
         <p class="secops-tagline">
           <strong>Watchtower™</strong> is the flagship brand family.
