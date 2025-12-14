@@ -332,33 +332,13 @@
 
     /* ✅ Gold “digital” band (muted / champagne gold, NOT yellow) */
     .band{
-      margin-top: 1.25rem;
-      border: 1px solid rgba(15,23,42,0.08);
-      border-radius: 18px;
-
-      background:
-        repeating-linear-gradient(
-          90deg,
-          rgba(161, 128, 61, 0.05) 0px,
-          rgba(161, 128, 61, 0.05) 1px,
-          rgba(255,255,255,0) 1px,
-          rgba(255,255,255,0) 26px
-        ),
-        repeating-linear-gradient(
-          0deg,
-          rgba(161, 128, 61, 0.04) 0px,
-          rgba(161, 128, 61, 0.04) 1px,
-          rgba(255,255,255,0) 1px,
-          rgba(255,255,255,0) 26px
-        ),
-        radial-gradient(circle at 18% 10%, rgba(180, 140, 70, 0.10), rgba(255,255,255,0) 52%),
-        radial-gradient(circle at 82% 12%, rgba(140, 100, 40, 0.08), rgba(255,255,255,0) 58%),
-        radial-gradient(circle at 50% 0%, rgba(190, 155, 85, 0.10), rgba(255,255,255,0) 60%),
-        linear-gradient(180deg, #fbf7ee 0%, #ffffff 72%);
-
-      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
-      padding: 1.25rem 1.25rem;
-    }
+  margin-top: 1.25rem;
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+  padding: 1.25rem 1.25rem;
+}
 
     .grid-3{
       margin-top: 0;
@@ -375,12 +355,38 @@
     }
 
     .card{
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      background:#fff;
-      padding: 1.1rem 1.1rem;
-      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
-    }
+  position: relative;                 /* ✅ required for ::before layering */
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background:#fff;
+  padding: 1.1rem 1.1rem;
+  box-shadow: 0 10px 22px rgba(2,6,23,0.05);
+  overflow: hidden;                   /* ✅ clip circuits to rounded corners */
+}
+
+/* ✅ circuit underlay */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-18%;
+  pointer-events:none;
+  z-index:0;
+  opacity:0.10;                       /* tune: 0.06–0.14 */
+  mix-blend-mode: multiply;           /* subtle on white */
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  /* Inline SVG background (same “board” vibe) */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23caa24a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23caa24a' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ✅ keep all real content above the circuit underlay */
+.card > *{
+  position: relative;
+  z-index: 1;
+}
+
 
     .card h3{
       margin:0 0 0.55rem;
