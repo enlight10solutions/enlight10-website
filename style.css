@@ -927,6 +927,33 @@ h2 {
   cursor: pointer;
 }
 
+/* Ensure the video is on top and clickable */
+video {
+  position: relative;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+/* Common overlay classes — make them click-through */
+.video-overlay,
+.hero-overlay,
+.hero-glow,
+.hero-gradient,
+.hero-copy,
+.overlay,
+.glow,
+.scrim {
+  pointer-events: none !important;
+}
+
+/* If you have buttons on top of the video, re-enable clicks ONLY for them */
+.video-overlay a,
+.video-overlay button,
+.hero-overlay a,
+.hero-overlay button {
+  pointer-events: auto !important;
+}
+
 /* =========================================================
    TWO-COLUMN HERO LAYOUT (INDEX)
    ========================================================= */
