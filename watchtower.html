@@ -29,6 +29,88 @@
     /* ---------------------------
        HERO (dark)
        --------------------------- */
+    .hero.splash{
+  position: relative;
+  overflow: hidden; /* keeps the glow from creating scrollbars */
+}
+
+    /* Big animated glow field behind the left logo block */
+.hero.splash::before{
+  content:"";
+  position:absolute;
+  left: -12%;
+  top: -22%;
+  width: 64%;
+  height: 95%;
+  pointer-events:none;
+  z-index: 0;
+
+  /* layered glows: gold core + cool blue ambient + subtle vignette */
+  background:
+    radial-gradient(circle at 35% 30%,
+      rgba(250,204,21,0.22),
+      rgba(250,204,21,0.10) 38%,
+      transparent 70%),
+    radial-gradient(circle at 55% 45%,
+      rgba(56,189,248,0.14),
+      rgba(56,189,248,0.06) 45%,
+      transparent 75%),
+    linear-gradient(180deg,
+      rgba(2,6,23,0.00) 0%,
+      rgba(2,6,23,0.28) 70%,
+      rgba(2,6,23,0.55) 100%);
+
+  filter: blur(18px);
+  opacity: 0.85;
+
+  /* movement: gentle drift + pulse */
+  animation: heroGlowDrift 12s ease-in-out infinite;
+}
+
+/* A moving “scan/sweep” band like the other logos */
+.hero.splash::after{
+  content:"";
+  position:absolute;
+  left:-40%;
+  top:-10%;
+  width: 90%;
+  height: 85%;
+  pointer-events:none;
+  z-index: 0;
+
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(250,204,21,0.10) 35%,
+    rgba(250,204,21,0.18) 45%,
+    rgba(250,204,21,0.08) 55%,
+    transparent 70%
+  );
+
+  filter: blur(10px);
+  opacity: 0.55;
+
+  animation: heroSweep 9.5s ease-in-out infinite;
+}
+
+@keyframes heroGlowDrift{
+  0%   { transform: translate(0, 0) scale(1.00); opacity: 0.70; }
+  50%  { transform: translate(2.5%, 3.5%) scale(1.05); opacity: 0.95; }
+  100% { transform: translate(0, 0) scale(1.00); opacity: 0.70; }
+}
+
+@keyframes heroSweep{
+  0%   { transform: translateX(-18%) translateY(0) rotate(0.001deg); opacity: 0.35; }
+  50%  { transform: translateX(22%) translateY(2%);               opacity: 0.65; }
+  100% { transform: translateX(-18%) translateY(0);               opacity: 0.35; }
+}
+
+    .hero.splash .hero-inner{
+  position: relative;
+  z-index: 1;
+}
+
+
     .wt-hero-shell{
       padding-top: 100px; /* clear fixed topbar */
       padding-bottom: 56px;
