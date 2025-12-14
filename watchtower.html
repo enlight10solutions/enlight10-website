@@ -1,4 +1,4 @@
-<!-- watchtower.html (FULL FILE REPLACEMENT — gold “digital” band + a little padding so the logo emblem isn’t cramped) -->
+<!-- watchtower.html (FULL FILE REPLACEMENT — animated gold circuits behind CRP logo, cleaned hero-left, smooth flow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@
   <style>
     /* Dark base up top, light body like the rest of the site */
     body{
-      margin:0;
+      margin:00;
       background:#020617;
       color:#e5e7eb;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -54,24 +54,89 @@
       gap: 1.1rem;
     }
 
-    /* ✅ Micro-fix: give the logo image some breathing room so any emblem in the graphic
-       doesn’t feel clipped against the edge */
-    .wt-hero-logo{
-      width:100%;
+    /* ✅ Logo container (with circuits behind) */
+    .wt-logo-wrap{
+      position: relative;
+      isolation: isolate;
+      width: 100%;
       max-width: 420px;
       border-radius: 18px;
       padding: 12px;
       background: rgba(2,6,23,0.35);
       border: 1px solid rgba(250,204,21,0.18);
       box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+      overflow: hidden; /* keep the circuit effect contained */
     }
 
-    .wt-hero-logo img{
+    /* Circuits sit BEHIND the logo image */
+    .wt-circuits-bg{
+      position:absolute;
+      inset: -22%;
+      z-index: 0;
+      opacity: 0.28;           /* intensity */
+      mix-blend-mode: screen;  /* makes it feel like light */
+      pointer-events:none;
+      filter: blur(0.2px);
+    }
+
+    .wt-circuits-bg svg{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
+    /* Logo image above circuits */
+    .wt-logo-wrap img{
+      position: relative;
+      z-index: 1;
       width:100%;
       height:auto;
       display:block;
       border-radius: 14px;
       background:#000;
+    }
+
+    /* Circuit styling + smooth motion */
+    .wt-circuits-bg .trace{
+      fill: none;
+      stroke: rgba(255, 212, 71, 0.95);
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.9;
+    }
+
+    .wt-circuits-bg .node{
+      fill: rgba(255, 212, 71, 0.95);
+      opacity: 0.95;
+    }
+
+    /* Glow filter */
+    .wt-circuits-bg .glow{
+      filter: drop-shadow(0 0 6px rgba(255, 212, 71, 0.25))
+              drop-shadow(0 0 12px rgba(255, 212, 71, 0.12));
+    }
+
+    /* Smooth left-to-right “data flow” effect */
+    .wt-circuits-bg .flow{
+      stroke-dasharray: 10 18;
+      animation: wtDash 10s linear infinite;
+      opacity: 0.95;
+    }
+    .wt-circuits-bg .flow2{
+      stroke-dasharray: 6 20;
+      animation: wtDash 14s linear infinite reverse;
+      opacity: 0.7;
+    }
+
+    @keyframes wtDash{
+      to { stroke-dashoffset: -320; }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .wt-circuits-bg .flow,
+      .wt-circuits-bg .flow2{ animation: none !important; }
     }
 
     .wt-hero-copy p{
@@ -213,45 +278,35 @@
       max-width: 920px;
     }
 
-    /* ✅ Gold “digital” band (flatter gold + subtle pattern) */
     /* ✅ Gold “digital” band (muted / champagne gold, NOT yellow) */
-.band{
-  margin-top: 1.25rem;
-  border: 1px solid rgba(15,23,42,0.08);
-  border-radius: 18px;
+    .band{
+      margin-top: 1.25rem;
+      border: 1px solid rgba(15,23,42,0.08);
+      border-radius: 18px;
 
-  background:
-    /* faint circuitry grid (very subtle) */
-    repeating-linear-gradient(
-      90deg,
-      rgba(161, 128, 61, 0.05) 0px,
-      rgba(161, 128, 61, 0.05) 1px,
-      rgba(255,255,255,0) 1px,
-      rgba(255,255,255,0) 26px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(161, 128, 61, 0.04) 0px,
-      rgba(161, 128, 61, 0.04) 1px,
-      rgba(255,255,255,0) 1px,
-      rgba(255,255,255,0) 26px
-    ),
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(161, 128, 61, 0.05) 0px,
+          rgba(161, 128, 61, 0.05) 1px,
+          rgba(255,255,255,0) 1px,
+          rgba(255,255,255,0) 26px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(161, 128, 61, 0.04) 0px,
+          rgba(161, 128, 61, 0.04) 1px,
+          rgba(255,255,255,0) 1px,
+          rgba(255,255,255,0) 26px
+        ),
+        radial-gradient(circle at 18% 10%, rgba(180, 140, 70, 0.10), rgba(255,255,255,0) 52%),
+        radial-gradient(circle at 82% 12%, rgba(140, 100, 40, 0.08), rgba(255,255,255,0) 58%),
+        radial-gradient(circle at 50% 0%, rgba(190, 155, 85, 0.10), rgba(255,255,255,0) 60%),
+        linear-gradient(180deg, #fbf7ee 0%, #ffffff 72%);
 
-    /* soft “nodes” (brushed gold, not neon) */
-    radial-gradient(circle at 18% 10%, rgba(180, 140, 70, 0.10), rgba(255,255,255,0) 52%),
-    radial-gradient(circle at 82% 12%, rgba(140, 100, 40, 0.08), rgba(255,255,255,0) 58%),
-    radial-gradient(circle at 50% 0%, rgba(190, 155, 85, 0.10), rgba(255,255,255,0) 60%),
-
-    /* base “champagne” wash */
-    linear-gradient(
-      180deg,
-      #fbf7ee 0%,
-      #ffffff 72%
-    );
-
-  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
-  padding: 1.25rem 1.25rem;
-}
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
 
     .grid-3{
       margin-top: 0;
@@ -469,7 +524,61 @@
   <section class="wt-hero-shell">
     <div class="wt-hero">
       <div class="wt-hero-left">
-        <div class="wt-hero-logo">
+
+        <!-- ✅ Logo with animated circuits behind it -->
+        <div class="wt-logo-wrap">
+          <div class="wt-circuits-bg" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+              <g opacity="0.95" class="glow">
+                <!-- Main traces -->
+                <path class="trace" d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" />
+                <path class="trace" d="M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520" />
+                <path class="trace" d="M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515" />
+                <path class="trace" d="M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420" />
+                <path class="trace" d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" />
+                <path class="trace" d="M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620" />
+                <path class="trace" d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" />
+                <path class="trace" d="M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720" />
+                <path class="trace" d="M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265" />
+                <path class="trace" d="M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340" />
+
+                <!-- Branches -->
+                <path class="trace" d="M520 265 V340 Q520 370 550 370 H650" />
+                <path class="trace" d="M520 265 H455 Q430 265 430 240 V190" />
+                <path class="trace" d="M740 420 V510 Q740 540 710 540 H615" />
+                <path class="trace" d="M855 305 H930 Q960 305 960 335 V380" />
+                <path class="trace" d="M450 515 H380 Q350 515 350 545 V610" />
+                <path class="trace" d="M280 235 H180 Q150 235 150 265 V315" />
+
+                <!-- Smooth flowing overlays -->
+                <path class="trace flow"  d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" />
+                <path class="trace flow2" d="M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620" />
+                <path class="trace flow"  d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" />
+                <path class="trace flow2" d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" />
+
+                <!-- Nodes -->
+                <g class="node">
+                  <circle cx="85" cy="115" r="5"/>
+                  <circle cx="280" cy="235" r="5"/>
+                  <circle cx="520" cy="265" r="5"/>
+                  <circle cx="520" cy="120" r="5"/>
+                  <circle cx="740" cy="420" r="5"/>
+                  <circle cx="855" cy="305" r="5"/>
+                  <circle cx="980" cy="70" r="5"/>
+                  <circle cx="935" cy="250" r="5"/>
+                  <circle cx="1030" cy="585" r="5"/>
+                  <circle cx="140" cy="560" r="5"/>
+                  <circle cx="350" cy="610" r="5"/>
+                  <circle cx="150" cy="315" r="5"/>
+                  <circle cx="430" cy="190" r="5"/>
+                  <circle cx="805" cy="265" r="5"/>
+                  <circle cx="960" cy="380" r="5"/>
+                  <circle cx="615" cy="540" r="5"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+
           <img src="./Watchtower_CRP_Logo.png" alt="Watchtower CRP by enLight10 Solutions" />
         </div>
 
