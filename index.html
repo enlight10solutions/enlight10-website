@@ -1,4 +1,4 @@
-<!-- index.html (FULL FILE REPLACEMENT — aligned hero + “Watchtower” white + bordered/card sections) -->
+<!-- index.html (FULL FILE REPLACEMENT — aligned hero + “Watchtower” white + bordered/card sections + offerings band gradient + CRP core micro-glow) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -226,7 +226,7 @@
       max-width: 920px;
     }
 
-    /* Bordered band wrapper */
+    /* Bordered band wrapper (base) */
     .band{
       margin-top: 1.25rem;
       border: 1px solid #e5e7eb;
@@ -237,6 +237,57 @@
         #ffffff;
       box-shadow: 0 16px 34px rgba(2,6,23,0.06);
       padding: 1.25rem 1.25rem;
+    }
+
+    /* ========= OFFERINGS BAND (Red -> Flat Gold -> Yellowish/White) ========= */
+    .offerings-band{
+      position: relative;
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem; /* match .band spacing */
+      background:
+        /* RED — SecureOps (left) */
+        radial-gradient(
+          circle at 12% 45%,
+          rgba(220, 38, 38, 0.22),
+          transparent 48%
+        ),
+        /* FLAT GOLD — CRP (center) */
+        radial-gradient(
+          circle at 50% 40%,
+          rgba(255, 212, 71, 0.26),
+          transparent 52%
+        ),
+        /* GOLD → WHITE — CDU (right) */
+        radial-gradient(
+          circle at 88% 38%,
+          rgba(255, 255, 255, 0.55),
+          rgba(255, 212, 71, 0.22) 45%,
+          transparent 70%
+        ),
+        /* Glass base */
+        linear-gradient(
+          180deg,
+          rgba(13, 17, 23, 0.08) 0%,
+          rgba(13, 17, 23, 0.03) 100%
+        );
+      border: 1px solid rgba(255, 212, 71, 0.18);
+      box-shadow:
+        0 20px 48px rgba(2, 6, 23, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    /* Optional micro-upgrade: make center (CRP) feel like the core */
+    .offerings-band::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 212, 71, 0.10),
+        transparent 60%
+      );
+      pointer-events:none;
     }
 
     .grid-3{
@@ -254,11 +305,11 @@
     }
 
     .card{
-      border: 1px solid #e5e7eb;
+      border: 1px solid rgba(15, 23, 42, 0.10);
       border-radius: 16px;
       background:#fff;
       padding: 1.1rem 1.1rem;
-      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
+      box-shadow: 0 14px 34px rgba(2,6,23,0.08);
     }
 
     .card h3{
@@ -483,7 +534,8 @@
           <strong>Cyber Defense United™</strong> (our DoD/DIB SecureOps variant).
         </p>
 
-        <div class="band">
+        <!-- UPDATED: offerings band uses brand-locked gradient order (Red -> flat gold -> yellow/white) -->
+        <div class="offerings-band">
           <div class="grid-3">
             <article class="card">
               <h3>Watchtower SecureOps™</h3>
