@@ -408,6 +408,28 @@
     .cdu-cta-band h2 { color: #ffffff !important; }
     .cdu-cta-band p { color: rgba(229, 231, 235, 0.92) !important; }
 
+    /* Force readable text inside the dark CTA band */
+.cdu-cta-band {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.cdu-cta-band h2 {
+  color: #ffffff;
+}
+
+.cdu-cta-band p {
+  color: rgba(229, 231, 235, 0.92);
+}
+
+/* EXPLICITLY restore button text colors */
+.cdu-cta-band .cdu-pill.primary {
+  color: #0b1120; /* dark text on gold */
+}
+
+.cdu-cta-band .cdu-pill.ghost {
+  color: #fff7d6; /* light text on dark */
+}
+
     .cdu-cta-actions {
       margin-top: 1rem;
       display: flex;
