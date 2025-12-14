@@ -1,4 +1,4 @@
-<!-- watchtower.html (FULL FILE REPLACEMENT) -->
+<!-- watchtower.html (FULL FILE REPLACEMENT — aligned with site “light” sections + band/card layout) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,25 +16,28 @@
   <script src="./script.js" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
-  <!-- Page-specific layout tweaks -->
+  <!-- Page-specific layout tweaks (kept minimal; matches index’s band/cards pattern) -->
   <style>
-    /* Overall page: dark base like the main hero */
-    body {
-      margin: 0;
-      background: #020617;
-      color: #e5e7eb;
+    /* Dark base up top, light body like the rest of the site */
+    body{
+      margin:0;
+      background:#020617;
+      color:#e5e7eb;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x:hidden;
     }
 
-    /* Top hero shell (dark) */
-    .wt-hero-shell {
-      background: linear-gradient(to bottom, #020617 0%, #020617 60%, #020617 100%);
-      color: #e5e7eb;
+    /* ---------------------------
+       HERO (dark)
+       --------------------------- */
+    .wt-hero-shell{
       padding-top: 100px; /* clear fixed topbar */
-      padding-bottom: 60px;
+      padding-bottom: 56px;
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
+      color:#e5e7eb;
     }
 
-    .wt-hero {
+    .wt-hero{
       max-width: 1100px;
       margin: 0 auto;
       padding: 2rem 1.5rem;
@@ -44,195 +47,347 @@
       align-items: flex-start;
     }
 
-    .wt-hero-left {
+    .wt-hero-left{
       flex: 0 0 360px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
       gap: 1.1rem;
     }
 
-    .wt-hero-logo {
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-
-    .wt-hero-logo img {
+    .wt-hero-logo img{
       max-width: 420px;
-      width: 100%;
-      height: auto;
+      width:100%;
+      height:auto;
       border-radius: 18px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.65);
+      background:#000;
     }
 
-    .wt-hero-copy p {
+    .wt-hero-copy p{
       margin: 0 0 0.75rem;
-      color: #e5e7eb;
-      line-height: 1.65;
+      line-height: 1.7;
+      color:#e5e7eb;
       max-width: 520px;
     }
 
-    .wt-hero-copy p.lead {
+    .wt-hero-copy p.lead{
       font-size: 1rem;
-      color: #e5e7eb;
+      color:#f1f5f9;
     }
 
-    .wt-hero-right {
+    .wt-hero-right{
       flex: 1 1 360px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
 
-    .wt-hero-right h1 {
-      margin: 0 0 0.5rem;
+    .wt-hero-right h1{
+      margin: 0 0 0.55rem;
       font-size: clamp(2rem, 2.8vw, 2.6rem);
-      font-weight: 750;
+      font-weight: 800;
       letter-spacing: 0.01em;
+      color:#fff;
     }
 
-    .wt-hero-tagline {
+    .wt-hero-tagline{
       margin: 0 0 1.25rem;
-      max-width: 680px;
+      max-width: 720px;
       font-size: 0.98rem;
-      line-height: 1.65;
+      line-height: 1.7;
       color: #cbd5f5;
     }
 
-    .wt-hero-video-frame {
-      width: 100%;
-      max-width: 720px;
+    .wt-hero-video-frame{
+      width:100%;
+      max-width: 760px;
       border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-      background: #000;
+      overflow:hidden;
+      box-shadow: 0 18px 42px rgba(0,0,0,0.72);
+      background:#000;
     }
 
-    .wt-hero-video-frame video {
-      width: 100%;
-      height: auto;
-      display: block;
+    .wt-hero-video-frame video{
+      width:100%;
+      height:auto;
+      display:block;
     }
 
-    /* Pills under the video */
-    .wt-hero-pills {
-      width: 100%;
-      max-width: 720px;
+    /* Pills under the video (consistent) */
+    .wt-hero-pills{
+      width:100%;
+      max-width: 760px;
       margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
+      display:flex;
+      flex-wrap:wrap;
       gap: 0.75rem;
-      justify-content: center;
-      align-items: center;
+      justify-content:center;
+      align-items:center;
     }
 
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.58rem 0.95rem;
+    .wt-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0.85rem 1.15rem;
       border-radius: 999px;
-      text-decoration: none;
+      text-decoration:none;
       font-weight: 650;
       font-size: 0.92rem;
       line-height: 1;
-      border: 1px solid rgba(251, 191, 36, 0.28);
-      background: rgba(2, 6, 23, 0.40);
-      color: #fde68a;
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-      transition: transform 140ms ease, filter 140ms ease, background 140ms ease;
+      min-height: 44px;
       white-space: nowrap;
+      border: 1px solid rgba(251,191,36,0.28);
+      background: rgba(2,6,23,0.40);
+      color: #fde68a;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      transition: transform 160ms ease, filter 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
-    .pill:hover {
+    .wt-pill:hover{
       transform: translateY(-1px);
       filter: brightness(1.05);
-      background: rgba(2, 6, 23, 0.52);
+      background: rgba(2,6,23,0.52);
     }
 
-    .pill.primary {
-      border: 1px solid rgba(251, 191, 36, 0.45);
-      background: rgba(251, 191, 36, 0.16);
+    .wt-pill.primary{
+      border: 1px solid rgba(251,191,36,0.48);
+      background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(251,191,36,0.18) 100%);
       color: #fff7d6;
     }
 
-    .pill.ghost {
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(2, 6, 23, 0.28);
+    .wt-pill.ghost{
+      border: 1px solid rgba(148,163,184,0.35);
+      background: rgba(2,6,23,0.28);
       color: #e2e8f0;
     }
 
-    @media (max-width: 900px) {
-      .wt-hero {
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-      }
-
-      .wt-hero-left,
-      .wt-hero-right {
-        flex: 1 1 auto;
-        width: 100%;
-      }
-
-      .wt-hero-right h1,
-      .wt-hero-tagline {
-        text-align: center;
-      }
+    /* Mobile */
+    @media (max-width: 900px){
+      .wt-hero{ flex-direction:column; align-items:center; }
+      .wt-hero-left, .wt-hero-right{ width:100%; flex:1 1 auto; }
+      .wt-hero-left{ align-items:center; text-align:left; }
+      .wt-hero-copy{ width:100%; }
+      .wt-hero-right h1, .wt-hero-tagline{ text-align:center; }
     }
 
-    /* Lower content: use the standard light theme from the main site */
-    main.light {
-      background: #ffffff;
-      color: #020617;
+    /* ---------------------------
+       LIGHT BODY (match index band/cards)
+       --------------------------- */
+    main.light{
+      background:#ffffff;
+      color:#020617;
       padding: 60px 0;
     }
 
-    /* Footer: center the e10 block reliably */
-    .footer-e10 {
-      margin-top: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      text-align: center;
+    .page-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
     }
-    .footer-e10 img {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
+
+    .section-title{
+      margin:0 0 0.55rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      color:#0b1220;
     }
-    .footer-e10 span {
-      font-size: 0.8rem;
-      opacity: 0.7;
+
+    .section-lead{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      max-width: 920px;
+    }
+
+    .band{
+      margin-top: 1.25rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(56,189,248,0.08), rgba(255,255,255,0) 45%),
+        radial-gradient(circle at 80% 10%, rgba(251,191,36,0.10), rgba(255,255,255,0) 55%),
+        #ffffff;
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
+
+    .grid-3{
+      margin-top: 0;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .grid-2{
+      margin-top: 0;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card{
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background:#fff;
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
+    }
+
+    .card h3{
+      margin:0 0 0.55rem;
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+      color:#0b1220;
+    }
+
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .card ul{
+      margin:0.75rem 0 0;
+      padding-left: 1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .mini-pill-row{
+      margin-top: 0.9rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.65rem;
+      align-items:center;
+    }
+
+    .mini-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.38rem 0.70rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      font-weight: 800;
+    }
+
+    /* Optional micro-upgrade: make the CENTER card feel like “the core” */
+    .card.core{
+      position: relative;
+      border-color: rgba(250,204,21,0.55);
+      box-shadow:
+        0 12px 28px rgba(2,6,23,0.08),
+        0 0 0 3px rgba(250,204,21,0.12);
+    }
+    .card.core::before{
+      content:"";
+      position:absolute;
+      inset:-10px;
+      border-radius: 22px;
+      background: radial-gradient(circle at 50% 0%, rgba(250,204,21,0.18), rgba(255,255,255,0) 55%);
+      pointer-events:none;
+    }
+
+    /* CTA band like index */
+    .cta-band{
+      margin-top: 1.25rem;
+      border-radius: 18px;
+      padding: 1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color:#e5e7eb;
+      border:1px solid rgba(251,191,36,0.22);
+      box-shadow:0 16px 34px rgba(2,6,23,0.35);
+    }
+    .cta-band h2{ margin:0 0 0.55rem; color:#fff; }
+    .cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
+
+    .cta-actions{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.9rem 1.2rem;
+      align-items:center;
+    }
+
+    /* CTA pills so links don't disappear */
+    .cta-actions a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.85rem 1.25rem;
+      border-radius:999px;
+      font-weight:650;
+      line-height:1;
+      text-decoration:none;
+      min-height:44px;
+      white-space:nowrap;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .cta-actions a.button.primary{
+      color:#0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+    .cta-actions a.button.primary:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(250, 204, 21, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .cta-actions a.button.ghost{
+      color: rgba(255,255,255,0.92);
+      background: rgba(15,23,42,0.35);
+      border: 1px solid rgba(148,163,184,0.55);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+    }
+    .cta-actions a.button.ghost:hover{
+      transform: translateY(-1px);
+      background: rgba(15,23,42,0.55);
+      border-color: rgba(250,204,21,0.45);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+    }
+
+    .cta-actions a:focus-visible{
+      outline:none;
+      box-shadow: 0 0 0 3px rgba(250,204,21,0.35), 0 14px 28px rgba(0,0,0,0.35);
+    }
+
+    /* Responsive body grids */
+    @media (max-width: 980px){
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV (updated: SecureOps + CDU only) -->
+  <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img
-        class="brand-logo brand-logo--slim"
-        src="./enLight10_Logo.png"
-        alt="enLight10 Solutions"
-      />
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
     </a>
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- SERVICES DROPDOWN (SecureOps + CDU only) -->
+        <!-- SERVICES DROPDOWN -->
         <div class="dropdown">
-          <button
-            class="dropdown-toggle"
-            type="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
             Services ▾
           </button>
           <div class="dropdown-panel">
@@ -247,25 +402,13 @@
           </div>
         </div>
 
-        <!-- PRODUCT LINK (current page) -->
         <a href="./watchtower.html" aria-current="page">Watchtower CRP</a>
-
-        <!-- ABOUT -->
         <a href="./who.html">Who We Are</a>
-
-        <!-- CONTACT -->
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
-      <!-- Hamburger (mobile) -->
-      <button
-        id="menuToggle"
-        class="hamburger"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-        type="button"
-      >
+      <button id="menuToggle" class="hamburger"
+        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -275,9 +418,7 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">
-        Services
-      </strong>
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
       <a href="./services-secureops.html">Watchtower SecureOps™</a>
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
@@ -287,16 +428,13 @@
     </nav>
   </aside>
 
-  <!-- HERO: Watchtower CRP logo + copy (left) and CRP demo video (right) -->
+  <!-- HERO -->
   <section class="wt-hero-shell">
     <div class="wt-hero">
-      <!-- LEFT: logo + copy -->
+      <!-- LEFT -->
       <div class="wt-hero-left">
         <div class="wt-hero-logo">
-          <img
-            src="./Watchtower_CRP_Logo.png"
-            alt="Watchtower CRP by enLight10 Solutions"
-          />
+          <img src="./Watchtower_CRP_Logo.png" alt="Watchtower CRP by enLight10 Solutions" />
         </div>
 
         <div class="wt-hero-copy">
@@ -314,7 +452,7 @@
         </div>
       </div>
 
-      <!-- RIGHT: title + tagline + CRP demo video + pills UNDER video -->
+      <!-- RIGHT -->
       <div class="wt-hero-right">
         <h1>Watchtower CRP™</h1>
         <p class="wt-hero-tagline">
@@ -323,24 +461,17 @@
         </p>
 
         <div class="wt-hero-video-frame" id="wt-demo">
-          <video
-            controls
-            preload="metadata"
-            aria-label="Watchtower CRP demo video"
-          >
+          <video controls preload="metadata" aria-label="Watchtower CRP demo video">
             <source src="https://enlight10media.blob.core.windows.net/media/Watchtower%20Demo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
         <div class="wt-hero-pills" aria-label="Watchtower CRP actions">
-          <a
-            class="pill primary"
-            href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access"
-          >
+          <a class="wt-pill primary" href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access">
             Request Watchtower CRP Briefing
           </a>
-          <a class="pill ghost" href="./services-cyber-defense-united.html">
+          <a class="wt-pill ghost" href="./services-cyber-defense-united.html">
             See How CRP Powers Cyber Defense United
           </a>
         </div>
@@ -348,159 +479,232 @@
     </div>
   </section>
 
-  <!-- LOWER CONTENT (light background) -->
+  <!-- MAIN (light, organized like index) -->
   <main class="light">
-    <!-- WHAT WATCHTOWER CRP DOES -->
-    <section class="section-block slim">
-      <h2>What Watchtower CRP Does</h2>
-      <div class="features three">
-        <article class="feature">
-          <h3>Unifies Signals into Stories</h3>
-          <p>
-            Watchtower CRP ingests alerts, logs, and context from your SIEM, EDR, identity, and network tools
-            and groups them into <strong>WCS-backed buckets</strong> that represent behaviors and campaigns,
-            not just single events.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Builds Evidence as You Work</h3>
-          <p>
-            Every investigation becomes a case with timelines, artifacts, decisions, and outcomes — ready for
-            <strong>command briefings, auditors, and CMMC/cATO evidence</strong> without extra paperwork.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Supports Real-World Operations</h3>
-          <p>
-            Designed for shift work, escalation paths, and handoffs — so SOCs, CSSPs, MSSPs, and small teams
-            can all operate in a consistent, repeatable way across Watchtower SecureOps and Cyber Defense United.
-          </p>
-        </article>
-      </div>
-    </section>
+    <div class="page-wrap">
 
-    <!-- CORE MODULES -->
-    <section class="section-block slim">
-      <h2>Core Modules in Watchtower CRP</h2>
-      <p class="lead">
-        The platform is built from focused modules that work together — so you can start where you are
-        and grow into full SecureOps and Cyber Defense United operations.
-      </p>
-      <div class="features three">
-        <article class="feature">
-          <h3>Guardian — Alerts &amp; Triage</h3>
-          <p>
-            Normalizes alerts from SIEM and tools into a consistent view, applies WCS-driven
-            correlations, and feeds prioritized buckets into your queues. Less swivel-chair,
-            more “here’s what matters.”
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Seek — WCS Bucket Engine</h3>
-          <p>
-            The reasoning core: <strong>Watchtower Common Schema (WCS)</strong> fused with correlation logic
-            to group related events into buckets that represent behaviors, attack paths, and anomalies.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Atlas — Investigations &amp; Timelines</h3>
-          <p>
-            Hands-on investigation space where analysts manage evidence, timelines, notes, and conclusions.
-            Perfect for IR, hunt, and long-running mission cases.
-          </p>
-        </article>
-      </div>
+      <!-- WHAT IT DOES -->
+      <section class="section-block slim">
+        <h2 class="section-title">What Watchtower CRP Does</h2>
+        <p class="section-lead">
+          Traditional tools generate alerts. Analysts chase noise. Compliance drains time.
+          A <strong>Cyber Reasoning Platform</strong> changes the model by focusing on behavior, intent,
+          and defensible evidence.
+        </p>
 
-      <div class="features three">
-        <article class="feature">
-          <h3>Assist — AI Copilots</h3>
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Unifies Signals into Stories</h3>
+              <p>
+                Ingests alerts, logs, and context from SIEM, EDR, identity, and network tools and groups them
+                into <strong>WCS-backed buckets</strong> that represent behaviors and campaigns — not just single events.
+              </p>
+            </article>
+
+            <article class="card core">
+              <h3>Builds Evidence as You Work</h3>
+              <p>
+                Every investigation becomes a case with timelines, artifacts, decisions, and outcomes — ready for
+                <strong>command briefings, auditors, and CMMC/cATO evidence</strong> without extra paperwork.
+              </p>
+              <div class="mini-pill-row">
+                <span class="mini-pill">Timeline</span>
+                <span class="mini-pill">Artifacts</span>
+                <span class="mini-pill">Decisions</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Supports Real-World Operations</h3>
+              <p>
+                Designed for shift work, escalation paths, and handoffs — so SOCs, CSSPs, MSSPs, and small teams
+                can operate consistently across SecureOps and Cyber Defense United.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CORE MODULES -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Core Modules in Watchtower CRP</h2>
+        <p class="section-lead">
+          Start where you are and grow into full SecureOps and Cyber Defense United operations.
+          These modules work together as one platform.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Guardian — Alerts &amp; Triage</h3>
+              <p>
+                Normalizes alerts into a consistent view, applies WCS-driven correlations, and feeds prioritized
+                buckets into your queues. Less swivel-chair, more “here’s what matters.”
+              </p>
+            </article>
+
+            <article class="card core">
+              <h3>Seek — WCS Bucket Engine</h3>
+              <p>
+                The reasoning core: <strong>Watchtower Common Schema (WCS)</strong> fused with correlation logic
+                to group related events into buckets that represent behaviors, attack paths, and anomalies.
+              </p>
+              <div class="mini-pill-row">
+                <span class="mini-pill">WCS</span>
+                <span class="mini-pill">Buckets</span>
+                <span class="mini-pill">Correlation</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Atlas — Investigations &amp; Timelines</h3>
+              <p>
+                Investigation workspace for evidence, timelines, notes, and conclusions — ideal for IR, hunt,
+                and long-running mission cases.
+              </p>
+            </article>
+          </div>
+
+          <div class="grid-3" style="margin-top:1.1rem;">
+            <article class="card">
+              <h3>Assist — AI Copilots</h3>
+              <p>
+                Copilots that summarize cases, propose next steps, draft reports, and translate technical details
+                into leader-ready language — with humans always in control.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Deploy — Automation &amp; SOAR</h3>
+              <p>
+                Connects CRP to SOAR and your automation stack for enrichment, containment, health checks,
+                and ticket updates.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Audit — Evidence &amp; Compliance</h3>
+              <p>
+                Aligns cases, actions, and artifacts to controls — turning day-to-day operations into
+                <strong>direct evidence</strong> for CMMC, RMF, and cATO.
+              </p>
+            </article>
+          </div>
+
+          <div class="card" style="margin-top:1.1rem;">
+            <h3>Roadmap (Next)</h3>
+            <p>
+              Future modules include <strong>Replay</strong> (re-simulating incidents),
+              <strong>Intel</strong> (threat intel fusion),
+              <strong>Graph</strong> (entity relationships),
+              and <strong>Training</strong> (scenario-driven exercises) — all built on the same CRP core.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHO IT'S FOR -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Who Watchtower CRP Is For</h2>
+        <p class="section-lead">
+          Built for missions where teams are stretched thin — and leadership needs answers they can defend.
+        </p>
+
+        <div class="band">
+          <div class="grid-2">
+            <article class="card">
+              <h3>Defense &amp; Government</h3>
+              <p>
+                SOCs/CSSPs supporting mission networks that must brief leadership, support cATO,
+                and operate across boundary, enclave, and mission environments.
+              </p>
+              <ul>
+                <li>Commander-ready narratives</li>
+                <li>Continuous monitoring evidence</li>
+                <li>Operations-friendly workflows</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Defense Contractors, MSSPs, and High-Risk Businesses</h3>
+              <p>
+                Teams that need monitoring, investigation, and <strong>CMMC-aligned evidence</strong> without
+                building a platform from scratch — and want a repeatable operating model.
+              </p>
+              <ul>
+                <li>Tenant / program onboarding</li>
+                <li>Standardized triage and cases</li>
+                <li>Proof of work + outcomes</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW TO GET -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">How to Get Watchtower CRP</h2>
+        <p class="section-lead">
+          Today, Watchtower CRP is delivered through <strong>Watchtower SecureOps™</strong> engagements and
+          <strong>Cyber Defense United™</strong> offerings — matched to your mission, tooling, and constraints.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Integrate Your Stack</h3>
+              <p>
+                Connect SIEM, EDR, firewall, identity, and mission systems into WCS so signals can be reasoned about
+                consistently across teams and environments.
+              </p>
+            </article>
+
+            <article class="card core">
+              <h3>Deploy Where You Operate</h3>
+              <p>
+                Stand up CRP in cloud, hybrid, or on-prem / air-gapped environments with an operating model
+                designed for shift work and high-stakes programs.
+              </p>
+              <div class="mini-pill-row">
+                <span class="mini-pill">Cloud</span>
+                <span class="mini-pill">Hybrid</span>
+                <span class="mini-pill">Air-Gapped</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <h3>Operationalize Evidence</h3>
+              <p>
+                Map workflows, reporting, and artifacts to contracts and compliance needs — turning daily ops into
+                defensible evidence for audits and leadership briefs.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <div class="cta-band">
+          <h2>Want a Watchtower CRP Briefing?</h2>
           <p>
-            AI copilots for SOC analysts and leadership that summarize cases, propose next steps,
-            draft reports, and help translate technical details into commander-ready language —
-            with humans always in control.
+            If you’re evaluating SecureOps modernization, mission monitoring, or evidence-driven operations,
+            we’ll start with your environment and show how CRP becomes your reasoning and assurance layer.
           </p>
-        </article>
-        <article class="feature">
-          <h3>Deploy — Automation &amp; SOAR</h3>
-          <p>
-            Connects Watchtower CRP to SOAR tools like Tines and your existing automation stack to
-            orchestrate enrichment, containment, health checks, and ticket updates.
-          </p>
-        </article>
-        <article class="feature">
-          <h3>Audit — Evidence &amp; Compliance</h3>
-          <p>
-            Aligns cases, actions, and artifacts to controls — turning day-to-day operations
-            into <strong>direct evidence</strong> for CMMC, RMF, and cATO without bolt-on tooling.
-          </p>
-        </article>
-      </div>
 
-      <p style="margin-top:1rem;">
-        Future modules include <strong>Replay</strong> (re-simulating incidents), <strong>Intel</strong>
-        (fusing threat intelligence), <strong>Graph</strong> (entity relationships), and
-        <strong>Training</strong> (scenario-driven exercises) — all building on the same CRP core.
-      </p>
-    </section>
+          <div class="cta-actions">
+            <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access &amp; SecureOps">
+              Request Watchtower CRP Briefing
+            </a>
+            <a class="button ghost" href="./services-cyber-defense-united.html">
+              Learn About Cyber Defense United
+            </a>
+          </div>
+        </div>
+      </section>
 
-    <!-- WHO IT'S FOR -->
-    <section class="section-block slim">
-      <h2>Who Watchtower CRP Is For</h2>
-      <p class="lead">The CRP is designed for teams that need reasoning, not just more alerts:</p>
-      <ul class="clean">
-        <li>
-          <strong>Defense &amp; Government SOCs / CSSPs</strong> that must brief leadership, support cATO,
-          and operate across boundary, enclave, and mission networks.
-        </li>
-        <li>
-          <strong>Defense contractors</strong> who need monitoring, investigation, and
-          <strong>CMMC-aligned evidence</strong> without building a platform from scratch.
-        </li>
-        <li>
-          <strong>MSSPs and SOC providers</strong> that want a repeatable operating model to onboard tenants,
-          standardize workflows, and prove value.
-        </li>
-        <li>
-          <strong>Security-focused SMBs</strong> that need structure, timelines, and documentation —
-          not just raw logs and tickets.
-        </li>
-      </ul>
-    </section>
-
-    <!-- HOW TO GET WATCHTOWER CRP -->
-    <section class="section-block slim">
-      <h2>How to Get Watchtower CRP Today</h2>
-      <p>
-        Today, Watchtower CRP is available through <strong>Watchtower SecureOps™</strong> engagements and
-        <strong>Cyber Defense United™</strong> offerings. We work with you to:
-      </p>
-      <ul class="clean">
-        <li>Integrate your SIEM, EDR, firewalls, identity, and mission systems into WCS.</li>
-        <li>Stand up Watchtower CRP in cloud, hybrid, or on-prem / air-gapped environments.</li>
-        <li>Map workflows, reporting, and evidence to your mission, contracts, and compliance needs.</li>
-      </ul>
-
-      <p style="margin-top:1rem;">
-        We’re currently onboarding a limited number of early access environments across DoD, DIB, MSSPs,
-        and high-risk commercial sectors.
-      </p>
-
-      <div style="margin-top:1.5rem;">
-        <a
-          class="button primary"
-          href="mailto:info@enlight10solutions.com?subject=Watchtower CRP / Early Access &amp; SecureOps"
-        >
-          Request Watchtower CRP / SecureOps Briefing
-        </a>
-        <a
-          class="button ghost"
-          href="./services-cyber-defense-united.html"
-          style="margin-left:0.75rem;"
-        >
-          Learn About Cyber Defense United
-        </a>
-      </div>
-    </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -518,7 +722,6 @@
         <a href="https://github.com/enlight10solutions" target="_blank">GitHub</a>
       </div>
 
-      <!-- Centered e10 block -->
       <div class="footer-e10">
         <img src="./e10_Logo.png" alt="e10 icon" />
         <span>enLight10 on social &amp; GitHub</span>
