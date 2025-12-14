@@ -167,6 +167,62 @@ body {
   box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.35), 0 14px 28px rgba(0, 0, 0, 0.35);
 }
 
+.hero,
+.about-hero,
+.cdu-hero {
+  position: relative;
+}
+
+/* =========================================================
+   GLOBAL SCROLL CUE (for dark hero sections)
+   Add <div class="scroll-cue">Scroll <span class="arrow">↓</span></div>
+   inside your hero section (near the bottom).
+   ========================================================= */
+
+.scroll-cue{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+
+  color: rgba(255,255,255,0.92);
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+
+  user-select: none;
+  pointer-events: none; /* purely visual; won’t block clicks */
+  z-index: 5;
+}
+
+.scroll-cue .arrow{
+  display: inline-block;
+  font-size: 1.05rem;
+  line-height: 1;
+  animation: scrollCueBounce 1.3s ease-in-out infinite;
+}
+
+@keyframes scrollCueBounce{
+  0%, 100% { transform: translateY(0); opacity: 0.85; }
+  50%      { transform: translateY(6px); opacity: 1; }
+}
+
+/* Hide on small screens if you want less clutter */
+@media (max-width: 768px){
+  .scroll-cue{ bottom: 14px; font-size: 0.84rem; }
+}
+
+
 /* =========================================================
    NAVIGATION BAR
    ========================================================= */
