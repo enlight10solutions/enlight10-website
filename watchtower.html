@@ -19,7 +19,7 @@
   <style>
     /* Dark base up top, light body like the rest of the site */
     body{
-      margin:00;
+      margin:0;
       background:#020617;
       color:#e5e7eb;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -29,13 +29,14 @@
     /* ---------------------------
        HERO (dark)
        --------------------------- */
-    .hero.splash{
+    /* HERO glow field (behind the left logo + spills into top hero) */
+.wt-hero-shell{
   position: relative;
-  overflow: hidden; /* keeps the glow from creating scrollbars */
+  overflow: hidden;
 }
 
-    /* Big animated glow field behind the left logo block */
-.hero.splash::before{
+/* Big ambient field */
+.wt-hero-shell::before{
   content:"";
   position:absolute;
   left: -12%;
@@ -45,7 +46,6 @@
   pointer-events:none;
   z-index: 0;
 
-  /* layered glows: gold core + cool blue ambient + subtle vignette */
   background:
     radial-gradient(circle at 35% 30%,
       rgba(250,204,21,0.22),
@@ -62,13 +62,11 @@
 
   filter: blur(18px);
   opacity: 0.85;
-
-  /* movement: gentle drift + pulse */
   animation: heroGlowDrift 12s ease-in-out infinite;
 }
 
-/* A moving “scan/sweep” band like the other logos */
-.hero.splash::after{
+/* Moving sweep band */
+.wt-hero-shell::after{
   content:"";
   position:absolute;
   left:-40%;
@@ -89,27 +87,14 @@
 
   filter: blur(10px);
   opacity: 0.55;
-
   animation: heroSweep 9.5s ease-in-out infinite;
 }
 
-@keyframes heroGlowDrift{
-  0%   { transform: translate(0, 0) scale(1.00); opacity: 0.70; }
-  50%  { transform: translate(2.5%, 3.5%) scale(1.05); opacity: 0.95; }
-  100% { transform: translate(0, 0) scale(1.00); opacity: 0.70; }
-}
-
-@keyframes heroSweep{
-  0%   { transform: translateX(-18%) translateY(0) rotate(0.001deg); opacity: 0.35; }
-  50%  { transform: translateX(22%) translateY(2%);               opacity: 0.65; }
-  100% { transform: translateX(-18%) translateY(0);               opacity: 0.35; }
-}
-
-    .hero.splash .hero-inner{
+/* Ensure content is above the glow */
+.wt-hero-shell .wt-hero{
   position: relative;
   z-index: 1;
 }
-
 
     .wt-hero-shell{
       padding-top: 100px; /* clear fixed topbar */
