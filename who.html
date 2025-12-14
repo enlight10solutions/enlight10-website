@@ -1,4 +1,4 @@
-<!-- who.html (FULL FILE REPLACEMENT — founder-focused + sharper CISO keywords + BLUE radiant buttons + resized metrics) -->
+<!-- who.html (FULL FILE REPLACEMENT — founder-focused + impact pills replacing metric cards) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,7 +171,7 @@
     .about-hero-copy strong{ color:#fff; font-weight:700; }
 
     /* ---------------------------
-       Blue radiant pill buttons (NEW)
+       Blue radiant pill buttons
        --------------------------- */
     .about-hero-actions{
       margin-top:0.35rem;
@@ -204,7 +204,6 @@
       outline-offset:3px;
     }
 
-    /* Sky blue → white radiant */
     .about-pill.primary{
       color:#0b1120;
       background: linear-gradient(
@@ -301,7 +300,6 @@
       overflow:hidden;
     }
 
-    /* subtle “not flat” sheen */
     .founder-card::before{
       content:"";
       position:absolute;
@@ -347,7 +345,7 @@
       line-height:1.4;
     }
 
-    /* CISO keyword chips (NEW) */
+    /* CISO keyword chips */
     .founder-badges{
       display:flex;
       flex-wrap:wrap;
@@ -391,40 +389,7 @@
       font-size:0.97rem;
     }
 
-    /* Metrics row — smaller + cleaner (FIX) */
-    .founder-metrics{
-      margin-top:0.95rem;
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 across */
-      gap:0.65rem;
-    }
-
-    .metric{
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:14px;
-      padding:0.70rem 0.70rem; /* smaller */
-      background:
-        radial-gradient(circle at 20% 15%, rgba(56,189,248,0.12), transparent 55%),
-        linear-gradient(180deg, rgba(2,6,23,0.02) 0%, rgba(2,6,23,0.00) 100%);
-    }
-
-    .metric .k{
-      font-size:0.72rem;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      color:#64748b;
-      margin:0 0 0.18rem;
-    }
-
-    .metric .v{
-      margin:0;
-      font-weight:850;
-      font-size:1.02rem; /* smaller */
-      letter-spacing:0.01em;
-      color:#0b1120;
-    }
-
-    /* “Proof” callout row (adds pop for CISOs) */
+    /* “Proof” callout row */
     .proof-row{
       margin-top:0.85rem;
       display:flex;
@@ -441,12 +406,35 @@
       font-weight:750;
       font-size:0.88rem;
       color:#0b1120;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.80) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.80) 100%);
       border: 1px solid rgba(15,23,42,0.10);
       box-shadow: 0 10px 20px rgba(2,6,23,0.06);
     }
     .proof b{ font-weight:900; }
+
+    /* NEW: High-impact "experience" pills (replaces the 4 metric cards) */
+    .impact-row{
+      margin-top:0.70rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.55rem;
+      align-items:center;
+    }
+    .impact-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.46rem 0.70rem;
+      border-radius:999px;
+      font-weight:800;
+      font-size:0.86rem;
+      color:#0b1120;
+      background: rgba(255,255,255,0.92);
+      border:1px solid rgba(15,23,42,0.10);
+      box-shadow: 0 10px 18px rgba(2,6,23,0.06);
+      white-space:nowrap;
+    }
+    .impact-pill strong{ font-weight:900; }
 
     .founder-side{
       display:grid;
@@ -557,7 +545,6 @@
       align-items:center;
     }
 
-    /* Footer e10 helper */
     .footer-e10{
       margin-top:0.75rem;
       display:flex;
@@ -574,7 +561,6 @@
       .about-grid{ grid-template-columns: 1fr; }
       .about-lanes{ grid-template-columns: 1fr; }
       .founder-wrap{ grid-template-columns: 1fr; }
-      .founder-metrics{ grid-template-columns: 1fr 1fr; }
       .founder-badges{ justify-content:flex-start; flex: 1 1 auto; }
     }
 
@@ -730,23 +716,16 @@
                   <span class="proof"><b>Repeatable</b> playbooks</span>
                 </div>
 
-                <div class="founder-metrics" aria-label="Founder highlights">
-                  <div class="metric">
-                    <p class="k">SOC/NSOC Stand-up</p>
-                    <p class="v">Built from zero</p>
-                  </div>
-                  <div class="metric">
-                    <p class="k">Incident Tempo</p>
-                    <p class="v">MTTD/MTTR ↓</p>
-                  </div>
-                  <div class="metric">
-                    <p class="k">Automation</p>
-                    <p class="v">Ops at scale</p>
-                  </div>
-                  <div class="metric">
-                    <p class="k">Outcome</p>
-                    <p class="v">Evidence + Proof</p>
-                  </div>
+                <!-- REPLACED: metric cards -> compact impact pills -->
+                <div class="impact-row" aria-label="High-impact experience">
+                  <span class="impact-pill">Hunt Forward Operations</span>
+                  <span class="impact-pill">Multiple IR Deployments</span>
+                  <span class="impact-pill">Stand up <strong>SOC</strong></span>
+                  <span class="impact-pill">Stand up <strong>NSOC</strong></span>
+                  <span class="impact-pill">Digital Transformation</span>
+                  <span class="impact-pill">Leadership Skills</span>
+                  <span class="impact-pill">Detection Engineering</span>
+                  <span class="impact-pill">Ops Automation</span>
                 </div>
 
                 <h3 style="margin:1.05rem 0 0.55rem; font-size:1.02rem;">Why this matters for partners</h3>
