@@ -231,6 +231,263 @@
       background: rgba(2, 6, 23, 0.35);
     }
 
+    /* ============================
+   SecureOps Packages (Rapid7-style comparison)
+   Paste near the bottom of your page <style>
+   ============================ */
+
+.pricing-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding: 0 1.5rem;
+}
+
+.pricing-head{
+  margin-top: 1.75rem;
+}
+
+.pricing-head h2{
+  margin:0 0 .55rem;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  color:#0b1220;
+}
+
+.pricing-head p{
+  margin:0;
+  max-width: 920px;
+  color:#334155;
+  line-height:1.7;
+}
+
+/* Soft gold circuit band behind the pricing area */
+.pricing-band{
+  margin-top: 1.15rem;
+  border-radius: 18px;
+  border: 1px solid rgba(15,23,42,0.08);
+  position: relative;
+  overflow: hidden;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 18% 10%, rgba(180, 140, 70, 0.10), transparent 52%),
+    radial-gradient(circle at 82% 12%, rgba(140, 100, 40, 0.08), transparent 58%),
+    linear-gradient(180deg, #fbf7ee 0%, #ffffff 72%);
+  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+}
+
+/* Circuit overlay (subtle) */
+.pricing-circuits{
+  position:absolute;
+  inset:-22%;
+  opacity:0.14;
+  mix-blend-mode:multiply;
+  pointer-events:none;
+  filter: blur(0.15px);
+}
+
+.pricing-circuits svg{ width:100%; height:100%; display:block; }
+
+/* Packages */
+.pkg-grid{
+  position: relative;
+  z-index: 1;
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pkg{
+  background:#fff;
+  border: 1px solid rgba(15,23,42,0.10);
+  border-radius: 16px;
+  padding: 1.05rem 1.05rem;
+  box-shadow: 0 12px 28px rgba(2,6,23,0.06);
+  display:flex;
+  flex-direction:column;
+  gap: .65rem;
+}
+
+.pkg .kicker{
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color:#64748b;
+  font-weight: 800;
+}
+
+.pkg h3{
+  margin:0;
+  font-size: 1.15rem;
+  color:#0b1220;
+  font-weight: 900;
+}
+
+.pkg .desc{
+  margin:0;
+  color:#334155;
+  line-height:1.65;
+  font-size: .95rem;
+}
+
+.pkg .pillrow{
+  display:flex;
+  gap:.55rem;
+  flex-wrap:wrap;
+  margin-top:.15rem;
+}
+.pkg .mini{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.35rem .65rem;
+  border-radius:999px;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight: 900;
+  border:1px solid rgba(2,6,23,0.10);
+  background: rgba(2,6,23,0.03);
+  color:#0b1120;
+}
+
+.pkg .cta{
+  margin-top:.35rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+}
+.pkg .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:44px;
+  padding:.8rem 1.0rem;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:750;
+  border:1px solid rgba(15,23,42,0.12);
+  background:#fff;
+  color:#0b1120;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+}
+.pkg .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(2,6,23,0.08); }
+
+.pkg.featured{
+  border-color: rgba(250,204,21,0.55);
+  box-shadow:
+    0 12px 28px rgba(2,6,23,0.08),
+    0 0 0 3px rgba(250,204,21,0.12);
+}
+.pkg.featured .btn.primary{
+  color:#0b1120;
+  background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+  border: 1px solid rgba(250, 204, 21, 0.55);
+}
+.pkg .btn.ghost{
+  background: rgba(2,6,23,0.02);
+  border-color: rgba(148,163,184,0.35);
+  color:#0b1120;
+}
+
+/* Comparison table */
+.pkg-table{
+  position: relative;
+  z-index: 1;
+  background:#fff;
+  border:1px solid rgba(15,23,42,0.10);
+  border-radius: 16px;
+  overflow:hidden;
+  box-shadow: 0 12px 28px rgba(2,6,23,0.06);
+}
+
+.pkg-row{
+  display:grid;
+  grid-template-columns: 1.3fr repeat(3, 1fr);
+  gap: 0;
+  border-top:1px solid rgba(2,6,23,0.06);
+}
+
+.pkg-row:first-child{ border-top:none; }
+
+.pkg-cell{
+  padding: .9rem .95rem;
+  font-size: .92rem;
+  color:#0b1120;
+  line-height:1.45;
+  border-left:1px solid rgba(2,6,23,0.06);
+}
+
+.pkg-cell:first-child{
+  border-left:none;
+  color:#0b1220;
+}
+
+.pkg-group{
+  background: linear-gradient(180deg, rgba(2,6,23,0.03) 0%, rgba(2,6,23,0.01) 100%);
+  font-weight: 900;
+  color:#0b1220;
+  text-transform: uppercase;
+  letter-spacing:.12em;
+  font-size: .75rem;
+}
+
+.pkg-colhead{
+  background:#0b1120;
+  color:#fff;
+  font-weight: 900;
+  text-align:center;
+}
+
+.pkg-colhead:first-child{
+  text-align:left;
+  color: rgba(255,255,255,0.85);
+}
+
+.ok{ font-weight: 900; }
+.muted{ color:#64748b; }
+.addon{
+  display:inline-flex;
+  align-items:center;
+  gap:.45rem;
+  font-weight: 850;
+  color:#0b1120;
+}
+.addon .tag{
+  font-size:.70rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.28rem .55rem;
+  border-radius:999px;
+  border:1px solid rgba(250,204,21,0.45);
+  background: rgba(250,204,21,0.12);
+}
+
+@media (max-width: 980px){
+  .pkg-grid{ grid-template-columns: 1fr; }
+  .pkg-row{ grid-template-columns: 1.2fr repeat(3, .9fr); }
+  .pkg-cell{ font-size:.88rem; padding:.8rem .8rem; }
+}
+
+@media (max-width: 760px){
+  /* Mobile: turn the table into stacked cards per feature group */
+  .pkg-table{ overflow: visible; }
+  .pkg-row{
+    grid-template-columns: 1fr;
+    border-top: 1px solid rgba(2,6,23,0.08);
+  }
+  .pkg-cell{
+    border-left:none;
+    border-top:1px dashed rgba(2,6,23,0.08);
+  }
+  .pkg-cell:first-child{
+    border-top:none;
+    font-weight:900;
+  }
+  .pkg-colhead{ display:none; }
+}
+
     /* ---------------------------------
        HERO pills (CTAs)
        --------------------------------- */
@@ -776,6 +1033,179 @@
 
     </div>
   </main>
+
+  <!-- =========================
+     SecureOps Packages (Pricing Diagram)
+     Paste ABOVE <footer>
+     ========================= -->
+<section class="section-block slim">
+  <div class="pricing-wrap">
+    <div class="pricing-head">
+      <h2>SecureOps Packages</h2>
+      <p>
+        Three ways to engage — built around measurable operations, clear reporting, and defensible evidence.
+        We’ll right-size coverage and integrations to your environment.
+      </p>
+    </div>
+
+    <div class="pricing-band">
+      <!-- subtle circuits behind the whole pricing band -->
+      <div class="pricing-circuits" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+          <g opacity="0.9">
+            <path d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" fill="none" stroke="rgba(161,128,61,0.85)" stroke-width="2.2" stroke-linecap="round"/>
+            <g fill="rgba(161,128,61,0.75)">
+              <circle cx="85" cy="115" r="5"/><circle cx="280" cy="235" r="5"/><circle cx="520" cy="120" r="5"/>
+              <circle cx="740" cy="420" r="5"/><circle cx="935" cy="250" r="5"/><circle cx="1030" cy="585" r="5"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- package cards -->
+      <div class="pkg-grid">
+        <article class="pkg">
+          <div class="kicker">Package</div>
+          <h3>Starter</h3>
+          <p class="desc">Right-sized monitoring + triage with clean reporting and escalation paths.</p>
+          <div class="pillrow">
+            <span class="mini">Business-hours</span>
+            <span class="mini">Evidence-first</span>
+            <span class="mini">Onboarding</span>
+          </div>
+          <div class="cta">
+            <a class="btn ghost" href="mailto:info@enlight10solutions.com?subject=SecureOps Starter Package">Talk Starter</a>
+          </div>
+        </article>
+
+        <article class="pkg featured">
+          <div class="kicker">Most Common</div>
+          <h3>Pro</h3>
+          <p class="desc">Hybrid or 24/7 coverage with deeper investigations, tuning, and response support.</p>
+          <div class="pillrow">
+            <span class="mini">Hybrid / 24x7</span>
+            <span class="mini">IR support</span>
+            <span class="mini">Playbooks</span>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="mailto:info@enlight10solutions.com?subject=SecureOps Pro Package">Talk Pro</a>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="kicker">Full-spectrum</div>
+          <h3>Elite</h3>
+          <p class="desc">Continuous operations with proactive hunting, hardening, and executive-ready cadence.</p>
+          <div class="pillrow">
+            <span class="mini">24x7x365</span>
+            <span class="mini">Hunt</span>
+            <span class="mini">Assurance</span>
+          </div>
+          <div class="cta">
+            <a class="btn ghost" href="mailto:info@enlight10solutions.com?subject=SecureOps Elite Package">Talk Elite</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- comparison table -->
+      <div class="pkg-table" role="table" aria-label="SecureOps package comparison">
+        <div class="pkg-row pkg-colhead" role="row">
+          <div class="pkg-cell" role="columnheader">Capability</div>
+          <div class="pkg-cell" role="columnheader">Starter</div>
+          <div class="pkg-cell" role="columnheader">Pro</div>
+          <div class="pkg-cell" role="columnheader">Elite</div>
+        </div>
+
+        <div class="pkg-row pkg-group" role="row">
+          <div class="pkg-cell" role="cell">Threat Detection &amp; Response</div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Monitoring coverage model</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Business-hours / on-call</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Hybrid or 24/7</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> 24x7x365</div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Case timelines + evidence packs</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Proactive threat hunting</div>
+          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+          <div class="pkg-cell" role="cell">
+            <span class="addon">Optional <span class="tag">Add-On</span></span>
+          </div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">IR surge support (remote)</div>
+          <div class="pkg-cell" role="cell">
+            <span class="addon">Optional <span class="tag">Add-On</span></span>
+          </div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+        </div>
+
+        <div class="pkg-row pkg-group" role="row">
+          <div class="pkg-cell" role="cell">Operations &amp; Reporting</div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Escalation paths + playbooks</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Baseline</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Standardized</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Advanced + tuned</div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Monthly exec summary / posture review</div>
+          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
+        </div>
+
+        <div class="pkg-row pkg-group" role="row">
+          <div class="pkg-cell" role="cell">Integrations &amp; Enablement</div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+          <div class="pkg-cell" role="cell"></div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Tool onboarding + tuning</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Core sources</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Expanded</div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span> Full program</div>
+        </div>
+
+        <div class="pkg-row" role="row">
+          <div class="pkg-cell" role="cell">Automation / SOAR workflows</div>
+          <div class="pkg-cell" role="cell"><span class="muted">—</span></div>
+          <div class="pkg-cell" role="cell">
+            <span class="addon">Optional <span class="tag">Add-On</span></span>
+          </div>
+          <div class="pkg-cell" role="cell"><span class="ok">✅</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- FOOTER -->
   <footer>
