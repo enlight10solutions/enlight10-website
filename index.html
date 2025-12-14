@@ -1,14 +1,14 @@
-<!-- index.html (FULL FILE REPLACEMENT — hero lowered + stronger pulse + SecureOps button pulled inward) -->
+<!-- index.html (FULL FILE REPLACEMENT — SAME STYLE/THEME, SIMPLER + LESS OVERWHELMING COPY) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>enLight10 Solutions — Watchtower SecureOps, CRP & Cyber Defense United</title>
+  <title>enLight10 Solutions — Watchtower SecureOps & Cyber Defense United</title>
   <meta
     name="description"
-    content="enLight10 Solutions is a veteran-owned cybersecurity company behind Watchtower — a flagship brand family that unites Watchtower SecureOps services, the Watchtower Cyber Reasoning Platform (CRP), and Cyber Defense United for DoD and DIB missions."
+    content="enLight10 Solutions delivers Watchtower SecureOps™ and Cyber Defense United™—modern security operations for enterprise, MSSPs, and DoD/DIB missions. Powered by the Watchtower Cyber Reasoning Platform (CRP™)."
   />
 
   <!-- Styles / JS (cache-bust) -->
@@ -109,43 +109,41 @@
     }
 
     /* Logo container with rounded edges + soft light */
-    /* Logo container with rounded edges + soft light */
-.hero-logo-wrap{
-  position: relative;
-  border-radius: 22px;
+    .hero-logo-wrap{
+      position: relative;
+      border-radius: 22px;
 
-  /* MORE controlled padding */
-  padding: 20px 22px 24px;
+      /* MORE controlled padding */
+      padding: 20px 22px 24px;
 
-  background: rgba(2,6,23,0.38);
-  box-shadow:
-    0 20px 48px rgba(0,0,0,0.65),
-    inset 0 0 0 1px rgba(255,212,71,0.16);
+      background: rgba(2,6,23,0.38);
+      box-shadow:
+        0 20px 48px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,212,71,0.16);
 
-  overflow: hidden;
-  isolation: isolate;
-}
-    
+      overflow: hidden;
+      isolation: isolate;
+    }
+
     .hero-logo-large{
-  transform: translateY(4px);
-}
+      transform: translateY(4px);
+    }
 
+    /* ✅ The logo image itself gets rounded + clipped cleanly */
+    .hero-logo-large{
+      width: 100%;
+      height: auto;
 
-/* ✅ The logo image itself gets rounded + clipped cleanly */
-.hero-logo-large{
-  width: 100%;
-  height: auto;
+      /* KEY FIXES */
+      max-width: 460px;        /* prevents over-scaling */
+      object-fit: contain;    /* NEVER crop */
+      display: block;
 
-  /* KEY FIXES */
-  max-width: 460px;        /* prevents over-scaling */
-  object-fit: contain;    /* NEVER crop */
-  display: block;
+      /* visual breathing room */
+      margin: 6px auto;
 
-  /* visual breathing room */
-  margin: 6px auto;
-   /* NEW */
-  border-radius: 14px; /* try 12–16px if you want to tune */
-}
+      border-radius: 14px;
+    }
 
     .hero-logo-wrap::before{
       content:"";
@@ -506,11 +504,11 @@
           <div class="dropdown-panel">
             <a href="./services-secureops.html">
               Watchtower SecureOps™
-              <span class="sub">Services delivered by people &amp; platform</span>
+              <span class="sub">Managed security operations</span>
             </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+              <span class="sub">DoD/DIB SecureOps variant</span>
             </a>
           </div>
         </div>
@@ -550,30 +548,32 @@
           <img class="hero-logo-large" src="./Watchtower_Logo.png" alt="enLight10 Watchtower" />
         </div>
 
+        <!-- ✅ SIMPLIFIED: fewer concepts up front -->
         <p class="tagline">
-          <strong>enLight10 Solutions</strong> is the company. <strong>Watchtower™</strong>
-          is the flagship brand family that unites our Watchtower<strong>
-          <span class="text-gradient gradient-red"> SecureOps™</span>
-          </strong> services line, the Watchtower<strong> <span class="flat-gold"> CRP™</span>
-          </strong> Cyber Reasoning Platform, and <strong>
-          <span class="text-gradient gradient-gold">Cyber Defense United™</span>
-          </strong> — the DoD/DIB SecureOps variant.
+          <strong>enLight10 Solutions</strong> delivers <strong>Watchtower™</strong> — a security operations offering built
+          for high-stakes environments.
+          <br /><br />
+          <strong><span class="text-gradient gradient-red">SecureOps™</span></strong> is our managed service for enterprise, MSSPs, and SMBs.
+          <strong><span class="text-gradient gradient-gold">Cyber Defense United™</span></strong> is the DoD/DIB mission variant.
+          <br /><br />
+          Powered by <strong><span class="flat-gold">CRP™</span></strong> — our reasoning and evidence layer (details below).
         </p>
       </div>
 
       <!-- RIGHT -->
       <div class="hero-right">
+        <!-- ✅ SIMPLIFIED headline: lead with outcome -->
         <h1 class="hero-title">
-          <span class="wt-white">Watchtower</span>
+          <span class="wt-white">Managed</span>
           <span class="text-gradient gradient-red"> SecureOps™</span>
-          &nbsp;&amp;&nbsp;
-          <span class="text-gradient gradient-gold">Cyber Defense United™</span>
+          &nbsp;for&nbsp;
+          <span class="text-gradient gradient-gold">DoD, DIB &amp; Critical Teams</span>
         </h1>
 
+        <!-- ✅ SIMPLIFIED subtitle: plain language, fewer acronyms -->
         <p class="hero-subtitle">
-          Modern SecureOps delivered by people and platform together: Watchtower SecureOps for
-          enterprise, MSSPs, and SMBs — and Cyber Defense United for DoD and DIB missions that
-          need cATO-ready monitoring, ZTA-aligned architectures, and evidence you can defend.
+          We help teams detect, investigate, respond, and report with confidence.
+          Less noise. Clearer decisions. Evidence you can defend — for operations, leadership, and audits.
         </p>
 
         <div class="hero-video-wrapper">
@@ -610,14 +610,13 @@
   <!-- MAIN -->
   <main class="light">
     <div class="page-wrap">
-      <!-- BRAND FAMILY -->
+
+      <!-- WHAT WE DO (replaces repetitive “brand family” framing) -->
       <section class="section-block slim">
-        <h2 class="section-title">The Watchtower™ Brand Family</h2>
+        <h2 class="section-title">What We Deliver</h2>
         <p class="section-lead">
-          Under <strong>enLight10 Solutions</strong>, Watchtower™ is the organizing brand for how we deliver cyber defense:
-          <strong>Watchtower SecureOps™</strong> (services delivered by people &amp; platform),
-          <strong>Watchtower CRP™</strong> (the Cyber Reasoning Platform), and
-          <strong>Cyber Defense United™</strong> (our DoD/DIB SecureOps variant).
+          Security operations that work in the real world — for stretched teams, complex tool stacks, and high accountability.
+          We focus on outcomes first: fast triage, defensible investigations, and disciplined response.
         </p>
 
         <div class="offerings-band">
@@ -625,8 +624,8 @@
             <article class="card">
               <h3>Watchtower SecureOps™</h3>
               <p>
-                A SecureOps services line built on Watchtower that delivers monitoring, hunt, IR, and reporting —
-                tuned to how different organizations actually operate.
+                Managed security operations delivered by people and platform together —
+                monitoring, triage, investigation support, and reporting.
               </p>
               <div class="pill-row">
                 <span class="mini-pill">Enterprise</span>
@@ -634,145 +633,146 @@
                 <span class="mini-pill">SMB Lite</span>
               </div>
               <ul>
-                <li>24/7 monitoring &amp; triage options</li>
-                <li>Use-case engineering and tuning</li>
-                <li>Operational reporting and evidence</li>
+                <li>Noise reduction + triage</li>
+                <li>Investigation support &amp; escalation</li>
+                <li>Operational reporting &amp; evidence</li>
               </ul>
+              <p style="margin-top:0.8rem;">
+                <a href="./services-secureops.html" class="text-link">SecureOps services →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Cyber Defense United™</h3>
+              <p>
+                The DoD/DIB SecureOps engagement — tuned for mission environments, constrained networks,
+                and leadership-grade visibility.
+              </p>
+              <ul>
+                <li>Continuous monitoring enablement</li>
+                <li>On-prem / constrained deployments</li>
+                <li>Evidence for oversight and audits</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a href="./services-cyber-defense-united.html" class="text-link">Cyber Defense United →</a>
+              </p>
             </article>
 
             <article class="card">
               <h3>Watchtower CRP™</h3>
               <p>
-                The <strong>Cyber Reasoning Platform</strong> powering SecureOps — fusing signals into narrative,
-                evidence, and decisions.
+                The platform that powers our workflows — turning signals into a clear narrative,
+                timeline, and evidence pack for decision makers.
               </p>
               <ul>
-                <li><strong>Guardian</strong> — alert triage</li>
-                <li><strong>Seek</strong> — correlations / buckets</li>
-                <li><strong>Atlas</strong> — investigations &amp; evidence</li>
-                <li><strong>Assist</strong> — analyst + leadership copilot</li>
-                <li><strong>Deploy</strong> — automation / SOAR patterns</li>
+                <li>Cases over alert spam</li>
+                <li>Timeline + artifacts built in</li>
+                <li>Repeatable ops patterns</li>
               </ul>
               <p style="margin-top:0.8rem;">
                 <a href="./watchtower.html" class="text-link">Explore Watchtower CRP →</a>
               </p>
             </article>
+          </div>
+        </div>
+      </section>
 
+      <!-- SERVICE OPTIONS (adds “bundles” without prices; keeps it simple) -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Service Options</h2>
+        <p class="section-lead">
+          Clear options, flexible scope. Pricing depends on coverage needs, environment size, and integration complexity.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
             <article class="card">
-              <h3>Cyber Defense United™</h3>
+              <h3>SecureOps Lite</h3>
               <p>
-                DoD/DIB-focused SecureOps built on Watchtower — tailored for mission networks and high-stakes programs.
+                Best for smaller teams that need SOC-grade help without SOC headcount.
               </p>
               <ul>
-                <li>cATO enablement &amp; continuous monitoring</li>
-                <li>On-prem / air-gapped deployments</li>
-                <li>ZTA-aligned architectures + reporting</li>
-                <li>CMMC evidence integration</li>
-                <li>IR, hunt, and leadership briefs</li>
+                <li>Business-hours or extended-hours coverage</li>
+                <li>Triage + escalation</li>
+                <li>Monthly reporting</li>
               </ul>
-              <p style="margin-top:0.8rem;">
-                <a href="./services-cyber-defense-united.html" class="text-link">See Cyber Defense United →</a>
+            </article>
+
+            <article class="card">
+              <h3>SecureOps Core</h3>
+              <p>
+                Best for regulated orgs and growing programs that need consistent operations and evidence.
+              </p>
+              <ul>
+                <li>Expanded monitoring + investigation support</li>
+                <li>Response coordination and documentation</li>
+                <li>Use-case tuning and continuous improvement</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>SecureOps Advanced</h3>
+              <p>
+                Best for mission-critical environments and partners needing deeper augmentation.
+              </p>
+              <ul>
+                <li>24/7 options + named support paths</li>
+                <li>Hunting / proactive analysis options</li>
+                <li>Executive / oversight brief artifacts</li>
+              </ul>
+            </article>
+          </div>
+
+          <p style="margin-top:1rem; color:#334155; line-height:1.7;">
+            <strong>Partner option:</strong> SecureOps for MSSPs (co-managed or augmentation). We help reduce analyst load and improve
+            investigation quality without forcing you to replace your stack.
+          </p>
+        </div>
+      </section>
+
+      <!-- WHY (keep your strengths; simpler wording) -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Why Watchtower?</h2>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Less Switching, More Defending</h3>
+              <p>
+                Reduce dashboard hopping. Bring context, actions, and documentation together so analysts can move faster.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Evidence Built In</h3>
+              <p>
+                Every investigation produces a defensible record — timeline, decisions, and artifacts you can brief or audit.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Built by Operators</h3>
+              <p>
+                Designed for real SOC/NOSC tempo, constrained environments, and leadership-grade reporting.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- WHAT IS CRP -->
+      <!-- COMPLIANCE (condensed; still present, less jargon) -->
       <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">What Is a Cyber Reasoning Platform?</h2>
+        <h2 class="section-title">Compliance-Ready Operations</h2>
         <p class="section-lead">
-          Traditional tools generate alerts. Analysts chase noise. Compliance drains time.
-          A <strong>Cyber Reasoning Platform</strong> changes the model by focusing on behavior, intent,
-          and the evidence your commanders, CISOs, and auditors need.
+          We focus on the operational reality behind oversight frameworks: monitoring, incident handling, and proof of execution.
         </p>
 
         <div class="band">
           <div class="grid-3">
             <article class="card">
-              <h3>Understands Behavior</h3>
+              <h3>Continuous Monitoring</h3>
               <p>
-                Watchtower CRP ingests signals from your existing tools and focuses on
-                <strong>intent and impact</strong> — not just signatures or single events.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Explains in Plain Language</h3>
-              <p>
-                Each investigation includes narrative + timeline + supporting evidence,
-                so leaders and auditors see the same story as analysts.
-              </p>
-            </article>
-            <article class="card">
-              <h3>Drives Action</h3>
-              <p>
-                Reasoning, risk, and recommended actions are surfaced together — moving you from
-                “something happened” to “here’s what we’re doing about it.”
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICES ALIGNMENT -->
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">Watchtower SecureOps™ Services</h2>
-        <p class="section-lead">
-          Watchtower SecureOps brings people and platform together — using the CRP as the reasoning engine
-          behind SOC workflows, reporting, and evidence. Cyber Defense United sits on top as the flagship
-          engagement for DoD and DIB missions.
-        </p>
-
-        <div class="band">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Cyber Defense United™</h3>
-              <p>
-                SOC and NOSC modernization built around Watchtower for DoD and DIB:
-                tiering, escalation paths, shift ops, reporting, and battle rhythm — aligned with cATO and RMF realities.
-              </p>
-              <p style="margin-top:0.8rem;">
-                <a href="./services-cyber-defense-united.html" class="text-link">Learn more →</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>SecureOps for Enterprise &amp; MSSPs</h3>
-              <p>
-                A repeatable operating model: WCS-driven detections, Atlas-backed investigations, Assist copilots,
-                and Deploy-powered automation — mapped into your existing SIEM and ticketing stack.
-              </p>
-              <p style="margin-top:0.8rem;">
-                <a href="./services-secureops.html" class="text-link">Platform &amp; SecureOps services →</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>SecureOps Lite (SMB)</h3>
-              <p>
-                SOC-grade workflows without full-SOC headcount. Watchtower captures evidence and reasoning so you can
-                prove what you did and why.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- COMPLIANCE LANES -->
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">cATO, CMMC, and Automation — Built on Watchtower</h2>
-        <p class="section-lead">
-          We focus on the parts of <strong>cATO</strong>, <strong>CMMC</strong>, and automation that depend on your
-          SOC, monitoring, and defensible evidence.
-        </p>
-
-        <div class="band">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Operational cATO Enablement</h3>
-              <p>
-                Continuous monitoring and evidence: Watchtower + your hardening stack + SOAR to produce operational proof
-                your A&amp;A team can use.
+                Turn security operations into consistent, repeatable monitoring with measurable outputs and documented actions.
               </p>
               <p style="margin-top:0.8rem;">
                 <a href="./services-cato.html" class="text-link">cATO enablement →</a>
@@ -780,10 +780,9 @@
             </article>
 
             <article class="card">
-              <h3>CMMC Operations &amp; Evidence</h3>
+              <h3>Evidence for Audits</h3>
               <p>
-                Focused on AU, IR, CM, CA, and RA — where cases, logs, and timelines become
-                <strong>proof of control execution</strong>.
+                Cases, timelines, and reports that support audit questions without weeks of manual reconstruction.
               </p>
               <p style="margin-top:0.8rem;">
                 <a href="./services-cmmc.html" class="text-link">CMMC ops lane →</a>
@@ -791,10 +790,9 @@
             </article>
 
             <article class="card">
-              <h3>Automation &amp; SOAR Optimization</h3>
+              <h3>Automation That Helps</h3>
               <p>
-                Automate enrichment, ticketing, health checks, and compliance workflows — with Watchtower as the reasoning
-                and evidence layer.
+                Improve enrichment, ticketing, and workflows — with reasoning and evidence, not just playbooks.
               </p>
               <p style="margin-top:0.8rem;">
                 <a href="./services-automation.html" class="text-link">Automation services →</a>
@@ -804,7 +802,7 @@
         </div>
       </section>
 
-      <!-- WHO WE SERVE -->
+      <!-- WHO WE SERVE (keep, slight tightening) -->
       <section class="section-block slim" style="margin-top:1.75rem;">
         <h2 class="section-title">Who We Serve</h2>
         <p class="section-lead">
@@ -816,74 +814,76 @@
             <article class="card">
               <h3>Defense &amp; Government</h3>
               <p>
-                Mission networks and cyber operations teams that need traceable decisions and cATO-ready monitoring.
+                Mission networks and operations teams that need traceable decisions and defensible reporting.
               </p>
             </article>
             <article class="card">
-              <h3>Defense Contractors</h3>
+              <h3>Defense Contractors (DIB)</h3>
               <p>
-                Programs that must prove security and compliance without drowning in manual reporting.
+                Programs that must prove security and compliance without drowning in manual work.
               </p>
             </article>
             <article class="card">
               <h3>Security-Focused Businesses</h3>
               <p>
-                Healthcare, finance, and critical services that need SOC-grade capability without a 50-person team.
+                Healthcare, finance, and critical services needing SOC-grade outcomes without SOC-scale overhead.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- WHY -->
+      <!-- WHAT IS CRP (moved lower + simplified; optional depth) -->
       <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">Why enLight10 &amp; Watchtower?</h2>
+        <h2 class="section-title">What Is CRP™?</h2>
+        <p class="section-lead">
+          Most tools generate alerts. CRP focuses on investigations — turning signals into a clear story and evidence you can act on.
+        </p>
 
         <div class="band">
           <div class="grid-3">
             <article class="card">
-              <h3>Less Switching, More Defending</h3>
+              <h3>Understands Context</h3>
               <p>
-                Replace scattered dashboards and tickets with a single narrative view — alerts, context, actions, and
-                documentation in one place.
+                Ingests signals from your existing tools and emphasizes impact and intent — not isolated events.
               </p>
             </article>
-
             <article class="card">
-              <h3>Evidence Built In</h3>
+              <h3>Explains Clearly</h3>
               <p>
-                Every case builds compliance-ready evidence as you work: timelines, decisions, artifacts, and reports
-                mapped to controls.
+                Each case includes a narrative, timeline, and supporting artifacts so analysts and leaders see the same picture.
               </p>
             </article>
-
             <article class="card">
-              <h3>Designed by Operators</h3>
+              <h3>Drives Action</h3>
               <p>
-                Built from real-world SOC/NOSC operations — designed for shift tempo, constrained environments,
-                and leadership-grade reporting.
+                Recommendations and risk are paired with evidence — moving teams from “something happened” to “here’s what we did.”
               </p>
             </article>
           </div>
+
+          <p style="margin-top:0.95rem;">
+            <a href="./watchtower.html" class="text-link">Go deeper on Watchtower CRP →</a>
+          </p>
         </div>
       </section>
 
       <!-- CTA -->
       <section class="section-block slim" style="margin-top:1.75rem;">
         <div class="cta-band">
-          <h2>Ready to Unite Your Cyber Defense?</h2>
+          <h2>Ready to Improve Your Security Operations?</h2>
           <p>
-            Whether you’re running a mission network, securing a defense program, or leading a high-risk small business,
-            the Watchtower brand family can become the core of how you defend — and how you prove it.
+            Tell us what you’re defending, what tools you have, and what success looks like.
+            We’ll recommend the right service option — and show how we produce clear outcomes and defensible evidence.
           </p>
 
           <div class="cta-actions">
             <a class="button primary"
-              href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Watchtower Conversation">
+              href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps / Cyber Defense United Conversation">
               Request a Conversation
             </a>
-            <a class="button ghost" href="./watchtower.html">
-              Learn More About the Watchtower CRP
+            <a class="button ghost" href="./services-secureops.html">
+              Review SecureOps Options
             </a>
           </div>
         </div>
