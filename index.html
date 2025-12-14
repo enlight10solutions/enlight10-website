@@ -96,6 +96,66 @@
       line-height: 1.7;
     }
 
+    /* Logo container with rounded edges + soft light */
+.hero-logo-wrap{
+  position: relative;
+  border-radius: 22px;
+  padding: 14px;
+  background: rgba(2,6,23,0.35);
+  box-shadow:
+    0 20px 48px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,212,71,0.18);
+  overflow: hidden;
+}
+
+/* Soft pulsing light behind logo */
+.hero-logo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255,212,71,0.25),
+    rgba(255,212,71,0.10) 35%,
+    transparent 65%
+  );
+  animation: logoPulse 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* Logo image rounding */
+.hero-logo-large{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pulse animation */
+@keyframes logoPulse{
+  0%   { opacity: 0.45; transform: scale(0.98); }
+  50%  { opacity: 0.75; transform: scale(1.02); }
+  100% { opacity: 0.45; transform: scale(0.98); }
+}
+
+    .flat-gold{
+  color:#facc15;
+  text-shadow: 0 1px 6px rgba(250,204,21,0.35);
+}
+
+    /* Micro vertical adjustment — LEFT side only */
+.hero-left{
+  margin-top: 14px; /* adjust between 10–18px if needed */
+}
+
+    @media (max-width: 900px){
+  .hero-left{
+    margin-top: 0;
+  }
+}
+
     /* ---------------------------
        Text gradient utilities
        --------------------------- */
@@ -506,13 +566,18 @@
     <div class="hero-inner">
       <!-- LEFT -->
       <div class="hero-left">
-        <img class="hero-logo-large" src="./Watchtower_Logo.png" alt="enLight10 Watchtower" />
+        <div class="hero-logo-wrap">
+          <img class="hero-logo-large" src="./Watchtower_Logo.png" alt="enLight10 Watchtower" />
+        </div>
 
         <p class="tagline">
           <strong>enLight10 Solutions</strong> is the company. <strong>Watchtower™</strong>
-          is the flagship brand family that unites our <strong>Watchtower SecureOps™</strong> services line,
-          the <strong>Watchtower CRP™</strong> Cyber Reasoning Platform, and
-          <strong>Cyber Defense United™</strong> — the DoD/DIB SecureOps variant.
+          is the flagship brand family that unites our <strong>
+          <span class="text-gradient gradient-red">Watchtower SecureOps™</span>
+          </strong> services line, the <strong> <span class="flat-gold">Watchtower CRP™</span>
+          </strong> Cyber Reasoning Platform, and <strong>
+          <span class="text-gradient gradient-gold">Cyber Defense United™</span>
+          </strong> — the DoD/DIB SecureOps variant.
         </p>
       </div>
 
