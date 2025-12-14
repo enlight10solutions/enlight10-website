@@ -1,4 +1,4 @@
-<!-- services-secureops.html (FULL FILE REPLACEMENT — hero layout fixes + logo red pulse/border + SecureOps gradient highlights + copy updates) -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT — fixed tagline placement (NOT inside logo frame) + ensured pulsing red glow behind logo) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,42 +90,45 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      gap: 1.1rem;
+      gap: 1rem;
       position: relative;
     }
 
-    /* ✅ Logo frame: subtle red border + pulsing red glow behind (like video outline) */
+    /* ✅ Logo frame: subtle red border + pulsing red glow BEHIND the logo */
     .secops-logo-frame{
       position: relative;
       width: 100%;
       max-width: 420px;
       border-radius: 18px;
       overflow: hidden;
+
       background: rgba(2, 6, 23, 0.35);
       outline: 1px solid rgba(239, 68, 68, 0.22);
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
     }
 
+    /* glow layer */
     .secops-logo-frame::before{
       content:"";
       position:absolute;
-      inset:-20%;
+      inset:-18%;
       background: radial-gradient(
-        circle at 50% 42%,
-        rgba(239, 68, 68, 0.26),
-        rgba(239, 68, 68, 0.12) 35%,
-        transparent 65%
+        circle at 50% 45%,
+        rgba(239, 68, 68, 0.28),
+        rgba(239, 68, 68, 0.14) 38%,
+        transparent 68%
       );
-      filter: blur(10px);
+      filter: blur(12px);
       opacity: 0.55;
       animation: secopsPulse 6.5s ease-in-out infinite;
       pointer-events:none;
+      z-index: 0; /* stays behind image */
     }
 
     @keyframes secopsPulse{
-      0%   { opacity: 0.45; transform: scale(0.98); }
+      0%   { opacity: 0.40; transform: scale(0.98); }
       50%  { opacity: 0.78; transform: scale(1.02); }
-      100% { opacity: 0.45; transform: scale(0.98); }
+      100% { opacity: 0.40; transform: scale(0.98); }
     }
 
     .secops-logo-frame img{
@@ -134,13 +137,13 @@
       display: block;
       border-radius: 18px;
       position: relative;
-      z-index: 1;
+      z-index: 1; /* image above glow */
     }
 
-    /* Tagline paragraph (we are moving it BELOW in markup, but keep styling) */
+    /* ✅ Tagline is OUTSIDE the logo frame (no overlap) */
     .secops-tagline {
       margin: 0;
-      max-width: 520px;
+      max-width: 420px; /* align with logo width */
       color: #e5e7eb;
       line-height: 1.7;
       font-size: 0.98rem;
@@ -184,7 +187,7 @@
       color: #ffffff;
     }
 
-    /* ✅ Inline highlight for SecureOps in the right-side paragraph */
+    /* Inline highlight for SecureOps */
     .secureops-highlight{
       font-weight: 800;
       letter-spacing: 0.01em;
@@ -207,9 +210,7 @@
       background: rgba(2, 6, 23, 0.35);
     }
 
-    /* ---------------------------------
-       HERO pills (CTAs)
-       --------------------------------- */
+    /* HERO pills (CTAs) */
     .secops-hero-actions {
       margin-top: 1.9rem;
       display: flex;
@@ -280,8 +281,7 @@
     }
 
     /* ---------------------------------
-       MAIN BODY (aligned with index/watchtower)
-       + soft red → white band behind cards
+       MAIN BODY
        --------------------------------- */
     main.light {
       background: #ffffff;
@@ -310,7 +310,6 @@
       font-size: 1.02rem;
     }
 
-    /* ✅ Soft SecureOps band: red-tint → white */
     .band-red{
       margin-top: 1.25rem;
       border: 1px solid #e5e7eb;
@@ -365,7 +364,6 @@
       font-size: 0.95rem;
     }
 
-    /* Optional: gently “core” highlight (still soft) */
     .card.core{
       position: relative;
       border-color: rgba(244,63,94,0.22);
@@ -393,17 +391,8 @@
       box-shadow: 0 16px 34px rgba(2, 6, 23, 0.35);
     }
 
-    .secops-cta-band h2 {
-      margin: 0 0 0.55rem;
-      color: #ffffff;
-    }
-
-    .secops-cta-band p {
-      margin: 0;
-      line-height: 1.7;
-      max-width: 900px;
-      color: rgba(229,231,235,0.92);
-    }
+    .secops-cta-band h2 { margin: 0 0 0.55rem; color: #ffffff; }
+    .secops-cta-band p { margin: 0; line-height: 1.7; max-width: 900px; color: rgba(229,231,235,0.92); }
 
     .secops-cta-actions {
       margin-top: 1rem;
@@ -424,6 +413,7 @@
       .secops-hero-right h1, .secops-hero-copy { text-align: left; }
       .secops-hero-actions { justify-content: flex-start; }
       .secops-logo-frame{ max-width: 520px; }
+      .secops-tagline{ max-width: 520px; }
     }
   </style>
 </head>
@@ -486,10 +476,13 @@
       <div class="secops-hero-left">
         <div class="secops-logo-frame">
           <img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps — Services powered by Watchtower CRP" />
-          <p class="secops-tagline"> <strong>Watchtower™</strong> is the flagship brand family. 
-          <em>SecureOps™</em> is our commercial services line —  We’re intentionally small and hands-on. Our work is grounded in real-world security operations and
-            delivered by people and platform together, powered by the Watchtower Cyber Reasoning Platform. </p> </div>       
         </div>
+
+        <p class="secops-tagline">
+          <strong>Watchtower™</strong> is the flagship brand family.
+          <em>SecureOps™</em> is our commercial services line — intentionally small and hands-on, grounded in real-world operations and
+          delivered by people and platform together, powered by the Watchtower Cyber Reasoning Platform.
+        </p>
       </div>
 
       <!-- RIGHT -->
@@ -522,7 +515,8 @@
             </a>
           </div>
         </div>
-      </div>      
+      </div>
+
     </div>
   </section>
 
