@@ -146,26 +146,43 @@
     }
 
     .hero-actions-under-video{
-      margin-top: 1.35rem;
-      display:flex;
-      justify-content:flex-start;
-      align-items:center;
-      gap: 2.25rem;
-      flex-wrap:wrap;
-    }
+  width: 100%;
+  max-width: 960px;          /* match your video wrapper max-width */
+  margin-top: 1.05rem;
+  display: flex;
+  justify-content: space-between; /* spreads them to edges of video width */
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
 
-    .hero-actions-under-video .button{
-      border-radius:999px;
-      padding:0.95rem 1.55rem;
-      line-height:1;
-      font-weight:650;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-height:44px;
-      white-space:nowrap;
-    }
+.hero-actions-under-video .button{
+  border-radius: 999px;
+  padding: 0.78rem 1.2rem;   /* smaller */
+  font-size: 0.92rem;        /* slightly smaller text */
+  line-height: 1;
+  font-weight: 650;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  white-space: nowrap;
+  flex: 0 1 auto;
+}
+
+/* On small screens, stack nicely */
+@media (max-width: 900px){
+  .hero-actions-under-video{
+    max-width: 960px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-actions-under-video .button{
+    width: 100%;
+    max-width: 420px;
+  }
+}
 
     .button.primary.gold{
       color:#0b1120;
@@ -537,13 +554,6 @@
           >
             <source src="https://enlight10media.blob.core.windows.net/media/Intro.mp4" type="video/mp4" />
           </video>
-
-          <div class="video-speed-controls">
-            <span>Playback speed:</span>
-            <button type="button" class="video-speed-btn" data-speed="1">1×</button>
-            <button type="button" class="video-speed-btn" data-speed="1.5">1.5×</button>
-            <button type="button" class="video-speed-btn" data-speed="2">2×</button>
-          </div>
 
           <div class="hero-actions hero-actions-under-video">
             <a class="button primary gold" href="./services-cyber-defense-united.html">
