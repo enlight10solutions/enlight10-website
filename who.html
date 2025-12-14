@@ -1,4 +1,4 @@
-<!-- who.html (About / Founder-focused with dark hero + BIG pulsing logo glow) -->
+<!-- who.html (FULL FILE REPLACEMENT) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,294 +6,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Who We Are — enLight10 Solutions</title>
 
-  <!-- Styles / JS -->
+  <!-- Shared site styles / JS -->
   <link rel="stylesheet" href="./style.css?v=26" />
   <script src="./script.js" defer></script>
-
-  <!-- Favicon -->
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
-  <!-- Page-specific layout -->
   <style>
-    body {
-      margin: 0;
-      background: #f9fafb;
-      color: #020617;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    body{
+      margin:0;
+      background:#f9fafb;
+      color:#020617;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
-
-    /* ----------------------------------
-   Hero pill buttons (shared pattern)
------------------------------------ */
-.about-hero-actions {
-  margin-top: 0.75rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1rem;
-  align-items: center;
-}
-
-.about-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.72rem 1.05rem;
-  border-radius: 999px;
-  font-weight: 650;
-  font-size: 0.95rem;
-  text-decoration: none;
-  line-height: 1;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    background 160ms ease,
-    border-color 160ms ease;
-  user-select: none;
-  white-space: nowrap;
-}
-
-.about-pill:hover {
-  transform: translateY(-1px);
-}
-
-.about-pill:focus-visible {
-  outline: 2px solid rgba(251, 191, 36, 0.65);
-  outline-offset: 3px;
-}
-
-/* Primary (gold) */
-.about-pill.primary {
-  color: #0b1120;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 191, 36, 1) 0%,
-    rgba(245, 158, 11, 1) 100%
-  );
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-}
-
-.about-pill.primary:hover {
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.55);
-}
-
-/* Ghost */
-.about-pill.ghost {
-  color: #fff7d6;
-  background: rgba(15, 23, 42, 0.35);
-  border: 1px solid rgba(251, 191, 36, 0.35);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-}
-
-.about-pill.ghost:hover {
-  border-color: rgba(251, 191, 36, 0.55);
-  background: rgba(15, 23, 42, 0.5);
-}
 
     /* ---------------------------
-       Dark hero (matches newer pages)
+       Hero
        --------------------------- */
-    .about-hero {
+    .about-hero{
+      position:relative;
       background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
-      color: #ffffff;
-      padding: 95px 0 70px; /* clears fixed nav */
-      position: relative;
-      overflow: hidden;
+      color:#fff;
+      padding:95px 0 70px;
+      overflow-x:hidden; /* allow big glow without horizontal scroll */
     }
 
-    .about-hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: center;
+    .about-hero::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(56,189,248,0.10), rgba(2,6,23,0) 55%),
+        radial-gradient(circle at 25% 70%, rgba(251,191,36,0.10), rgba(2,6,23,0) 60%);
+      filter:blur(10px);
+      opacity:0.75;
+      pointer-events:none;
     }
 
-    .about-hero-left {
-      flex: 0 0 380px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      position: relative;
+    .about-hero-inner{
+      position:relative;
+      z-index:1;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:3rem;
+      align-items:center;
     }
 
-    /* Wrapper so we can build a BIG pulse around the logo */
-    .logo-pulse-wrapper {
-      position: relative;
-      display: inline-flex;
-      align-items: flex-start;
-      justify-content: flex-start;
+    .about-hero-left{
+      flex:0 0 380px;
+      display:flex;
+      justify-content:flex-start;
+      align-items:flex-start;
     }
 
-    /* BIG amber pulse (primary) */
-    .logo-pulse-wrapper::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 760px;              /* BIGGER */
-      height: 760px;             /* BIGGER */
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
+    /* Pulse wrapper — FIXED stacking so glow always renders */
+    .logo-pulse-wrapper{
+      position:relative;
+      display:inline-flex;
+      align-items:flex-start;
+      justify-content:flex-start;
+      isolation:isolate; /* key: prevents weird stacking issues */
+      z-index:1;
+    }
+
+    .logo-pulse-wrapper::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:820px;
+      height:820px;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
       background: radial-gradient(
         circle,
-        rgba(245, 158, 11, 0.34) 0%,
-        rgba(245, 158, 11, 0.18) 28%,
-        rgba(245, 158, 11, 0.09) 45%,
-        rgba(245, 158, 11, 0.03) 60%,
-        rgba(245, 158, 11, 0.00) 72%
+        rgba(245,158,11,0.40) 0%,
+        rgba(245,158,11,0.22) 28%,
+        rgba(245,158,11,0.11) 45%,
+        rgba(245,158,11,0.05) 60%,
+        rgba(245,158,11,0.00) 72%
       );
-      filter: blur(22px);
-      opacity: 0.65;
-      animation: e10Pulse 5.8s ease-in-out infinite;
-      z-index: 0;
-      pointer-events: none;
+      filter: blur(24px);
+      opacity:0.75;
+      animation:e10Pulse 5.8s ease-in-out infinite;
+      z-index:-1; /* key: behind logo */
+      pointer-events:none;
     }
 
-    /* HUGE cool pulse (secondary depth) */
-    .logo-pulse-wrapper::after {
-      content: "";
-      position: absolute;
-      left: 52%;
-      top: 52%;
-      width: 1180px;              /* BIGGER */
-      height: 1180px;             /* BIGGER */
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
+    .logo-pulse-wrapper::after{
+      content:"";
+      position:absolute;
+      left:52%;
+      top:52%;
+      width:1220px;
+      height:1220px;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
       background: radial-gradient(
         circle,
-        rgba(56, 189, 248, 0.12) 0%,
-        rgba(56, 189, 248, 0.06) 35%,
-        rgba(56, 189, 248, 0.03) 55%,
-        rgba(56, 189, 248, 0.00) 72%
+        rgba(56,189,248,0.14) 0%,
+        rgba(56,189,248,0.08) 35%,
+        rgba(56,189,248,0.04) 55%,
+        rgba(56,189,248,0.00) 72%
       );
-      filter: blur(34px);
-      opacity: 0.35;
-      animation: e10Pulse2 7.6s ease-in-out infinite;
-      z-index: 0;
-      pointer-events: none;
+      filter: blur(36px);
+      opacity:0.40;
+      animation:e10Pulse2 7.6s ease-in-out infinite;
+      z-index:-2; /* deeper layer */
+      pointer-events:none;
     }
 
-    /* Big logo */
-    .about-hero-logo {
-      width: 100%;
-      max-width: 460px;
-      height: auto;
-      border-radius: 18px;
-      position: relative;
-      z-index: 2;
-      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.65));
+    .about-hero-logo{
+      width:100%;
+      max-width:460px;
+      height:auto;
+      border-radius:18px;
+      position:relative;
+      z-index:2;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.65));
     }
 
-    @keyframes e10Pulse {
-      0%, 100% { opacity: 0.45; transform: translate(-50%, -50%) scale(0.98); }
-      50%      { opacity: 0.82; transform: translate(-50%, -50%) scale(1.06); }
+    @keyframes e10Pulse{
+      0%,100%{ opacity:0.50; transform:translate(-50%,-50%) scale(0.98); }
+      50%{ opacity:0.90; transform:translate(-50%,-50%) scale(1.07); }
+    }
+    @keyframes e10Pulse2{
+      0%,100%{ opacity:0.22; transform:translate(-50%,-50%) scale(0.98); }
+      50%{ opacity:0.48; transform:translate(-50%,-50%) scale(1.05); }
     }
 
-    @keyframes e10Pulse2 {
-      0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.98); }
-      50%      { opacity: 0.44; transform: translate(-50%, -50%) scale(1.04); }
+    .about-hero-right{
+      flex:1 1 360px;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
     }
 
-    .about-hero-right {
-      flex: 1 1 360px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .about-hero-kicker{
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      opacity:0.82;
     }
 
-    .about-hero-kicker {
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.8;
+    .about-hero-right h1{
+      margin:0;
+      font-size:clamp(2rem,2.8vw,2.6rem);
+      font-weight:800;
+      letter-spacing:0.01em;
     }
 
-    .about-hero-right h1 {
-      margin: 0;
-      font-size: clamp(2rem, 2.8vw, 2.6rem);
-      font-weight: 700;
+    .about-hero-copy{
+      margin:0;
+      font-size:1rem;
+      line-height:1.75;
+      color:#e5e7eb;
+      max-width:640px;
+    }
+    .about-hero-copy strong{ color:#fff; font-weight:700; }
+
+    /* Hero pills */
+    .about-hero-actions{
+      margin-top:0.35rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.75rem 1rem;
+      align-items:center;
     }
 
-    .about-hero-copy {
-      margin: 0;
-      font-size: 1rem;
-      line-height: 1.75;
-      color: #e5e7eb;
-      max-width: 620px;
+    .about-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.78rem 1.10rem;
+      border-radius:999px;
+      font-weight:650;
+      font-size:0.95rem;
+      text-decoration:none;
+      line-height:1;
+      transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+      user-select:none;
+      white-space:nowrap;
     }
 
-    .about-hero-copy strong {
-      font-weight: 650;
+    .about-pill:hover{ transform:translateY(-1px); }
+    .about-pill:focus-visible{
+      outline:2px solid rgba(251,191,36,0.65);
+      outline-offset:3px;
     }
 
-    .about-hero-actions {
-      margin-top: 0.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.2rem;
-      align-items: center;
+    .about-pill.primary{
+      color:#0b1120;
+      background: linear-gradient(180deg, rgba(251,191,36,1) 0%, rgba(245,158,11,1) 100%);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+    }
+    .about-pill.primary:hover{ box-shadow: 0 16px 34px rgba(0,0,0,0.55); }
+
+    .about-pill.ghost{
+      color:#fff7d6;
+      background: rgba(15,23,42,0.35);
+      border: 1px solid rgba(251,191,36,0.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .about-pill.ghost:hover{
+      border-color: rgba(251,191,36,0.55);
+      background: rgba(15,23,42,0.50);
     }
 
-    /* Light body (same pattern as other pages) */
-    main.light {
-      background: #ffffff;
-      color: #020617;
-      padding: 60px 0;
+    /* ---------------------------
+       Main (organized like CDU)
+       --------------------------- */
+    main.light{
+      background:#ffffff;
+      color:#020617;
+      padding:60px 0;
     }
 
-    @media (max-width: 900px) {
-      .about-hero-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-      }
+    .about-section{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
+    }
 
-      .about-hero-left,
-      .about-hero-right {
-        width: 100%;
-        flex: 1 1 auto;
-      }
+    .about-grid{
+      margin-top:1.1rem;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:1.1rem;
+    }
 
-      .about-hero-left {
-        justify-content: center;
-      }
+    .about-card{
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:1.15rem 1.15rem;
+      background:#fff;
+      box-shadow:0 10px 22px rgba(2,6,23,0.06);
+    }
 
-      /* Reduce glow on mobile so it doesn’t dominate the screen */
-      .logo-pulse-wrapper::before {
-        width: 680px;
-        height: 680px;
-      }
-      .logo-pulse-wrapper::after {
-        width: 860px;
-        height: 860px;
-      }
+    .about-card h3{
+      margin:0 0 0.55rem;
+      font-size:1.02rem;
+      letter-spacing:0.01em;
+    }
+
+    .about-card p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .about-list{
+      margin:0.75rem 0 0;
+      padding-left:1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .about-lanes{
+      margin-top:1.15rem;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:1.1rem;
+    }
+
+    .about-lane{
+      border:1px solid #e5e7eb;
+      border-radius:16px;
+      padding:1.15rem 1.15rem;
+      background:#fff;
+      box-shadow:0 10px 22px rgba(2,6,23,0.06);
+    }
+    .about-lane h3{ margin:0 0 0.55rem; }
+    .about-lane p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .about-cta-band{
+      margin-top:1.25rem;
+      border-radius:18px;
+      padding:1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color:#e5e7eb;
+      border:1px solid rgba(251,191,36,0.22);
+      box-shadow:0 16px 34px rgba(2,6,23,0.35);
+    }
+    .about-cta-band h2{ margin:0 0 0.55rem; color:#fff; }
+    .about-cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
+
+    .about-cta-actions{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.9rem 1.2rem;
+      align-items:center;
+    }
+
+    /* Footer e10 helper */
+    .footer-e10{
+      margin-top:0.75rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:0.5rem;
+      width:100%;
+      text-align:center;
+    }
+    .footer-e10 img{ width:28px; height:28px; border-radius:6px; }
+    footer .footer-e10 span{ font-size:0.8rem; color: rgba(229,231,235,0.78); }
+
+    @media (max-width: 980px){
+      .about-grid{ grid-template-columns: 1fr; }
+      .about-lanes{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px){
+      .about-hero-inner{ flex-direction:column; align-items:center; }
+      .about-hero-left,.about-hero-right{ width:100%; flex:1 1 auto; }
+      .about-hero-left{ justify-content:center; }
+
+      .logo-pulse-wrapper::before{ width:680px; height:680px; }
+      .logo-pulse-wrapper::after{ width:860px; height:860px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- NAV (match newer site structure) -->
+  <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img
-        class="brand-logo brand-logo--slim"
-        src="./enLight10_Logo.png"
-        alt="enLight10 Solutions"
-      />
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
     </a>
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- SERVICES DROPDOWN (SecureOps + CDU only) -->
         <div class="dropdown">
-          <button
-            class="dropdown-toggle"
-            type="button"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
             Services ▾
           </button>
           <div class="dropdown-panel">
@@ -308,25 +362,13 @@
           </div>
         </div>
 
-        <!-- PRODUCT LINK -->
         <a href="./watchtower.html">Watchtower CRP</a>
-
-        <!-- ABOUT -->
         <a href="./who.html" aria-current="page">Who We Are</a>
-
-        <!-- CONTACT -->
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
-      <!-- Hamburger (mobile) -->
-      <button
-        id="menuToggle"
-        class="hamburger"
-        aria-label="Toggle mobile menu"
-        aria-expanded="false"
-        aria-controls="mobileMenu"
-        type="button"
-      >
+      <button id="menuToggle" class="hamburger"
+        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -336,9 +378,7 @@
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">
-        Services
-      </strong>
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
       <a href="./services-secureops.html">Watchtower SecureOps™</a>
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
@@ -348,133 +388,152 @@
     </nav>
   </aside>
 
-  <!-- HERO: Who We Are -->
+  <!-- HERO -->
   <section class="about-hero">
     <div class="about-hero-inner">
-
-      <!-- LEFT: Logo with BIG pulse -->
       <div class="about-hero-left">
         <div class="logo-pulse-wrapper">
-          <img
-            src="./enLight10_Logo.png"
-            alt="enLight10 Solutions"
-            class="about-hero-logo"
-          />
+          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" class="about-hero-logo" />
         </div>
       </div>
 
-      <!-- RIGHT: Text -->
       <div class="about-hero-right">
         <div class="about-hero-kicker">Who We Are</div>
-        <h1>Built by operators. Focused on mission outcomes.</h1>
+        <h1>Built by operators. Focused on outcomes.</h1>
 
         <p class="about-hero-copy">
-          <strong>enLight10 Solutions</strong> is a veteran-owned cybersecurity company focused on supporting
-          government and defense operations — and building <strong>Watchtower</strong>, a SOC platform shaped by
-          real-world experience.
+          <strong>enLight10 Solutions</strong> is a veteran-owned cybersecurity company supporting defense and commercial
+          environments — and building <strong>Watchtower</strong>, a SOC platform shaped by real-world operations.
         </p>
 
         <p class="about-hero-copy">
-          We operate at the intersection of practitioner reality, mission constraints, and modern technology.
-          The work we do — and the platform we’re building — comes from lived experience inside cyber teams
-          responsible for critical infrastructure, defense networks, and national-level missions.
+          We help teams bring order to tool sprawl, improve response speed, and produce defensible evidence:
+          <strong>what happened → what it meant → what we did</strong>.
         </p>
 
         <div class="about-hero-actions">
-  <a
-    class="about-pill primary"
-    href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation"
-  >
-    Start a Conversation
-  </a>
-
-  <a class="about-pill ghost" href="./watchtower.html">
-    Explore Watchtower CRP
-  </a>
-</div>
+          <a class="about-pill primary"
+            href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation">
+            Start a Conversation
+          </a>
+          <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP</a>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- MAIN (light) -->
+  <!-- MAIN -->
   <main class="light">
-    <!-- Founder Bio -->
-    <section class="section-block slim">
-      <h2>Founder</h2>
+    <div class="about-section">
+      <section class="section-block slim">
+        <h2>What We Deliver</h2>
+        <p class="lead">
+          We combine operational cyber defense experience with platform-building discipline — so customers get real
+          security outcomes today, and a clearer operating picture over time.
+        </p>
 
-      <p>
-        enLight10 Solutions was founded by <strong>Jay Moreno</strong>, a cybersecurity operator and leader with over
-        15 years of technical experience and 9 years dedicated to defensive cyber operations across military, federal,
-        and government contracting environments.
-      </p>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Security Operations &amp; Incident Response</h3>
+            <p>
+              Monitoring, triage, investigations, and response support — designed for environments where speed,
+              clarity, and evidence matter.
+            </p>
+            <ul class="about-list">
+              <li>Case-based workflows with timelines and artifacts</li>
+              <li>Actionable recommendations and IR reporting</li>
+              <li>Operational cadence: daily/weekly/monthly reporting</li>
+            </ul>
+          </article>
 
-      <ul class="clean">
-        <li><strong>U.S. Air Force (Active Duty):</strong> early career in network operations and enterprise command-and-control support.</li>
-        <li><strong>U.S. Army National Guard &amp; Deployment:</strong> systems administration, IT modernization, and deployed communications support across multiple theaters.</li>
-        <li><strong>Cyber Protection Team (CPT):</strong> selected as one of the top cybersecurity operators across the Guard (~20,000 personnel).</li>
-        <li><strong>USCYBERCOM–Aligned Missions:</strong> threat hunter supporting Cyber National Mission Teams and hunt-forward operations.</li>
-        <li><strong>GG-13 Cyber Hunt Lead:</strong> led advanced hunt operations with NSA Texas and international deployments supporting U.S. and allied defense partners.</li>
-        <li><strong>SOC &amp; Ops Leadership:</strong> directed security operations, IR, threat hunting, automation efforts, and security modernization programs.</li>
-      </ul>
+          <article class="about-card">
+            <h3>Engineering &amp; Tool Integration</h3>
+            <p>
+              We help you connect the tools you already own and reduce dashboard chaos — including log pipelines,
+              SIEM/EDR integration, and automation glue.
+            </p>
+            <ul class="about-list">
+              <li>SIEM onboarding + tuning and use-case engineering</li>
+              <li>Identity, endpoint, and network data integration</li>
+              <li>Automation and ITSM enrichment patterns</li>
+            </ul>
+          </article>
 
-      <p style="margin-top:1rem;">
-        Jay’s operational focus — from CPT missions and hunt operations to enterprise SOC leadership — directly informs
-        how Watchtower is being built and how we support customers today.
-      </p>
-    </section>
+          <article class="about-card">
+            <h3>Watchtower Platform</h3>
+            <p>
+              Watchtower is our operating workspace for investigations, evidence, and reasoning — built to help
+              defenders decide faster and communicate clearly.
+            </p>
+            <ul class="about-list">
+              <li>Evidence packs for audits and leadership</li>
+              <li>Analyst-assist summaries and report drafting</li>
+              <li>Designed for constrained / real-world operations</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-    <!-- Credibility / Certifications -->
-    <section class="section-block slim">
-      <h2>Clearance &amp; Certifications</h2>
-      <ul class="clean">
-        <li><strong>Clearance:</strong> Active TS/SCI eligible</li>
-        <li><strong>Certifications:</strong> CISSP, GCIA, CySA+, Security+</li>
-        <li><strong>Education:</strong> M.S. Cybersecurity, B.S. Computer Science</li>
-      </ul>
-    </section>
+      <section class="section-block slim">
+        <h2>How We Work</h2>
+        <p class="lead">
+          We’re hands-on, subcontract-friendly, and mission-aligned. We don’t add complexity for its own sake — we
+          simplify operations and improve outcomes.
+        </p>
 
-    <!-- Why We're Building -->
-    <section class="section-block slim">
-      <h2>Why We’re Building Watchtower</h2>
-      <p>
-        After years inside SOCs and cyber missions, one pattern was constant: analysts spent too much time navigating tools
-        and too little time understanding the threat or telling the story of the incident.
-      </p>
-      <p>
-        Watchtower exists to change that — giving analysts one place to investigate, document, and communicate clearly.
-      </p>
+        <div class="about-lanes">
+          <article class="about-lane">
+            <h3>Operator-first</h3>
+            <p>
+              We design around the analyst workflow: triage → investigate → contain → report. If it doesn’t help
+              operations, it doesn’t ship.
+            </p>
+          </article>
 
-      <p style="margin-top:.5rem;">
-        Learn more on the <a href="./watchtower.html" class="text-link">Watchtower page →</a>
-      </p>
-    </section>
+          <article class="about-lane">
+            <h3>Evidence-first</h3>
+            <p>
+              Security work has to stand up to scrutiny. We build repeatable documentation: timelines, artifacts,
+              decisions, and reporting that auditors and leaders can understand.
+            </p>
+          </article>
 
-    <!-- Business -->
-    <section class="section-block slim">
-      <h2>How We Work</h2>
-      <ul class="clean">
-        <li>Mission-aligned, not vendor-driven</li>
-        <li>Subcontract-friendly and partnership-focused</li>
-        <li>Built for long-term operational trust</li>
-        <li>If it doesn't help the mission — we don't do it</li>
-      </ul>
-    </section>
+          <article class="about-lane">
+            <h3>Integration, not replacement</h3>
+            <p>
+              You keep your existing tools. We connect and rationalize them, then layer automation and reasoning
+              on top to reduce time-to-answer.
+            </p>
+          </article>
 
-    <!-- CTA -->
-    <section class="section-block slim">
-      <h2>Connect With Us</h2>
-      <p>
-        Whether you're exploring Watchtower, looking for cybersecurity support, or discussing teaming opportunities —
-        we’re open to a straightforward conversation.
-      </p>
+          <article class="about-lane">
+            <h3>Human-in-the-loop AI</h3>
+            <p>
+              AI is for acceleration, not autopilot. Summaries, drafting, and suggestion flows are controlled by
+              analysts, with traceability baked in.
+            </p>
+          </article>
+        </div>
+      </section>
 
-      <div style="margin-top:1.5rem;">
-        <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Government Cyber / Watchtower Inquiry">
-          Start a Conversation
-        </a>
-      </div>
-    </section>
+      <section class="section-block slim">
+        <div class="about-cta-band">
+          <h2>Connect with us</h2>
+          <p>
+            Whether you’re exploring Watchtower, looking for SOC support, or discussing teaming opportunities —
+            we’re open to a straightforward conversation about your environment and what “better” looks like.
+          </p>
+
+          <div class="about-cta-actions">
+            <a class="about-pill primary"
+              href="mailto:info@enlight10solutions.com?subject=enLight10 / Intro Conversation">
+              Start a Conversation
+            </a>
+            <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP</a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- FOOTER -->
@@ -493,9 +552,9 @@
       </div>
 
       <div class="footer-e10">
-  <img src="./e10_Logo.png" alt="e10 icon" />
-  <span>enLight10 on social &amp; GitHub</span>
-</div>
+        <img src="./e10_Logo.png" alt="e10 icon" />
+        <span>enLight10 on social &amp; GitHub</span>
+      </div>
     </div>
   </footer>
 </body>
