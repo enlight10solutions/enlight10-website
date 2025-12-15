@@ -1,0 +1,397 @@
+<!-- capabilities.html (FULL FILE — matches site theme + simple, prime/gov-friendly download page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Capabilities — enLight10 Solutions</title>
+  <meta
+    name="description"
+    content="Download the enLight10 Solutions Capability Statement (PDF) — Watchtower SecureOps™ and Cyber Defense United™."
+  />
+
+  <!-- Shared styles / JS (match index) -->
+  <link rel="stylesheet" href="./style.css?v=27" />
+  <script src="./script.js?v=27" defer></script>
+
+  <!-- Preload + Favicon -->
+  <link rel="preload" as="image" href="./enLight10_Logo.png" />
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <style>
+    /* Keep consistent global background */
+    body{
+      background:#f9fafb;
+      color:#020617;
+      overflow-x:hidden;
+    }
+
+    /* Page hero (dark, like home) */
+    .cap-hero{
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
+      color:#fff;
+
+      /* match your “hero under nav” behavior */
+      padding-top: 44px;
+      border-bottom: 1px solid rgba(250,204,21,0.18);
+    }
+
+    .cap-hero-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.6rem 1.5rem 1.75rem;
+      display:flex;
+      gap: 1.75rem;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .cap-hero h1{
+      margin:0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    }
+
+    .cap-hero p{
+      margin: 0.65rem 0 0;
+      max-width: 860px;
+      opacity: 0.92;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .cap-actions{
+      display:flex;
+      gap: 0.9rem;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+    /* Page content */
+    main.light{
+      background:#ffffff;
+      color:#020617;
+      padding: 44px 0 60px;
+    }
+
+    .page-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
+    }
+
+    .band{
+      position: relative;
+      border: 1px solid rgba(255, 212, 71, 0.18);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 12% 45%, rgba(220, 38, 38, 0.16), transparent 48%),
+        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.18), transparent 52%),
+        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), rgba(255, 212, 71, 0.16) 45%, transparent 70%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.1rem;
+      align-items: start;
+      margin-top: 1rem;
+    }
+
+    .card{
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 14px 34px rgba(2,6,23,0.08);
+    }
+
+    .card h2, .card h3{
+      margin:0 0 0.55rem;
+      font-weight: 850;
+      letter-spacing: 0.01em;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .card p{
+      margin:0.35rem 0 0;
+      color:#334155;
+      line-height: 1.7;
+      font-size: 0.96rem;
+    }
+
+    .mini-list{
+      margin:0.75rem 0 0;
+      padding-left: 1.1rem;
+      color:#334155;
+      line-height:1.7;
+      font-size:0.95rem;
+    }
+
+    /* “Button” styling consistent with your site */
+    .btn-row{
+      display:flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      align-items:center;
+      margin-top: 0.9rem;
+    }
+
+    .button{
+      border-radius: 999px;
+      padding: 0.80rem 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .button.primary.gold{
+      color:#0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .button.primary.gold:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(250, 204, 21, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.30);
+    }
+
+    .button.ghost{
+      color:#0b1120;
+      background: rgba(2,6,23,0.03);
+      border: 1px solid rgba(2,6,23,0.14);
+    }
+
+    .button.ghost:hover{
+      background: rgba(2,6,23,0.06);
+      transform: translateY(-1px);
+    }
+
+    .meta{
+      margin-top: 0.9rem;
+      font-size: 0.88rem;
+      color: rgba(148, 163, 184, 0.92);
+    }
+
+    .meta strong{
+      color: rgba(255,255,255,0.92);
+    }
+
+    .note{
+      margin-top: 0.85rem;
+      font-size: 0.92rem;
+      color:#475569;
+      line-height: 1.7;
+    }
+
+    .inline-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.34rem 0.62rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      font-weight: 750;
+      margin-right: 0.45rem;
+      margin-bottom: 0.45rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 960px){
+      .grid-2{ grid-template-columns: 1fr; }
+      .cap-actions{ width: 100%; justify-content: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOP BAR (same structure as index) -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Services ▾
+          </button>
+          <div class="dropdown-panel">
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Managed security operations</span>
+            </a>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB SecureOps variant</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="./watchtower.html">Cyber Reasoning Platform</a>
+        <a href="./capabilities.html" aria-current="page">Capabilities</a>
+        <a href="./who.html">Who We Are</a>
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
+
+      <button id="menuToggle" class="hamburger"
+        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
+      <hr />
+      <a href="./watchtower.html">Cyber Reasoning Platform</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- HERO -->
+  <header class="cap-hero">
+    <div class="cap-hero-inner">
+      <div>
+        <h1>Capabilities</h1>
+        <p>
+          Download our Capability Statement for <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> —
+          managed security operations, advisory, and AI-augmented security workflows aligned to mission-driven environments.
+        </p>
+      </div>
+
+      <div class="cap-actions">
+        <a class="button primary gold" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
+          Download PDF
+        </a>
+        <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Capability%20Statement%20Request">
+          Request a Conversation
+        </a>
+      </div>
+
+      <!-- Optional quick meta line (keep it simple; edit/remove as needed) -->
+      <div class="meta">
+        <strong>enLight10 Solutions, LLC</strong> • Honolulu, HI • Remote / U.S. Coverage
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="light">
+    <div class="page-wrap">
+
+      <section class="band" aria-label="Capability Statement download and summary">
+        <div class="grid-2">
+
+          <!-- LEFT: What it is -->
+          <article class="card">
+            <h2>Capability Statement (PDF)</h2>
+            <p>
+              This document is designed for primes, government stakeholders, and mission-driven organizations
+              that need a clear summary of our services, differentiators, and operating model.
+            </p>
+
+            <div class="btn-row">
+              <a class="button primary gold" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
+                Open / Download PDF
+              </a>
+              <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Capabilities%20-%20Intro%20Call">
+                Schedule Intro
+              </a>
+            </div>
+
+            <p class="note">
+              If the PDF doesn’t open, ensure the file name is exactly:
+              <strong>Capability_Statement.pdf</strong> (case-sensitive on some hosts).
+            </p>
+          </article>
+
+          <!-- RIGHT: Quick bullets for credibility + alignment -->
+          <aside class="card">
+            <h3>What You’ll Find Inside</h3>
+            <p>
+              A quick-read summary aligned to how cyber capabilities are evaluated in real acquisition and delivery.
+            </p>
+
+            <ul class="mini-list">
+              <li>Managed security operations (SecureOps™ / Cyber Defense United™)</li>
+              <li>Advisory &amp; vCISO services</li>
+              <li>Compliance and audit-readiness support</li>
+              <li>AI-augmented workflows via Watchtower CRP (reasoning + evidence)</li>
+              <li>NAICS and company identifiers</li>
+            </ul>
+
+            <div style="margin-top:0.95rem;">
+              <span class="inline-pill">Operator-Led</span>
+              <span class="inline-pill">Evidence-First</span>
+              <span class="inline-pill">Works With Your Stack</span>
+              <span class="inline-pill">DoD/DIB Ready</span>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (keep consistent with index) -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+
+      <p class="footer-info">
+        <a href="./capabilities.html">Capabilities Statement</a> •
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <!-- Optional: keep or remove (your call) -->
+      <div style="margin-top:0.75rem; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+        <img src="./e10_Logo.png" alt="e10 icon" style="width:28px; height:28px; border-radius:6px;" />
+        <span style="font-size:0.8rem; opacity:0.7;">enLight10 on social &amp; GitHub</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
