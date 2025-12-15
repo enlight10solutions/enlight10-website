@@ -1,4 +1,4 @@
-<!-- capabilities.html (FULL FILE — matches site theme + simple, prime/gov-friendly download page) -->
+<!-- capabilities.html (FULL FILE REPLACEMENT — matches who.html hero/pulse + blue radiant buttons + e10-band styling) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
     content="Download the enLight10 Solutions Capability Statement (PDF) — Watchtower SecureOps™ and Cyber Defense United™."
   />
 
-  <!-- Shared styles / JS (match index) -->
+  <!-- Shared styles / JS -->
   <link rel="stylesheet" href="./style.css?v=27" />
   <script src="./script.js?v=27" defer></script>
 
@@ -20,217 +20,419 @@
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
-    /* Keep consistent global background */
     body{
+      margin:0;
       background:#f9fafb;
       color:#020617;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       overflow-x:hidden;
     }
 
-    /* Page hero (dark, like home) */
+    /* ---------------------------
+       HERO (match who.html)
+       --------------------------- */
     .cap-hero{
-      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
+      position:relative;
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
       color:#fff;
+      padding:95px 0 70px;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(56,189,248,0.14);
+    }
 
-      /* match your “hero under nav” behavior */
-      padding-top: 44px;
-      border-bottom: 1px solid rgba(250,204,21,0.18);
+    .cap-hero::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(56,189,248,0.10), rgba(2,6,23,0) 55%),
+        radial-gradient(circle at 25% 70%, rgba(251,191,36,0.10), rgba(2,6,23,0) 60%);
+      filter:blur(10px);
+      opacity:0.75;
+      pointer-events:none;
     }
 
     .cap-hero-inner{
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1.6rem 1.5rem 1.75rem;
+      position:relative;
+      z-index:1;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
       display:flex;
-      gap: 1.75rem;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .cap-hero h1{
-      margin:0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 900;
-      letter-spacing: 0.01em;
-      line-height: 1.05;
-      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-    }
-
-    .cap-hero p{
-      margin: 0.65rem 0 0;
-      max-width: 860px;
-      opacity: 0.92;
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-
-    .cap-actions{
-      display:flex;
-      gap: 0.9rem;
+      flex-wrap:wrap;
+      gap:3rem;
       align-items:center;
-      flex-wrap: wrap;
     }
 
-    /* Page content */
+    .cap-hero-left{
+      flex:0 0 380px;
+      display:flex;
+      justify-content:flex-start;
+      align-items:flex-start;
+      overflow:visible;
+    }
+
+    /* Pulse wrapper — same as who.html */
+    .logo-pulse-wrapper{
+      position:relative;
+      display:inline-flex;
+      align-items:flex-start;
+      justify-content:flex-start;
+      isolation:isolate;
+      z-index:1;
+      overflow:visible;
+    }
+
+    .logo-pulse-wrapper::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:820px;
+      height:820px;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      background: radial-gradient(
+        circle,
+        rgba(245,158,11,0.40) 0%,
+        rgba(245,158,11,0.22) 28%,
+        rgba(245,158,11,0.11) 45%,
+        rgba(245,158,11,0.05) 60%,
+        rgba(245,158,11,0.00) 72%
+      );
+      filter: blur(24px);
+      opacity:0.75;
+      animation:e10Pulse 5.8s ease-in-out infinite;
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .logo-pulse-wrapper::after{
+      content:"";
+      position:absolute;
+      left:52%;
+      top:52%;
+      width:1220px;
+      height:1220px;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      background: radial-gradient(
+        circle,
+        rgba(56,189,248,0.14) 0%,
+        rgba(56,189,248,0.08) 35%,
+        rgba(56,189,248,0.04) 55%,
+        rgba(56,189,248,0.00) 72%
+      );
+      filter: blur(36px);
+      opacity:0.40;
+      animation:e10Pulse2 7.6s ease-in-out infinite;
+      z-index:-2;
+      pointer-events:none;
+    }
+
+    .cap-hero-logo{
+      width:100%;
+      max-width:460px;
+      height:auto;
+      border-radius:18px;
+      position:relative;
+      z-index:2;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.65));
+    }
+
+    @keyframes e10Pulse{
+      0%,100%{ opacity:0.50; transform:translate(-50%,-50%) scale(0.98); }
+      50%{ opacity:0.90; transform:translate(-50%,-50%) scale(1.07); }
+    }
+    @keyframes e10Pulse2{
+      0%,100%{ opacity:0.22; transform:translate(-50%,-50%) scale(0.98); }
+      50%{ opacity:0.48; transform:translate(-50%,-50%) scale(1.05); }
+    }
+
+    .cap-hero-right{
+      flex:1 1 360px;
+      display:flex;
+      flex-direction:column;
+      gap:1rem;
+    }
+
+    .cap-hero-kicker{
+      font-size:0.78rem;
+      letter-spacing:0.14em;
+      text-transform:uppercase;
+      opacity:0.82;
+    }
+
+    .cap-hero-right h1{
+      margin:0;
+      font-size:clamp(2rem,2.8vw,2.6rem);
+      font-weight:800;
+      letter-spacing:0.01em;
+      line-height:1.1;
+    }
+
+    .cap-hero-copy{
+      margin:0;
+      font-size:1rem;
+      line-height:1.75;
+      color:#e5e7eb;
+      max-width:720px;
+    }
+    .cap-hero-copy strong{ color:#fff; font-weight:700; }
+
+    /* ---------------------------
+       Blue radiant pill buttons (match who.html)
+       --------------------------- */
+    .cap-hero-actions{
+      margin-top:0.35rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.75rem 1rem;
+      align-items:center;
+    }
+
+    .cap-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.76rem 1.08rem;
+      border-radius:999px;
+      font-weight:700;
+      font-size:0.94rem;
+      text-decoration:none;
+      line-height:1;
+      transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease, filter 160ms ease;
+      user-select:none;
+      white-space:nowrap;
+      min-height:42px;
+    }
+
+    .cap-pill:hover{ transform:translateY(-1px); }
+
+    .cap-pill:focus-visible{
+      outline:2px solid rgba(56,189,248,0.85);
+      outline-offset:3px;
+    }
+
+    .cap-pill.primary{
+      color:#0b1120;
+      background: linear-gradient(
+        to top,
+        #0284c7 0%,
+        #38bdf8 38%,
+        #bae6fd 72%,
+        #ffffff 100%
+      );
+      border: 1px solid rgba(56,189,248,0.55);
+      box-shadow:
+        0 12px 28px rgba(56,189,248,0.25),
+        0 10px 22px rgba(2,6,23,0.35),
+        inset 0 -1px 0 rgba(255,255,255,0.55);
+    }
+    .cap-pill.primary:hover{
+      box-shadow:
+        0 14px 32px rgba(56,189,248,0.30),
+        0 12px 26px rgba(2,6,23,0.45),
+        inset 0 -1px 0 rgba(255,255,255,0.70);
+      filter:saturate(1.02);
+    }
+
+    .cap-pill.ghost{
+      color:#eaf7ff;
+      background: rgba(15,23,42,0.35);
+      border: 1px solid rgba(56,189,248,0.35);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
+    .cap-pill.ghost:hover{
+      border-color: rgba(56,189,248,0.55);
+      background: rgba(15,23,42,0.50);
+    }
+
+    .cap-meta{
+      margin-top:0.35rem;
+      font-size:0.92rem;
+      color: rgba(229,231,235,0.78);
+      line-height:1.6;
+    }
+    .cap-meta strong{ color:rgba(255,255,255,0.92); }
+
+    /* ---------------------------
+       MAIN (match who.html patterns)
+       --------------------------- */
     main.light{
       background:#ffffff;
       color:#020617;
-      padding: 44px 0 60px;
+      padding:60px 0;
     }
 
-    .page-wrap{
+    .cap-section{
       max-width:1100px;
       margin:0 auto;
       padding:0 1.5rem;
     }
 
-    .band{
-      position: relative;
-      border: 1px solid rgba(255, 212, 71, 0.18);
-      border-radius: 18px;
-      background:
-        radial-gradient(circle at 12% 45%, rgba(220, 38, 38, 0.16), transparent 48%),
-        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.18), transparent 52%),
-        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), rgba(255, 212, 71, 0.16) 45%, transparent 70%),
-        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
-      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
-      padding: 1.25rem 1.25rem;
+    h2{
+      margin:0;
+      font-size:1.35rem;
+      letter-spacing:0.01em;
     }
 
-    .grid-2{
-      display:grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.1rem;
-      align-items: start;
-      margin-top: 1rem;
-    }
-
-    .card{
-      border: 1px solid rgba(15, 23, 42, 0.10);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(6px);
-      padding: 1.1rem 1.1rem;
-      box-shadow: 0 14px 34px rgba(2,6,23,0.08);
-    }
-
-    .card h2, .card h3{
-      margin:0 0 0.55rem;
-      font-weight: 850;
-      letter-spacing: 0.01em;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .card p{
-      margin:0.35rem 0 0;
+    .lead{
+      margin:0.55rem 0 0;
       color:#334155;
-      line-height: 1.7;
-      font-size: 0.96rem;
+      line-height:1.7;
+      font-size:0.98rem;
+      max-width:900px;
     }
 
-    .mini-list{
-      margin:0.75rem 0 0;
-      padding-left: 1.1rem;
+    /* BLUE -> YELLOW -> WHITE "BAND" (same as who.html e10-band) */
+    .e10-band{
+      position:relative;
+      margin-top:1.15rem;
+      border-radius:18px;
+      padding:1.25rem 1.25rem;
+      border:1px solid rgba(56,189,248,0.18);
+      background:
+        radial-gradient(circle at 14% 45%, rgba(56,189,248,0.16), transparent 52%),
+        radial-gradient(circle at 50% 40%, rgba(251,191,36,0.18), transparent 56%),
+        radial-gradient(circle at 88% 38%, rgba(255,255,255,0.70), rgba(251,191,36,0.14) 48%, transparent 72%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
+      box-shadow:
+        0 18px 44px rgba(2, 6, 23, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+    }
+
+    .e10-band::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(56,189,248,0.07), transparent 60%);
+      pointer-events:none;
+    }
+
+    /* Cards in band */
+    .cap-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap:1.1rem;
+      align-items:start;
+    }
+
+    .cap-card{
+      position:relative;
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:16px;
+      padding:1.15rem 1.15rem;
+      background: rgba(255,255,255,0.94);
+      box-shadow:0 12px 28px rgba(2,6,23,0.08);
+      backdrop-filter: blur(6px);
+      overflow:hidden;
+    }
+
+    .cap-card::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(56,189,248,0.12), transparent 55%),
+        radial-gradient(circle at 70% 10%, rgba(251,191,36,0.10), transparent 60%),
+        linear-gradient(180deg, rgba(2,6,23,0.02) 0%, rgba(2,6,23,0.00) 65%);
+      pointer-events:none;
+      z-index:0;
+    }
+    .cap-card > *{ position:relative; z-index:1; }
+
+    .cap-card h3{
+      margin:0 0 0.55rem;
+      font-size:1.05rem;
+      letter-spacing:0.01em;
+    }
+
+    .cap-card p{
+      margin:0;
       color:#334155;
       line-height:1.7;
       font-size:0.95rem;
     }
 
-    /* “Button” styling consistent with your site */
-    .btn-row{
+    .cap-list{
+      margin:0.75rem 0 0;
+      padding-left:1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .pill-row{
+      margin-top:0.85rem;
       display:flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
+      gap:0.55rem;
       align-items:center;
-      margin-top: 0.9rem;
     }
-
-    .button{
-      border-radius: 999px;
-      padding: 0.80rem 1.15rem;
-      font-size: 0.92rem;
-      line-height: 1;
-      font-weight: 650;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      white-space: nowrap;
-    }
-
-    .button.primary.gold{
-      color:#0b1120;
-      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
-      border: 1px solid rgba(250, 204, 21, 0.55);
-      box-shadow:
-        0 10px 22px rgba(250, 204, 21, 0.18),
-        0 6px 14px rgba(0, 0, 0, 0.25);
-    }
-
-    .button.primary.gold:hover{
-      transform: translateY(-1px);
-      box-shadow:
-        0 14px 28px rgba(250, 204, 21, 0.22),
-        0 10px 20px rgba(0, 0, 0, 0.30);
-    }
-
-    .button.ghost{
-      color:#0b1120;
-      background: rgba(2,6,23,0.03);
-      border: 1px solid rgba(2,6,23,0.14);
-    }
-
-    .button.ghost:hover{
-      background: rgba(2,6,23,0.06);
-      transform: translateY(-1px);
-    }
-
-    .meta{
-      margin-top: 0.9rem;
-      font-size: 0.88rem;
-      color: rgba(148, 163, 184, 0.92);
-    }
-
-    .meta strong{
-      color: rgba(255,255,255,0.92);
-    }
-
-    .note{
-      margin-top: 0.85rem;
-      font-size: 0.92rem;
-      color:#475569;
-      line-height: 1.7;
-    }
-
-    .inline-pill{
+    .pill{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      padding:0.34rem 0.62rem;
+      padding:0.46rem 0.70rem;
       border-radius:999px;
-      font-size:0.78rem;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      border:1px solid rgba(2,6,23,0.10);
-      background: rgba(2,6,23,0.03);
+      font-weight:800;
+      font-size:0.86rem;
       color:#0b1120;
-      font-weight: 750;
-      margin-right: 0.45rem;
-      margin-bottom: 0.45rem;
+      background: rgba(255,255,255,0.92);
+      border:1px solid rgba(15,23,42,0.10);
+      box-shadow: 0 10px 18px rgba(2,6,23,0.06);
+      white-space:nowrap;
     }
 
-    /* Responsive */
-    @media (max-width: 960px){
-      .grid-2{ grid-template-columns: 1fr; }
-      .cap-actions{ width: 100%; justify-content: flex-start; }
+    .cap-note{
+      margin-top:0.85rem;
+      font-size:0.92rem;
+      color:#475569;
+      line-height:1.7;
+    }
+
+    /* Simple CTA band (dark) */
+    .cap-cta-band{
+      margin-top:1.25rem;
+      border-radius:18px;
+      padding:1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color:#e5e7eb;
+      border:1px solid rgba(56,189,248,0.22);
+      box-shadow:0 16px 34px rgba(2,6,23,0.35);
+    }
+    .cap-cta-band h2{ margin:0 0 0.55rem; color:#fff; }
+    .cap-cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
+
+    .cap-cta-actions{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.9rem 1.2rem;
+      align-items:center;
+    }
+
+    @media (max-width: 980px){
+      .cap-grid{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px){
+      .cap-hero-inner{ flex-direction:column; align-items:center; }
+      .cap-hero-left,.cap-hero-right{ width:100%; flex:1 1 auto; }
+      .cap-hero-left{ justify-content:center; }
+
+      .logo-pulse-wrapper::before{ width:680px; height:680px; }
+      .logo-pulse-wrapper::after{ width:860px; height:860px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOP BAR (same structure as index) -->
+  <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -276,92 +478,134 @@
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
       <a href="./watchtower.html">Cyber Reasoning Platform</a>
-      <a href="./capabilities.html">Capabilities</a>
+      <a href="./capabilities.html" aria-current="page">Capabilities</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
   </aside>
 
   <!-- HERO -->
-  <header class="cap-hero">
+  <section class="cap-hero">
     <div class="cap-hero-inner">
-      <div>
-        <h1>Capabilities</h1>
-        <p>
+      <div class="cap-hero-left">
+        <div class="logo-pulse-wrapper">
+          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" class="cap-hero-logo" />
+        </div>
+      </div>
+
+      <div class="cap-hero-right">
+        <div class="cap-hero-kicker">Capabilities</div>
+        <h1>Prime- and mission-ready. Clear, fast, and defensible.</h1>
+
+        <p class="cap-hero-copy">
           Download our Capability Statement for <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> —
-          managed security operations, advisory, and AI-augmented security workflows aligned to mission-driven environments.
+          managed security operations, advisory, and AI-augmented workflows aligned to real operational environments.
         </p>
-      </div>
 
-      <div class="cap-actions">
-        <a class="button primary gold" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
-          Download PDF
-        </a>
-        <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Capability%20Statement%20Request">
-          Request a Conversation
-        </a>
-      </div>
+        <p class="cap-hero-copy">
+          We’re built for teams that need <strong>measurable outcomes</strong>, <strong>clean reporting</strong>, and
+          <strong>evidence that holds up</strong> under leadership and audit scrutiny.
+        </p>
 
-      <!-- Optional quick meta line (keep it simple; edit/remove as needed) -->
-      <div class="meta">
-        <strong>enLight10 Solutions, LLC</strong> • Honolulu, HI • Remote / U.S. Coverage
+        <div class="cap-hero-actions">
+          <a class="cap-pill primary" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
+            Download PDF
+          </a>
+          <a class="cap-pill ghost" href="mailto:info@enlight10solutions.com?subject=Capability%20Statement%20Request">
+            Request a Conversation
+          </a>
+          <a class="cap-pill ghost" href="./watchtower.html">
+            Explore Watchtower CRP
+          </a>
+        </div>
+
+        <div class="cap-meta">
+          <strong>enLight10 Solutions, LLC</strong> • Honolulu, HI • Remote / U.S. Coverage
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
   <!-- MAIN -->
   <main class="light">
-    <div class="page-wrap">
+    <div class="cap-section">
 
-      <section class="band" aria-label="Capability Statement download and summary">
-        <div class="grid-2">
+      <section aria-label="Capability Statement download">
+        <h2>Capability Statement (PDF)</h2>
+        <p class="lead">
+          A prime- and government-friendly overview of our services, differentiators, operating model, and identifiers —
+          designed for quick evaluation and easy teaming discussions.
+        </p>
 
-          <!-- LEFT: What it is -->
-          <article class="card">
-            <h2>Capability Statement (PDF)</h2>
-            <p>
-              This document is designed for primes, government stakeholders, and mission-driven organizations
-              that need a clear summary of our services, differentiators, and operating model.
-            </p>
+        <div class="e10-band">
+          <div class="cap-grid">
 
-            <div class="btn-row">
-              <a class="button primary gold" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
-                Open / Download PDF
-              </a>
-              <a class="button ghost" href="mailto:info@enlight10solutions.com?subject=Capabilities%20-%20Intro%20Call">
-                Schedule Intro
-              </a>
-            </div>
+            <!-- LEFT -->
+            <article class="cap-card">
+              <h3>Download</h3>
+              <p>
+                Use the buttons below to open the PDF in a new tab or download it directly.
+                If you need a tailored version for an opportunity (NAICS alignment, scope emphasis, or teaming language),
+                email us and we’ll respond quickly.
+              </p>
 
-            <p class="note">
-              If the PDF doesn’t open, ensure the file name is exactly:
-              <strong>Capability_Statement.pdf</strong> (case-sensitive on some hosts).
-            </p>
-          </article>
+              <div class="cap-hero-actions" style="margin-top:0.9rem;">
+                <a class="cap-pill primary" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
+                  Open / Download PDF
+                </a>
+                <a class="cap-pill ghost" href="mailto:info@enlight10solutions.com?subject=Capabilities%20-%20Intro%20Call">
+                  Schedule Intro
+                </a>
+              </div>
 
-          <!-- RIGHT: Quick bullets for credibility + alignment -->
-          <aside class="card">
-            <h3>What You’ll Find Inside</h3>
-            <p>
-              A quick-read summary aligned to how cyber capabilities are evaluated in real acquisition and delivery.
-            </p>
+              <p class="cap-note">
+                If the PDF doesn’t open, confirm the file name is exactly:
+                <strong>Capability_Statement.pdf</strong> (case-sensitive on some hosts).
+              </p>
+            </article>
 
-            <ul class="mini-list">
-              <li>Managed security operations (SecureOps™ / Cyber Defense United™)</li>
-              <li>Advisory &amp; vCISO services</li>
-              <li>Compliance and audit-readiness support</li>
-              <li>AI-augmented workflows via Watchtower CRP (reasoning + evidence)</li>
-              <li>NAICS and company identifiers</li>
-            </ul>
+            <!-- RIGHT -->
+            <aside class="cap-card">
+              <h3>What You’ll Find Inside</h3>
+              <p>
+                A quick-read summary aligned to how cyber capabilities are evaluated in acquisition and delivery.
+              </p>
 
-            <div style="margin-top:0.95rem;">
-              <span class="inline-pill">Operator-Led</span>
-              <span class="inline-pill">Evidence-First</span>
-              <span class="inline-pill">Works With Your Stack</span>
-              <span class="inline-pill">DoD/DIB Ready</span>
-            </div>
-          </aside>
+              <ul class="cap-list">
+                <li>Managed security operations (SecureOps™ / Cyber Defense United™)</li>
+                <li>Advisory &amp; vCISO services</li>
+                <li>Compliance and audit-readiness support</li>
+                <li>AI-augmented workflows via Watchtower CRP (reasoning + evidence)</li>
+                <li>NAICS and company identifiers</li>
+              </ul>
 
+              <div class="pill-row" aria-label="Differentiator pills">
+                <span class="pill">Operator-Led</span>
+                <span class="pill">Evidence-First</span>
+                <span class="pill">Works With Your Stack</span>
+                <span class="pill">DoD/DIB Ready</span>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional secondary CTA band -->
+      <section aria-label="Teaming and contact call to action" style="margin-top:1.35rem;">
+        <div class="cap-cta-band">
+          <h2>Teaming &amp; Partnerships</h2>
+          <p>
+            If you’re a prime or mission partner evaluating subcontract support, we’re straightforward to onboard:
+            operator-led delivery, integration-first approach, and reporting that leadership can defend.
+          </p>
+          <div class="cap-cta-actions">
+            <a class="cap-pill primary" href="mailto:info@enlight10solutions.com?subject=enLight10%20/%20Teaming%20Conversation">
+              Start a Conversation
+            </a>
+            <a class="cap-pill ghost" href="./services-secureops.html">Watchtower SecureOps™</a>
+            <a class="cap-pill ghost" href="./services-cyber-defense-united.html">Cyber Defense United™</a>
+          </div>
         </div>
       </section>
 
