@@ -1,0 +1,706 @@
+<!-- partners.html (FULL FILE — Prime Partners, capability insert, pilots, LOE, outcomes) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Prime Partners — enLight10 Solutions | Watchtower™ Capability Insert</title>
+  <meta
+    name="description"
+    content="Partner with enLight10 Solutions to embed Watchtower™ as a capability insert on federal and defense programs. Low-risk pilots, LOE support, and evidence-first operations that reduce onboarding risk and accelerate delivery."
+  />
+
+  <!-- Styles / JS (cache-bust) -->
+  <link rel="stylesheet" href="./style.css?v=28" />
+  <script src="./script.js?v=28" defer></script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <style>
+    body{
+      margin:0;
+      background:#f9fafb;
+      color:#020617;
+      overflow-x:hidden;
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    /* Hero (dark) */
+    .hero.splash{
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
+      color:#fff;
+      padding-top: 44px; /* under nav */
+      padding-bottom: 34px;
+    }
+
+    .hero-inner{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 26px 1.5rem 0;
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 2.1rem;
+      align-items:start;
+    }
+
+    @media (max-width: 980px){
+      .hero-inner{
+        grid-template-columns: 1fr;
+        text-align:center;
+      }
+      .hero-left, .hero-right{ align-items:center; }
+    }
+
+    .hero-left, .hero-right{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    @media (max-width: 980px){
+      .hero-left, .hero-right{ align-items:center; }
+    }
+
+    .hero-title{
+      margin: 0 0 0.7rem;
+      font-weight: 850;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+      font-size: clamp(1.9rem, 3vw, 2.45rem);
+      max-width: 760px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    .hero-subtitle{
+      margin:0 0 1rem;
+      opacity: 0.92;
+      line-height: 1.7;
+      max-width: 760px;
+      font-size: 0.98rem;
+    }
+
+    .pill-row{
+      margin-top: 0.6rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.65rem;
+      align-items:center;
+    }
+
+    .mini-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.38rem 0.70rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.92);
+      font-weight: 700;
+    }
+
+    .hero-card{
+      width:100%;
+      border-radius: 18px;
+      padding: 1.15rem 1.15rem;
+      background: rgba(2,6,23,0.38);
+      border: 1px solid rgba(255,212,71,0.16);
+      box-shadow:
+        0 20px 48px rgba(0,0,0,0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 55% 45%,
+        rgba(255,212,71,0.35),
+        rgba(255,212,71,0.12) 45%,
+        transparent 72%
+      );
+      filter: blur(22px);
+      opacity: 0.65;
+      pointer-events:none;
+    }
+
+    .hero-card h3{
+      margin:0 0 0.5rem;
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card p{
+      margin:0;
+      opacity:0.92;
+      line-height:1.7;
+      font-size:0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions{
+      margin-top: 1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.9rem 1.1rem;
+      align-items:center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions .button{
+      border-radius: 999px;
+      padding: 0.78rem 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    .button.primary.gold{
+      color:#0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+
+    .button.ghost{
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .button.primary.gold:hover,
+    .button.ghost:hover{
+      transform: translateY(-1px);
+    }
+
+    main.light{
+      background:#ffffff;
+      color:#020617;
+      padding: 58px 0;
+    }
+
+    .page-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
+    }
+
+    .section-block{ margin-top: 1.85rem; }
+    .section-block:first-child{ margin-top: 0; }
+
+    .section-title{
+      margin:0 0 0.55rem;
+      font-weight: 850;
+      letter-spacing: 0.01em;
+      font-size: 1.35rem;
+    }
+
+    .section-lead{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      max-width: 940px;
+    }
+
+    .band{
+      position: relative;
+      margin-top: 1.15rem;
+      border: 1px solid rgba(255, 212, 71, 0.18);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 12% 45%, rgba(220, 38, 38, 0.14), transparent 48%),
+        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.16), transparent 52%),
+        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), rgba(255, 212, 71, 0.14) 45%, transparent 70%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-top: 0.95rem;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+      margin-top: 0.95rem;
+    }
+
+    @media (max-width: 980px){
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 14px 34px rgba(2,6,23,0.08);
+    }
+
+    .card h3{
+      margin:0 0 0.55rem;
+      font-size: 1.03rem;
+      letter-spacing: 0.01em;
+    }
+
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .card ul{
+      margin:0.75rem 0 0;
+      padding-left: 1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .callout{
+      margin-top: 0.95rem;
+      padding: 0.95rem 1.05rem;
+      border-radius: 14px;
+      border: 1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      line-height: 1.7;
+    }
+
+    .text-link{
+      color:#0f172a;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(15,23,42,0.22);
+    }
+    .text-link:hover{ opacity: 0.85; }
+
+    .cta-band{
+      margin-top: 1.25rem;
+      border-radius: 18px;
+      padding: 1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color:#e5e7eb;
+      border:1px solid rgba(251,191,36,0.22);
+      box-shadow:0 16px 34px rgba(2,6,23,0.35);
+    }
+    .cta-band h2{ margin:0 0 0.55rem; color:#fff; }
+    .cta-band p{ margin:0; line-height:1.7; max-width:920px; color:#e5e7eb; }
+
+    .cta-actions{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.9rem 1.2rem;
+      align-items:center;
+    }
+
+    .cta-actions .button{
+      border-radius:999px;
+      padding:0.78rem 1.15rem;
+      font-size:0.92rem;
+      line-height:1;
+      font-weight:650;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      white-space:nowrap;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Services ▾
+          </button>
+          <div class="dropdown-panel">
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Operations enablement + delivery</span>
+            </a>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB mission variant</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="./watchtower.html">Watchtower CRP™</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./partners.html" aria-current="page">Prime Partners</a>
+        <a href="./who.html">Who We Are</a>
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+      </div>
+
+      <button id="menuToggle" class="hamburger"
+        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower CRP™</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./partners.html" aria-current="page">Prime Partners</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero splash" id="top">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1 class="hero-title">Prime Partners</h1>
+        <p class="hero-subtitle">
+          Embed <strong>Watchtower™</strong> as a <strong>capability insert</strong> that reduces onboarding risk, accelerates delivery,
+          and produces <strong>evidence-first</strong> operational outputs for leadership and audits — without forcing tool replacement.
+        </p>
+
+        <div class="pill-row">
+          <span class="mini-pill">Capability Insert</span>
+          <span class="mini-pill">Low-Risk Pilots</span>
+          <span class="mini-pill">LOE Support</span>
+          <span class="mini-pill">Evidence-First</span>
+          <span class="mini-pill">Works With Your Stack</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button primary gold" href="mailto:info@enlight10solutions.com?subject=Prime%20Partner%20-%20Watchtower%20Capability%20Insert">
+            Partner with Us
+          </a>
+          <a class="button ghost" href="./Capability_Statement.pdf">
+            Capability Statement
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <h3>Where primes use Watchtower</h3>
+          <p>
+            <strong>Programs with compressed timelines</strong>, staffing friction, constrained networks, tool sprawl,
+            and high accountability. Watchtower helps stabilize delivery by unifying workflow, evidence, and reporting.
+          </p>
+          <div class="callout" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.92); position:relative; z-index:1;">
+            <strong>Outcome:</strong> fewer handoffs, faster triage, clearer decisions, defensible evidence packs.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN -->
+  <main class="light">
+    <div class="page-wrap">
+
+      <!-- WHY PARTNER -->
+      <section class="section-block">
+        <h2 class="section-title">Why Partner with enLight10</h2>
+        <p class="section-lead">
+          We are operator-led and program-minded. We build structure around messy operational reality and turn it into repeatable outcomes.
+          Watchtower is designed to be inserted into existing environments to reduce risk and accelerate execution.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Reduce Onboarding Risk</h3>
+              <p>
+                Normalize signals and workflows so new staff and blended teams can operate consistently,
+                even when tools and environments vary across enclaves.
+              </p>
+              <ul>
+                <li>Case-centric workflow (not alert floods)</li>
+                <li>Repeatable operating patterns</li>
+                <li>Clear escalation + documentation</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Accelerate Delivery</h3>
+              <p>
+                Watchtower provides the control-plane layer that simplifies integrations and unifies operational work.
+                Start with a small pilot, then expand based on outcomes.
+              </p>
+              <ul>
+                <li>Time-boxed pilot playbook</li>
+                <li>Integration + normalization patterns</li>
+                <li>Operational cadence and outputs</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Evidence You Can Defend</h3>
+              <p>
+                Programs get audited. Leaders need defensible narratives.
+                Watchtower produces evidence packs that support oversight, compliance, and incident response.
+              </p>
+              <ul>
+                <li>Narrative + timeline + artifacts</li>
+                <li>Decision trail (why/what/when)</li>
+                <li>Executive-ready brief outputs</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENGAGEMENT MODELS -->
+      <section class="section-block">
+        <h2 class="section-title">Engagement Models</h2>
+        <p class="section-lead">
+          Pick the lowest-risk entry point. We commonly start with a pilot or an LOE-based capability insert,
+          then scale once the customer sees measurable outcomes.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>1) Time-Boxed Pilot (60–90 Days)</h3>
+              <p>
+                Validate integrations, workflows, and success metrics with a clean off-ramp.
+                Ideal for proving value to a customer quickly.
+              </p>
+              <ul>
+                <li>Ingest + normalize key data sources</li>
+                <li>Stand up case workflow + evidence outputs</li>
+                <li>Final outcomes report + scale plan</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="mailto:info@enlight10solutions.com?subject=Prime%20Partner%20-%20Time-Boxed%20Pilot%20(60-90%20Days)">
+                  Discuss a Pilot →
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>2) Capability Insert (LOE)</h3>
+              <p>
+                Embed Watchtower and an operator-led delivery lead into the program to accelerate outcomes
+                (architecture, operations, reporting, and integration discipline).
+              </p>
+              <ul>
+                <li>Architecture and operating pattern enablement</li>
+                <li>Detection tuning + triage acceleration</li>
+                <li>Reporting cadence and evidence packs</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="mailto:info@enlight10solutions.com?subject=Prime%20Partner%20-%20Capability%20Insert%20(LOE)">
+                  Discuss LOE Support →
+                </a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>3) Co-Managed Operations Enablement</h3>
+              <p>
+                When the program needs it, we can pair Watchtower with defined operational support focused on outcomes,
+                not headcount. Built for constrained environments.
+              </p>
+              <ul>
+                <li>Playbooks + response discipline</li>
+                <li>Oversight-ready briefs</li>
+                <li>Continuous improvement loop</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="./services-secureops.html">View SecureOps →</a>
+              </p>
+            </article>
+          </div>
+
+          <div class="callout">
+            <strong>Prime-friendly:</strong> We can operate as a subcontractor, a niche capability insert, or a time-boxed pilot delivery.
+            We are structured to integrate cleanly into existing program execution, reporting, and governance.
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE CAN SUPPORT -->
+      <section class="section-block">
+        <h2 class="section-title">Typical Program Use Cases</h2>
+        <p class="section-lead">
+          Watchtower is built for modern security operations where tool sprawl, staffing churn, and mission constraints collide.
+        </p>
+
+        <div class="band">
+          <div class="grid-2">
+            <article class="card">
+              <h3>SOC / NOSC Modernization</h3>
+              <ul>
+                <li>Unified workflow: alerts → cases → evidence</li>
+                <li>Standardized triage patterns across enclaves</li>
+                <li>Executive-ready reporting and oversight outputs</li>
+                <li>Operations discipline (SOPs, runbooks, cadence)</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>High-Assurance / Constrained Networks</h3>
+              <ul>
+                <li>On-prem / restricted network deployments</li>
+                <li>Evidence-first operations for audits and leadership</li>
+                <li>Reduced dependence on “tribal knowledge”</li>
+                <li>Integrates with existing tool stacks and data sources</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Zero Trust &amp; Continuous Monitoring</h3>
+              <ul>
+                <li>Operationalize ZT into measurable outputs</li>
+                <li>Support cATO-minded monitoring and evidence</li>
+                <li>Improve visibility, decisions, and documentation</li>
+                <li>Rationalize alert sources to reduce noise</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>AI-Ready Operations (Without Hype)</h3>
+              <ul>
+                <li>Use AI to augment decisions after the workflow is solid</li>
+                <li>Evidence-based reasoning (not black-box outputs)</li>
+                <li>Better context for analysts and leadership</li>
+                <li>Safer automation with proof and traceability</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHAT WE NEED -->
+      <section class="section-block">
+        <h2 class="section-title">What We Need from a Prime</h2>
+        <p class="section-lead">
+          We keep friction low. If you can provide the basics below, we can move fast.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Environment &amp; Constraints</h3>
+              <ul>
+                <li>Where it runs (cloud / hybrid / on-prem)</li>
+                <li>Data movement constraints</li>
+                <li>Access model (VPN, bastion, enclaves)</li>
+                <li>Security/compliance expectations</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Tool Stack Inputs</h3>
+              <ul>
+                <li>SIEM, EDR, IdP, network telemetry sources</li>
+                <li>Ticketing/workflow system</li>
+                <li>Data retention expectations</li>
+                <li>Any must-keep tools or standards</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Success Criteria</h3>
+              <ul>
+                <li>What “better” looks like (MTTD/MTTR, noise)</li>
+                <li>Reporting requirements (weekly/monthly/QBR)</li>
+                <li>Evidence requirements (audits/oversight)</li>
+                <li>Decision authority and escalation paths</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="callout">
+            <strong>Fast start:</strong> If you want, we’ll send a one-page intake checklist you can forward to the customer
+            to quickly scope a pilot or LOE insert.
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-block">
+        <div class="cta-band">
+          <h2>Let’s Make Your Program Easier to Deliver</h2>
+          <p>
+            If you’re a prime leading a high-tempo program with tool sprawl, staffing churn, or audit pressure,
+            Watchtower can be inserted quickly to stabilize operations and produce measurable outcomes.
+          </p>
+
+          <div class="cta-actions">
+            <a class="button primary gold"
+              href="mailto:info@enlight10solutions.com?subject=Prime%20Partner%20Conversation%20-%20Watchtower%20Capability%20Insert">
+              Request a Prime Partner Call
+            </a>
+            <a class="button ghost" href="./Capability_Statement.pdf">
+              View Capability Statement
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
