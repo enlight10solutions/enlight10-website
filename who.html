@@ -1,4 +1,4 @@
-<!-- who.html (FULL FILE REPLACEMENT — founder-focused + impact pills replacing metric cards) -->
+<!-- who.html (FULL FILE REPLACEMENT — standardized nav + standardized footer year + commercial-first / pilot-first alignment) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +7,8 @@
   <title>Who We Are — enLight10 Solutions</title>
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=27" />
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css?v=30" />
+  <script src="./script.js?v=30" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
@@ -397,53 +397,6 @@
       font-size:0.97rem;
     }
 
-    /* “Proof” callout row */
-    .proof-row{
-      margin-top:0.85rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.55rem;
-      align-items:center;
-    }
-    .proof{
-      display:inline-flex;
-      align-items:center;
-      gap:0.45rem;
-      padding:0.48rem 0.72rem;
-      border-radius:999px;
-      font-weight:750;
-      font-size:0.88rem;
-      color:#0b1120;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.80) 100%);
-      border: 1px solid rgba(15,23,42,0.10);
-      box-shadow: 0 10px 20px rgba(2,6,23,0.06);
-    }
-    .proof b{ font-weight:900; }
-
-    /* NEW: High-impact "experience" pills (replaces the 4 metric cards) */
-    .impact-row{
-      margin-top:0.70rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.55rem;
-      align-items:center;
-    }
-    .impact-pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.46rem 0.70rem;
-      border-radius:999px;
-      font-weight:800;
-      font-size:0.86rem;
-      color:#0b1120;
-      background: rgba(255,255,255,0.92);
-      border:1px solid rgba(15,23,42,0.10);
-      box-shadow: 0 10px 18px rgba(2,6,23,0.06);
-      white-space:nowrap;
-    }
-    .impact-pill strong{ font-weight:900; }
-
     .founder-side{
       display:grid;
       gap:1.1rem;
@@ -553,18 +506,6 @@
       align-items:center;
     }
 
-    .footer-e10{
-      margin-top:0.75rem;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:0.5rem;
-      width:100%;
-      text-align:center;
-    }
-    .footer-e10 img{ width:28px; height:28px; border-radius:6px; }
-    footer .footer-e10 span{ font-size:0.8rem; color: rgba(229,231,235,0.78); }
-
     @media (max-width: 980px){
       .about-grid{ grid-template-columns: 1fr; }
       .about-lanes{ grid-template-columns: 1fr; }
@@ -584,7 +525,7 @@
 </head>
 
 <body>
-  <!-- NAV -->
+  <!-- NAV (standardized to match index.html) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -599,17 +540,18 @@
           <div class="dropdown-panel">
             <a href="./services-secureops.html">
               Watchtower SecureOps™
-              <span class="sub">Services delivered by people &amp; platform</span>
+              <span class="sub">Operations enablement + delivery</span>
             </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+              <span class="sub">DoD/DIB mission variant</span>
             </a>
           </div>
         </div>
 
         <a href="./watchtower.html">Watchtower CRP™</a>
         <a href="./capabilities.html">Capabilities</a>
+        <a href="./partners.html">Prime Partners</a>
         <a href="./who.html" aria-current="page">Who We Are</a>
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
@@ -621,7 +563,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (standardized) -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
@@ -631,6 +573,7 @@
       <hr />
       <a href="./watchtower.html">Watchtower CRP™</a>
       <a href="./capabilities.html">Capabilities</a>
+      <a href="./partners.html">Prime Partners</a>
       <a href="./who.html" aria-current="page">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
@@ -652,7 +595,7 @@
         <p class="about-hero-copy">
           <strong>enLight10 Solutions</strong> is led by a cyber operations executive with deep experience standing up
           mission-ready security operations, executing advanced threat hunting, and leading outcomes under pressure.
-          We’re building <strong>Watchtower</strong> as the investigation and evidence workspace we always wished we had.
+          We’re building <strong>Watchtower™</strong> as the investigation and evidence workspace we always wished we had.
         </p>
 
         <p class="about-hero-copy">
@@ -661,12 +604,13 @@
         </p>
 
         <div class="about-hero-actions">
+          <!-- ✅ Align to pilot-first wedge -->
           <a class="about-pill primary"
-            href="mailto:info@enlight10solutions.com?subject=enLight10 / Partnership Conversation">
-            Start a Conversation
+             href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+            Start a Pilot
           </a>
           <a class="about-pill ghost" href="#founder">Meet the Founder</a>
-          <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP</a>
+          <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP™</a>
         </div>
       </div>
     </div>
@@ -870,20 +814,22 @@
 
           <div class="about-cta-actions">
             <a class="about-pill primary"
-              href="mailto:info@enlight10solutions.com?subject=enLight10 / Intro Conversation">
-              Start a Conversation
+              href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+              Start a Pilot
             </a>
-            <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP</a>
+            <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP™</a>
+            <a class="about-pill ghost" href="./partners.html">Prime Partners</a>
           </div>
         </div>
       </section>
+
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (standardized, current year) -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025–2026 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
