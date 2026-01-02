@@ -164,6 +164,31 @@
       50%     { opacity:0.55; transform: scale(1.03); }
     }
 
+    /* --- Definition term colors (hero) --- */
+.def-term-flat-gold{
+  color:#facc15;                /* flat gold */
+  text-shadow: 0 1px 6px rgba(250,204,21,0.35);
+  font-weight: 800;
+}
+
+.def-term-gold-grad{
+  background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  font-weight: 900;
+}
+
+.def-term-red-grad{
+  background: linear-gradient(180deg, #ffe4e6 0%, #fda4af 38%, #fb7185 60%, #ef4444 80%, #dc2626 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  font-weight: 900;
+}
+    
     .flat-gold{
       color:#facc15;
       text-shadow: 0 1px 6px rgba(250,204,21,0.35);
@@ -694,12 +719,25 @@
         </div>
 
         <!-- DEFINITIONS (expanded) -->
-        <p class="hero-subtitle" style="margin-top:0.85rem; opacity:0.86; font-size:0.9rem;">
-          <li><strong>CRP™</strong> = <strong>Cyber Reasoning Platform™</strong> — the reasoning and evidence layer behind repeatable investigations.</li>       
-          <li><strong>Cyber Defense United™ (CDU)</strong> = mission-focused cyber defense for DoD/DIB environments (on-prem / restricted / disconnected) combining Watchtower CRP + experienced defenders.</li>        
-          <li><strong>Watchtower SecureOps™</strong> = outcomes-driven security operations enablement and delivery (integration, tuning, playbooks, reporting cadence) using Watchtower as the evidence and decision layer.</li> 
-          <li><strong>Evidence Pack™</strong> = case narrative + timeline + artifacts + decision trail for leadership and audit questions.</li> 
-        </p>
+        <!-- DEFINITIONS (expanded) -->
+<ul class="hero-subtitle" style="margin-top:0.85rem; opacity:0.90; font-size:0.9rem; line-height:1.7; padding-left: 1.15rem;">
+  <li>
+    <strong class="def-term-flat-gold">CRP™</strong> = <strong class="def-term-flat-gold">Cyber Reasoning Platform™</strong>
+    — the reasoning and evidence layer behind repeatable investigations.
+  </li>
+  <li>
+    <strong class="def-term-gold-grad">Cyber Defense United™ (CDU)</strong>
+    = mission-focused cyber defense for DoD/DIB environments (on-prem / restricted / disconnected) combining Watchtower CRP + experienced defenders.
+  </li>
+  <li>
+    <strong class="def-term-red-grad">Watchtower SecureOps™</strong>
+    = outcomes-driven security operations enablement and delivery (integration, tuning, playbooks, reporting cadence) using Watchtower as the evidence and decision layer.
+  </li>
+  <li>
+    <strong>Evidence Pack™</strong>
+    = case narrative + timeline + artifacts + decision trail for leadership and audit questions.
+  </li>
+</ul>
       </div>
     </div>
 
