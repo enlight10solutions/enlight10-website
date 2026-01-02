@@ -230,6 +230,22 @@
 }
 
     .hero-actions-under-video { max-width: 760px; }
+
+    /* Under-video CTA buttons: no underline + perfectly centered label */
+.hero-actions-under-video .button{
+  text-decoration: none !important;   /* kill underline */
+  display: inline-flex;               /* ensure flex centering */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Also prevent underline on hover/focus */
+.hero-actions-under-video .button:hover,
+.hero-actions-under-video .button:focus,
+.hero-actions-under-video .button:active{
+  text-decoration: none !important;
+}
     
     .button.primary.gold{
       color:#0b1120;
