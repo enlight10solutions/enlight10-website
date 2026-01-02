@@ -713,6 +713,129 @@
       .secops-hero-actions { justify-content: flex-start; }
       .secops-logo-glow{ max-width: 520px; }
       .secops-tagline{ max-width: 520px; }
+
+    /* ==============================
+   SecureOps "Common fit" band
+   ============================== */
+.fit-band{
+  margin-top: 1.05rem;
+  border-radius: 18px;
+  border: 1px solid rgba(244,63,94,0.18);
+  background:
+    radial-gradient(circle at 14% 10%, rgba(244,63,94,0.12), transparent 46%),
+    radial-gradient(circle at 86% 0%, rgba(251,191,36,0.10), transparent 52%),
+    linear-gradient(180deg, rgba(255,241,242,0.92) 0%, rgba(255,255,255,1) 70%);
+  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+  padding: 1.1rem 1.1rem;
+}
+
+.fit-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.65rem;
+}
+
+.fit-head strong{
+  margin:0;
+  color:#0b1220;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.fit-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color:#0b1120;
+  border: 1px solid rgba(244,63,94,0.18);
+  background: rgba(255,255,255,0.85);
+}
+
+.fit-pills{
+  margin-top: 0.2rem;
+}
+
+.fit-pills li{
+  border-color: rgba(244,63,94,0.12);
+  background: rgba(255,255,255,0.92);
+}
+
+.fit-note{
+  margin: 0.65rem 0 0.85rem;
+  color:#334155;
+  line-height:1.65;
+  font-size:0.95rem;
+  max-width: 980px;
+}
+
+.fit-grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 0.9rem;
+}
+
+.fit-card{
+  border-radius: 16px;
+  border: 1px solid rgba(2,6,23,0.10);
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+  padding: 0.85rem 0.85rem;
+}
+
+.fit-card-title{
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 900;
+  color:#64748b;
+  margin-bottom: 0.55rem;
+}
+
+.fit-card-body{
+  color:#0b1120;
+  font-weight: 650;
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+
+.fit-chiprow{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 0.45rem;
+}
+
+.fit-chip{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0.26rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(244,63,94,0.14);
+  background: rgba(255,255,255,0.92);
+  color:#0b1120;
+}
+
+.fit-outcomes{
+  margin-top: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .fit-grid{ grid-template-columns: 1fr; }
+  .fit-head{ flex-direction: column; align-items:flex-start; }
+}
     }
   </style>
 </head>
@@ -837,28 +960,62 @@
           and who need reporting leadership can understand and defend.
         </p>
 
-        <div class="trust-strip">
-          <strong>Common fit</strong>
-          <ul class="trust-items" aria-label="Commercial fit">
-            <li>Security Teams (5–50)</li>
-            <li>Regulated SaaS</li>
-            <li>Healthcare</li>
-            <li>Financial Services</li>
-            <li>Enterprise SOCs</li>
-            <li>MSSPs</li>
-            <li>Hybrid / Cloud Migration</li>
-          </ul>
-          <p class="trust-note">
-            We integrate what you already have (SIEM/EDR/IdP/cloud logs) and deliver measurable operations with defensible evidence.
-          </p>
+        <div class="fit-band">
+  <div class="fit-head">
+    <strong>Common fit</strong>
+    <span class="fit-badge">Commercial-first • Pilot-friendly</span>
+  </div>
 
-          <div class="outcomes-row" aria-label="Outcomes">
-            <span class="outcome-pill">Noise Reduction</span>
-            <span class="outcome-pill">Faster Triage</span>
-            <span class="outcome-pill">Clear Escalation</span>
-            <span class="outcome-pill">Defensible Reporting</span>
-          </div>
-        </div>
+  <ul class="trust-items fit-pills" aria-label="Commercial fit">
+    <li>Security Teams (5–50)</li>
+    <li>Regulated SaaS</li>
+    <li>Healthcare</li>
+    <li>Financial Services</li>
+    <li>Enterprise SOCs</li>
+    <li>MSSPs</li>
+    <li>Hybrid / Cloud Migration</li>
+  </ul>
+
+  <p class="fit-note">
+    We integrate the stack you already operate — normalize signals across sources, and
+    unify them into <strong>a single reasoning + evidence layer</strong> that improves understanding, response, and reporting.
+  </p>
+
+  <div class="fit-grid" aria-label="Integration and reasoning layer">
+    <div class="fit-card">
+      <div class="fit-card-title">Integrates</div>
+      <div class="fit-chiprow">
+        <span class="fit-chip">SIEM</span>
+        <span class="fit-chip">SOAR / Automation</span>
+        <span class="fit-chip">EDR</span>
+        <span class="fit-chip">Vulnerability</span>
+        <span class="fit-chip">Cloud Telemetry</span>
+        <span class="fit-chip">Identity / IdP</span>
+      </div>
+    </div>
+
+    <div class="fit-card">
+      <div class="fit-card-title">Unifies</div>
+      <div class="fit-card-body">
+        Signals → context → cases → timelines → artifacts
+      </div>
+    </div>
+
+    <div class="fit-card">
+      <div class="fit-card-title">Explains</div>
+      <div class="fit-card-body">
+        Summaries, recommended next steps, and <strong>defensible narratives</strong> — human-reviewed.
+      </div>
+    </div>
+  </div>
+
+  <div class="outcomes-row fit-outcomes" aria-label="Outcomes">
+    <span class="outcome-pill">Noise Reduction</span>
+    <span class="outcome-pill">Faster Triage</span>
+    <span class="outcome-pill">Clear Escalation</span>
+    <span class="outcome-pill">Defensible Reporting</span>
+  </div>
+</div>
 
         <!-- What SecureOps Delivers -->
         <div style="margin-top:1.6rem;">
