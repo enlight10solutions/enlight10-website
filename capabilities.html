@@ -1,4 +1,4 @@
-<!-- capabilities.html (FULL FILE REPLACEMENT — matches who.html hero/pulse + blue radiant buttons + e10-band styling) -->
+<!-- capabilities.html (FULL FILE REPLACEMENT — standardized nav + footer year, DoD/DIB direction alignment, removes MSSP-ish language, adds clear “what we do” + identifiers placeholder, keeps who.html hero/pulse + blue radiant buttons + e10-band styling) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
   <title>Capabilities — enLight10 Solutions</title>
   <meta
     name="description"
-    content="Download the enLight10 Solutions Capability Statement (PDF) — Watchtower SecureOps™ and Cyber Defense United™."
+    content="Download the enLight10 Solutions Capability Statement (PDF) — Watchtower SecureOps™ and Cyber Defense United™ for DoD and the Defense Industrial Base."
   />
 
   <!-- Shared styles / JS -->
@@ -395,6 +395,46 @@
       line-height:1.7;
     }
 
+    /* New: small identifier chips */
+    .id-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:0.75rem;
+      margin-top:1rem;
+    }
+    .id-item{
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:14px;
+      padding:0.85rem 0.9rem;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 10px 18px rgba(2,6,23,0.06);
+    }
+    .id-item .k{
+      font-size:0.74rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:#64748b;
+      font-weight:900;
+      margin:0 0 0.35rem;
+    }
+    .id-item .v{
+      margin:0;
+      font-weight:850;
+      color:#0b1120;
+      letter-spacing:0.01em;
+      font-size:0.95rem;
+      line-height:1.35;
+      word-break:break-word;
+    }
+    .id-item .hint{
+      margin:0.35rem 0 0;
+      color:#475569;
+      font-size:0.88rem;
+      line-height:1.55;
+    }
+
     /* Simple CTA band (dark) */
     .cap-cta-band{
       margin-top:1.25rem;
@@ -418,6 +458,7 @@
 
     @media (max-width: 980px){
       .cap-grid{ grid-template-columns: 1fr; }
+      .id-grid{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 900px){
@@ -432,7 +473,7 @@
 </head>
 
 <body>
-  <!-- NAV -->
+  <!-- NAV (STANDARDIZED: matches CDU + site direction wording) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -447,11 +488,11 @@
           <div class="dropdown-panel">
             <a href="./services-secureops.html">
               Watchtower SecureOps™
-              <span class="sub">Managed security operations</span>
+              <span class="sub">Services delivered by people &amp; platform</span>
             </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps variant</span>
+              <span class="sub">DoD/DIB cyber defense on Watchtower</span>
             </a>
           </div>
         </div>
@@ -469,7 +510,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (STANDARDIZED) -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
@@ -499,11 +540,11 @@
 
         <p class="cap-hero-copy">
           Download our Capability Statement for <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> —
-          managed security operations, advisory, and AI-augmented workflows aligned to real operational environments.
+          mission-aligned cyber defense, integration support, and evidence-ready reporting for DoD and the Defense Industrial Base.
         </p>
 
         <p class="cap-hero-copy">
-          We’re built for teams that need <strong>measurable outcomes</strong>, <strong>clean reporting</strong>, and
+          Built for teams that need <strong>measurable outcomes</strong>, <strong>operational discipline</strong>, and
           <strong>evidence that holds up</strong> under leadership and audit scrutiny.
         </p>
 
@@ -511,7 +552,7 @@
           <a class="cap-pill primary" href="./Capability_Statement.pdf" target="_blank" rel="noopener">
             Download PDF
           </a>
-          <a class="cap-pill ghost" href="mailto:info@enlight10solutions.com?subject=Capability%20Statement%20Request">
+          <a class="cap-pill ghost" href="mailto:info@enlight10solutions.com?subject=Capabilities%20/%20Teaming%20Conversation">
             Request a Conversation
           </a>
           <a class="cap-pill ghost" href="./watchtower.html">
@@ -544,9 +585,8 @@
             <article class="cap-card">
               <h3>Download</h3>
               <p>
-                Use the buttons below to open the PDF in a new tab or download it directly.
-                If you need a tailored version for an opportunity (NAICS alignment, scope emphasis, or teaming language),
-                email us and we’ll respond quickly.
+                Open the PDF in a new tab or download it directly. If you need a tailored version for an opportunity
+                (scope emphasis, teaming language, or identifier alignment), email us — we respond quickly.
               </p>
 
               <div class="cap-hero-actions" style="margin-top:0.9rem;">
@@ -557,6 +597,10 @@
                   Schedule Intro
                 </a>
               </div>
+
+              <p class="cap-note">
+                <strong>Procurement-friendly:</strong> Designed to support subcontract discussions, scope fit, and mission delivery alignment.
+              </p>
             </article>
 
             <!-- RIGHT -->
@@ -567,26 +611,55 @@
               </p>
 
               <ul class="cap-list">
-                <li>Managed security operations (SecureOps™ / Cyber Defense United™)</li>
-                <li>Advisory &amp; vCISO services</li>
-                <li>Compliance and audit-readiness support</li>
-                <li>AI-augmented workflows via Watchtower CRP (reasoning + evidence)</li>
-                <li>NAICS and company identifiers</li>
+                <li>Watchtower SecureOps™ — services delivered by people &amp; platform</li>
+                <li>Cyber Defense United™ — DoD/DIB mission cyber defense variant</li>
+                <li>Operations design, escalation paths, and reporting cadence</li>
+                <li>Integration support for on-prem / restricted / disconnected environments</li>
+                <li>Evidence-ready incident outputs (cases, timelines, artifacts, decision logs)</li>
               </ul>
 
               <div class="pill-row" aria-label="Differentiator pills">
                 <span class="pill">Operator-Led</span>
                 <span class="pill">Evidence-First</span>
                 <span class="pill">Works With Your Stack</span>
-                <span class="pill">DoD/DIB Ready</span>
+                <span class="pill">Prime-Friendly</span>
               </div>
             </aside>
 
           </div>
+
+          <!-- NEW: Identifiers / quick facts (placeholder values you can fill in once) -->
+          <div class="id-grid" aria-label="Company identifiers">
+            <div class="id-item">
+              <p class="k">UEI</p>
+              <p class="v">[Insert UEI]</p>
+              <p class="hint">Unique Entity ID for procurement.</p>
+            </div>
+            <div class="id-item">
+              <p class="k">CAGE / NCAGE</p>
+              <p class="v">[Insert CAGE]</p>
+              <p class="hint">Government contracting identifier.</p>
+            </div>
+            <div class="id-item">
+              <p class="k">NAICS</p>
+              <p class="v">[Insert primary NAICS + others]</p>
+              <p class="hint">List top 2–4 that match your direction.</p>
+            </div>
+            <div class="id-item">
+              <p class="k">SAM</p>
+              <p class="v">Active / [Date]</p>
+              <p class="hint">Status + last renewal date.</p>
+            </div>
+          </div>
+
+          <p class="cap-note" style="margin-top:1rem;">
+            <strong>Note:</strong> Watchtower CRP can be deployed in mission environments based on enclave constraints.
+            Engagements are scoped to align with program governance, data handling requirements, and operational reporting needs.
+          </p>
         </div>
       </section>
 
-      <!-- Optional secondary CTA band -->
+      <!-- Secondary CTA band -->
       <section aria-label="Teaming and contact call to action" style="margin-top:1.35rem;">
         <div class="cap-cta-band">
           <h2>Teaming &amp; Partnerships</h2>
@@ -607,10 +680,10 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (STANDARDIZED: current year) -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
