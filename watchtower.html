@@ -1,4 +1,4 @@
-<!-- watchtower.html (FULL FILE REPLACEMENT — hero-wide circuit field + white subtitle + rename to Cyber Reasoning Platform™) -->
+<!-- watchtower.html (FULL FILE REPLACEMENT — standardized nav + standardized footer year + pilot-first CTA alignment) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +12,8 @@
   />
 
   <!-- Shared styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=26" />
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css?v=30" />
+  <script src="./script.js?v=30" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
@@ -50,7 +50,7 @@
       -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
       mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
 
-      opacity: 0.18;                 /* overall intensity of the circuit layer */
+      opacity: 0.18;
       mix-blend-mode: screen;
       filter: blur(0.15px);
 
@@ -60,7 +60,6 @@
 
       /* Inline SVG circuit pattern */
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23ffd447' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23ffd447' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
-
       animation: heroCircuitDrift 18s ease-in-out infinite;
     }
 
@@ -114,15 +113,12 @@
       border-radius: 18px;
       padding: 12px;
       background: rgba(2,6,23,0.35);
-
-      /* ✅ gold border */
       border: 1px solid rgba(250,204,21,0.30);
-
       box-shadow: 0 18px 40px rgba(0,0,0,0.55);
       overflow: hidden;
     }
 
-    /* Circuits BEHIND the logo image (kept, but bigger) */
+    /* Circuits BEHIND the logo image */
     .wt-circuits-bg{
       position:absolute;
       inset: -30%;
@@ -145,8 +141,6 @@
       width:100%;
       height:auto;
       display:block;
-
-      /* ✅ rounded logo edges */
       border-radius: 14px;
       background:#000;
     }
@@ -219,7 +213,7 @@
       color:#ffffff;
     }
 
-    /* ✅ Subtitle: force white (remove blue cast) */
+    /* Subtitle: force white */
     .wt-hero-tagline{
       margin: 0 0 1.25rem;
       max-width: 720px;
@@ -353,37 +347,35 @@
     }
 
     .card{
-  position: relative;                 /* ✅ required for ::before layering */
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  background:#fff;
-  padding: 1.1rem 1.1rem;
-  box-shadow: 0 10px 22px rgba(2,6,23,0.05);
-  overflow: hidden;                   /* ✅ clip circuits to rounded corners */
-}
+      position: relative;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background:#fff;
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
+      overflow: hidden;
+    }
 
-/* ✅ circuit underlay */
-.card::before{
-  content:"";
-  position:absolute;
-  inset:-18%;
-  pointer-events:none;
-  z-index:0;
-  opacity:0.20;                       /* tune: 0.06–0.14 */
-  mix-blend-mode: multiply;           /* subtle on white */
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-position: center;
+    /* circuit underlay */
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-18%;
+      pointer-events:none;
+      z-index:0;
+      opacity:0.20;
+      mix-blend-mode: multiply;
+      background-repeat:no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23caa24a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23caa24a' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    }
 
-  /* Inline SVG background (same “board” vibe) */
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23caa24a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23caa24a' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* ✅ keep all real content above the circuit underlay */
-.card > *{
-  position: relative;
-  z-index: 1;
-}
+    /* keep all content above underlay */
+    .card > *{
+      position: relative;
+      z-index: 1;
+    }
 
     .card h3{
       margin:0 0 0.55rem;
@@ -504,7 +496,7 @@
 </head>
 
 <body>
-  <!-- NAV -->
+  <!-- NAV (standardized) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -519,17 +511,18 @@
           <div class="dropdown-panel">
             <a href="./services-secureops.html">
               Watchtower SecureOps™
-              <span class="sub">Services delivered by people &amp; platform</span>
+              <span class="sub">Operations enablement + delivery</span>
             </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+              <span class="sub">DoD/DIB mission variant</span>
             </a>
           </div>
         </div>
 
-        <a href="./watchtower.html">Watchtower CRP™</a>
+        <a href="./watchtower.html" aria-current="page">Watchtower CRP™</a>
         <a href="./capabilities.html">Capabilities</a>
+        <a href="./partners.html">Prime Partners</a>
         <a href="./who.html">Who We Are</a>
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
@@ -541,7 +534,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (standardized) -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
@@ -549,8 +542,9 @@
       <a href="./services-secureops.html">Watchtower SecureOps™</a>
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
-      <a href="./watchtower.html">Watchtower CRP™</a>
+      <a href="./watchtower.html" aria-current="page">Watchtower CRP™</a>
       <a href="./capabilities.html">Capabilities</a>
+      <a href="./partners.html">Prime Partners</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
@@ -576,19 +570,16 @@
                 <path class="trace" d="M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720" />
                 <path class="trace" d="M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265" />
                 <path class="trace" d="M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340" />
-
                 <path class="trace" d="M520 265 V340 Q520 370 550 370 H650" />
                 <path class="trace" d="M520 265 H455 Q430 265 430 240 V190" />
                 <path class="trace" d="M740 420 V510 Q740 540 710 540 H615" />
                 <path class="trace" d="M855 305 H930 Q960 305 960 335 V380" />
                 <path class="trace" d="M450 515 H380 Q350 515 350 545 V610" />
                 <path class="trace" d="M280 235 H180 Q150 235 150 265 V315" />
-
                 <path class="trace flow"  d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" />
                 <path class="trace flow2" d="M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620" />
                 <path class="trace flow"  d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" />
                 <path class="trace flow2" d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" />
-
                 <g class="node">
                   <circle cx="85" cy="115" r="5"/>
                   <circle cx="280" cy="235" r="5"/>
@@ -616,15 +607,14 @@
 
         <div class="wt-hero-copy">
           <p class="lead">
-            <strong>Cyber Reasoning Platform™</strong> is the reasoning core at the heart
-            of the Watchtower brand family — powering <strong>Watchtower SecureOps™</strong> services and
-            <strong>Cyber Defense United™</strong> for DoD, DIB, and security-focused missions.
+            <strong>Cyber Reasoning Platform™</strong> is the reasoning core behind the Watchtower brand family — powering
+            <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> for DoD, DIB, and high-assurance environments.
           </p>
 
           <p>
-            Cyber Reasoning Platform ingests signals from your existing tools and turns them into correlated
-            investigations, narrative timelines, and defensible evidence. Modules like Guardian, Seek,
-            Atlas, Assist, Deploy, and Audit help teams defend faster without losing the story.
+            Cyber Reasoning Platform ingests signals from your existing tools and turns them into correlated investigations,
+            narrative timelines, and defensible evidence. Modules like Guardian, Seek, Atlas, Assist, Deploy, and Audit help
+            teams defend faster without losing the story.
           </p>
         </div>
       </div>
@@ -632,8 +622,8 @@
       <div class="wt-hero-right">
         <h1>Watchtower CRP™</h1>
         <p class="wt-hero-tagline">
-          The Cyber Reasoning Platform that transforms your existing security tools into organized
-          understanding, actionable response, and continuous assurance for SecureOps and Cyber Defense United.
+          The Cyber Reasoning Platform that transforms your existing security tools into organized understanding,
+          actionable response, and continuous assurance for SecureOps and Cyber Defense United.
         </p>
 
         <div class="wt-hero-video-frame" id="wt-demo">
@@ -644,11 +634,16 @@
         </div>
 
         <div class="wt-hero-pills" aria-label="Cyber Reasoning Platform actions">
-          <a class="wt-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber Reasoning Platform / Early Access">
-            Request Cyber Reasoning Platform Briefing
+          <!-- ✅ Pilot-first CTA -->
+          <a class="wt-pill primary"
+             href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+            Start a Pilot
+          </a>
+          <a class="wt-pill ghost" href="./services-secureops.html">
+            See Watchtower SecureOps™
           </a>
           <a class="wt-pill ghost" href="./services-cyber-defense-united.html">
-            See How It Powers Cyber Defense United
+            See Cyber Defense United™
           </a>
         </div>
       </div>
@@ -858,15 +853,19 @@
 
       <section class="section-block slim" style="margin-top:1.75rem;">
         <div class="cta-band">
-          <h2>Want a Cyber Reasoning Platform Briefing?</h2>
+          <h2>Ready for a 30–90 Day Pilot?</h2>
           <p>
-            If you’re evaluating SecureOps modernization, mission monitoring, or evidence-driven operations,
-            we’ll start with your environment and show how the platform becomes your reasoning and assurance layer.
+            We’ll start with your environment and success metrics, connect your existing tools, and deliver
+            evidence-driven investigations your leaders can brief and auditors can validate.
           </p>
 
           <div class="cta-actions">
-            <a class="button primary" href="mailto:info@enlight10solutions.com?subject=Cyber Reasoning Platform / Early Access &amp; SecureOps">
-              Request Cyber Reasoning Platform Briefing
+            <a class="button primary"
+               href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+              Start a Pilot
+            </a>
+            <a class="button ghost" href="./services-secureops.html">
+              Learn About SecureOps
             </a>
             <a class="button ghost" href="./services-cyber-defense-united.html">
               Learn About Cyber Defense United
@@ -878,10 +877,10 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (standardized, current year) -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
