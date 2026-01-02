@@ -1,4 +1,4 @@
-<!-- partners.html (FULL FILE — Prime Partners, capability insert, pilots, LOE, outcomes) -->
+<!-- partners.html (FULL FILE REPLACEMENT — fixes hero/top clipping under fixed nav) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,18 +27,37 @@
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     }
 
+    /* -------------------------------------------------
+       FIX: hero content hidden under fixed top nav
+       ------------------------------------------------- */
+    :root{
+      /* If your topbar height changes, tweak this one value */
+      --nav-clearance: 96px;
+    }
+
+    /* Ensure anchor jumps don't hide headings under fixed nav */
+    #top { scroll-margin-top: var(--nav-clearance); }
+
     /* Hero (dark) */
     .hero.splash{
       background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
       color:#fff;
-      padding-top: 44px; /* under nav */
+
+      /* was 44px — too small when nav is fixed */
+      padding-top: var(--nav-clearance);
       padding-bottom: 34px;
+
+      position: relative;
+      z-index: 0;
     }
 
     .hero-inner{
       max-width:1100px;
       margin:0 auto;
-      padding: 26px 1.5rem 0;
+
+      /* was 26px top padding + hero padding-top 44px (too tight) */
+      padding: 22px 1.5rem 0;
+
       display:grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 2.1rem;
@@ -107,20 +126,28 @@
     .hero-card{
       width:100%;
       border-radius: 18px;
-      padding: 1.15rem 1.15rem;
+
+      /* tiny top pad helps if any font renders “high” */
+      padding: 1.25rem 1.15rem 1.15rem;
+
       background: rgba(2,6,23,0.38);
       border: 1px solid rgba(255,212,71,0.16);
       box-shadow:
         0 20px 48px rgba(0,0,0,0.55),
         inset 0 1px 0 rgba(255, 255, 255, 0.10);
       position: relative;
+
+      /* keep the glow contained but don’t clip header text */
       overflow: hidden;
     }
 
     .hero-card::after{
       content:"";
       position:absolute;
-      inset:-40%;
+
+      /* was -40% (aggressive) — can visually “eat” the top edge on some displays */
+      inset:-28%;
+
       background: radial-gradient(circle at 55% 45%,
         rgba(255,212,71,0.35),
         rgba(255,212,71,0.12) 45%,
@@ -137,6 +164,9 @@
       letter-spacing: 0.01em;
       position: relative;
       z-index: 1;
+
+      /* ensure not visually clipped */
+      padding-top: 2px;
     }
 
     .hero-card p{
@@ -387,7 +417,7 @@
       <hr />
       <a href="./watchtower.html">Watchtower CRP™</a>
       <a href="./partners.html" aria-current="page">Prime Partners</a>
-      <a href="./capabilities.html">Capabilities</a>      
+      <a href="./capabilities.html">Capabilities</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
