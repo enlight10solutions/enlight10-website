@@ -1,4 +1,4 @@
-<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT — adds CDU Packages + comparison table above CTA) -->
+<!-- services-cyber-defense-united.html (FULL FILE REPLACEMENT — DoD/DIB shift, removes MSSP language, reinforces subcontractor/mission support) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +8,11 @@
   <title>Cyber Defense United — enLight10 Watchtower Services</title>
   <meta
     name="description"
-    content="Cyber Defense United is enLight10’s DoD/DIB-focused SecureOps engagement, combining managed cyber defense expertise with the Watchtower Cyber Reasoning Platform."
+    content="Cyber Defense United is enLight10’s DoD/DIB-focused cyber defense engagement, combining mission-aligned security operations, on-prem integration, and the Watchtower Cyber Reasoning Platform."
   />
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=26" />
+  <link rel="stylesheet" href="./style.css?v=27" />
   <script src="./script.js" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
@@ -174,7 +174,7 @@
       margin: 0 0 0.7rem;
       font-size: 0.95rem;
       opacity: 0.92;
-      max-width: 680px;
+      max-width: 700px;
       line-height: 1.7;
       color: #e5e7eb;
     }
@@ -275,10 +275,10 @@
       font-size: 1.02rem;
       line-height: 1.75;
       color: #0f172a;
-      max-width: 900px;
+      max-width: 920px;
     }
 
-    /* GOLD THEMED "BAND" WRAPPER (behind groups of cards) */
+    /* GOLD THEMED "BAND" WRAPPER */
     .cdu-band{
       position: relative;
       margin-top: 1.25rem;
@@ -449,7 +449,6 @@
       font-weight: 900;
     }
 
-    /* Consistent "Talk" buttons */
     .cdu-talk{
       display:inline-flex;
       align-items:center;
@@ -488,7 +487,6 @@
         0 10px 22px rgba(2, 6, 23, 0.10);
     }
 
-    /* Comparison table */
     .cdu-table{
       position: relative;
       z-index: 1;
@@ -539,7 +537,6 @@
     .ok{ font-weight: 900; }
     .muted{ color:#64748b; }
 
-    /* Optional / Add-on chip (subtle) */
     .chip{
       display:inline-flex;
       align-items:center;
@@ -585,26 +582,6 @@
       align-items: center;
     }
 
-    /* Footer: ensure the e10 icon block is centered consistently */
-    .footer-e10 {
-      margin-top: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      width: 100%;
-      text-align: center;
-    }
-    .footer-e10 img {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-    }
-    .footer-e10 span {
-      font-size: 0.8rem;
-      opacity: 0.7;
-    }
-
     @media (max-width: 980px) {
       .cdu-grid { grid-template-columns: 1fr; }
       .cdu-lanes { grid-template-columns: 1fr; }
@@ -640,7 +617,7 @@
 </head>
 
 <body>
-  <!-- NAV (NO custom hover/active overrides; use global site behavior) -->
+  <!-- NAV -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -648,7 +625,6 @@
 
     <div class="nav-right">
       <div class="nav-links">
-        <!-- SERVICES DROPDOWN -->
         <div class="dropdown">
           <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
             Services ▾
@@ -658,25 +634,19 @@
               Watchtower SecureOps™
               <span class="sub">Services delivered by people &amp; platform</span>
             </a>
-            <a href="./services-cyber-defense-united.html">
+            <a href="./services-cyber-defense-united.html" aria-current="page">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+              <span class="sub">DoD/DIB cyber defense on Watchtower</span>
             </a>
           </div>
         </div>
 
-        <!-- PRODUCT LINK -->
         <a href="./watchtower.html">Watchtower CRP™</a>
         <a href="./capabilities.html">Capabilities</a>
-
-        <!-- ABOUT -->
         <a href="./who.html">Who We Are</a>
-
-        <!-- CONTACT -->
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
 
-      <!-- Hamburger (mobile) -->
       <button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
         <span></span><span></span><span></span>
       </button>
@@ -707,8 +677,9 @@
 
         <p class="cdu-tagline">
           <strong>Watchtower™</strong> is the flagship brand family.
-          <em>Cyber Defense United™</em> is the DoD/DIB SecureOps variant —
-          delivering the <em>Cyber Reasoning Platform</em> plus the expertise to respond to real threats.
+          <em>Cyber Defense United™</em> is the DoD/DIB mission variant —
+          delivering the <em>Cyber Reasoning Platform</em> plus experienced defenders who can investigate, respond,
+          and produce defensible evidence in constrained environments.
         </p>
       </div>
 
@@ -721,9 +692,9 @@
         </h1>
 
         <p class="cdu-hero-subtitle">
-          A mission-focused managed cyber defense capability for DoD and the Defense Industrial Base —
-          combining Watchtower’s reasoning engine with operators who can investigate, respond, and produce
-          defensible evidence.
+          A mission-focused cyber defense capability for DoD and the Defense Industrial Base —
+          combining Watchtower’s reasoning engine with operational leadership, engineering integration, and evidence-ready outputs.
+          <strong>Designed for on-prem, restricted, and disconnected environments.</strong>
         </p>
 
         <div class="cdu-hero-video-wrapper">
@@ -732,7 +703,7 @@
           </video>
 
           <div class="cdu-hero-actions">
-            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber Defense United Conversation">
+            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20Conversation">
               Request a Conversation
             </a>
 
@@ -755,23 +726,25 @@
       <section class="section-block slim">
         <h2>What Cyber Defense United Delivers</h2>
         <p class="cdu-lead">
-          Cyber Defense United brings together two things most programs struggle to unify:
+          Cyber Defense United brings together two things mission environments struggle to unify:
           <strong>the Cyber Reasoning Platform</strong> (Watchtower CRP) and
           <strong>experienced defenders</strong> who can triage, investigate, and respond.
-          We operate as a DoD/DIB-aligned MSSP, an on-prem tool integrator, and a contracting partner for IT/cyber
-          programs that need measurable outcomes and defensible evidence.
+          We support DoD/DIB programs as a mission-aligned cyber defense partner — focusing on
+          <strong>continuous monitoring</strong>, <strong>operational discipline</strong>, and <strong>defensible evidence</strong>.
+          We typically support as a <strong>subcontractor to primes</strong> or as a specialty cyber services provider under existing
+          contract vehicles.
         </p>
 
         <div class="cdu-band">
           <div class="cdu-grid">
             <article class="cdu-card">
-              <h3>Managed Detection &amp; Response (MDR/MSSP)</h3>
+              <h3>Mission Cyber Defense Operations (DCO / Continuous Monitoring)</h3>
               <p>
-                Ongoing monitoring, triage, investigation, and incident response — designed for high-consequence
+                Ongoing monitoring, triage, investigation, and incident response support — built for high-consequence
                 environments where you must prove what happened and what you did about it.
               </p>
               <ul class="cdu-list">
-                <li>24/7 or mission-aligned coverage models</li>
+                <li>Mission-aligned coverage models (business-hours, hybrid, or 24/7)</li>
                 <li>Case-based investigations with timelines and artifacts</li>
                 <li>IR support: containment guidance, recovery support, after-action reporting</li>
               </ul>
@@ -786,20 +759,20 @@
               <ul class="cdu-list">
                 <li>Unified investigations across SIEM/EDR/identity/network sources</li>
                 <li>Evidence packs: “here’s what we saw → what it meant → what we did”</li>
-                <li>Standardized playbooks and reporting across enclaves/tenants</li>
+                <li>Standardized playbooks and reporting aligned to mission needs</li>
               </ul>
             </article>
 
             <article class="cdu-card">
               <h3>On-Prem Integration &amp; Tool Rationalization</h3>
               <p>
-                We deploy and integrate in the environments you actually have: on-prem, constrained, or air-gapped.
-                We align your tool stack to operations and reduce chaos, not add more dashboards.
+                We deploy and integrate in the environments you actually have: on-prem, restricted, or disconnected.
+                We align your tool stack to operations and reduce chaos — not add more dashboards.
               </p>
               <ul class="cdu-list">
                 <li>SIEM/EDR/log pipeline integrations and tuning</li>
-                <li>On-prem deployments &amp; disconnected operations patterns</li>
-                <li>Modernization plans grounded in “battle rhythm” and reporting</li>
+                <li>Disconnected operations patterns and continuity planning</li>
+                <li>Modernization plans grounded in battle rhythm and reporting</li>
               </ul>
             </article>
           </div>
@@ -811,8 +784,8 @@
         <p class="cdu-lead">
           Many “cATO” efforts fail because they treat operations as paperwork. We focus on the parts that make cATO real:
           <strong>continuous monitoring</strong>, <strong>repeatable operations</strong>, and <strong>evidence</strong>.
-          Cyber Defense United can be paired with an automation toolset and AI integration support so your program improves
-          security outcomes while reducing manual burden.
+          Cyber Defense United can be paired with automation and AI integration support so your program improves outcomes
+          while reducing manual burden — with governance and auditability.
         </p>
 
         <div class="cdu-band">
@@ -834,11 +807,11 @@
               <h3>AI Integration Support (Human-in-the-Loop)</h3>
               <p>
                 We integrate AI where it actually helps defenders: summarization, triage assistance, report drafting,
-                and decision support — with analyst control and auditable outputs.
+                and decision support — with operator control and auditable outputs.
               </p>
               <ul class="cdu-list">
                 <li>Assist-driven summaries and “next-step” suggestions</li>
-                <li>Report and briefing acceleration for leadership and auditors</li>
+                <li>Briefing acceleration for leadership and auditors</li>
                 <li>AI governance patterns: logging, review gates, and traceability</li>
               </ul>
             </article>
@@ -849,10 +822,11 @@
       <section class="section-block slim">
         <h2>DoD Contracting Support for IT &amp; Cyber Programs</h2>
         <p class="cdu-lead">
-          In addition to managed defense, Cyber Defense United supports DoD contracting needs across IT and cyber:
-          modernization, operations design, engineering support, and mission-ready reporting. If you need a partner that
-          can deliver both <strong>operations</strong> and <strong>technical execution</strong>, we can align to your
-          program structure and constraints.
+          In addition to cyber defense operations, Cyber Defense United supports DoD IT and cyber programs across modernization,
+          operations design, engineering support, and mission-ready reporting. If you need a partner that can deliver both
+          <strong>operational execution</strong> and <strong>technical integration</strong>, we align to your program structure and constraints.
+          Common engagement patterns include <strong>subcontract support</strong> to primes, surge support for exercises, and integration support
+          for new tools coming online.
         </p>
 
         <div class="cdu-band">
@@ -869,15 +843,15 @@
               <h3>Engineering + Integration</h3>
               <p>
                 Build the backbone: pipelines, integrations, tuning, and operational dashboards — with Watchtower as the
-                unifying workspace.
+                unifying workspace and evidence layer.
               </p>
             </article>
 
             <article class="cdu-card">
               <h3>Compliance-Driven Operations</h3>
               <p>
-                Evidence you can defend: cases, timelines, artifacts, and repeatable workflows that support CMMC and
-                continuous monitoring expectations.
+                Evidence you can defend: cases, timelines, artifacts, and repeatable workflows that support continuous monitoring,
+                audit questions, and DIB compliance expectations.
               </p>
             </article>
           </div>
@@ -909,7 +883,9 @@
                   <span class="mini">Onboarding</span>
                 </div>
                 <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Foundation">Talk Foundation</a>
+                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Foundation">
+                    Talk Foundation
+                  </a>
                 </div>
               </article>
 
@@ -923,13 +899,15 @@
                   <span class="mini">Playbooks</span>
                 </div>
                 <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk cdu-talk--gold" href="mailto:info@enlight10solutions.com?subject=CDU%20Mission">Talk Mission</a>
+                  <a class="cdu-talk cdu-talk--gold" href="mailto:info@enlight10solutions.com?subject=CDU%20Mission">
+                    Talk Mission
+                  </a>
                 </div>
               </article>
 
               <article class="cdu-pkg">
                 <div class="kicker">Full-spectrum</div>
-                <h3>Command</h3>
+                <h3>Command Support</h3>
                 <p class="desc">Continuous operations with proactive hunt, hardening, and executive/ATO-ready outputs.</p>
                 <div class="cdu-pillrow">
                   <span class="mini">24x7x365</span>
@@ -937,7 +915,9 @@
                   <span class="mini">Assurance</span>
                 </div>
                 <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Command">Talk Command</a>
+                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Command%20Support">
+                    Talk Command Support
+                  </a>
                 </div>
               </article>
             </div>
@@ -947,7 +927,7 @@
                 <div class="cdu-cell" role="columnheader">Capability</div>
                 <div class="cdu-cell" role="columnheader">Foundation</div>
                 <div class="cdu-cell" role="columnheader">Mission</div>
-                <div class="cdu-cell" role="columnheader">Command</div>
+                <div class="cdu-cell" role="columnheader">Command Support</div>
               </div>
 
               <div class="cdu-row cdu-group" role="row">
@@ -1000,7 +980,7 @@
               </div>
 
               <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Monthly exec summary / posture review</div>
+                <div class="cdu-cell" role="cell">Monthly posture review / briefs</div>
                 <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
                 <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
                 <div class="cdu-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
@@ -1043,13 +1023,13 @@
         <div class="cdu-cta-band">
           <h2>Let’s talk about your environment.</h2>
           <p>
-            If you’re supporting a mission network, a defense program, or a DIB enterprise that needs measurable cyber
-            defense outcomes — we’ll start with a short technical conversation about your tools, constraints, and
-            priorities, then propose a clear operating approach.
+            If you’re supporting a mission network, a defense program, or a DIB enterprise that needs measurable cyber defense
+            outcomes — we’ll start with a short technical conversation about your tools, constraints, and priorities,
+            then propose a clear operating approach.
           </p>
 
           <div class="cdu-cta-actions">
-            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber Defense United / Technical Conversation">
+            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20/%20Technical%20Conversation">
               Request a Conversation
             </a>
             <a class="cdu-pill ghost" href="./watchtower.html">
@@ -1065,7 +1045,7 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">© 2025–2026 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
