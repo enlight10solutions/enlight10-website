@@ -1,4 +1,4 @@
-<!-- services-secureops.html (standardized nav + pilot-first CTA + standardized footer year + commercial positioning) -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT — adds “Who it’s for” strip + outcomes row + consistent pilot language) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +12,8 @@
   />
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=30" />
-  <script src="./script.js?v=30" defer></script>
+  <link rel="stylesheet" href="./style.css?v=31" />
+  <script src="./script.js?v=31" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
@@ -200,11 +200,6 @@
       color: #ffffff;
     }
 
-    .secureops-highlight{
-      font-weight: 800;
-      letter-spacing: 0.01em;
-    }
-
     .secops-video-wrapper {
       display: flex;
       flex-direction: column;
@@ -320,6 +315,73 @@
       line-height:1.7;
       max-width: 920px;
       font-size: 1.02rem;
+    }
+
+    /* Trust strip (who it's for) */
+    .trust-strip{
+      margin-top: 1.05rem;
+      padding: 0.9rem 1.05rem;
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      background: rgba(2,6,23,0.02);
+      box-shadow: 0 12px 26px rgba(2,6,23,0.05);
+    }
+    .trust-strip strong{
+      display:block;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+      color:#0b1220;
+      font-weight: 800;
+    }
+    .trust-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.55rem;
+      align-items:center;
+      color:#334155;
+      line-height:1.6;
+      font-size:0.95rem;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .trust-items li{
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,0.08);
+      background: rgba(255,255,255,0.88);
+      font-weight: 650;
+      font-size: 0.85rem;
+    }
+    .trust-note{
+      margin: 0.55rem 0 0;
+      color:#475569;
+      font-size:0.92rem;
+      line-height:1.6;
+    }
+
+    /* Outcomes row */
+    .outcomes-row{
+      margin-top: 0.95rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.55rem;
+      align-items:center;
+    }
+    .outcome-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(2,6,23,0.10);
+      background: rgba(255,255,255,0.85);
+      color:#0b1120;
+      box-shadow: 0 10px 18px rgba(2,6,23,0.05);
     }
 
     /* Page band gradient */
@@ -507,7 +569,7 @@
       gap: 0.5rem;
 
       width: 100%;
-      max-width: 240px;
+      max-width: 260px;
       min-height: 46px;
 
       padding: 0.85rem 1.15rem;
@@ -748,10 +810,10 @@
           </video>
 
           <div class="secops-hero-actions">
-            <!-- ✅ Pilot-first CTA (commercial) -->
+            <!-- Pilot-first CTA (commercial) -->
             <a class="secops-pill primary"
-               href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request%20(30-90%20Days)&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
-              Start a SecureOps Pilot
+               href="mailto:info@enlight10solutions.com?subject=SecureOps%2030%E2%80%9390%20Day%20Pilot%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+              Start a 30–90 Day Pilot
             </a>
             <a class="secops-pill ghost" href="./watchtower.html">
               Learn About the Watchtower CRP
@@ -767,56 +829,88 @@
   <main class="light">
     <div class="page-wrap">
 
-      <!-- What SecureOps Delivers -->
+      <!-- Who it's for + Outcomes -->
       <section class="section-block slim">
-        <h2 class="section-title">What Watchtower SecureOps Delivers</h2>
+        <h2 class="section-title">Who SecureOps Is For</h2>
         <p class="section-lead">
-          Watchtower SecureOps brings together the <strong>Watchtower CRP</strong> and experienced operators to help
-          commercial organizations run security operations that are <strong>measurable</strong>, <strong>repeatable</strong>,
-          and <strong>defensible</strong>. We can augment your existing SOC, modernize your workflows, or operate as a
-          managed partner alongside your team.
+          SecureOps is designed for commercial organizations that want SOC-grade rigor without adding tool sprawl —
+          and who need reporting leadership can understand and defend.
         </p>
 
-        <div class="band-red">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Managed Detection &amp; Response</h3>
-              <p>
-                Monitoring, triage, investigation, and response support — built around cases and evidence, not just
-                alert queues.
-              </p>
-              <ul>
-                <li>Business-hours, 24/7, or hybrid coverage models</li>
-                <li>Case timelines, artifacts, and after-action reporting</li>
-                <li>Clear escalation paths and “what we did” documentation</li>
-              </ul>
-            </article>
+        <div class="trust-strip">
+          <strong>Common fit</strong>
+          <ul class="trust-items" aria-label="Commercial fit">
+            <li>Security Teams (5–50)</li>
+            <li>Regulated SaaS</li>
+            <li>Healthcare</li>
+            <li>Financial Services</li>
+            <li>Enterprise SOCs</li>
+            <li>MSSPs</li>
+            <li>Hybrid / Cloud Migration</li>
+          </ul>
+          <p class="trust-note">
+            We integrate what you already have (SIEM/EDR/IdP/cloud logs) and deliver measurable operations with defensible evidence.
+          </p>
 
-            <article class="card core">
-              <h3>CRP as the Operations Hub</h3>
-              <p>
-                Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leaders
-                get clarity.
-              </p>
-              <ul>
-                <li>Unified investigations across SIEM/EDR/identity/network/cloud sources</li>
-                <li>Standardized playbooks and consistent reporting</li>
-                <li>Evidence packs: “what we saw → what it meant → what we did”</li>
-              </ul>
-            </article>
+          <div class="outcomes-row" aria-label="Outcomes">
+            <span class="outcome-pill">Noise Reduction</span>
+            <span class="outcome-pill">Faster Triage</span>
+            <span class="outcome-pill">Clear Escalation</span>
+            <span class="outcome-pill">Defensible Reporting</span>
+          </div>
+        </div>
 
-            <article class="card">
-              <h3>Incident Response &amp; Surge Support</h3>
-              <p>
-                When something is real, you need experienced hands. We support containment decisions, recovery, and
-                communications.
-              </p>
-              <ul>
-                <li>Rapid triage + scoping to confirm impact</li>
-                <li>Containment guidance aligned to your risk tolerance</li>
-                <li>Executive summaries and post-incident recommendations</li>
-              </ul>
-            </article>
+        <!-- What SecureOps Delivers -->
+        <div style="margin-top:1.6rem;">
+          <h2 class="section-title">What Watchtower SecureOps Delivers</h2>
+          <p class="section-lead">
+            Watchtower SecureOps brings together the <strong>Watchtower CRP</strong> and experienced operators to help
+            commercial organizations run security operations that are <strong>measurable</strong>, <strong>repeatable</strong>,
+            and <strong>defensible</strong>. We can augment your existing SOC, modernize your workflows, or operate as a
+            managed partner alongside your team.
+          </p>
+
+          <div class="band-red">
+            <div class="grid-3">
+              <article class="card">
+                <h3>Managed Detection &amp; Response</h3>
+                <p>
+                  Monitoring, triage, investigation, and response support — built around cases and evidence, not just
+                  alert queues.
+                </p>
+                <ul>
+                  <li>Business-hours, 24/7, or hybrid coverage models</li>
+                  <li>Case timelines, artifacts, and after-action reporting</li>
+                  <li>Clear escalation paths and “what we did” documentation</li>
+                </ul>
+              </article>
+
+              <article class="card core">
+                <h3>CRP as the Operations Hub</h3>
+                <p>
+                  Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leaders
+                  get clarity.
+                </p>
+                <ul>
+                  <li>Unified investigations across SIEM/EDR/identity/network/cloud sources</li>
+                  <li>Standardized playbooks and consistent reporting</li>
+                  <li>Evidence packs: “what we saw → what it meant → what we did”</li>
+                </ul>
+              </article>
+
+              <article class="card">
+                <h3>Incident Response &amp; Surge Support</h3>
+                <p>
+                  When something is real, you need experienced hands. We support containment decisions, recovery, and
+                  communications.
+                </p>
+                <ul>
+                  <li>Rapid triage + scoping to confirm impact</li>
+                  <li>Containment guidance aligned to your risk tolerance</li>
+                  <li>Executive summaries and post-incident recommendations</li>
+                </ul>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -1012,8 +1106,8 @@
                 </div>
                 <div class="cta">
                   <a class="pkg-talk"
-                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
-                    Start Starter Pilot
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter%2030%E2%80%9390%20Day%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+                    Start a 30–90 Day Pilot
                   </a>
                 </div>
               </article>
@@ -1029,8 +1123,8 @@
                 </div>
                 <div class="cta">
                   <a class="pkg-talk pkg-talk--gold"
-                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
-                    Start Pro Pilot
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro%2030%E2%80%9390%20Day%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+                    Start a 30–90 Day Pilot
                   </a>
                 </div>
               </article>
@@ -1046,8 +1140,8 @@
                 </div>
                 <div class="cta">
                   <a class="pkg-talk"
-                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
-                    Start Elite Pilot
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite%2030%E2%80%9390%20Day%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+                    Start a 30–90 Day Pilot
                   </a>
                 </div>
               </article>
@@ -1153,8 +1247,8 @@
 
           <div class="secops-cta-actions">
             <a class="secops-pill primary"
-               href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request%20(30-90%20Days)&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
-              Request a Pilot
+               href="mailto:info@enlight10solutions.com?subject=SecureOps%2030%E2%80%9390%20Day%20Pilot%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+              Start a 30–90 Day Pilot
             </a>
             <a class="secops-pill ghost" href="./watchtower.html">
               Explore Watchtower CRP
