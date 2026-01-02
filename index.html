@@ -196,55 +196,39 @@
       white-space: nowrap;
     }
 
-    /* Under-video persona CTAs (secondary routing) */
-    .hero-actions-under-video{
-      width: 100%;
-      max-width: 960px;
-      margin-top: 1.05rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      padding-right: 0;
-      padding-left: 0;
-      box-sizing: border-box;
-    }
+    /* Make the CTA row match the video width and align under each half */
+.hero-video-wrapper{
+  width: 100%;
+  align-items: flex-start;
+}
 
-    .hero-actions-under-video .button{
-      border-radius: 999px;
-      padding: 0.78rem 1.2rem;
-      font-size: 0.92rem;
-      line-height: 1;
-      font-weight: 650;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      white-space: nowrap;
-      flex: 0 1 auto;
-    }
+/* ✅ Two fixed columns under the video */
+.hero-actions-under-video{
+  width: 100%;
+  max-width: 720px;          /* match your video max width */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 1.05rem;
+  align-items: stretch;
+}
 
-    @media (max-width: 900px){
-      .hero-actions-under-video{
-        justify-content: center;
-      }
-      .hero-actions-under-video .button{
-        width: 100%;
-        max-width: 420px;
-      }
+/* ✅ Buttons fill each column so centers line up */
+.hero-actions-under-video .button{
+  width: 100%;
+  justify-content: center;
+  min-height: 46px;
+}
 
-      .hero-left-actions{
-        width: 100%;
-        justify-content:center;
-      }
-      .hero-left-actions .button{
-        width: 100%;
-        max-width: 420px;
-      }
-    }
-
+/* Mobile: stack */
+@media (max-width: 900px){
+  .hero-actions-under-video{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 420px;
+  }
+}
+    
     .button.primary.gold{
       color:#0b1120;
       background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
@@ -691,12 +675,9 @@
 
         <!-- Trimmed definitions (2 only) -->
         <ul class="hero-defs" aria-label="Key definitions">
-          <li>
-            <strong>CRP™ (Cyber Reasoning Platform™)</strong> — the reasoning and evidence layer behind repeatable investigations.
-          </li>
-          <li>
-            <strong>Evidence Pack™</strong> — case narrative + timeline + artifacts + decision trail for leadership and audit questions.
-          </li>
+          <p>
+            We turn SIEM/EDR/IdP noise into investigations + evidence your leaders can trust.
+          </p>
         </ul>
       </div>
     </div>
