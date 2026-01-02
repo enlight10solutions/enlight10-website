@@ -1,4 +1,4 @@
-<!-- services-secureops.html (FULL FILE REPLACEMENT — bottom fixed + packages band matches site gradient) -->
+<!-- services-secureops.html (FULL FILE REPLACEMENT — standardized nav + pilot-first CTA + standardized footer year + commercial positioning) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,12 +8,12 @@
   <title>Watchtower SecureOps™ — Modern SOC Services Powered by Watchtower</title>
   <meta
     name="description"
-    content="Watchtower SecureOps™ is enLight10’s services line for commercial and MSSP environments — SecureOps for Enterprise, SecureOps for MSSPs, and SecureOps Lite (SMB), all powered by the Watchtower Cyber Reasoning Platform (CRP)."
+    content="Watchtower SecureOps™ is enLight10’s commercial services line — modern SOC operations delivered by people + platform, powered by the Watchtower Cyber Reasoning Platform (CRP)."
   />
 
   <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=27" />
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="./style.css?v=30" />
+  <script src="./script.js?v=30" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
@@ -290,7 +290,7 @@
     }
 
     .pkg-table { overflow-x: auto; }
-    .pkg-row   { min-width: 840px; } /* allows scroll instead of squish */
+    .pkg-row   { min-width: 840px; }
 
     /* ---------------------------------
        MAIN BODY
@@ -322,7 +322,7 @@
       font-size: 1.02rem;
     }
 
-    /* Your page band gradient */
+    /* Page band gradient */
     .band-red{
       margin-top: 1.25rem;
       border: 1px solid #e5e7eb;
@@ -394,13 +394,12 @@
     }
 
     /* =========================================================
-       Packages + Table (Rapid7-ish) — now using band-red style
+       Packages + Table — band matches site gradient
        ========================================================= */
     .pricing-wrap { margin-top: 1.75rem; }
     .pricing-head h2{ margin:0 0 0.55rem; font-weight:800; color:#0b1220; }
     .pricing-head p{ margin:0; color:#334155; line-height:1.7; max-width: 920px; }
 
-    /* Make the package band MATCH your page bands */
     .pricing-band{
       margin-top: 1.25rem;
       position: relative;
@@ -415,7 +414,6 @@
       padding: 1.25rem 1.25rem;
     }
 
-    /* Keep circuits subtle */
     .pricing-circuits{
       position:absolute;
       inset:-14%;
@@ -501,7 +499,7 @@
       margin-top: 0.55rem;
     }
 
-    /* --- A single, consistent "Talk" button style --- */
+    /* Consistent "Pilot" buttons */
     .pkg-talk {
       display: inline-flex;
       align-items: center;
@@ -509,7 +507,7 @@
       gap: 0.5rem;
 
       width: 100%;
-      max-width: 220px;
+      max-width: 240px;
       min-height: 46px;
 
       padding: 0.85rem 1.15rem;
@@ -546,7 +544,7 @@
         0 10px 22px rgba(2, 6, 23, 0.10);
     }
 
-    /* Comparison table (div-based) */
+    /* Comparison table */
     .pkg-table{
       position: relative;
       z-index: 1;
@@ -588,7 +586,6 @@
       border-left:none;
     }
 
-    /* Group header rows */
     .pkg-group .pkg-cell{
       background: rgba(2,6,23,0.03);
       font-weight: 900;
@@ -602,8 +599,6 @@
     .ok{ font-weight: 900; }
     .muted{ color:#64748b; }
 
-    /* Replace big ADD-ON pill with subtle chip */
-    .addon .tag{ display:none !important; }
     .addon{
       display:inline-flex;
       align-items:center;
@@ -617,7 +612,7 @@
       border: 1px solid rgba(15, 23, 42, 0.12);
       background: rgba(2, 6, 23, 0.03);
       color: #0b1120;
-      opacity: 0.82;
+      opacity:  0.82;
     }
 
     /* CTA band */
@@ -661,7 +656,7 @@
 </head>
 
 <body>
-  <!-- NAV -->
+  <!-- NAV (standardized) -->
   <nav class="topbar" role="navigation" aria-label="Primary">
     <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
       <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
@@ -676,17 +671,18 @@
           <div class="dropdown-panel">
             <a href="./services-secureops.html" aria-current="page">
               Watchtower SecureOps™
-              <span class="sub">Services delivered by people &amp; platform</span>
+              <span class="sub">Commercial services line</span>
             </a>
             <a href="./services-cyber-defense-united.html">
               Cyber Defense United™
-              <span class="sub">DoD/DIB SecureOps on Watchtower</span>
+              <span class="sub">DoD/DIB mission variant</span>
             </a>
           </div>
         </div>
 
         <a href="./watchtower.html">Watchtower CRP™</a>
         <a href="./capabilities.html">Capabilities</a>
+        <a href="./partners.html">Prime Partners</a>
         <a href="./who.html">Who We Are</a>
         <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
@@ -697,7 +693,7 @@
     </div>
   </nav>
 
-  <!-- MOBILE MENU -->
+  <!-- MOBILE MENU (standardized) -->
   <div id="menuBackdrop" class="menu-backdrop" hidden></div>
   <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
     <nav class="menu-nav">
@@ -706,8 +702,8 @@
       <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
       <hr />
       <a href="./watchtower.html">Watchtower CRP™</a>
-      <a href="./partners.html">Prime Partners</a>
       <a href="./capabilities.html">Capabilities</a>
+      <a href="./partners.html">Prime Partners</a>
       <a href="./who.html">Who We Are</a>
       <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
     </nav>
@@ -727,25 +723,23 @@
 
         <p class="secops-tagline">
           <strong>Watchtower™</strong> is the flagship brand family.
-          <em>SecureOps™</em> is our commercial services line — intentionally small and hands-on, grounded in real-world operations and
+          <em>SecureOps™</em> is our commercial services line — intentionally hands-on, grounded in real-world operations,
           delivered by people and platform together, powered by the Watchtower Cyber Reasoning Platform.
         </p>
       </div>
 
       <!-- RIGHT -->
       <div class="secops-hero-right">
-        <div class="secops-hero-kicker">Services • Watchtower SecureOps™</div>
+        <div class="secops-hero-kicker">Commercial Services • Watchtower SecureOps™</div>
 
         <h1>
           Watchtower <span class="text-gradient gradient-red">SecureOps</span>™
         </h1>
 
         <p class="secops-hero-copy">
-          We focus on two things: <strong>building Watchtower</strong> — our cyber reasoning platform — and
-          <strong>running security operations with you</strong> through
-          <span class="text-gradient gradient-red secureops-highlight">Watchtower SecureOps™</span>.
-          For commercial and MSSP environments, that means clearer investigations, faster response, and reporting that connects
-          security work to business risk.
+          Modern security operations for commercial teams — with <strong>clear investigations</strong>, <strong>faster response</strong>,
+          and <strong>defensible reporting</strong>. We integrate the tools you already have and wrap them with a
+          reasoning + evidence layer so your team spends less time chasing noise and more time closing outcomes.
         </p>
 
         <div class="secops-video-wrapper">
@@ -754,8 +748,10 @@
           </video>
 
           <div class="secops-hero-actions">
-            <a class="secops-pill primary" href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps Conversation">
-              Talk to Us About SecureOps
+            <!-- ✅ Pilot-first CTA (commercial) -->
+            <a class="secops-pill primary"
+               href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request%20(30-90%20Days)&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+              Start a SecureOps Pilot
             </a>
             <a class="secops-pill ghost" href="./watchtower.html">
               Learn About the Watchtower CRP
@@ -797,13 +793,13 @@
             </article>
 
             <article class="card core">
-              <h3>Watchtower CRP as the Operations Hub</h3>
+              <h3>CRP as the Operations Hub</h3>
               <p>
-                Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leadership
-                gets clarity.
+                Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leaders
+                get clarity.
               </p>
               <ul>
-                <li>Unified investigations across SIEM/EDR/identity/network sources</li>
+                <li>Unified investigations across SIEM/EDR/identity/network/cloud sources</li>
                 <li>Standardized playbooks and consistent reporting</li>
                 <li>Evidence packs: “what we saw → what it meant → what we did”</li>
               </ul>
@@ -837,9 +833,9 @@
           <div class="grid-3">
             <article class="card">
               <h3>SecureOps for Enterprise</h3>
-              <p>For in-house security teams that already own tools but need a more coherent operating model.</p>
+              <p>For in-house security teams that own tools but want a tighter operating model and clearer reporting.</p>
               <ul>
-                <li>Modern-triage workflows + investigation cases documented in CRP</li>
+                <li>Modern triage + investigation cases documented in CRP</li>
                 <li>Integration with your security tools and ticketing</li>
                 <li>Leadership-ready reporting tied to business risk</li>
               </ul>
@@ -851,7 +847,7 @@
               <ul>
                 <li>Multi-tenant patterns for cases and reporting</li>
                 <li>Standardized triage + escalation across clients</li>
-                <li>Evidence and narratives customers can understand</li>
+                <li>Evidence and narratives customers can actually use</li>
               </ul>
             </article>
 
@@ -861,7 +857,7 @@
               <ul>
                 <li>Right-sized alerting with clear priorities</li>
                 <li>Business-hours monitoring + on-call patterns</li>
-                <li>Audit-ready “what happened / what we did” records</li>
+                <li>“What happened / what we did” audit-ready records</li>
               </ul>
             </article>
           </div>
@@ -873,7 +869,7 @@
         <h2 class="section-title">Commercial Enablement: Integration, AI, and Automation</h2>
         <p class="section-lead">
           Most teams don’t need “more tools” — they need their tools to work together and reduce manual work.
-          SecureOps helps integrate your stack, apply automation safely, and use AI where it improves outcomes.
+          SecureOps integrates your stack, applies automation safely, and uses AI where it improves outcomes.
         </p>
 
         <div class="band-red">
@@ -898,7 +894,7 @@
                 decision support — with review gates and auditability.
               </p>
               <ul>
-                <li>Case summaries and “recommended next steps”</li>
+                <li>Case summaries and recommended next steps</li>
                 <li>Faster executive briefs and audit narratives</li>
                 <li>Safe patterns: traceability, approvals, and logging</li>
               </ul>
@@ -913,7 +909,7 @@
               </p>
               <ul>
                 <li>Evidence packs aligned to common frameworks (SOC 2, ISO 27001, internal policies)</li>
-                <li>Automated reports on a regular interval (weekly/monthly/quarterly)</li>
+                <li>Automated reporting cadence (weekly/monthly/quarterly)</li>
                 <li>Operational records for auditors and leadership</li>
               </ul>
             </article>
@@ -925,7 +921,7 @@
               </p>
               <ul>
                 <li>SOAR-assisted ticket creation and routing</li>
-                <li>Vulnerability + patch workflows aligned to established change windows</li>
+                <li>Vulnerability + patch workflows aligned to change windows</li>
                 <li>Closed-loop validation: “fixed + verified” documentation</li>
               </ul>
             </article>
@@ -976,7 +972,7 @@
         </div>
       </section>
 
-      <!-- SecureOps Packages (ABOVE CTA) -->
+      <!-- SecureOps Packages -->
       <section class="section-block slim" style="margin-top:1.75rem;">
         <div class="pricing-wrap">
           <div class="pricing-head">
@@ -1015,7 +1011,10 @@
                   <span class="mini">Onboarding</span>
                 </div>
                 <div class="cta">
-                  <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter">Talk Starter</a>
+                  <a class="pkg-talk"
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
+                    Start Starter Pilot
+                  </a>
                 </div>
               </article>
 
@@ -1029,7 +1028,10 @@
                   <span class="mini">Playbooks</span>
                 </div>
                 <div class="cta">
-                  <a class="pkg-talk pkg-talk--gold" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro">Talk Pro</a>
+                  <a class="pkg-talk pkg-talk--gold"
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
+                    Start Pro Pilot
+                  </a>
                 </div>
               </article>
 
@@ -1043,7 +1045,10 @@
                   <span class="mini">Assurance</span>
                 </div>
                 <div class="cta">
-                  <a class="pkg-talk" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite">Talk Elite</a>
+                  <a class="pkg-talk"
+                     href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite%20Pilot&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0ACoverage%20goal%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0A">
+                    Start Elite Pilot
+                  </a>
                 </div>
               </article>
             </div>
@@ -1137,19 +1142,19 @@
         </div>
       </section>
 
-      <!-- CTA (NOW correctly inside MAIN and above FOOTER) -->
+      <!-- CTA -->
       <section class="section-block slim" style="margin-top:1.75rem; padding-bottom: 60px;">
         <div class="secops-cta-band">
-          <h2>Let’s talk about your environment.</h2>
+          <h2>Start with a 30–90 Day Pilot.</h2>
           <p>
-            If you’re running security operations — or need to — and want a way to <strong>defend and prove it</strong>
-            without building everything yourself, we’ll start with a short conversation about your tools,
-            constraints, and priorities.
+            We’ll align on your success metrics, connect your existing tools, and deliver clear case timelines and reporting
+            that leadership can understand and you can defend.
           </p>
 
           <div class="secops-cta-actions">
-            <a class="secops-pill primary" href="mailto:info@enlight10solutions.com?subject=Watchtower SecureOps / Technical Conversation">
-              Request a Conversation
+            <a class="secops-pill primary"
+               href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request%20(30-90%20Days)&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0ACoverage%20goal%20(BH%2FHybrid%2F24x7)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+              Request a Pilot
             </a>
             <a class="secops-pill ghost" href="./watchtower.html">
               Explore Watchtower CRP
@@ -1161,10 +1166,10 @@
     </div>
   </main>
 
-  <!-- FOOTER (LAST) -->
+  <!-- FOOTER (standardized) -->
   <footer>
     <div class="footer-inner">
-      <p class="footer-copy">© 2025–2026 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
       <p class="footer-vet">Veteran-Owned Small Business</p>
       <p class="footer-info">
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
