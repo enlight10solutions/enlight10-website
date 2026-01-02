@@ -1,19 +1,19 @@
-<!-- index.html (FULL FILE REPLACEMENT — platform-first, prime-friendly, Watchtower control plane positioning) -->
+<!-- index.html (FULL FILE REPLACEMENT — commercial-first on-ramp while preserving prime credibility) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>enLight10 Solutions — Watchtower™ SOC Control Plane & Cyber Operations Enablement</title>
+  <title>enLight10 Solutions — Watchtower™ SOC Control Plane for Modern Security Operations</title>
   <meta
     name="description"
-    content="enLight10 Solutions delivers Watchtower™—a Security Operations Control Plane and Cyber Reasoning Platform™ that unifies alerts, cases, and evidence across your existing stack. Built by operators for mission, primes, and high-assurance environments."
+    content="Watchtower™ is a Security Operations Control Plane and Cyber Reasoning Platform™ that unifies alerts, cases, and evidence across your existing stack. Built by operators for modern security teams, MSSPs, and high-assurance environments."
   />
 
   <!-- Styles / JS (cache-bust) -->
-  <link rel="stylesheet" href="./style.css?v=28" />
-  <script src="./script.js?v=28" defer></script>
+  <link rel="stylesheet" href="./style.css?v=29" />
+  <script src="./script.js?v=29" defer></script>
 
   <!-- Preload + Favicon -->
   <link rel="preload" as="image" href="./enLight10_Logo.png" />
@@ -169,24 +169,6 @@
       text-shadow: 0 1px 6px rgba(250,204,21,0.35);
     }
 
-    /* Text gradient utilities */
-    .text-gradient{
-      background-clip:text;
-      -webkit-background-clip:text;
-      color:transparent;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .gradient-gold{
-      background-image: linear-gradient(180deg, #ffffff 0%, #fff2c2 40%, #facc15 75%, #eab308 100%);
-      filter: drop-shadow(0 2px 6px rgba(250, 204, 21, 0.35));
-    }
-
-    .gradient-red{
-      background-image: linear-gradient(180deg, #ffffff 0%, #ffd6d6 40%, #ef4444 75%, #dc2626 100%);
-      filter: drop-shadow(0 2px 6px rgba(220, 38, 38, 0.35));
-    }
-
     .wt-white{
       color:#ffffff;
       text-shadow: 0 2px 10px rgba(0,0,0,0.35);
@@ -259,6 +241,7 @@
         0 10px 20px rgba(0, 0, 0, 0.45);
     }
 
+    /* Secondary CTA: still “serious”, but now commercial-onramp */
     .button.secureops{
       color:#0b1120;
       background: linear-gradient(180deg, #ffffff 0%, #ffd6d6 42%, #ef4444 78%, #dc2626 100%);
@@ -355,6 +338,13 @@
       gap: 1.1rem;
     }
 
+    .grid-2{
+      margin-top: 1.05rem;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
     .card{
       border: 1px solid rgba(15, 23, 42, 0.10);
       border-radius: 16px;
@@ -416,6 +406,41 @@
       color: rgba(255,255,255,0.92);
     }
 
+    /* New: subtle "trust strip" */
+    .trust-strip{
+      margin-top: 1.15rem;
+      padding: 0.9rem 1.05rem;
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      background: rgba(2,6,23,0.02);
+      box-shadow: 0 12px 26px rgba(2,6,23,0.05);
+    }
+    .trust-strip strong{
+      display:block;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+    .trust-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.55rem;
+      align-items:center;
+      color:#334155;
+      line-height:1.6;
+      font-size:0.95rem;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .trust-items li{
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,0.08);
+      background: rgba(255,255,255,0.8);
+      font-weight: 650;
+      font-size: 0.85rem;
+    }
+
     .cta-band{
       margin-top: 1.25rem;
       border-radius: 18px;
@@ -438,6 +463,7 @@
 
     @media (max-width: 980px){
       .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 900px){
@@ -527,7 +553,7 @@
           a <strong>Security Operations Control Plane</strong> and <strong>Cyber Reasoning Platform™</strong> that unifies alerts, cases, and evidence
           across your existing stack.
           <br /><br />
-          Built by operators for <strong>mission</strong>, <strong>primes</strong>, and <strong>high-assurance environments</strong> —
+          Built by operators for <strong>modern security teams</strong>, <strong>MSSPs</strong>, and <strong>high-assurance environments</strong> —
           without forcing tool replacement.
           <br /><br />
           <span style="opacity:0.95;">
@@ -548,13 +574,13 @@
         <p class="hero-subtitle">
           Consolidate security operations without ripping out tooling.
           Watchtower normalizes signals, builds evidence-backed cases, and supports disciplined response —
-          so teams move faster with confidence in constrained, high-accountability environments.
+          so teams move faster with confidence.
         </p>
 
         <div class="pill-row" style="margin-top:0.55rem;">
           <span class="mini-pill">Veteran-Owned</span>
           <span class="mini-pill">Operator-Led</span>
-          <span class="mini-pill">DoD/DIB Ready</span>
+          <span class="mini-pill">MSSP-Friendly</span>
           <span class="mini-pill">Works With Your Stack</span>
           <span class="mini-pill">Evidence-First</span>
         </div>
@@ -577,8 +603,9 @@
             <a class="button primary gold" href="./watchtower.html">
               How Watchtower Works
             </a>
-            <a class="button secureops" href="./partners.html">
-              Prime / Subcontract Path
+            <!-- ✅ Commercial-first CTA (primes still find partners via nav + lower CTA) -->
+            <a class="button secureops" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Commercial%20Demo">
+              Request a Demo
             </a>
           </div>
         </div>
@@ -601,6 +628,20 @@
           Watchtower is a platform-first approach to modern security operations:
           unify what you already have, reduce noise, and produce defensible evidence for action, oversight, and audits.
         </p>
+
+        <!-- ✅ NEW: quick "who it’s for" clarity -->
+        <div class="trust-strip" style="margin-top:1.05rem;">
+          <strong>Who Watchtower is for</strong>
+          <ul class="trust-items" aria-label="Ideal customers">
+            <li>Security Teams (5–50)</li>
+            <li>MSSPs / MSPs</li>
+            <li>Regulated SaaS</li>
+            <li>Healthcare</li>
+            <li>Financial Services</li>
+            <li>Public Sector</li>
+            <li>DoD / DIB</li>
+          </ul>
+        </div>
 
         <div class="offerings-band">
           <div class="grid-3">
@@ -648,20 +689,20 @@
             </article>
 
             <article class="card">
-              <h3>Prime &amp; Mission Enablement</h3>
+              <h3>Deployment Options</h3>
               <p>
-                Embed Watchtower as a capability insert that reduces onboarding risk, accelerates delivery, and improves outcomes
-                across high-assurance programs and constrained networks.
+                Deploy Watchtower in cloud, hybrid, or constrained environments.
+                Keep your existing tools — Watchtower unifies the operational layer.
               </p>
               <div class="pill-row">
-                <span class="mini-pill">Prime-Ready</span>
-                <span class="mini-pill">Mission</span>
-                <span class="mini-pill">High-Assurance</span>
+                <span class="mini-pill">Cloud</span>
+                <span class="mini-pill">Hybrid</span>
+                <span class="mini-pill">Constrained</span>
               </div>
               <ul>
-                <li>Time-boxed pilots or LOE support</li>
-                <li>No tool displacement required</li>
-                <li>Operational outcomes and reporting</li>
+                <li>Works with your SIEM / EDR / IdP stack</li>
+                <li>Multi-tenant friendly for MSSPs</li>
+                <li>Audit-ready evidence outputs</li>
               </ul>
               <p style="margin-top:0.8rem;">
                 <a href="./partners.html" class="text-link">Prime Partners →</a>
@@ -670,13 +711,28 @@
 
           </div>
         </div>
+
+        <!-- ✅ NEW: “Integrates With” trust band (text-only, no logos needed) -->
+        <div class="trust-strip">
+          <strong>Integrates with your stack</strong>
+          <ul class="trust-items" aria-label="Integration examples">
+            <li>Microsoft Sentinel</li>
+            <li>Defender</li>
+            <li>CrowdStrike</li>
+            <li>Elastic / OpenSearch</li>
+            <li>Entra ID / Okta</li>
+            <li>Palo Alto / Fortinet</li>
+            <li>AWS / Azure Logs</li>
+          </ul>
+        </div>
       </section>
 
       <!-- ENGAGEMENT OPTIONS -->
       <section class="section-block slim" style="margin-top:1.75rem;">
         <h2 class="section-title">Engagement Options</h2>
         <p class="section-lead">
-          Start small, prove outcomes, and expand deliberately. Most teams begin with a pilot or a focused capability insert.
+          Start small, prove outcomes, and expand deliberately.
+          Commercial teams typically start with a <strong>30-day pilot</strong>; high-assurance environments may require 60–90 days.
           Final pricing depends on environment, integrations, and operating constraints.
         </p>
 
@@ -684,7 +740,7 @@
           <div class="grid-3">
 
             <article class="card">
-              <h3>Pilot (60–90 Days)</h3>
+              <h3>Pilot (30–90 Days)</h3>
               <p>
                 A time-boxed deployment to validate integrations, workflows, and measurable outcomes — with a clean off-ramp.
               </p>
@@ -699,7 +755,7 @@
                 <li>Success criteria + final report</li>
               </ul>
               <p style="margin-top:0.8rem;">
-                <a class="text-link" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20(60-90%20Days)">
+                <a class="text-link" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20(30-90%20Days)">
                   Discuss a Pilot →
                 </a>
               </p>
@@ -712,7 +768,7 @@
               </p>
               <div class="pill-row">
                 <span class="mini-pill">Embedded</span>
-                <span class="mini-pill">Prime-Friendly</span>
+                <span class="mini-pill">Program-Minded</span>
                 <span class="mini-pill">Repeatable</span>
               </div>
               <ul>
@@ -777,10 +833,9 @@
             </article>
 
             <article class="card">
-              <h3>Prime &amp; Mission Ready</h3>
+              <h3>Built for Real Constraints</h3>
               <p>
-                Built for real operational tempo, constrained networks, and leadership-grade reporting.
-                Designed to reduce onboarding risk and accelerate delivery.
+                Designed for operational tempo, distributed teams, and leadership-grade reporting — from commercial to high-assurance environments.
               </p>
             </article>
           </div>
@@ -832,7 +887,7 @@
       <!-- CTA -->
       <section class="section-block slim" style="margin-top:1.75rem;">
         <div class="cta-band">
-          <h2>Want to Pilot Watchtower or Embed It into a Program?</h2>
+          <h2>Want a Commercial Demo or a Prime Partner Conversation?</h2>
           <p>
             Tell us your environment, tool stack, and what success looks like.
             We’ll propose a low-risk pilot or a capability insert that produces measurable outcomes and defensible evidence.
@@ -840,8 +895,8 @@
 
           <div class="cta-actions">
             <a class="button primary"
-              href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20or%20Capability%20Insert%20Conversation">
-              Request a Conversation
+              href="mailto:info@enlight10solutions.com?subject=Watchtower%20Commercial%20Demo%20Request">
+              Request a Demo
             </a>
             <a class="button ghost" href="./partners.html">
               Prime Partners
