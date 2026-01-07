@@ -1,4 +1,4 @@
-<!-- capabilities.html (standardized nav + footer year, DoD/DIB direction alignment, removes MSSP-ish language, adds clear “what we do” + identifiers placeholder, keeps who.html hero/pulse + blue radiant buttons + e10-band styling) -->
+<!-- capabilities.html (FULL FILE REPLACEMENT — identifiers filled from Capability_Statement.docx) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -256,6 +256,13 @@
     }
     .cap-meta strong{ color:rgba(255,255,255,0.92); }
 
+    .cap-meta a{
+      color: rgba(186,230,253,0.92);
+      text-decoration:none;
+      border-bottom:1px solid rgba(56,189,248,0.25);
+    }
+    .cap-meta a:hover{ border-bottom-color: rgba(56,189,248,0.55); }
+
     /* ---------------------------
        MAIN (match who.html patterns)
        --------------------------- */
@@ -395,7 +402,7 @@
       line-height:1.7;
     }
 
-    /* New: small identifier chips */
+    /* Identifiers */
     .id-grid{
       position:relative;
       z-index:1;
@@ -563,7 +570,10 @@
         </div>
 
         <div class="cap-meta">
-          <strong>enLight10 Solutions, LLC</strong> • Honolulu, HI • Remote / U.S. Coverage
+          <strong>enLight10 Solutions, LLC</strong> • Honolulu, HI • Remote / U.S. Coverage<br />
+          <strong>UEI:</strong> W1ZNWPAX2FG7 • <strong>CAGE:</strong> 17BE8 •
+          <a href="mailto:jay.moreno@enlight10solutions.com">jay.moreno@enlight10solutions.com</a> •
+          <a href="tel:+15129860582">512-986-0582</a>
         </div>
       </div>
     </div>
@@ -630,27 +640,29 @@
 
           </div>
 
-          <!-- NEW: Identifiers / quick facts (placeholder values you can fill in once) -->
+          <!-- Identifiers / quick facts (FILLED) -->
           <div class="id-grid" aria-label="Company identifiers">
             <div class="id-item">
               <p class="k">UEI</p>
-              <p class="v">[Insert UEI]</p>
+              <p class="v">W1ZNWPAX2FG7</p>
               <p class="hint">Unique Entity ID for procurement.</p>
             </div>
             <div class="id-item">
               <p class="k">CAGE / NCAGE</p>
-              <p class="v">[Insert CAGE]</p>
+              <p class="v">17BE8</p>
               <p class="hint">Government contracting identifier.</p>
             </div>
             <div class="id-item">
               <p class="k">NAICS</p>
-              <p class="v">[Insert primary NAICS + others]</p>
-              <p class="hint">List top 2–4 that match your direction.</p>
+              <p class="v">
+                541512 (Primary) • 541511 • 541513 • 541519 • 541690
+              </p>
+              <p class="hint">Computer systems design, software, facilities mgmt, other computer services, and technical consulting.</p>
             </div>
             <div class="id-item">
               <p class="k">SAM</p>
-              <p class="v">Active / [Date]</p>
-              <p class="hint">Status + last renewal date.</p>
+              <p class="v">Active (All Awards)</p>
+              <p class="hint">Registration status for federal procurement.</p>
             </div>
           </div>
 
@@ -691,6 +703,11 @@
         <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
         <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
       </p>
+
+      <p class="footer-info" style="margin-top:0.35rem;">
+        <strong>UEI:</strong> W1ZNWPAX2FG7 • <strong>CAGE:</strong> 17BE8
+      </p>
+
       <div class="footer-social">
         <span>Follow us:</span>
         <a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> |
