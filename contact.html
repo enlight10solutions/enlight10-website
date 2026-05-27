@@ -3,31 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact enLight10 Solutions</title>
+  <title>Contact | enLight10 Solutions</title>
   <meta name="description" content="Contact enLight10 Solutions for cyber readiness assessment, CMMC and NIST readiness, vulnerability management review, Microsoft 365 and Entra ID security review, OT/ICS assessment support, teaming, subcontracting, and Watchtower discussions." />
-  <link rel="stylesheet" href="./style.css?v=40" />
-  <script src="./script.js?v=40" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+  <script src="./script.js" defer></script>
 </head>
-<body class="e10-page">
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions Home"><img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" /></a>
-    <div class="nav-right"><div class="nav-links"><a href="./">Home</a><a href="./cyber-readiness.html">Cyber Readiness</a><a href="./services.html">Services</a><a href="./watchtower.html">Watchtower</a><a href="./capabilities.html">Capabilities</a><a href="./partners.html">Partners</a><a href="./who.html">Who We Are</a><a class="button small" href="./contact.html" aria-current="page">Contact</a></div><button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button"><span></span><span></span><span></span></button></div>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="nav__inner">
+      <a class="nav__brand" href="./" aria-label="enLight10 Solutions — Home">
+        <img src="./enLight10_Logo.png" alt="" />
+        <span>enLight10</span>
+      </a>
+      <div class="nav__links">
+        <div class="nav__dd" data-dd>
+          <button class="nav__dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav__dd-panel">
+            <a class="nav__dd-item" href="./services-secureops.html">Watchtower SecureOps<span class="sub">Commercial security operations</span></a>
+            <a class="nav__dd-item" href="./services-cyber-defense-united.html">Cyber Defense United<span class="sub">DoD &amp; DIB mission variant</span></a>
+          </div>
+        </div>
+        <a class="nav__link" href="./watchtower.html">Watchtower</a>
+        <a class="nav__link" href="./capabilities.html">Capabilities</a>
+        <a class="nav__link" href="./partners.html">Partners</a>
+        <a class="nav__link" href="./who.html">Who We Are</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a class="btn btn--accent btn--sm" href="./contact.html" aria-current="page">Talk to us</a>
+        <button class="nav__menu" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
   </nav>
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu"><nav class="menu-nav"><a href="./">Home</a><a href="./cyber-readiness.html">Cyber Readiness</a><a href="./services.html">Services</a><a href="./watchtower.html">Watchtower</a><a href="./capabilities.html">Capabilities</a><a href="./partners.html">Partners</a><a href="./who.html">Who We Are</a><a href="./contact.html" aria-current="page">Contact</a></nav></aside>
-  <header class="e10-hero"><div class="e10-hero-inner"><div class="e10-hero-copy"><p class="e10-kicker">Contact</p><h1>Talk with enLight10 about assessments, remediation, Watchtower, or teaming.</h1><p class="lead">Use this page for cyber readiness assessment requests, CMMC / NIST readiness, vulnerability management review, Microsoft 365 / Entra ID security review, OT / ICS assessment support, subcontracting, proposal support, and Watchtower discussions.</p><div class="e10-actions"><a class="e10-button primary" href="mailto:info@enlight10solutions.com?subject=enLight10%20Contact%20Request">Contact enLight10</a><a class="e10-button ghost" href="./cyber-readiness.html">Request a Cyber Readiness Review</a></div></div><div class="e10-hero-panel"><img src="./enLight10_Logo.png" alt="enLight10 Solutions" /></div></div></header>
-  <main class="e10-main"><div class="e10-wrap">
-    <section class="e10-section"><h2>How we can help</h2><div class="e10-band"><div class="e10-grid three">
-      <article class="e10-card"><h3>Cyber readiness assessment</h3><p>Understand posture, risk, gaps, and practical remediation priorities.</p></article>
-      <article class="e10-card"><h3>CMMC / NIST readiness</h3><p>Discuss CMMC readiness, NIST 800-171 readiness, SSP support, POA&amp;M support, and evidence organization.</p></article>
-      <article class="e10-card"><h3>Vulnerability management review</h3><p>Turn vulnerability scan results into prioritized remediation work.</p></article>
-      <article class="e10-card"><h3>Microsoft 365 / Entra ID security review</h3><p>Review identity, access, logging, Defender, Purview, and evidence readiness.</p></article>
-      <article class="e10-card"><h3>OT / ICS assessment support</h3><p>Plan safe visibility, dependency review, risk review, and resilience improvements.</p></article>
-      <article class="e10-card"><h3>Teaming and Watchtower</h3><p>Discuss teaming, subcontracting, proposal support, and Watchtower-supported remediation workflows.</p></article>
-    </div></div></section>
-    <section class="e10-section"><div class="e10-band"><h2>Send a request</h2><form class="e10-form" action="mailto:info@enlight10solutions.com" method="post" enctype="text/plain"><label>Name <input name="name" autocomplete="name" /></label><label>Organization <input name="organization" autocomplete="organization" /></label><label>Email <input name="email" type="email" autocomplete="email" /></label><label>Service interest <select name="service_interest"><option>Cyber readiness assessment</option><option>CMMC / NIST readiness</option><option>Vulnerability management review</option><option>Microsoft 365 / Entra ID security review</option><option>OT / ICS assessment support</option><option>Teaming / subcontracting</option><option>Watchtower discussion</option></select></label><label>Message <textarea name="message"></textarea></label><div class="e10-actions"><button class="e10-button primary" type="submit">Contact enLight10</button><a class="e10-button ghost" style="color:#0b1120;border-color:rgba(15,23,42,0.18);" href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></div></form></div></section>
-  </div></main>
-  <footer><div class="footer-inner"><p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p><p class="footer-vet">Veteran-Owned Small Business</p><p class="footer-info"><a href="./Capability_Statement.pdf">Capabilities Statement</a> • <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></p><div class="footer-social"><span>Follow us:</span><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> | <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></div></div></footer>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu">
+    <a href="./services-secureops.html">Watchtower SecureOps</a>
+    <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
+    <hr />
+    <a href="./watchtower.html">Watchtower</a>
+    <a href="./capabilities.html">Capabilities</a>
+    <a href="./partners.html">Partners</a>
+    <a href="./who.html">Who We Are</a>
+    <hr />
+    <a class="btn btn--accent" href="./contact.html" style="justify-content:center;">Talk to us</a>
+  </aside>
+
+  <section class="hero hero--inner">
+    <div class="hero__bg"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow eyebrow--dark">Contact</span>
+          <h1>Talk with enLight10 about assessments, Watchtower, or teaming.</h1>
+          <p class="lead" style="color:var(--dark-text-2);margin-top:var(--space-4);">Reach out for cyber readiness assessments, CMMC/NIST readiness, vulnerability management, Microsoft 365 security review, teaming, and Watchtower discussions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--3" style="margin-bottom:var(--space-7);">
+        <article class="card">
+          <h3>Cyber readiness assessment</h3>
+          <p>Understand posture, risk, gaps, and practical remediation priorities.</p>
+        </article>
+        <article class="card">
+          <h3>CMMC / NIST readiness</h3>
+          <p>Discuss CMMC readiness, NIST 800-171 readiness, SSP support, POA&amp;M support, and evidence organization.</p>
+        </article>
+        <article class="card">
+          <h3>Vulnerability management review</h3>
+          <p>Turn vulnerability scan results into prioritized remediation work.</p>
+        </article>
+        <article class="card">
+          <h3>Microsoft 365 / Entra ID security review</h3>
+          <p>Review identity, access, logging, Defender, Purview, and evidence readiness.</p>
+        </article>
+        <article class="card">
+          <h3>OT / ICS assessment support</h3>
+          <p>Plan safe visibility, dependency review, risk review, and resilience improvements.</p>
+        </article>
+        <article class="card">
+          <h3>Teaming and Watchtower</h3>
+          <p>Discuss teaming, subcontracting, proposal support, and Watchtower-supported remediation workflows.</p>
+        </article>
+      </div>
+
+      <div class="band" style="max-width:720px;">
+        <h2 style="margin-bottom:var(--space-5);">Send a request</h2>
+        <form class="form-grid" action="mailto:info@enlight10solutions.com" method="post" enctype="text/plain">
+          <div class="grid grid--2">
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input id="c-name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="c-org">Organization</label>
+              <input id="c-org" name="organization" type="text" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="c-interest">Service interest</label>
+            <select id="c-interest" name="service_interest">
+              <option>Cyber readiness assessment</option>
+              <option>CMMC / NIST readiness</option>
+              <option>Vulnerability management review</option>
+              <option>Microsoft 365 / Entra ID security review</option>
+              <option>OT / ICS assessment support</option>
+              <option>Teaming / subcontracting</option>
+              <option>Watchtower discussion</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" name="message"></textarea>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-3);align-items:center;">
+            <button class="btn btn--accent btn--lg" type="submit">Send request</button>
+            <a class="btn btn--secondary btn--lg" href="mailto:info@enlight10solutions.com">Email directly →</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+          <p>Cybersecurity operations and the Watchtower Cyber Reasoning Platform — for commercial teams, primes, and mission programs.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./services-secureops.html">SecureOps</a></li>
+            <li><a href="./services-cyber-defense-united.html">Cyber Defense United</a></li>
+            <li><a href="./watchtower.html">Watchtower CRP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./who.html">Who we are</a></li>
+            <li><a href="./capabilities.html">Capabilities</a></li>
+            <li><a href="./partners.html">Partners</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="./Capability_Statement.pdf">Capability statement</a></li>
+            <li><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 enLight10 Solutions, LLC.</div>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <span class="badge">Veteran-Owned Small Business</span>
+          <span>UEI W1ZNWPAX2FG7 · CAGE 17BE8</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>

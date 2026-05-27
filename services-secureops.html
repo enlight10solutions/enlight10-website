@@ -1,20 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Watchtower SecureOps | enLight10 Solutions</title><meta name="description" content="Watchtower SecureOps is a follow-on operational enablement service after cybersecurity assessment and remediation planning, supporting monitoring strategy, evidence-ready reporting, workflow improvement, and scoped operations." /><link rel="stylesheet" href="./style.css?v=40" /><script src="./script.js?v=40" defer></script><link rel="icon" href="./enLight10_Logo.png" type="image/png" /></head>
-<body class="e10-page">
-  <nav class="topbar" role="navigation" aria-label="Primary"><a class="brand" href="./"><img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" /></a><div class="nav-right"><div class="nav-links"><a href="./">Home</a><a href="./cyber-readiness.html">Cyber Readiness</a><a href="./services.html">Services</a><a href="./watchtower.html">Watchtower</a><a href="./capabilities.html">Capabilities</a><a href="./partners.html">Partners</a><a href="./who.html">Who We Are</a><a class="button small" href="./contact.html">Contact</a></div><button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button"><span></span><span></span><span></span></button></div></nav>
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div><aside id="mobileMenu" class="menu-panel" hidden><nav class="menu-nav"><a href="./">Home</a><a href="./cyber-readiness.html">Cyber Readiness</a><a href="./services.html">Services</a><a href="./watchtower.html">Watchtower</a><a href="./capabilities.html">Capabilities</a><a href="./partners.html">Partners</a><a href="./who.html">Who We Are</a><a href="./contact.html">Contact</a></nav></aside>
-  <header class="e10-hero"><div class="e10-hero-inner"><div class="e10-hero-copy"><p class="e10-kicker">SecureOps</p><h1>Operational enablement after assessment and remediation planning.</h1><p class="lead">Watchtower SecureOps helps teams improve security operations with monitoring strategy, evidence-ready reporting, workflow discipline, and scoped operational support.</p><p class="supporting">SecureOps is not positioned as the default entry point. Most customers should start with an assessment, remediation roadmap, or readiness review, then add operational enablement where it makes sense.</p><div class="e10-actions"><a class="e10-button primary" href="./cyber-readiness.html">Request a Cyber Readiness Review</a><a class="e10-button ghost" href="./watchtower.html">Explore Watchtower</a></div></div><div class="e10-hero-panel"><img src="./Watchtower_SecureOps_Logo.png" alt="Watchtower SecureOps" /></div></div></header>
-  <main class="e10-main"><div class="e10-wrap">
-    <section class="e10-section"><h2>SecureOps can support</h2><div class="e10-band"><div class="e10-grid three">
-      <article class="e10-card"><h3>Monitoring strategy</h3><p>Define practical coverage models, escalation paths, telemetry priorities, and reporting cadence.</p></article>
-      <article class="e10-card"><h3>Operational workflow improvement</h3><p>Improve handoffs, playbooks, ticketing, remediation tracking, and decision documentation.</p></article>
-      <article class="e10-card"><h3>Evidence-ready reporting</h3><p>Create recurring summaries that show risks, actions, exceptions, and progress.</p></article>
-      <article class="e10-card"><h3>Tool and signal alignment</h3><p>Align SIEM, EDR, identity, vulnerability, and ticketing data to the work that needs action.</p></article>
-      <article class="e10-card"><h3>Scoped response support</h3><p>Provide focused triage, investigation, and after-action support when scoped by engagement.</p></article>
-      <article class="e10-card"><h3>Partner-supported delivery</h3><p>When broader coverage is needed, enLight10 can coordinate scoped or partner-supported options.</p></article>
-    </div></div></section>
-    <section class="e10-section"><div class="e10-cta"><h2>Build operations from real findings.</h2><p>SecureOps works best when it follows a clear assessment, roadmap, and remediation workflow.</p><div class="e10-actions" style="margin-top:1rem;"><a class="e10-button primary" href="./contact.html">Contact enLight10</a><a class="e10-button ghost" href="./services.html">Back to Services</a></div></div></section>
-  </div></main>
-  <footer><div class="footer-inner"><p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p><p class="footer-vet">Veteran-Owned Small Business</p><p class="footer-info"><a href="./Capability_Statement.pdf">Capabilities Statement</a> • <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></p><div class="footer-social"><span>Follow us:</span><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> | <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></div></div></footer>
-</body></html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watchtower SecureOps | enLight10 Solutions</title>
+  <meta name="description" content="Watchtower SecureOps is a follow-on operational enablement service after cybersecurity assessment and remediation planning, supporting monitoring strategy, evidence-ready reporting, workflow improvement, and scoped operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+  <script src="./script.js" defer></script>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="nav__inner">
+      <a class="nav__brand" href="./" aria-label="enLight10 Solutions — Home">
+        <img src="./enLight10_Logo.png" alt="" />
+        <span>enLight10</span>
+      </a>
+      <div class="nav__links">
+        <div class="nav__dd" data-dd>
+          <button class="nav__dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav__dd-panel">
+            <a class="nav__dd-item" href="./services-secureops.html" aria-current="page">Watchtower SecureOps<span class="sub">Commercial security operations</span></a>
+            <a class="nav__dd-item" href="./services-cyber-defense-united.html">Cyber Defense United<span class="sub">DoD &amp; DIB mission variant</span></a>
+          </div>
+        </div>
+        <a class="nav__link" href="./watchtower.html">Watchtower</a>
+        <a class="nav__link" href="./capabilities.html">Capabilities</a>
+        <a class="nav__link" href="./partners.html">Partners</a>
+        <a class="nav__link" href="./who.html">Who We Are</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <a class="btn btn--accent btn--sm" href="./contact.html">Talk to us</a>
+        <button class="nav__menu" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu">
+    <a href="./services-secureops.html">Watchtower SecureOps</a>
+    <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
+    <hr />
+    <a href="./watchtower.html">Watchtower</a>
+    <a href="./capabilities.html">Capabilities</a>
+    <a href="./partners.html">Partners</a>
+    <a href="./who.html">Who We Are</a>
+    <hr />
+    <a class="btn btn--accent" href="./contact.html" style="justify-content:center;">Talk to us</a>
+  </aside>
+
+  <section class="hero hero--inner">
+    <div class="hero__bg"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow eyebrow--dark">Watchtower SecureOps · Commercial</span>
+          <h1>Operational enablement after assessment and remediation planning.</h1>
+          <p class="lead" style="color:var(--dark-text-2);margin-top:var(--space-4);">Watchtower SecureOps helps teams improve security operations with monitoring strategy, evidence-ready reporting, workflow discipline, and scoped operational support.</p>
+          <p style="color:var(--dark-text-3);margin-top:var(--space-3);font-size:var(--text-sm);">SecureOps is not positioned as the default entry point. Most customers should start with an assessment and remediation roadmap, then add operational enablement where it makes sense.</p>
+          <div class="hero__actions">
+            <a class="btn btn--accent btn--lg" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>
+            <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">Explore Watchtower</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What SecureOps supports</span>
+        <h2>Build operations from real findings.</h2>
+      </div>
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>Monitoring strategy</h3>
+          <p>Define practical coverage models, escalation paths, telemetry priorities, and reporting cadence.</p>
+        </article>
+        <article class="card">
+          <h3>Operational workflow improvement</h3>
+          <p>Improve handoffs, playbooks, ticketing, remediation tracking, and decision documentation.</p>
+        </article>
+        <article class="card">
+          <h3>Evidence-ready reporting</h3>
+          <p>Create recurring summaries that show risks, actions, exceptions, and progress for leadership and auditors.</p>
+        </article>
+        <article class="card">
+          <h3>Tool and signal alignment</h3>
+          <p>Align SIEM, EDR, identity, vulnerability, and ticketing data to the work that needs action.</p>
+        </article>
+        <article class="card">
+          <h3>Scoped response support</h3>
+          <p>Provide focused triage, investigation, and after-action support when scoped by engagement.</p>
+        </article>
+        <article class="card">
+          <h3>Partner-supported delivery</h3>
+          <p>When broader coverage is needed, enLight10 can coordinate scoped or partner-supported options.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <span class="eyebrow eyebrow--dark">Get started</span>
+        <h2>Build operations from real findings.</h2>
+        <p>SecureOps works best when it follows a clear assessment, roadmap, and remediation workflow. Start there first.</p>
+        <div class="cta-band__actions">
+          <a class="btn btn--accent btn--lg" href="./contact.html">Contact enLight10</a>
+          <a class="btn btn--secondary btn--lg on-dark" href="./services.html">Back to Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+          <p>Cybersecurity operations and the Watchtower Cyber Reasoning Platform — for commercial teams, primes, and mission programs.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./services-secureops.html">SecureOps</a></li>
+            <li><a href="./services-cyber-defense-united.html">Cyber Defense United</a></li>
+            <li><a href="./watchtower.html">Watchtower CRP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./who.html">Who we are</a></li>
+            <li><a href="./capabilities.html">Capabilities</a></li>
+            <li><a href="./partners.html">Partners</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="./Capability_Statement.pdf">Capability statement</a></li>
+            <li><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 enLight10 Solutions, LLC.</div>
+        <div style="display:flex;gap:12px;align-items:center;">
+          <span class="badge">Veteran-Owned Small Business</span>
+          <span>UEI W1ZNWPAX2FG7 · CAGE 17BE8</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

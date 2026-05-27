@@ -3,149 +3,356 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cybersecurity Readiness, Compliance, and Remediation Support | enLight10 Solutions</title>
-  <meta name="description" content="enLight10 Solutions helps small businesses, government contractors, public-sector teams, and critical infrastructure organizations assess cybersecurity risk, organize evidence, prioritize remediation, and build practical cybersecurity roadmaps." />
-  <link rel="stylesheet" href="./style.css?v=40" />
-  <script src="./script.js?v=40" defer></script>
+  <title>enLight10 Solutions — Watchtower SOC Control Plane</title>
+  <meta name="description" content="Watchtower is a Security Operations Control Plane and Cyber Reasoning Platform. Built by operators for commercial teams and high-assurance environments — without forcing tool replacement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+  <script src="./script.js" defer></script>
 </head>
-<body class="e10-page">
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions Home">
-      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-    </a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="./" aria-current="page">Home</a>
-        <a href="./cyber-readiness.html">Cyber Readiness</a>
-        <a href="./services.html">Services</a>
-        <a href="./watchtower.html">Watchtower</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./partners.html">Partners</a>
-        <a href="./who.html">Who We Are</a>
-        <a class="button small" href="./contact.html">Contact</a>
+<body>
+
+  <!-- Nav -->
+  <nav class="nav" role="navigation" aria-label="Primary">
+    <div class="nav__inner">
+      <a class="nav__brand" href="./" aria-label="enLight10 Solutions — Home">
+        <img src="./enLight10_Logo.png" alt="" />
+        <span>enLight10</span>
+      </a>
+      <div class="nav__links">
+        <div class="nav__dd" data-dd>
+          <button class="nav__dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
+            Services
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav__dd-panel">
+            <a class="nav__dd-item" href="./services-secureops.html">
+              Watchtower SecureOps
+              <span class="sub">Commercial security operations</span>
+            </a>
+            <a class="nav__dd-item" href="./services-cyber-defense-united.html">
+              Cyber Defense United
+              <span class="sub">DoD &amp; DIB mission variant</span>
+            </a>
+          </div>
+        </div>
+        <a class="nav__link" href="./watchtower.html">Watchtower</a>
+        <a class="nav__link" href="./capabilities.html">Capabilities</a>
+        <a class="nav__link" href="./partners.html">Partners</a>
+        <a class="nav__link" href="./who.html">Who We Are</a>
       </div>
-      <button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-        <span></span><span></span><span></span>
-      </button>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <a class="btn btn--accent btn--sm" href="./contact.html">Talk to us</a>
+        <button class="nav__menu" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
     </div>
   </nav>
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
-    <nav class="menu-nav">
-      <a href="./" aria-current="page">Home</a>
-      <a href="./cyber-readiness.html">Cyber Readiness</a>
-      <a href="./services.html">Services</a>
-      <a href="./watchtower.html">Watchtower</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./partners.html">Partners</a>
-      <a href="./who.html">Who We Are</a>
-      <a href="./contact.html">Contact</a>
-    </nav>
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu">
+    <a href="./services-secureops.html">Watchtower SecureOps</a>
+    <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
+    <hr />
+    <a href="./watchtower.html">Watchtower</a>
+    <a href="./capabilities.html">Capabilities</a>
+    <a href="./partners.html">Partners</a>
+    <a href="./who.html">Who We Are</a>
+    <hr />
+    <a class="btn btn--accent" href="./contact.html" style="justify-content:center;">Talk to us</a>
   </aside>
 
-  <header class="e10-hero">
-    <div class="e10-hero-inner">
-      <div class="e10-hero-copy">
-        <p class="e10-kicker">Assessment-first cybersecurity</p>
-        <h1>Cybersecurity Readiness, Compliance, and Remediation Support</h1>
-        <p class="lead">enLight10 Solutions helps organizations assess cybersecurity risk, organize evidence, prioritize remediation, and build practical roadmaps for stronger security operations.</p>
-        <p class="supporting">We support small businesses, government contractors, public-sector teams, and critical infrastructure environments with cyber readiness assessments, CMMC/NIST support, vulnerability management review, Microsoft 365 security review, and Watchtower-supported remediation workflows.</p>
-        <div class="e10-actions">
-          <a class="e10-button primary" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>
-          <a class="e10-button ghost" href="./services.html">Explore Services</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <span class="eyebrow eyebrow--dark">SOC Control Plane · Cyber Reasoning Platform</span>
+          <h1>Security operations that explain themselves.</h1>
+          <p class="lead">
+            Watchtower unifies alerts, cases, and evidence across the tools you already run. Analysts move faster. Leaders see the story. Auditors get the trail — without ripping out your stack.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request">
+              Start a 30–90 day pilot
+            </a>
+            <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">
+              How it works
+            </a>
+          </div>
+
+          <div class="trust-strip">
+            <span class="trust-chip">Veteran-Owned</span>
+            <span class="trust-chip">Works with your stack</span>
+            <span class="trust-chip">Evidence-first</span>
+            <span class="trust-chip">Prime-friendly</span>
+            <span class="trust-chip">DoD &amp; DIB ready</span>
+          </div>
+        </div>
+
+        <div class="hero__panel">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="https://enlight10media.z22.web.core.windows.net/Intro.faststart.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
-      <div class="e10-hero-panel">
-        <img src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+    </div>
+  </section>
+
+  <!-- Value pillars -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What Watchtower delivers</span>
+        <h2>One control plane. Your existing tools. Defensible outcomes.</h2>
+        <p class="lead">
+          Most teams don't need more tools — they need the tools they have to work together. Watchtower wraps your stack with a reasoning + evidence layer so the work stops getting lost between dashboards.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.07 7.07 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.07-7.07 4.24-4.24"></path></svg>
+          </div>
+          <h3>SOC unification</h3>
+          <p>Normalize signals across SIEM, EDR, identity, network, and cloud. One case view. One escalation path. No more dashboard switching.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line><line x1="9" y1="11" x2="15" y2="11"></line></svg>
+          </div>
+          <h3>Evidence Packs</h3>
+          <p>Every investigation produces a defensible record: timeline, artifacts, decisions, and a narrative leadership and auditors can actually read.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5.5 3.8 10.5 8 12 4.2-1.5 8-6.5 8-12V6z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+          </div>
+          <h3>Deploy anywhere</h3>
+          <p>Cloud, hybrid, on-prem, or disconnected enclaves. Designed for real operating constraints — not just clean-environment demos.</p>
+        </article>
       </div>
     </div>
-  </header>
+  </section>
 
-  <main class="e10-main">
-    <div class="e10-wrap">
-      <section class="e10-section">
-        <h2>Assessment-first cybersecurity</h2>
-        <p class="e10-section-lead">Cybersecurity assessments should not end as static reports. enLight10 starts by understanding your environment, identifying control and operational gaps, organizing the evidence you already have, and building an actionable cybersecurity remediation roadmap that fits your risk, budget, and compliance needs.</p>
-      </section>
-
-      <section class="e10-section">
-        <h2>What we help you do</h2>
-        <div class="e10-band">
-          <div class="e10-grid three">
-            <article class="e10-card"><h3>Understand cybersecurity risk</h3><p>Get a practical view of exposure, gaps, dependencies, and priorities.</p></article>
-            <article class="e10-card"><h3>Prepare for CMMC / NIST requirements</h3><p>Support CMMC readiness, NIST 800-171 readiness, SSP support, POA&amp;M support, and evidence organization.</p></article>
-            <article class="e10-card"><h3>Review vulnerabilities</h3><p>Turn scan outputs into risk-based priorities, patch plans, and remediation tracking.</p></article>
-            <article class="e10-card"><h3>Improve Microsoft 365 security</h3><p>Review MFA, Conditional Access, Entra ID, admin roles, logging, Defender, Purview, and identity risk.</p></article>
-            <article class="e10-card"><h3>Organize evidence and POA&amp;Ms</h3><p>Build documentation habits that support audits, decisions, and follow-through.</p></article>
-            <article class="e10-card"><h3>Move from findings to action</h3><p>Assign owners, track status, document risk decisions, and report progress.</p></article>
-          </div>
+  <!-- Stats -->
+  <section class="section section--compact">
+    <div class="container">
+      <div class="stats">
+        <div>
+          <div class="stat__num">30–90 d</div>
+          <div class="stat__label">Time-boxed pilot</div>
         </div>
-      </section>
-
-      <section class="e10-section">
-        <h2>Core services</h2>
-        <div class="e10-band">
-          <div class="e10-grid three">
-            <article class="e10-card"><h3>Cyber Readiness Assessment</h3><p>Cybersecurity posture review, risk and gap identification, practical roadmap, and executive-ready findings summary.</p></article>
-            <article class="e10-card"><h3>CMMC / NIST 800-171 Readiness</h3><p>Control gap mapping, SSP support, POA&amp;M support, evidence organization, and readiness support for defense contractors.</p></article>
-            <article class="e10-card"><h3>Vulnerability Management Review</h3><p>Review vulnerability scan outputs, prioritize risk, and build a findings-to-action workflow.</p></article>
-            <article class="e10-card"><h3>Microsoft 365 / Entra ID Security Review</h3><p>Review identity, access, logging, Defender, Purview, and evidence readiness.</p></article>
-            <article class="e10-card"><h3>OT / ICS Cybersecurity Assessment Support</h3><p>Safe visibility, dependency review, risk analysis, and resilience planning for operational environments.</p></article>
-            <article class="e10-card"><h3>Watchtower-Supported Remediation Tracking</h3><p>Findings, evidence, owners, POA&amp;Ms, risk decisions, remediation status, and reporting.</p></article>
-          </div>
+        <div>
+          <div class="stat__num">0</div>
+          <div class="stat__label">Tools replaced to start</div>
         </div>
-      </section>
-
-      <section class="e10-section">
-        <div class="e10-cta">
-          <h2>Watchtower helps turn findings into action.</h2>
-          <p>Watchtower supports assessment-to-operations workflows by organizing findings, evidence, owners, remediation status, risk decisions, and reports. It is designed to help teams move beyond static assessment reports and maintain a defensible record of cybersecurity improvement.</p>
-          <div class="e10-actions" style="margin-top:1rem;">
-            <a class="e10-button primary" href="./watchtower.html">Explore Watchtower</a>
-            <a class="e10-button ghost" href="./contact.html">Contact enLight10</a>
-          </div>
+        <div>
+          <div class="stat__num">1</div>
+          <div class="stat__label">Case view across the stack</div>
         </div>
-      </section>
-
-      <section class="e10-section">
-        <h2>Who we support</h2>
-        <div class="e10-band">
-          <div class="e10-pill-row">
-            <span class="e10-pill">Small businesses</span>
-            <span class="e10-pill">Government contractors</span>
-            <span class="e10-pill">Public-sector organizations</span>
-            <span class="e10-pill">Utilities and critical infrastructure</span>
-            <span class="e10-pill">MSP/MSSP and prime partners</span>
-          </div>
+        <div>
+          <div class="stat__num">100%</div>
+          <div class="stat__label">Evidence-backed outputs</div>
         </div>
-      </section>
-
-      <section class="e10-section">
-        <h2>Partner-ready support</h2>
-        <p class="e10-section-lead">enLight10 can support primes, MSPs, MSSPs, OT consultants, CMMC consultants, and proposal teams as a cybersecurity assessment, compliance, vulnerability management, and remediation workflow partner. We help teams scope realistic work, produce clear findings, and maintain evidence-ready reporting.</p>
-      </section>
-
-      <section class="e10-section">
-        <div class="e10-cta">
-          <h2>Ready to understand your cybersecurity posture?</h2>
-          <p>Start with a practical review that helps you understand risk, prioritize action, organize evidence, and improve security maturity.</p>
-          <div class="e10-actions" style="margin-top:1rem;">
-            <a class="e10-button primary" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>
-            <a class="e10-button ghost" href="./partners.html">Discuss Teaming</a>
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
-      <p class="footer-vet">Veteran-Owned Small Business</p>
-      <p class="footer-info"><a href="./Capability_Statement.pdf">Capabilities Statement</a> • <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></p>
-      <div class="footer-social"><span>Follow us:</span><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> | <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> | <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></div>
+  <!-- Two paths -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Two ways to engage</span>
+        <h2>Pick the lane that matches your environment.</h2>
+        <p class="lead">
+          Most organizations start with a low-risk pilot. We align on success metrics, connect your existing tools, and prove the outcomes you care about before scaling.
+        </p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card card--accent">
+          <span class="eyebrow">Commercial</span>
+          <h3 style="font-size:var(--text-2xl); margin-top:4px;">Watchtower SecureOps</h3>
+          <p>Outcomes-driven SOC operations for commercial teams: integration, tuning, playbooks, investigations, and reporting leaders actually read.</p>
+          <ul>
+            <li>30–90 day pilot-first motion</li>
+            <li>Works with your SIEM / EDR / IdP / cloud</li>
+            <li>Evidence Packs for audit and leadership</li>
+          </ul>
+          <a class="text-link" href="./services-secureops.html" style="margin-top:var(--space-4); display:inline-block;">
+            Explore SecureOps →
+          </a>
+        </article>
+
+        <article class="card">
+          <span class="eyebrow">Mission · DoD / DIB</span>
+          <h3 style="font-size:var(--text-2xl); margin-top:4px;">Cyber Defense United</h3>
+          <p>Mission-aligned cyber defense for high-assurance environments. Built for constrained networks, prime-led programs, and disciplined operational reporting.</p>
+          <ul>
+            <li>On-prem, restricted, and disconnected enclaves</li>
+            <li>Prime-friendly capability insert or LOE</li>
+            <li>Defensible evidence and reporting cadence</li>
+          </ul>
+          <a class="text-link" href="./services-cyber-defense-united.html" style="margin-top:var(--space-4); display:inline-block;">
+            Explore CDU →
+          </a>
+        </article>
+      </div>
+
+      <p class="muted" style="margin-top:var(--space-5); text-align:center;">
+        Not sure where you fit? Start with a pilot — we'll propose the simplest path to measurable outcomes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Who it's for -->
+  <section class="section section--compact" style="background:var(--bg-subtle);">
+    <div class="container">
+      <div class="section-head" style="margin-bottom:var(--space-5);">
+        <span class="eyebrow">Built for</span>
+        <h2 style="font-size:var(--text-2xl);">Security teams that need rigor without sprawl.</h2>
+      </div>
+      <div class="trust-strip" style="margin-top:0;">
+        <span class="trust-chip trust-chip--light">Security Teams (5–50)</span>
+        <span class="trust-chip trust-chip--light">Regulated SaaS</span>
+        <span class="trust-chip trust-chip--light">Healthcare</span>
+        <span class="trust-chip trust-chip--light">Financial Services</span>
+        <span class="trust-chip trust-chip--light">Public Sector</span>
+        <span class="trust-chip trust-chip--light">DoD / DIB</span>
+        <span class="trust-chip trust-chip--light">Critical Infrastructure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integrations -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-row">
+        <div>
+          <span class="eyebrow">Works with your stack</span>
+          <h2>No rip-and-replace. Connect what you already trust.</h2>
+          <p class="lead">
+            Watchtower integrates through APIs, log pipelines, and standard connectors. We unify the signals into cases and defensible evidence — without forcing tool migration.
+          </p>
+          <div class="trust-strip" style="margin-top:var(--space-4);">
+            <span class="trust-chip trust-chip--light">SIEM</span>
+            <span class="trust-chip trust-chip--light">SOAR</span>
+            <span class="trust-chip trust-chip--light">EDR</span>
+            <span class="trust-chip trust-chip--light">NDR</span>
+            <span class="trust-chip trust-chip--light">Identity / IdP</span>
+            <span class="trust-chip trust-chip--light">Vulnerability</span>
+            <span class="trust-chip trust-chip--light">ITSM</span>
+            <span class="trust-chip trust-chip--light">Cloud logs</span>
+          </div>
+        </div>
+
+        <div class="feature-row__media" aria-hidden="true">
+          <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#facc15" stop-opacity="0.18"/>
+                <stop offset="100%" stop-color="#facc15" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <rect x="160" y="115" width="80" height="50" rx="10" fill="#0a0c10"/>
+            <text x="200" y="146" text-anchor="middle" fill="#facc15" font-size="13" font-weight="700" font-family="Inter">CRP</text>
+            <g fill="#ffffff" stroke="#e6e7eb" stroke-width="1.5" font-family="Inter" font-size="11" font-weight="600">
+              <rect x="20" y="20" width="100" height="38" rx="8"/><text x="70" y="44" text-anchor="middle" fill="#0a0c10">SIEM</text>
+              <rect x="20" y="120" width="100" height="38" rx="8"/><text x="70" y="144" text-anchor="middle" fill="#0a0c10">EDR</text>
+              <rect x="20" y="220" width="100" height="38" rx="8"/><text x="70" y="244" text-anchor="middle" fill="#0a0c10">Identity</text>
+              <rect x="280" y="20" width="100" height="38" rx="8"/><text x="330" y="44" text-anchor="middle" fill="#0a0c10">Cloud</text>
+              <rect x="280" y="120" width="100" height="38" rx="8"/><text x="330" y="144" text-anchor="middle" fill="#0a0c10">Network</text>
+              <rect x="280" y="220" width="100" height="38" rx="8"/><text x="330" y="244" text-anchor="middle" fill="#0a0c10">Ticketing</text>
+            </g>
+            <g stroke="#d4d6db" stroke-width="1.5" fill="none">
+              <path d="M120 40 Q160 60 160 130" />
+              <path d="M120 140 H160" />
+              <path d="M120 240 Q160 220 160 150" />
+              <path d="M240 130 Q280 60 280 40" />
+              <path d="M240 140 H280" />
+              <path d="M240 150 Q280 220 280 240" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-band">
+        <span class="eyebrow eyebrow--dark">Get started</span>
+        <h2>Start with a 30–90 day pilot.</h2>
+        <p>
+          Tell us your environment, tool stack, and what success looks like. We'll propose a low-risk pilot or capability insert that produces measurable outcomes and defensible evidence.
+        </p>
+        <div class="cta-band__actions">
+          <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request">
+            Start a pilot
+          </a>
+          <a class="btn btn--secondary btn--lg on-dark" href="./partners.html">
+            Prime partners
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+          <p>Cybersecurity operations and the Watchtower Cyber Reasoning Platform — for commercial teams, primes, and mission programs.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./services-secureops.html">SecureOps</a></li>
+            <li><a href="./services-cyber-defense-united.html">Cyber Defense United</a></li>
+            <li><a href="./watchtower.html">Watchtower CRP</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./who.html">Who we are</a></li>
+            <li><a href="./capabilities.html">Capabilities</a></li>
+            <li><a href="./partners.html">Partners</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="./Capability_Statement.pdf">Capability statement</a></li>
+            <li><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a></li>
+            <li><a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 enLight10 Solutions, LLC.</div>
+        <div style="display:flex; gap:12px; align-items:center;">
+          <span class="badge">Veteran-Owned Small Business</span>
+          <span>UEI W1ZNWPAX2FG7 · CAGE 17BE8</span>
+        </div>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
