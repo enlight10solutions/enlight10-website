@@ -1,4 +1,4 @@
-// script.js (FULL FILE REPLACEMENT — CLEAN: shared header + mobile menu + dropdowns)
+// script.js (FULL FILE REPLACEMENT — CLEAN: shared header/footer + mobile menu + dropdowns)
 // - Removed ALL demo video speed/seek/keyboard logic
 // - No custom video controls at all (native <video controls> will work normally)
 
@@ -66,6 +66,68 @@ document.addEventListener("DOMContentLoaded", function () {
       '    <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>',
       '  </nav>',
       '</aside>'
+    ].join("\n");
+  }
+
+  /* ---------------- Shared footer ---------------- */
+  var footerMount = document.querySelector("[data-site-footer]");
+
+  if (footerMount) {
+    footerMount.outerHTML = [
+      '<footer>',
+      '  <div class="footer-inner">',
+      '    <div class="footer-cta">',
+      '      <p>Not sure where to start? Begin with a Cyber Readiness Review.</p>',
+      '      <div class="footer-cta-actions">',
+      '        <a class="button primary" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>',
+      '        <a class="button ghost" href="./capabilities.html">View Capabilities</a>',
+      '      </div>',
+      '    </div>',
+      '',
+      '    <nav class="footer-sitemap" aria-label="Footer navigation">',
+      '      <div class="footer-column">',
+      '        <h2>Start Here</h2>',
+      '        <a href="./cyber-readiness.html">Cyber Readiness Review</a>',
+      '        <a href="./capabilities.html">Capabilities</a>',
+      '        <a href="./Capability_Statement.pdf">Capability Statement</a>',
+      '      </div>',
+      '      <div class="footer-column">',
+      '        <h2>Services</h2>',
+      '        <a href="./services-secureops.html">Watchtower SecureOps™</a>',
+      '        <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>',
+      '        <a href="./watchtower.html">Watchtower CRP™</a>',
+      '      </div>',
+      '      <div class="footer-column">',
+      '        <h2>Company</h2>',
+      '        <a href="./who.html">Who We Are</a>',
+      '        <a href="./partners.html">Prime Partners</a>',
+      '        <a href="mailto:info@enlight10solutions.com">Contact</a>',
+      '      </div>',
+      '      <div class="footer-column footer-contracting">',
+      '        <h2>Contracting</h2>',
+      '        <p><strong>UEI:</strong> W1ZNWPAX2FG7</p>',
+      '        <p><strong>CAGE:</strong> 17BE8</p>',
+      '        <p>Veteran-Owned Small Business</p>',
+      '        <p>SAM Active (All Awards)</p>',
+      '      </div>',
+      '    </nav>',
+      '',
+      '    <div class="footer-bottom">',
+      '      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>',
+      '      <p class="footer-vet">Veteran-Owned Small Business</p>',
+      '      <p class="footer-info">',
+      '        <a href="./Capability_Statement.pdf">Capabilities Statement</a> •',
+      '        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>',
+      '      </p>',
+      '      <div class="footer-social">',
+      '        <span>Follow us:</span>',
+      '        <a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> |',
+      '        <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> |',
+      '        <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a>',
+      '      </div>',
+      '    </div>',
+      '  </div>',
+      '</footer>'
     ].join("\n");
   }
 
