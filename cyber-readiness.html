@@ -28,7 +28,7 @@
         <h1>Cyber Readiness Review for Small Businesses, Contractors, and Public-Sector Teams</h1>
         <p class="lead">Get a practical view of your cybersecurity posture, compliance gaps, vulnerabilities, and remediation priorities. enLight10 Solutions helps you understand where you stand, what matters most, and what to do next.</p>
         <div class="e10-actions">
-          <a class="e10-button primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Readiness%20Review%20Request&amp;body=Name%3A%0AOrganization%3A%0AEmail%3A%0AService%20interest%3A%0AMessage%3A%0A">Request a Review</a>
+          <a class="e10-button primary" href="#request-review">Request a Review</a>
           <a class="e10-button ghost" href="./contact.html">Contact enLight10</a>
         </div>
       </div>
@@ -77,18 +77,36 @@
         </ul></div>
       </section>
 
-      <section class="e10-section">
+      <section id="request-review" class="e10-section">
         <div class="e10-band">
           <h2>Request a Cyber Readiness Review</h2>
-          <p class="e10-section-lead">No backend form is connected yet, so this page uses a prepared email request.</p>
-          <form class="e10-form" action="mailto:info@enlight10solutions.com" method="post" enctype="text/plain">
-            <label>Name <input name="name" autocomplete="name" /></label>
-            <label>Organization <input name="organization" autocomplete="organization" /></label>
-            <label>Email <input name="email" type="email" autocomplete="email" /></label>
-            <label>Service interest <select name="service_interest"><option>Cyber readiness assessment</option><option>CMMC / NIST 800-171 readiness</option><option>Vulnerability management review</option><option>Microsoft 365 / Entra ID security review</option><option>OT / ICS assessment support</option><option>Watchtower-supported remediation workflow</option></select></label>
-            <label>Message <textarea name="message"></textarea></label>
-            <div class="e10-actions"><button class="e10-button primary" type="submit">Request a Review</button><a class="e10-button ghost" style="color:#0b1120;border-color:rgba(15,23,42,0.18);" href="mailto:info@enlight10solutions.com?subject=Cyber%20Readiness%20Review%20Request">Email info@enlight10solutions.com</a></div>
-          </form>
+          <p class="e10-section-lead">Share a few details and enLight10 Solutions will follow up soon.</p>
+          <div class="tally-embed-wrap">
+            <iframe
+              data-tally-src="https://tally.so/embed/obkLjb?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="560"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+              title="Cyber Readiness Review Request">
+            </iframe>
+          </div>
+          <script>
+            var d = document, w = "https://tally.so/widgets/embed.js", v = function () {
+              if (typeof Tally !== "undefined") Tally.loadEmbeds();
+              else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function (e) { e.src = e.dataset.tallySrc; });
+            };
+            if (typeof Tally !== "undefined") v();
+            else if (d.querySelector('script[src="' + w + '"]') == null) {
+              var s = d.createElement("script");
+              s.src = w;
+              s.onload = v;
+              s.onerror = v;
+              d.body.appendChild(s);
+            }
+          </script>
         </div>
       </section>
     </div>

@@ -1345,6 +1345,18 @@ footer {
   resize: vertical;
 }
 
+.tally-embed-wrap {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.tally-embed-wrap iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+}
+
 @media (max-width: 980px) {
   .e10-hero-inner { grid-template-columns: 1fr; }
   .e10-hero-panel { max-width: 520px; }
