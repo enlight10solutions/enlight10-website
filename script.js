@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var footerMount = document.querySelector("[data-site-footer]");
 
   if (footerMount) {
+    // TODO: Add Privacy and Terms pages before running paid campaigns or collecting higher-volume form submissions.
     footerMount.outerHTML = [
       '<footer>',
       '  <div class="footer-inner">',
@@ -186,12 +187,16 @@ document.addEventListener("DOMContentLoaded", function () {
         hideTimer = null;
       }
       dd.classList.add("open");
+      toggle.setAttribute("aria-expanded", "true");
     }
 
-    function scheduleClose() {
-      hideTimer = setTimeout(function () {
-        dd.classList.remove("open");
-      }, 200);
+    function close() {
+      dd.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function scheduleClose(delay) {
+      hideTimer = setTimeout(close, delay || 200);
     }
 
     // Hover (desktop)
@@ -200,13 +205,36 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.addEventListener("mouseleave", scheduleClose);
     panelEl.addEventListener("mouseleave", scheduleClose);
 
+    // Keyboard focus
+    dd.addEventListener("focusin", open);
+    dd.addEventListener("focusout", function () {
+      scheduleClose(0);
+    });
+
     // Click toggle (touchpads / accessibility)
     toggle.addEventListener("click", function (e) {
       e.preventDefault();
       if (dd.classList.contains("open")) {
-        dd.classList.remove("open");
+        close();
       } else {
         open();
+      }
+    });
+
+    toggle.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        close();
+        toggle.focus();
+      }
+    });
+  });
+
+  document.addEventListener("click", function (e) {
+    dropdowns.forEach(function (dd) {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove("open");
+        var toggle = dd.querySelector(".dropdown-toggle");
+        if (toggle) toggle.setAttribute("aria-expanded", "false");
       }
     });
   });
