@@ -1,22 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
+// script.js (FULL FILE REPLACEMENT — CLEAN: mobile menu + dropdowns only)
+// - Removed ALL demo video speed/seek/keyboard logic
+// - No custom video controls at all (native <video controls> will work normally)
 
-  /* ---- Mobile menu ---- */
+document.addEventListener("DOMContentLoaded", function () {
+  /* ---------------- Mobile menu ---------------- */
   var menuBtn = document.getElementById("menuToggle");
+  var panel = document.getElementById("mobileMenu");
   var backdrop = document.getElementById("menuBackdrop");
 
   function openMenu() {
     document.body.classList.add("menu-open");
+    if (panel) panel.hidden = false;
+    if (backdrop) backdrop.hidden = false;
     if (menuBtn) menuBtn.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
     document.body.classList.remove("menu-open");
     if (menuBtn) menuBtn.setAttribute("aria-expanded", "false");
+    setTimeout(function () {
+      if (panel) panel.hidden = true;
+      if (backdrop) backdrop.hidden = true;
+    }, 200);
   }
 
   if (menuBtn) {
     menuBtn.addEventListener("click", function () {
-      menuBtn.getAttribute("aria-expanded") === "true" ? closeMenu() : openMenu();
+      var expanded = menuBtn.getAttribute("aria-expanded") === "true";
+      if (expanded) closeMenu();
+      else openMenu();
     });
   }
 
@@ -25,44 +37,52 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && document.body.classList.contains("menu-open")) closeMenu();
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
+      closeMenu();
+    }
   });
 
-  /* ---- Nav dropdowns ---- */
-  document.querySelectorAll("[data-dd]").forEach(function (dd) {
-    var btn = dd.querySelector(".nav__dd-btn");
-    var panel = dd.querySelector(".nav__dd-panel");
-    if (!btn || !panel) return;
+  /* ---------------- Dropdowns (Services / Product) ---------------- */
+  var dropdowns = document.querySelectorAll(".dropdown");
 
-    var timer = null;
+  dropdowns.forEach(function (dd) {
+    var toggle = dd.querySelector(".dropdown-toggle");
+    var panelEl = dd.querySelector(".dropdown-panel");
+    if (!toggle || !panelEl) return;
+
+    var hideTimer = null;
 
     function open() {
-      if (timer) { clearTimeout(timer); timer = null; }
+      if (hideTimer) {
+        clearTimeout(hideTimer);
+        hideTimer = null;
+      }
       dd.classList.add("open");
-      btn.setAttribute("aria-expanded", "true");
     }
 
-    function schedClose() {
-      timer = setTimeout(function () {
+    function scheduleClose() {
+      hideTimer = setTimeout(function () {
         dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }, 180);
+      }, 200);
     }
 
-    btn.addEventListener("mouseenter", open);
-    panel.addEventListener("mouseenter", open);
-    btn.addEventListener("mouseleave", schedClose);
-    panel.addEventListener("mouseleave", schedClose);
+    // Hover (desktop)
+    toggle.addEventListener("mouseenter", open);
+    panelEl.addEventListener("mouseenter", open);
+    toggle.addEventListener("mouseleave", scheduleClose);
+    panelEl.addEventListener("mouseleave", scheduleClose);
 
-    btn.addEventListener("click", function (e) {
+    // Click toggle (touchpads / accessibility)
+    toggle.addEventListener("click", function (e) {
       e.preventDefault();
       if (dd.classList.contains("open")) {
         dd.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
       } else {
         open();
       }
     });
   });
 
+  // Note: CRP diagram scroll animation removed.
+  // The new SVG handles its own animation via internal CSS.
 });

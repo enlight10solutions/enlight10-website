@@ -1,358 +1,1077 @@
+<!-- index.html (FULL FILE REPLACEMENT — simplified hero CTA hierarchy + commercial-first language + defs trimmed + service defs moved into “Two Paths” band) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>enLight10 Solutions — Watchtower SOC Control Plane</title>
-  <meta name="description" content="Watchtower is a Security Operations Control Plane and Cyber Reasoning Platform. Built by operators for commercial teams and high-assurance environments — without forcing tool replacement." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
-  <script src="./script.js" defer></script>
-</head>
-<body>
 
-  <!-- Nav -->
-  <nav class="nav" role="navigation" aria-label="Primary">
-    <div class="nav__inner">
-      <a class="nav__brand" href="./" aria-label="enLight10 Solutions — Home">
-        <img src="./enLight10_Logo.png" alt="" />
-        <span>enLight10</span>
-      </a>
-      <div class="nav__links">
-        <div class="nav__dd" data-dd>
-          <button class="nav__dd-btn" type="button" aria-haspopup="true" aria-expanded="false">
-            Services
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  <title>enLight10 Solutions — Watchtower™ SOC Control Plane for Modern Security Operations</title>
+  <meta
+    name="description"
+    content="Watchtower™ is a Security Operations Control Plane and Cyber Reasoning Platform™ that unifies alerts, cases, and evidence across your existing stack. Built by operators for commercial teams and high-assurance environments."
+  />
+
+  <!-- Styles / JS (cache-bust) -->
+  <link rel="stylesheet" href="./style.css?v=32" />
+  <script src="./script.js?v=32" defer></script>
+
+  <!-- Preload + Favicon -->
+  <link rel="preload" as="image" href="./enLight10_Logo.png" />
+  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
+
+  <style>
+    /* ---------------------------
+       Global
+       --------------------------- */
+    body {
+      background: #f9fafb;
+      color: #020617;
+      overflow-x: hidden;
+    }
+
+    /* Hero area (dark) */
+    .hero.splash {
+      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
+      color: #ffffff;
+      padding-top: 44px; /* under nav */
+    }
+
+    .hero.splash .hero-inner{
+      align-items:flex-start;
+      gap: 3rem;
+      padding-top: 18px !important;
+      margin-top: 0 !important;
+    }
+
+    .hero-right{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
+      padding-top: 0 !important;
+      margin-top: 0;
+    }
+
+    .hero-left{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap: 1.05rem;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 900px){
+      .hero-left, .hero-right { margin-top: 0; }
+    }
+
+    .tagline{
+      max-width: 560px;
+      margin: 0;
+      opacity: 0.96;
+      line-height: 1.7;
+    }
+
+    .hero-heading h1,
+    .hero-title{
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      margin: 0 0 0.75rem;
+      max-width: 820px;
+      line-height: 1.05;
+    }
+
+    .hero-subtitle{
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 720px;
+      line-height: 1.7;
+    }
+
+    /* Logo container */
+    .hero-logo-wrap{
+      position: relative;
+      border-radius: 22px;
+      padding: 20px 22px 24px;
+      background: rgba(2,6,23,0.38);
+      box-shadow:
+        0 20px 48px rgba(0,0,0,0.65),
+        inset 0 0 0 1px rgba(255,212,71,0.16);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-logo-large{
+      width: 100%;
+      height: auto;
+      max-width: 460px;
+      object-fit: contain;
+      display: block;
+      margin: 6px auto;
+      border-radius: 14px;
+      transform: translateY(4px);
+    }
+
+    .hero-logo-wrap::before{
+      content:"";
+      position:absolute;
+      inset:-35%;
+      background: radial-gradient(circle at 50% 40%,
+        rgba(255,212,71,0.42),
+        rgba(255,212,71,0.16) 40%,
+        transparent 70%
+      );
+      filter: blur(18px);
+      opacity: 0.75;
+      animation: logoPulse 5.8s ease-in-out infinite;
+      pointer-events:none;
+      z-index: 0;
+    }
+
+    .hero-logo-wrap::after{
+      content:"";
+      position:absolute;
+      inset:-45%;
+      background: radial-gradient(circle at 55% 45%,
+        rgba(56,189,248,0.18),
+        rgba(56,189,248,0.08) 45%,
+        transparent 72%
+      );
+      filter: blur(26px);
+      opacity: 0.55;
+      animation: logoPulse2 7.2s ease-in-out infinite;
+      pointer-events:none;
+      z-index: 0;
+    }
+
+    @keyframes logoPulse{
+      0%,100% { opacity:0.55; transform: scale(0.98); }
+      50%     { opacity:0.95; transform: scale(1.04); }
+    }
+    @keyframes logoPulse2{
+      0%,100% { opacity:0.22; transform: scale(0.98); }
+      50%     { opacity:0.55; transform: scale(1.03); }
+    }
+
+    .flat-gold{
+      color:#facc15;
+      text-shadow: 0 1px 6px rgba(250,204,21,0.35);
+    }
+
+    .wt-white{
+      color:#ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+    }
+
+    /* Video + CTA row */
+    .hero-video-wrapper{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      width:100%;
+      margin-top: 0.25rem;
+    }
+
+    /* Primary CTA (left) */
+    .hero-left-actions{
+      display:flex;
+      gap: 0.9rem;
+      align-items:center;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .hero-left-actions .button{
+      border-radius: 999px;
+      padding: 0.78rem 1.2rem;
+      font-size: 0.92rem;
+      line-height: 1;
+      font-weight: 650;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      white-space: nowrap;
+    }
+
+    /* Make the CTA row match the video width and align under each half */
+.hero-video-wrapper{
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* ✅ Two fixed columns under the video */
+.hero-actions-under-video{
+  width: 100%;
+  max-width: 720px;          /* match your video max width */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 1.05rem;
+  align-items: stretch;
+}
+
+/* ✅ Buttons fill each column so centers line up */
+.hero-actions-under-video .button{
+  width: 100%;
+  justify-content: center;
+  min-height: 46px;
+}
+
+/* Mobile: stack */
+@media (max-width: 900px){
+  .hero-actions-under-video{
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 420px;
+  }
+}
+
+    .hero-actions-under-video { max-width: 760px; }
+
+    /* Under-video CTA buttons: no underline + perfectly centered label */
+.hero-actions-under-video .button{
+  text-decoration: none !important;   /* kill underline */
+  display: inline-flex;               /* ensure flex centering */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Also prevent underline on hover/focus */
+.hero-actions-under-video .button:hover,
+.hero-actions-under-video .button:focus,
+.hero-actions-under-video .button:active{
+  text-decoration: none !important;
+}
+    
+    .button.primary.gold{
+      color:#0b1120;
+      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      box-shadow:
+        0 10px 22px rgba(250, 204, 21, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+    .button.primary.gold:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(250, 204, 21, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* SecureOps (red) */
+    .button.secureops{
+      color:#ffffff;
+      background: linear-gradient(180deg, #fecaca 0%, #fb7185 44%, #ef4444 78%, #dc2626 100%);
+      border: 1px solid rgba(239, 68, 68, 0.55);
+      box-shadow:
+        0 10px 22px rgba(239, 68, 68, 0.18),
+        0 6px 14px rgba(0, 0, 0, 0.35);
+    }
+    .button.secureops:hover{
+      transform: translateY(-1px);
+      box-shadow:
+        0 14px 28px rgba(239, 68, 68, 0.22),
+        0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Ghost (dark hero) */
+    .button.ghost-dark{
+      color:#fff7d6;
+      background: rgba(15, 23, 42, 0.35);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    }
+    .button.ghost-dark:hover{
+      border-color: rgba(251, 191, 36, 0.55);
+      background: rgba(15, 23, 42, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* “How it works” text link in hero */
+    .hero-textlink{
+      display:inline-flex;
+      align-items:center;
+      gap:0.4rem;
+      color: rgba(255,255,255,0.90);
+      text-decoration: none;
+      font-weight: 650;
+      opacity: 0.92;
+      margin-top: -0.25rem;
+    }
+    .hero-textlink:hover{
+      opacity: 1;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* MAIN */
+    main.light{
+      background:#ffffff;
+      color:#020617;
+      padding:60px 0;
+    }
+
+    .page-wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 1.5rem;
+    }
+
+    .section-title{
+      margin:0 0 0.55rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .section-lead{
+      margin:0;
+      color:#334155;
+      line-height:1.7;
+      max-width: 920px;
+    }
+
+    .band{
+      position: relative;
+      margin-top: 1.25rem;
+      border: 1px solid rgba(255, 212, 71, 0.18);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 12% 45%, rgba(220, 38, 38, 0.16), transparent 48%),
+        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.18), transparent 52%),
+        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), rgba(255, 212, 71, 0.16) 45%, transparent 70%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
+      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+      padding: 1.25rem 1.25rem;
+    }
+
+    .band::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 212, 71, 0.08), transparent 60%);
+      pointer-events:none;
+    }
+
+    .offerings-band{
+      position: relative;
+      border-radius: 18px;
+      padding: 1.25rem 1.25rem;
+      background:
+        radial-gradient(circle at 12% 45%, rgba(220, 38, 38, 0.22), transparent 48%),
+        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.26), transparent 52%),
+        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.55), rgba(255, 212, 71, 0.22) 45%, transparent 70%),
+        linear-gradient(180deg, rgba(13, 17, 23, 0.08) 0%, rgba(13, 17, 23, 0.03) 100%);
+      border: 1px solid rgba(255, 212, 71, 0.18);
+      box-shadow:
+        0 20px 48px rgba(2, 6, 23, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .offerings-band::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      border-radius:inherit;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 212, 71, 0.10), transparent 60%);
+      pointer-events:none;
+    }
+
+    .grid-3{
+      margin-top: 1.05rem;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .grid-2{
+      margin-top: 1.05rem;
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .card{
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      padding: 1.1rem 1.1rem;
+      box-shadow: 0 14px 34px rgba(2,6,23,0.08);
+    }
+
+    .card h3{
+      margin:0 0 0.55rem;
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+    }
+
+    .card p{
+      margin:0;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .card ul{
+      margin:0.75rem 0 0;
+      padding-left: 1.1rem;
+      color:#334155;
+      line-height:1.65;
+      font-size:0.95rem;
+    }
+
+    .pill-row{
+      margin-top: 0.9rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.65rem;
+      align-items:center;
+    }
+
+    .mini-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.38rem 0.70rem;
+      border-radius:999px;
+      font-size:0.78rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      border:1px solid rgba(2,6,23,0.10);
+      background: rgba(2,6,23,0.03);
+      color:#0b1120;
+      font-weight: 700;
+    }
+
+    .hero.splash .mini-pill{
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.92);
+    }
+
+    .trust-strip{
+      margin-top: 1.15rem;
+      padding: 0.9rem 1.05rem;
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.10);
+      background: rgba(2,6,23,0.02);
+      box-shadow: 0 12px 26px rgba(2,6,23,0.05);
+    }
+    .trust-strip strong{
+      display:block;
+      margin-bottom: 0.35rem;
+      letter-spacing: 0.01em;
+    }
+    .trust-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 0.55rem;
+      align-items:center;
+      color:#334155;
+      line-height:1.6;
+      font-size:0.95rem;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .trust-items li{
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(2,6,23,0.08);
+      background: rgba(255,255,255,0.8);
+      font-weight: 650;
+      font-size: 0.85rem;
+    }
+
+    .trust-note{
+      margin: 0.55rem 0 0;
+      color:#475569;
+      font-size:0.92rem;
+      line-height:1.6;
+    }
+
+    .cta-band{
+      margin-top: 1.25rem;
+      border-radius: 18px;
+      padding: 1.35rem 1.35rem;
+      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
+      color:#e5e7eb;
+      border:1px solid rgba(251,191,36,0.22);
+      box-shadow:0 16px 34px rgba(2,6,23,0.35);
+    }
+    .cta-band h2{ margin:0 0 0.55rem; color:#fff; }
+    .cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
+
+    .cta-actions{
+      margin-top:1rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:0.9rem 1.2rem;
+      align-items:center;
+    }
+
+    /* Trimmed definitions under video */
+    .hero-defs{
+      margin-top: 0.9rem;
+      opacity: 0.90;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      max-width: 820px;
+      padding-left: 1.15rem;
+    }
+    .hero-defs li{ margin: 0.25rem 0; }
+    .hero-defs strong{ color:#ffffff; }
+
+    @media (max-width: 980px){
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px){
+      .hero-inner{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+      }
+      .hero-left, .hero-right{
+        align-items:center;
+      }
+      .hero-title{ text-align:center; }
+      .hero-subtitle{ text-align:center; }
+      .hero-video-wrapper{ align-items:center; }
+      .hero-actions-under-video{ justify-content:center; gap: 1.1rem; }
+      .tagline{ text-align:center; }
+      .hero-defs{ text-align:center; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- TOP BAR -->
+  <nav class="topbar" role="navigation" aria-label="Primary">
+    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
+      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links">
+        <div class="dropdown">
+          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Services ▾
           </button>
-          <div class="nav__dd-panel">
-            <a class="nav__dd-item" href="./services-secureops.html">
-              Watchtower SecureOps
-              <span class="sub">Commercial security operations</span>
+          <div class="dropdown-panel">
+            <a href="./services-secureops.html">
+              Watchtower SecureOps™
+              <span class="sub">Operations enablement + delivery</span>
             </a>
-            <a class="nav__dd-item" href="./services-cyber-defense-united.html">
-              Cyber Defense United
-              <span class="sub">DoD &amp; DIB mission variant</span>
+            <a href="./services-cyber-defense-united.html">
+              Cyber Defense United™
+              <span class="sub">DoD/DIB mission variant</span>
             </a>
           </div>
         </div>
-        <a class="nav__link" href="./watchtower.html">Watchtower</a>
-        <a class="nav__link" href="./capabilities.html">Capabilities</a>
-        <a class="nav__link" href="./partners.html">Partners</a>
-        <a class="nav__link" href="./who.html">Who We Are</a>
+
+        <a href="./watchtower.html">Watchtower CRP™</a>
+        <a href="./capabilities.html">Capabilities</a>
+        <a href="./partners.html">Prime Partners</a>
+        <a href="./who.html">Who We Are</a>
+        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
       </div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <a class="btn btn--accent btn--sm" href="./contact.html">Talk to us</a>
-        <button class="nav__menu" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </button>
-      </div>
+
+      <button id="menuToggle" class="hamburger"
+        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <div class="menu-backdrop" id="menuBackdrop"></div>
-  <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu">
-    <a href="./services-secureops.html">Watchtower SecureOps</a>
-    <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
-    <hr />
-    <a href="./watchtower.html">Watchtower</a>
-    <a href="./capabilities.html">Capabilities</a>
-    <a href="./partners.html">Partners</a>
-    <a href="./who.html">Who We Are</a>
-    <hr />
-    <a class="btn btn--accent" href="./contact.html" style="justify-content:center;">Talk to us</a>
+  <!-- MOBILE MENU -->
+  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
+  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
+    <nav class="menu-nav">
+      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
+      <a href="./services-secureops.html">Watchtower SecureOps™</a>
+      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
+      <hr />
+      <a href="./watchtower.html">Watchtower CRP™</a>
+      <a href="./capabilities.html">Capabilities</a>
+      <a href="./partners.html">Prime Partners</a>
+      <a href="./who.html">Who We Are</a>
+      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
+    </nav>
   </aside>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero__bg"></div>
-    <div class="container">
-      <div class="hero__inner">
-        <div class="hero__copy">
-          <span class="eyebrow eyebrow--dark">SOC Control Plane · Cyber Reasoning Platform</span>
-          <h1>Security operations that explain themselves.</h1>
-          <p class="lead">
-            Watchtower unifies alerts, cases, and evidence across the tools you already run. Analysts move faster. Leaders see the story. Auditors get the trail — without ripping out your stack.
-          </p>
-
-          <div class="hero__actions">
-            <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request">
-              Start a 30–90 day pilot
-            </a>
-            <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">
-              How it works
-            </a>
-          </div>
-
-          <div class="trust-strip">
-            <span class="trust-chip">Veteran-Owned</span>
-            <span class="trust-chip">Works with your stack</span>
-            <span class="trust-chip">Evidence-first</span>
-            <span class="trust-chip">Prime-friendly</span>
-            <span class="trust-chip">DoD &amp; DIB ready</span>
-          </div>
+  <!-- HERO -->
+  <section class="hero splash" id="top">
+    <div class="hero-inner">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-logo-wrap">
+          <img class="hero-logo-large" src="./Watchtower_Logo.png" alt="Watchtower — Security Operations Control Plane" />
         </div>
 
-        <div class="hero__panel">
-          <video autoplay muted loop playsinline preload="metadata">
+        <p class="tagline">
+          <strong>enLight10 Solutions</strong> delivers <strong>Watchtower™</strong> —
+          a <strong>Security Operations Control Plane</strong> and <strong>Cyber Reasoning Platform™</strong> that unifies alerts, cases, and evidence
+          across your existing stack.
+          <br /><br />
+          Built by operators for <strong>commercial teams</strong> and <strong>high-assurance environments</strong> —
+          including mission and prime programs — <strong>without forcing tool replacement</strong>.
+          <br /><br />
+          <span style="opacity:0.95;">
+            <strong>Evidence-first</strong> investigations,
+            <strong>operational clarity</strong>,
+            and a defensible record for leadership and audits.
+          </span>
+        </p>
+
+        <!-- Primary: Pilot -->
+        <div class="hero-left-actions" aria-label="Primary action">
+          <a class="button primary gold"
+             href="mailto:info@enlight10solutions.com?subject=Watchtower%2030%E2%80%9390%20Day%20Pilot%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%20(SIEM%2FEDR%2FIdP%2FCloud)%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
+            Start a 30–90 Day Pilot
+          </a>
+        </div>
+
+        <!-- Secondary: “How it works” as a link -->
+        <a class="hero-textlink" href="./watchtower.html" aria-label="Learn how Watchtower works">
+          Learn how Watchtower works <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+        <h1 class="hero-title">
+          <span class="wt-white">Watchtower™</span><br />
+          <span class="flat-gold">SOC Control Plane</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Consolidate security operations without ripping out tooling.
+          Watchtower normalizes signals, builds evidence-backed cases, and produces defensible outputs —
+          so teams move faster with confidence.
+        </p>
+
+        <div class="pill-row" style="margin-top:0.55rem;">
+          <span class="mini-pill">Veteran-Owned</span>
+          <span class="mini-pill">Operator-Led</span>
+          <span class="mini-pill">Prime-Friendly</span>
+          <span class="mini-pill">Works With Your Stack</span>
+          <span class="mini-pill">Evidence-First</span>
+        </div>
+
+        <div class="hero-video-wrapper">
+          <video
+            id="demoVideo"
+            class="hero-video featured"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
             <source src="https://enlight10media.z22.web.core.windows.net/Intro.faststart.mp4" type="video/mp4" />
           </video>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Value pillars -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">What Watchtower delivers</span>
-        <h2>One control plane. Your existing tools. Defensible outcomes.</h2>
-        <p class="lead">
-          Most teams don't need more tools — they need the tools they have to work together. Watchtower wraps your stack with a reasoning + evidence layer so the work stops getting lost between dashboards.
-        </p>
-      </div>
-
-      <div class="grid grid--3">
-        <article class="card">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 10v6M4.22 4.22l4.24 4.24m7.07 7.07 4.24 4.24M1 12h6m10 0h6M4.22 19.78l4.24-4.24m7.07-7.07 4.24-4.24"></path></svg>
+          <!-- Secondary routing: commercial vs mission -->
+          <div class="hero-actions hero-actions-under-video">
+            <a class="button primary gold" href="./services-cyber-defense-united.html">
+              Explore Cyber Defense United
+            </a>
+            <a class="button secureops" href="./services-secureops.html">
+              Explore SecureOps
+            </a>
           </div>
-          <h3>SOC unification</h3>
-          <p>Normalize signals across SIEM, EDR, identity, network, and cloud. One case view. One escalation path. No more dashboard switching.</p>
-        </article>
-
-        <article class="card">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="9" y1="15" x2="15" y2="15"></line><line x1="9" y1="11" x2="15" y2="11"></line></svg>
-          </div>
-          <h3>Evidence Packs</h3>
-          <p>Every investigation produces a defensible record: timeline, artifacts, decisions, and a narrative leadership and auditors can actually read.</p>
-        </article>
-
-        <article class="card">
-          <div class="card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5.5 3.8 10.5 8 12 4.2-1.5 8-6.5 8-12V6z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
-          </div>
-          <h3>Deploy anywhere</h3>
-          <p>Cloud, hybrid, on-prem, or disconnected enclaves. Designed for real operating constraints — not just clean-environment demos.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section section--compact">
-    <div class="container">
-      <div class="stats">
-        <div>
-          <div class="stat__num">30–90 d</div>
-          <div class="stat__label">Time-boxed pilot</div>
         </div>
-        <div>
-          <div class="stat__num">0</div>
-          <div class="stat__label">Tools replaced to start</div>
-        </div>
-        <div>
-          <div class="stat__num">1</div>
-          <div class="stat__label">Case view across the stack</div>
-        </div>
-        <div>
-          <div class="stat__num">100%</div>
-          <div class="stat__label">Evidence-backed outputs</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Two paths -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Two ways to engage</span>
-        <h2>Pick the lane that matches your environment.</h2>
-        <p class="lead">
-          Most organizations start with a low-risk pilot. We align on success metrics, connect your existing tools, and prove the outcomes you care about before scaling.
-        </p>
-      </div>
-
-      <div class="grid grid--2">
-        <article class="card card--accent">
-          <span class="eyebrow">Commercial</span>
-          <h3 style="font-size:var(--text-2xl); margin-top:4px;">Watchtower SecureOps</h3>
-          <p>Outcomes-driven SOC operations for commercial teams: integration, tuning, playbooks, investigations, and reporting leaders actually read.</p>
-          <ul>
-            <li>30–90 day pilot-first motion</li>
-            <li>Works with your SIEM / EDR / IdP / cloud</li>
-            <li>Evidence Packs for audit and leadership</li>
+        <!-- Trimmed definitions (2 only) -->
+        <div class="hero-defs" aria-label="Key definitions">
+          <p style="margin:0 0 0.4rem;">
+            We turn SIEM/EDR/IdP noise into investigations + evidence your leaders can trust.
+            </p>
+            <ul style="margin:0; padding-left:1.15rem;">
+              <li><strong>CRP™</strong> = the reasoning + evidence layer behind repeatable investigations.</li>
+            <li><strong>Evidence Pack™</strong> = narrative + timeline + artifacts + decision trail for leadership and audits.</li>
           </ul>
-          <a class="text-link" href="./services-secureops.html" style="margin-top:var(--space-4); display:inline-block;">
-            Explore SecureOps →
-          </a>
-        </article>
-
-        <article class="card">
-          <span class="eyebrow">Mission · DoD / DIB</span>
-          <h3 style="font-size:var(--text-2xl); margin-top:4px;">Cyber Defense United</h3>
-          <p>Mission-aligned cyber defense for high-assurance environments. Built for constrained networks, prime-led programs, and disciplined operational reporting.</p>
-          <ul>
-            <li>On-prem, restricted, and disconnected enclaves</li>
-            <li>Prime-friendly capability insert or LOE</li>
-            <li>Defensible evidence and reporting cadence</li>
-          </ul>
-          <a class="text-link" href="./services-cyber-defense-united.html" style="margin-top:var(--space-4); display:inline-block;">
-            Explore CDU →
-          </a>
-        </article>
+        </div>
       </div>
+    </div>
 
-      <p class="muted" style="margin-top:var(--space-5); text-align:center;">
-        Not sure where you fit? Start with a pilot — we'll propose the simplest path to measurable outcomes.
-      </p>
+    <div class="scroll-cue" aria-hidden="true">
+      Scroll <span class="arrow">↓</span>
     </div>
   </section>
 
-  <!-- Who it's for -->
-  <section class="section section--compact" style="background:var(--bg-subtle);">
-    <div class="container">
-      <div class="section-head" style="margin-bottom:var(--space-5);">
-        <span class="eyebrow">Built for</span>
-        <h2 style="font-size:var(--text-2xl);">Security teams that need rigor without sprawl.</h2>
-      </div>
-      <div class="trust-strip" style="margin-top:0;">
-        <span class="trust-chip trust-chip--light">Security Teams (5–50)</span>
-        <span class="trust-chip trust-chip--light">Regulated SaaS</span>
-        <span class="trust-chip trust-chip--light">Healthcare</span>
-        <span class="trust-chip trust-chip--light">Financial Services</span>
-        <span class="trust-chip trust-chip--light">Public Sector</span>
-        <span class="trust-chip trust-chip--light">DoD / DIB</span>
-        <span class="trust-chip trust-chip--light">Critical Infrastructure</span>
-      </div>
-    </div>
-  </section>
+  <!-- MAIN -->
+  <main class="light">
+    <div class="page-wrap">
 
-  <!-- Integrations -->
-  <section class="section">
-    <div class="container">
-      <div class="feature-row">
-        <div>
-          <span class="eyebrow">Works with your stack</span>
-          <h2>No rip-and-replace. Connect what you already trust.</h2>
-          <p class="lead">
-            Watchtower integrates through APIs, log pipelines, and standard connectors. We unify the signals into cases and defensible evidence — without forcing tool migration.
+      <!-- TWO PATHS (moved service definitions out of hero) -->
+      <section class="section-block slim">
+        <h2 class="section-title">Two Ways to Engage</h2>
+        <p class="section-lead">
+          Most organizations start with a low-risk pilot. Choose the engagement lane that matches your environment and constraints.
+        </p>
+
+        <div class="band">
+          <div class="grid-2">
+            <article class="card">
+              <h3>Watchtower SecureOps™ (Commercial)</h3>
+              <p>
+                Outcomes-driven security operations enablement and delivery: integration, tuning, playbooks, investigation workflows,
+                and defensible reporting — powered by Watchtower CRP.
+              </p>
+              <ul>
+                <li>30–90 day pilot-first motion</li>
+                <li>Works with your SIEM/EDR/IdP/tooling</li>
+                <li>Evidence Packs for leadership and audit readiness</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="./services-secureops.html">Explore SecureOps →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Cyber Defense United™ (Mission / DoD/DIB)</h3>
+              <p>
+                Mission-focused cyber defense for high-assurance environments (on-prem / restricted / disconnected),
+                combining Watchtower CRP with experienced defenders and disciplined operational reporting.
+              </p>
+              <ul>
+                <li>Designed for constrained networks and program realities</li>
+                <li>Prime-friendly capability insert or LOE</li>
+                <li>Defensible evidence and reporting cadence</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="./services-cyber-defense-united.html">Explore CDU →</a>
+              </p>
+            </article>
+          </div>
+
+          <p style="margin-top:1rem; color:#334155; line-height:1.7;">
+            <strong>Not sure?</strong> Start with a pilot. We’ll align on success metrics and propose the simplest path to measurable outcomes.
           </p>
-          <div class="trust-strip" style="margin-top:var(--space-4);">
-            <span class="trust-chip trust-chip--light">SIEM</span>
-            <span class="trust-chip trust-chip--light">SOAR</span>
-            <span class="trust-chip trust-chip--light">EDR</span>
-            <span class="trust-chip trust-chip--light">NDR</span>
-            <span class="trust-chip trust-chip--light">Identity / IdP</span>
-            <span class="trust-chip trust-chip--light">Vulnerability</span>
-            <span class="trust-chip trust-chip--light">ITSM</span>
-            <span class="trust-chip trust-chip--light">Cloud logs</span>
+        </div>
+      </section>
+
+      <!-- WHAT WE DELIVER -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">What We Deliver</h2>
+        <p class="section-lead">
+          Watchtower is a platform-first approach to modern security operations:
+          unify what you already have, reduce noise, and produce defensible evidence for action, oversight, and audits.
+        </p>
+
+        <div class="trust-strip" style="margin-top:1.05rem;">
+          <strong>Who Watchtower is for</strong>
+          <ul class="trust-items" aria-label="Ideal customers">
+            <li>Security Teams (5–50)</li>
+            <li>Program Networks</li>
+            <li>Regulated SaaS</li>
+            <li>Healthcare</li>
+            <li>Financial Services</li>
+            <li>Public Sector</li>
+            <li>DoD / DIB</li>
+          </ul>
+        </div>
+
+        <div class="offerings-band">
+          <div class="grid-3">
+
+            <article class="card">
+              <h3>SOC Unification &amp; Control Plane</h3>
+              <p>
+                Normalize signals from tools you don’t replace, unify cases and workflows, and reduce dashboard hopping.
+                Designed to improve speed and consistency across distributed teams.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Integrates</span>
+                <span class="mini-pill">Normalizes</span>
+                <span class="mini-pill">Unifies</span>
+              </div>
+              <ul>
+                <li>Cross-tool ingestion and normalization</li>
+                <li>Case-centric workflows (not alert floods)</li>
+                <li>Repeatable operating patterns</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a href="./watchtower.html" class="text-link">Explore Watchtower →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Evidence Pack™ Investigations</h3>
+              <p>
+                Each case produces a defensible record: narrative, timeline, artifacts, and decision trail —
+                built for leadership briefings, oversight, and audit questions without manual reconstruction.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Narrative</span>
+                <span class="mini-pill">Timeline</span>
+                <span class="mini-pill">Artifacts</span>
+              </div>
+              <ul>
+                <li><strong>Case timeline</strong> + key artifacts</li>
+                <li><strong>Decision trail</strong> + justification</li>
+                <li><strong>Executive-ready outputs</strong> + audit support</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a href="./capabilities.html" class="text-link">Capabilities →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Deployment Options</h3>
+              <p>
+                Deploy Watchtower in cloud, hybrid, or constrained environments.
+                Keep your existing tools — Watchtower unifies the operational layer.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Cloud</span>
+                <span class="mini-pill">Hybrid</span>
+                <span class="mini-pill">Constrained</span>
+              </div>
+              <ul>
+                <li>Works with your SIEM / EDR / IdP stack</li>
+                <li>Designed for real constraints</li>
+                <li>Evidence-first case outputs</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a href="./partners.html" class="text-link">Prime Partners →</a>
+              </p>
+            </article>
+
           </div>
         </div>
 
-        <div class="feature-row__media" aria-hidden="true">
-          <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#facc15" stop-opacity="0.18"/>
-                <stop offset="100%" stop-color="#facc15" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
-            <rect x="160" y="115" width="80" height="50" rx="10" fill="#0a0c10"/>
-            <text x="200" y="146" text-anchor="middle" fill="#facc15" font-size="13" font-weight="700" font-family="Inter">CRP</text>
-            <g fill="#ffffff" stroke="#e6e7eb" stroke-width="1.5" font-family="Inter" font-size="11" font-weight="600">
-              <rect x="20" y="20" width="100" height="38" rx="8"/><text x="70" y="44" text-anchor="middle" fill="#0a0c10">SIEM</text>
-              <rect x="20" y="120" width="100" height="38" rx="8"/><text x="70" y="144" text-anchor="middle" fill="#0a0c10">EDR</text>
-              <rect x="20" y="220" width="100" height="38" rx="8"/><text x="70" y="244" text-anchor="middle" fill="#0a0c10">Identity</text>
-              <rect x="280" y="20" width="100" height="38" rx="8"/><text x="330" y="44" text-anchor="middle" fill="#0a0c10">Cloud</text>
-              <rect x="280" y="120" width="100" height="38" rx="8"/><text x="330" y="144" text-anchor="middle" fill="#0a0c10">Network</text>
-              <rect x="280" y="220" width="100" height="38" rx="8"/><text x="330" y="244" text-anchor="middle" fill="#0a0c10">Ticketing</text>
-            </g>
-            <g stroke="#d4d6db" stroke-width="1.5" fill="none">
-              <path d="M120 40 Q160 60 160 130" />
-              <path d="M120 140 H160" />
-              <path d="M120 240 Q160 220 160 150" />
-              <path d="M240 130 Q280 60 280 40" />
-              <path d="M240 140 H280" />
-              <path d="M240 150 Q280 220 280 240" />
-            </g>
-          </svg>
+        <!-- “Integrations” trust band (tool concepts) -->
+        <div class="trust-strip">
+          <strong>Integration examples (tool categories — no replacement required)</strong>
+          <ul class="trust-items" aria-label="Integration categories">
+            <li>SIEM</li>
+            <li>SOAR / Automation</li>
+            <li>EDR</li>
+            <li>NDR</li>
+            <li>Vulnerability Scanners</li>
+            <li>IAM / IdP</li>
+            <li>Ticketing / ITSM</li>
+            <li>Knowledge Management</li>
+            <li>Threat Intelligence (CTI)</li>
+            <li>Cloud / Platform Logs</li>
+          </ul>
+          <p class="trust-note">
+            Examples shown — Watchtower integrates via APIs, log pipelines, and standard connectors to unify signals into cases and defensible evidence.
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="cta-band">
-        <span class="eyebrow eyebrow--dark">Get started</span>
-        <h2>Start with a 30–90 day pilot.</h2>
-        <p>
-          Tell us your environment, tool stack, and what success looks like. We'll propose a low-risk pilot or capability insert that produces measurable outcomes and defensible evidence.
+      <!-- ENGAGEMENT OPTIONS -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Engagement Options</h2>
+        <p class="section-lead">
+          Start small, prove outcomes, and expand deliberately.
+          Commercial teams typically start with a <strong>30-day pilot</strong>; high-assurance environments may require 60–90 days.
+          Final pricing depends on environment, integrations, and operating constraints.
         </p>
-        <div class="cta-band__actions">
-          <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request">
-            Start a pilot
-          </a>
-          <a class="btn btn--secondary btn--lg on-dark" href="./partners.html">
-            Prime partners
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-          <p>Cybersecurity operations and the Watchtower Cyber Reasoning Platform — for commercial teams, primes, and mission programs.</p>
+        <div class="band">
+          <div class="grid-3">
+
+            <article class="card">
+              <h3>Pilot (30–90 Days)</h3>
+              <p>
+                A time-boxed deployment to validate integrations, workflows, and measurable outcomes — with a clean off-ramp.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Time-Boxed</span>
+                <span class="mini-pill">Outcomes</span>
+                <span class="mini-pill">Low Risk</span>
+              </div>
+              <ul>
+                <li>Signal ingestion + normalization</li>
+                <li>Case workflow + <strong>Evidence Pack™ outputs</strong></li>
+                <li>Success criteria + final outcomes report</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link"
+                   href="mailto:info@enlight10solutions.com?subject=Watchtower%2030%E2%80%9390%20Day%20Pilot%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0AEnvironment%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+                  Start a Pilot →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Capability Insert (LOE)</h3>
+              <p>
+                Embed with your team to accelerate delivery: architecture enablement, SOC modernization, and evidence-ready operations.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Embedded</span>
+                <span class="mini-pill">Program-Minded</span>
+                <span class="mini-pill">Repeatable</span>
+              </div>
+              <ul>
+                <li>Architecture + operating patterns</li>
+                <li>Detection / triage acceleration</li>
+                <li>Reporting cadence + proof of execution</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Capability%20Insert%20(LOE)">
+                  Discuss LOE Support →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Operations Enablement</h3>
+              <p>
+                When needed, we can pair Watchtower with defined operational services — focused on outcomes, not headcount.
+              </p>
+              <div class="pill-row">
+                <span class="mini-pill">Enable</span>
+                <span class="mini-pill">Measure</span>
+                <span class="mini-pill">Improve</span>
+              </div>
+              <ul>
+                <li>Playbooks and response discipline</li>
+                <li>Executive-ready briefs</li>
+                <li>Continuous improvement loop</li>
+              </ul>
+              <p style="margin-top:0.8rem;">
+                <a class="text-link" href="./services-secureops.html">See SecureOps →</a>
+              </p>
+            </article>
+
+          </div>
+
+          <p style="margin-top:1rem; color:#334155; line-height:1.7;">
+            <strong>Note:</strong> Watchtower is designed to <strong>work with your stack</strong> (SIEM/EDR/IdP/network/data sources)
+            and can be deployed in cloud, hybrid, and constrained environments.
+          </p>
         </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="./services-secureops.html">SecureOps</a></li>
-            <li><a href="./services-cyber-defense-united.html">Cyber Defense United</a></li>
-            <li><a href="./watchtower.html">Watchtower CRP</a></li>
-          </ul>
+      </section>
+
+      <!-- WHY -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Why Watchtower?</h2>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Less Switching, More Defending</h3>
+              <p>
+                Reduce dashboard hopping. Bring context, actions, and documentation together so teams can move faster.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Evidence Built In</h3>
+              <p>
+                Every investigation produces a defensible record — timeline, decisions, and artifacts you can brief or audit.
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Built for Real Constraints</h3>
+              <p>
+                Designed for operational tempo, distributed teams, and leadership-grade reporting — from commercial to high-assurance environments.
+              </p>
+            </article>
+          </div>
         </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="./who.html">Who we are</a></li>
-            <li><a href="./capabilities.html">Capabilities</a></li>
-            <li><a href="./partners.html">Partners</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-          </ul>
+      </section>
+
+      <!-- COMPLIANCE -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <h2 class="section-title">Compliance-Ready Operations</h2>
+        <p class="section-lead">
+          We focus on the operational reality behind oversight frameworks: monitoring, incident handling, and proof of execution.
+        </p>
+
+        <div class="band">
+          <div class="grid-3">
+            <article class="card">
+              <h3>Continuous Monitoring</h3>
+              <p>
+                Consistent monitoring with measurable outputs and documented actions — aligned to high-assurance environments.
+              </p>
+              <p style="margin-top:0.8rem;">
+                <a href="./services-cato.html" class="text-link">cATO enablement →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Evidence for Audits</h3>
+              <p>
+                Cases, timelines, and reports that answer audit questions without weeks of manual reconstruction.
+              </p>
+              <p style="margin-top:0.8rem;">
+                <a href="./services-cmmc.html" class="text-link">CMMC ops lane →</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3>Automation That Helps</h3>
+              <p>
+                Improve enrichment and workflows — with reasoning and evidence, not just playbooks.
+              </p>
+              <p style="margin-top:0.8rem;">
+                <a href="./services-automation.html" class="text-link">Automation services →</a>
+              </p>
+            </article>
+          </div>
         </div>
-        <div>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="./Capability_Statement.pdf">Capability statement</a></li>
-            <li><a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a></li>
-            <li><a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a></li>
-          </ul>
+      </section>
+
+      <!-- CTA -->
+      <section class="section-block slim" style="margin-top:1.75rem;">
+        <div class="cta-band">
+          <h2>Start with a 30–90 Day Pilot</h2>
+          <p>
+            Tell us your environment, tool stack, and what success looks like.
+            We’ll propose a low-risk pilot or a capability insert that produces measurable outcomes and defensible evidence.
+          </p>
+
+          <div class="cta-actions">
+            <a class="button primary"
+              href="mailto:info@enlight10solutions.com?subject=Watchtower%2030%E2%80%9390%20Day%20Pilot%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0AEnvironment%3A%0ATop%203%20pain%20points%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
+              Start a Pilot
+            </a>
+            <a class="button ghost" href="./partners.html">
+              Prime Partners
+            </a>
+            <a class="button ghost"
+              href="mailto:info@enlight10solutions.com?subject=Watchtower%20Demo%20Request&body=Company%3A%0AIndustry%3A%0ATool%20stack%3A%0AEnvironment%3A%0ATop%203%20pain%20points%3A%0A">
+              Request a Demo
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="footer__bottom">
-        <div>© 2026 enLight10 Solutions, LLC.</div>
-        <div style="display:flex; gap:12px; align-items:center;">
-          <span class="badge">Veteran-Owned Small Business</span>
-          <span>UEI W1ZNWPAX2FG7 · CAGE 17BE8</span>
-        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">© 2026 enLight10 Solutions, LLC. All rights reserved.</p>
+      <p class="footer-vet">Veteran-Owned Small Business</p>
+      <p class="footer-info">
+        <a href="./Capability_Statement.pdf">Capabilities Statement</a> •
+        <a href="mailto:info@enlight10solutions.com">info@enlight10solutions.com</a>
+      </p>
+      <div class="footer-social">
+        <span>Follow us:</span>
+        <a href="https://linkedin.com/company/enlight10solutions" target="_blank" rel="noopener">LinkedIn</a> |
+        <a href="https://x.com/E10Solutions" target="_blank" rel="noopener">X</a> |
+        <a href="https://github.com/enlight10solutions" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </footer>
-
 </body>
 </html>
