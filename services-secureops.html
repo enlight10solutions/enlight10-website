@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Watchtower SecureOps | enLight10 Solutions</title>
-  <meta name="description" content="Watchtower SecureOps is a follow-on operational enablement service after cybersecurity assessment and remediation planning, supporting monitoring strategy, evidence-ready reporting, workflow improvement, and scoped operations." />
+  <title>Watchtower SecureOps — Modern SOC services for commercial teams | enLight10</title>
+  <meta name="description" content="Watchtower SecureOps is enLight10's commercial services line — modern SOC operations delivered by people and the Watchtower Cyber Reasoning Platform." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -27,8 +27,14 @@
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </button>
           <div class="nav__dd-panel">
-            <a class="nav__dd-item" href="./services-secureops.html" aria-current="page">Watchtower SecureOps<span class="sub">Commercial security operations</span></a>
-            <a class="nav__dd-item" href="./services-cyber-defense-united.html">Cyber Defense United<span class="sub">DoD &amp; DIB mission variant</span></a>
+            <a class="nav__dd-item" href="./services-secureops.html" aria-current="page">
+              Watchtower SecureOps
+              <span class="sub">Commercial security operations</span>
+            </a>
+            <a class="nav__dd-item" href="./services-cyber-defense-united.html">
+              Cyber Defense United
+              <span class="sub">DoD &amp; DIB mission variant</span>
+            </a>
           </div>
         </div>
         <a class="nav__link" href="./watchtower.html">Watchtower</a>
@@ -36,7 +42,7 @@
         <a class="nav__link" href="./partners.html">Partners</a>
         <a class="nav__link" href="./who.html">Who We Are</a>
       </div>
-      <div style="display:flex;align-items:center;gap:8px;">
+      <div style="display:flex; align-items:center; gap:8px;">
         <a class="btn btn--accent btn--sm" href="./contact.html">Talk to us</a>
         <button class="nav__menu" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -47,7 +53,7 @@
 
   <div class="menu-backdrop" id="menuBackdrop"></div>
   <aside class="menu-panel" id="mobileMenu" aria-label="Mobile menu">
-    <a href="./services-secureops.html">Watchtower SecureOps</a>
+    <a href="./services-secureops.html" aria-current="page">Watchtower SecureOps</a>
     <a href="./services-cyber-defense-united.html">Cyber Defense United</a>
     <hr />
     <a href="./watchtower.html">Watchtower</a>
@@ -58,73 +64,375 @@
     <a class="btn btn--accent" href="./contact.html" style="justify-content:center;">Talk to us</a>
   </aside>
 
-  <section class="hero hero--inner">
+  <!-- Hero -->
+  <section class="hero">
     <div class="hero__bg"></div>
     <div class="container">
       <div class="hero__inner">
         <div class="hero__copy">
-          <span class="eyebrow eyebrow--dark">Watchtower SecureOps · Commercial</span>
-          <h1>Operational enablement after assessment and remediation planning.</h1>
-          <p class="lead" style="color:var(--dark-text-2);margin-top:var(--space-4);">Watchtower SecureOps helps teams improve security operations with monitoring strategy, evidence-ready reporting, workflow discipline, and scoped operational support.</p>
-          <p style="color:var(--dark-text-3);margin-top:var(--space-3);font-size:var(--text-sm);">SecureOps is not positioned as the default entry point. Most customers should start with an assessment and remediation roadmap, then add operational enablement where it makes sense.</p>
+          <span class="eyebrow eyebrow--dark">Commercial · Watchtower SecureOps</span>
+          <h1>Modern SOC operations that produce evidence, not noise.</h1>
+          <p class="lead">
+            Watchtower SecureOps integrates your existing stack and wraps it with a reasoning + evidence layer. Faster triage. Clearer escalation. Reporting that leadership can read and audits can defend.
+          </p>
           <div class="hero__actions">
-            <a class="btn btn--accent btn--lg" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>
-            <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">Explore Watchtower</a>
+            <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request">
+              Start a 30–90 day pilot
+            </a>
+            <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">
+              Watchtower CRP
+            </a>
           </div>
+          <div class="trust-strip">
+            <span class="trust-chip">Works with your stack</span>
+            <span class="trust-chip">Evidence-first</span>
+            <span class="trust-chip">No rip-and-replace</span>
+            <span class="trust-chip">Pilot-friendly</span>
+          </div>
+        </div>
+
+        <div class="hero__panel">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="https://enlight10media.z22.web.core.windows.net/Secureops.faststart.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Who it's for -->
   <section class="section">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">What SecureOps supports</span>
-        <h2>Build operations from real findings.</h2>
+        <span class="eyebrow">Who SecureOps is for</span>
+        <h2>SOC-grade rigor without adding tool sprawl.</h2>
+        <p class="lead">
+          We integrate the stack you already operate, normalize signals across sources, and unify them into a single reasoning + evidence layer that improves understanding, response, and reporting.
+        </p>
       </div>
-      <div class="grid grid--3">
+
+      <div class="trust-strip" style="margin-top:0;">
+        <span class="trust-chip trust-chip--light">Security Teams (5–50)</span>
+        <span class="trust-chip trust-chip--light">Regulated SaaS</span>
+        <span class="trust-chip trust-chip--light">Healthcare</span>
+        <span class="trust-chip trust-chip--light">Financial Services</span>
+        <span class="trust-chip trust-chip--light">Enterprise SOCs</span>
+        <span class="trust-chip trust-chip--light">MSSPs</span>
+        <span class="trust-chip trust-chip--light">Hybrid / Cloud Migration</span>
+      </div>
+
+      <div class="grid grid--3" style="margin-top:var(--space-7);">
         <article class="card">
-          <h3>Monitoring strategy</h3>
-          <p>Define practical coverage models, escalation paths, telemetry priorities, and reporting cadence.</p>
+          <span class="eyebrow">Integrates</span>
+          <h3 style="margin-top:4px;">Your existing tools</h3>
+          <p>SIEM, SOAR, EDR, identity, vulnerability scanners, cloud telemetry. Connect through APIs and log pipelines — no migration required.</p>
         </article>
         <article class="card">
-          <h3>Operational workflow improvement</h3>
-          <p>Improve handoffs, playbooks, ticketing, remediation tracking, and decision documentation.</p>
+          <span class="eyebrow">Unifies</span>
+          <h3 style="margin-top:4px;">Signals into cases</h3>
+          <p>Normalize the noise. Group related activity into behaviors. Replace alert floods with case timelines and artifacts.</p>
         </article>
         <article class="card">
-          <h3>Evidence-ready reporting</h3>
-          <p>Create recurring summaries that show risks, actions, exceptions, and progress for leadership and auditors.</p>
-        </article>
-        <article class="card">
-          <h3>Tool and signal alignment</h3>
-          <p>Align SIEM, EDR, identity, vulnerability, and ticketing data to the work that needs action.</p>
-        </article>
-        <article class="card">
-          <h3>Scoped response support</h3>
-          <p>Provide focused triage, investigation, and after-action support when scoped by engagement.</p>
-        </article>
-        <article class="card">
-          <h3>Partner-supported delivery</h3>
-          <p>When broader coverage is needed, enLight10 can coordinate scoped or partner-supported options.</p>
+          <span class="eyebrow">Explains</span>
+          <h3 style="margin-top:4px;">Defensible narratives</h3>
+          <p>Every investigation produces an Evidence Pack — summary, timeline, decisions, and recommended next steps. Human-reviewed.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- What we deliver -->
+  <section class="section" style="background:var(--bg-subtle);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we deliver</span>
+        <h2>Operations that are measurable, repeatable, and defensible.</h2>
+        <p class="lead">
+          Watchtower SecureOps combines the platform with experienced operators. Augment your existing SOC, modernize workflows, or operate as a managed partner alongside your team.
+        </p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <h3>Managed Detection &amp; Response</h3>
+          <p>Monitoring, triage, investigation, and response support — built around cases and evidence, not alert queues.</p>
+          <ul>
+            <li>Business-hours, 24/7, or hybrid coverage</li>
+            <li>Case timelines and after-action reporting</li>
+            <li>Clear escalation paths with documentation</li>
+          </ul>
+        </article>
+
+        <article class="card card--accent">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </div>
+          <h3>CRP as the operations hub</h3>
+          <p>Watchtower unifies alerts, context, and evidence across your tools so analysts move faster and leaders get clarity.</p>
+          <ul>
+            <li>Unified investigations across SIEM/EDR/IdP/cloud</li>
+            <li>Standardized playbooks and reporting</li>
+            <li>Evidence packs: what we saw — what we did</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
+          <h3>Incident response &amp; surge</h3>
+          <p>When something is real, you need experienced hands. We support containment decisions, recovery, and communications.</p>
+          <ul>
+            <li>Rapid triage and impact scoping</li>
+            <li>Containment guidance aligned to your risk tolerance</li>
+            <li>Executive summaries and post-incident recommendations</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Variants -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Service variants</span>
+        <h2>The same foundation, tuned for three commercial realities.</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <h3>SecureOps for Enterprise</h3>
+          <p>For in-house security teams that own tools but want a tighter operating model and clearer reporting.</p>
+          <ul>
+            <li>Modern triage and investigation cases</li>
+            <li>Integration with your security tools and ticketing</li>
+            <li>Leadership-ready reporting tied to business risk</li>
+          </ul>
+        </article>
+
+        <article class="card card--accent">
+          <h3>SecureOps for MSSPs</h3>
+          <p>For providers that need repeatable operations across customers with clear, customer-facing value.</p>
+          <ul>
+            <li>Multi-tenant patterns for cases and reporting</li>
+            <li>Standardized triage and escalation across clients</li>
+            <li>Evidence and narratives customers can actually use</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>SecureOps Lite (SMB)</h3>
+          <p>SOC-grade rigor without a full 24/7 headcount — right-sized for smaller teams.</p>
+          <ul>
+            <li>Right-sized alerting with clear priorities</li>
+            <li>Business-hours monitoring with on-call patterns</li>
+            <li>Audit-ready "what happened" records</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="section" style="background:var(--bg-subtle);">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Packages</span>
+        <h2>Three ways to engage.</h2>
+        <p class="lead">
+          Right-sized coverage, clear reporting, and defensible evidence at every tier. Final scope tunes to your environment, integrations, and operating constraints.
+        </p>
+      </div>
+
+      <div class="tiers">
+        <article class="tier">
+          <h3>Starter</h3>
+          <p class="tier__desc">Right-sized monitoring and triage with clean reporting and escalation paths.</p>
+          <div class="tier__pills">
+            <span class="tier__pill">Business-hours</span>
+            <span class="tier__pill">Evidence-first</span>
+            <span class="tier__pill">Onboarding</span>
+          </div>
+          <div class="tier__cta">
+            <a class="btn btn--secondary" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Starter%20Inquiry">Discuss Starter</a>
+          </div>
+        </article>
+
+        <article class="tier tier--featured">
+          <span class="tier__badge">Most common</span>
+          <h3>Pro</h3>
+          <p class="tier__desc">Hybrid or 24/7 coverage with deeper investigations, tuning, and IR support.</p>
+          <div class="tier__pills">
+            <span class="tier__pill">Hybrid / 24×7</span>
+            <span class="tier__pill">IR support</span>
+            <span class="tier__pill">Playbooks</span>
+          </div>
+          <div class="tier__cta">
+            <a class="btn btn--accent" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pro%20Pilot">Start Pro pilot</a>
+          </div>
+        </article>
+
+        <article class="tier">
+          <h3>Elite</h3>
+          <p class="tier__desc">Continuous operations with proactive hunting, hardening, and executive-ready cadence.</p>
+          <div class="tier__pills">
+            <span class="tier__pill">24×7×365</span>
+            <span class="tier__pill">Hunt</span>
+            <span class="tier__pill">Assurance</span>
+          </div>
+          <div class="tier__cta">
+            <a class="btn btn--secondary" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Elite%20Inquiry">Discuss Elite</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="compare-wrap" style="margin-top:var(--space-7);">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th>Starter</th>
+              <th>Pro</th>
+              <th>Elite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group"><td colspan="4">Detection &amp; Response</td></tr>
+            <tr>
+              <th>Monitoring coverage</th>
+              <td><span class="ok">Business-hours</span></td>
+              <td><span class="ok">Hybrid or 24/7</span></td>
+              <td><span class="ok">24×7×365</span></td>
+            </tr>
+            <tr>
+              <th>Case timelines &amp; evidence packs</th>
+              <td><span class="ok"></span></td>
+              <td><span class="ok"></span></td>
+              <td><span class="ok"></span></td>
+            </tr>
+            <tr>
+              <th>Proactive threat hunting</th>
+              <td><span class="none"></span></td>
+              <td><span class="addon">Optional</span></td>
+              <td><span class="ok"></span></td>
+            </tr>
+            <tr>
+              <th>IR surge support (remote)</th>
+              <td><span class="addon">Optional</span></td>
+              <td><span class="ok"></span></td>
+              <td><span class="ok"></span></td>
+            </tr>
+            <tr class="group"><td colspan="4">Operations &amp; Reporting</td></tr>
+            <tr>
+              <th>Escalation paths &amp; playbooks</th>
+              <td><span class="ok">Baseline</span></td>
+              <td><span class="ok">Standardized</span></td>
+              <td><span class="ok">Advanced + tuned</span></td>
+            </tr>
+            <tr>
+              <th>Monthly executive summary</th>
+              <td><span class="none"></span></td>
+              <td><span class="ok"></span></td>
+              <td><span class="ok">+ trend readout</span></td>
+            </tr>
+            <tr class="group"><td colspan="4">Integrations &amp; Enablement</td></tr>
+            <tr>
+              <th>Tool onboarding &amp; tuning</th>
+              <td><span class="ok">Core sources</span></td>
+              <td><span class="ok">Expanded</span></td>
+              <td><span class="ok">Full program</span></td>
+            </tr>
+            <tr>
+              <th>Automation / SOAR workflows</th>
+              <td><span class="none"></span></td>
+              <td><span class="addon">Optional</span></td>
+              <td><span class="ok"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Powered by CRP -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-row">
+        <div>
+          <span class="eyebrow">Powered by Watchtower CRP</span>
+          <h2>The reasoning + evidence layer above your tools.</h2>
+          <p class="lead">
+            You keep your existing tools. Watchtower SecureOps and the CRP wrap them in a single, clearer operating picture — built around investigations, not dashboards.
+          </p>
+          <div style="display:grid; gap:var(--space-3); margin-top:var(--space-4);">
+            <div>
+              <strong>Guardian + Seek.</strong>
+              <p style="margin:2px 0 0;">Organizes alerts and groups related activity into behaviors — not single noisy detections.</p>
+            </div>
+            <div>
+              <strong>Atlas + Assist.</strong>
+              <p style="margin:2px 0 0;">Investigation workspace with timelines, artifacts, and operator-controlled AI assistance.</p>
+            </div>
+            <div>
+              <strong>Deploy + Audit.</strong>
+              <p style="margin:2px 0 0;">Automation patterns plus reusable evidence outputs aligned to how teams actually operate.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row__media">
+          <svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+            <rect x="160" y="115" width="80" height="50" rx="10" fill="#0a0c10"/>
+            <text x="200" y="146" text-anchor="middle" fill="#facc15" font-size="13" font-weight="700" font-family="Inter">CRP</text>
+            <g fill="#ffffff" stroke="#e6e7eb" stroke-width="1.5" font-family="Inter" font-size="11" font-weight="600">
+              <rect x="20" y="50" width="100" height="38" rx="8"/>
+              <text x="70" y="74" text-anchor="middle" fill="#0a0c10">Guardian</text>
+              <rect x="20" y="190" width="100" height="38" rx="8"/>
+              <text x="70" y="214" text-anchor="middle" fill="#0a0c10">Seek</text>
+              <rect x="280" y="50" width="100" height="38" rx="8"/>
+              <text x="330" y="74" text-anchor="middle" fill="#0a0c10">Atlas</text>
+              <rect x="280" y="190" width="100" height="38" rx="8"/>
+              <text x="330" y="214" text-anchor="middle" fill="#0a0c10">Deploy</text>
+            </g>
+            <g stroke="#d4d6db" stroke-width="1.5" fill="none">
+              <path d="M120 70 Q160 90 160 130" />
+              <path d="M120 210 Q160 180 160 150" />
+              <path d="M240 130 Q280 90 280 70" />
+              <path d="M240 150 Q280 180 280 210" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="section">
     <div class="container">
       <div class="cta-band">
         <span class="eyebrow eyebrow--dark">Get started</span>
-        <h2>Build operations from real findings.</h2>
-        <p>SecureOps works best when it follows a clear assessment, roadmap, and remediation workflow. Start there first.</p>
+        <h2>Start with a 30–90 day pilot.</h2>
+        <p>
+          We'll align on success metrics, connect your existing tools, and deliver case timelines and reporting that leadership can read and you can defend.
+        </p>
         <div class="cta-band__actions">
-          <a class="btn btn--accent btn--lg" href="./contact.html">Contact enLight10</a>
-          <a class="btn btn--secondary btn--lg on-dark" href="./services.html">Back to Services</a>
+          <a class="btn btn--accent btn--lg" href="mailto:info@enlight10solutions.com?subject=SecureOps%20Pilot%20Request">
+            Start a pilot
+          </a>
+          <a class="btn btn--secondary btn--lg on-dark" href="./watchtower.html">
+            Explore Watchtower CRP
+          </a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -162,7 +470,7 @@
       </div>
       <div class="footer__bottom">
         <div>© 2026 enLight10 Solutions, LLC.</div>
-        <div style="display:flex;gap:12px;align-items:center;">
+        <div style="display:flex; gap:12px; align-items:center;">
           <span class="badge">Veteran-Owned Small Business</span>
           <span>UEI W1ZNWPAX2FG7 · CAGE 17BE8</span>
         </div>
