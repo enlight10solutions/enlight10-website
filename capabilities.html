@@ -13,7 +13,7 @@
 
   <!-- Shared styles / JS -->
   <link rel="stylesheet" href="./style.css?v=27" />
-  <script src="./script.js?v=27" defer></script>
+  <script src="./script.js?v=33" defer></script>
 
   <!-- Preload + Favicon -->
   <link rel="preload" as="image" href="./enLight10_Logo.png" />
@@ -481,58 +481,7 @@
 
 <body>
   <!-- NAV (STANDARDIZED: matches CDU + site direction wording) -->
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-    </a>
-
-    <div class="nav-right">
-      <div class="nav-links">
-        <div class="dropdown">
-          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            Services ▾
-          </button>
-          <div class="dropdown-panel">
-            <a href="./services-secureops.html">
-              Watchtower SecureOps™
-              <span class="sub">Services delivered by people &amp; platform</span>
-            </a>
-            <a href="./services-cyber-defense-united.html">
-              Cyber Defense United™
-              <span class="sub">DoD/DIB cyber defense on Watchtower</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="./watchtower.html">Watchtower CRP™</a>
-        <a href="./capabilities.html" aria-current="page">Capabilities</a>
-        <a href="./partners.html">Prime Partners</a>
-        <a href="./who.html">Who We Are</a>
-        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-      </div>
-
-      <button id="menuToggle" class="hamburger"
-        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU (STANDARDIZED) -->
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
-    <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-secureops.html">Watchtower SecureOps™</a>
-      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
-      <hr />
-      <a href="./watchtower.html">Watchtower CRP™</a>
-      <a href="./capabilities.html" aria-current="page">Capabilities</a>
-      <a href="./partners.html">Prime Partners</a>
-      <a href="./who.html">Who We Are</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
+  <div data-site-header data-current="capabilities"></div>
 
   <!-- HERO -->
   <section class="cap-hero">
@@ -545,16 +494,17 @@
 
       <div class="cap-hero-right">
         <div class="cap-hero-kicker">Capabilities</div>
-        <h1>Prime- and mission-ready. Clear, fast, and defensible.</h1>
+        <h1>Prime- and mission-ready cyber readiness support.</h1>
 
         <p class="cap-hero-copy">
-          Download our Capability Statement for <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> —
-          mission-aligned cyber defense, integration support, and evidence-ready reporting for DoD and the Defense Industrial Base.
+          enLight10 provides assessment-led cybersecurity, compliance readiness, SOC/OT advisory, and
+          Watchtower AI-enabled workflow support for teams that need clear findings, prioritized remediation,
+          and evidence-ready reporting.
         </p>
 
         <p class="cap-hero-copy">
-          Built for teams that need <strong>measurable outcomes</strong>, <strong>operational discipline</strong>, and
-          <strong>evidence that holds up</strong> under leadership and audit scrutiny.
+          Built for primes, mission partners, public-sector teams, and DIB organizations that need practical
+          cyber readiness support without exaggerated claims or rip-and-replace assumptions.
         </p>
 
         <div class="cap-hero-actions">
@@ -566,6 +516,9 @@
           </a>
           <a class="cap-pill ghost" href="./watchtower.html">
             Explore Watchtower CRP
+          </a>
+          <a class="cap-pill ghost" href="./cyber-readiness.html">
+            Request a Cyber Readiness Review
           </a>
         </div>
 
@@ -623,11 +576,11 @@
               </p>
 
               <ul class="cap-list">
+                <li>Assessment-first cyber readiness and compliance support</li>
                 <li>Watchtower SecureOps™ — services delivered by people &amp; platform</li>
                 <li>Cyber Defense United™ — DoD/DIB mission cyber defense variant</li>
-                <li>Operations design, escalation paths, and reporting cadence</li>
-                <li>Integration support for on-prem / restricted / disconnected environments</li>
-                <li>Evidence-ready incident outputs (cases, timelines, artifacts, decision logs)</li>
+                <li>SOC, MSSP, detection, and reporting uplift</li>
+                <li>Evidence-ready outputs, control mapping, and remediation tracking</li>
               </ul>
 
               <div class="pill-row" aria-label="Differentiator pills">
@@ -673,6 +626,38 @@
         </div>
       </section>
 
+      <section aria-label="Best-fit support areas" style="margin-top:1.35rem;">
+        <h2>Best-Fit Support Areas</h2>
+        <p class="lead">
+          A quick fit check for primes, public-sector teams, DIB organizations, and partners evaluating scope.
+        </p>
+        <div class="e10-band">
+          <div class="cap-grid">
+            <article class="cap-card">
+              <h3>Readiness &amp; Compliance</h3>
+              <ul class="cap-list">
+                <li>Cyber baseline and compliance readiness assessments</li>
+                <li>NIST/CMMC/SOC 2 evidence and control mapping support</li>
+                <li>Prime/subcontractor cyber assessment support</li>
+              </ul>
+            </article>
+            <article class="cap-card">
+              <h3>Operations &amp; Evidence</h3>
+              <ul class="cap-list">
+                <li>SOC/MSSP workflow, detection, and reporting uplift</li>
+                <li>OT/ICS cyber readiness advisory</li>
+                <li>Watchtower-enabled evidence, reporting, and remediation tracking</li>
+              </ul>
+              <div class="cap-hero-actions" style="margin-top:0.9rem;">
+                <a class="cap-pill primary" href="./cyber-readiness.html">
+                  Request a Cyber Readiness Review
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <!-- Secondary CTA band -->
       <section aria-label="Teaming and contact call to action" style="margin-top:1.35rem;">
         <div class="cap-cta-band">
@@ -685,6 +670,7 @@
             <a class="cap-pill primary" href="mailto:info@enlight10solutions.com?subject=enLight10%20/%20Teaming%20Conversation">
               Start a Conversation
             </a>
+            <a class="cap-pill ghost" href="./cyber-readiness.html">Request a Cyber Readiness Review</a>
             <a class="cap-pill ghost" href="./services-secureops.html">Watchtower SecureOps™</a>
             <a class="cap-pill ghost" href="./services-cyber-defense-united.html">Cyber Defense United™</a>
           </div>

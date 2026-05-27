@@ -13,7 +13,7 @@
 
   <!-- Styles / JS (cache-bust) -->
   <link rel="stylesheet" href="./style.css?v=32" />
-  <script src="./script.js?v=32" defer></script>
+  <script src="./script.js?v=33" defer></script>
 
   <!-- Preload + Favicon -->
   <link rel="preload" as="image" href="./enLight10_Logo.png" />
@@ -554,60 +554,7 @@
 
 <body>
   <!-- TOP BAR -->
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-    </a>
-
-    <div class="nav-right">
-      <div class="nav-links">
-        <div class="dropdown">
-          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            Services ▾
-          </button>
-          <div class="dropdown-panel">
-            <a href="./services-secureops.html">
-              Watchtower SecureOps™
-              <span class="sub">Operations enablement + delivery</span>
-            </a>
-            <a href="./services-cyber-defense-united.html">
-              Cyber Defense United™
-              <span class="sub">DoD/DIB mission variant</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="./watchtower.html">Watchtower CRP™</a>
-        <a href="./cyber-readiness.html">Cyber Readiness</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./partners.html">Prime Partners</a>
-        <a href="./who.html">Who We Are</a>
-        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-      </div>
-
-      <button id="menuToggle" class="hamburger"
-        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
-    <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-secureops.html">Watchtower SecureOps™</a>
-      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
-      <hr />
-      <a href="./watchtower.html">Watchtower CRP™</a>
-      <a href="./cyber-readiness.html">Cyber Readiness</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./partners.html">Prime Partners</a>
-      <a href="./who.html">Who We Are</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
+  <div data-site-header data-current="index"></div>
 
   <!-- HERO -->
   <section class="hero splash" id="top">
@@ -619,10 +566,7 @@
         </div>
 
         <p class="tagline">
-          <strong>enLight10 Solutions</strong> provides <strong>assessment-first cyber readiness and compliance support</strong> for teams that need clarity, action, and proof.
-          <br /><br />
-          We help organizations assess risk, map findings to compliance and business impact, prioritize remediation,
-          and organize evidence using practitioner-led workflows and <strong>Watchtower AI-enabled support</strong>.
+          <strong>enLight10 Solutions</strong> helps public-sector, small-business, DIB, SOC, and OT/ICS teams move from uncertainty to a practical cyber readiness plan.
           <br /><br />
           <span style="opacity:0.95;">
             <strong>Assess.</strong> <strong>Improve.</strong> <strong>Prove.</strong>
@@ -645,13 +589,13 @@
       <!-- RIGHT -->
       <div class="hero-right">
         <h1 class="hero-title">
-          <span class="wt-white">Assessment-first</span><br />
-          <span class="flat-gold">cyber readiness</span>
+          <span class="wt-white">Assessment-first cyber readiness</span><br />
+          <span class="flat-gold">for teams that need clarity, action, and proof.</span>
         </h1>
 
         <p class="hero-subtitle">
-          Assessment-first cybersecurity and compliance support that turns findings into prioritized remediation,
-          evidence, reporting, SOC/OT improvement, and measurable outcomes.
+          enLight10 helps organizations assess risk, map findings to compliance and business impact, prioritize remediation,
+          and organize evidence using practitioner-led workflows and Watchtower AI-enabled support.
         </p>
 
         <div class="pill-row" style="margin-top:0.55rem;">
@@ -690,11 +634,11 @@
         <!-- Trimmed definitions (2 only) -->
         <div class="hero-defs" aria-label="Key definitions">
           <p style="margin:0 0 0.4rem;">
-            We help teams move from findings to risk decisions, remediation priorities, evidence, and reporting.
+            Start with a scoped review, then turn findings into decisions, owners, evidence, and measurable progress.
             </p>
             <ul style="margin:0; padding-left:1.15rem;">
               <li><strong>Assess. Improve. Prove.</strong> = baseline the environment, prioritize action, and document progress.</li>
-            <li><strong>Watchtower</strong> = AI-enabled workflow support for evidence, mapping, reporting, and remediation tracking.</li>
+            <li><strong>Watchtower</strong> = human-reviewed workflow support for evidence, mapping, reporting, and remediation tracking.</li>
           </ul>
         </div>
       </div>
@@ -714,7 +658,7 @@
         <h2 class="section-title">Assess. Improve. Prove.</h2>
         <p class="section-lead">
           enLight10 starts with the environment in front of you: business context, systems, compliance drivers,
-          policies, evidence, risk goals, and operating constraints. From there, we map findings into action.
+          policies, evidence, risk goals, and operating constraints. Then we map risk, prioritize action, and help prove progress.
         </p>
 
         <div class="band">
@@ -766,8 +710,7 @@
       <section class="section-block slim" style="margin-top:1.75rem;">
         <h2 class="section-title">Capability Areas</h2>
         <p class="section-lead">
-          enLight10 focuses on assessment-led advisory,
-          compliance readiness, SOC/OT uplift, and Watchtower-enabled workflow support.
+          Focused support for readiness, compliance, operational uplift, and evidence-backed reporting.
         </p>
 
         <div class="band">

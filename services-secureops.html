@@ -13,7 +13,7 @@
 
   <!-- Shared site styles / JS -->
   <link rel="stylesheet" href="./style.css?v=31" />
-  <script src="./script.js?v=31" defer></script>
+  <script src="./script.js?v=33" defer></script>
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
   <style>
@@ -810,57 +810,7 @@
 
 <body>
   <!-- NAV (standardized) -->
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-    </a>
-
-    <div class="nav-right">
-      <div class="nav-links">
-        <div class="dropdown">
-          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            Services ▾
-          </button>
-          <div class="dropdown-panel">
-            <a href="./services-secureops.html" aria-current="page">
-              Watchtower SecureOps™
-              <span class="sub">Commercial services line</span>
-            </a>
-            <a href="./services-cyber-defense-united.html">
-              Cyber Defense United™
-              <span class="sub">DoD/DIB mission variant</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="./watchtower.html">Watchtower CRP™</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./partners.html">Prime Partners</a>
-        <a href="./who.html">Who We Are</a>
-        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-      </div>
-
-      <button id="menuToggle" class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU (standardized) -->
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
-    <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-secureops.html" aria-current="page">Watchtower SecureOps™</a>
-      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
-      <hr />
-      <a href="./watchtower.html">Watchtower CRP™</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./partners.html">Prime Partners</a>
-      <a href="./who.html">Who We Are</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
+  <div data-site-header data-current="services-secureops"></div>
 
   <!-- HERO -->
   <section class="secops-hero">

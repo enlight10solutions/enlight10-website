@@ -11,7 +11,7 @@
   />
 
   <link rel="stylesheet" href="./style.css?v=32" />
-  <script src="./script.js?v=32" defer></script>
+  <script src="./script.js?v=33" defer></script>
   <link rel="preload" as="image" href="./enLight10_Logo.png" />
   <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
 
@@ -239,59 +239,7 @@
 </head>
 
 <body>
-  <nav class="topbar" role="navigation" aria-label="Primary">
-    <a class="brand" href="./" aria-label="enLight10 Solutions — Home">
-      <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions" />
-    </a>
-
-    <div class="nav-right">
-      <div class="nav-links">
-        <div class="dropdown">
-          <button class="dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            Services ▾
-          </button>
-          <div class="dropdown-panel">
-            <a href="./services-secureops.html">
-              Watchtower SecureOps™
-              <span class="sub">Operations enablement + delivery</span>
-            </a>
-            <a href="./services-cyber-defense-united.html">
-              Cyber Defense United™
-              <span class="sub">DoD/DIB mission variant</span>
-            </a>
-          </div>
-        </div>
-
-        <a href="./watchtower.html">Watchtower CRP™</a>
-        <a href="./cyber-readiness.html" aria-current="page">Cyber Readiness</a>
-        <a href="./capabilities.html">Capabilities</a>
-        <a href="./partners.html">Prime Partners</a>
-        <a href="./who.html">Who We Are</a>
-        <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-      </div>
-
-      <button id="menuToggle" class="hamburger"
-        aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div id="menuBackdrop" class="menu-backdrop" hidden></div>
-  <aside id="mobileMenu" class="menu-panel" hidden aria-label="Mobile Menu">
-    <nav class="menu-nav">
-      <strong style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; opacity:0.8;">Services</strong>
-      <a href="./services-secureops.html">Watchtower SecureOps™</a>
-      <a href="./services-cyber-defense-united.html">Cyber Defense United™</a>
-      <hr />
-      <a href="./watchtower.html">Watchtower CRP™</a>
-      <a href="./cyber-readiness.html" aria-current="page">Cyber Readiness</a>
-      <a href="./capabilities.html">Capabilities</a>
-      <a href="./partners.html">Prime Partners</a>
-      <a href="./who.html">Who We Are</a>
-      <a class="button small" href="mailto:info@enlight10solutions.com">Contact</a>
-    </nav>
-  </aside>
+  <div data-site-header data-current="cyber-readiness"></div>
 
   <section class="readiness-hero">
     <div class="readiness-wrap readiness-hero-inner">
@@ -299,8 +247,8 @@
         <p class="readiness-kicker">Cyber Readiness Review</p>
         <h1>Cyber Readiness Review</h1>
         <p class="lead">
-          Assessment-first cybersecurity and compliance support that turns findings into prioritized remediation,
-          evidence, and measurable improvement.
+          A scoped, practitioner-led review that helps you assess risk, map findings, prioritize remediation,
+          organize evidence, and prove progress.
         </p>
         <div class="readiness-actions">
           <a class="button primary gold" href="#review-form">Request a Review</a>
@@ -321,12 +269,12 @@
         <h2 class="section-title">Who This Is For</h2>
         <div class="band">
           <div class="grid-3">
-            <article class="card"><h3>Small Businesses</h3><p>Teams needing a cybersecurity baseline and a practical next-step plan.</p></article>
-            <article class="card"><h3>Public Sector &amp; Education</h3><p>Organizations preparing for risk reviews, policy updates, or evidence requests.</p></article>
-            <article class="card"><h3>DIB Contractors</h3><p>Contractors preparing for CMMC and NIST 800-171 expectations without suggesting official CMMC assessment status.</p></article>
-            <article class="card"><h3>Policy / IRP / Evidence Gaps</h3><p>Teams that need policy, incident response plan, evidence, or compliance readiness review.</p></article>
-            <article class="card"><h3>SOC / MSSP Teams</h3><p>Teams needing uplift around triage workflow, reporting, detection, or operational handoffs.</p></article>
-            <article class="card"><h3>OT / ICS Environments</h3><p>Operational environments needing advisory-led cyber readiness support with safety and uptime in mind.</p></article>
+            <article class="card"><h3>Small Businesses</h3><p>Teams needing a cybersecurity baseline, risk register, and practical next-step plan.</p></article>
+            <article class="card"><h3>Public Sector &amp; Education</h3><p>Organizations preparing for risk reviews, policy updates, control mapping, or evidence requests.</p></article>
+            <article class="card"><h3>DIB Contractors</h3><p>Contractors preparing for CMMC and NIST 800-171 expectations without implying official assessor status.</p></article>
+            <article class="card"><h3>Policy / IRP / Evidence Gaps</h3><p>Teams that need policies, incident response plans, evidence, and remediation actions organized.</p></article>
+            <article class="card"><h3>SOC / MSSP Teams</h3><p>Teams needing uplift around triage workflow, reporting, detection logic, or operational handoffs.</p></article>
+            <article class="card"><h3>OT / ICS Environments</h3><p>Operational environments needing cyber readiness guidance with safety, uptime, and asset context in mind.</p></article>
           </div>
         </div>
       </section>
@@ -353,7 +301,7 @@
                 <li>Compliance mapping to NIST, CMMC, or SOC 2 where applicable</li>
                 <li>Risk register and prioritized remediation roadmap</li>
                 <li>SOC, detection, and response workflow opportunities</li>
-                <li>Optional Watchtower AI workflow support for evidence, mapping, reporting, and remediation tracking</li>
+                <li>Optional Watchtower AI-enabled workflow support for evidence, mapping, reporting, and remediation tracking</li>
               </ul>
             </article>
           </div>
@@ -410,6 +358,47 @@
               <p>
                 Watchtower supports evidence organization, mapping, reporting, and remediation tracking without
                 replacing existing SIEM, EDR, GRC, or patching tools.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">Common Starting Points</h2>
+        <p class="section-lead">
+          Most reviews begin with a clear operational pressure, not a perfect set of documents.
+        </p>
+        <div class="band">
+          <div class="grid-3">
+            <article class="card"><h3>Baseline</h3><p>I need a cybersecurity baseline.</p></article>
+            <article class="card"><h3>Compliance Readiness</h3><p>I need to prepare for CMMC, NIST 800-171, NIST CSF, or SOC 2 expectations.</p></article>
+            <article class="card"><h3>Evidence</h3><p>I need help organizing policies, IR plans, evidence, and remediation actions.</p></article>
+            <article class="card"><h3>Roadmap</h3><p>I need a practical risk register and roadmap.</p></article>
+            <article class="card"><h3>SOC Uplift</h3><p>I need SOC workflow, triage, reporting, or detection uplift.</p></article>
+            <article class="card"><h3>OT/ICS Readiness</h3><p>I need OT/ICS cyber readiness guidance without disrupting operations.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-block">
+        <h2 class="section-title">What This Is Not</h2>
+        <div class="band">
+          <div class="grid-2">
+            <article class="card">
+              <h3>Trust Boundaries</h3>
+              <ul>
+                <li>Not a guaranteed compliance certification.</li>
+                <li>Not a replacement for your SIEM, EDR, GRC, or patch tools.</li>
+                <li>Not an autonomous AI decision system.</li>
+                <li>Not a one-size-fits-all scan.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>What It Is</h3>
+              <p>
+                A scoped, practitioner-led review that turns available context and evidence into prioritized next steps,
+                remediation tracking, and executive-ready reporting.
               </p>
             </article>
           </div>
