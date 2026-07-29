@@ -386,7 +386,7 @@ body {
   box-shadow: 0 0 10px rgba(191, 161, 90, 0.38);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1181px) {
   .nav-links { display: flex; }
   .hamburger { display: none; }
 }
@@ -566,9 +566,9 @@ body {
 
 .menu-panel {
   position: fixed;
-  inset: 64px 0 0 auto;
+  inset: 72px 0 0 auto;
   width: min(320px, 86vw);
-  height: calc(100dvh - 64px);
+  height: calc(100dvh - 72px);
   background: #000;
   border-left: 1px solid rgba(255, 255, 255, .08);
   box-shadow: -18px 0 28px rgba(0, 0, 0, .35);

@@ -1,792 +1,124 @@
-<!-- who.html (standardized nav + standardized footer year + commercial-first / pilot-first alignment) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Who We Are — enLight10 Solutions</title>
-  <meta name="description" content="Learn about enLight10 Solutions, a veteran-owned cyber readiness company focused on practitioner-led advisory, evidence-backed reporting, and human-reviewed workflows." />
-  <link rel="canonical" href="https://enlight10solutions.com/who.html" />
-  <meta property="og:title" content="Who We Are — enLight10 Solutions" />
-  <meta property="og:description" content="Veteran-led cyber readiness support focused on practitioner-led advisory, evidence-backed reporting, and human-reviewed workflows." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://enlight10solutions.com/who.html" />
-  <meta property="og:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Who We Are — enLight10 Solutions" />
-  <meta name="twitter:description" content="Veteran-led cyber readiness support focused on practitioner-led advisory, evidence-backed reporting, and human-reviewed workflows." />
-  <meta name="twitter:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-
-  <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=32" />
-  <script src="./script.js?v=35" defer></script>
-  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
-
-  <style>
-    body{
-      margin:0;
-      background:#f9fafb;
-      color:#020617;
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      overflow-x:hidden;
-    }
-
-    /* ---------------------------
-       Hero
-       --------------------------- */
-    .about-hero{
-      position:relative;
-      background: linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
-      color:#fff;
-      padding:95px 0 70px;
-      overflow:hidden;
-    }
-
-    .about-hero::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(56,189,248,0.10), rgba(2,6,23,0) 55%),
-        radial-gradient(circle at 25% 70%, rgba(251,191,36,0.10), rgba(2,6,23,0) 60%);
-      filter:blur(10px);
-      opacity:0.75;
-      pointer-events:none;
-    }
-
-    .about-hero-inner{
-      position:relative;
-      z-index:1;
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 1.5rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:3rem;
-      align-items:center;
-    }
-
-    .about-hero-left{
-      flex:0 0 380px;
-      display:flex;
-      justify-content:flex-start;
-      align-items:flex-start;
-      overflow:visible;
-    }
-
-    /* Pulse wrapper — fixed stacking so glow always renders */
-    .logo-pulse-wrapper{
-      position:relative;
-      display:inline-flex;
-      align-items:flex-start;
-      justify-content:flex-start;
-      isolation:isolate;
-      z-index:1;
-      overflow:visible;
-    }
-
-    .logo-pulse-wrapper::before{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:50%;
-      width:820px;
-      height:820px;
-      transform:translate(-50%,-50%);
-      border-radius:999px;
-      background: radial-gradient(
-        circle,
-        rgba(245,158,11,0.40) 0%,
-        rgba(245,158,11,0.22) 28%,
-        rgba(245,158,11,0.11) 45%,
-        rgba(245,158,11,0.05) 60%,
-        rgba(245,158,11,0.00) 72%
-      );
-      filter: blur(24px);
-      opacity:0.75;
-      animation:e10Pulse 5.8s ease-in-out infinite;
-      z-index:-1;
-      pointer-events:none;
-    }
-
-    .logo-pulse-wrapper::after{
-      content:"";
-      position:absolute;
-      left:52%;
-      top:52%;
-      width:1220px;
-      height:1220px;
-      transform:translate(-50%,-50%);
-      border-radius:999px;
-      background: radial-gradient(
-        circle,
-        rgba(56,189,248,0.14) 0%,
-        rgba(56,189,248,0.08) 35%,
-        rgba(56,189,248,0.04) 55%,
-        rgba(56,189,248,0.00) 72%
-      );
-      filter: blur(36px);
-      opacity:0.40;
-      animation:e10Pulse2 7.6s ease-in-out infinite;
-      z-index:-2;
-      pointer-events:none;
-    }
-
-    .about-hero-logo{
-      width:100%;
-      max-width:460px;
-      height:auto;
-      border-radius:18px;
-      position:relative;
-      z-index:2;
-      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.65));
-    }
-
-    @keyframes e10Pulse{
-      0%,100%{ opacity:0.50; transform:translate(-50%,-50%) scale(0.98); }
-      50%{ opacity:0.90; transform:translate(-50%,-50%) scale(1.07); }
-    }
-    @keyframes e10Pulse2{
-      0%,100%{ opacity:0.22; transform:translate(-50%,-50%) scale(0.98); }
-      50%{ opacity:0.48; transform:translate(-50%,-50%) scale(1.05); }
-    }
-
-    .about-hero-right{
-      flex:1 1 360px;
-      display:flex;
-      flex-direction:column;
-      gap:1rem;
-    }
-
-    .about-hero-kicker{
-      font-size:0.78rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      opacity:0.82;
-    }
-
-    .about-hero-right h1{
-      margin:0;
-      font-size:clamp(2rem,2.8vw,2.6rem);
-      font-weight:800;
-      letter-spacing:0.01em;
-    }
-
-    .about-hero-copy{
-      margin:0;
-      font-size:1rem;
-      line-height:1.75;
-      color:#e5e7eb;
-      max-width:680px;
-    }
-    .about-hero-copy strong{ color:#fff; font-weight:700; }
-
-    /* ---------------------------
-       Blue radiant pill buttons
-       --------------------------- */
-    .about-hero-actions{
-      margin-top:0.35rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.75rem 1rem;
-      align-items:center;
-    }
-
-    .about-pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.76rem 1.08rem;
-      border-radius:999px;
-      font-weight:700;
-      font-size:0.94rem;
-      text-decoration:none;
-      line-height:1;
-      transition:transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease, filter 160ms ease;
-      user-select:none;
-      white-space:nowrap;
-      min-height:42px;
-    }
-
-    .about-pill:hover{ transform:translateY(-1px); }
-
-    .about-pill:focus-visible{
-      outline:2px solid rgba(56,189,248,0.85);
-      outline-offset:3px;
-    }
-
-    .about-pill.primary{
-      color:#0b1120;
-      background: linear-gradient(
-        to top,
-        #0284c7 0%,
-        #38bdf8 38%,
-        #bae6fd 72%,
-        #ffffff 100%
-      );
-      border: 1px solid rgba(56,189,248,0.55);
-      box-shadow:
-        0 12px 28px rgba(56,189,248,0.25),
-        0 10px 22px rgba(2,6,23,0.35),
-        inset 0 -1px 0 rgba(255,255,255,0.55);
-    }
-    .about-pill.primary:hover{
-      box-shadow:
-        0 14px 32px rgba(56,189,248,0.30),
-        0 12px 26px rgba(2,6,23,0.45),
-        inset 0 -1px 0 rgba(255,255,255,0.70);
-      filter: saturate(1.02);
-    }
-
-    .about-pill.ghost{
-      color:#eaf7ff;
-      background: rgba(15,23,42,0.35);
-      border: 1px solid rgba(56,189,248,0.35);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-    }
-    .about-pill.ghost:hover{
-      border-color: rgba(56,189,248,0.55);
-      background: rgba(15,23,42,0.50);
-    }
-
-    /* ---------------------------
-       Main
-       --------------------------- */
-    main.light{
-      background:#ffffff;
-      color:#020617;
-      padding:60px 0;
-    }
-
-    .lead{
-      font-size: 1.02rem;
-      line-height: 1.75;
-      color: #0f172a;
-      max-width: 920px;
-      margin: 0;
-    }
-
-    .about-section{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 1.5rem;
-    }
-
-    /* BLUE -> YELLOW -> WHITE "BAND" */
-    .e10-band{
-      position:relative;
-      margin-top:1.15rem;
-      border-radius:18px;
-      padding:1.25rem 1.25rem;
-      border:1px solid rgba(56,189,248,0.18);
-      background:
-        radial-gradient(circle at 14% 45%, rgba(56,189,248,0.16), transparent 52%),
-        radial-gradient(circle at 50% 40%, rgba(251,191,36,0.18), transparent 56%),
-        radial-gradient(circle at 88% 38%, rgba(255,255,255,0.70), rgba(251,191,36,0.14) 48%, transparent 72%),
-        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
-      box-shadow:
-        0 18px 44px rgba(2, 6, 23, 0.08),
-        inset 0 1px 0 rgba(255,255,255,0.35);
-    }
-
-    .e10-band::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:inherit;
-      background: radial-gradient(circle at 50% 50%, rgba(56,189,248,0.07), transparent 60%);
-      pointer-events:none;
-    }
-
-    /* -------- Founder section -------- */
-    .founder-wrap{
-      margin-top:1.1rem;
-      display:grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap:1.1rem;
-      align-items:start;
-    }
-
-    .founder-card{
-      position:relative;
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:18px;
-      background: rgba(255,255,255,0.94);
-      box-shadow:0 12px 26px rgba(2,6,23,0.08);
-      padding:1.25rem 1.25rem;
-      backdrop-filter: blur(6px);
-      z-index:1;
-      overflow:hidden;
-    }
-
-    .founder-card::before{
-      content:"";
-      position:absolute;
-      inset:-40px;
-      background:
-        radial-gradient(circle at 18% 20%, rgba(56,189,248,0.12), transparent 55%),
-        radial-gradient(circle at 70% 10%, rgba(251,191,36,0.10), transparent 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.02) 0%, rgba(2,6,23,0.00) 65%);
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .founder-card > *{ position:relative; z-index:1; }
-
-    .founder-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:0.9rem;
-      flex-wrap:wrap;
-      margin-bottom:0.85rem;
-    }
-
-    .founder-title{
-      display:flex;
-      flex-direction:column;
-      gap:0.15rem;
-      min-width:260px;
-      flex: 1 1 auto;
-    }
-
-    .founder-title h2{
-      margin:0;
-      font-size:1.35rem;
-      letter-spacing:0.01em;
-      line-height:1.1;
-    }
-
-    .founder-sub{
-      margin:0;
-      color:#475569;
-      font-size:0.95rem;
-      line-height:1.4;
-    }
-
-    /* CISO keyword chips */
-    .founder-badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.55rem;
-      align-items:center;
-      justify-content:flex-end;
-      flex: 0 1 420px;
-    }
-
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.44rem 0.70rem;
-      border-radius:999px;
-      font-size:0.86rem;
-      font-weight:750;
-      border:1px solid rgba(56,189,248,0.22);
-      background: rgba(56,189,248,0.08);
-      color:#0b1120;
-      white-space:nowrap;
-    }
-
-    .badge.dark{
-      border-color:rgba(15,23,42,0.12);
-      background:#0b1120;
-      color:#fff;
-      box-shadow:0 10px 22px rgba(2,6,23,0.10);
-    }
-
-    .badge.keyword{
-      border-color: rgba(2,132,199,0.22);
-      background: linear-gradient(180deg, rgba(56,189,248,0.18) 0%, rgba(2,132,199,0.08) 100%);
-      color:#0b1120;
-    }
-
-    .founder-body p{
-      margin:0.55rem 0 0;
-      color:#334155;
-      line-height:1.7;
-      font-size:0.97rem;
-    }
-
-    .founder-side{
-      display:grid;
-      gap:1.1rem;
-      position:relative;
-      z-index:1;
-    }
-
-    .mini-card{
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:16px;
-      padding:1.1rem 1.1rem;
-      background: rgba(255,255,255,0.94);
-      box-shadow:0 10px 22px rgba(2,6,23,0.08);
-      backdrop-filter: blur(6px);
-    }
-    .mini-card h3{ margin:0 0 0.55rem; font-size:1.02rem; }
-    .mini-card p{ margin:0; color:#334155; line-height:1.65; font-size:0.95rem; }
-
-    .timeline{
-      margin:0.75rem 0 0;
-      padding-left:1.05rem;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    /* Other sections */
-    .about-grid{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap:1.1rem;
-    }
-
-    .about-card{
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:16px;
-      padding:1.15rem 1.15rem;
-      background: rgba(255,255,255,0.94);
-      box-shadow:0 12px 28px rgba(2,6,23,0.08);
-      backdrop-filter: blur(6px);
-    }
-
-    .about-card h3{
-      margin:0 0 0.55rem;
-      font-size:1.02rem;
-      letter-spacing:0.01em;
-    }
-
-    .about-card p{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .about-list{
-      margin:0.75rem 0 0;
-      padding-left:1.1rem;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .about-lanes{
-      position:relative;
-      z-index:1;
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap:1.1rem;
-    }
-
-    .about-lane{
-      border:1px solid rgba(15,23,42,0.10);
-      border-radius:16px;
-      padding:1.15rem 1.15rem;
-      background: rgba(255,255,255,0.94);
-      box-shadow:0 12px 28px rgba(2,6,23,0.08);
-      backdrop-filter: blur(6px);
-    }
-    .about-lane h3{ margin:0 0 0.55rem; }
-    .about-lane p{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .about-cta-band{
-      margin-top:1.25rem;
-      border-radius:18px;
-      padding:1.35rem 1.35rem;
-      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
-      color:#e5e7eb;
-      border:1px solid rgba(56,189,248,0.22);
-      box-shadow:0 16px 34px rgba(2,6,23,0.35);
-    }
-    .about-cta-band h2{ margin:0 0 0.55rem; color:#fff; }
-    .about-cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
-
-    .about-cta-actions{
-      margin-top:1rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.9rem 1.2rem;
-      align-items:center;
-    }
-
-    @media (max-width: 980px){
-      .about-grid{ grid-template-columns: 1fr; }
-      .about-lanes{ grid-template-columns: 1fr; }
-      .founder-wrap{ grid-template-columns: 1fr; }
-      .founder-badges{ justify-content:flex-start; flex: 1 1 auto; }
-    }
-
-    @media (max-width: 900px){
-      .about-hero-inner{ flex-direction:column; align-items:center; }
-      .about-hero-left,.about-hero-right{ width:100%; flex:1 1 auto; }
-      .about-hero-left{ justify-content:center; }
-
-      .logo-pulse-wrapper::before{ width:680px; height:680px; }
-      .logo-pulse-wrapper::after{ width:860px; height:860px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Company | enLight10 Solutions</title>
+  <meta name="description" content="enLight10 Solutions is a veteran-owned, operator-led cybersecurity company building Watchtower and delivering evidence-driven cyber operations.">
+  <link rel="canonical" href="https://enlight10solutions.com/who.html">
+  <meta property="og:title" content="Company | enLight10 Solutions">
+  <meta property="og:description" content="Veteran-led. Operator-built. Evidence-driven.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://enlight10solutions.com/Watchtower_Logo.png">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="./e10_Logo.png" type="image/png">
+  <link rel="stylesheet" href="./style.css?v=33">
+  <link rel="stylesheet" href="./watchtower-marketing.css?v=9">
+  <script src="./script.js?v=40" defer></script>
 </head>
-
-<body>
-  <!-- NAV (standardized to match index.html) -->
+<body class="wt-site">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div data-site-header data-current="who"></div>
 
-  <!-- HERO -->
-  <section class="about-hero">
-    <div class="about-hero-inner">
-      <div class="about-hero-left">
-        <div class="logo-pulse-wrapper">
-          <img src="./enLight10_Logo.png" alt="enLight10 Solutions" class="about-hero-logo" />
+  <main id="main">
+    <section class="interior-hero" aria-labelledby="company-title">
+      <div class="signal-field" aria-hidden="true"></div>
+      <div class="page-shell interior-hero__grid">
+        <div>
+          <p class="eyebrow"><span></span> Company</p>
+          <h1 id="company-title">Veteran-led.<br>Operator-built.<br><em>Evidence-driven.</em></h1>
+          <p class="hero-deck">enLight10 Solutions builds cybersecurity capability around the people who own the outcome—connecting operations, engineering, governed AI, and defensible proof.</p>
+          <div class="action-row"><a class="wt-button wt-button--primary" href="#founder">Meet the founder</a><a class="wt-button wt-button--outline" href="./watchtower.html">Explore Watchtower</a></div>
+        </div>
+        <aside class="interior-hero__aside">
+          <span class="aside-label">Our operating belief</span>
+          <h2>Security work should end in a decision you can explain.</h2>
+          <p>What happened. What it meant. What was authorized. What changed. What proved the outcome.</p>
+          <div class="tag-row"><span>Operator-first</span><span>Human authority</span><span>Proof</span></div>
+        </aside>
+      </div>
+      <div class="page-shell trust-strip interior-trust">
+        <span>Veteran-owned</span><span>15+ years experience</span><span>National mission background</span><span>Human-reviewed</span>
+      </div>
+    </section>
+
+    <section class="content-section content-section--light" id="founder" aria-labelledby="founder-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow eyebrow--dark"><span></span> Founder</p><h2 id="founder-title">Built from experience behind the dashboard.</h2></div>
+          <div class="content-intro__copy"><p>Customers do not need another cyber brand. They need leaders who have owned outcomes under pressure and can build capability that holds up to operational and audit scrutiny.</p></div>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-main">
+            <h2>Jay Moreno</h2>
+            <p class="profile-title">Founder · Cybersecurity Executive · SOC / NSOC Builder</p>
+            <div class="credential-row"><span>15+ years technical</span><span>9 years leadership</span><span>CISSP</span><span>GCIA</span><span>TS/SCI Eligible</span></div>
+            <p>Jay was recruited to design, stand up, and lead a mission-ready network security operations capability supporting INDOPACOM requirements—integrating SOC, NOC, operational awareness, playbooks, escalation, and automation into one operating construct.</p>
+            <p>Previously, he led enterprise SOC operations, incident response, and detection improvement, and executed advanced threat hunting in support of USCYBERCOM national mission teams, including hunt-forward and high-stakes operational environments.</p>
+            <p>Watchtower is shaped by that experience: the need to connect fragmented signals, preserve human judgment, coordinate action, and produce evidence that leadership can trust.</p>
+          </article>
+          <aside>
+            <div class="profile-panel"><h3>Career Snapshot</h3><ul><li>INSOC / NSOC Director — integrated operations, playbooks, and automation</li><li>Cyber Operations Manager — 24/7 SOC, detection, and incident response</li><li>USCYBERCOM Threat Hunting — host, network, and ICS hunts</li><li>Military Communications &amp; Cyber — deployed operational leadership</li></ul></div>
+            <div class="profile-panel"><h3>Education &amp; Certifications</h3><p>M.S. Cyber Security, Western Governors University<br>B.S. Computer Science, Texas State University<br>A.S. Information Technology, CCAF<br><br>CISSP · GCIA · CySA+ · Security+</p></div>
+          </aside>
         </div>
       </div>
+    </section>
 
-      <div class="about-hero-right">
-        <div class="about-hero-kicker">Who We Are</div>
-        <h1>Veteran-led. Operator-built. Evidence-driven.</h1>
-
-        <p class="about-hero-copy">
-          <strong>enLight10 Solutions</strong> is led by a cyber operations executive with deep experience standing up
-          mission-ready security operations, executing advanced threat hunting, and leading outcomes under pressure.
-          We’re building <strong>Watchtower™</strong> as the investigation and evidence workspace we always wished we had.
-        </p>
-
-        <p class="about-hero-copy">
-          Our focus is simple: reduce time-to-answer, reduce tool sprawl, and produce defensible proof —
-          <strong>what happened → what it meant → what we did</strong>.
-        </p>
-
-        <div class="about-hero-actions">
-          <!-- ✅ Align to pilot-first wedge -->
-          <a class="about-pill primary"
-             href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
-            Start a Pilot
-          </a>
-          <a class="about-pill ghost" href="#founder">Meet the Founder</a>
-          <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP™</a>
+    <section class="content-section content-section--dark" aria-labelledby="why-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow"><span></span> Why it matters</p><h2 id="why-title">Credibility measured in usable outcomes.</h2></div>
+          <div class="content-intro__copy"><p>Our experience changes how we scope, design, and deliver. We optimize for adoption, operational pressure, accountability, and evidence—not presentation theater.</p></div>
+        </div>
+        <div class="feature-grid feature-grid--four">
+          <article class="feature-card"><span class="feature-card__index">01</span><h3>We Speak Operator</h3><p>We have lived shift operations, incident tempo, constrained networks, and mission pressure.</p></article>
+          <article class="feature-card"><span class="feature-card__index">02</span><h3>We Ship Usable</h3><p>Integration-first delivery built around real workflows, authority, and environmental constraints.</p></article>
+          <article class="feature-card"><span class="feature-card__index">03</span><h3>We Build Proof</h3><p>Timelines, artifacts, decisions, and outcomes ready for leadership and audit scrutiny.</p></article>
+          <article class="feature-card"><span class="feature-card__index">04</span><h3>We Govern AI</h3><p>Bounded assistance, logging, review gates, and traceability with humans retaining authority.</p></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MAIN -->
-  <main class="light">
-    <div class="about-section">
-
-      <!-- FOUNDER -->
-      <section id="founder" class="section-block slim">
-        <h2>Founder</h2>
-        <p class="lead">
-          Customers don’t need another “cyber brand.” They need leaders who’ve owned outcomes under pressure —
-          and can build a capability that holds up to mission and audit scrutiny.
-        </p>
-
-        <div class="e10-band">
-          <div class="founder-wrap">
-            <article class="founder-card">
-              <div class="founder-head">
-                <div class="founder-title">
-                  <h2>Jay Moreno</h2>
-                  <p class="founder-sub">Founder • Cybersecurity Executive • SOC/NSOC Builder</p>
-                </div>
-
-                <div class="founder-badges" aria-label="Founder credentials">
-                  <span class="badge">15+ yrs technical</span>
-                  <span class="badge">9 yrs leadership</span>
-                  <span class="badge keyword">AI + Automation</span>
-                  <span class="badge keyword">Zero Trust</span>
-                  <span class="badge keyword">cATO / Continuous Monitoring</span>
-                  <span class="badge dark">CISSP • GCIA</span>
-                  <span class="badge dark">TS/SCI Eligible</span>
-                </div>
-              </div>
-
-              <div class="founder-body">
-                <p>
-                  Jay was recruited to design, stand up, and lead a mission-ready NSOC supporting INDOPACOM requirements —
-                  integrating SOC/NOC/ops situational awareness, playbooks, escalation paths, and automation into a unified
-                  operational construct.
-                </p>
-
-                <p>
-                  Prior to that, he led enterprise SOC operations, IR, and detection improvements, and has executed
-                  advanced threat hunting in support of USCYBERCOM national mission teams — including hunt-forward
-                  operations and high-stakes environments where clarity and speed matter.
-                </p>
-
-                <h3 style="margin:1.05rem 0 0.55rem; font-size:1.02rem;">Why this matters for partners</h3>
-                <ul class="about-list">
-                  <li><strong>We speak operator.</strong> We’ve lived shift ops, incident tempo, and mission pressure.</li>
-                  <li><strong>We ship usable.</strong> Integration-first delivery that fits real workflows and constraints.</li>
-                  <li><strong>We build defensible proof.</strong> Timelines, artifacts, decisions — ready for leadership and audit.</li>
-                  <li><strong>We design for governance.</strong> Human-in-the-loop AI, logging, review gates, and traceability.</li>
-                </ul>
-              </div>
-            </article>
-
-            <aside class="founder-side">
-              <div class="mini-card">
-                <h3>Career Snapshot</h3>
-                <ul class="timeline">
-                  <li><strong>INSOC/NSOC Director (Hawaii)</strong> — stood up integrated SOC/NOC ops model, playbooks, and automation</li>
-                  <li><strong>Cyber Operations Manager</strong> — 24/7 SOC leadership, detection + tuning + IR acceleration</li>
-                  <li><strong>USCYBERCOM Threat Hunting</strong> — hunt-forward support and advanced hunts (host/network/ICS)</li>
-                  <li><strong>Military Communications + Cyber</strong> — leadership and operational IT in deployed environments</li>
-                </ul>
-              </div>
-
-              <div class="mini-card">
-                <h3>Education &amp; Certifications</h3>
-                <p>
-                  M.S. Cyber Security • Western Governors University<br/>
-                  B.S. Computer Science • Texas State University<br/>
-                  A.S. Information Technology • CCAF
-                </p>
-                <p style="margin-top:0.65rem;">
-                  CISSP • GCIA • CySA+ • Security+ • TS/SCI Eligible
-                </p>
-              </div>
-
-              <div class="mini-card">
-                <h3>What Jay Builds</h3>
-                <p>
-                  Watchtower is an operator-driven workspace for investigations, evidence, and reasoning —
-                  designed to reduce time-to-answer, improve reporting quality, and keep humans in control.
-                </p>
-              </div>
-            </aside>
-          </div>
+    <section class="content-section content-section--light" aria-labelledby="deliver-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow eyebrow--dark"><span></span> What we deliver</p><h2 id="deliver-title">People, platform, and operational discipline.</h2></div>
+          <div class="content-intro__copy"><p>We combine hands-on cybersecurity leadership with engineering and a governed operating layer so customers can improve now and build a stronger system over time.</p></div>
         </div>
-      </section>
-
-      <!-- WHAT WE DELIVER -->
-      <section class="section-block slim">
-        <h2>What We Deliver</h2>
-        <p class="lead">
-          We combine hands-on operational leadership with engineering discipline — so customers get real outcomes now,
-          and a stronger operating picture over time.
-        </p>
-
-        <div class="e10-band">
-          <div class="about-grid">
-            <article class="about-card">
-              <h3>Security Operations &amp; Incident Response</h3>
-              <p>
-                Monitoring, triage, investigations, and response support — designed for environments where speed,
-                clarity, and evidence matter.
-              </p>
-              <ul class="about-list">
-                <li>Case-based workflows with timelines and artifacts</li>
-                <li>Actionable recommendations and IR reporting</li>
-                <li>Operational cadence: daily/weekly/monthly reporting</li>
-              </ul>
-            </article>
-
-            <article class="about-card">
-              <h3>Engineering &amp; Tool Integration</h3>
-              <p>
-                Connect what you already own and reduce dashboard chaos — log pipelines, SIEM/EDR integration,
-                and automation glue that actually gets used.
-              </p>
-              <ul class="about-list">
-                <li>SIEM onboarding + tuning and use-case engineering</li>
-                <li>Identity, endpoint, and network data integration</li>
-                <li>Automation and ITSM enrichment patterns</li>
-              </ul>
-            </article>
-
-            <article class="about-card">
-              <h3>Watchtower Platform</h3>
-              <p>
-                Our operating workspace for investigations, evidence, and reasoning — built to help defenders decide
-                faster and communicate clearly.
-              </p>
-              <ul class="about-list">
-                <li>Evidence packs for audits and leadership</li>
-                <li>Analyst-assist summaries and report drafting</li>
-                <li>Designed for constrained / real-world operations</li>
-              </ul>
-            </article>
-          </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-card__index">OPERATIONS</span><h3>Security Operations &amp; Response</h3><p>Monitoring, triage, investigation, response, and reporting designed around speed, clarity, and defensible evidence.</p><ul><li>Case-based workflows</li><li>Actionable response guidance</li><li>Operational reporting cadence</li></ul></article>
+          <article class="feature-card"><span class="feature-card__index">ENGINEERING</span><h3>Tool Integration &amp; Automation</h3><p>Connect the systems already in place, reduce dashboard chaos, and introduce automation that operators will use.</p><ul><li>SIEM and EDR integration</li><li>Identity, endpoint, cloud, and network</li><li>ITSM and automation patterns</li></ul></article>
+          <article class="feature-card"><span class="feature-card__index">PLATFORM</span><h3>Watchtower</h3><p>A governed workspace for vulnerability operations, investigations, decisions, action, and evidence-backed closure.</p><ul><li>Connected operational context</li><li>Bounded AI assistance</li><li>Verified outcomes</li></ul></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- HOW WE WORK -->
-      <section class="section-block slim">
-        <h2>How We Work</h2>
-        <p class="lead">
-          We’re hands-on, subcontract-friendly, and mission-aligned. We don’t add complexity for its own sake —
-          we simplify operations and improve outcomes.
-        </p>
-
-        <div class="e10-band">
-          <div class="about-lanes">
-            <article class="about-lane">
-              <h3>Operator-first</h3>
-              <p>
-                We design around the analyst workflow: triage → investigate → contain → report. If it doesn’t help
-                operations, it doesn’t ship.
-              </p>
-            </article>
-
-            <article class="about-lane">
-              <h3>Evidence-first</h3>
-              <p>
-                Security work has to stand up to scrutiny. We build repeatable documentation: timelines, artifacts,
-                decisions, and reporting that auditors and leaders can understand.
-              </p>
-            </article>
-
-            <article class="about-lane">
-              <h3>Integration, not replacement</h3>
-              <p>
-                You keep your existing tools. We connect and rationalize them, then layer automation and reasoning
-                on top to reduce time-to-answer.
-              </p>
-            </article>
-
-            <article class="about-lane">
-              <h3>Human-in-the-loop AI</h3>
-              <p>
-                AI is for acceleration, not autopilot. Summaries, drafting, and suggestion flows are controlled by
-                analysts, with traceability baked in.
-              </p>
-            </article>
-          </div>
+    <section class="content-section content-section--navy" aria-labelledby="work-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow"><span></span> How we work</p><h2 id="work-title">Simple principles. Consistent delivery.</h2></div>
+          <div class="content-intro__copy"><p>We are hands-on, subcontract-friendly, and mission-aligned. Complexity must earn its place.</p></div>
         </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="section-block slim">
-        <div class="about-cta-band">
-          <h2>Connect with us</h2>
-          <p>
-            If you’re exploring Watchtower, looking for SOC support, or discussing teaming opportunities —
-            we’re open to a straightforward conversation about your environment and what “better” looks like.
-          </p>
-
-          <div class="about-cta-actions">
-            <a class="about-pill primary"
-              href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%3A%0ASuccess%20metrics%3A%0ATimeline%3A%0A">
-              Start a Pilot
-            </a>
-            <a class="about-pill ghost" href="./watchtower.html">Explore Watchtower CRP™</a>
-            <a class="about-pill ghost" href="./partners.html">Prime Partners</a>
-          </div>
+        <div class="detail-grid">
+          <article class="detail-card detail-card--accent"><span class="card-kicker">01</span><h3>Operator-first</h3><p>Design around the workflow from triage through investigation, action, validation, and reporting.</p></article>
+          <article class="detail-card"><span class="card-kicker">02</span><h3>Evidence-first</h3><p>Make timelines, decisions, artifacts, and proof a natural product of the work.</p></article>
+          <article class="detail-card"><span class="card-kicker">03</span><h3>Integration, not replacement</h3><p>Connect and rationalize existing tools before asking customers to add another system.</p></article>
+          <article class="detail-card"><span class="card-kicker">04</span><h3>AI for acceleration, not autopilot</h3><p>Use assistance within defined boundaries while accountable people retain control.</p></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
+    <section class="contact-band" aria-labelledby="company-cta-title">
+      <div class="signal-field" aria-hidden="true"></div>
+      <div class="page-shell">
+        <p class="eyebrow"><span></span> A straightforward conversation</p>
+        <h2 id="company-cta-title">Tell us what “better”<br><em>needs to look like.</em></h2>
+        <p>Whether you are exploring Watchtower, operational support, or a teaming opportunity, we will start with the environment and the outcome.</p>
+        <div class="action-row action-row--center"><a class="wt-button wt-button--primary" href="mailto:info@enlight10solutions.com?subject=enLight10%20Conversation">Connect with us ↗</a><a class="wt-button wt-button--quiet" href="./partners.html">Prime partners</a></div>
+      </div>
+    </section>
   </main>
-
-  <!-- FOOTER (standardized, current year) -->
   <div data-site-footer></div>
 </body>
 </html>

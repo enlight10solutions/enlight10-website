@@ -1,1071 +1,129 @@
-<!-- services-cyber-defense-united.html (DoD/DIB shift, prime-friendly language, safer cATO phrasing, data handling + engagement modes, “command-ready” package rename) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Cyber Defense United — enLight10 Watchtower Services</title>
-  <meta
-    name="description"
-    content="Cyber Defense United is enLight10’s DoD/DIB-focused cyber defense engagement, combining mission-aligned security operations, on-prem integration, and the Watchtower Cyber Reasoning Platform."
-  />
-  <link rel="canonical" href="https://enlight10solutions.com/services-cyber-defense-united.html" />
-  <meta property="og:title" content="Cyber Defense United™ — enLight10 Solutions" />
-  <meta property="og:description" content="DoD/DIB-focused cyber readiness, mission-aligned security operations, integration support, and Watchtower-enabled evidence workflows." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://enlight10solutions.com/services-cyber-defense-united.html" />
-  <meta property="og:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cyber Defense United™ — enLight10 Solutions" />
-  <meta name="twitter:description" content="DoD/DIB-focused cyber readiness, mission-aligned security operations, integration support, and Watchtower-enabled evidence workflows." />
-  <meta name="twitter:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-
-  <!-- Shared site styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=32" />
-  <script src="./script.js?v=35" defer></script>
-  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
-
-  <!-- Page-specific layout -->
-  <style>
-    body {
-      margin: 0;
-      background: #f9fafb;
-      color: #020617;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    /* ---------------------------
-       Text gradient utilities
-       --------------------------- */
-    .text-gradient {
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* White → Gold */
-    .gradient-gold {
-      background-image: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fff2c2 40%,
-        #facc15 75%,
-        #eab308 100%
-      );
-      filter: drop-shadow(0 2px 6px rgba(250, 204, 21, 0.35));
-    }
-
-    /* ---------------------------
-       HERO (index-like layout)
-       --------------------------- */
-    .cdu-hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(900px 420px at 18% 35%, rgba(251, 191, 36, 0.10), rgba(2, 6, 23, 0) 60%),
-        linear-gradient(to bottom, #020617 0%, #0b1120 60%, #020617 100%);
-      color: #ffffff;
-      padding: 95px 0 75px; /* clears fixed nav */
-    }
-
-    .cdu-hero::before {
-      content: "";
-      position: absolute;
-      inset: -40px;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(56, 189, 248, 0.08), rgba(2, 6, 23, 0) 55%),
-        radial-gradient(circle at 25% 70%, rgba(251, 191, 36, 0.08), rgba(2, 6, 23, 0) 60%);
-      filter: blur(10px);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .cdu-hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: flex-start;
-    }
-
-    /* LEFT */
-    .cdu-hero-left {
-      flex: 0 0 380px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 1.1rem;
-      position: relative;
-    }
-
-    .cdu-hero-left img {
-      max-width: 460px;
-      width: 100%;
-      height: auto;
-      border-radius: 18px;
-      border: 1px solid rgba(250, 204, 21, 0.55);
-      box-shadow:
-        0 18px 40px rgba(0, 0, 0, 0.70),
-        0 0 0 1px rgba(255, 242, 194, 0.22) inset;
-      background: rgba(2, 6, 23, 0.35);
-      position: relative;
-      z-index: 2;
-    }
-
-    .cdu-hero-left::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: -10%;
-      transform: translate(-50%, 0);
-      width: 640px;
-      height: 640px;
-      border-radius: 999px;
-      background: radial-gradient(
-        circle at 50% 35%,
-        rgba(251, 191, 36, 0.18) 0%,
-        rgba(251, 191, 36, 0.08) 34%,
-        rgba(251, 191, 36, 0.00) 66%
-      );
-      filter: blur(14px);
-      opacity: 0.55;
-      z-index: 1;
-      pointer-events: none;
-      animation: cduGlowDrift 10s ease-in-out infinite;
-    }
-
-    @keyframes cduGlowDrift {
-      0%   { transform: translate(-50%, -8%); opacity: 0.45; }
-      50%  { transform: translate(-50%, 18%); opacity: 0.70; }
-      100% { transform: translate(-50%, -8%); opacity: 0.45; }
-    }
-
-    .cdu-tagline {
-      margin: 0;
-      max-width: 520px;
-      color: #e5e7eb;
-      line-height: 1.7;
-      font-size: 0.98rem;
-    }
-    .cdu-tagline strong { color: #ffffff; font-weight: 700; }
-    .cdu-tagline em { font-style: normal; color: #fff7d6; font-weight: 650; }
-
-    /* RIGHT */
-    .cdu-hero-right {
-      flex: 1 1 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 0.85rem;
-    }
-
-    .cdu-hero-kicker {
-      font-size: 0.78rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.82;
-    }
-
-    .cdu-hero-right h1 {
-      margin: 0;
-      font-size: clamp(2rem, 2.8vw, 2.7rem);
-      font-weight: 900;
-      letter-spacing: 0.01em;
-    }
-
-    .cdu-hero-subtitle {
-      margin: 0 0 0.7rem;
-      font-size: 0.95rem;
-      opacity: 0.92;
-      max-width: 700px;
-      line-height: 1.7;
-      color: #e5e7eb;
-    }
-
-    .cdu-hero-video-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      margin-top: 0.25rem;
-    }
-
-    .cdu-hero-video {
-      width: 100%;
-      max-width: 720px;
-      border-radius: 16px;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
-      outline: 1px solid rgba(251, 191, 36, 0.22);
-      background: rgba(2, 6, 23, 0.35);
-    }
-
-    /* Pill CTAs under video */
-    .cdu-hero-actions {
-      margin-top: 1.9rem; /* clears player controls row */
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .cdu-pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.95rem 1.55rem;
-      border-radius: 999px;
-      font-weight: 650;
-      font-size: 0.95rem;
-      text-decoration: none;
-      line-height: 1;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
-      user-select: none;
-      white-space: nowrap;
-      min-height: 44px;
-    }
-
-    .cdu-pill:focus-visible {
-      outline: 2px solid rgba(251, 191, 36, 0.65);
-      outline-offset: 3px;
-    }
-
-    .cdu-pill:hover { transform: translateY(-1px); }
-
-    .cdu-pill.primary {
-      color: #0b1120;
-      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
-      border: 1px solid rgba(250, 204, 21, 0.55);
-      box-shadow:
-        0 10px 22px rgba(250, 204, 21, 0.18),
-        0 6px 14px rgba(0, 0, 0, 0.35);
-    }
-
-    .cdu-pill.primary:hover {
-      box-shadow:
-        0 14px 28px rgba(250, 204, 21, 0.22),
-        0 10px 20px rgba(0, 0, 0, 0.45);
-    }
-
-    .cdu-pill.ghost {
-      color: #fff7d6;
-      background: rgba(15, 23, 42, 0.35);
-      border: 1px solid rgba(251, 191, 36, 0.35);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-    }
-
-    .cdu-pill.ghost:hover {
-      border-color: rgba(251, 191, 36, 0.55);
-      background: rgba(15, 23, 42, 0.50);
-    }
-
-    /* ---------------------------
-       BODY
-       --------------------------- */
-    main.light {
-      background: #ffffff;
-      color: #020617;
-      padding: 60px 0;
-    }
-
-    .cdu-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    .cdu-lead {
-      font-size: 1.02rem;
-      line-height: 1.75;
-      color: #0f172a;
-      max-width: 920px;
-    }
-
-    /* GOLD THEMED "BAND" WRAPPER */
-    .cdu-band{
-      position: relative;
-      margin-top: 1.25rem;
-      border-radius: 18px;
-      padding: 1.25rem 1.25rem;
-      border: 1px solid rgba(251, 191, 36, 0.18);
-
-      background:
-        radial-gradient(circle at 14% 45%, rgba(250, 204, 21, 0.16), transparent 52%),
-        radial-gradient(circle at 50% 40%, rgba(255, 212, 71, 0.18), transparent 56%),
-        radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.65), rgba(255, 212, 71, 0.16) 48%, transparent 72%),
-        linear-gradient(180deg, rgba(13, 17, 23, 0.04) 0%, rgba(13, 17, 23, 0.02) 100%);
-
-      box-shadow:
-        0 18px 44px rgba(2, 6, 23, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.35);
-    }
-
-    .cdu-band::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:inherit;
-      background: radial-gradient(circle at 50% 50%, rgba(255, 212, 71, 0.08), transparent 60%);
-      pointer-events:none;
-    }
-
-    .cdu-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .cdu-card {
-      border: 1px solid rgba(15, 23, 42, 0.10);
-      border-radius: 16px;
-      padding: 1.1rem 1.1rem;
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
-      backdrop-filter: blur(6px);
-    }
-
-    .cdu-card h3 {
-      margin: 0 0 0.55rem;
-      font-size: 1.02rem;
-      letter-spacing: 0.01em;
-    }
-
-    .cdu-card p {
-      margin: 0;
-      color: #334155;
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .cdu-list {
-      margin: 0.8rem 0 0;
-      padding-left: 1.1rem;
-      color: #334155;
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    .cdu-lanes {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .cdu-lane {
-      border: 1px solid rgba(15, 23, 42, 0.10);
-      border-radius: 16px;
-      padding: 1.15rem 1.15rem;
-      background: rgba(255,255,255,0.94);
-      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
-      backdrop-filter: blur(6px);
-    }
-
-    .cdu-lane h3 { margin: 0 0 0.55rem; }
-    .cdu-lane p {
-      margin: 0;
-      color: #334155;
-      line-height: 1.65;
-      font-size: 0.95rem;
-    }
-
-    /* =========================
-       CDU PACKAGES + TABLE
-       ========================= */
-    .cdu-pricing-wrap{ margin-top: 1.75rem; }
-    .cdu-pricing-head h2{ margin:0 0 0.55rem; font-weight:900; }
-    .cdu-pricing-head p{ margin:0; color:#0f172a; line-height:1.7; max-width: 920px; }
-
-    .cdu-pkg-grid{
-      position: relative;
-      z-index: 1;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-      margin-bottom: 1.1rem;
-    }
-
-    .cdu-pkg{
-      background: rgba(255,255,255,0.94);
-      border: 1px solid rgba(15, 23, 42, 0.10);
-      border-radius: 16px;
-      padding: 1.1rem 1.1rem;
-      box-shadow: 0 12px 28px rgba(2, 6, 23, 0.08);
-      backdrop-filter: blur(6px);
-      display:flex;
-      flex-direction:column;
-      gap: 0.65rem;
-    }
-
-    .cdu-pkg.featured{
-      border-color: rgba(250, 204, 21, 0.55);
-      box-shadow:
-        0 12px 28px rgba(2,6,23,0.10),
-        0 0 0 3px rgba(250,204,21,0.14);
-    }
-
-    .cdu-pkg .kicker{
-      font-size:0.78rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      color:#64748b;
-      font-weight:900;
-    }
-
-    .cdu-pkg h3{
-      margin:0;
-      font-size:1.35rem;
-      color:#0b1120;
-      letter-spacing:0.01em;
-      font-weight: 900;
-    }
-
-    .cdu-pkg .desc{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .cdu-pillrow{
-      margin-top: 0.25rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 0.5rem;
-    }
-
-    .cdu-pillrow .mini{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.38rem 0.70rem;
-      border-radius:999px;
-      font-size:0.78rem;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      border:1px solid rgba(2,6,23,0.10);
-      background: rgba(2,6,23,0.03);
-      color:#0b1120;
-      font-weight: 900;
-    }
-
-    .cdu-talk{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:100%;
-      max-width: 240px;
-      min-height: 46px;
-      padding: 0.85rem 1.15rem;
-      border-radius: 999px;
-      font-weight: 900;
-      text-decoration:none;
-      letter-spacing: 0.01em;
-      color:#0b1120;
-      background:#ffffff;
-      border:1px solid rgba(15,23,42,0.18);
-      box-shadow:
-        0 10px 22px rgba(2, 6, 23, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.55);
-      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
-    }
-
-    .cdu-talk:hover{
-      transform: translateY(-1px);
-      border-color: rgba(250, 204, 21, 0.65);
-      box-shadow:
-        0 14px 28px rgba(2, 6, 23, 0.12),
-        0 0 0 3px rgba(250, 204, 21, 0.12);
-    }
-
-    .cdu-talk--gold{
-      color:#0b1120;
-      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
-      border:1px solid rgba(250, 204, 21, 0.60);
-      box-shadow:
-        0 12px 26px rgba(250, 204, 21, 0.18),
-        0 10px 22px rgba(2, 6, 23, 0.10);
-    }
-
-    .cdu-table{
-      position: relative;
-      z-index: 1;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(2,6,23,0.10);
-      border-radius: 16px;
-      overflow:hidden;
-      box-shadow: 0 10px 22px rgba(2,6,23,0.06);
-    }
-
-    .cdu-row{
-      display:grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      border-top: 1px solid rgba(2,6,23,0.08);
-    }
-    .cdu-row:first-child{ border-top:none; }
-
-    .cdu-cell{
-      padding: 0.95rem 1rem;
-      font-size: 0.95rem;
-      line-height: 1.55;
-      color:#0b1120;
-      border-left: 1px solid rgba(2,6,23,0.06);
-      background: rgba(255,255,255,0.96);
-    }
-    .cdu-cell:first-child{ border-left:none; font-weight:650; }
-
-    .cdu-colhead .cdu-cell{
-      background: linear-gradient(180deg, rgba(2,6,23,0.96) 0%, rgba(11,17,32,0.96) 100%);
-      color:#ffffff;
-      font-weight:900;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      font-size:0.82rem;
-      border-left: 1px solid rgba(255,255,255,0.08);
-    }
-    .cdu-colhead .cdu-cell:first-child{ border-left:none; }
-
-    .cdu-group .cdu-cell{
-      background: rgba(2,6,23,0.03);
-      font-weight:900;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      font-size:0.82rem;
-    }
-    .cdu-group .cdu-cell:not(:first-child){ background: rgba(2,6,23,0.03); }
-
-    .ok{ font-weight: 900; }
-    .muted{ color:#64748b; }
-
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      background: rgba(2, 6, 23, 0.03);
-      color: #0b1120;
-      opacity: 0.82;
-    }
-    .chip.addon{
-      border-color: rgba(250, 204, 21, 0.35);
-      background: rgba(250, 204, 21, 0.08);
-      opacity: 0.90;
-    }
-
-    /* ---------------------------
-       CTA
-       --------------------------- */
-    .cdu-cta-band {
-      margin-top: 1.25rem;
-      border-radius: 18px;
-      padding: 1.35rem 1.35rem;
-      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
-      color: #e5e7eb;
-      border: 1px solid rgba(251, 191, 36, 0.22);
-      box-shadow: 0 16px 34px rgba(2, 6, 23, 0.35);
-    }
-
-    .cdu-cta-band h2 { margin: 0 0 0.55rem; color: #ffffff !important; }
-    .cdu-cta-band p { margin: 0; line-height: 1.7; max-width: 900px; color: rgba(229, 231, 235, 0.92) !important; }
-
-    .cdu-cta-actions {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem 1.2rem;
-      align-items: center;
-    }
-
-    @media (max-width: 980px) {
-      .cdu-grid { grid-template-columns: 1fr; }
-      .cdu-lanes { grid-template-columns: 1fr; }
-      .cdu-pkg-grid { grid-template-columns: 1fr; }
-      .cdu-row { grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr; }
-    }
-
-    @media (max-width: 900px) {
-      .cdu-hero-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: left;
-      }
-
-      .cdu-hero-left,
-      .cdu-hero-right {
-        flex: 1 1 auto;
-        width: 100%;
-      }
-
-      .cdu-hero-actions {
-        justify-content: flex-start;
-        gap: 1.1rem;
-      }
-
-      .cdu-hero-left::after {
-        width: 520px;
-        height: 520px;
-        top: 34%;
-      }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber Defense United | Mission Cyber Defense</title>
+  <meta name="description" content="Cyber Defense United combines Watchtower with experienced cyber operators for DoD, DIB, restricted, on-prem, and mission-constrained environments.">
+  <link rel="canonical" href="https://enlight10solutions.com/services-cyber-defense-united.html">
+  <meta property="og:title" content="Cyber Defense United | enLight10 Solutions">
+  <meta property="og:description" content="Mission cyber defense, integration, continuous monitoring, and evidence-backed operations.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://enlight10solutions.com/Watchtower_CDU_Logo.png">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="./e10_Logo.png" type="image/png">
+  <link rel="stylesheet" href="./style.css?v=33">
+  <link rel="stylesheet" href="./watchtower-marketing.css?v=9">
+  <script src="./script.js?v=40" defer></script>
 </head>
-
-<body>
-  <!-- NAV -->
+<body class="wt-site">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div data-site-header data-current="services-cyber-defense-united"></div>
 
-  <!-- HERO -->
-  <section class="cdu-hero">
-    <div class="cdu-hero-inner">
-      <!-- LEFT -->
-      <div class="cdu-hero-left">
-        <img src="./Watchtower_CDU_Logo.png" alt="Watchtower — Cyber Defense United" />
-
-        <p class="cdu-tagline">
-          <strong>Watchtower™</strong> is the flagship brand family.
-          <em>Cyber Defense United™</em> is the DoD/DIB mission variant —
-          delivering the <em>Cyber Reasoning Platform</em> plus experienced defenders who can investigate, respond,
-          and produce defensible evidence in constrained environments.
-        </p>
+  <main id="main">
+    <section class="interior-hero" aria-labelledby="cdu-title">
+      <div class="signal-field" aria-hidden="true"></div>
+      <div class="page-shell interior-hero__grid">
+        <div>
+          <p class="eyebrow"><span></span> Cyber Defense United</p>
+          <h1 id="cdu-title">Mission cyber defense built for <em>operational reality.</em></h1>
+          <p class="hero-deck">Watchtower, experienced defenders, and engineering integration for DoD, DIB, on-prem, restricted, and disconnected environments—aligned to existing tools and program governance.</p>
+          <div class="action-row"><a class="wt-button wt-button--primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20Conversation">Request a mission conversation ↗</a><a class="wt-button wt-button--outline" href="#cdu-overview">Explore the capability</a></div>
+        </div>
+        <aside class="interior-hero__aside">
+          <span class="aside-label">Mission services</span>
+          <h2>Operations, engineering, and evidence in one delivery model.</h2>
+          <p>Structured to support prime-led programs and mission teams with strict enclave, data movement, and oversight constraints.</p>
+          <div class="tag-row"><span>DoD</span><span>DIB</span><span>Prime support</span></div>
+        </aside>
       </div>
+      <div class="page-shell trust-strip interior-trust">
+        <span>Mission-aligned</span><span>Restricted deployment</span><span>Existing tool integration</span><span>Evidence-ready</span>
+      </div>
+    </section>
 
-      <!-- RIGHT -->
-      <div class="cdu-hero-right">
-        <div class="cdu-hero-kicker">Services • Cyber Defense United</div>
-
-        <h1 class="cdu-hero-title">
-          <span class="text-gradient gradient-gold">Cyber Defense United.</span>
-        </h1>
-
-        <p class="cdu-hero-subtitle">
-          A mission-focused cyber defense capability for DoD and the Defense Industrial Base —
-          combining Watchtower’s reasoning engine with operational leadership, engineering integration, and evidence-ready outputs.
-          <strong>Designed for on-prem, restricted, and disconnected environments.</strong>
-          <strong>Built to operate alongside existing tools — no rip-and-replace.</strong>
-        </p>
-
-        <div class="cdu-hero-video-wrapper">
-          <video class="cdu-hero-video" controls autoplay muted loop playsinline preload="metadata">
-            <source src="https://enlight10media.z22.web.core.windows.net/Cyber%20Defense%20United.faststart.mp4" type="video/mp4" />
+    <section class="content-section content-section--light" id="cdu-overview" aria-labelledby="cdu-overview-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow eyebrow--dark"><span></span> The capability</p><h2 id="cdu-overview-title">Experienced defenders, governed by a common operating picture.</h2></div>
+          <div class="content-intro__copy"><p>Cyber Defense United brings together continuous monitoring, incident response, Watchtower, and integration engineering to support high-consequence environments.</p></div>
+        </div>
+        <div class="media-panel">
+          <video controls preload="none" playsinline poster="./Watchtower_CDU_Logo.png" aria-label="Cyber Defense United overview">
+            <source src="https://enlight10media.z22.web.core.windows.net/Cyber%20Defense%20United.faststart.mp4" type="video/mp4">
+            Your browser does not support embedded video.
           </video>
-
-          <div class="cdu-hero-actions">
-            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20Conversation">
-              Request a Conversation
-            </a>
-
-            <a class="cdu-pill ghost" href="./watchtower.html">
-              Learn More About Watchtower
-            </a>
-          </div>
         </div>
       </div>
-    </div>
-    <div class="scroll-cue" aria-hidden="true">
-      Scroll <span class="arrow">↓</span>
-    </div>
-  </section>
+    </section>
 
-  <!-- MAIN BODY -->
-  <main class="light">
-    <div class="cdu-section">
-
-      <section class="section-block slim">
-        <h2>What Cyber Defense United Delivers</h2>
-        <p class="cdu-lead">
-          Cyber Defense United brings together two things mission environments struggle to unify:
-          <strong>the Cyber Reasoning Platform</strong> (Watchtower CRP) and
-          <strong>experienced defenders</strong> who can triage, investigate, and respond.
-          We support DoD/DIB programs as a mission-aligned cyber defense partner — focusing on
-          <strong>continuous monitoring</strong>, <strong>operational discipline</strong>, and <strong>defensible evidence</strong>.
-          We typically support as a <strong>subcontractor to primes</strong> or as a specialty cyber services provider under existing
-          contract vehicles.
-        </p>
-
-        <div class="cdu-band">
-          <div class="cdu-grid">
-            <article class="cdu-card">
-              <h3>Mission Cyber Defense Operations (DCO / Continuous Monitoring)</h3>
-              <p>
-                Ongoing monitoring, triage, investigation, and incident response support — built for high-consequence
-                environments where you must prove what happened and what you did about it.
-              </p>
-              <ul class="cdu-list">
-                <li>Mission-aligned coverage models (business-hours, hybrid, or 24/7)</li>
-                <li>Case-based investigations with timelines, artifacts, and decision logs</li>
-                <li>IR support: containment guidance, recovery support, after-action reporting (AAR)</li>
-              </ul>
-            </article>
-
-            <article class="cdu-card">
-              <h3>Watchtower CRP as the Reasoning Core</h3>
-              <p>
-                Watchtower CRP acts as the operational brain that unifies alerts, context, and evidence across tools
-                — so decisions are faster, clearer, and easier to defend.
-              </p>
-              <ul class="cdu-list">
-                <li>Unified investigations across SIEM/EDR/identity/network sources</li>
-                <li>Evidence packs: incident chronology → artifacts → assessment → actions taken</li>
-                <li>Standardized playbooks and reporting aligned to mission needs</li>
-              </ul>
-            </article>
-
-            <article class="cdu-card">
-              <h3>On-Prem Integration &amp; Tool Rationalization</h3>
-              <p>
-                We deploy and integrate in the environments you actually have: on-prem, restricted, or disconnected.
-                We align your tool stack to operations and reduce chaos — not add more dashboards.
-              </p>
-              <ul class="cdu-list">
-                <li>SIEM/EDR/log pipeline integrations and tuning</li>
-                <li>Disconnected operations patterns and continuity planning</li>
-                <li>Modernization plans grounded in battle rhythm and reporting</li>
-              </ul>
-            </article>
-          </div>
+    <section class="content-section content-section--dark" aria-labelledby="cdu-delivers-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow"><span></span> What CDU delivers</p><h2 id="cdu-delivers-title">Execution that holds up to mission and oversight.</h2></div>
+          <div class="content-intro__copy"><p>We commonly support as a subcontractor to primes or a specialty cyber services provider under an existing program structure.</p></div>
         </div>
-      </section>
-
-      <!-- NEW: Engagement Modes (prime-friendly) -->
-      <section class="section-block slim">
-        <h2>How We Engage</h2>
-        <p class="cdu-lead">
-          Cyber Defense United is structured to plug into existing program delivery models — including prime-led programs
-          and mission environments with strict enclave constraints.
-        </p>
-
-        <div class="cdu-band">
-          <div class="cdu-grid">
-            <article class="cdu-card">
-              <h3>Subcontract Support to Primes</h3>
-              <p>
-                A specialized cyber defense team embedded under prime leadership, aligned to program cadence, governance,
-                and mission reporting.
-              </p>
-              <ul class="cdu-list">
-                <li>Mission DCO support (continuous monitoring, triage, investigations)</li>
-                <li>Engineering integration + tool onboarding for restricted environments</li>
-                <li>Evidence-ready deliverables for program oversight</li>
-              </ul>
-            </article>
-
-            <article class="cdu-card">
-              <h3>Surge Support (Exercises / Incidents)</h3>
-              <p>
-                Rapid augmentation for high-tempo periods — incident response surges, exercises, migrations, or tool cutovers
-                where you need experienced hands.
-              </p>
-              <ul class="cdu-list">
-                <li>Rapid scoping + containment planning</li>
-                <li>Decision support and leadership briefs</li>
-                <li>After-action reporting with corrective actions</li>
-              </ul>
-            </article>
-
-            <article class="cdu-card">
-              <h3>Integration + Operations Design</h3>
-              <p>
-                Build the operating model: tiering, handoffs, escalation paths, battle rhythm, and measurable reporting —
-                tied directly to the way your mission teams execute.
-              </p>
-              <ul class="cdu-list">
-                <li>Workflow + RACI + reporting cadence</li>
-                <li>Tool tuning to reduce noise and improve fidelity</li>
-                <li>Repeatable evidence capture as a byproduct of operations</li>
-              </ul>
-            </article>
-          </div>
-
-          <p style="margin:1rem 0 0; max-width:920px; color:#334155; line-height:1.7;">
-            <strong>Data handling and deployment posture:</strong>
-            Built for mission environments that require <strong>CUI-aligned controls</strong> and restricted data movement.
-            Designed for <strong>on-prem</strong>, <strong>restricted</strong>, and <strong>disconnected</strong> enclaves with
-            governance and auditability.
-          </p>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-card__index">01 / DEFEND</span><h3>Mission Cyber Defense Operations</h3><p>Monitoring, triage, investigations, response support, and continuous monitoring for high-consequence environments.</p><ul><li>Business-hours, hybrid, or 24/7 options</li><li>Case timelines and decision logs</li><li>Containment, recovery, and AAR support</li></ul></article>
+          <article class="feature-card"><span class="feature-card__index">02 / REASON</span><h3>Watchtower as the Reasoning Core</h3><p>Unify alerts, vulnerability findings, asset context, investigations, decisions, and evidence across the existing mission stack.</p><ul><li>Cross-source investigations</li><li>Human authorization gates</li><li>Evidence packs and reporting</li></ul></article>
+          <article class="feature-card"><span class="feature-card__index">03 / INTEGRATE</span><h3>On-Prem &amp; Restricted Integration</h3><p>Deploy and operate within the environments programs actually have, including constrained or disconnected enclaves.</p><ul><li>SIEM, EDR, and log pipeline integration</li><li>Continuity and disconnected patterns</li><li>Battle-rhythm-aligned modernization</li></ul></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section-block slim">
-        <h2>A&amp;A / Continuous Monitoring Enablement, Automation, and AI Integration</h2>
-        <p class="cdu-lead">
-          Many continuous monitoring initiatives fail when they become paperwork exercises
-          We focus on what makes continuous monitoring real:
-          <strong>repeatable operations</strong>, <strong>traceable decisions</strong>, and <strong>evidence</strong>.
-          Cyber Defense United can be paired with automation and AI integration support so your program improves outcomes
-          while reducing manual burden — with governance and auditability.
-        </p>
-
-        <div class="cdu-band">
-          <div class="cdu-lanes">
-            <article class="cdu-lane">
-              <h3>Operational Continuous Monitoring Package</h3>
-              <p>
-                A packaged approach that combines Watchtower-led monitoring with supporting tooling to automate hardening,
-                checks, and evidence capture — built to support A&amp;A realities and continuous monitoring expectations.
-              </p>
-              <ul class="cdu-list">
-                <li>Continuous monitoring workflows + reporting cadence</li>
-                <li>Automated evidence generation aligned to operations (cases/timelines/artifacts/decision logs)</li>
-                <li>Integration of supporting automation tools (per enclave constraints)</li>
-              </ul>
-            </article>
-
-            <article class="cdu-lane">
-              <h3>AI Integration Support (Human-in-the-Loop)</h3>
-              <p>
-                We integrate AI where it actually helps defenders: summarization, triage assistance, report drafting,
-                and decision support — with operator control and auditable outputs.
-              </p>
-              <ul class="cdu-list">
-                <li>Assist-driven summaries and “next-step” suggestions</li>
-                <li>Briefing acceleration for leadership and auditors</li>
-                <li>Governance patterns: logging, review gates, and traceability</li>
-              </ul>
-            </article>
-          </div>
+    <section class="content-section content-section--light" aria-labelledby="engage-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow eyebrow--dark"><span></span> How we engage</p><h2 id="engage-title">Plug into the program without disrupting it.</h2></div>
+          <div class="content-intro__copy"><p>We align to prime leadership, customer governance, enclave controls, decision authority, and the reporting cadence already in place.</p></div>
         </div>
-      </section>
-
-      <section class="section-block slim">
-        <h2>DoD Contracting Support for IT &amp; Cyber Programs</h2>
-        <p class="cdu-lead">
-          In addition to cyber defense operations, Cyber Defense United supports DoD IT and cyber programs across modernization,
-          operations design, engineering support, and mission-ready reporting. If you need a partner that can deliver both
-          <strong>operational execution</strong> and <strong>technical integration</strong>, we align to your program structure and constraints.
-          Common engagement patterns include <strong>subcontract support</strong> to primes, surge support for exercises, and integration support
-          for new tools coming online.
-        </p>
-
-        <div class="cdu-band">
-          <div class="cdu-grid">
-            <article class="cdu-card">
-              <h3>SOC / NSOC Modernization</h3>
-              <p>
-                Tiering models, escalation paths, shift design, battle rhythm, and reporting — aligned to your mission
-                and resourcing realities.
-              </p>
-            </article>
-
-            <article class="cdu-card">
-              <h3>Engineering + Integration</h3>
-              <p>
-                Build the backbone: pipelines, integrations, tuning, and operational dashboards — with Watchtower as the
-                unifying workspace and evidence layer.
-              </p>
-            </article>
-
-            <article class="cdu-card">
-              <h3>Compliance-Driven Operations</h3>
-              <p>
-                Evidence you can defend: incident chronologies, artifacts, decision logs, and repeatable workflows that support
-                continuous monitoring expectations and audit questions.
-              </p>
-            </article>
-          </div>
+        <div class="detail-grid detail-grid--three">
+          <article class="detail-card detail-card--accent"><span class="card-kicker">SUBCONTRACT</span><h3>Support to Primes</h3><p>Specialized cyber defense delivery embedded under prime leadership and aligned to program cadence.</p><ul><li>DCO and continuous monitoring</li><li>Restricted integration support</li><li>Oversight-ready deliverables</li></ul></article>
+          <article class="detail-card"><span class="card-kicker">SURGE</span><h3>Exercise &amp; Incident Support</h3><p>Experienced augmentation during incident response, exercises, migrations, and high-tempo transitions.</p><ul><li>Rapid scoping and containment planning</li><li>Leadership decision support</li><li>After-action corrective measures</li></ul></article>
+          <article class="detail-card"><span class="card-kicker">DESIGN</span><h3>Integration &amp; Operations Design</h3><p>Build the tiering, handoffs, RACI, escalation, battle rhythm, and reporting model.</p><ul><li>Workflow and authority design</li><li>Tool tuning and rationalization</li><li>Evidence as a byproduct of operations</li></ul></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- =========================
-           CDU PACKAGES (ABOVE CTA)
-           ========================= -->
-      <section class="section-block slim">
-        <div class="cdu-pricing-wrap">
-          <div class="cdu-pricing-head">
-            <h2>Cyber Defense United Packages</h2>
-            <p>
-              Three ways to engage — tuned for mission networks, DIB enterprises, and programs that need repeatable operations
-              and defensible evidence. Options are available to right-size coverage and scope.
-            </p>
-          </div>
-
-          <div class="cdu-band">
-            <div class="cdu-pkg-grid">
-              <article class="cdu-pkg">
-                <div class="kicker">Package</div>
-                <h3>Foundation</h3>
-                <p class="desc">Mission-aligned monitoring + triage with documented cases and clear escalation paths.</p>
-                <div class="cdu-pillrow">
-                  <span class="mini">Business-hours / On-call</span>
-                  <span class="mini">Evidence-first</span>
-                  <span class="mini">Onboarding</span>
-                </div>
-                <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Foundation">
-                    Talk Foundation
-                  </a>
-                </div>
-              </article>
-
-              <article class="cdu-pkg featured">
-                <div class="kicker">Most Common</div>
-                <h3>Mission</h3>
-                <p class="desc">Hybrid or 24/7 coverage with deeper investigations, IR support, and cadence reporting.</p>
-                <div class="cdu-pillrow">
-                  <span class="mini">Hybrid / 24x7</span>
-                  <span class="mini">IR Support</span>
-                  <span class="mini">Playbooks</span>
-                </div>
-                <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk cdu-talk--gold" href="mailto:info@enlight10solutions.com?subject=CDU%20Mission">
-                    Talk Mission
-                  </a>
-                </div>
-              </article>
-
-              <article class="cdu-pkg">
-                <div class="kicker">Full-spectrum</div>
-                <h3>Command-Ready</h3>
-                <p class="desc">Continuous operations with proactive hunt, hardening, and leadership-ready evidence outputs.</p>
-                <div class="cdu-pillrow">
-                  <span class="mini">24x7x365</span>
-                  <span class="mini">Hunt</span>
-                  <span class="mini">Assurance</span>
-                </div>
-                <div style="margin-top:0.55rem;">
-                  <a class="cdu-talk" href="mailto:info@enlight10solutions.com?subject=CDU%20Command-Ready">
-                    Talk Command-Ready
-                  </a>
-                </div>
-              </article>
-            </div>
-
-            <div class="cdu-table" role="table" aria-label="Cyber Defense United package comparison">
-              <div class="cdu-row cdu-colhead" role="row">
-                <div class="cdu-cell" role="columnheader">Capability</div>
-                <div class="cdu-cell" role="columnheader">Foundation</div>
-                <div class="cdu-cell" role="columnheader">Mission</div>
-                <div class="cdu-cell" role="columnheader">Command-Ready</div>
-              </div>
-
-              <div class="cdu-row cdu-group" role="row">
-                <div class="cdu-cell" role="cell">Threat Detection &amp; Response</div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Coverage model</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Business-hours / on-call</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Hybrid or 24/7</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> 24x7x365</div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Case timelines + evidence packs</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Proactive threat hunting</div>
-                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
-                <div class="cdu-cell" role="cell"><span class="chip addon">Add-on</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">IR surge support (remote)</div>
-                <div class="cdu-cell" role="cell"><span class="chip">Optional</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-              </div>
-
-              <div class="cdu-row cdu-group" role="row">
-                <div class="cdu-cell" role="cell">Operations &amp; Reporting</div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Escalation paths + playbooks</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Baseline</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Standardized</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Advanced + tuned</div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Monthly posture review / briefs</div>
-                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> + trend readout</div>
-              </div>
-
-              <div class="cdu-row cdu-group" role="row">
-                <div class="cdu-cell" role="cell">Enablement &amp; Compliance</div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-                <div class="cdu-cell" role="cell"></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">On-prem integration / tool onboarding</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Core sources</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Expanded</div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span> Full program</div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">Continuous monitoring evidence automation</div>
-                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
-                <div class="cdu-cell" role="cell"><span class="chip addon">Add-on</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-              </div>
-
-              <div class="cdu-row" role="row">
-                <div class="cdu-cell" role="cell">AI assist (human-in-the-loop)</div>
-                <div class="cdu-cell" role="cell"><span class="muted">—</span></div>
-                <div class="cdu-cell" role="cell"><span class="chip">Optional</span></div>
-                <div class="cdu-cell" role="cell"><span class="ok">✅</span></div>
-              </div>
-            </div>
-          </div>
+    <section class="content-section content-section--navy" aria-labelledby="continuous-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow"><span></span> Continuous monitoring</p><h2 id="continuous-title">Turn assurance into an operating discipline.</h2></div>
+          <div class="content-intro__copy"><p>Continuous monitoring fails when it becomes a paperwork exercise. We connect repeatable operations, traceable decisions, and evidence aligned to the way the mission executes.</p></div>
         </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="section-block slim">
-        <div class="cdu-cta-band">
-          <h2>Let’s talk about your environment.</h2>
-          <p>
-            If you’re supporting a mission network, a defense program, or a DIB enterprise that needs measurable cyber defense
-            outcomes — we’ll start with a short technical conversation about your tools, constraints, and priorities,
-            then propose a clear operating approach.
-          </p>
-
-          <div class="cdu-cta-actions">
-            <a class="cdu-pill primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20/%20Technical%20Conversation">
-              Request a Conversation
-            </a>
-            <a class="cdu-pill ghost" href="./watchtower.html">
-              Explore Watchtower CRP
-            </a>
-          </div>
+        <div class="detail-grid">
+          <article class="detail-card detail-card--accent"><span class="card-kicker">OPERATE</span><h3>A&amp;A / Continuous Monitoring Enablement</h3><p>Establish workflow, reporting cadence, control validation, and evidence generation tied to operational cases and decisions.</p><ul><li>Repeatable monitoring workflow</li><li>Automated evidence capture</li><li>Enclave-aware supporting automation</li></ul></article>
+          <article class="detail-card"><span class="card-kicker">ASSIST</span><h3>Governed AI Integration</h3><p>Use AI for summarization, research, triage support, and brief drafting within logged, reviewable, human-controlled boundaries.</p><ul><li>Recommendations with operator review</li><li>Leadership and auditor brief acceleration</li><li>Logging, gates, and traceability</li></ul></article>
+          <article class="detail-card"><span class="card-kicker">MODERNIZE</span><h3>SOC / NSOC Operating Model</h3><p>Align tiering, escalation, shift design, mission reporting, and tooling with program requirements.</p></article>
+          <article class="detail-card"><span class="card-kicker">ENGINEER</span><h3>Technical Integration</h3><p>Build and tune pipelines, integrations, use cases, and operational views with Watchtower as the governance layer.</p></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
+    <section class="content-section content-section--dark" aria-labelledby="cdu-packages-title">
+      <div class="page-shell">
+        <div class="content-intro">
+          <div><p class="eyebrow"><span></span> Engagement packages</p><h2 id="cdu-packages-title">Right-sized to mission demand.</h2></div>
+          <div class="content-intro__copy"><p>Coverage, integration, evidence automation, and response scope are tailored to the mission network and program need.</p></div>
+        </div>
+        <div class="package-grid">
+          <article class="package-card"><span class="card-kicker">FOUNDATION</span><h3>Mission Baseline</h3><p>Mission-aligned monitoring and triage with documented cases and clear escalation.</p><ul><li>Business-hours or on-call</li><li>Core source onboarding</li><li>Evidence-first operations</li></ul><a class="text-link" href="mailto:info@enlight10solutions.com?subject=CDU%20Foundation">Discuss Foundation →</a></article>
+          <article class="package-card package-card--featured"><span class="card-kicker">MISSION / MOST COMMON</span><h3>Expanded Defense</h3><p>Hybrid or continuous coverage with deeper investigations, response support, and recurring mission briefs.</p><ul><li>Hybrid or 24/7 options</li><li>IR and playbook support</li><li>Posture reviews and evidence</li></ul><a class="text-link" href="mailto:info@enlight10solutions.com?subject=CDU%20Mission">Discuss Mission →</a></article>
+          <article class="package-card"><span class="card-kicker">COMMAND-READY</span><h3>Continuous Operations</h3><p>Full-spectrum mission operations with proactive hunting, hardening, and leadership-ready assurance.</p><ul><li>24x7x365 option</li><li>Threat hunting and integration</li><li>Continuous monitoring automation</li></ul><a class="text-link" href="mailto:info@enlight10solutions.com?subject=CDU%20Command-Ready">Discuss Command-Ready →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" aria-labelledby="cdu-cta-title">
+      <div class="signal-field" aria-hidden="true"></div>
+      <div class="page-shell">
+        <p class="eyebrow"><span></span> Begin with the environment</p>
+        <h2 id="cdu-cta-title">Mission, constraints,<br><em>then the operating model.</em></h2>
+        <p>Tell us the program context, tools, enclave posture, reporting need, and desired outcome. We will propose a clear delivery path.</p>
+        <div class="action-row action-row--center"><a class="wt-button wt-button--primary" href="mailto:info@enlight10solutions.com?subject=Cyber%20Defense%20United%20Technical%20Conversation">Request a technical conversation ↗</a><a class="wt-button wt-button--quiet" href="./partners.html">Prime partner options</a></div>
+      </div>
+    </section>
   </main>
-
-  <!-- FOOTER -->
   <div data-site-footer></div>
 </body>
 </html>

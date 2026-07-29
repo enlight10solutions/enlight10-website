@@ -1,842 +1,266 @@
-<!-- watchtower.html (standardized nav + standardized footer year + pilot-first CTA alignment) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cyber Reasoning Platform™ — Watchtower by enLight10 Solutions</title>
-
-  <meta
-    name="description"
-    content="Cyber Reasoning Platform™ is the reasoning core behind Watchtower SecureOps™ and Cyber Defense United™ — helping teams turn raw signals into investigations, evidence, and decisions they can defend."
-  />
-  <link rel="canonical" href="https://enlight10solutions.com/watchtower.html" />
-  <meta property="og:title" content="Watchtower CRP™ — enLight10 Solutions" />
-  <meta property="og:description" content="Watchtower CRP supports human-reviewed workflows for investigations, evidence organization, reporting, and remediation tracking." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://enlight10solutions.com/watchtower.html" />
-  <meta property="og:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Watchtower CRP™ — enLight10 Solutions" />
-  <meta name="twitter:description" content="Watchtower CRP supports human-reviewed workflows for investigations, evidence organization, reporting, and remediation tracking." />
-  <meta name="twitter:image" content="https://enlight10solutions.com/enLight10_Logo.png" />
-
-  <!-- Shared styles / JS -->
-  <link rel="stylesheet" href="./style.css?v=32" />
-  <script src="./script.js?v=35" defer></script>
-  <link rel="icon" href="./enLight10_Logo.png" type="image/png" />
-
-  <style>
-    body{
-      margin:0;
-      background:#020617;
-      color:#e5e7eb;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      overflow-x:hidden;
-    }
-
-    /* -------------------------------------------------------
-       HERO SHELL (dark) — hero-wide circuit field at the top
-       ------------------------------------------------------- */
-    .wt-hero-shell{
-      position: relative;
-      overflow: hidden;
-      padding-top: 100px; /* clear fixed topbar */
-      padding-bottom: 56px;
-      background: linear-gradient(to bottom, #020617 0%, #0b1120 55%, #020617 100%);
-      color:#e5e7eb;
-    }
-
-    /* Circuit field spans BOTH columns (hero-wide) */
-    .wt-hero-shell::before{
-      content:"";
-      position:absolute;
-      inset:-20% -10% auto -10%;
-      height: 520px;
-      pointer-events:none;
-      z-index:0;
-
-      /* Fade the circuit field out as it goes down */
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 100%);
-
-      opacity: 0.18;
-      mix-blend-mode: screen;
-      filter: blur(0.15px);
-
-      background-repeat: repeat;
-      background-size: 1200px 700px;
-      background-position: 0px 0px;
-
-      /* Inline SVG circuit pattern */
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23ffd447' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23ffd447' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
-      animation: heroCircuitDrift 18s ease-in-out infinite;
-    }
-
-    /* A subtle vignette to keep contrast clean */
-    .wt-hero-shell::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      z-index:0;
-      background:
-        radial-gradient(900px 520px at 18% 30%, rgba(250,204,21,0.10), rgba(2,6,23,0) 60%),
-        radial-gradient(900px 520px at 70% 22%, rgba(56,189,248,0.06), rgba(2,6,23,0) 60%),
-        linear-gradient(180deg, rgba(2,6,23,0.10) 0%, rgba(2,6,23,0.22) 40%, rgba(2,6,23,0.45) 100%);
-      opacity: 0.95;
-    }
-
-    @keyframes heroCircuitDrift{
-      0%   { background-position: 0px 0px; }
-      50%  { background-position: 180px 38px; }
-      100% { background-position: 0px 0px; }
-    }
-
-    /* Ensure hero content sits above the circuit field */
-    .wt-hero{
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-      align-items: flex-start;
-    }
-
-    .wt-hero-left{
-      flex: 0 0 360px;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      gap: 1.1rem;
-    }
-
-    /* Logo container */
-    .wt-logo-wrap{
-      position: relative;
-      isolation: isolate;
-      width: 100%;
-      max-width: 420px;
-      border-radius: 18px;
-      padding: 12px;
-      background: rgba(2,6,23,0.35);
-      border: 1px solid rgba(250,204,21,0.30);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
-      overflow: hidden;
-    }
-
-    /* Circuits BEHIND the logo image */
-    .wt-circuits-bg{
-      position:absolute;
-      inset: -30%;
-      z-index: 0;
-      opacity: 0.26;
-      mix-blend-mode: screen;
-      pointer-events:none;
-      filter: blur(0.2px);
-    }
-
-    .wt-circuits-bg svg{
-      width:100%;
-      height:100%;
-      display:block;
-    }
-
-    .wt-logo-wrap img{
-      position: relative;
-      z-index: 1;
-      width:100%;
-      height:auto;
-      display:block;
-      border-radius: 14px;
-      background:#000;
-    }
-
-    .wt-circuits-bg .trace{
-      fill: none;
-      stroke: rgba(255, 212, 71, 0.95);
-      stroke-width: 2.2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      opacity: 0.9;
-    }
-
-    .wt-circuits-bg .node{
-      fill: rgba(255, 212, 71, 0.95);
-      opacity: 0.95;
-    }
-
-    .wt-circuits-bg .glow{
-      filter: drop-shadow(0 0 6px rgba(255, 212, 71, 0.25))
-              drop-shadow(0 0 12px rgba(255, 212, 71, 0.12));
-    }
-
-    .wt-circuits-bg .flow{
-      stroke-dasharray: 10 18;
-      animation: wtDash 10s linear infinite;
-      opacity: 0.95;
-    }
-    .wt-circuits-bg .flow2{
-      stroke-dasharray: 6 20;
-      animation: wtDash 14s linear infinite reverse;
-      opacity: 0.7;
-    }
-
-    @keyframes wtDash{
-      to { stroke-dashoffset: -320; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .wt-hero-shell::before{ animation: none !important; }
-      .wt-circuits-bg .flow,
-      .wt-circuits-bg .flow2{ animation: none !important; }
-    }
-
-    .wt-hero-copy p{
-      margin: 0 0 0.75rem;
-      line-height: 1.7;
-      color:#e5e7eb;
-      max-width: 520px;
-    }
-
-    .wt-hero-copy p.lead{
-      font-size: 1rem;
-      color:#f1f5f9;
-    }
-
-    .wt-hero-right{
-      flex: 1 1 360px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-    }
-
-    .wt-hero-right h1{
-      margin: 0 0 0.55rem;
-      font-size: clamp(2rem, 2.8vw, 2.6rem);
-      font-weight: 800;
-      letter-spacing: 0.01em;
-      color:#ffffff;
-    }
-
-    /* Subtitle: force white */
-    .wt-hero-tagline{
-      margin: 0 0 1.25rem;
-      max-width: 720px;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.90);
-      text-shadow: 0 1px 10px rgba(0,0,0,0.28);
-    }
-
-    .wt-hero-video-frame{
-      width:100%;
-      max-width: 760px;
-      border-radius: 18px;
-      overflow:hidden;
-      box-shadow: 0 18px 42px rgba(0,0,0,0.72);
-      background:#000;
-    }
-
-    .wt-hero-video-frame video{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .wt-hero-pills{
-      width:100%;
-      max-width: 760px;
-      margin-top: 1rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 0.75rem;
-      justify-content:center;
-      align-items:center;
-    }
-
-    .wt-pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding: 0.85rem 1.15rem;
-      border-radius: 999px;
-      text-decoration:none;
-      font-weight: 650;
-      font-size: 0.92rem;
-      line-height: 1;
-      min-height: 44px;
-      white-space: nowrap;
-      border: 1px solid rgba(251,191,36,0.28);
-      background: rgba(2,6,23,0.40);
-      color: #fde68a;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-      transition: transform 160ms ease, filter 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-
-    .wt-pill:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-      background: rgba(2,6,23,0.52);
-    }
-
-    .wt-pill.primary{
-      border: 1px solid rgba(251,191,36,0.48);
-      background: linear-gradient(180deg, rgba(255,255,255,0.16) 0%, rgba(251,191,36,0.18) 100%);
-      color: #fff7d6;
-    }
-
-    .wt-pill.ghost{
-      border: 1px solid rgba(148,163,184,0.35);
-      background: rgba(2,6,23,0.28);
-      color: #e2e8f0;
-    }
-
-    @media (max-width: 900px){
-      .wt-hero{ flex-direction:column; align-items:center; }
-      .wt-hero-left, .wt-hero-right{ width:100%; flex:1 1 auto; }
-      .wt-hero-left{ align-items:center; text-align:left; }
-      .wt-hero-copy{ width:100%; }
-      .wt-hero-right h1, .wt-hero-tagline{ text-align:center; }
-    }
-
-    /* ---------------------------
-       LIGHT BODY
-       --------------------------- */
-    main.light{
-      background:#ffffff;
-      color:#020617;
-      padding: 60px 0;
-    }
-
-    .page-wrap{
-      max-width:1100px;
-      margin:0 auto;
-      padding:0 1.5rem;
-    }
-
-    .section-title{
-      margin:0 0 0.55rem;
-      font-weight: 800;
-      letter-spacing: 0.01em;
-      color:#0b1220;
-    }
-
-    .section-lead{
-      margin:0;
-      color:#334155;
-      line-height:1.7;
-      max-width: 920px;
-    }
-
-    .band{
-      margin-top: 1.25rem;
-      border: 1px solid rgba(15,23,42,0.08);
-      border-radius: 18px;
-      background: #ffffff;
-      box-shadow: 0 16px 34px rgba(2,6,23,0.06);
-      padding: 1.25rem 1.25rem;
-    }
-
-    .grid-3{
-      margin-top: 0;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .grid-2{
-      margin-top: 0;
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.1rem;
-    }
-
-    .card{
-      position: relative;
-      border: 1px solid #e5e7eb;
-      border-radius: 16px;
-      background:#fff;
-      padding: 1.1rem 1.1rem;
-      box-shadow: 0 10px 22px rgba(2,6,23,0.05);
-      overflow: hidden;
-    }
-
-    /* circuit underlay */
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:-18%;
-      pointer-events:none;
-      z-index:0;
-      opacity:0.20;
-      mix-blend-mode: multiply;
-      background-repeat:no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 700'%3E%3Cg fill='none' stroke='%23caa24a' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' opacity='0.9'%3E%3Cpath d='M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520'/%3E%3Cpath d='M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520'/%3E%3Cpath d='M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515'/%3E%3Cpath d='M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420'/%3E%3Cpath d='M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305'/%3E%3Cpath d='M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620'/%3E%3Cpath d='M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770'/%3E%3Cpath d='M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720'/%3E%3Cpath d='M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265'/%3E%3Cpath d='M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340'/%3E%3Cpath d='M520 265 V340 Q520 370 550 370 H650'/%3E%3Cpath d='M520 265 H455 Q430 265 430 240 V190'/%3E%3Cpath d='M740 420 V510 Q740 540 710 540 H615'/%3E%3Cpath d='M855 305 H930 Q960 305 960 335 V380'/%3E%3Cpath d='M450 515 H380 Q350 515 350 545 V610'/%3E%3Cpath d='M280 235 H180 Q150 235 150 265 V315'/%3E%3C/g%3E%3Cg fill='%23caa24a' opacity='0.85'%3E%3Ccircle cx='85' cy='115' r='5'/%3E%3Ccircle cx='280' cy='235' r='5'/%3E%3Ccircle cx='520' cy='265' r='5'/%3E%3Ccircle cx='520' cy='120' r='5'/%3E%3Ccircle cx='740' cy='420' r='5'/%3E%3Ccircle cx='855' cy='305' r='5'/%3E%3Ccircle cx='980' cy='70' r='5'/%3E%3Ccircle cx='935' cy='250' r='5'/%3E%3Ccircle cx='1030' cy='585' r='5'/%3E%3Ccircle cx='140' cy='560' r='5'/%3E%3Ccircle cx='350' cy='610' r='5'/%3E%3Ccircle cx='150' cy='315' r='5'/%3E%3Ccircle cx='430' cy='190' r='5'/%3E%3Ccircle cx='805' cy='265' r='5'/%3E%3Ccircle cx='960' cy='380' r='5'/%3E%3Ccircle cx='615' cy='540' r='5'/%3E%3C/g%3E%3C/svg%3E");
-    }
-
-    /* keep all content above underlay */
-    .card > *{
-      position: relative;
-      z-index: 1;
-    }
-
-    .card h3{
-      margin:0 0 0.55rem;
-      font-size: 1.02rem;
-      letter-spacing: 0.01em;
-      color:#0b1220;
-    }
-
-    .card p{
-      margin:0;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .card ul{
-      margin:0.75rem 0 0;
-      padding-left: 1.1rem;
-      color:#334155;
-      line-height:1.65;
-      font-size:0.95rem;
-    }
-
-    .mini-pill-row{
-      margin-top: 0.9rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 0.65rem;
-      align-items:center;
-    }
-
-    .mini-pill{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.38rem 0.70rem;
-      border-radius:999px;
-      font-size:0.78rem;
-      letter-spacing:0.12em;
-      text-transform:uppercase;
-      border:1px solid rgba(2,6,23,0.10);
-      background: rgba(2,6,23,0.03);
-      color:#0b1120;
-      font-weight: 800;
-    }
-
-    .card.core{
-      position: relative;
-      border-color: rgba(250,204,21,0.55);
-      box-shadow:
-        0 12px 28px rgba(2,6,23,0.08),
-        0 0 0 3px rgba(250,204,21,0.12);
-    }
-    .card.core::before{
-      content:"";
-      position:absolute;
-      inset:-10px;
-      border-radius: 22px;
-      background: radial-gradient(circle at 50% 0%, rgba(250,204,21,0.18), rgba(255,255,255,0) 55%);
-      pointer-events:none;
-    }
-
-    .cta-band{
-      margin-top: 1.25rem;
-      border-radius: 18px;
-      padding: 1.35rem 1.35rem;
-      background: linear-gradient(180deg, rgba(2,6,23,0.92) 0%, rgba(11,17,32,0.92) 100%);
-      color:#e5e7eb;
-      border:1px solid rgba(251,191,36,0.22);
-      box-shadow:0 16px 34px rgba(2,6,23,0.35);
-    }
-    .cta-band h2{ margin:0 0 0.55rem; color:#fff; }
-    .cta-band p{ margin:0; line-height:1.7; max-width:900px; color:#e5e7eb; }
-
-    .cta-actions{
-      margin-top:1rem;
-      display:flex;
-      flex-wrap:wrap;
-      gap:0.9rem 1.2rem;
-      align-items:center;
-    }
-
-    .cta-actions a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0.85rem 1.25rem;
-      border-radius:999px;
-      font-weight:650;
-      line-height:1;
-      text-decoration:none;
-      min-height:44px;
-      white-space:nowrap;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
-    }
-
-    .cta-actions a.button.primary{
-      color:#0b1120;
-      background: linear-gradient(180deg, #ffffff 0%, #fff2c2 42%, #facc15 78%, #eab308 100%);
-      border: 1px solid rgba(250, 204, 21, 0.55);
-      box-shadow:
-        0 10px 22px rgba(250, 204, 21, 0.18),
-        0 6px 14px rgba(0, 0, 0, 0.35);
-    }
-
-    .cta-actions a.button.ghost{
-      color: rgba(255,255,255,0.92);
-      background: rgba(15,23,42,0.35);
-      border: 1px solid rgba(148,163,184,0.55);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
-    }
-
-    @media (max-width: 980px){
-      .grid-3{ grid-template-columns: 1fr; }
-      .grid-2{ grid-template-columns: 1fr; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Watchtower Platform | Governed Security Operations</title>
+  <meta name="description" content="Watchtower turns vulnerability findings into contextual priorities, human-authorized remediation, validated fixes, and evidence-backed closure.">
+  <link rel="canonical" href="https://enlight10solutions.com/watchtower.html">
+  <meta property="og:title" content="Watchtower — From finding to verified fix">
+  <meta property="og:description" content="A governed operating layer for vulnerability management, incident response, assets and exposure, engineering, and bounded AI workers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enlight10solutions.com/watchtower.html">
+  <meta property="og:image" content="https://enlight10solutions.com/Watchtower_Logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="./e10_Logo.png" type="image/png">
+  <link rel="stylesheet" href="./style.css?v=33">
+  <link rel="stylesheet" href="./watchtower-marketing.css?v=9">
+  <script src="./script.js?v=40" defer></script>
 </head>
-
-<body>
-  <!-- NAV (standardized) -->
+<body class="wt-site wt-product-page">
+  <a class="skip-link" href="#main">Skip to content</a>
   <div data-site-header data-current="watchtower"></div>
 
-  <!-- HERO -->
-  <section class="wt-hero-shell">
-    <div class="wt-hero">
-      <div class="wt-hero-left">
-
-        <!-- Logo with animated circuits behind it -->
-        <div class="wt-logo-wrap">
-          <div class="wt-circuits-bg" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
-              <g opacity="0.95" class="glow">
-                <path class="trace" d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" />
-                <path class="trace" d="M140 560 H290 Q325 560 325 525 V410 Q325 380 355 380 H520" />
-                <path class="trace" d="M210 210 V310 Q210 340 240 340 H420 Q450 340 450 370 V515" />
-                <path class="trace" d="M520 120 V220 Q520 250 550 250 H710 Q740 250 740 280 V420" />
-                <path class="trace" d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" />
-                <path class="trace" d="M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620" />
-                <path class="trace" d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" />
-                <path class="trace" d="M1030 585 H900 Q870 585 870 555 V520 Q870 490 840 490 H720" />
-                <path class="trace" d="M980 70 V165 Q980 195 950 195 H835 Q805 195 805 225 V265" />
-                <path class="trace" d="M60 330 H170 Q200 330 200 300 V250 Q200 220 230 220 H340" />
-                <path class="trace" d="M520 265 V340 Q520 370 550 370 H650" />
-                <path class="trace" d="M520 265 H455 Q430 265 430 240 V190" />
-                <path class="trace" d="M740 420 V510 Q740 540 710 540 H615" />
-                <path class="trace" d="M855 305 H930 Q960 305 960 335 V380" />
-                <path class="trace" d="M450 515 H380 Q350 515 350 545 V610" />
-                <path class="trace" d="M280 235 H180 Q150 235 150 265 V315" />
-                <path class="trace flow"  d="M85 115 H250 Q280 115 280 145 V235 Q280 265 310 265 H520" />
-                <path class="trace flow2" d="M905 140 H760 Q730 140 730 170 V205 Q730 235 700 235 H620" />
-                <path class="trace flow"  d="M1100 420 H965 Q935 420 935 390 V250 Q935 220 905 220 H770" />
-                <path class="trace flow2" d="M610 590 V470 Q610 440 640 440 H825 Q855 440 855 410 V305" />
-                <g class="node">
-                  <circle cx="85" cy="115" r="5"/>
-                  <circle cx="280" cy="235" r="5"/>
-                  <circle cx="520" cy="265" r="5"/>
-                  <circle cx="520" cy="120" r="5"/>
-                  <circle cx="740" cy="420" r="5"/>
-                  <circle cx="855" cy="305" r="5"/>
-                  <circle cx="980" cy="70" r="5"/>
-                  <circle cx="935" cy="250" r="5"/>
-                  <circle cx="1030" cy="585" r="5"/>
-                  <circle cx="140" cy="560" r="5"/>
-                  <circle cx="350" cy="610" r="5"/>
-                  <circle cx="150" cy="315" r="5"/>
-                  <circle cx="430" cy="190" r="5"/>
-                  <circle cx="805" cy="265" r="5"/>
-                  <circle cx="960" cy="380" r="5"/>
-                  <circle cx="615" cy="540" r="5"/>
-                </g>
-              </g>
-            </svg>
+  <main id="main">
+    <section class="platform-hero" aria-labelledby="platform-title">
+      <div class="signal-field" aria-hidden="true"></div>
+      <div class="page-shell platform-hero__grid">
+        <div>
+          <p class="eyebrow"><span></span> Watchtower cyber reasoning platform</p>
+          <h1 id="platform-title">A vulnerability is not closed until the fix is <em>verified.</em></h1>
+          <p class="hero-deck">Watchtower turns fragmented security work into one governed path from discovery to validated closure—with humans authorizing consequential action.</p>
+          <div class="action-row">
+            <a class="wt-button wt-button--primary" href="#full-demo"><span class="play-mark" aria-hidden="true">▶</span> Watch the full demo</a>
+            <a class="wt-button wt-button--outline" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request&amp;body=Organization%3A%0AEnvironment%3A%0ACurrent%20security%20tools%3A%0APilot%20goal%3A%0ATimeline%3A">Start a pilot <span aria-hidden="true">↗</span></a>
           </div>
-
-          <img src="./Watchtower_CRP_Logo.png" alt="Cyber Reasoning Platform by enLight10 Solutions" />
         </div>
-
-        <div class="wt-hero-copy">
-          <p class="lead">
-            <strong>Cyber Reasoning Platform™</strong> is the reasoning core behind the Watchtower brand family — powering
-            <strong>Watchtower SecureOps™</strong> and <strong>Cyber Defense United™</strong> for DoD, DIB, and high-assurance environments.
-          </p>
-
-          <p>
-            Cyber Reasoning Platform ingests signals from your existing tools and turns them into correlated investigations,
-            narrative timelines, and defensible evidence. Modules like Guardian, Seek, Atlas, Assist, Deploy, and Audit help
-            teams defend faster without losing the story.
-          </p>
+        <div class="platform-mark">
+          <img src="./Watchtower_Logo.png" alt="Watchtower by enLight10">
         </div>
       </div>
+      <div class="page-shell trust-strip" aria-label="Product characteristics">
+        <span>Connects to existing tools</span><span>Human authority preserved</span><span>Evidence by design</span><span>Flexible deployment</span>
+      </div>
+    </section>
 
-      <div class="wt-hero-right">
-        <h1>Watchtower CRP™</h1>
-        <p class="wt-hero-tagline">
-          The Cyber Reasoning Platform that transforms your existing security tools into organized understanding,
-          actionable response, and continuous assurance for SecureOps and Cyber Defense United.
-        </p>
+    <section class="platform-overview" aria-labelledby="overview-title">
+      <div class="page-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow eyebrow--dark"><span></span> The operating layer</p><h2 id="overview-title">Turn fragmented tools into coordinated outcomes.</h2></div>
+          <p>Watchtower connects the systems you already depend on, normalizes their tool-specific signals into shared security context, and governs how that context becomes decisions, action, validation, and proof.</p>
+        </div>
+        <div class="architecture architecture--animated" role="img" aria-label="Security tools and data flow through Watchtower, where they are normalized into context for incident coordination, vulnerability remediation, infrastructure understanding, and compliance evidence.">
+          <svg class="architecture-flow" viewBox="0 0 1200 620" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="flowIn" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#75869a" stop-opacity=".18"/>
+                <stop offset=".68" stop-color="#ba9131" stop-opacity=".78"/>
+                <stop offset="1" stop-color="#f5c84c"/>
+              </linearGradient>
+              <linearGradient id="flowOut" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#f5c84c"/>
+                <stop offset=".5" stop-color="#9ebfae"/>
+                <stop offset="1" stop-color="#58d6a1"/>
+              </linearGradient>
+              <filter id="flowGlow" x="-30%" y="-30%" width="160%" height="160%">
+                <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <g class="flow-lines flow-lines--inbound">
+              <path d="M330 116 C430 116 430 240 535 294"/>
+              <path d="M330 173 C440 173 445 255 535 299"/>
+              <path d="M330 230 C450 230 455 270 535 304"/>
+              <path d="M330 287 C455 287 470 290 535 309"/>
+              <path d="M330 344 C455 344 470 330 535 314"/>
+              <path d="M330 401 C450 401 455 350 535 319"/>
+              <path d="M330 458 C440 458 445 365 535 324"/>
+              <path d="M330 515 C430 515 430 380 535 329"/>
+            </g>
+            <g class="flow-lines flow-lines--outbound">
+              <path d="M665 300 C760 285 765 132 870 132"/>
+              <path d="M665 306 C780 300 775 252 870 252"/>
+              <path d="M665 314 C780 320 775 372 870 372"/>
+              <path d="M665 320 C760 338 765 492 870 492"/>
+            </g>
+            <path class="flow-spine" d="M505 310 H695"/>
+            <circle class="flow-packet flow-packet--one" cx="0" cy="0" r="4">
+              <animateMotion dur="3.8s" repeatCount="indefinite" path="M330 116 C430 116 430 240 535 294"/>
+            </circle>
+            <circle class="flow-packet flow-packet--two" cx="0" cy="0" r="4">
+              <animateMotion dur="4.4s" begin="-2.1s" repeatCount="indefinite" path="M330 401 C450 401 455 350 535 319"/>
+            </circle>
+            <circle class="flow-packet flow-packet--three" cx="0" cy="0" r="4">
+              <animateMotion dur="3.5s" begin="-1.2s" repeatCount="indefinite" path="M665 306 C780 300 775 252 870 252"/>
+            </circle>
+            <circle class="flow-packet flow-packet--four" cx="0" cy="0" r="4">
+              <animateMotion dur="4.2s" begin="-3s" repeatCount="indefinite" path="M665 320 C760 338 765 492 870 492"/>
+            </circle>
+          </svg>
 
-        <div class="wt-hero-video-frame" id="wt-demo">
-          <video controls preload="metadata" aria-label="Cyber Reasoning Platform demo video">
-            <source src="https://enlight10media.z22.web.core.windows.net/Watchtower%20Demo.faststart.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
+          <div class="architecture-column architecture-column--sources">
+            <span class="architecture-label">TOOLS + DATA</span>
+            <div class="architecture-sources">
+              <span><i></i>SIEM</span>
+              <span><i></i>EDR / XDR</span>
+              <span><i></i>VULNERABILITIES</span>
+              <span><i></i>IDENTITY / IDAM</span>
+              <span><i></i>CLOUD + NETWORK</span>
+              <span><i></i>CMDB / ASSETS</span>
+              <span><i></i>TICKETS / ITSM</span>
+              <span><i></i>POLICIES + EVIDENCE</span>
+            </div>
+          </div>
+
+          <div class="architecture-stage">
+            <span class="stage-input">TOOL-SPECIFIC SIGNALS</span>
+            <div class="architecture-core architecture-core--visual">
+              <img class="architecture-core__image" src="./Watchtower_Logo_TowerOnly.PNG" alt="">
+              <span class="core-beacon" aria-hidden="true"></span>
+              <div class="architecture-core__copy">
+                <strong>WATCHTOWER</strong>
+                <small>NORMALIZE + CORRELATE<br>CONTEXT + GOVERNANCE</small>
+              </div>
+            </div>
+            <span class="stage-output">NORMALIZED SECURITY CONTEXT</span>
+          </div>
+
+          <div class="architecture-column architecture-column--outcomes">
+            <span class="architecture-label">COORDINATED OUTCOMES</span>
+            <div class="architecture-outcomes">
+              <span><i>01</i><b>Incident Coordination</b><small>Cases, response, decisions</small></span>
+              <span><i>02</i><b>Vulnerability Remediation</b><small>Prioritize, fix, verify</small></span>
+              <span><i>03</i><b>Infrastructure Understanding</b><small>Assets, exposure, dependencies</small></span>
+              <span><i>04</i><b>Compliance Evidence</b><small>Controls, artifacts, proof</small></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capability-section" aria-labelledby="capability-title">
+      <div class="page-shell">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow"><span></span> One platform, connected operations</p>
+          <h2 id="capability-title">Built for the work security teams actually do.</h2>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card capability-card--featured">
+            <span class="card-index">01 / CORE</span>
+            <div class="capability-symbol" aria-hidden="true">✓</div>
+            <h3>Vulnerability Management</h3>
+            <p>Unify findings, add operational context, prioritize risk, plan remediation, preserve authorization, validate the fix, and close with evidence.</p>
+            <ul><li>Finding normalization</li><li>Contextual prioritization</li><li>Verified closure</li></ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">02</span><div class="capability-symbol" aria-hidden="true">⌁</div>
+            <h3>Incident Response</h3><p>Organize signals, investigation steps, decisions, and evidence into a coordinated response record.</p>
+            <ul><li>Case orchestration</li><li>Human decision gates</li><li>Evidence timeline</li></ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">03</span><div class="capability-symbol" aria-hidden="true">◎</div>
+            <h3>Assets &amp; Exposure</h3><p>Connect technical findings to asset ownership, business importance, reachability, and mission impact.</p>
+            <ul><li>Asset context</li><li>Exposure paths</li><li>Mission relevance</li></ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">04</span><div class="capability-symbol" aria-hidden="true">◇</div>
+            <h3>Security Engineering</h3><p>Turn recurring operational friction into governed engineering work with visible ownership and validation.</p>
+            <ul><li>Remediation plans</li><li>Change coordination</li><li>Control validation</li></ul>
+          </article>
+          <article class="capability-card">
+            <span class="card-index">05</span><div class="capability-symbol" aria-hidden="true">✦</div>
+            <h3>Bounded AI Workers</h3><p>Use AI for research, correlation, drafting, and workflow support within defined authority and review boundaries.</p>
+            <ul><li>Traceable assistance</li><li>Bounded actions</li><li>Human oversight</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow-proof" aria-labelledby="workflow-title">
+      <div class="page-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow eyebrow--dark"><span></span> Vulnerability operations</p><h2 id="workflow-title">A closed loop you can inspect.</h2></div>
+          <p>Each step retains the context, decision, owner, and evidence required to explain not only what happened, but why the result should be trusted.</p>
+        </div>
+        <ol class="proof-list">
+          <li><span>01</span><div><h3>Ingest findings</h3><p>Bring together scanner, endpoint, cloud, identity, and manually reported findings.</p></div><small>UNIFY</small></li>
+          <li><span>02</span><div><h3>Add asset and mission context</h3><p>Understand ownership, exposure, criticality, dependencies, and operational consequence.</p></div><small>CONTEXTUALIZE</small></li>
+          <li><span>03</span><div><h3>Analyze exploitability and exposure</h3><p>Use technical and environmental signals to surface the work that matters now.</p></div><small>PRIORITIZE</small></li>
+          <li><span>04</span><div><h3>Build the remediation plan</h3><p>Translate the finding into accountable action with dependencies and success criteria.</p></div><small>PLAN</small></li>
+          <li><span>05</span><div><h3>Preserve human approval</h3><p>Keep accountable operators in control of consequential changes and exceptions.</p></div><small>AUTHORIZE</small></li>
+          <li><span>06</span><div><h3>Execute, validate, and close</h3><p>Re-test the control, confirm exposure is removed, and package the closure evidence.</p></div><small>PROVE</small></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="demo-section demo-section--dark" id="full-demo" aria-labelledby="full-demo-title">
+      <div class="page-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow"><span></span> Product demonstration</p><h2 id="full-demo-title">See verified closure end to end.</h2></div>
+          <p>The full demonstration shows Watchtower move from an incoming finding through context, planning, human-authorized action, validation, and evidence-backed closure.</p>
+        </div>
+        <div class="demo-frame">
+          <video controls preload="none" playsinline poster="./watchtower-demo-poster.svg?v=2" aria-label="Watchtower vulnerability operations product demonstration">
+            <source src="https://enlight10media.z22.web.core.windows.net/Vulnerabilities%28V3%29.mp4" type="video/mp4">
+            Your browser does not support embedded video. <a href="https://enlight10media.z22.web.core.windows.net/Vulnerabilities%28V3%29.mp4">Open the Watchtower vulnerability operations demo</a>.
           </video>
+          <button class="demo-play-overlay" type="button" aria-label="Play the Watchtower vulnerability operations demonstration">
+            <span class="demo-play-icon" aria-hidden="true">▶</span>
+            <span class="demo-play-copy"><strong>Watch the product demonstration</strong><small>Ingest → Prioritize → Remediate → Verify → Prove</small></span>
+          </button>
         </div>
+        <p class="demo-note">Watchtower vulnerability operations demonstration</p>
+      </div>
+    </section>
 
-        <div class="wt-hero-pills" aria-label="Cyber Reasoning Platform actions">
-          <!-- ✅ Pilot-first CTA -->
-          <a class="wt-pill primary"
-             href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
-            Start a Pilot
-          </a>
-          <a class="wt-pill ghost" href="./services-secureops.html">
-            See Watchtower SecureOps™
-          </a>
-          <a class="wt-pill ghost" href="./services-cyber-defense-united.html">
-            See Cyber Defense United™
-          </a>
+    <section class="governance-section" aria-labelledby="governance-title">
+      <div class="page-shell governance-grid">
+        <div>
+          <p class="eyebrow eyebrow--dark"><span></span> Governed AI</p>
+          <h2 id="governance-title">Acceleration without surrendering authority.</h2>
+          <p>Watchtower’s AI workers support defined tasks such as research, correlation, summarization, and plan development. Consequential decisions remain bounded by policy, permissions, and human review.</p>
+        </div>
+        <div class="governance-stack">
+          <article><span>01</span><div><h3>Bounded scope</h3><p>Workers operate within explicitly defined tasks, tools, and data boundaries.</p></div></article>
+          <article><span>02</span><div><h3>Human authorization</h3><p>Operators retain approval over changes, exceptions, and risk acceptance.</p></div></article>
+          <article><span>03</span><div><h3>Traceable output</h3><p>Inputs, recommendations, actions, and outcomes remain inspectable.</p></div></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MAIN -->
-  <main class="light">
-    <div class="page-wrap">
-
-      <section class="section-block slim">
-        <h2 class="section-title">What the Cyber Reasoning Platform Does</h2>
-        <p class="section-lead">
-          Traditional tools generate alerts. Analysts chase noise. Compliance drains time.
-          A <strong>Cyber Reasoning Platform</strong> changes the model by focusing on behavior, intent,
-          and defensible evidence.
-        </p>
-
-        <div class="band">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Unifies Signals into Stories</h3>
-              <p>
-                Ingests alerts, logs, and context from SIEM, EDR, identity, and network tools and groups them
-                into <strong>WCS-backed buckets</strong> that represent behaviors and campaigns — not just single events.
-              </p>
-            </article>
-
-            <article class="card core">
-              <h3>Builds Evidence as You Work</h3>
-              <p>
-                Every investigation becomes a case with timelines, artifacts, decisions, and outcomes — ready for
-                <strong>command briefings, auditors, and CMMC-aligned evidence and audit support</strong> without extra paperwork.
-              </p>
-              <div class="mini-pill-row">
-                <span class="mini-pill">Timeline</span>
-                <span class="mini-pill">Artifacts</span>
-                <span class="mini-pill">Decisions</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Supports Real-World Operations</h3>
-              <p>
-                Designed for shift work, escalation paths, and handoffs — so SOCs, CSSPs, MSSPs, and small teams
-                can operate consistently across SecureOps and Cyber Defense United.
-              </p>
-            </article>
-          </div>
+    <section class="deployment-section" aria-labelledby="platform-deployment-title">
+      <div class="page-shell">
+        <div class="section-heading section-heading--split">
+          <div><p class="eyebrow"><span></span> Deployment &amp; engagement</p><h2 id="platform-deployment-title">Designed to fit the mission.</h2></div>
+          <p>Start with a focused pilot, validate outcomes in your environment, and expand the operating model at a pace your team can absorb.</p>
         </div>
-      </section>
-
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">Core Modules in the Cyber Reasoning Platform</h2>
-        <p class="section-lead">
-          Start where you are and grow into full SecureOps and Cyber Defense United operations.
-          These modules work together as one platform.
-        </p>
-
-        <div class="band">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Guardian — Alerts &amp; Triage</h3>
-              <p>
-                Normalizes alerts into a consistent view, applies WCS-driven correlations, and feeds prioritized
-                buckets into your queues. Less swivel-chair, more “here’s what matters.”
-              </p>
-            </article>
-
-            <article class="card core">
-              <h3>Seek — WCS Bucket Engine</h3>
-              <p>
-                The reasoning core: <strong>Watchtower Common Schema (WCS)</strong> fused with correlation logic
-                to group related events into buckets that represent behaviors, attack paths, and anomalies.
-              </p>
-              <div class="mini-pill-row">
-                <span class="mini-pill">WCS</span>
-                <span class="mini-pill">Buckets</span>
-                <span class="mini-pill">Correlation</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Atlas — Investigations &amp; Timelines</h3>
-              <p>
-                Investigation workspace for evidence, timelines, notes, and conclusions — ideal for IR, hunt,
-                and long-running mission cases.
-              </p>
-            </article>
-          </div>
-
-          <div class="grid-3" style="margin-top:1.1rem;">
-            <article class="card">
-              <h3>Assist — AI Copilots</h3>
-              <p>
-                Copilots that summarize cases, propose next steps, draft reports, and translate technical details
-                into leader-ready language — with humans always in control.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Deploy — Automation &amp; SOAR</h3>
-              <p>
-                Connects the platform to SOAR and your automation stack for enrichment, containment, health checks,
-                and ticket updates.
-              </p>
-            </article>
-
-            <article class="card">
-              <h3>Audit — Evidence &amp; Compliance</h3>
-              <p>
-                Aligns cases, actions, and artifacts to controls — turning day-to-day operations into
-                <strong>direct evidence</strong> for CMMC, RMF, A&A and continuous monitoring.
-              </p>
-            </article>
-          </div>
-
-          <div class="card" style="margin-top:1.1rem;">
-            <h3>Roadmap (Next)</h3>
-            <p>
-              Future modules include <strong>Replay</strong> (re-simulating incidents),
-              <strong>Intel</strong> (threat intel fusion),
-              <strong>Graph</strong> (entity relationships),
-              and <strong>Training</strong> (scenario-driven exercises) — all built on the same core.
-            </p>
-          </div>
+        <div class="deployment-grid deployment-grid--three">
+          <article><span class="card-kicker">01 / DEPLOY</span><h3>Secure SaaS</h3><p>Operate through a managed cloud delivery model with a bounded onboarding scope.</p></article>
+          <article><span class="card-kicker">02 / CONTROL</span><h3>Your Azure tenant</h3><p>Deploy within a customer-controlled Azure environment when mission or policy requires it.</p></article>
+          <article><span class="card-kicker">03 / OPERATE</span><h3>Software + expertise</h3><p>Pair Watchtower with optional SecureOps, incident response, investigation, and advisory support.</p></article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">Who the Cyber Reasoning Platform Is For</h2>
-        <p class="section-lead">
-          Built for missions where teams are stretched thin — and leadership needs answers they can defend.
-        </p>
-
-        <div class="band">
-          <div class="grid-2">
-            <article class="card">
-              <h3>Defense &amp; Government</h3>
-              <p>
-                SOCs/CSSPs supporting mission networks that must brief leadership, support A&A / RMF workflows,
-                and operate across boundary, enclave, and mission environments.
-              </p>
-              <ul>
-                <li>Commander-ready narratives</li>
-                <li>Continuous monitoring evidence</li>
-                <li>Operations-friendly workflows</li>
-              </ul>
-            </article>
-
-            <article class="card">
-              <h3>Defense Contractors, MSSPs, and High-Risk Businesses</h3>
-              <p>
-                Teams that need monitoring, investigation, and <strong>CMMC-aligned evidence</strong> without
-                building a platform from scratch — and want a repeatable operating model.
-              </p>
-              <ul>
-                <li>Tenant / program onboarding</li>
-                <li>Standardized triage and cases</li>
-                <li>Proof of work + outcomes</li>
-              </ul>
-            </article>
-          </div>
+    <section class="pilot-section" aria-labelledby="pilot-title">
+      <div class="page-shell pilot-card">
+        <div>
+          <p class="eyebrow"><span></span> A bounded path to proof</p>
+          <h2 id="pilot-title">Start with one workflow.<br>Measure one real outcome.</h2>
+          <p>Bring a representative data source, a meaningful vulnerability backlog, and an operational success measure. We’ll scope a pilot around your environment—not a canned lab.</p>
         </div>
-      </section>
-
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <h2 class="section-title">How to Get the Cyber Reasoning Platform</h2>
-        <p class="section-lead">
-          Today, the platform is delivered through <strong>Watchtower SecureOps™</strong> engagements and
-          <strong>Cyber Defense United™</strong> offerings — matched to your mission, tooling, and constraints.
-        </p>
-
-        <div class="band">
-          <div class="grid-3">
-            <article class="card">
-              <h3>Integrate Your Stack</h3>
-              <p>
-                Connect SIEM, EDR, firewall, identity, and mission systems into WCS so signals can be reasoned about
-                consistently across teams and environments.
-              </p>
-            </article>
-
-            <article class="card core">
-              <h3>Deploy Where You Operate</h3>
-              <p>
-                Stand up the platform in cloud, hybrid, or on-prem / air-gapped environments with an operating model
-                designed for shift work and high-stakes programs.
-              </p>
-              <div class="mini-pill-row">
-                <span class="mini-pill">Cloud</span>
-                <span class="mini-pill">Hybrid</span>
-                <span class="mini-pill">Air-Gapped</span>
-              </div>
-            </article>
-
-            <article class="card">
-              <h3>Operationalize Evidence</h3>
-              <p>
-                Map workflows, reporting, and artifacts to contracts and compliance needs — turning daily ops into
-                defensible evidence for audits and leadership briefs.
-              </p>
-            </article>
-          </div>
+        <div class="pilot-steps">
+          <span><b>01</b> Define the use case</span><span><b>02</b> Connect priority data</span><span><b>03</b> Prove the closed loop</span>
         </div>
-      </section>
-
-      <section class="section-block slim" style="margin-top:1.75rem;">
-        <div class="cta-band">
-          <h2>Ready for a 30–90 Day Pilot?</h2>
-          <p>
-            We’ll start with your environment and success metrics, connect your existing tools, and deliver
-            evidence-driven investigations your leaders can brief and auditors can validate.
-          </p>
-
-          <div class="cta-actions">
-            <a class="button primary"
-               href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request%20(30-90%20Days)&body=Tool%20stack%3A%0AEnvironment%20(cloud%2Fhybrid%2Fconstrained)%3A%0ASuccess%20metrics%20(MTTD%2FMTTR%2Fnoise%20reduction)%3A%0ATimeline%3A%0A">
-              Start a Pilot
-            </a>
-            <a class="button ghost" href="./services-secureops.html">
-              Learn About SecureOps
-            </a>
-            <a class="button ghost" href="./services-cyber-defense-united.html">
-              Learn About Cyber Defense United
-            </a>
-          </div>
+        <div class="action-row">
+          <a class="wt-button wt-button--primary" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Pilot%20Request&amp;body=Organization%3A%0AEnvironment%3A%0ACurrent%20security%20tools%3A%0APilot%20goal%3A%0ATimeline%3A">Start a pilot <span aria-hidden="true">↗</span></a>
+          <a class="wt-button wt-button--quiet" href="mailto:info@enlight10solutions.com?subject=Watchtower%20Conversation">Talk with an operator</a>
         </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER (standardized, current year) -->
   <div data-site-footer></div>
 </body>
 </html>
