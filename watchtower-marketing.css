@@ -625,12 +625,16 @@
 .architecture-core--visual::after { border-radius: 22px; }
 .architecture-core__image {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  left: 0;
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 140%;
   border-radius: 17px;
+  clip-path: inset(0 0 28.58% 0 round 17px);
   object-fit: cover;
+  object-position: center top;
   box-shadow: inset 0 0 35px rgba(0,0,0,.25);
 }
 .architecture-core__copy {
@@ -647,8 +651,8 @@
 .architecture-core__copy strong { display: block; }
 .architecture-core__copy small { display: block; }
 .architecture-core--visual .core-beacon {
-  top: 38%;
-  left: 48%;
+  top: 46%;
+  left: 56%;
   z-index: 4;
   animation: towerBeacon 2.3s ease-in-out infinite;
 }
