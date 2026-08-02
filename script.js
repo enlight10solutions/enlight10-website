@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     headerMount.outerHTML = [
       '<nav class="topbar" role="navigation" aria-label="Primary">',
       '  <a class="brand" href="./" aria-label="enLight10 Solutions — Home">',
-      '    <img class="brand-logo brand-logo--slim" src="./enLight10_Logo.png" alt="enLight10 Solutions">',
+      '    <img class="brand-logo brand-logo--slim" src="./enLight10%20Logo.png" alt="enLight10 Solutions">',
       '  </a>',
       '  <div class="nav-right">',
       '    <div class="nav-links">',
