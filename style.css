@@ -789,19 +789,23 @@ body.menu-open { overflow: hidden; }
 }
 
 .footer-e10 {
-  margin-top: 0.75rem;
+  margin: 1rem auto 0;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  width: 100%;
+  width: fit-content;
   text-align: center;
+  text-decoration: none;
 }
 
 .footer-e10 img {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(251, 191, 36, 0.38);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
 }
 
 .footer-e10 span {
@@ -1162,11 +1166,16 @@ footer {
 
 .footer-social {
   margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
   font-weight: 600;
 }
 
 .footer-social span {
-  margin-right: 0.25rem;
+  margin: 0 0.1rem;
   color: rgba(255, 255, 255, 0.88);
 }
 
