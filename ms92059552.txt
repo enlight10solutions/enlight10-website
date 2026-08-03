@@ -1,0 +1,5 @@
+{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "enlight10solution.com",
+  "Id": "f49bf9ce-6a89-4317-8f56-6c8a22b5abec"
+}
