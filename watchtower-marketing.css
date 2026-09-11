@@ -437,6 +437,32 @@
 .operator-credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 .operator-credentials span { padding: .6rem .8rem; border: 1px solid var(--wt-dark-line); color: #6d551c; font-size: .6rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 
+/* Federal credential surfaces */
+.credentials-section { padding: 115px 0; background: var(--wt-paper); color: var(--wt-ink); }
+.credentials-section .section-heading--split > p { color: #59616b; opacity: 1; }
+.credentials-grid { display: grid; grid-template-columns: 1.12fr 1fr 1fr; border: 1px solid var(--wt-dark-line); }
+.credential-card { min-height: 335px; padding: 34px 28px; background: #f8f7f3; }
+.credential-card + .credential-card { border-left: 1px solid var(--wt-dark-line); }
+.credential-card--featured { background: linear-gradient(145deg, #fffdf6, #f1eee4); box-shadow: inset 0 3px 0 var(--wt-gold); }
+.credential-card--supporting { background: #f1efeb; }
+.credential-card h3 { margin: 2.8rem 0 .55rem; font-family: Georgia, serif; font-size: 1.55rem; font-weight: 500; letter-spacing: -.025em; line-height: 1.15; }
+.credential-card p { color: #58616a; font-size: .88rem; line-height: 1.7; }
+.credential-card__title { margin-bottom: 1.15rem; color: #856b22 !important; font-size: 1rem !important; font-weight: 750; line-height: 1.45 !important; }
+.credential-status { display: inline-block; margin: 0 0 1rem; color: #846919; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; }
+.credential-card__note { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--wt-dark-line); color: #6c7378 !important; font-size: .77rem !important; }
+.capability-credibility { display: grid; grid-template-columns: .75fr 1.1fr 1fr; gap: 30px; align-items: center; margin-top: 48px; padding: 26px 30px; border: 1px solid rgba(245,200,76,.35); background: linear-gradient(105deg, rgba(245,200,76,.1), rgba(255,255,255,.025)); }
+.capability-credibility h3 { margin: .55rem 0 0; color: var(--wt-gold); font-family: Georgia, serif; font-size: 1.65rem; font-weight: 500; }
+.capability-credibility p { margin: 0; color: #b9c3ce; font-size: .86rem; line-height: 1.7; }
+.capability-credibility__note { color: #8e9baa !important; font-size: .78rem !important; }
+.contracting-credentials { margin-top: 58px; padding-top: 48px; border-top: 1px solid var(--wt-dark-line); }
+.contracting-credentials__intro { margin-bottom: 30px; }
+.contracting-credential-list { display: grid; grid-template-columns: repeat(2, 1fr); border: 1px solid var(--wt-dark-line); }
+.contracting-credential-list > div { display: flex; min-height: 100px; flex-direction: column; justify-content: center; gap: 8px; padding: 22px 24px; background: #f8f7f3; }
+.contracting-credential-list > div:nth-child(2n) { border-left: 1px solid var(--wt-dark-line); }
+.contracting-credential-list > div:nth-child(n+3) { border-top: 1px solid var(--wt-dark-line); }
+.contracting-credential-list span { color: #78632b; font-size: .61rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.contracting-credential-list strong { color: var(--wt-ink); font-family: Georgia, serif; font-size: 1.08rem; font-weight: 500; }
+
 /* Readiness and final CTA */
 .readiness-bridge { padding: 65px 0; background: #0b1b2b; }
 .readiness-card { display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: center; padding: 45px 52px; border: 1px solid rgba(245,200,76,.23); background: linear-gradient(105deg, rgba(245,200,76,.08), transparent); }
@@ -1093,7 +1119,7 @@
   .section-heading h2 { font-size: 2.6rem; }
   .demo-play-overlay { right: 7%; left: 7%; max-width: none; }
   .demo-play-copy small { display: none; }
-  .demo-section, .urgency-section, .loop-section, .difference-section, .deployment-section, .operator-section, .platform-overview, .capability-section, .workflow-proof, .governance-section { padding: 82px 0; }
+  .demo-section, .urgency-section, .loop-section, .difference-section, .deployment-section, .operator-section, .credentials-section, .platform-overview, .capability-section, .workflow-proof, .governance-section { padding: 82px 0; }
   .loop-grid, .deployment-grid, .deployment-grid--three, .capability-grid { grid-template-columns: 1fr; }
   .loop-grid li { min-height: auto; }
   .deployment-grid article, .deployment-grid article + article { border-left: 0; }
@@ -1113,6 +1139,7 @@
   .interior-hero h1 { font-size: clamp(3.05rem, 15vw, 4.5rem); }
   .interior-hero__aside { padding: 27px; }
   .content-section { padding: 80px 0; }
+  .contracting-credentials .content-intro h2 { font-size: clamp(2.35rem, 10vw, 3.6rem); line-height: 1.02; }
   .feature-grid, .feature-grid--two, .feature-grid--four, .detail-grid, .detail-grid--three, .package-grid { grid-template-columns: 1fr; }
   .feature-card, .feature-grid--two .feature-card:nth-child(2n), .feature-grid--four .feature-card:nth-child(2n), .feature-grid--four .feature-card:nth-child(4n), .feature-grid:not(.feature-grid--two):not(.feature-grid--four) .feature-card:nth-child(3n) { border-right: 0; }
   .process-line { grid-template-columns: 1fr; border-top: 0; }
@@ -1122,6 +1149,10 @@
   .fact-grid { grid-template-columns: 1fr; }
   .fact, .fact:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--wt-dark-line); }
   .statement-card { padding: 30px 25px; }
+  .credentials-grid, .contracting-credential-list { grid-template-columns: 1fr; }
+  .credential-card + .credential-card, .contracting-credential-list > div:nth-child(2n) { border-left: 0; }
+  .credential-card + .credential-card, .contracting-credential-list > div + div { border-top: 1px solid var(--wt-dark-line); }
+  .capability-credibility { grid-template-columns: 1fr; gap: 15px; padding: 24px; }
   .trust-boundary { grid-template-columns: 1fr; }
   .trust-boundary > div + div { border-top: 1px solid var(--wt-dark-line); border-left: 0; }
   .profile-main, .profile-panel { padding: 28px; }
