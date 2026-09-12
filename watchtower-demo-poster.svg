@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Watchtower vulnerability operations demo</title>
+  <title id="title">Watchtower™ vulnerability operations demo</title>
   <desc id="desc">A dark product interface showing a vulnerability workflow reaching verified closure.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
@@ -26,8 +26,8 @@
   <g transform="translate(90 62)">
     <circle cx="8" cy="8" r="8" fill="#f5c84c"/>
     <circle cx="8" cy="8" r="22" fill="#f5c84c" opacity=".12" filter="url(#goldBlur)"/>
-    <text x="33" y="15" fill="#f8fafc" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">WATCHTOWER</text>
-    <text x="265" y="14" fill="#718196" font-family="Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="3">VULNERABILITY OPERATIONS</text>
+    <text x="33" y="15" fill="#f8fafc" font-family="Segoe UI,Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="5">WATCHTOWER™</text>
+    <text x="295" y="14" fill="#718196" font-family="Segoe UI,Arial,sans-serif" font-size="12" letter-spacing="3">VULNERABILITY OPERATIONS</text>
   </g>
 
   <g transform="translate(150 230)">
