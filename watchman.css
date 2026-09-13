@@ -7,7 +7,7 @@
 .wm-page main [id] { scroll-margin-top: 108px; }
 .wm-hero { position: relative; isolation: isolate; overflow: hidden; padding-top: 140px; background: radial-gradient(ellipse at 80% 40%, #213043 0%, transparent 48%), linear-gradient(125deg, #06101c, #091522); }
 .wm-hero-grid { display: grid; grid-template-columns: 1.25fr 1fr; align-items: center; gap: 50px; padding-bottom: 65px; }
-.wm-page .wm-wordmark { margin: 0 0 22px; color: var(--wt-gold); font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 750; letter-spacing: .3em; }
+.wm-page .wm-wordmark { margin: 0 0 22px; color: var(--wt-gold); font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 750; letter-spacing: .08em; }
 .wm-wordmark sup { font-size: .45em; letter-spacing: 0; vertical-align: super; }
 .wm-hero h1 { margin-bottom: 26px; color: var(--wt-white); font-size: clamp(3.1rem, 5.5vw, 5.2rem); line-height: 1.02; }
 .wm-hero-copy > p:not(.eyebrow):not(.wm-wordmark) { max-width: 630px; font-size: 1.04rem; }
