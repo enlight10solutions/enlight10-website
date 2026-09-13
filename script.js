@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
       '        <h2>Work With Us</h2>',
       '        <a href="./partners.html">Prime Partners</a>',
       '        <a href="./capabilities.html">Capabilities &amp; Contracting</a>',
-      '        <a href="./enLight10%20Capability%20Statement.pdf">Download Capability Statement (PDF)</a>',
+      '        <a href="./enLight10_Capability_Statement_v2.pdf">Download Capability Statement (PDF)</a>',
       '        <a href="mailto:info@enlight10solutions.com">Contact</a>',
       '      </div>',
       '      <div class="footer-column footer-contracting">',
